@@ -1,0 +1,56 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scripts/BuscaPalavras.gd" type="Script" id=1]
+[ext_resource path="res://SpritesBlocagem/Seta.png" type="Texture" id=2]
+[ext_resource path="res://SpritesBlocagem/Bolsa.png" type="Texture" id=3]
+[ext_resource path="res://SpritesBlocagem/FundoBrancoBordaPreta.png" type="Texture" id=4]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Voltar" type="Button" parent="."]
+margin_left = 9.2692
+margin_top = 513.222
+margin_right = 161.269
+margin_bottom = 605.222
+rect_scale = Vector2( 1, 0.8 )
+icon = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Bolsa" type="Button" parent="."]
+margin_left = 935.796
+margin_top = 507.429
+margin_right = 1039.8
+margin_bottom = 617.429
+rect_scale = Vector2( 0.7, 0.7 )
+icon = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PalavrasPopUp" type="Control" parent="."]
+visible = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="PalavrasPopUp"]
+position = Vector2( 525.906, 265.2 )
+scale = Vector2( 0.6, 0.5 )
+texture = ExtResource( 4 )
+
+[node name="Voltar2" type="Button" parent="PalavrasPopUp"]
+margin_left = 387.953
+margin_top = 394.481
+margin_right = 539.953
+margin_bottom = 486.481
+rect_scale = Vector2( 0.5, 0.6 )
+icon = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="Voltar" to="." method="_on_Voltar_pressed"]
+[connection signal="pressed" from="Bolsa" to="." method="_on_Bolsa_pressed"]
+[connection signal="pressed" from="PalavrasPopUp/Voltar2" to="." method="_on_Voltar2_pressed"]

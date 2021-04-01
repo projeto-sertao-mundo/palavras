@@ -1,0 +1,88 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://SpritesBlocagem/Porta.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/ChangeScenePorta.gd" type="Script" id=2]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 162.53
+margin_top = 370.417
+margin_right = 256.53
+margin_bottom = 384.417
+rect_scale = Vector2( 1.5, 1.5 )
+text = "Busca palavras"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 451.052
+margin_top = 370.417
+margin_right = 566.052
+margin_bottom = 384.417
+rect_scale = Vector2( 1.5, 1.5 )
+text = "Quarto de costura"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="."]
+margin_left = 758.472
+margin_top = 369.157
+margin_right = 881.472
+margin_bottom = 400.157
+rect_scale = Vector2( 1.5, 1.5 )
+text = "Quarto montagens 
+      das frases"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VoltarMenu" type="Button" parent="."]
+margin_left = 446.3
+margin_top = 519.52
+margin_right = 600.3
+margin_bottom = 566.52
+text = "Voltar"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PortaBuscaPalavras" type="Button" parent="."]
+margin_left = 135.0
+margin_top = 22.6652
+margin_right = 647.0
+margin_bottom = 832.665
+rect_scale = Vector2( 0.35, 0.4 )
+icon = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PortaQuartoCostura" type="Button" parent="."]
+margin_left = 450.022
+margin_top = 30.6742
+margin_right = 962.022
+margin_bottom = 840.674
+rect_scale = Vector2( 0.35, 0.4 )
+icon = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PortaQuartoMontagens" type="Button" parent="."]
+margin_left = 754.366
+margin_top = 28.0045
+margin_right = 1266.37
+margin_bottom = 838.005
+rect_scale = Vector2( 0.35, 0.4 )
+icon = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="VoltarMenu" to="." method="_on_VoltarMenu_pressed"]
+[connection signal="pressed" from="PortaBuscaPalavras" to="." method="_on_PortaBuscaPalavras_pressed"]
+[connection signal="pressed" from="PortaQuartoCostura" to="." method="_on_PortaQuartoCostura_pressed"]
+[connection signal="pressed" from="PortaQuartoMontagens" to="." method="_on_PortaQuartoMontagens_pressed"]
