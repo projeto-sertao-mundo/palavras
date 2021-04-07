@@ -3,7 +3,7 @@
 [ext_resource path="res://Scripts/BuscaPalavras.gd" type="Script" id=1]
 [ext_resource path="res://SpritesBlocagem/Seta.png" type="Texture" id=2]
 [ext_resource path="res://SpritesBlocagem/Bolsa.png" type="Texture" id=3]
-[ext_resource path="res://SpritesBlocagem/FundoBrancoBordaPreta.png" type="Texture" id=4]
+[ext_resource path="res://Cenas/CenasPrefab/PalavrasPopUp.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scripts/Palavras.gd" type="Script" id=5]
 [ext_resource path="res://Scripts/InicializadorBuscaPalavras.gd" type="Script" id=6]
 
@@ -14,7 +14,7 @@ script = ExtResource( 1 )
 script = ExtResource( 6 )
 
 [node name="Palavra1" type="KinematicBody2D" parent="Palavras"]
-position = Vector2( 561.569, 49.1787 )
+position = Vector2( 827.494, 161.482 )
 script = ExtResource( 5 )
 __meta__ = {
 "_edit_group_": true
@@ -30,7 +30,7 @@ __meta__ = {
 }
 
 [node name="Palavra2" type="KinematicBody2D" parent="Palavras"]
-position = Vector2( 349.039, 159.012 )
+position = Vector2( 237.795, 220.461 )
 script = ExtResource( 5 )
 __meta__ = {
 "_edit_group_": true
@@ -46,7 +46,7 @@ __meta__ = {
 }
 
 [node name="Palavra3" type="KinematicBody2D" parent="Palavras"]
-position = Vector2( 193.747, 48.0832 )
+position = Vector2( 137.595, 74.5698 )
 script = ExtResource( 5 )
 __meta__ = {
 "_edit_group_": true
@@ -62,7 +62,7 @@ __meta__ = {
 }
 
 [node name="Palavra4" type="KinematicBody2D" parent="Palavras"]
-position = Vector2( 787.468, 74.1837 )
+position = Vector2( 709.068, 34.9836 )
 script = ExtResource( 5 )
 __meta__ = {
 "_edit_group_": true
@@ -78,7 +78,7 @@ __meta__ = {
 }
 
 [node name="Palavra5" type="KinematicBody2D" parent="Palavras"]
-position = Vector2( 509.468, 431.184 )
+position = Vector2( 710.766, 282.859 )
 script = ExtResource( 5 )
 __meta__ = {
 "_edit_group_": true
@@ -94,7 +94,7 @@ __meta__ = {
 }
 
 [node name="Palavra6" type="KinematicBody2D" parent="Palavras"]
-position = Vector2( 74.4679, 262.184 )
+position = Vector2( 82.9436, 333.168 )
 script = ExtResource( 5 )
 __meta__ = {
 "_edit_group_": true
@@ -132,33 +132,13 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="PalavrasPopUp" type="Control" parent="."]
+[node name="PalavrasPopUp" parent="." instance=ExtResource( 4 )]
 visible = false
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Sprite" type="Sprite" parent="PalavrasPopUp"]
-position = Vector2( 525.906, 265.2 )
-scale = Vector2( 0.6, 0.5 )
-texture = ExtResource( 4 )
-
-[node name="Voltar2" type="Button" parent="PalavrasPopUp"]
-margin_left = 387.953
-margin_top = 394.481
-margin_right = 539.953
-margin_bottom = 486.481
-rect_scale = Vector2( 0.5, 0.6 )
-icon = ExtResource( 2 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 [connection signal="pressed" from="Palavras/Palavra1/Palavra" to="Palavras/Palavra1" method="_on_Palavra_pressed"]
 [connection signal="pressed" from="Palavras/Palavra2/Palavra" to="Palavras/Palavra2" method="_on_Palavra_pressed"]
 [connection signal="pressed" from="Palavras/Palavra3/Palavra" to="Palavras/Palavra3" method="_on_Palavra_pressed"]
 [connection signal="pressed" from="Palavras/Palavra4/Palavra" to="Palavras/Palavra4" method="_on_Palavra_pressed"]
 [connection signal="pressed" from="Palavras/Palavra5/Palavra" to="Palavras/Palavra5" method="_on_Palavra_pressed"]
 [connection signal="pressed" from="Palavras/Palavra6/Palavra" to="Palavras/Palavra6" method="_on_Palavra_pressed"]
-[connection signal="pressed" from="Bolsa" to="." method="_on_Bolsa_pressed"]
+[connection signal="pressed" from="Bolsa" to="PalavrasPopUp" method="_on_Bolsa_pressed"]
 [connection signal="pressed" from="Voltar" to="." method="_on_Voltar_pressed"]
-[connection signal="pressed" from="PalavrasPopUp/Voltar2" to="." method="_on_Voltar2_pressed"]
