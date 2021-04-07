@@ -1,21 +1,110 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scripts/BuscaPalavras.gd" type="Script" id=1]
 [ext_resource path="res://SpritesBlocagem/Seta.png" type="Texture" id=2]
 [ext_resource path="res://SpritesBlocagem/Bolsa.png" type="Texture" id=3]
 [ext_resource path="res://SpritesBlocagem/FundoBrancoBordaPreta.png" type="Texture" id=4]
 [ext_resource path="res://Scripts/Palavras.gd" type="Script" id=5]
+[ext_resource path="res://Scripts/InicializadorBuscaPalavras.gd" type="Script" id=6]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 1 )
 
-[node name="Voltar" type="Button" parent="."]
-margin_left = 9.2692
-margin_top = 513.222
-margin_right = 161.269
-margin_bottom = 605.222
-rect_scale = Vector2( 1, 0.8 )
-icon = ExtResource( 2 )
+[node name="Palavras" type="Node" parent="."]
+script = ExtResource( 6 )
+
+[node name="Palavra1" type="KinematicBody2D" parent="Palavras"]
+position = Vector2( 561.569, 49.1787 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_group_": true
+}
+palavra = "Palavra1"
+
+[node name="Palavra" type="Button" parent="Palavras/Palavra1"]
+margin_right = 109.0
+margin_bottom = 39.0002
+text = "Palavra1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Palavra2" type="KinematicBody2D" parent="Palavras"]
+position = Vector2( 349.039, 159.012 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_group_": true
+}
+palavra = "Palavra2"
+
+[node name="Palavra" type="Button" parent="Palavras/Palavra2"]
+margin_right = 109.0
+margin_bottom = 39.0002
+text = "Palavra2"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Palavra3" type="KinematicBody2D" parent="Palavras"]
+position = Vector2( 193.747, 48.0832 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_group_": true
+}
+palavra = "Palavra3"
+
+[node name="Palavra" type="Button" parent="Palavras/Palavra3"]
+margin_right = 109.0
+margin_bottom = 39.0002
+text = "Palavra3"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Palavra4" type="KinematicBody2D" parent="Palavras"]
+position = Vector2( 787.468, 74.1837 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_group_": true
+}
+palavra = "Palavra4"
+
+[node name="Palavra" type="Button" parent="Palavras/Palavra4"]
+margin_right = 109.0
+margin_bottom = 39.0002
+text = "Palavra4"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Palavra5" type="KinematicBody2D" parent="Palavras"]
+position = Vector2( 509.468, 431.184 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_group_": true
+}
+palavra = "Palavra5"
+
+[node name="Palavra" type="Button" parent="Palavras/Palavra5"]
+margin_right = 109.0
+margin_bottom = 39.0002
+text = "Palavra5"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Palavra6" type="KinematicBody2D" parent="Palavras"]
+position = Vector2( 74.4679, 262.184 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_group_": true
+}
+palavra = "Palavra6"
+
+[node name="Palavra" type="Button" parent="Palavras/Palavra6"]
+margin_right = 109.0
+margin_bottom = 39.0002
+text = "Palavra6"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -29,6 +118,17 @@ rect_scale = Vector2( 0.7, 0.7 )
 icon = ExtResource( 3 )
 __meta__ = {
 "_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Voltar" type="Button" parent="."]
+margin_left = 9.2692
+margin_top = 513.222
+margin_right = 161.269
+margin_bottom = 605.222
+rect_scale = Vector2( 1, 0.8 )
+icon = ExtResource( 2 )
+__meta__ = {
 "_edit_use_anchors_": false
 }
 
@@ -53,102 +153,12 @@ icon = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="Palavra1" type="KinematicBody2D" parent="."]
-position = Vector2( 561.569, 49.1787 )
-script = ExtResource( 5 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Palavra" type="Button" parent="Palavra1"]
-margin_right = 109.0
-margin_bottom = 39.0002
-text = "Palavra1"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Palavra2" type="KinematicBody2D" parent="."]
-position = Vector2( 349.039, 159.012 )
-script = ExtResource( 5 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Palavra" type="Button" parent="Palavra2"]
-margin_right = 109.0
-margin_bottom = 39.0002
-text = "Palavra2"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Palavra3" type="KinematicBody2D" parent="."]
-position = Vector2( 193.747, 48.0832 )
-script = ExtResource( 5 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Palavra" type="Button" parent="Palavra3"]
-margin_right = 109.0
-margin_bottom = 39.0002
-text = "Palavra3"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Palavra4" type="KinematicBody2D" parent="."]
-position = Vector2( 787.468, 74.1837 )
-script = ExtResource( 5 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Palavra" type="Button" parent="Palavra4"]
-margin_right = 109.0
-margin_bottom = 39.0002
-text = "Palavra4"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Palavra5" type="KinematicBody2D" parent="."]
-position = Vector2( 509.468, 431.184 )
-script = ExtResource( 5 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Palavra" type="Button" parent="Palavra5"]
-margin_right = 109.0
-margin_bottom = 39.0002
-text = "Palavra5"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Palavra6" type="KinematicBody2D" parent="."]
-position = Vector2( 74.4679, 262.184 )
-script = ExtResource( 5 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Palavra" type="Button" parent="Palavra6"]
-margin_right = 109.0
-margin_bottom = 39.0002
-text = "Palavra6"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-[connection signal="pressed" from="Voltar" to="." method="_on_Voltar_pressed"]
+[connection signal="pressed" from="Palavras/Palavra1/Palavra" to="Palavras/Palavra1" method="_on_Palavra_pressed"]
+[connection signal="pressed" from="Palavras/Palavra2/Palavra" to="Palavras/Palavra2" method="_on_Palavra_pressed"]
+[connection signal="pressed" from="Palavras/Palavra3/Palavra" to="Palavras/Palavra3" method="_on_Palavra_pressed"]
+[connection signal="pressed" from="Palavras/Palavra4/Palavra" to="Palavras/Palavra4" method="_on_Palavra_pressed"]
+[connection signal="pressed" from="Palavras/Palavra5/Palavra" to="Palavras/Palavra5" method="_on_Palavra_pressed"]
+[connection signal="pressed" from="Palavras/Palavra6/Palavra" to="Palavras/Palavra6" method="_on_Palavra_pressed"]
 [connection signal="pressed" from="Bolsa" to="." method="_on_Bolsa_pressed"]
+[connection signal="pressed" from="Voltar" to="." method="_on_Voltar_pressed"]
 [connection signal="pressed" from="PalavrasPopUp/Voltar2" to="." method="_on_Voltar2_pressed"]
-[connection signal="pressed" from="Palavra1/Palavra" to="Palavra1" method="_on_Palavra_pressed"]
-[connection signal="pressed" from="Palavra2/Palavra" to="Palavra2" method="_on_Palavra_pressed"]
-[connection signal="pressed" from="Palavra3/Palavra" to="Palavra3" method="_on_Palavra_pressed"]
-[connection signal="pressed" from="Palavra4/Palavra" to="Palavra4" method="_on_Palavra_pressed"]
-[connection signal="pressed" from="Palavra5/Palavra" to="Palavra5" method="_on_Palavra_pressed"]
-[connection signal="pressed" from="Palavra6/Palavra" to="Palavra6" method="_on_Palavra_pressed"]
