@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scripts/BuscaPalavras.gd" type="Script" id=1]
 [ext_resource path="res://SpritesBlocagem/Seta.png" type="Texture" id=2]
 [ext_resource path="res://SpritesBlocagem/Bolsa.png" type="Texture" id=3]
 [ext_resource path="res://Cenas/CenasPrefab/PalavrasPopUp.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scripts/Palavras.gd" type="Script" id=5]
+[ext_resource path="res://Scripts/InicializadorBuscaPalavras.gd" type="Script" id=6]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 1 )
@@ -130,6 +131,9 @@ __meta__ = {
 
 [node name="PalavrasPopUp" parent="." instance=ExtResource( 4 )]
 visible = false
+
+[node name="Node" type="Node" parent="."]
+script = ExtResource( 6 )
 [connection signal="pressed" from="Palavra1/Palavra" to="Palavra1" method="_on_Palavra_pressed"]
 [connection signal="pressed" from="Palavra2/Palavra" to="Palavra2" method="_on_Palavra_pressed"]
 [connection signal="pressed" from="Palavra3/Palavra" to="Palavra3" method="_on_Palavra_pressed"]
