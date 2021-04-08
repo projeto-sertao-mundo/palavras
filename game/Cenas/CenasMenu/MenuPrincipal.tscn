@@ -9,12 +9,11 @@ script = ExtResource( 2 )
 path = "res://Cenas/CenasMenu/Corredor.tscn"
 
 [node name="Fundo" type="Sprite" parent="."]
-position = Vector2( -4.58359, -0.600006 )
 scale = Vector2( 0.565491, 0.565491 )
 texture = ExtResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="Fundo"]
-position = Vector2( -2.98703, -196.177 )
+position = Vector2( 0, -196.177 )
 scale = Vector2( 0.754051, 0.233278 )
 texture = ExtResource( 1 )
 
@@ -79,6 +78,15 @@ margin_left = -5.0
 margin_top = -1.0
 margin_right = -5.0
 margin_bottom = -1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonLock" type="Control" parent="CreditosPopUP"]
+margin_left = -510.079
+margin_top = -291.339
+margin_right = 529.921
+margin_bottom = 328.661
 __meta__ = {
 "_edit_use_anchors_": false
 }

@@ -67,6 +67,10 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="ButtonLock" type="Control" parent="RetalhoPopUp"]
+margin_right = 1023.0
+margin_bottom = 607.0
+
 [node name="FundoBrancoBordaPreta" type="Sprite" parent="RetalhoPopUp"]
 position = Vector2( 483.634, 247.248 )
 scale = Vector2( 0.733302, 0.386887 )
