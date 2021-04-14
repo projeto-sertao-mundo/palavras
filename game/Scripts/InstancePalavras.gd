@@ -18,7 +18,9 @@ func InstanciarPalavras():
 
 func _on_Bolsa_pressed():
 	self.show()
+	self.get_parent().set_position(Vector2(-150,0))
 	InstanciarPalavras()
 
 func _on_Voltar_pressed():
+	self.get_parent().set_position(Vector2(0,0))
 	self.hide()

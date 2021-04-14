@@ -38,13 +38,12 @@ __meta__ = {
 }
 
 [node name="CosturaPopUp" type="Control" parent="."]
-visible = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Sprite" type="Sprite" parent="CosturaPopUp"]
-position = Vector2( 469.543, 302.554 )
+position = Vector2( 468.794, 302.929 )
 scale = Vector2( 1.23192, 0.669833 )
 texture = ExtResource( 1 )
 
@@ -108,46 +107,124 @@ __meta__ = {
 [node name="Control" type="Control" parent="CosturaPopUp"]
 margin_right = 40.0
 margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="FundoBrancoBordaPreta2" type="Sprite" parent="CosturaPopUp/Control"]
+[node name="Verde" type="Button" parent="CosturaPopUp/Control"]
 modulate = Color( 0, 1, 0.109804, 1 )
-position = Vector2( 339.862, 115.819 )
-scale = Vector2( 0.0802576, 0.0534922 )
-texture = ExtResource( 1 )
+margin_left = 315.237
+margin_top = 94.4854
+margin_right = 827.237
+margin_bottom = 904.485
+rect_scale = Vector2( 0.09, 0.05 )
+custom_colors/font_color_disabled = Color( 1, 1, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+icon = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
 
-[node name="FundoBrancoBordaPreta3" type="Sprite" parent="CosturaPopUp/Control"]
-modulate = Color( 0.85098, 1, 0, 1 )
-position = Vector2( 262.08, 171.378 )
-scale = Vector2( 0.0802576, 0.0534922 )
-texture = ExtResource( 1 )
-
-[node name="FundoBrancoBordaPreta4" type="Sprite" parent="CosturaPopUp/Control"]
-modulate = Color( 0.0196078, 0.0823529, 1, 1 )
-position = Vector2( 339.862, 176.934 )
-scale = Vector2( 0.0802576, 0.0534922 )
-texture = ExtResource( 1 )
-
-[node name="FundoBrancoBordaPreta6" type="Sprite" parent="CosturaPopUp/Control"]
-modulate = Color( 0.901961, 0.596078, 0.0666667, 1 )
-position = Vector2( 339.862, 232.493 )
-scale = Vector2( 0.0802576, 0.0534922 )
-texture = ExtResource( 1 )
-
-[node name="FundoBrancoBordaPreta5" type="Sprite" parent="CosturaPopUp/Control"]
-modulate = Color( 0.752941, 0.141176, 0.572549, 1 )
-position = Vector2( 262.08, 232.493 )
-scale = Vector2( 0.0802576, 0.0534922 )
-texture = ExtResource( 1 )
-
-[node name="FundoBrancoBordaPreta" type="Sprite" parent="CosturaPopUp/Control"]
+[node name="Vermelho" type="Button" parent="CosturaPopUp/Control"]
 modulate = Color( 1, 0, 0, 1 )
-position = Vector2( 261.286, 115.025 )
-scale = Vector2( 0.0802576, 0.0534922 )
-texture = ExtResource( 1 )
+margin_left = 238.449
+margin_top = 93.7363
+margin_right = 750.449
+margin_bottom = 903.736
+rect_scale = Vector2( 0.09, 0.05 )
+custom_colors/font_color_disabled = Color( 1, 1, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+icon = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Azul" type="Button" parent="CosturaPopUp/Control"]
+modulate = Color( 0.0196078, 0.0823529, 1, 1 )
+margin_left = 316.128
+margin_top = 150.278
+margin_right = 828.128
+margin_bottom = 960.278
+rect_scale = Vector2( 0.09, 0.05 )
+custom_colors/font_color_disabled = Color( 1, 1, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+icon = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Amarelo" type="Button" parent="CosturaPopUp/Control"]
+modulate = Color( 0.85098, 1, 0, 1 )
+margin_left = 239.339
+margin_top = 149.529
+margin_right = 751.339
+margin_bottom = 959.529
+rect_scale = Vector2( 0.09, 0.05 )
+custom_colors/font_color_disabled = Color( 1, 1, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+icon = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Laranja" type="Button" parent="CosturaPopUp/Control"]
+modulate = Color( 0.901961, 0.596078, 0.0666667, 1 )
+margin_left = 316.128
+margin_top = 213.207
+margin_right = 828.128
+margin_bottom = 1023.21
+rect_scale = Vector2( 0.09, 0.05 )
+custom_colors/font_color_disabled = Color( 1, 1, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+icon = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Rosa" type="Button" parent="CosturaPopUp/Control"]
+modulate = Color( 0.752941, 0.141176, 0.572549, 1 )
+margin_left = 239.339
+margin_top = 212.458
+margin_right = 751.339
+margin_bottom = 1022.46
+rect_scale = Vector2( 0.09, 0.05 )
+custom_colors/font_color_disabled = Color( 1, 1, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+icon = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
 
 [node name="PalavrasPopUp" parent="CosturaPopUp" instance=ExtResource( 6 )]
 visible = false
+margin_left = 500.0
+margin_right = 500.0
 [connection signal="pressed" from="MaquinaCostura" to="." method="_on_MaquinaCostura_pressed"]
 [connection signal="pressed" from="Voltar2" to="." method="_on_Voltar2_pressed"]
 [connection signal="pressed" from="CosturaPopUp/Voltar" to="." method="_on_Voltar_pressed"]
+[connection signal="pressed" from="CosturaPopUp/Recomecar" to="." method="_on_Recomecar_pressed"]
 [connection signal="pressed" from="CosturaPopUp/Bolsa" to="CosturaPopUp/PalavrasPopUp" method="_on_Bolsa_pressed"]
+[connection signal="pressed" from="CosturaPopUp/Control/Verde" to="." method="_on_Verde_pressed"]
+[connection signal="pressed" from="CosturaPopUp/Control/Vermelho" to="." method="_on_Vermelho_pressed"]
+[connection signal="pressed" from="CosturaPopUp/Control/Azul" to="." method="_on_Azul_pressed"]
+[connection signal="pressed" from="CosturaPopUp/Control/Amarelo" to="." method="_on_Amarelo_pressed"]
+[connection signal="pressed" from="CosturaPopUp/Control/Laranja" to="." method="_on_Laranja_pressed"]
+[connection signal="pressed" from="CosturaPopUp/Control/Rosa" to="." method="_on_Rosa_pressed"]
