@@ -7,10 +7,10 @@
 script = ExtResource( 2 )
 
 [node name="Label" type="Label" parent="."]
-margin_left = 162.53
-margin_top = 370.417
-margin_right = 256.53
-margin_bottom = 384.417
+margin_left = 423.158
+margin_top = 518.742
+margin_right = 517.158
+margin_bottom = 532.742
 rect_scale = Vector2( 1.5, 1.5 )
 text = "Busca palavras"
 __meta__ = {
@@ -18,10 +18,10 @@ __meta__ = {
 }
 
 [node name="Label2" type="Label" parent="."]
-margin_left = 451.052
-margin_top = 370.417
-margin_right = 566.052
-margin_bottom = 384.417
+margin_left = 711.68
+margin_top = 518.742
+margin_right = 826.68
+margin_bottom = 532.742
 rect_scale = Vector2( 1.5, 1.5 )
 text = "Quarto de costura"
 __meta__ = {
@@ -29,10 +29,10 @@ __meta__ = {
 }
 
 [node name="Label3" type="Label" parent="."]
-margin_left = 758.472
-margin_top = 369.157
-margin_right = 881.472
-margin_bottom = 400.157
+margin_left = 1019.1
+margin_top = 517.482
+margin_right = 1142.1
+margin_bottom = 548.482
 rect_scale = Vector2( 1.5, 1.5 )
 text = "Quarto montagens 
       das frases"
@@ -41,20 +41,20 @@ __meta__ = {
 }
 
 [node name="VoltarMenu" type="Button" parent="."]
-margin_left = 446.3
-margin_top = 519.52
-margin_right = 600.3
-margin_bottom = 566.52
+margin_left = 706.928
+margin_top = 667.845
+margin_right = 860.928
+margin_bottom = 714.845
 text = "Voltar"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="PortaBuscaPalavras" type="Button" parent="."]
-margin_left = 135.0
-margin_top = 22.6652
-margin_right = 647.0
-margin_bottom = 832.665
+margin_left = 395.628
+margin_top = 170.99
+margin_right = 907.628
+margin_bottom = 980.99
 rect_scale = Vector2( 0.35, 0.4 )
 icon = ExtResource( 1 )
 __meta__ = {
@@ -62,10 +62,10 @@ __meta__ = {
 }
 
 [node name="PortaQuartoCostura" type="Button" parent="."]
-margin_left = 450.022
-margin_top = 30.6742
-margin_right = 962.022
-margin_bottom = 840.674
+margin_left = 710.65
+margin_top = 178.999
+margin_right = 1222.65
+margin_bottom = 988.999
 rect_scale = Vector2( 0.35, 0.4 )
 icon = ExtResource( 1 )
 __meta__ = {
@@ -73,10 +73,10 @@ __meta__ = {
 }
 
 [node name="PortaQuartoMontagens" type="Button" parent="."]
-margin_left = 754.366
-margin_top = 28.0045
-margin_right = 1266.37
-margin_bottom = 838.005
+margin_left = 1014.99
+margin_top = 176.329
+margin_right = 1527.0
+margin_bottom = 986.33
 rect_scale = Vector2( 0.35, 0.4 )
 icon = ExtResource( 1 )
 __meta__ = {

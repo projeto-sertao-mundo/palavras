@@ -11,7 +11,7 @@
 script = ExtResource( 1 )
 
 [node name="Palavra1" type="KinematicBody2D" parent="."]
-position = Vector2( 758.52, 50.8857 )
+position = Vector2( 1002.52, 222.886 )
 script = ExtResource( 5 )
 __meta__ = {
 "_edit_group_": true
@@ -27,7 +27,7 @@ __meta__ = {
 }
 
 [node name="Palavra2" type="KinematicBody2D" parent="."]
-position = Vector2( 210.443, 264.462 )
+position = Vector2( 454.443, 436.462 )
 script = ExtResource( 5 )
 __meta__ = {
 "_edit_group_": true
@@ -43,7 +43,7 @@ __meta__ = {
 }
 
 [node name="Palavra3" type="KinematicBody2D" parent="."]
-position = Vector2( 298.138, 29.3799 )
+position = Vector2( 542.138, 201.38 )
 script = ExtResource( 5 )
 __meta__ = {
 "_edit_group_": true
@@ -59,7 +59,7 @@ __meta__ = {
 }
 
 [node name="Palavra4" type="KinematicBody2D" parent="."]
-position = Vector2( 491.443, 235.96 )
+position = Vector2( 735.443, 407.96 )
 script = ExtResource( 5 )
 __meta__ = {
 "_edit_group_": true
@@ -75,7 +75,7 @@ __meta__ = {
 }
 
 [node name="Palavra5" type="KinematicBody2D" parent="."]
-position = Vector2( 729.793, 397.023 )
+position = Vector2( 973.793, 569.023 )
 script = ExtResource( 5 )
 __meta__ = {
 "_edit_group_": true
@@ -91,7 +91,7 @@ __meta__ = {
 }
 
 [node name="Palavra6" type="KinematicBody2D" parent="."]
-position = Vector2( 257.757, 446.143 )
+position = Vector2( 501.757, 618.143 )
 script = ExtResource( 5 )
 __meta__ = {
 "_edit_group_": true
@@ -107,10 +107,10 @@ __meta__ = {
 }
 
 [node name="Bolsa" type="Button" parent="."]
-margin_left = 935.796
-margin_top = 507.429
-margin_right = 1039.8
-margin_bottom = 617.429
+margin_left = 1509.8
+margin_top = 809.429
+margin_right = 1613.8
+margin_bottom = 919.429
 rect_scale = Vector2( 0.7, 0.7 )
 icon = ExtResource( 3 )
 __meta__ = {
@@ -119,10 +119,10 @@ __meta__ = {
 }
 
 [node name="Voltar" type="Button" parent="."]
-margin_left = 9.2692
-margin_top = 513.222
-margin_right = 161.269
-margin_bottom = 605.222
+margin_left = 5.2692
+margin_top = 815.222
+margin_right = 157.269
+margin_bottom = 907.222
 rect_scale = Vector2( 1, 0.8 )
 icon = ExtResource( 2 )
 __meta__ = {
@@ -131,6 +131,10 @@ __meta__ = {
 
 [node name="PalavrasPopUp" parent="." instance=ExtResource( 4 )]
 visible = false
+margin_left = 260.0
+margin_top = 102.0
+margin_right = 260.0
+margin_bottom = 102.0
 
 [node name="Node" type="Node" parent="."]
 script = ExtResource( 6 )

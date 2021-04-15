@@ -11,15 +11,15 @@
 script = ExtResource( 5 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 468.63, 301.128 )
+position = Vector2( 803.124, 431.334 )
 scale = Vector2( 1.30407, 0.701479 )
 texture = ExtResource( 1 )
 
 [node name="MaquinaCostura" type="Button" parent="."]
-margin_left = 380.164
-margin_top = 349.14
-margin_right = 617.164
-margin_bottom = 580.14
+margin_left = 714.658
+margin_top = 479.346
+margin_right = 951.658
+margin_bottom = 710.346
 rect_scale = Vector2( 0.7, 0.7 )
 icon = ExtResource( 2 )
 __meta__ = {
@@ -27,10 +27,10 @@ __meta__ = {
 }
 
 [node name="Voltar2" type="Button" parent="."]
-margin_left = 191.881
-margin_top = 512.307
-margin_right = 343.881
-margin_bottom = 604.307
+margin_left = 526.375
+margin_top = 642.513
+margin_right = 678.375
+margin_bottom = 734.513
 rect_scale = Vector2( 0.5, 0.5 )
 icon = ExtResource( 3 )
 __meta__ = {
