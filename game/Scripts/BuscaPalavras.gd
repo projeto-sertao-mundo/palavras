@@ -8,3 +8,6 @@ func _on_Bolsa_pressed():
 
 func _on_Voltar2_pressed():
 	get_node("PalavrasPopUp").hide()
+
+func _ready():
+	$"/root/Global".firstSceneNode = self

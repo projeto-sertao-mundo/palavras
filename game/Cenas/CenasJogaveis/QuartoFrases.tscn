@@ -8,42 +8,46 @@
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 4 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 450.622, 745.111, 180.674 ],
+"_edit_vertical_guides_": [ 798.937, 489.346, 1121.74 ]
+}
 
 [node name="Fundo" type="Sprite" parent="."]
-position = Vector2( 819.979, 428.066 )
+position = Vector2( 804.877, 460.158 )
 scale = Vector2( 1.25218, 0.68836 )
 texture = ExtResource( 1 )
 
 [node name="FundoFrases" type="Sprite" parent="."]
-position = Vector2( 820.178, 377.773 )
+position = Vector2( 805.076, 409.865 )
 scale = Vector2( 1.12082, 0.481104 )
 texture = ExtResource( 1 )
 
 [node name="Frase1" type="Button" parent="."]
-margin_left = 558.468
-margin_top = 199.767
-margin_right = 1079.47
-margin_bottom = 244.767
+margin_left = 543.366
+margin_top = 231.859
+margin_right = 1064.37
+margin_bottom = 276.859
 text = "O sertão é _________"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Frase2" type="Button" parent="."]
-margin_left = 556.686
-margin_top = 265.694
-margin_right = 1077.69
-margin_bottom = 310.694
+margin_left = 541.584
+margin_top = 297.786
+margin_right = 1062.58
+margin_bottom = 342.786
 text = "A vida no sertão é __________"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Bolsa" type="Button" parent="."]
-margin_left = 1047.66
-margin_top = 628.802
-margin_right = 1151.66
-margin_bottom = 738.802
+margin_left = 1032.55
+margin_top = 660.894
+margin_right = 1136.55
+margin_bottom = 770.894
 rect_scale = Vector2( 0.5, 0.5 )
 icon = ExtResource( 2 )
 __meta__ = {
@@ -51,10 +55,10 @@ __meta__ = {
 }
 
 [node name="Voltar" type="Button" parent="."]
-margin_left = 528.029
-margin_top = 621.925
-margin_right = 680.029
-margin_bottom = 713.925
+margin_left = 512.927
+margin_top = 654.017
+margin_right = 664.927
+margin_bottom = 746.017
 rect_scale = Vector2( 0.8, 0.6 )
 icon = ExtResource( 3 )
 __meta__ = {
@@ -63,13 +67,13 @@ __meta__ = {
 
 [node name="RetalhoPopUp" type="Control" parent="."]
 visible = false
+margin_left = 313.366
+margin_top = 186.887
+margin_right = 313.366
+margin_bottom = 186.887
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="ButtonLock" type="Control" parent="RetalhoPopUp"]
-margin_right = 1023.0
-margin_bottom = 607.0
 
 [node name="FundoBrancoBordaPreta" type="Sprite" parent="RetalhoPopUp"]
 position = Vector2( 483.634, 247.248 )
@@ -112,6 +116,10 @@ __meta__ = {
 
 [node name="PalavrasPopUp" parent="." instance=ExtResource( 5 )]
 visible = false
+margin_left = 639.947
+margin_top = 205.765
+margin_right = 639.947
+margin_bottom = 205.765
 [connection signal="pressed" from="Frase1" to="." method="_on_Frase1_pressed"]
 [connection signal="pressed" from="Frase2" to="." method="_on_Frase2_pressed"]
 [connection signal="pressed" from="Bolsa" to="PalavrasPopUp" method="_on_Bolsa_pressed"]
