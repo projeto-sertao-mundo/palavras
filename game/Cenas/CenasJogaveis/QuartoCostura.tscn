@@ -38,6 +38,7 @@ __meta__ = {
 }
 
 [node name="CosturaPopUp" type="Control" parent="."]
+visible = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
