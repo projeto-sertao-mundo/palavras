@@ -6,7 +6,7 @@
 [ext_resource path="res://Scripts/QuartoFrases.gd" type="Script" id=4]
 [ext_resource path="res://Cenas/CenasPrefab/PalavrasPopUp.tscn" type="PackedScene" id=5]
 
-[node name="Node2D" type="Node2D"]
+[node name="QuartoFrases" type="Node2D"]
 script = ExtResource( 4 )
 __meta__ = {
 "_edit_horizontal_guides_": [ 450.622, 745.111, 180.674 ],

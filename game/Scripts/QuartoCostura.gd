@@ -1,17 +1,16 @@
 extends Node2D
 
-var podeSetar
 var palavra
 
 func _ready():
 	$"/root/Global".firstSceneNode = self
-	podeSetar = false
+	$"/root/Global".podeSetar = false
 
 func _process(delta):
-	if(podeSetar && !Input.is_action_pressed("Click")):
+	if($"/root/Global".podeSetar && !Input.is_action_pressed("Click")):
 		MudarLabelPreview(palavra.text)
 		palavra.free()
-		podeSetar = false
+		$"/root/Global".podeSetar = false
 	
 
 func MudarLabelPreview(var texto):
@@ -46,9 +45,9 @@ func _on_Recomecar_pressed():
 	MudarLabelPreview("")
 
 func _on_Area2D_area_entered(area):
-	podeSetar = true
+	$"/root/Global".podeSetar = true
 	palavra = area.get_parent()
 
 func _on_Area2D_area_exited(area):
-	podeSetar = false
+	$"/root/Global".podeSetar = false
 	palavra = null

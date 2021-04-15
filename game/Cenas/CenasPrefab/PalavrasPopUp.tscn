@@ -12,6 +12,15 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="ButtonLock" type="Control" parent="."]
+margin_left = -505.0
+margin_top = -259.0
+margin_right = 1944.0
+margin_bottom = 1192.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 156.391, 253.578 )
 scale = Vector2( 0.630005, 0.630005 )
