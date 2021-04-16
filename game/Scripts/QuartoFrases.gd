@@ -11,3 +11,6 @@ func _on_Voltar_pressed():
 
 func _on_Voltar2_pressed():
 	get_node("RetalhoPopUp").hide()
+
+func _ready():
+	$"/root/Global".firstSceneNode = self

@@ -8,7 +8,7 @@ func _ready():
 
 func _process(delta):
 	if($"/root/Global".podeSetar && !Input.is_action_pressed("Click")):
-		MudarLabelPreview(palavra.text)
+		MudarLabelPreview(palavra.get_node("Label").text)
 		palavra.free()
 		$"/root/Global".podeSetar = false
 	

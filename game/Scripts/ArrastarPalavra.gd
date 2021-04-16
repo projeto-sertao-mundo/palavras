@@ -1,4 +1,4 @@
-extends Button
+extends TextureButton
 
 var mouseIn
 var primeiroNode
@@ -17,9 +17,12 @@ func _process(delta):
 		elif mouseIn && Input.is_action_pressed("Click"):
 			palavraInstanciada.visible = false
 			primeiroNode.add_child(palavraInstanciada)
-			palavraInstanciada.text = self.text
 			palavraInstanciada.name = self.name
-		elif !Input.is_action_pressed("Click") && primeiroNode.has_node(self.name) && !$"/root/Global".podeSetar:
+			palavraInstanciada.get_node("Label").text = self.name
+			palavraInstanciada.rect_scale.x = 0.3
+			palavraInstanciada.rect_scale.y = 0.3
+		
+		elif !Input.is_action_pressed("Click") && primeiroNode.has_node(self.name) && !$"/root/Global".podeSetar && palavraInstanciada:
 			palavraInstanciada.free()
 	
 

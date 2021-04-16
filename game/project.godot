@@ -17,7 +17,7 @@ _global_script_class_icons={
 
 config/name="JogoPalavras"
 run/main_scene="res://Cenas/CenasMenu/MenuPrincipal.tscn"
-config/icon="res://SpritesBlocagem/icon.png"
+config/icon="res://SpritesBlocagem/Blocagem/icon.png"
 
 [autoload]
 

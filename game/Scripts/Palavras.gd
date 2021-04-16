@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 var movimento
-var velocidade = 400
+var velocidade = 700
 export var palavra = ""
 
 func _ready():
