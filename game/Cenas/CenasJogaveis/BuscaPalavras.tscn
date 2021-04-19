@@ -4,10 +4,10 @@
 [ext_resource path="res://Sprites/Concepts/seta_.png" type="Texture" id=2]
 [ext_resource path="res://Sprites/Blocagem/Bolsa.png" type="Texture" id=3]
 [ext_resource path="res://Cenas/CenasPrefab/PalavrasPopUp.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Scripts/Palavras.gd" type="Script" id=5]
+[ext_resource path="res://Sprites/SpritesFinais/Letras/A.png" type="Texture" id=5]
 [ext_resource path="res://Scripts/InicializadorBuscaPalavras.gd" type="Script" id=6]
 [ext_resource path="res://Sprites/Concepts/Cozinha.png" type="Texture" id=7]
-[ext_resource path="res://Cenas/CenasPrefab/BotaoLetra.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scripts/Palavras.gd" type="Script" id=8]
 [ext_resource path="res://Sprites/SpritesFinais/Letras/B.png" type="Texture" id=9]
 [ext_resource path="res://Sprites/SpritesFinais/Letras/N.png" type="Texture" id=10]
 [ext_resource path="res://Sprites/SpritesFinais/Letras/F.png" type="Texture" id=11]
@@ -42,290 +42,8 @@ position = Vector2( 799.746, 451.378 )
 scale = Vector2( 0.416084, 0.416291 )
 texture = ExtResource( 7 )
 
-[node name="A" type="KinematicBody2D" parent="."]
-position = Vector2( 1541.96, 444.914 )
-script = ExtResource( 5 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="TextureButton" parent="A" instance=ExtResource( 8 )]
-modulate = Color( 0.486275, 0.890196, 1, 1 )
-
-[node name="B" type="KinematicBody2D" parent="."]
-position = Vector2( 1541.96, 444.914 )
-script = ExtResource( 5 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="TextureButton" parent="B" instance=ExtResource( 8 )]
-modulate = Color( 0.486275, 0.890196, 1, 1 )
-texture_normal = ExtResource( 9 )
-
-[node name="C" type="KinematicBody2D" parent="."]
-position = Vector2( 1541.96, 444.914 )
-script = ExtResource( 5 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="TextureButton" parent="C" instance=ExtResource( 8 )]
-modulate = Color( 0.486275, 0.890196, 1, 1 )
-texture_normal = ExtResource( 16 )
-
-[node name="D" type="KinematicBody2D" parent="."]
-position = Vector2( 1541.96, 444.914 )
-script = ExtResource( 5 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="TextureButton" parent="D" instance=ExtResource( 8 )]
-modulate = Color( 0.486275, 0.890196, 1, 1 )
-texture_normal = ExtResource( 19 )
-
-[node name="E" type="KinematicBody2D" parent="."]
-position = Vector2( 1541.96, 444.914 )
-script = ExtResource( 5 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="TextureButton" parent="E" instance=ExtResource( 8 )]
-modulate = Color( 0.486275, 0.890196, 1, 1 )
-texture_normal = ExtResource( 12 )
-
-[node name="F" type="KinematicBody2D" parent="."]
-position = Vector2( 1541.96, 444.914 )
-script = ExtResource( 5 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="TextureButton" parent="F" instance=ExtResource( 8 )]
-modulate = Color( 0.486275, 0.890196, 1, 1 )
-texture_normal = ExtResource( 11 )
-
-[node name="G" type="KinematicBody2D" parent="."]
-position = Vector2( 1541.96, 444.914 )
-script = ExtResource( 5 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="TextureButton" parent="G" instance=ExtResource( 8 )]
-modulate = Color( 0.486275, 0.890196, 1, 1 )
-texture_normal = ExtResource( 14 )
-
-[node name="H" type="KinematicBody2D" parent="."]
-position = Vector2( 1541.96, 444.914 )
-script = ExtResource( 5 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="TextureButton" parent="H" instance=ExtResource( 8 )]
-modulate = Color( 0.486275, 0.890196, 1, 1 )
-texture_normal = ExtResource( 20 )
-
-[node name="I" type="KinematicBody2D" parent="."]
-position = Vector2( 1541.96, 444.914 )
-script = ExtResource( 5 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="TextureButton" parent="I" instance=ExtResource( 8 )]
-modulate = Color( 0.486275, 0.890196, 1, 1 )
-texture_normal = ExtResource( 13 )
-
-[node name="J" type="KinematicBody2D" parent="."]
-position = Vector2( 1541.96, 444.914 )
-script = ExtResource( 5 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="TextureButton" parent="J" instance=ExtResource( 8 )]
-modulate = Color( 0.486275, 0.890196, 1, 1 )
-texture_normal = ExtResource( 15 )
-
-[node name="K" type="KinematicBody2D" parent="."]
-position = Vector2( 1541.96, 444.914 )
-script = ExtResource( 5 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="TextureButton" parent="K" instance=ExtResource( 8 )]
-modulate = Color( 0.486275, 0.890196, 1, 1 )
-texture_normal = ExtResource( 17 )
-
-[node name="L" type="KinematicBody2D" parent="."]
-position = Vector2( 1541.96, 444.914 )
-script = ExtResource( 5 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="TextureButton" parent="L" instance=ExtResource( 8 )]
-modulate = Color( 0.486275, 0.890196, 1, 1 )
-texture_normal = ExtResource( 18 )
-
-[node name="M" type="KinematicBody2D" parent="."]
-position = Vector2( 1541.96, 444.914 )
-script = ExtResource( 5 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="TextureButton" parent="M" instance=ExtResource( 8 )]
-modulate = Color( 0.486275, 0.890196, 1, 1 )
-texture_normal = ExtResource( 21 )
-
-[node name="N" type="KinematicBody2D" parent="."]
-position = Vector2( 1541.96, 444.914 )
-script = ExtResource( 5 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="TextureButton" parent="N" instance=ExtResource( 8 )]
-modulate = Color( 0.486275, 0.890196, 1, 1 )
-texture_normal = ExtResource( 10 )
-
-[node name="O" type="KinematicBody2D" parent="."]
-position = Vector2( 1541.96, 444.914 )
-script = ExtResource( 5 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="TextureButton" parent="O" instance=ExtResource( 8 )]
-modulate = Color( 0.486275, 0.890196, 1, 1 )
-texture_normal = ExtResource( 24 )
-
-[node name="P" type="KinematicBody2D" parent="."]
-position = Vector2( 1541.96, 444.914 )
-script = ExtResource( 5 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="TextureButton" parent="P" instance=ExtResource( 8 )]
-modulate = Color( 0.486275, 0.890196, 1, 1 )
-texture_normal = ExtResource( 22 )
-
-[node name="Q" type="KinematicBody2D" parent="."]
-position = Vector2( 1541.96, 444.914 )
-script = ExtResource( 5 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="TextureButton" parent="Q" instance=ExtResource( 8 )]
-modulate = Color( 0.486275, 0.890196, 1, 1 )
-texture_normal = ExtResource( 23 )
-
-[node name="R" type="KinematicBody2D" parent="."]
-position = Vector2( 1541.96, 444.914 )
-script = ExtResource( 5 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="TextureButton" parent="R" instance=ExtResource( 8 )]
-modulate = Color( 0.486275, 0.890196, 1, 1 )
-texture_normal = ExtResource( 27 )
-
-[node name="S" type="KinematicBody2D" parent="."]
-position = Vector2( 1541.96, 444.914 )
-script = ExtResource( 5 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="TextureButton" parent="S" instance=ExtResource( 8 )]
-modulate = Color( 0.486275, 0.890196, 1, 1 )
-texture_normal = ExtResource( 31 )
-
-[node name="T" type="KinematicBody2D" parent="."]
-position = Vector2( 1541.96, 444.914 )
-script = ExtResource( 5 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="TextureButton" parent="T" instance=ExtResource( 8 )]
-modulate = Color( 0.486275, 0.890196, 1, 1 )
-texture_normal = ExtResource( 29 )
-
-[node name="U" type="KinematicBody2D" parent="."]
-position = Vector2( 1541.96, 444.914 )
-script = ExtResource( 5 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="TextureButton" parent="U" instance=ExtResource( 8 )]
-modulate = Color( 0.486275, 0.890196, 1, 1 )
-texture_normal = ExtResource( 30 )
-
-[node name="V" type="KinematicBody2D" parent="."]
-position = Vector2( 1541.96, 444.914 )
-script = ExtResource( 5 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="TextureButton" parent="V" instance=ExtResource( 8 )]
-modulate = Color( 0.486275, 0.890196, 1, 1 )
-texture_normal = ExtResource( 25 )
-
-[node name="W" type="KinematicBody2D" parent="."]
-position = Vector2( 1541.96, 444.914 )
-script = ExtResource( 5 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="TextureButton" parent="W" instance=ExtResource( 8 )]
-modulate = Color( 0.486275, 0.890196, 1, 1 )
-texture_normal = ExtResource( 28 )
-
-[node name="X" type="KinematicBody2D" parent="."]
-position = Vector2( 1541.96, 444.914 )
-script = ExtResource( 5 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="TextureButton" parent="X" instance=ExtResource( 8 )]
-modulate = Color( 0.486275, 0.890196, 1, 1 )
-texture_normal = ExtResource( 32 )
-
-[node name="Y" type="KinematicBody2D" parent="."]
-position = Vector2( 1541.96, 444.914 )
-script = ExtResource( 5 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="TextureButton" parent="Y" instance=ExtResource( 8 )]
-modulate = Color( 0.486275, 0.890196, 1, 1 )
-texture_normal = ExtResource( 26 )
-
-[node name="Z" type="KinematicBody2D" parent="."]
-position = Vector2( 1541.96, 444.914 )
-script = ExtResource( 5 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="TextureButton" parent="Z" instance=ExtResource( 8 )]
-modulate = Color( 0.486275, 0.890196, 1, 1 )
-texture_normal = ExtResource( 33 )
+[node name="Inicializador" type="Node" parent="."]
+script = ExtResource( 6 )
 
 [node name="PalavrasPopUp" parent="." instance=ExtResource( 4 )]
 visible = false
@@ -353,33 +71,500 @@ margin_bottom = 1020.07
 rect_scale = Vector2( 0.6, 0.4 )
 texture_normal = ExtResource( 2 )
 
-[node name="Node" type="Node" parent="."]
-script = ExtResource( 6 )
-[connection signal="pressed" from="A/TextureButton" to="A" method="_on_TextureButton_pressed"]
-[connection signal="pressed" from="B/TextureButton" to="B" method="_on_TextureButton_pressed"]
-[connection signal="pressed" from="C/TextureButton" to="C" method="_on_TextureButton_pressed"]
-[connection signal="pressed" from="D/TextureButton" to="D" method="_on_TextureButton_pressed"]
-[connection signal="pressed" from="E/TextureButton" to="E" method="_on_TextureButton_pressed"]
-[connection signal="pressed" from="F/TextureButton" to="F" method="_on_TextureButton_pressed"]
-[connection signal="pressed" from="G/TextureButton" to="G" method="_on_TextureButton_pressed"]
-[connection signal="pressed" from="H/TextureButton" to="H" method="_on_TextureButton_pressed"]
-[connection signal="pressed" from="I/TextureButton" to="I" method="_on_TextureButton_pressed"]
-[connection signal="pressed" from="J/TextureButton" to="J" method="_on_TextureButton_pressed"]
-[connection signal="pressed" from="K/TextureButton" to="K" method="_on_TextureButton_pressed"]
-[connection signal="pressed" from="L/TextureButton" to="L" method="_on_TextureButton_pressed"]
-[connection signal="pressed" from="M/TextureButton" to="M" method="_on_TextureButton_pressed"]
-[connection signal="pressed" from="N/TextureButton" to="N" method="_on_TextureButton_pressed"]
-[connection signal="pressed" from="O/TextureButton" to="O" method="_on_TextureButton_pressed"]
-[connection signal="pressed" from="P/TextureButton" to="P" method="_on_TextureButton_pressed"]
-[connection signal="pressed" from="Q/TextureButton" to="Q" method="_on_TextureButton_pressed"]
-[connection signal="pressed" from="R/TextureButton" to="R" method="_on_TextureButton_pressed"]
-[connection signal="pressed" from="S/TextureButton" to="S" method="_on_TextureButton_pressed"]
-[connection signal="pressed" from="T/TextureButton" to="T" method="_on_TextureButton_pressed"]
-[connection signal="pressed" from="U/TextureButton" to="U" method="_on_TextureButton_pressed"]
-[connection signal="pressed" from="V/TextureButton" to="V" method="_on_TextureButton_pressed"]
-[connection signal="pressed" from="W/TextureButton" to="W" method="_on_TextureButton_pressed"]
-[connection signal="pressed" from="X/TextureButton" to="X" method="_on_TextureButton_pressed"]
-[connection signal="pressed" from="Y/TextureButton" to="Y" method="_on_TextureButton_pressed"]
-[connection signal="pressed" from="Z/TextureButton" to="Z" method="_on_TextureButton_pressed"]
+[node name="Letras" type="Node2D" parent="."]
+
+[node name="A" type="KinematicBody2D" parent="Letras"]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 1465.13, 421.436 )
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="TextureButton" type="TextureButton" parent="Letras/A"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture_normal = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="B" type="KinematicBody2D" parent="Letras"]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 1465.13, 421.436 )
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="TextureButton" type="TextureButton" parent="Letras/B"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture_normal = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="C" type="KinematicBody2D" parent="Letras"]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 1465.13, 421.436 )
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="TextureButton" type="TextureButton" parent="Letras/C"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture_normal = ExtResource( 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="D" type="KinematicBody2D" parent="Letras"]
+modulate = Color( 0, 1, 0.0627451, 1 )
+position = Vector2( 1465.13, 421.436 )
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="TextureButton" type="TextureButton" parent="Letras/D"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture_normal = ExtResource( 19 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="E" type="KinematicBody2D" parent="Letras"]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 1465.13, 421.436 )
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="TextureButton" type="TextureButton" parent="Letras/E"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture_normal = ExtResource( 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="F" type="KinematicBody2D" parent="Letras"]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 1465.13, 421.436 )
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="TextureButton" type="TextureButton" parent="Letras/F"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture_normal = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="G" type="KinematicBody2D" parent="Letras"]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 1465.13, 421.436 )
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="TextureButton" type="TextureButton" parent="Letras/G"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture_normal = ExtResource( 14 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="H" type="KinematicBody2D" parent="Letras"]
+modulate = Color( 0.945098, 0, 1, 1 )
+position = Vector2( 1465.13, 421.436 )
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="TextureButton" type="TextureButton" parent="Letras/H"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture_normal = ExtResource( 20 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="I" type="KinematicBody2D" parent="Letras"]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 1465.13, 421.436 )
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="TextureButton" type="TextureButton" parent="Letras/I"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture_normal = ExtResource( 13 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="J" type="KinematicBody2D" parent="Letras"]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 1465.13, 421.436 )
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="TextureButton" type="TextureButton" parent="Letras/J"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture_normal = ExtResource( 15 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="K" type="KinematicBody2D" parent="Letras"]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 1465.13, 421.436 )
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="TextureButton" type="TextureButton" parent="Letras/K"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture_normal = ExtResource( 17 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="L" type="KinematicBody2D" parent="Letras"]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 1465.13, 421.436 )
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="TextureButton" type="TextureButton" parent="Letras/L"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture_normal = ExtResource( 18 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="M" type="KinematicBody2D" parent="Letras"]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 1465.13, 421.436 )
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="TextureButton" type="TextureButton" parent="Letras/M"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture_normal = ExtResource( 21 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="N" type="KinematicBody2D" parent="Letras"]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 1465.13, 421.436 )
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="TextureButton" type="TextureButton" parent="Letras/N"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture_normal = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="O" type="KinematicBody2D" parent="Letras"]
+modulate = Color( 0, 0.203922, 1, 1 )
+position = Vector2( 1465.13, 421.436 )
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="TextureButton" type="TextureButton" parent="Letras/O"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture_normal = ExtResource( 24 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="P" type="KinematicBody2D" parent="Letras"]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 1465.13, 421.436 )
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="TextureButton" type="TextureButton" parent="Letras/P"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture_normal = ExtResource( 22 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Q" type="KinematicBody2D" parent="Letras"]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 1465.13, 421.436 )
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="TextureButton" type="TextureButton" parent="Letras/Q"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture_normal = ExtResource( 23 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="R" type="KinematicBody2D" parent="Letras"]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 1465.13, 421.436 )
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="TextureButton" type="TextureButton" parent="Letras/R"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture_normal = ExtResource( 27 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="S" type="KinematicBody2D" parent="Letras"]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 1465.13, 421.436 )
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="TextureButton" type="TextureButton" parent="Letras/S"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture_normal = ExtResource( 31 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="T" type="KinematicBody2D" parent="Letras"]
+modulate = Color( 0.345098, 0.396078, 0.309804, 1 )
+position = Vector2( 1465.13, 421.436 )
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="TextureButton" type="TextureButton" parent="Letras/T"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture_normal = ExtResource( 29 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="U" type="KinematicBody2D" parent="Letras"]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 1465.13, 421.436 )
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="TextureButton" type="TextureButton" parent="Letras/U"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture_normal = ExtResource( 30 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="V" type="KinematicBody2D" parent="Letras"]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 1465.13, 421.436 )
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="TextureButton" type="TextureButton" parent="Letras/V"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture_normal = ExtResource( 25 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="W" type="KinematicBody2D" parent="Letras"]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 1465.13, 421.436 )
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="TextureButton" type="TextureButton" parent="Letras/W"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture_normal = ExtResource( 28 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="X" type="KinematicBody2D" parent="Letras"]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 1465.13, 421.436 )
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="TextureButton" type="TextureButton" parent="Letras/X"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture_normal = ExtResource( 32 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Y" type="KinematicBody2D" parent="Letras"]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 1465.13, 421.436 )
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="TextureButton" type="TextureButton" parent="Letras/Y"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture_normal = ExtResource( 26 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Z" type="KinematicBody2D" parent="Letras"]
+modulate = Color( 1, 0, 0, 1 )
+position = Vector2( 1465.13, 421.436 )
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="TextureButton" type="TextureButton" parent="Letras/Z"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture_normal = ExtResource( 33 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="pressed" from="Bolsa" to="PalavrasPopUp" method="_on_Bolsa_pressed"]
 [connection signal="pressed" from="Voltar" to="." method="_on_Voltar_pressed"]
+[connection signal="mouse_entered" from="Letras/A" to="Letras/A/TextureButton" method="_on_A_mouse_entered"]
+[connection signal="mouse_exited" from="Letras/A" to="Letras/A/TextureButton" method="_on_A_mouse_exited"]
+[connection signal="pressed" from="Letras/A/TextureButton" to="Letras/A" method="_on_TextureButton_pressed"]
+[connection signal="mouse_entered" from="Letras/B" to="Letras/B/TextureButton" method="_on_A_mouse_entered"]
+[connection signal="mouse_exited" from="Letras/B" to="Letras/B/TextureButton" method="_on_A_mouse_exited"]
+[connection signal="pressed" from="Letras/B/TextureButton" to="Letras/B" method="_on_TextureButton_pressed"]
+[connection signal="mouse_entered" from="Letras/C" to="Letras/C/TextureButton" method="_on_A_mouse_entered"]
+[connection signal="mouse_exited" from="Letras/C" to="Letras/C/TextureButton" method="_on_A_mouse_exited"]
+[connection signal="pressed" from="Letras/C/TextureButton" to="Letras/C" method="_on_TextureButton_pressed"]
+[connection signal="mouse_entered" from="Letras/D" to="Letras/D/TextureButton" method="_on_A_mouse_entered"]
+[connection signal="mouse_exited" from="Letras/D" to="Letras/D/TextureButton" method="_on_A_mouse_exited"]
+[connection signal="pressed" from="Letras/D/TextureButton" to="Letras/D" method="_on_TextureButton_pressed"]
+[connection signal="mouse_entered" from="Letras/E" to="Letras/E/TextureButton" method="_on_A_mouse_entered"]
+[connection signal="mouse_exited" from="Letras/E" to="Letras/E/TextureButton" method="_on_A_mouse_exited"]
+[connection signal="pressed" from="Letras/E/TextureButton" to="Letras/E" method="_on_TextureButton_pressed"]
+[connection signal="mouse_entered" from="Letras/F" to="Letras/F/TextureButton" method="_on_A_mouse_entered"]
+[connection signal="mouse_exited" from="Letras/F" to="Letras/F/TextureButton" method="_on_A_mouse_exited"]
+[connection signal="pressed" from="Letras/F/TextureButton" to="Letras/F" method="_on_TextureButton_pressed"]
+[connection signal="mouse_entered" from="Letras/G" to="Letras/G/TextureButton" method="_on_A_mouse_entered"]
+[connection signal="mouse_exited" from="Letras/G" to="Letras/G/TextureButton" method="_on_A_mouse_exited"]
+[connection signal="pressed" from="Letras/G/TextureButton" to="Letras/G" method="_on_TextureButton_pressed"]
+[connection signal="mouse_entered" from="Letras/H" to="Letras/H/TextureButton" method="_on_A_mouse_entered"]
+[connection signal="mouse_exited" from="Letras/H" to="Letras/H/TextureButton" method="_on_A_mouse_exited"]
+[connection signal="pressed" from="Letras/H/TextureButton" to="Letras/H" method="_on_TextureButton_pressed"]
+[connection signal="mouse_entered" from="Letras/I" to="Letras/I/TextureButton" method="_on_A_mouse_entered"]
+[connection signal="mouse_exited" from="Letras/I" to="Letras/I/TextureButton" method="_on_A_mouse_exited"]
+[connection signal="pressed" from="Letras/I/TextureButton" to="Letras/I" method="_on_TextureButton_pressed"]
+[connection signal="mouse_entered" from="Letras/J" to="Letras/J/TextureButton" method="_on_A_mouse_entered"]
+[connection signal="mouse_exited" from="Letras/J" to="Letras/J/TextureButton" method="_on_A_mouse_exited"]
+[connection signal="pressed" from="Letras/J/TextureButton" to="Letras/J" method="_on_TextureButton_pressed"]
+[connection signal="mouse_entered" from="Letras/K" to="Letras/K/TextureButton" method="_on_A_mouse_entered"]
+[connection signal="mouse_exited" from="Letras/K" to="Letras/K/TextureButton" method="_on_A_mouse_exited"]
+[connection signal="pressed" from="Letras/K/TextureButton" to="Letras/K" method="_on_TextureButton_pressed"]
+[connection signal="mouse_entered" from="Letras/L" to="Letras/L/TextureButton" method="_on_A_mouse_entered"]
+[connection signal="mouse_exited" from="Letras/L" to="Letras/L/TextureButton" method="_on_A_mouse_exited"]
+[connection signal="pressed" from="Letras/L/TextureButton" to="Letras/L" method="_on_TextureButton_pressed"]
+[connection signal="mouse_entered" from="Letras/M" to="Letras/M/TextureButton" method="_on_A_mouse_entered"]
+[connection signal="mouse_exited" from="Letras/M" to="Letras/M/TextureButton" method="_on_A_mouse_exited"]
+[connection signal="pressed" from="Letras/M/TextureButton" to="Letras/M" method="_on_TextureButton_pressed"]
+[connection signal="mouse_entered" from="Letras/N" to="Letras/N/TextureButton" method="_on_A_mouse_entered"]
+[connection signal="mouse_exited" from="Letras/N" to="Letras/N/TextureButton" method="_on_A_mouse_exited"]
+[connection signal="pressed" from="Letras/N/TextureButton" to="Letras/N" method="_on_TextureButton_pressed"]
+[connection signal="mouse_entered" from="Letras/O" to="Letras/O/TextureButton" method="_on_A_mouse_entered"]
+[connection signal="mouse_exited" from="Letras/O" to="Letras/O/TextureButton" method="_on_A_mouse_exited"]
+[connection signal="pressed" from="Letras/O/TextureButton" to="Letras/O" method="_on_TextureButton_pressed"]
+[connection signal="mouse_entered" from="Letras/P" to="Letras/P/TextureButton" method="_on_A_mouse_entered"]
+[connection signal="mouse_exited" from="Letras/P" to="Letras/P/TextureButton" method="_on_A_mouse_exited"]
+[connection signal="pressed" from="Letras/P/TextureButton" to="Letras/P" method="_on_TextureButton_pressed"]
+[connection signal="mouse_entered" from="Letras/Q" to="Letras/Q/TextureButton" method="_on_A_mouse_entered"]
+[connection signal="mouse_exited" from="Letras/Q" to="Letras/Q/TextureButton" method="_on_A_mouse_exited"]
+[connection signal="pressed" from="Letras/Q/TextureButton" to="Letras/Q" method="_on_TextureButton_pressed"]
+[connection signal="mouse_entered" from="Letras/R" to="Letras/R/TextureButton" method="_on_A_mouse_entered"]
+[connection signal="mouse_exited" from="Letras/R" to="Letras/R/TextureButton" method="_on_A_mouse_exited"]
+[connection signal="pressed" from="Letras/R/TextureButton" to="Letras/R" method="_on_TextureButton_pressed"]
+[connection signal="mouse_entered" from="Letras/S" to="Letras/S/TextureButton" method="_on_A_mouse_entered"]
+[connection signal="mouse_exited" from="Letras/S" to="Letras/S/TextureButton" method="_on_A_mouse_exited"]
+[connection signal="pressed" from="Letras/S/TextureButton" to="Letras/S" method="_on_TextureButton_pressed"]
+[connection signal="mouse_entered" from="Letras/T" to="Letras/T/TextureButton" method="_on_A_mouse_entered"]
+[connection signal="mouse_exited" from="Letras/T" to="Letras/T/TextureButton" method="_on_A_mouse_exited"]
+[connection signal="pressed" from="Letras/T/TextureButton" to="Letras/T" method="_on_TextureButton_pressed"]
+[connection signal="mouse_entered" from="Letras/U" to="Letras/U/TextureButton" method="_on_A_mouse_entered"]
+[connection signal="mouse_exited" from="Letras/U" to="Letras/U/TextureButton" method="_on_A_mouse_exited"]
+[connection signal="pressed" from="Letras/U/TextureButton" to="Letras/U" method="_on_TextureButton_pressed"]
+[connection signal="mouse_entered" from="Letras/V" to="Letras/V/TextureButton" method="_on_A_mouse_entered"]
+[connection signal="mouse_exited" from="Letras/V" to="Letras/V/TextureButton" method="_on_A_mouse_exited"]
+[connection signal="pressed" from="Letras/V/TextureButton" to="Letras/V" method="_on_TextureButton_pressed"]
+[connection signal="mouse_entered" from="Letras/W" to="Letras/W/TextureButton" method="_on_A_mouse_entered"]
+[connection signal="mouse_exited" from="Letras/W" to="Letras/W/TextureButton" method="_on_A_mouse_exited"]
+[connection signal="pressed" from="Letras/W/TextureButton" to="Letras/W" method="_on_TextureButton_pressed"]
+[connection signal="mouse_entered" from="Letras/X" to="Letras/X/TextureButton" method="_on_A_mouse_entered"]
+[connection signal="mouse_exited" from="Letras/X" to="Letras/X/TextureButton" method="_on_A_mouse_exited"]
+[connection signal="pressed" from="Letras/X/TextureButton" to="Letras/X" method="_on_TextureButton_pressed"]
+[connection signal="mouse_entered" from="Letras/Y" to="Letras/Y/TextureButton" method="_on_A_mouse_entered"]
+[connection signal="mouse_exited" from="Letras/Y" to="Letras/Y/TextureButton" method="_on_A_mouse_exited"]
+[connection signal="pressed" from="Letras/Y/TextureButton" to="Letras/Y" method="_on_TextureButton_pressed"]
+[connection signal="mouse_entered" from="Letras/Z" to="Letras/Z/TextureButton" method="_on_A_mouse_entered"]
+[connection signal="mouse_exited" from="Letras/Z" to="Letras/Z/TextureButton" method="_on_A_mouse_exited"]
+[connection signal="pressed" from="Letras/Z/TextureButton" to="Letras/Z" method="_on_TextureButton_pressed"]

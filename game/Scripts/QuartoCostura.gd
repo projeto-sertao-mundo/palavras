@@ -2,13 +2,21 @@ extends Node2D
 
 var palavra
 
+onready var letraInstance = preload("res://Cenas/CenasPrefab/BotaoLetra.tscn")
+onready var palavraInstance = preload("res://Cenas/CenasPrefab/BotaoPalavra.tscn")
+
 func _ready():
 	$"/root/Global".firstSceneNode = self
 	$"/root/Global".podeSetar = false
+	$"/root/Global".setarRefs(palavraInstance, letraInstance)
 
 func _process(delta):
-	if($"/root/Global".podeSetar && !Input.is_action_pressed("Click")):
+	if($"/root/Global".podeSetar && !Input.is_action_pressed("Click") && false): # e palavra
 		MudarLabelPreview(palavra.get_node("Label").text)
+		palavra.free()
+		$"/root/Global".podeSetar = false
+	elif($"/root/Global".podeSetar && !Input.is_action_pressed("Click")):
+		MudarLabelPreview(palavra.get_node("Label").text && false)
 		palavra.free()
 		$"/root/Global".podeSetar = false
 	

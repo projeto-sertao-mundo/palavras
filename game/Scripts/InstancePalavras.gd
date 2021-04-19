@@ -1,11 +1,9 @@
 extends Control
 
-onready var palavra = preload("res://Cenas/CenasPrefab/BotaoPalavra.tscn")
-onready var letra = preload("res://Cenas/CenasPrefab/BotaoLetra.tscn")
-
 var bolsa = []
 var bolsaLetras = []
 var foiClicado = false;
+
 
 func InstanciarPalavras():
 	bolsa = $"/root/Global".retornarPalavras()
@@ -14,7 +12,7 @@ func InstanciarPalavras():
 	if get_child(6).name == "Palavras":
 		for textoPalavra in bolsa:
 			if !get_node("Palavras").has_node("GridPalavra/"+textoPalavra):
-				var palavraInstanciada = palavra.instance()
+				var palavraInstanciada = $"/root/Global".palavraInstanceRef.instance()
 				palavraInstanciada.name = textoPalavra
 				self.get_node("Palavras").get_node("GridPalavras").add_child(palavraInstanciada)
 				palavraInstanciada.get_node("Label").text = textoPalavra
@@ -22,21 +20,16 @@ func InstanciarPalavras():
 	elif get_child(6).name == "Letras":
 		for letraRef in bolsaLetras:
 			if !get_node("Letras").has_node("GridLetras/"+letraRef.nome):
-				var palavraInstanciada = letra.instance()
-				palavraInstanciada.name = letraRef.nome
-				self.get_node("Letras").get_node("GridLetras").add_child(palavraInstanciada)
-				palavraInstanciada.texture_normal = letraRef.sprite
+				var letraInstanciada = $"/root/Global".letraInstanceRef.instance()
+				letraInstanciada.name = letraRef.nome
+				self.get_node("Letras").get_node("GridLetras").add_child(letraInstanciada)
+				letraInstanciada.texture_normal = letraRef.sprite
+				letraInstanciada.modulate = letraRef.cor
 		
-
-func _ready():
-	$"/root/Global".palavra = palavra
 
 func _on_Bolsa_pressed():
 	self.show()
 	InstanciarPalavras()
-
-func _on_Voltar_pressed():
-	self.hide()
 
 func _on_ButtonPalavras_pressed():
 	move_child(get_node("Palavras"), 6)
@@ -49,3 +42,6 @@ func _on_ButtonLetras_pressed():
 func _on_ButtonRetalhos_pressed():
 	move_child(get_node("Retalhos"), 6)
 	InstanciarPalavras()
+
+func _on_Voltar_pressed():
+	self.hide()

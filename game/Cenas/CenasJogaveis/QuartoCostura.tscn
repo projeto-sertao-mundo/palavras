@@ -7,7 +7,6 @@
 [ext_resource path="res://Cenas/CenasPrefab/PalavrasPopUp.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Sprites/Concepts/seta_.png" type="Texture" id=7]
 
-
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 244.093, 395.129 )
 

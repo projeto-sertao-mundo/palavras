@@ -7,7 +7,6 @@
 [ext_resource path="res://Sprites/Concepts/Interface.png" type="Texture" id=6]
 [ext_resource path="res://Sprites/Concepts/seta_.png" type="Texture" id=7]
 
-
 [node name="QuartoFrases" type="Node2D"]
 position = Vector2( -4.48987, -4.48981 )
 script = ExtResource( 4 )

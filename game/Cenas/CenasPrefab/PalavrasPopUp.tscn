@@ -124,7 +124,8 @@ margin_bottom = 725.0
 rect_scale = Vector2( 0.5, 0.3 )
 texture_normal = ExtResource( 2 )
 __meta__ = {
-"_edit_group_": true
+"_edit_group_": true,
+"_edit_use_anchors_": false
 }
 [connection signal="pressed" from="ButtonPalavras" to="." method="_on_ButtonPalavras_pressed"]
 [connection signal="pressed" from="ButtonLetras" to="." method="_on_ButtonLetras_pressed"]

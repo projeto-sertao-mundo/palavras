@@ -3,12 +3,13 @@ extends Node
 var bolsa = []
 var bolsaLetra = []
 var aux = -1
-var palavra
 var firstSceneNode
 var podeSetar
+var palavraInstanceRef
+var letraInstanceRef
 
-func adicionarItemBolsaPalavra(var palavra):
-	var palavraNova = [palavra]
+func adicionarItemBolsaPalavra(var palavraR):
+	var palavraNova = [palavraR]
 	bolsa += palavraNova
 
 func adicionarItemBolsaLetra(var letra):
@@ -16,7 +17,7 @@ func adicionarItemBolsaLetra(var letra):
 	
 	letraNova.sprite = letra.get_child(0).texture_normal
 	letraNova.nome = letra.name
-	#letraNova.cor = letraNovaRef.Color()
+	letraNova.cor = Color(letra.modulate.r, letra.modulate.g, letra.modulate.b)
 	
 	var letraNovaVector = [letraNova]
 	
@@ -28,6 +29,9 @@ func retornarPalavras():
 func retornarLetras():
 	return bolsaLetra
 
+func setarRefs(var palavras, var letras):
+	palavraInstanceRef = palavras
+	letraInstanceRef = letras
 
 class Letras:
 	var sprite
