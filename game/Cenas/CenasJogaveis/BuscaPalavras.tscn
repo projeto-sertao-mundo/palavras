@@ -1,12 +1,38 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://Scripts/BuscaPalavras.gd" type="Script" id=1]
-[ext_resource path="res://SpritesBlocagem/Concepts/seta_.png" type="Texture" id=2]
-[ext_resource path="res://SpritesBlocagem/Blocagem/Bolsa.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Concepts/seta_.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Blocagem/Bolsa.png" type="Texture" id=3]
 [ext_resource path="res://Cenas/CenasPrefab/PalavrasPopUp.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scripts/Palavras.gd" type="Script" id=5]
 [ext_resource path="res://Scripts/InicializadorBuscaPalavras.gd" type="Script" id=6]
-[ext_resource path="res://SpritesBlocagem/Concepts/Cozinha.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/Concepts/Cozinha.png" type="Texture" id=7]
+[ext_resource path="res://Cenas/CenasPrefab/BotaoLetra.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Sprites/SpritesFinais/Letras/B.png" type="Texture" id=9]
+[ext_resource path="res://Sprites/SpritesFinais/Letras/N.png" type="Texture" id=10]
+[ext_resource path="res://Sprites/SpritesFinais/Letras/F.png" type="Texture" id=11]
+[ext_resource path="res://Sprites/SpritesFinais/Letras/E.png" type="Texture" id=12]
+[ext_resource path="res://Sprites/SpritesFinais/Letras/I.png" type="Texture" id=13]
+[ext_resource path="res://Sprites/SpritesFinais/Letras/G.png" type="Texture" id=14]
+[ext_resource path="res://Sprites/SpritesFinais/Letras/J.png" type="Texture" id=15]
+[ext_resource path="res://Sprites/SpritesFinais/Letras/C.png" type="Texture" id=16]
+[ext_resource path="res://Sprites/SpritesFinais/Letras/K.png" type="Texture" id=17]
+[ext_resource path="res://Sprites/SpritesFinais/Letras/L.png" type="Texture" id=18]
+[ext_resource path="res://Sprites/SpritesFinais/Letras/D.png" type="Texture" id=19]
+[ext_resource path="res://Sprites/SpritesFinais/Letras/H.png" type="Texture" id=20]
+[ext_resource path="res://Sprites/SpritesFinais/Letras/M.png" type="Texture" id=21]
+[ext_resource path="res://Sprites/SpritesFinais/Letras/P.png" type="Texture" id=22]
+[ext_resource path="res://Sprites/SpritesFinais/Letras/Q.png" type="Texture" id=23]
+[ext_resource path="res://Sprites/SpritesFinais/Letras/O.png" type="Texture" id=24]
+[ext_resource path="res://Sprites/SpritesFinais/Letras/V.png" type="Texture" id=25]
+[ext_resource path="res://Sprites/SpritesFinais/Letras/Y.png" type="Texture" id=26]
+[ext_resource path="res://Sprites/SpritesFinais/Letras/R.png" type="Texture" id=27]
+[ext_resource path="res://Sprites/SpritesFinais/Letras/W.png" type="Texture" id=28]
+[ext_resource path="res://Sprites/SpritesFinais/Letras/T.png" type="Texture" id=29]
+[ext_resource path="res://Sprites/SpritesFinais/Letras/U.png" type="Texture" id=30]
+[ext_resource path="res://Sprites/SpritesFinais/Letras/S.png" type="Texture" id=31]
+[ext_resource path="res://Sprites/SpritesFinais/Letras/X.png" type="Texture" id=32]
+[ext_resource path="res://Sprites/SpritesFinais/Letras/Z.png" type="Texture" id=33]
 
 [node name="BuscaPalavras" type="Node2D"]
 script = ExtResource( 1 )
@@ -16,101 +42,290 @@ position = Vector2( 799.746, 451.378 )
 scale = Vector2( 0.416084, 0.416291 )
 texture = ExtResource( 7 )
 
-[node name="Palavra1" type="KinematicBody2D" parent="."]
-position = Vector2( 1441.52, 703.843 )
+[node name="A" type="KinematicBody2D" parent="."]
+position = Vector2( 1541.96, 444.914 )
 script = ExtResource( 5 )
 __meta__ = {
 "_edit_group_": true
 }
-palavra = "Palavra1"
 
-[node name="Palavra" type="Button" parent="Palavra1"]
-margin_right = 109.0
-margin_bottom = 39.0002
-text = "Palavra1"
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="TextureButton" parent="A" instance=ExtResource( 8 )]
+modulate = Color( 0.486275, 0.890196, 1, 1 )
 
-[node name="Palavra2" type="KinematicBody2D" parent="."]
-position = Vector2( 835.013, 48.4004 )
+[node name="B" type="KinematicBody2D" parent="."]
+position = Vector2( 1541.96, 444.914 )
 script = ExtResource( 5 )
 __meta__ = {
 "_edit_group_": true
 }
-palavra = "Palavra2"
 
-[node name="Palavra" type="Button" parent="Palavra2"]
-margin_right = 109.0
-margin_bottom = 39.0002
-text = "Palavra2"
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="TextureButton" parent="B" instance=ExtResource( 8 )]
+modulate = Color( 0.486275, 0.890196, 1, 1 )
+texture_normal = ExtResource( 9 )
 
-[node name="Palavra3" type="KinematicBody2D" parent="."]
-position = Vector2( 47.6966, 426.126 )
+[node name="C" type="KinematicBody2D" parent="."]
+position = Vector2( 1541.96, 444.914 )
 script = ExtResource( 5 )
 __meta__ = {
 "_edit_group_": true
 }
-palavra = "Palavra3"
 
-[node name="Palavra" type="Button" parent="Palavra3"]
-margin_right = 109.0
-margin_bottom = 39.0002
-text = "Palavra3"
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="TextureButton" parent="C" instance=ExtResource( 8 )]
+modulate = Color( 0.486275, 0.890196, 1, 1 )
+texture_normal = ExtResource( 16 )
 
-[node name="Palavra4" type="KinematicBody2D" parent="."]
-position = Vector2( 522.683, 560.787 )
+[node name="D" type="KinematicBody2D" parent="."]
+position = Vector2( 1541.96, 444.914 )
 script = ExtResource( 5 )
 __meta__ = {
 "_edit_group_": true
 }
-palavra = "Palavra4"
 
-[node name="Palavra" type="Button" parent="Palavra4"]
-margin_right = 109.0
-margin_bottom = 39.0002
-text = "Palavra4"
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="TextureButton" parent="D" instance=ExtResource( 8 )]
+modulate = Color( 0.486275, 0.890196, 1, 1 )
+texture_normal = ExtResource( 19 )
 
-[node name="Palavra5" type="KinematicBody2D" parent="."]
-position = Vector2( 805.983, 294.833 )
+[node name="E" type="KinematicBody2D" parent="."]
+position = Vector2( 1541.96, 444.914 )
 script = ExtResource( 5 )
 __meta__ = {
 "_edit_group_": true
 }
-palavra = "Palavra5"
 
-[node name="Palavra" type="Button" parent="Palavra5"]
-margin_right = 109.0
-margin_bottom = 39.0002
-text = "Palavra5"
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="TextureButton" parent="E" instance=ExtResource( 8 )]
+modulate = Color( 0.486275, 0.890196, 1, 1 )
+texture_normal = ExtResource( 12 )
 
-[node name="Palavra6" type="KinematicBody2D" parent="."]
-position = Vector2( 1006.69, 547.722 )
+[node name="F" type="KinematicBody2D" parent="."]
+position = Vector2( 1541.96, 444.914 )
 script = ExtResource( 5 )
 __meta__ = {
 "_edit_group_": true
 }
-palavra = "Palavra6"
 
-[node name="Palavra" type="Button" parent="Palavra6"]
-margin_right = 109.0
-margin_bottom = 39.0002
-text = "Palavra6"
+[node name="TextureButton" parent="F" instance=ExtResource( 8 )]
+modulate = Color( 0.486275, 0.890196, 1, 1 )
+texture_normal = ExtResource( 11 )
+
+[node name="G" type="KinematicBody2D" parent="."]
+position = Vector2( 1541.96, 444.914 )
+script = ExtResource( 5 )
 __meta__ = {
-"_edit_use_anchors_": false
+"_edit_group_": true
 }
+
+[node name="TextureButton" parent="G" instance=ExtResource( 8 )]
+modulate = Color( 0.486275, 0.890196, 1, 1 )
+texture_normal = ExtResource( 14 )
+
+[node name="H" type="KinematicBody2D" parent="."]
+position = Vector2( 1541.96, 444.914 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="TextureButton" parent="H" instance=ExtResource( 8 )]
+modulate = Color( 0.486275, 0.890196, 1, 1 )
+texture_normal = ExtResource( 20 )
+
+[node name="I" type="KinematicBody2D" parent="."]
+position = Vector2( 1541.96, 444.914 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="TextureButton" parent="I" instance=ExtResource( 8 )]
+modulate = Color( 0.486275, 0.890196, 1, 1 )
+texture_normal = ExtResource( 13 )
+
+[node name="J" type="KinematicBody2D" parent="."]
+position = Vector2( 1541.96, 444.914 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="TextureButton" parent="J" instance=ExtResource( 8 )]
+modulate = Color( 0.486275, 0.890196, 1, 1 )
+texture_normal = ExtResource( 15 )
+
+[node name="K" type="KinematicBody2D" parent="."]
+position = Vector2( 1541.96, 444.914 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="TextureButton" parent="K" instance=ExtResource( 8 )]
+modulate = Color( 0.486275, 0.890196, 1, 1 )
+texture_normal = ExtResource( 17 )
+
+[node name="L" type="KinematicBody2D" parent="."]
+position = Vector2( 1541.96, 444.914 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="TextureButton" parent="L" instance=ExtResource( 8 )]
+modulate = Color( 0.486275, 0.890196, 1, 1 )
+texture_normal = ExtResource( 18 )
+
+[node name="M" type="KinematicBody2D" parent="."]
+position = Vector2( 1541.96, 444.914 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="TextureButton" parent="M" instance=ExtResource( 8 )]
+modulate = Color( 0.486275, 0.890196, 1, 1 )
+texture_normal = ExtResource( 21 )
+
+[node name="N" type="KinematicBody2D" parent="."]
+position = Vector2( 1541.96, 444.914 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="TextureButton" parent="N" instance=ExtResource( 8 )]
+modulate = Color( 0.486275, 0.890196, 1, 1 )
+texture_normal = ExtResource( 10 )
+
+[node name="O" type="KinematicBody2D" parent="."]
+position = Vector2( 1541.96, 444.914 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="TextureButton" parent="O" instance=ExtResource( 8 )]
+modulate = Color( 0.486275, 0.890196, 1, 1 )
+texture_normal = ExtResource( 24 )
+
+[node name="P" type="KinematicBody2D" parent="."]
+position = Vector2( 1541.96, 444.914 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="TextureButton" parent="P" instance=ExtResource( 8 )]
+modulate = Color( 0.486275, 0.890196, 1, 1 )
+texture_normal = ExtResource( 22 )
+
+[node name="Q" type="KinematicBody2D" parent="."]
+position = Vector2( 1541.96, 444.914 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="TextureButton" parent="Q" instance=ExtResource( 8 )]
+modulate = Color( 0.486275, 0.890196, 1, 1 )
+texture_normal = ExtResource( 23 )
+
+[node name="R" type="KinematicBody2D" parent="."]
+position = Vector2( 1541.96, 444.914 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="TextureButton" parent="R" instance=ExtResource( 8 )]
+modulate = Color( 0.486275, 0.890196, 1, 1 )
+texture_normal = ExtResource( 27 )
+
+[node name="S" type="KinematicBody2D" parent="."]
+position = Vector2( 1541.96, 444.914 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="TextureButton" parent="S" instance=ExtResource( 8 )]
+modulate = Color( 0.486275, 0.890196, 1, 1 )
+texture_normal = ExtResource( 31 )
+
+[node name="T" type="KinematicBody2D" parent="."]
+position = Vector2( 1541.96, 444.914 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="TextureButton" parent="T" instance=ExtResource( 8 )]
+modulate = Color( 0.486275, 0.890196, 1, 1 )
+texture_normal = ExtResource( 29 )
+
+[node name="U" type="KinematicBody2D" parent="."]
+position = Vector2( 1541.96, 444.914 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="TextureButton" parent="U" instance=ExtResource( 8 )]
+modulate = Color( 0.486275, 0.890196, 1, 1 )
+texture_normal = ExtResource( 30 )
+
+[node name="V" type="KinematicBody2D" parent="."]
+position = Vector2( 1541.96, 444.914 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="TextureButton" parent="V" instance=ExtResource( 8 )]
+modulate = Color( 0.486275, 0.890196, 1, 1 )
+texture_normal = ExtResource( 25 )
+
+[node name="W" type="KinematicBody2D" parent="."]
+position = Vector2( 1541.96, 444.914 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="TextureButton" parent="W" instance=ExtResource( 8 )]
+modulate = Color( 0.486275, 0.890196, 1, 1 )
+texture_normal = ExtResource( 28 )
+
+[node name="X" type="KinematicBody2D" parent="."]
+position = Vector2( 1541.96, 444.914 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="TextureButton" parent="X" instance=ExtResource( 8 )]
+modulate = Color( 0.486275, 0.890196, 1, 1 )
+texture_normal = ExtResource( 32 )
+
+[node name="Y" type="KinematicBody2D" parent="."]
+position = Vector2( 1541.96, 444.914 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="TextureButton" parent="Y" instance=ExtResource( 8 )]
+modulate = Color( 0.486275, 0.890196, 1, 1 )
+texture_normal = ExtResource( 26 )
+
+[node name="Z" type="KinematicBody2D" parent="."]
+position = Vector2( 1541.96, 444.914 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="TextureButton" parent="Z" instance=ExtResource( 8 )]
+modulate = Color( 0.486275, 0.890196, 1, 1 )
+texture_normal = ExtResource( 33 )
 
 [node name="PalavrasPopUp" parent="." instance=ExtResource( 4 )]
 visible = false
@@ -140,11 +355,31 @@ texture_normal = ExtResource( 2 )
 
 [node name="Node" type="Node" parent="."]
 script = ExtResource( 6 )
-[connection signal="pressed" from="Palavra1/Palavra" to="Palavra1" method="_on_Palavra_pressed"]
-[connection signal="pressed" from="Palavra2/Palavra" to="Palavra2" method="_on_Palavra_pressed"]
-[connection signal="pressed" from="Palavra3/Palavra" to="Palavra3" method="_on_Palavra_pressed"]
-[connection signal="pressed" from="Palavra4/Palavra" to="Palavra4" method="_on_Palavra_pressed"]
-[connection signal="pressed" from="Palavra5/Palavra" to="Palavra5" method="_on_Palavra_pressed"]
-[connection signal="pressed" from="Palavra6/Palavra" to="Palavra6" method="_on_Palavra_pressed"]
+[connection signal="pressed" from="A/TextureButton" to="A" method="_on_TextureButton_pressed"]
+[connection signal="pressed" from="B/TextureButton" to="B" method="_on_TextureButton_pressed"]
+[connection signal="pressed" from="C/TextureButton" to="C" method="_on_TextureButton_pressed"]
+[connection signal="pressed" from="D/TextureButton" to="D" method="_on_TextureButton_pressed"]
+[connection signal="pressed" from="E/TextureButton" to="E" method="_on_TextureButton_pressed"]
+[connection signal="pressed" from="F/TextureButton" to="F" method="_on_TextureButton_pressed"]
+[connection signal="pressed" from="G/TextureButton" to="G" method="_on_TextureButton_pressed"]
+[connection signal="pressed" from="H/TextureButton" to="H" method="_on_TextureButton_pressed"]
+[connection signal="pressed" from="I/TextureButton" to="I" method="_on_TextureButton_pressed"]
+[connection signal="pressed" from="J/TextureButton" to="J" method="_on_TextureButton_pressed"]
+[connection signal="pressed" from="K/TextureButton" to="K" method="_on_TextureButton_pressed"]
+[connection signal="pressed" from="L/TextureButton" to="L" method="_on_TextureButton_pressed"]
+[connection signal="pressed" from="M/TextureButton" to="M" method="_on_TextureButton_pressed"]
+[connection signal="pressed" from="N/TextureButton" to="N" method="_on_TextureButton_pressed"]
+[connection signal="pressed" from="O/TextureButton" to="O" method="_on_TextureButton_pressed"]
+[connection signal="pressed" from="P/TextureButton" to="P" method="_on_TextureButton_pressed"]
+[connection signal="pressed" from="Q/TextureButton" to="Q" method="_on_TextureButton_pressed"]
+[connection signal="pressed" from="R/TextureButton" to="R" method="_on_TextureButton_pressed"]
+[connection signal="pressed" from="S/TextureButton" to="S" method="_on_TextureButton_pressed"]
+[connection signal="pressed" from="T/TextureButton" to="T" method="_on_TextureButton_pressed"]
+[connection signal="pressed" from="U/TextureButton" to="U" method="_on_TextureButton_pressed"]
+[connection signal="pressed" from="V/TextureButton" to="V" method="_on_TextureButton_pressed"]
+[connection signal="pressed" from="W/TextureButton" to="W" method="_on_TextureButton_pressed"]
+[connection signal="pressed" from="X/TextureButton" to="X" method="_on_TextureButton_pressed"]
+[connection signal="pressed" from="Y/TextureButton" to="Y" method="_on_TextureButton_pressed"]
+[connection signal="pressed" from="Z/TextureButton" to="Z" method="_on_TextureButton_pressed"]
 [connection signal="pressed" from="Bolsa" to="PalavrasPopUp" method="_on_Bolsa_pressed"]
 [connection signal="pressed" from="Voltar" to="." method="_on_Voltar_pressed"]

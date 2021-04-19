@@ -1,0 +1,17 @@
+[remap]
+
+importer="texture_atlas"
+type="Texture"
+path="res://.import/M.png-f9011522b3f0631eb0fa124a002b9230.res"
+group_file="res://Sprites/SpritesFinais/Atlas/AtlasLetras.png"
+valid=true
+[deps]
+
+
+source_file="res://Sprites/SpritesFinais/Letras/M.png"
+dest_files=[ "res://.import/M.png-f9011522b3f0631eb0fa124a002b9230.res" ]
+
+[params]
+
+atlas_file="res://Sprites/SpritesFinais/Atlas/AtlasLetras.png"
+import_mode=0
