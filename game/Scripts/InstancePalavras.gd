@@ -11,10 +11,12 @@ func InstanciarPalavras():
 	
 	if get_child(6).name == "Palavras":
 		for textoPalavra in bolsa:
-			if !get_node("Palavras").has_node("GridPalavra/"+textoPalavra):
+			if !get_node("Palavras").has_node("GridPalavras/"+textoPalavra):
 				var palavraInstanciada = $"/root/Global".palavraInstanceRef.instance()
+				var caminhoParentesco = self.get_node("Palavras").get_node("GridPalavras")
+				
+				caminhoParentesco.add_child(palavraInstanciada)
 				palavraInstanciada.name = textoPalavra
-				self.get_node("Palavras").get_node("GridPalavras").add_child(palavraInstanciada)
 				palavraInstanciada.get_node("Label").text = textoPalavra
 		
 	elif get_child(6).name == "Letras":

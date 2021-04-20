@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=37 format=2]
 
 [ext_resource path="res://Scripts/BuscaPalavras.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/Concepts/seta_.png" type="Texture" id=2]
@@ -33,6 +33,13 @@
 [ext_resource path="res://Sprites/SpritesFinais/Letras/S.png" type="Texture" id=31]
 [ext_resource path="res://Sprites/SpritesFinais/Letras/X.png" type="Texture" id=32]
 [ext_resource path="res://Sprites/SpritesFinais/Letras/Z.png" type="Texture" id=33]
+[ext_resource path="res://Fonts/xilosa_.ttf" type="DynamicFontData" id=34]
+[ext_resource path="res://Sprites/Concepts/ButaoBag.png" type="Texture" id=35]
+
+[sub_resource type="DynamicFont" id=1]
+size = 80
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 34 )
 
 [node name="BuscaPalavras" type="Node2D"]
 script = ExtResource( 1 )
@@ -488,6 +495,36 @@ texture_normal = ExtResource( 33 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Palavras" type="Node2D" parent="."]
+visible = false
+
+[node name="Palavra1" type="KinematicBody2D" parent="Palavras"]
+position = Vector2( 326.003, 44.1237 )
+scale = Vector2( 0.2, 0.2 )
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="TextureButton" type="TextureButton" parent="Palavras/Palavra1"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture_normal = ExtResource( 35 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Palavras/Palavra1"]
+margin_left = 84.0
+margin_top = 45.0
+margin_right = 416.0
+margin_bottom = 125.0
+custom_fonts/font = SubResource( 1 )
+text = "Palavra1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="pressed" from="Bolsa" to="PalavrasPopUp" method="_on_Bolsa_pressed"]
 [connection signal="pressed" from="Voltar" to="." method="_on_Voltar_pressed"]
 [connection signal="mouse_entered" from="Letras/A" to="Letras/A/TextureButton" method="_on_A_mouse_entered"]
@@ -568,3 +605,6 @@ __meta__ = {
 [connection signal="mouse_entered" from="Letras/Z" to="Letras/Z/TextureButton" method="_on_A_mouse_entered"]
 [connection signal="mouse_exited" from="Letras/Z" to="Letras/Z/TextureButton" method="_on_A_mouse_exited"]
 [connection signal="pressed" from="Letras/Z/TextureButton" to="Letras/Z" method="_on_TextureButton_pressed"]
+[connection signal="mouse_entered" from="Palavras/Palavra1" to="Palavras/Palavra1/TextureButton" method="_on_A_mouse_entered"]
+[connection signal="mouse_exited" from="Palavras/Palavra1" to="Palavras/Palavra1/TextureButton" method="_on_A_mouse_exited"]
+[connection signal="pressed" from="Palavras/Palavra1/TextureButton" to="Palavras/Palavra1" method="_on_TextureButton_pressed"]

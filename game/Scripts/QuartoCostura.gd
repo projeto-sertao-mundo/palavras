@@ -1,6 +1,7 @@
 extends Node2D
 
 var palavra
+var numeroCaracteres = 0
 
 onready var letraInstance = preload("res://Cenas/CenasPrefab/BotaoLetra.tscn")
 onready var palavraInstance = preload("res://Cenas/CenasPrefab/BotaoPalavra.tscn")
@@ -11,18 +12,23 @@ func _ready():
 	$"/root/Global".setarRefs(palavraInstance, letraInstance)
 
 func _process(delta):
-	if($"/root/Global".podeSetar && !Input.is_action_pressed("Click") && false): # e palavra
-		MudarLabelPreview(palavra.get_node("Label").text)
+	
+	if ($"/root/Global".podeSetar && !Input.is_action_pressed("Click") && palavra.name.length() > 1):
+		if numeroCaracteres <= 10:
+			MudarLabelPreview(palavra.get_node("Label").text)
+			$"/root/Global".podeSetar = false
 		palavra.free()
-		$"/root/Global".podeSetar = false
-	elif($"/root/Global".podeSetar && !Input.is_action_pressed("Click")):
-		MudarLabelPreview(palavra.get_node("Label").text && false)
+	elif ($"/root/Global".podeSetar && !Input.is_action_pressed("Click") && palavra.name.length() == 1):
+		if numeroCaracteres <= 10:
+			MudarLabelPreview(palavra.name)
+			$"/root/Global".podeSetar = false
 		palavra.free()
-		$"/root/Global".podeSetar = false
 	
 
 func MudarLabelPreview(var texto):
-	get_node("CosturaPopUp/Preview").get_node("Label").text = texto
+	numeroCaracteres += 1
+	var textoAtual = get_node("CosturaPopUp/Preview").get_node("Label").text
+	get_node("CosturaPopUp/Preview").get_node("Label").text = textoAtual + texto
 
 func _on_MaquinaCostura_pressed():
 	get_node("CosturaPopUp").show()
@@ -48,14 +54,17 @@ func _on_Vermelho_pressed():
 	MudarCor(1, 0, 0)
 func _on_Verde_pressed():
 	MudarCor(0,1,0)
+
 func _on_Recomecar_pressed():
 	MudarCor(1,1,1)
-	MudarLabelPreview("")
+	get_node("CosturaPopUp/Preview").get_node("Label").text = ""
 
 func _on_Area2D_area_entered(area):
+	set_process(true)
 	$"/root/Global".podeSetar = true
 	palavra = area.get_parent()
 
 func _on_Area2D_area_exited(area):
+	set_process(false)
 	$"/root/Global".podeSetar = false
 	palavra = null

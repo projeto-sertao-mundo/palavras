@@ -18,7 +18,7 @@ func _process(delta):
 		if palavra.length() == 1:
 			$"/root/Global".adicionarItemBolsaLetra(self)
 		else:
-			$"/root/Global".adicionarItemBolsaPalavra(palavra)
+			$"/root/Global".adicionarItemBolsaPalavra(self.name)
 		self.free()
 
 func _on_TextureButton_pressed():

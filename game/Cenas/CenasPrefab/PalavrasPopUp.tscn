@@ -20,10 +20,10 @@ __meta__ = {
 }
 
 [node name="ButtonLock" type="Control" parent="."]
-margin_left = -971.091
-margin_top = -456.065
-margin_right = 1477.91
-margin_bottom = 994.935
+margin_left = -3454.0
+margin_top = -1515.0
+margin_right = 2741.0
+margin_bottom = 2076.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
