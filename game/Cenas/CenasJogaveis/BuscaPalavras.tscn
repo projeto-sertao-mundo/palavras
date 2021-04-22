@@ -6,7 +6,7 @@
 [ext_resource path="res://Cenas/CenasPrefab/PalavrasPopUp.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Sprites/SpritesFinais/Letras/A.png" type="Texture" id=5]
 [ext_resource path="res://Scripts/InicializadorBuscaPalavras.gd" type="Script" id=6]
-[ext_resource path="res://Sprites/Concepts/Cozinha.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/Cozinha refeita.png" type="Texture" id=7]
 [ext_resource path="res://Scripts/Palavras.gd" type="Script" id=8]
 [ext_resource path="res://Sprites/SpritesFinais/Letras/B.png" type="Texture" id=9]
 [ext_resource path="res://Sprites/SpritesFinais/Letras/N.png" type="Texture" id=10]
@@ -57,18 +57,11 @@ script = ExtResource( 1 )
 
 [node name="Cozinha" type="Sprite" parent="."]
 position = Vector2( 799.746, 451.378 )
-scale = Vector2( 0.416084, 0.416291 )
+scale = Vector2( 0.832, 0.832 )
 texture = ExtResource( 7 )
 
 [node name="Inicializador" type="Node" parent="."]
 script = ExtResource( 6 )
-
-[node name="PalavrasPopUp" parent="." instance=ExtResource( 4 )]
-visible = false
-margin_left = 459.562
-margin_top = 73.0513
-margin_right = 459.562
-margin_bottom = 73.0513
 
 [node name="Bolsa" type="TextureButton" parent="."]
 margin_left = 1487.99
@@ -92,8 +85,9 @@ texture_normal = ExtResource( 2 )
 [node name="Letras" type="Node2D" parent="."]
 
 [node name="A" type="KinematicBody2D" parent="Letras"]
-modulate = Color( 0, 0, 0, 1 )
-position = Vector2( 1465.13, 421.436 )
+modulate = Color( 0.576471, 0.701961, 0.741176, 1 )
+position = Vector2( 1318.14, 245.374 )
+scale = Vector2( 1.24, 1.16 )
 script = ExtResource( 8 )
 __meta__ = {
 "_edit_group_": true
@@ -108,8 +102,9 @@ __meta__ = {
 }
 
 [node name="B" type="KinematicBody2D" parent="Letras"]
-modulate = Color( 0, 0, 0, 1 )
-position = Vector2( 1465.13, 421.436 )
+modulate = Color( 0.768627, 0.768627, 0.768627, 1 )
+position = Vector2( 699.095, 395.607 )
+scale = Vector2( 0.84, 0.760002 )
 script = ExtResource( 8 )
 __meta__ = {
 "_edit_group_": true
@@ -124,8 +119,9 @@ __meta__ = {
 }
 
 [node name="C" type="KinematicBody2D" parent="Letras"]
-modulate = Color( 0, 0, 0, 1 )
-position = Vector2( 1465.13, 421.436 )
+modulate = Color( 0.243137, 0.196078, 0.0941176, 1 )
+position = Vector2( 1096.75, 264.952 )
+scale = Vector2( 1, 1.36 )
 script = ExtResource( 8 )
 __meta__ = {
 "_edit_group_": true
@@ -140,8 +136,9 @@ __meta__ = {
 }
 
 [node name="D" type="KinematicBody2D" parent="Letras"]
-modulate = Color( 0, 1, 0.0627451, 1 )
-position = Vector2( 1465.13, 421.436 )
+modulate = Color( 0.721569, 0.443137, 0.113725, 1 )
+position = Vector2( -13.8261, 683.672 )
+rotation = -0.990586
 script = ExtResource( 8 )
 __meta__ = {
 "_edit_group_": true
@@ -156,8 +153,8 @@ __meta__ = {
 }
 
 [node name="E" type="KinematicBody2D" parent="Letras"]
-modulate = Color( 0, 0, 0, 1 )
-position = Vector2( 1465.13, 421.436 )
+modulate = Color( 0.960784, 0.788235, 0.247059, 1 )
+position = Vector2( 1038.06, 97.6061 )
 script = ExtResource( 8 )
 __meta__ = {
 "_edit_group_": true
@@ -172,8 +169,9 @@ __meta__ = {
 }
 
 [node name="F" type="KinematicBody2D" parent="Letras"]
-modulate = Color( 0, 0, 0, 1 )
-position = Vector2( 1465.13, 421.436 )
+modulate = Color( 0.74902, 0.741176, 0.756863, 1 )
+position = Vector2( 51.0802, 511.126 )
+rotation = 0.184496
 script = ExtResource( 8 )
 __meta__ = {
 "_edit_group_": true
@@ -188,8 +186,10 @@ __meta__ = {
 }
 
 [node name="G" type="KinematicBody2D" parent="Letras"]
-modulate = Color( 0, 0, 0, 1 )
-position = Vector2( 1465.13, 421.436 )
+modulate = Color( 0.337875, 0.634701, 0.714844, 1 )
+position = Vector2( 1555.34, 556.122 )
+rotation = 0.540487
+scale = Vector2( 0.80002, 0.719995 )
 script = ExtResource( 8 )
 __meta__ = {
 "_edit_group_": true
@@ -204,8 +204,8 @@ __meta__ = {
 }
 
 [node name="H" type="KinematicBody2D" parent="Letras"]
-modulate = Color( 0.945098, 0, 1, 1 )
-position = Vector2( 1465.13, 421.436 )
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 777.156, 342.093 )
 script = ExtResource( 8 )
 __meta__ = {
 "_edit_group_": true
@@ -220,8 +220,9 @@ __meta__ = {
 }
 
 [node name="I" type="KinematicBody2D" parent="Letras"]
-modulate = Color( 0, 0, 0, 1 )
-position = Vector2( 1465.13, 421.436 )
+modulate = Color( 0.52549, 0.396078, 0.188235, 1 )
+position = Vector2( 418.982, 133.032 )
+rotation = 0.749716
 script = ExtResource( 8 )
 __meta__ = {
 "_edit_group_": true
@@ -236,8 +237,8 @@ __meta__ = {
 }
 
 [node name="J" type="KinematicBody2D" parent="Letras"]
-modulate = Color( 0, 0, 0, 1 )
-position = Vector2( 1465.13, 421.436 )
+modulate = Color( 0.27451, 0.160784, 0.0509804, 1 )
+position = Vector2( 908.671, 574.108 )
 script = ExtResource( 8 )
 __meta__ = {
 "_edit_group_": true
@@ -252,8 +253,8 @@ __meta__ = {
 }
 
 [node name="K" type="KinematicBody2D" parent="Letras"]
-modulate = Color( 0, 0, 0, 1 )
-position = Vector2( 1465.13, 421.436 )
+modulate = Color( 0.396078, 0.509804, 0.623529, 1 )
+position = Vector2( 1280.84, 537.701 )
 script = ExtResource( 8 )
 __meta__ = {
 "_edit_group_": true
@@ -268,8 +269,9 @@ __meta__ = {
 }
 
 [node name="L" type="KinematicBody2D" parent="Letras"]
-modulate = Color( 0, 0, 0, 1 )
-position = Vector2( 1465.13, 421.436 )
+modulate = Color( 0.113725, 0.113725, 0.113725, 1 )
+position = Vector2( 515.34, 65.6829 )
+rotation = -0.0493734
 script = ExtResource( 8 )
 __meta__ = {
 "_edit_group_": true
@@ -284,8 +286,10 @@ __meta__ = {
 }
 
 [node name="M" type="KinematicBody2D" parent="Letras"]
-modulate = Color( 0, 0, 0, 1 )
-position = Vector2( 1465.13, 421.436 )
+modulate = Color( 0.819608, 0.682353, 0.411765, 1 )
+position = Vector2( 580.769, 534.453 )
+rotation = 0.464136
+scale = Vector2( 0.892695, 0.695862 )
 script = ExtResource( 8 )
 __meta__ = {
 "_edit_group_": true
@@ -300,8 +304,8 @@ __meta__ = {
 }
 
 [node name="N" type="KinematicBody2D" parent="Letras"]
-modulate = Color( 0, 0, 0, 1 )
-position = Vector2( 1465.13, 421.436 )
+modulate = Color( 0.435294, 0.266667, 0.0784314, 1 )
+position = Vector2( 649.195, 572.019 )
 script = ExtResource( 8 )
 __meta__ = {
 "_edit_group_": true
@@ -316,8 +320,9 @@ __meta__ = {
 }
 
 [node name="O" type="KinematicBody2D" parent="Letras"]
-modulate = Color( 0, 0.203922, 1, 1 )
-position = Vector2( 1465.13, 421.436 )
+modulate = Color( 0.285156, 0.20659, 0.131439, 1 )
+position = Vector2( 1288.48, 115.703 )
+scale = Vector2( 2.03432, 1.76915 )
 script = ExtResource( 8 )
 __meta__ = {
 "_edit_group_": true
@@ -332,8 +337,9 @@ __meta__ = {
 }
 
 [node name="P" type="KinematicBody2D" parent="Letras"]
-modulate = Color( 0, 0, 0, 1 )
-position = Vector2( 1465.13, 421.436 )
+modulate = Color( 0.360784, 0.211765, 0.0627451, 1 )
+position = Vector2( 517.391, 312.873 )
+rotation = 0.231938
 script = ExtResource( 8 )
 __meta__ = {
 "_edit_group_": true
@@ -348,8 +354,9 @@ __meta__ = {
 }
 
 [node name="Q" type="KinematicBody2D" parent="Letras"]
-modulate = Color( 0, 0, 0, 1 )
-position = Vector2( 1465.13, 421.436 )
+modulate = Color( 0.560784, 0.560784, 0.560784, 1 )
+position = Vector2( 147.18, 435.676 )
+scale = Vector2( 0.880001, 1 )
 script = ExtResource( 8 )
 __meta__ = {
 "_edit_group_": true
@@ -364,8 +371,10 @@ __meta__ = {
 }
 
 [node name="R" type="KinematicBody2D" parent="Letras"]
-modulate = Color( 0, 0, 0, 1 )
-position = Vector2( 1465.13, 421.436 )
+modulate = Color( 0.639216, 0.639216, 0.654902, 1 )
+position = Vector2( 114.692, 551.529 )
+rotation = 0.111176
+scale = Vector2( 1, 0.8 )
 script = ExtResource( 8 )
 __meta__ = {
 "_edit_group_": true
@@ -380,8 +389,10 @@ __meta__ = {
 }
 
 [node name="S" type="KinematicBody2D" parent="Letras"]
-modulate = Color( 0, 0, 0, 1 )
-position = Vector2( 1465.13, 421.436 )
+modulate = Color( 0.898039, 0.517647, 0.686275, 1 )
+position = Vector2( 291.36, 648.525 )
+rotation = 0.710223
+scale = Vector2( 0.791948, 1 )
 script = ExtResource( 8 )
 __meta__ = {
 "_edit_group_": true
@@ -396,8 +407,8 @@ __meta__ = {
 }
 
 [node name="T" type="KinematicBody2D" parent="Letras"]
-modulate = Color( 0.345098, 0.396078, 0.309804, 1 )
-position = Vector2( 1465.13, 421.436 )
+modulate = Color( 0.647059, 0.627451, 0.466667, 1 )
+position = Vector2( 698.415, 42.0473 )
 script = ExtResource( 8 )
 __meta__ = {
 "_edit_group_": true
@@ -412,8 +423,9 @@ __meta__ = {
 }
 
 [node name="U" type="KinematicBody2D" parent="Letras"]
-modulate = Color( 0, 0, 0, 1 )
-position = Vector2( 1465.13, 421.436 )
+modulate = Color( 0.537255, 0.537255, 0.498039, 1 )
+position = Vector2( 498.406, 228.856 )
+scale = Vector2( 1.42478, 0.560001 )
 script = ExtResource( 8 )
 __meta__ = {
 "_edit_group_": true
@@ -428,8 +440,8 @@ __meta__ = {
 }
 
 [node name="V" type="KinematicBody2D" parent="Letras"]
-modulate = Color( 0, 0, 0, 1 )
-position = Vector2( 1465.13, 421.436 )
+modulate = Color( 0.854902, 0.827451, 0.788235, 1 )
+position = Vector2( 847.134, 438.798 )
 script = ExtResource( 8 )
 __meta__ = {
 "_edit_group_": true
@@ -444,11 +456,14 @@ __meta__ = {
 }
 
 [node name="W" type="KinematicBody2D" parent="Letras"]
-modulate = Color( 0, 0, 0, 1 )
-position = Vector2( 1465.13, 421.436 )
+modulate = Color( 0.0941176, 0.435294, 0.168627, 1 )
+position = Vector2( 1011.06, 395.469 )
+rotation = 0.78836
+scale = Vector2( 1.02864, 0.663486 )
 script = ExtResource( 8 )
 __meta__ = {
-"_edit_group_": true
+"_edit_group_": true,
+"_editor_description_": ""
 }
 
 [node name="TextureButton" type="TextureButton" parent="Letras/W"]
@@ -460,8 +475,8 @@ __meta__ = {
 }
 
 [node name="X" type="KinematicBody2D" parent="Letras"]
-modulate = Color( 0, 0, 0, 1 )
-position = Vector2( 1465.13, 421.436 )
+modulate = Color( 0.407843, 0.262745, 0.105882, 1 )
+position = Vector2( 774.61, 113.48 )
 script = ExtResource( 8 )
 __meta__ = {
 "_edit_group_": true
@@ -476,8 +491,8 @@ __meta__ = {
 }
 
 [node name="Y" type="KinematicBody2D" parent="Letras"]
-modulate = Color( 0, 0, 0, 1 )
-position = Vector2( 1465.13, 421.436 )
+modulate = Color( 0.505882, 0.486275, 0.345098, 1 )
+position = Vector2( 1528.07, 108.928 )
 script = ExtResource( 8 )
 __meta__ = {
 "_edit_group_": true
@@ -492,8 +507,8 @@ __meta__ = {
 }
 
 [node name="Z" type="KinematicBody2D" parent="Letras"]
-modulate = Color( 1, 0, 0, 1 )
-position = Vector2( 1465.13, 421.436 )
+modulate = Color( 0.247059, 0.160784, 0.0745098, 1 )
+position = Vector2( 1195.78, 712.306 )
 script = ExtResource( 8 )
 __meta__ = {
 "_edit_group_": true
@@ -508,8 +523,8 @@ __meta__ = {
 }
 
 [node name="Ã" type="KinematicBody2D" parent="Letras"]
-modulate = Color( 0, 0, 0, 1 )
-position = Vector2( 1465.13, 421.436 )
+modulate = Color( 0.968627, 0.968627, 0.968627, 1 )
+position = Vector2( 324.968, 345.8 )
 script = ExtResource( 8 )
 __meta__ = {
 "_edit_group_": true
@@ -525,8 +540,9 @@ __meta__ = {
 }
 
 [node name="Á" type="KinematicBody2D" parent="Letras"]
-modulate = Color( 0, 0, 0, 1 )
-position = Vector2( 1465.13, 421.436 )
+modulate = Color( 0.690196, 0.466667, 0.215686, 1 )
+position = Vector2( 53.4435, 234.026 )
+scale = Vector2( 0.76, 1 )
 script = ExtResource( 8 )
 __meta__ = {
 "_edit_group_": true
@@ -542,8 +558,8 @@ __meta__ = {
 }
 
 [node name="Â" type="KinematicBody2D" parent="Letras"]
-modulate = Color( 0, 0, 0, 1 )
-position = Vector2( 1465.13, 421.436 )
+modulate = Color( 0.745098, 0.466667, 0.203922, 1 )
+position = Vector2( 159.331, 35.1856 )
 script = ExtResource( 8 )
 __meta__ = {
 "_edit_group_": true
@@ -559,8 +575,8 @@ __meta__ = {
 }
 
 [node name="Ç" type="KinematicBody2D" parent="Letras"]
-modulate = Color( 0.345098, 0.396078, 0.309804, 1 )
-position = Vector2( 1465.13, 421.436 )
+modulate = Color( 0.368627, 0.223529, 0.0784314, 1 )
+position = Vector2( 646.796, 149.695 )
 script = ExtResource( 8 )
 __meta__ = {
 "_edit_group_": true
@@ -576,8 +592,8 @@ __meta__ = {
 }
 
 [node name="É" type="KinematicBody2D" parent="Letras"]
-modulate = Color( 0, 0, 0, 1 )
-position = Vector2( 1465.13, 421.436 )
+modulate = Color( 0.636719, 0.615578, 0.46759, 1 )
+position = Vector2( 839.264, 30.8951 )
 script = ExtResource( 8 )
 __meta__ = {
 "_edit_group_": true
@@ -593,8 +609,8 @@ __meta__ = {
 }
 
 [node name="Ê" type="KinematicBody2D" parent="Letras"]
-modulate = Color( 0, 0, 0, 1 )
-position = Vector2( 1465.13, 421.436 )
+modulate = Color( 0.760784, 0.537255, 0.223529, 1 )
+position = Vector2( 194.248, 377.384 )
 script = ExtResource( 8 )
 __meta__ = {
 "_edit_group_": true
@@ -610,8 +626,8 @@ __meta__ = {
 }
 
 [node name="Í" type="KinematicBody2D" parent="Letras"]
-modulate = Color( 0, 0, 0, 1 )
-position = Vector2( 1465.13, 421.436 )
+modulate = Color( 0.658824, 0.658824, 0.690196, 1 )
+position = Vector2( 1393.43, 374.577 )
 script = ExtResource( 8 )
 __meta__ = {
 "_edit_group_": true
@@ -627,8 +643,9 @@ __meta__ = {
 }
 
 [node name="Õ" type="KinematicBody2D" parent="Letras"]
-modulate = Color( 0, 0, 0, 1 )
-position = Vector2( 1465.13, 421.436 )
+modulate = Color( 0.231373, 0.168627, 0.105882, 1 )
+position = Vector2( 1301.28, 18.6145 )
+scale = Vector2( 2, 1.56 )
 script = ExtResource( 8 )
 __meta__ = {
 "_edit_group_": true
@@ -644,8 +661,8 @@ __meta__ = {
 }
 
 [node name="Ó" type="KinematicBody2D" parent="Letras"]
-modulate = Color( 0, 0, 0, 1 )
-position = Vector2( 1465.13, 421.436 )
+modulate = Color( 0.388235, 0.227451, 0.0784314, 1 )
+position = Vector2( 480.988, 376.11 )
 script = ExtResource( 8 )
 __meta__ = {
 "_edit_group_": true
@@ -661,8 +678,8 @@ __meta__ = {
 }
 
 [node name="Ô" type="KinematicBody2D" parent="Letras"]
-modulate = Color( 1, 0, 0, 1 )
-position = Vector2( 1465.13, 421.436 )
+modulate = Color( 0.289063, 0.185181, 0.0812988, 1 )
+position = Vector2( 378.241, 536.742 )
 script = ExtResource( 8 )
 __meta__ = {
 "_edit_group_": true
@@ -678,8 +695,10 @@ __meta__ = {
 }
 
 [node name="Ú" type="KinematicBody2D" parent="Letras"]
-modulate = Color( 1, 0, 0, 1 )
-position = Vector2( 1465.13, 421.436 )
+modulate = Color( 0.733333, 0.733333, 0.74902, 1 )
+position = Vector2( 1475.43, 690.179 )
+rotation = 0.197587
+scale = Vector2( 1, 0.679995 )
 script = ExtResource( 8 )
 __meta__ = {
 "_edit_group_": true
@@ -693,6 +712,13 @@ texture_normal = ExtResource( 45 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="PalavrasPopUp" parent="." instance=ExtResource( 4 )]
+visible = false
+margin_left = 459.562
+margin_top = 73.0513
+margin_right = 459.562
+margin_bottom = 73.0513
 
 [node name="Palavras" type="Node2D" parent="."]
 visible = false
