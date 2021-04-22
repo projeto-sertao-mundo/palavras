@@ -1,5 +1,6 @@
 extends KinematicBody2D
 
+export var isLetraAcentuada = false
 var movimento
 var velocidade = 700
 var palavra = ""
@@ -15,7 +16,9 @@ func _process(delta):
 	if  bolsaNode.get_rect().position.distance_to(self.position) > 50:
 		move_and_slide(movimento * velocidade)
 	else:
-		if palavra.length() == 1:
+		if isLetraAcentuada:
+			$"/root/Global".adicionarItemBolsaLetraAcentuada(self)
+		elif palavra.length() == 1:
 			$"/root/Global".adicionarItemBolsaLetra(self)
 		else:
 			$"/root/Global".adicionarItemBolsaPalavra(self.name)

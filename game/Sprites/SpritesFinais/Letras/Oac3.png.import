@@ -1,0 +1,17 @@
+[remap]
+
+importer="texture_atlas"
+type="Texture"
+path="res://.import/Oac3.png-ae4dd4bc8cd64cc01a0db5851f80e6cb.res"
+group_file="res://Sprites/SpritesFinais/Atlas/.png"
+valid=true
+[deps]
+
+
+source_file="res://Sprites/SpritesFinais/Letras/Oac3.png"
+dest_files=[ "res://.import/Oac3.png-ae4dd4bc8cd64cc01a0db5851f80e6cb.res" ]
+
+[params]
+
+atlas_file="res://Sprites/SpritesFinais/Atlas/.png"
+import_mode=0

@@ -13,7 +13,7 @@ func _ready():
 
 func _process(delta):
 	
-	if ($"/root/Global".podeSetar && !Input.is_action_pressed("Click") && palavra.name.length() > 1):
+	if ($"/root/Global".podeSetar && !Input.is_action_pressed("Click") && palavra.name.length() > 1 && !palavra.isLetraAcentuada):
 		if numeroCaracteres <= 10:
 			MudarLabelPreview(palavra.get_node("Label").text)
 			$"/root/Global".podeSetar = false

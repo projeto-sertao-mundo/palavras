@@ -1,13 +1,14 @@
 extends Control
-
-var bolsa = []
-var bolsaLetras = []
 var foiClicado = false;
 
-
 func InstanciarPalavras():
+	var bolsa = []
+	var bolsaLetras = []
+	var bolsaLetrasAcentuadas = []
+	
 	bolsa = $"/root/Global".retornarPalavras()
 	bolsaLetras = $"/root/Global".retornarLetras()
+	bolsaLetrasAcentuadas = $"/root/Global".retornarLetrasAcentuadas()
 	
 	if get_child(6).name == "Palavras":
 		for textoPalavra in bolsa:
@@ -20,6 +21,16 @@ func InstanciarPalavras():
 				palavraInstanciada.get_node("Label").text = textoPalavra
 		
 	elif get_child(6).name == "Letras":
+
+		for letraRefAc in bolsaLetrasAcentuadas:
+			if !get_node("Letras").has_node("GridLetrasAcentuadas/"+letraRefAc.nome):
+				var letraInstanciada = $"/root/Global".letraInstanceRef.instance()
+				letraInstanciada.name = letraRefAc.nome
+				letraInstanciada.isLetraAcentuada = true
+				self.get_node("Letras").get_node("GridLetrasAcentuadas").add_child(letraInstanciada)
+				letraInstanciada.texture_normal = letraRefAc.sprite
+				letraInstanciada.modulate = letraRefAc.cor
+		
 		for letraRef in bolsaLetras:
 			if !get_node("Letras").has_node("GridLetras/"+letraRef.nome):
 				var letraInstanciada = $"/root/Global".letraInstanceRef.instance()
@@ -27,6 +38,7 @@ func InstanciarPalavras():
 				self.get_node("Letras").get_node("GridLetras").add_child(letraInstanciada)
 				letraInstanciada.texture_normal = letraRef.sprite
 				letraInstanciada.modulate = letraRef.cor
+			
 		
 
 func _on_Bolsa_pressed():

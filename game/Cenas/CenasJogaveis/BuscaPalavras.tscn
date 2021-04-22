@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=2]
+[gd_scene load_steps=48 format=2]
 
 [ext_resource path="res://Scripts/BuscaPalavras.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/Concepts/seta_.png" type="Texture" id=2]
@@ -35,6 +35,17 @@
 [ext_resource path="res://Sprites/SpritesFinais/Letras/Z.png" type="Texture" id=33]
 [ext_resource path="res://Fonts/xilosa_.ttf" type="DynamicFontData" id=34]
 [ext_resource path="res://Sprites/Concepts/ButaoBag.png" type="Texture" id=35]
+[ext_resource path="res://Sprites/SpritesFinais/Letras/Aac2.png" type="Texture" id=36]
+[ext_resource path="res://Sprites/SpritesFinais/Letras/Eac3.png" type="Texture" id=37]
+[ext_resource path="res://Sprites/SpritesFinais/Letras/Oac2.png" type="Texture" id=38]
+[ext_resource path="res://Sprites/SpritesFinais/Letras/Cedilha.png" type="Texture" id=39]
+[ext_resource path="res://Sprites/SpritesFinais/Letras/Oac.png" type="Texture" id=40]
+[ext_resource path="res://Sprites/SpritesFinais/Letras/Eac.png" type="Texture" id=41]
+[ext_resource path="res://Sprites/SpritesFinais/Letras/Aac.png" type="Texture" id=42]
+[ext_resource path="res://Sprites/SpritesFinais/Letras/Aac3.png" type="Texture" id=43]
+[ext_resource path="res://Sprites/SpritesFinais/Letras/Iac.png" type="Texture" id=44]
+[ext_resource path="res://Sprites/SpritesFinais/Letras/Uac.png" type="Texture" id=45]
+[ext_resource path="res://Sprites/SpritesFinais/Letras/Oac3.png" type="Texture" id=46]
 
 [sub_resource type="DynamicFont" id=1]
 size = 80
@@ -496,6 +507,193 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Ã" type="KinematicBody2D" parent="Letras"]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 1465.13, 421.436 )
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_group_": true
+}
+isLetraAcentuada = true
+
+[node name="TextureButton" type="TextureButton" parent="Letras/Ã"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture_normal = ExtResource( 42 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Á" type="KinematicBody2D" parent="Letras"]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 1465.13, 421.436 )
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_group_": true
+}
+isLetraAcentuada = true
+
+[node name="TextureButton" type="TextureButton" parent="Letras/Á"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture_normal = ExtResource( 36 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Â" type="KinematicBody2D" parent="Letras"]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 1465.13, 421.436 )
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_group_": true
+}
+isLetraAcentuada = true
+
+[node name="TextureButton" type="TextureButton" parent="Letras/Â"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture_normal = ExtResource( 43 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Ç" type="KinematicBody2D" parent="Letras"]
+modulate = Color( 0.345098, 0.396078, 0.309804, 1 )
+position = Vector2( 1465.13, 421.436 )
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_group_": true
+}
+isLetraAcentuada = true
+
+[node name="TextureButton" type="TextureButton" parent="Letras/Ç"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture_normal = ExtResource( 39 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="É" type="KinematicBody2D" parent="Letras"]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 1465.13, 421.436 )
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_group_": true
+}
+isLetraAcentuada = true
+
+[node name="TextureButton" type="TextureButton" parent="Letras/É"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture_normal = ExtResource( 41 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Ê" type="KinematicBody2D" parent="Letras"]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 1465.13, 421.436 )
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_group_": true
+}
+isLetraAcentuada = true
+
+[node name="TextureButton" type="TextureButton" parent="Letras/Ê"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture_normal = ExtResource( 37 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Í" type="KinematicBody2D" parent="Letras"]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 1465.13, 421.436 )
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_group_": true
+}
+isLetraAcentuada = true
+
+[node name="TextureButton" type="TextureButton" parent="Letras/Í"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture_normal = ExtResource( 44 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Õ" type="KinematicBody2D" parent="Letras"]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 1465.13, 421.436 )
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_group_": true
+}
+isLetraAcentuada = true
+
+[node name="TextureButton" type="TextureButton" parent="Letras/Õ"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture_normal = ExtResource( 40 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Ó" type="KinematicBody2D" parent="Letras"]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 1465.13, 421.436 )
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_group_": true
+}
+isLetraAcentuada = true
+
+[node name="TextureButton" type="TextureButton" parent="Letras/Ó"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture_normal = ExtResource( 38 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Ô" type="KinematicBody2D" parent="Letras"]
+modulate = Color( 1, 0, 0, 1 )
+position = Vector2( 1465.13, 421.436 )
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_group_": true
+}
+isLetraAcentuada = true
+
+[node name="TextureButton" type="TextureButton" parent="Letras/Ô"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture_normal = ExtResource( 46 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Ú" type="KinematicBody2D" parent="Letras"]
+modulate = Color( 1, 0, 0, 1 )
+position = Vector2( 1465.13, 421.436 )
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_group_": true
+}
+isLetraAcentuada = true
+
+[node name="TextureButton" type="TextureButton" parent="Letras/Ú"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture_normal = ExtResource( 45 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Palavras" type="Node2D" parent="."]
 visible = false
 
@@ -605,6 +803,39 @@ __meta__ = {
 [connection signal="mouse_entered" from="Letras/Z" to="Letras/Z/TextureButton" method="_on_A_mouse_entered"]
 [connection signal="mouse_exited" from="Letras/Z" to="Letras/Z/TextureButton" method="_on_A_mouse_exited"]
 [connection signal="pressed" from="Letras/Z/TextureButton" to="Letras/Z" method="_on_TextureButton_pressed"]
+[connection signal="mouse_entered" from="Letras/Ã" to="Letras/Ã/TextureButton" method="_on_A_mouse_entered"]
+[connection signal="mouse_exited" from="Letras/Ã" to="Letras/Ã/TextureButton" method="_on_A_mouse_exited"]
+[connection signal="pressed" from="Letras/Ã/TextureButton" to="Letras/Ã" method="_on_TextureButton_pressed"]
+[connection signal="mouse_entered" from="Letras/Á" to="Letras/Á/TextureButton" method="_on_A_mouse_entered"]
+[connection signal="mouse_exited" from="Letras/Á" to="Letras/Á/TextureButton" method="_on_A_mouse_exited"]
+[connection signal="pressed" from="Letras/Á/TextureButton" to="Letras/Á" method="_on_TextureButton_pressed"]
+[connection signal="mouse_entered" from="Letras/Â" to="Letras/Â/TextureButton" method="_on_A_mouse_entered"]
+[connection signal="mouse_exited" from="Letras/Â" to="Letras/Â/TextureButton" method="_on_A_mouse_exited"]
+[connection signal="pressed" from="Letras/Â/TextureButton" to="Letras/Â" method="_on_TextureButton_pressed"]
+[connection signal="mouse_entered" from="Letras/Ç" to="Letras/Ç/TextureButton" method="_on_A_mouse_entered"]
+[connection signal="mouse_exited" from="Letras/Ç" to="Letras/Ç/TextureButton" method="_on_A_mouse_exited"]
+[connection signal="pressed" from="Letras/Ç/TextureButton" to="Letras/Ç" method="_on_TextureButton_pressed"]
+[connection signal="mouse_entered" from="Letras/É" to="Letras/É/TextureButton" method="_on_A_mouse_entered"]
+[connection signal="mouse_exited" from="Letras/É" to="Letras/É/TextureButton" method="_on_A_mouse_exited"]
+[connection signal="pressed" from="Letras/É/TextureButton" to="Letras/É" method="_on_TextureButton_pressed"]
+[connection signal="mouse_entered" from="Letras/Ê" to="Letras/Ê/TextureButton" method="_on_A_mouse_entered"]
+[connection signal="mouse_exited" from="Letras/Ê" to="Letras/Ê/TextureButton" method="_on_A_mouse_exited"]
+[connection signal="pressed" from="Letras/Ê/TextureButton" to="Letras/Ê" method="_on_TextureButton_pressed"]
+[connection signal="mouse_entered" from="Letras/Í" to="Letras/Í/TextureButton" method="_on_A_mouse_entered"]
+[connection signal="mouse_exited" from="Letras/Í" to="Letras/Í/TextureButton" method="_on_A_mouse_exited"]
+[connection signal="pressed" from="Letras/Í/TextureButton" to="Letras/Í" method="_on_TextureButton_pressed"]
+[connection signal="mouse_entered" from="Letras/Õ" to="Letras/Õ/TextureButton" method="_on_A_mouse_entered"]
+[connection signal="mouse_exited" from="Letras/Õ" to="Letras/Õ/TextureButton" method="_on_A_mouse_exited"]
+[connection signal="pressed" from="Letras/Õ/TextureButton" to="Letras/Õ" method="_on_TextureButton_pressed"]
+[connection signal="mouse_entered" from="Letras/Ó" to="Letras/Ó/TextureButton" method="_on_A_mouse_entered"]
+[connection signal="mouse_exited" from="Letras/Ó" to="Letras/Ó/TextureButton" method="_on_A_mouse_exited"]
+[connection signal="pressed" from="Letras/Ó/TextureButton" to="Letras/Ó" method="_on_TextureButton_pressed"]
+[connection signal="mouse_entered" from="Letras/Ô" to="Letras/Ô/TextureButton" method="_on_A_mouse_entered"]
+[connection signal="mouse_exited" from="Letras/Ô" to="Letras/Ô/TextureButton" method="_on_A_mouse_exited"]
+[connection signal="pressed" from="Letras/Ô/TextureButton" to="Letras/Ô" method="_on_TextureButton_pressed"]
+[connection signal="mouse_entered" from="Letras/Ú" to="Letras/Ú/TextureButton" method="_on_A_mouse_entered"]
+[connection signal="mouse_exited" from="Letras/Ú" to="Letras/Ú/TextureButton" method="_on_A_mouse_exited"]
+[connection signal="pressed" from="Letras/Ú/TextureButton" to="Letras/Ú" method="_on_TextureButton_pressed"]
 [connection signal="mouse_entered" from="Palavras/Palavra1" to="Palavras/Palavra1/TextureButton" method="_on_A_mouse_entered"]
 [connection signal="mouse_exited" from="Palavras/Palavra1" to="Palavras/Palavra1/TextureButton" method="_on_A_mouse_exited"]
 [connection signal="pressed" from="Palavras/Palavra1/TextureButton" to="Palavras/Palavra1" method="_on_TextureButton_pressed"]
