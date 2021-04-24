@@ -423,7 +423,7 @@ __meta__ = {
 }
 
 [node name="U" type="KinematicBody2D" parent="Letras"]
-modulate = Color( 0.537255, 0.537255, 0.498039, 1 )
+modulate = Color( 0.611765, 0.611765, 0.572549, 1 )
 position = Vector2( 498.406, 228.856 )
 scale = Vector2( 1.42478, 0.560001 )
 script = ExtResource( 8 )
