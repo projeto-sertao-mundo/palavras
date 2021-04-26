@@ -18,6 +18,9 @@ func _process(delta):
 			instanceLetraPalavra($"/root/Global".letraInstanceRef, nome)
 		else:
 			instanceLetraPalavra($"/root/Global".palavraInstanceRef, nome)
+		
+		if !Input.is_action_pressed("Click") && palavrasParentesco.has_node(nome) && !$"/root/Global".podeSetar:
+			palavrasParentesco.get_node(nome).free()
 
 func instanceLetraPalavra(var ref, var nome):
 	if !palavrasParentesco.has_node(nome) && mouseIn && Input.is_action_pressed("Click"):
@@ -32,9 +35,6 @@ func instanceLetraPalavra(var ref, var nome):
 		palavraInstanciada = palavrasParentesco.get_node(nome)
 		palavraInstanciada.set_position(get_viewport().get_mouse_position())
 		palavraInstanciada.visible = true
-
-	if !Input.is_action_pressed("Click") && palavrasParentesco.has_node(nome) && !$"/root/Global".podeSetar:
-		palavrasParentesco.get_node(nome).free()
 
 
 func _on_TextureButton_mouse_entered():
