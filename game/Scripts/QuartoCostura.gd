@@ -58,6 +58,8 @@ func _on_Verde_pressed():
 func _on_Recomecar_pressed():
 	MudarCor(1,1,1)
 	get_node("CosturaPopUp/Preview").get_node("Label").text = ""
+	numeroCaracteres = 0
+	print("rodei")
 
 func _on_Area2D_area_entered(area):
 	set_process(true)

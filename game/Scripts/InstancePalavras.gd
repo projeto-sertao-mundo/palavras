@@ -29,7 +29,7 @@ func InstanciarPalavras():
 				letraInstanciada.isLetraAcentuada = true
 				self.get_node("Letras").get_node("GridLetrasAcentuadas").add_child(letraInstanciada)
 				letraInstanciada.texture_normal = letraRefAc.sprite
-				letraInstanciada.modulate = letraRefAc.cor
+				#letraInstanciada.modulate = letraRefAc.cor
 		
 		for letraRef in bolsaLetras:
 			if !get_node("Letras").has_node("GridLetras/"+letraRef.nome):
@@ -37,7 +37,7 @@ func InstanciarPalavras():
 				letraInstanciada.name = letraRef.nome
 				self.get_node("Letras").get_node("GridLetras").add_child(letraInstanciada)
 				letraInstanciada.texture_normal = letraRef.sprite
-				letraInstanciada.modulate = letraRef.cor
+				#letraInstanciada.modulate = letraRef.cor
 			
 		
 

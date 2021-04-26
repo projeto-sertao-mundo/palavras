@@ -246,6 +246,8 @@ __meta__ = {
 "_edit_group_": true,
 "_edit_use_anchors_": false
 }
+
+[node name="ArrastarParentesco" type="Node" parent="."]
 [connection signal="pressed" from="MaquinaCostura" to="." method="_on_MaquinaCostura_pressed"]
 [connection signal="pressed" from="Voltar2" to="." method="_on_Voltar2_pressed"]
 [connection signal="area_entered" from="CosturaPopUp/Preview/Area2D" to="." method="_on_Area2D_area_entered"]

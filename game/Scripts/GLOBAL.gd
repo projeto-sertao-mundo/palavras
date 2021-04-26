@@ -18,7 +18,7 @@ func adicionarItemBolsaLetra(var letra):
 	
 	letraNova.sprite = letra.get_child(0).texture_normal
 	letraNova.nome = letra.name
-	letraNova.cor = Color(letra.modulate.r, letra.modulate.g, letra.modulate.b)
+	#letraNova.cor = Color(letra.modulate.r, letra.modulate.g, letra.modulate.b)
 	
 	var letraNovaVector = [letraNova]
 	
@@ -29,7 +29,7 @@ func adicionarItemBolsaLetraAcentuada(var letra):
 	
 	letraNova.sprite = letra.get_child(0).texture_normal
 	letraNova.nome = letra.name
-	letraNova.cor = Color(letra.modulate.r, letra.modulate.g, letra.modulate.b)
+	#letraNova.cor = Color(letra.modulate.r, letra.modulate.g, letra.modulate.b)
 	
 	var letraNovaVector = [letraNova]
 	
