@@ -2,11 +2,11 @@
 
 [ext_resource path="res://Scripts/BuscaPalavras.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/Concepts/seta_.png" type="Texture" id=2]
-[ext_resource path="res://Sprites/Blocagem/Bolsa.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/SpritesFinais/ObetosCostura/Bolsa.png" type="Texture" id=3]
 [ext_resource path="res://Cenas/CenasPrefab/PalavrasPopUp.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Sprites/SpritesFinais/Letras/A.png" type="Texture" id=5]
 [ext_resource path="res://Scripts/InicializadorBuscaPalavras.gd" type="Script" id=6]
-[ext_resource path="res://Sprites/Cozinha refeita.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/SpritesFinais/Fundo cenas/Cozinha refeita.png" type="Texture" id=7]
 [ext_resource path="res://Scripts/Palavras.gd" type="Script" id=8]
 [ext_resource path="res://Sprites/SpritesFinais/Letras/B.png" type="Texture" id=9]
 [ext_resource path="res://Sprites/SpritesFinais/Letras/N.png" type="Texture" id=10]
@@ -64,10 +64,11 @@ texture = ExtResource( 7 )
 script = ExtResource( 6 )
 
 [node name="Bolsa" type="TextureButton" parent="."]
-margin_left = 1487.99
-margin_top = 791.991
-margin_right = 1591.99
-margin_bottom = 901.991
+margin_left = 1486.1
+margin_top = 748.573
+margin_right = 1647.1
+margin_bottom = 983.573
+rect_scale = Vector2( 0.6, 0.6 )
 texture_normal = ExtResource( 3 )
 __meta__ = {
 "_edit_group_": true,

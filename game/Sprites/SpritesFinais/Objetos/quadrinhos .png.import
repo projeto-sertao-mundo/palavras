@@ -1,0 +1,17 @@
+[remap]
+
+importer="texture_atlas"
+type="Texture"
+path="res://.import/quadrinhos .png-0dfc59512330666e5b10a448803aadff.res"
+group_file="res://Sprites/SpritesFinais/Atlas/Objetos.png"
+valid=true
+[deps]
+
+
+source_file="res://Sprites/SpritesFinais/Objetos/quadrinhos .png"
+dest_files=[ "res://.import/quadrinhos .png-0dfc59512330666e5b10a448803aadff.res" ]
+
+[params]
+
+atlas_file="res://Sprites/SpritesFinais/Atlas/Objetos.png"
+import_mode=0

@@ -1,0 +1,17 @@
+[remap]
+
+importer="texture_atlas"
+type="Texture"
+path="res://.import/slider botão.png-b1870c015ab89bc564b736995b85bc3a.res"
+group_file="res://Sprites/SpritesFinais/Atlas/Objetos.png"
+valid=true
+[deps]
+
+
+source_file="res://Sprites/SpritesFinais/Objetos/slider botão.png"
+dest_files=[ "res://.import/slider botão.png-b1870c015ab89bc564b736995b85bc3a.res" ]
+
+[params]
+
+atlas_file="res://Sprites/SpritesFinais/Atlas/Objetos.png"
+import_mode=0

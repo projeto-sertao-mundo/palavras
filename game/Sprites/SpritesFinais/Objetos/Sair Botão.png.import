@@ -1,0 +1,17 @@
+[remap]
+
+importer="texture_atlas"
+type="Texture"
+path="res://.import/Sair Botão.png-73b7cc879fb503973d223659cf0e1573.res"
+group_file="res://Sprites/SpritesFinais/Atlas/Objetos.png"
+valid=true
+[deps]
+
+
+source_file="res://Sprites/SpritesFinais/Objetos/Sair Botão.png"
+dest_files=[ "res://.import/Sair Botão.png-73b7cc879fb503973d223659cf0e1573.res" ]
+
+[params]
+
+atlas_file="res://Sprites/SpritesFinais/Atlas/Objetos.png"
+import_mode=0

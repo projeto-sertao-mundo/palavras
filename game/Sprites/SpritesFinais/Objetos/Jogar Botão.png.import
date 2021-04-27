@@ -1,0 +1,17 @@
+[remap]
+
+importer="texture_atlas"
+type="Texture"
+path="res://.import/Jogar Botão.png-1655b3fc69f998b8a9dd586c24fe7d04.res"
+group_file="res://Sprites/SpritesFinais/Atlas/Objetos.png"
+valid=true
+[deps]
+
+
+source_file="res://Sprites/SpritesFinais/Objetos/Jogar Botão.png"
+dest_files=[ "res://.import/Jogar Botão.png-1655b3fc69f998b8a9dd586c24fe7d04.res" ]
+
+[params]
+
+atlas_file="res://Sprites/SpritesFinais/Atlas/Objetos.png"
+import_mode=0

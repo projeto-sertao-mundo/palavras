@@ -3,7 +3,7 @@
 importer="texture_atlas"
 type="Texture"
 path="res://.import/J.png-1437e19f12370f60f3065e2d5803c297.res"
-group_file="res://Sprites/SpritesFinais/Atlas/.png"
+group_file="res://Sprites/SpritesFinais/Atlas/Letras.png"
 valid=true
 [deps]
 
@@ -13,5 +13,5 @@ dest_files=[ "res://.import/J.png-1437e19f12370f60f3065e2d5803c297.res" ]
 
 [params]
 
-atlas_file="res://Sprites/SpritesFinais/Atlas/.png"
+atlas_file="res://Sprites/SpritesFinais/Atlas/Letras.png"
 import_mode=0

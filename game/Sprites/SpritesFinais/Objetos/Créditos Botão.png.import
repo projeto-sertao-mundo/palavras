@@ -1,0 +1,17 @@
+[remap]
+
+importer="texture_atlas"
+type="Texture"
+path="res://.import/Créditos Botão.png-4a53165c7cb220f14296b260a32edac8.res"
+group_file="res://Sprites/SpritesFinais/Atlas/Objetos.png"
+valid=true
+[deps]
+
+
+source_file="res://Sprites/SpritesFinais/Objetos/Créditos Botão.png"
+dest_files=[ "res://.import/Créditos Botão.png-4a53165c7cb220f14296b260a32edac8.res" ]
+
+[params]
+
+atlas_file="res://Sprites/SpritesFinais/Atlas/Objetos.png"
+import_mode=0

@@ -1,10 +1,10 @@
 [gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Sprites/Blocagem/FundoBrancoBordaPreta.png" type="Texture" id=1]
-[ext_resource path="res://Sprites/Blocagem/Bolsa.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/SpritesFinais/ObetosCostura/Bolsa.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/SpritesFinais/Fundo cenas/Interface.png" type="Texture" id=3]
 [ext_resource path="res://Scripts/QuartoFrases.gd" type="Script" id=4]
 [ext_resource path="res://Cenas/CenasPrefab/PalavrasPopUp.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Sprites/Concepts/Interface.png" type="Texture" id=6]
 [ext_resource path="res://Sprites/Concepts/seta_.png" type="Texture" id=7]
 
 [node name="QuartoFrases" type="Node2D"]
@@ -17,8 +17,8 @@ __meta__ = {
 
 [node name="Interface" type="Sprite" parent="."]
 position = Vector2( 804.239, 454.735 )
-scale = Vector2( 0.416318, 0.416365 )
-texture = ExtResource( 6 )
+scale = Vector2( 0.835, 0.835 )
+texture = ExtResource( 3 )
 
 [node name="FundoFrases" type="Sprite" parent="."]
 position = Vector2( 805.076, 409.865 )
@@ -45,15 +45,13 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Bolsa" type="Button" parent="."]
-margin_left = 1371.09
-margin_top = 687.621
-margin_right = 1475.09
-margin_bottom = 797.621
-icon = ExtResource( 2 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="Bolsa" type="TextureButton" parent="."]
+margin_left = 1383.8
+margin_top = 649.48
+margin_right = 1544.8
+margin_bottom = 884.48
+rect_scale = Vector2( 0.6, 0.6 )
+texture_normal = ExtResource( 2 )
 
 [node name="Voltar" type="TextureButton" parent="."]
 margin_left = 129.841

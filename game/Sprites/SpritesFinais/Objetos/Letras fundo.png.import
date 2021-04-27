@@ -1,0 +1,17 @@
+[remap]
+
+importer="texture_atlas"
+type="Texture"
+path="res://.import/Letras fundo.png-1e8dc6f01c23ecab0b869f2b454ddf89.res"
+group_file="res://Sprites/SpritesFinais/Atlas/Objetos.png"
+valid=true
+[deps]
+
+
+source_file="res://Sprites/SpritesFinais/Objetos/Letras fundo.png"
+dest_files=[ "res://.import/Letras fundo.png-1e8dc6f01c23ecab0b869f2b454ddf89.res" ]
+
+[params]
+
+atlas_file="res://Sprites/SpritesFinais/Atlas/Objetos.png"
+import_mode=0
