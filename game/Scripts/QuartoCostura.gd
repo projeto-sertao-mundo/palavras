@@ -53,10 +53,12 @@ func _on_Azul_pressed():
 func _on_Vermelho_pressed():
 	MudarCor(0.635294, 0.152941, 0.07451)
 func _on_Verde_pressed():
-	MudarCor(0.32549, 0.580392, 0.337255)
+	MudarCor(0.007843, 0.505882, 0)
+func _on_Branco_pressed():
+	MudarCor(0.882353, 0.882353, 0.819608)
 
 func _on_Recomecar_pressed():
-	MudarCor(1,1,1)
+	MudarCor(0.882353, 0.882353, 0.819608)
 	get_node("CosturaPopUp/Preview").get_node("Label").text = ""
 	numeroCaracteres = 0
 	print("rodei")
@@ -72,10 +74,19 @@ func _on_Area2D_area_exited(area):
 	palavra = null
 
 func _on_Quadrado_pressed():
-	self.get_node("CosturaPopUp/Preview").texture = self.get_node("CosturaPopUp/Quadrado").texture_normal
+	self.get_node("CosturaPopUp/Preview").texture = self.get_node("CosturaPopUp/Formas/Quadrado").texture_normal
 
 func _on_Retangulo_pressed():
-	self.get_node("CosturaPopUp/Preview").texture = self.get_node("CosturaPopUp/Retangulo").texture_normal
+	self.get_node("CosturaPopUp/Preview").texture = self.get_node("CosturaPopUp/Formas/Retangulo").texture_normal
 
 func _on_Losango_pressed():
-	self.get_node("CosturaPopUp/Preview").texture = self.get_node("CosturaPopUp/Losango").texture_normal
+	self.get_node("CosturaPopUp/Preview").texture = self.get_node("CosturaPopUp/Formas/Losango").texture_normal
+
+func _on_Hexagono_pressed():
+	self.get_node("CosturaPopUp/Preview").texture = self.get_node("CosturaPopUp/Formas/Hexagono").texture_normal
+
+func _on_Circulo_pressed():
+	self.get_node("CosturaPopUp/Preview").texture = self.get_node("CosturaPopUp/Formas/Circulo").texture_normal
+
+func _on_RetanguloPe_pressed():
+	self.get_node("CosturaPopUp/Preview").texture = self.get_node("CosturaPopUp/Formas/RetanguloPe").texture_normal
