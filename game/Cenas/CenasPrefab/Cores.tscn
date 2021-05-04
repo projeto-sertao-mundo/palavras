@@ -5,6 +5,7 @@
 [node name="Button" type="TextureButton"]
 margin_right = 40.0
 margin_bottom = 40.0
+rect_scale = Vector2( 0.35, 0.35 )
 texture_normal = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false

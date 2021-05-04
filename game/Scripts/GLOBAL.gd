@@ -8,6 +8,14 @@ var firstSceneNode
 var podeSetar
 var palavraInstanceRef
 var letraInstanceRef
+var coresInstanceRef
+var corArrastada
+
+func mudarcorArrastada(var cor):
+	corArrastada = cor
+
+func returnCorArrastada():
+	return corArrastada
 
 func adicionarItemBolsaPalavra(var palavraR):
 	var palavraNova = [palavraR]
@@ -44,9 +52,10 @@ func retornarLetras():
 func retornarLetrasAcentuadas():
 	return bolsaLetraAcentuada
 
-func setarRefs(var palavras, var letras):
+func setarRefs(var palavras, var letras, var cores):
 	palavraInstanceRef = palavras
 	letraInstanceRef = letras
+	coresInstanceRef = cores
 
 class Letras:
 	var sprite

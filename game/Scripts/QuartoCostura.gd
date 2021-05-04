@@ -5,11 +5,14 @@ var numeroCaracteres = 0
 
 onready var letraInstance = preload("res://Cenas/CenasPrefab/BotaoLetra.tscn")
 onready var palavraInstance = preload("res://Cenas/CenasPrefab/BotaoPalavra.tscn")
+onready var coresInstance = preload ("res://Cenas/CenasPrefab/Cores.tscn")
+
+var caminho = "CosturaPopUp/Formas/HolderFormas" #PASTA DESTINO DOS SPRITES MUDAR!!!
 
 func _ready():
 	$"/root/Global".firstSceneNode = self
 	$"/root/Global".podeSetar = false
-	$"/root/Global".setarRefs(palavraInstance, letraInstance)
+	$"/root/Global".setarRefs(palavraInstance, letraInstance, coresInstance)
 
 func _process(delta):
 	
@@ -42,23 +45,9 @@ func _on_Voltar2_pressed():
 func MudarCor(var r, g, b):
 	get_node("CosturaPopUp/Preview").modulate = Color(r,g,b)
 
-func _on_None_pressed():
-	MudarCor(0.75, 0.14, 0.57)
-func _on_Roxo_pressed():
-	MudarCor(0.513726, 0.45098, 0.552941)
-func _on_Amarelo_pressed():
-	MudarCor(0.811765, 0.588235, 0.062745)
-func _on_Azul_pressed():
-	MudarCor(0.294118, 0.439216, 0.580392)
-func _on_Vermelho_pressed():
-	MudarCor(0.635294, 0.152941, 0.07451)
-func _on_Verde_pressed():
-	MudarCor(0.007843, 0.505882, 0)
-func _on_Branco_pressed():
-	MudarCor(0.882353, 0.882353, 0.819608)
-
 func _on_Recomecar_pressed():
-	MudarCor(0.882353, 0.882353, 0.819608)
+	get_node("CosturaPopUp/Preview/Miolo").modulate = Color(0.882353, 0.882353, 0.819608)
+	get_node("CosturaPopUp/Preview/Borda").modulate = Color(0.882353, 0.882353, 0.819608)
 	get_node("CosturaPopUp/Preview").get_node("Label").text = ""
 	numeroCaracteres = 0
 	print("rodei")
@@ -73,20 +62,24 @@ func _on_Area2D_area_exited(area):
 	$"/root/Global".podeSetar = false
 	palavra = null
 
+func mudarSprite(var nomeMiolo, var nomeBorda):
+	self.get_node("CosturaPopUp/Preview/Miolo").texture = self.get_node(caminho + "/" + nomeMiolo).texture
+	self.get_node("CosturaPopUp/Preview/Borda").texture = self.get_node(caminho + "/" + nomeBorda).texture
+
 func _on_Quadrado_pressed():
-	self.get_node("CosturaPopUp/Preview").texture = self.get_node("CosturaPopUp/Formas/Quadrado").texture_normal
+	mudarSprite("Quadrado Miolo","Quadrado Borda")
 
 func _on_Retangulo_pressed():
-	self.get_node("CosturaPopUp/Preview").texture = self.get_node("CosturaPopUp/Formas/Retangulo").texture_normal
+	mudarSprite("Retangulo Miolo","Retangulo Borda")
 
 func _on_Losango_pressed():
-	self.get_node("CosturaPopUp/Preview").texture = self.get_node("CosturaPopUp/Formas/Losango").texture_normal
+	mudarSprite("Losango Miolo","Losango Borda")
 
 func _on_Hexagono_pressed():
-	self.get_node("CosturaPopUp/Preview").texture = self.get_node("CosturaPopUp/Formas/Hexagono").texture_normal
+	mudarSprite("Hexagono Miolo","Hexagono Borda")
 
 func _on_Circulo_pressed():
-	self.get_node("CosturaPopUp/Preview").texture = self.get_node("CosturaPopUp/Formas/Circulo").texture_normal
+	mudarSprite("Circulo Miolo","Circulo Borda")
 
 func _on_RetanguloPe_pressed():
-	self.get_node("CosturaPopUp/Preview").texture = self.get_node("CosturaPopUp/Formas/RetanguloPe").texture_normal
+	mudarSprite("Retangulo De Pe Miolo","Retangulo De Pe Borda")
