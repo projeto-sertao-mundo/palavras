@@ -2,17 +2,21 @@ extends Node2D
 
 var palavra
 var numeroCaracteres = 0
+var numeroRetalhos = 0
+
+export (String) var SceneName
 
 onready var letraInstance = preload("res://Cenas/CenasPrefab/BotaoLetra.tscn")
 onready var palavraInstance = preload("res://Cenas/CenasPrefab/BotaoPalavra.tscn")
 onready var coresInstance = preload ("res://Cenas/CenasPrefab/Cores.tscn")
+onready var retalhosInstance = preload ("res://Cenas/CenasPrefab/Preview.tscn")
 
 var caminho = "CosturaPopUp/Formas/HolderFormas" #PASTA DESTINO DOS SPRITES MUDAR!!!
 
 func _ready():
 	$"/root/Global".firstSceneNode = self
 	$"/root/Global".podeSetar = false
-	$"/root/Global".setarRefs(palavraInstance, letraInstance, coresInstance)
+	$"/root/Global".setarRefs(palavraInstance, letraInstance, coresInstance, retalhosInstance)
 
 func _process(delta):
 	
@@ -50,7 +54,6 @@ func _on_Recomecar_pressed():
 	get_node("CosturaPopUp/Preview/Borda").modulate = Color(0.882353, 0.882353, 0.819608)
 	get_node("CosturaPopUp/Preview").get_node("Label").text = ""
 	numeroCaracteres = 0
-	print("rodei")
 
 func _on_Area2D_area_entered(area):
 	set_process(true)
@@ -83,3 +86,21 @@ func _on_Circulo_pressed():
 
 func _on_RetanguloPe_pressed():
 	mudarSprite("Retangulo De Pe Miolo","Retangulo De Pe Borda")
+
+func _on_Costurar_pressed():
+	
+	if numeroRetalhos < 9:
+		var previewRef = self.get_node("CosturaPopUp/Preview")
+		var spriteBorda = previewRef.get_node("Borda").texture
+		var spriteMiolo = previewRef.get_node("Miolo").texture
+		var corBorda = previewRef.get_node("Borda").modulate
+		var corMiolo = previewRef.get_node("Miolo").modulate
+		var label = previewRef.get_node("Label").text
+		numeroRetalhos += 1
+		
+		$"/root/Global".criarRetalho(corBorda, corMiolo, spriteBorda, spriteMiolo, label)
+		get_node("CosturaPopUp/Preview/Miolo").modulate = Color(0.882353, 0.882353, 0.819608)
+		get_node("CosturaPopUp/Preview/Borda").modulate = Color(0.882353, 0.882353, 0.819608)
+		get_node("CosturaPopUp/Preview").get_node("Label").text = ""
+		numeroCaracteres = 0
+

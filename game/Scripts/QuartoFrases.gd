@@ -1,5 +1,7 @@
 extends Node2D
 
+export (String) var SceneName
+
 func _on_Frase1_pressed():
 	get_node("RetalhoPopUp").show()
 

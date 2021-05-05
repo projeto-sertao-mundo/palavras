@@ -4,7 +4,7 @@
 [ext_resource path="res://Sprites/Concepts/seta_.png" type="Texture" id=2]
 [ext_resource path="res://Scripts/InstancePalavras.gd" type="Script" id=3]
 [ext_resource path="res://Sprites/Concepts/artes da bag/quadro palavras separado.png" type="Texture" id=4]
-[ext_resource path="res://Sprites/Concepts/artes da bag/Retalhos Fundo separado.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/SpritesFinais/noAtlasObjects/Retalho fundo completo.png" type="Texture" id=5]
 [ext_resource path="res://Sprites/Blocagem/icon.png" type="Texture" id=6]
 [ext_resource path="res://Sprites/Concepts/quadrinhos .png" type="Texture" id=7]
 
@@ -20,21 +20,12 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ButtonLock" type="Control" parent="."]
-margin_left = -3454.0
-margin_top = -1515.0
-margin_right = 2741.0
-margin_bottom = 2076.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="ButtonPalavras" type="Button" parent="."]
 modulate = Color( 1, 1, 1, 0 )
-margin_left = 171.325
-margin_top = 4.97699
-margin_right = 328.325
-margin_bottom = 74.977
+margin_left = 171.0
+margin_top = -19.0
+margin_right = 328.0
+margin_bottom = 51.0
 icon = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -42,10 +33,10 @@ __meta__ = {
 
 [node name="ButtonLetras" type="Button" parent="."]
 modulate = Color( 1, 1, 1, 0 )
-margin_left = 25.3253
-margin_top = 5.97699
-margin_right = 159.325
-margin_bottom = 77.977
+margin_left = 12.0
+margin_top = -14.0
+margin_right = 154.0
+margin_bottom = 56.0
 icon = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -53,29 +44,32 @@ __meta__ = {
 
 [node name="ButtonRetalhos" type="Button" parent="."]
 modulate = Color( 1, 1, 1, 0 )
-margin_left = 339.325
-margin_top = 3.97699
-margin_right = 486.325
-margin_bottom = 73.977
+margin_left = 359.0
+margin_top = -13.0
+margin_right = 514.0
+margin_bottom = 57.0
 icon = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Retalhos" type="Sprite" parent="."]
-position = Vector2( 297.015, 278.619 )
-scale = Vector2( 0.3, 0.3 )
+position = Vector2( 299.004, 278.314 )
+scale = Vector2( 0.6, 0.6 )
 texture = ExtResource( 5 )
 
 [node name="GridRetalhos" type="GridContainer" parent="Retalhos"]
-margin_left = -966.87
-margin_top = -755.445
-margin_right = 905.13
-margin_bottom = 594.555
-custom_constants/vseparation = 8
-custom_constants/hseparation = 30
+margin_left = -326.0
+margin_top = -204.0
+margin_right = 290.0
+margin_bottom = 279.0
+grow_horizontal = 0
+grow_vertical = 0
+custom_constants/vseparation = 220
+custom_constants/hseparation = 250
 columns = 3
 __meta__ = {
+"_edit_group_": true,
 "_edit_use_anchors_": false
 }
 
@@ -132,6 +126,8 @@ __meta__ = {
 "_edit_group_": true,
 "_edit_use_anchors_": false
 }
+
+[node name="ParentControl" type="Node" parent="."]
 
 [node name="Voltar" type="TextureButton" parent="."]
 margin_left = 2.0

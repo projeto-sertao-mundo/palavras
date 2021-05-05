@@ -14,6 +14,7 @@ __meta__ = {
 "_edit_horizontal_guides_": [ 450.622, 745.111, 180.674 ],
 "_edit_vertical_guides_": [ 798.937, 489.346, 1121.74 ]
 }
+SceneName = "QuartoFrases"
 
 [node name="Interface" type="Sprite" parent="."]
 position = Vector2( 804.239, 454.735 )

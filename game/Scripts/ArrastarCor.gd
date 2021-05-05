@@ -35,11 +35,11 @@ func instanceCor(var ref, var nome):
 
 func on_TextureButton_mouse_entered():
 	mouseIn = true
-	set_process(true)
+	#set_process(true)
 
 func on_TextureButton_mouse_exited():
 	mouseIn = false
-	set_process(false)
+	#set_process(false)
 
 
 func _on_Verde_mouse_entered():

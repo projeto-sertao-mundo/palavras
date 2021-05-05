@@ -1,0 +1,46 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Fonts/xilosa_.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Sprites/SpritesFinais/noAtlasObjects/Retângulo Borda.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/SpritesFinais/noAtlasObjects/Retangulo Miolo.png" type="Texture" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 72.0968, 69.361 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 15
+font_data = ExtResource( 1 )
+
+[node name="Preview" type="Control"]
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Miolo" type="Sprite" parent="."]
+scale = Vector2( 0.22, 0.22 )
+texture = ExtResource( 3 )
+
+[node name="Borda" type="Sprite" parent="."]
+scale = Vector2( 0.22, 0.22 )
+texture = ExtResource( 2 )
+
+[node name="Area2D" type="Area2D" parent="."]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource( 1 )
+
+[node name="Label" type="Label" parent="."]
+modulate = Color( 0, 0, 0, 1 )
+margin_left = -45.0
+margin_top = -18.0
+margin_right = 45.0
+margin_bottom = 22.0
+custom_fonts/font = SubResource( 2 )
+align = 1
+valign = 1
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}

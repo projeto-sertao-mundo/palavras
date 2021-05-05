@@ -3,12 +3,7 @@ var foiClicado = false;
 
 func InstanciarPalavras():
 	var bolsa = []
-	var bolsaLetras = []
-	var bolsaLetrasAcentuadas = []
-	
 	bolsa = $"/root/Global".retornarPalavras()
-	bolsaLetras = $"/root/Global".retornarLetras()
-	bolsaLetrasAcentuadas = $"/root/Global".retornarLetrasAcentuadas()
 	
 	if get_child(6).name == "Palavras":
 		for textoPalavra in bolsa:
@@ -19,9 +14,13 @@ func InstanciarPalavras():
 				caminhoParentesco.add_child(palavraInstanciada)
 				palavraInstanciada.name = textoPalavra
 				palavraInstanciada.get_node("Label").text = textoPalavra
-		
 	elif get_child(6).name == "Letras":
-
+		
+		var bolsaLetrasAcentuadas = []
+		var bolsaLetras = []
+		bolsaLetras = $"/root/Global".retornarLetras()
+		bolsaLetrasAcentuadas = $"/root/Global".retornarLetrasAcentuadas()
+		
 		for letraRefAc in bolsaLetrasAcentuadas:
 			if !get_node("Letras").has_node("GridLetrasAcentuadas/"+letraRefAc.nome):
 				var letraInstanciada = $"/root/Global".letraInstanceRef.instance()
@@ -37,9 +36,20 @@ func InstanciarPalavras():
 				letraInstanciada.name = letraRef.nome
 				self.get_node("Letras").get_node("GridLetras").add_child(letraInstanciada)
 				letraInstanciada.texture_normal = letraRef.sprite
-				#letraInstanciada.modulate = letraRef.cor
-			
-		
+	elif get_child(6).name == "Retalhos":
+		var retalhos = []
+		retalhos = $"/root/Global".retornarRetalhos()
+		for retalhoRef in retalhos:
+			if !get_node("Retalhos").has_node("GridRetalhos/"+str(retalhoRef.codigo)):
+				var retalhoInstanciado = $"/root/Global".retalhoInstanceRef.instance()
+				retalhoInstanciado.name = str(retalhoRef.codigo)
+				retalhoInstanciado.get_node("Borda").modulate = retalhoRef.corBorda
+				retalhoInstanciado.get_node("Miolo").modulate = retalhoRef.corMiolo
+				retalhoInstanciado.get_node("Borda").texture = retalhoRef.spriteBorda
+				retalhoInstanciado.get_node("Miolo").texture = retalhoRef.spriteMiolo
+				retalhoInstanciado.get_node("Label").text = retalhoRef.labelText
+				self.get_node("Retalhos").get_node("GridRetalhos").add_child(retalhoInstanciado)
+
 
 func _on_Bolsa_pressed():
 	self.show()
@@ -59,3 +69,6 @@ func _on_ButtonRetalhos_pressed():
 
 func _on_Voltar_pressed():
 	self.hide()
+
+func _on_Costurar_pressed():
+	InstanciarPalavras()

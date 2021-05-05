@@ -3,13 +3,29 @@ extends Node
 var bolsa = []
 var bolsaLetra = []
 var bolsaLetraAcentuada = []
+var retalhos = []
+
 var aux = -1
-var firstSceneNode
 var podeSetar
+
+var firstSceneNode
+
 var palavraInstanceRef
 var letraInstanceRef
 var coresInstanceRef
+var retalhoInstanceRef
+
 var corArrastada
+
+var codigoRetalho = 0
+
+func criarRetalho(var corBorda, corMiolo, spriteBorda, spriteMiolo, texto):
+	codigoRetalho += 1
+	var retalhoNovo = [Costura.new(corBorda, corMiolo, spriteBorda, spriteMiolo, texto, codigoRetalho)]
+	retalhos += retalhoNovo
+
+func retornarRetalhos():
+	return retalhos
 
 func mudarcorArrastada(var cor):
 	corArrastada = cor
@@ -52,10 +68,11 @@ func retornarLetras():
 func retornarLetrasAcentuadas():
 	return bolsaLetraAcentuada
 
-func setarRefs(var palavras, var letras, var cores):
+func setarRefs(var palavras, var letras, var cores, var retalhos):
 	palavraInstanceRef = palavras
 	letraInstanceRef = letras
 	coresInstanceRef = cores
+	retalhoInstanceRef = retalhos
 
 class Letras:
 	var sprite

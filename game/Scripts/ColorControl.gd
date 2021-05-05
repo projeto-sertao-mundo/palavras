@@ -44,3 +44,6 @@ func MudarCor(var r, g, b):
 
 func _on_Recomecar_pressed():
 	corAnterior = Color(0.882353, 0.882353, 0.819608)
+
+func _on_Costurar_pressed():
+	corAnterior = Color(0.882353, 0.882353, 0.819608)

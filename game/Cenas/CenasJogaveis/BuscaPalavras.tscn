@@ -54,6 +54,7 @@ font_data = ExtResource( 34 )
 
 [node name="BuscaPalavras" type="Node2D"]
 script = ExtResource( 1 )
+SceneName = "BuscaPalavras"
 
 [node name="Cozinha" type="Sprite" parent="."]
 position = Vector2( 799.746, 451.378 )

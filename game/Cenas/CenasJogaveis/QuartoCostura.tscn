@@ -37,7 +37,7 @@
 [ext_resource path="res://Sprites/SpritesFinais/noAtlasObjects/Circulo Borda.png" type="Texture" id=35]
 [ext_resource path="res://Sprites/SpritesFinais/noAtlasObjects/Losango Borda.png" type="Texture" id=36]
 [ext_resource path="res://Scripts/ArrastarCor.gd" type="Script" id=37]
-[ext_resource path="res://Scripts/ColorControl.gd" type="Script" id=38]
+[ext_resource path="res://Scripts/ColorControl.gd" type="Script" id=39]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 72.0968, 69.361 )
@@ -48,6 +48,7 @@ font_data = ExtResource( 3 )
 
 [node name="QuartoCostura" type="Node2D"]
 script = ExtResource( 5 )
+SceneName = "QuartoCostura"
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 799.776, 450.077 )
@@ -77,6 +78,7 @@ __meta__ = {
 }
 
 [node name="CosturaPopUp" type="Control" parent="."]
+visible = false
 margin_left = -84.8948
 margin_top = 143.063
 margin_right = -84.8948
@@ -95,23 +97,18 @@ position = Vector2( 653.708, 93.2643 )
 scale = Vector2( 0.833891, 0.833891 )
 texture = ExtResource( 10 )
 
-[node name="FormatoRetalhos" type="Sprite" parent="CosturaPopUp"]
-position = Vector2( 304.977, 238.152 )
-scale = Vector2( 0.809819, 1.12881 )
-texture = ExtResource( 17 )
-
 [node name="Preview" type="Sprite" parent="CosturaPopUp"]
-position = Vector2( 584.798, 338.298 )
+position = Vector2( 571.464, 331.767 )
 
 [node name="Miolo" type="Sprite" parent="CosturaPopUp/Preview"]
 scale = Vector2( 0.42, 0.42 )
 texture = ExtResource( 26 )
-script = ExtResource( 38 )
+script = ExtResource( 39 )
 
 [node name="Borda" type="Sprite" parent="CosturaPopUp/Preview"]
 scale = Vector2( 0.4, 0.4 )
 texture = ExtResource( 25 )
-script = ExtResource( 38 )
+script = ExtResource( 39 )
 
 [node name="Area2D" type="Area2D" parent="CosturaPopUp/Preview"]
 
@@ -131,6 +128,11 @@ uppercase = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="FormatoRetalhos" type="Sprite" parent="CosturaPopUp"]
+position = Vector2( 304.977, 238.152 )
+scale = Vector2( 0.809819, 1.12881 )
+texture = ExtResource( 17 )
 
 [node name="Bolsa" type="TextureButton" parent="CosturaPopUp"]
 margin_left = 446.433
@@ -408,9 +410,13 @@ margin_bottom = -16.937
 [connection signal="area_exited" from="CosturaPopUp/Preview/Area2D" to="." method="_on_Area2D_area_exited"]
 [connection signal="pressed" from="CosturaPopUp/Bolsa" to="CosturaPopUp/PalavrasPopUp" method="_on_Bolsa_pressed"]
 [connection signal="pressed" from="CosturaPopUp/Voltar" to="." method="_on_Voltar_pressed"]
+[connection signal="pressed" from="CosturaPopUp/Costurar" to="CosturaPopUp/PalavrasPopUp" method="_on_Costurar_pressed"]
+[connection signal="pressed" from="CosturaPopUp/Costurar" to="." method="_on_Costurar_pressed"]
+[connection signal="pressed" from="CosturaPopUp/Costurar" to="CosturaPopUp/Preview/Miolo" method="_on_Costurar_pressed"]
+[connection signal="pressed" from="CosturaPopUp/Costurar" to="CosturaPopUp/Preview/Borda" method="_on_Costurar_pressed"]
+[connection signal="pressed" from="CosturaPopUp/Recomecar" to="." method="_on_Recomecar_pressed"]
 [connection signal="pressed" from="CosturaPopUp/Recomecar" to="CosturaPopUp/Preview/Miolo" method="_on_Recomecar_pressed"]
 [connection signal="pressed" from="CosturaPopUp/Recomecar" to="CosturaPopUp/Preview/Borda" method="_on_Recomecar_pressed"]
-[connection signal="pressed" from="CosturaPopUp/Recomecar" to="." method="_on_Recomecar_pressed"]
 [connection signal="mouse_entered" from="CosturaPopUp/Cor/Verde" to="CosturaPopUp/Cor/Verde" method="_on_Verde_mouse_entered"]
 [connection signal="mouse_exited" from="CosturaPopUp/Cor/Verde" to="CosturaPopUp/Cor/Verde" method="_on_Verde_mouse_exited"]
 [connection signal="mouse_entered" from="CosturaPopUp/Cor/Vermelho" to="CosturaPopUp/Cor/Vermelho" method="_on_Vermelho_mouse_entered"]
