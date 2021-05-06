@@ -6,7 +6,7 @@ onready var letra = preload("res://Cenas/CenasPrefab/BotaoLetra.tscn")
 onready var palavra = preload("res://Cenas/CenasPrefab/BotaoPalavra.tscn")
 
 func _on_Voltar_pressed():
-	get_tree().change_scene("res://Cenas/CenasMenu/Corredor.tscn")
+	var _cenaChanged = get_tree().change_scene("res://Cenas/CenasMenu/Corredor.tscn")
 
 func _on_Bolsa_pressed():
 	get_node("PalavrasPopUp").show()

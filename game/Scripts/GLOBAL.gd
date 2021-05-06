@@ -68,11 +68,11 @@ func retornarLetras():
 func retornarLetrasAcentuadas():
 	return bolsaLetraAcentuada
 
-func setarRefs(var palavras, var letras, var cores, var retalhos):
+func setarRefs(var palavras, var letras, var cores, var retalhosRef):
 	palavraInstanceRef = palavras
 	letraInstanceRef = letras
 	coresInstanceRef = cores
-	retalhoInstanceRef = retalhos
+	retalhoInstanceRef = retalhosRef
 
 class Letras:
 	var sprite

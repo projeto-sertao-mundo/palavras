@@ -18,7 +18,7 @@ func _ready():
 	$"/root/Global".podeSetar = false
 	$"/root/Global".setarRefs(palavraInstance, letraInstance, coresInstance, retalhosInstance)
 
-func _process(delta):
+func _process(_delta):
 	
 	if ($"/root/Global".podeSetar && !Input.is_action_pressed("Click") && palavra.name.length() > 1 && !palavra.isLetraAcentuada):
 		if numeroCaracteres <= 15:
@@ -44,7 +44,7 @@ func _on_Voltar_pressed():
 	get_node("CosturaPopUp").hide()
 
 func _on_Voltar2_pressed():
-	get_tree().change_scene("res://Cenas/CenasMenu/Corredor.tscn")
+	var _cenaChanged = get_tree().change_scene("res://Cenas/CenasMenu/Corredor.tscn")
 
 func MudarCor(var r, g, b):
 	get_node("CosturaPopUp/Preview").modulate = Color(r,g,b)
@@ -60,7 +60,7 @@ func _on_Area2D_area_entered(area):
 	$"/root/Global".podeSetar = true
 	palavra = area.get_parent()
 
-func _on_Area2D_area_exited(area):
+func _on_Area2D_area_exited(_area):
 	set_process(false)
 	$"/root/Global".podeSetar = false
 	palavra = null

@@ -12,9 +12,9 @@ func _ready():
 	bolsaNode = get_parent().get_parent().get_node("Bolsa")
 	movimento = (get_parent().get_parent().get_node("Bolsa").get_rect().position - self.position).normalized()
 
-func _process(delta):
+func _process(_delta):
 	if  bolsaNode.get_rect().position.distance_to(self.position) > 50:
-		move_and_slide(movimento * velocidade)
+		var _ignore = move_and_slide(movimento * velocidade)
 	else:
 		if isLetraAcentuada:
 			$"/root/Global".adicionarItemBolsaLetraAcentuada(self)

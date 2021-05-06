@@ -3,7 +3,7 @@ extends Sprite
 var setado = false
 var corAnterior = Color(0.882353, 0.882353, 0.819608)
 
-func _process(delta):
+func _process(_delta):
 	var cor = $"/root/Global".returnCorArrastada()
 	
 	if is_pixel_opaque(get_local_mouse_position()) && cor != null:

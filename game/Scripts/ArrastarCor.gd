@@ -10,7 +10,7 @@ func _ready():
 	#primeiroNode = $"/root/Global".firstSceneNode
 	corParentesco = self.get_parent().get_node("CoresParent")
 
-func _process(delta):
+func _process(_delta):
 	var nome = self.name
 	instanceCor($"/root/Global".coresInstanceRef, nome)
 	if !Input.is_action_pressed("Click") && corParentesco.has_node(nome) && !$"/root/Global".podeSetar:

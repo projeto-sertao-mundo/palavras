@@ -6,7 +6,7 @@ func _on_Jogar_pressed():
 	ChangeScene()
 
 func ChangeScene():
-	get_tree().change_scene(path)
+	var _cenaChanged = get_tree().change_scene(path)
 
 func _on_Creditos_pressed():
 	get_node("CreditosPopUP").show()

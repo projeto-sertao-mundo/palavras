@@ -10,7 +10,7 @@ func _ready():
 	primeiroNode = $"/root/Global".firstSceneNode
 	palavrasParentesco = primeiroNode.get_node("ArrastarParentesco")
 
-func _process(delta):
+func _process(_delta):
 	if (primeiroNode.name == "QuartoCostura"):
 		var nome = self.name
 		
@@ -39,8 +39,14 @@ func instanceLetraPalavra(var ref, var nome):
 
 func _on_TextureButton_mouse_entered():
 	mouseIn = true
-	set_process(true)
+	#set_process(true)
 
 func _on_TextureButton_mouse_exited():
 	mouseIn = false
-	set_process(false)
+	#set_process(false)
+
+func _on_Button_pressed():
+	pass 
+
+func _on_TextureButton_pressed():
+	pass
