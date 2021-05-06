@@ -101,6 +101,6 @@ func _on_Costurar_pressed():
 		$"/root/Global".criarRetalho(corBorda, corMiolo, spriteBorda, spriteMiolo, label)
 		get_node("CosturaPopUp/Preview/Miolo").modulate = Color(0.882353, 0.882353, 0.819608)
 		get_node("CosturaPopUp/Preview/Borda").modulate = Color(0.882353, 0.882353, 0.819608)
-		get_node("CosturaPopUp/Preview").get_node("Label").text = ""
+		get_node("CosturaPopUp/Preview/Label").text = ""
 		numeroCaracteres = 0
 

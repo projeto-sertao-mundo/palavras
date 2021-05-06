@@ -7,7 +7,7 @@ var corParentesco
 export var isLetraAcentuada = false
 
 func _ready():
-	#primeiroNode = $"/root/Global".firstSceneNode
+	primeiroNode = $"/root/Global".firstSceneNode
 	corParentesco = self.get_parent().get_node("CoresParent")
 
 func _process(_delta):
@@ -26,7 +26,6 @@ func instanceCor(var ref, var nome):
 			corInstanciada.texture_normal = self.texture_normal
 			$"/root/Global".mudarcorArrastada(corInstanciada)
 			#corInstanciada.modulate = Color(self.modulate.r, self.modulate.g, self.modulate.b)
-	
 	if corParentesco.has_node(nome) && Input.is_action_pressed("Click"):
 		corInstanciada = corParentesco.get_node(nome)
 		corInstanciada.set_position(get_viewport().get_mouse_position())

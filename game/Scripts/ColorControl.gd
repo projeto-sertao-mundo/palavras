@@ -8,6 +8,7 @@ func _process(_delta):
 	
 	if is_pixel_opaque(get_local_mouse_position()) && cor != null:
 		var corAux = Color(0.882353, 0.882353, 0.819608)
+		
 		if cor.name == "Verde":
 			MudarCor(0.007843, 0.505882, 0)
 			corAux = Color(0.007843, 0.505882, 0)
@@ -26,16 +27,14 @@ func _process(_delta):
 		elif cor.name == "Branco":
 			MudarCor(0.882353, 0.882353, 0.819608)
 			corAux = Color(0.882353, 0.882353, 0.819608)
-		
 		if !Input.is_action_pressed("Click"):
 			setado = true
 			cor.free()
 			corAnterior = Color(corAux)
 		else:
 			setado = false
-		
 	
-	if !setado && !Input.is_action_pressed("Click") || !is_pixel_opaque(get_local_mouse_position()) && setado == false:
+	if !is_pixel_opaque(get_local_mouse_position()) && !setado:
 		self.modulate = corAnterior
 
 
