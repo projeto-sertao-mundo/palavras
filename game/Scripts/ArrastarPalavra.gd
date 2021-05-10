@@ -5,6 +5,7 @@ var primeiroNode
 var palavraInstanciada
 var palavrasParentesco
 export var isLetraAcentuada = false
+export var isRetalho = false;
 
 func _ready():
 	primeiroNode = $"/root/Global".firstSceneNode
@@ -14,13 +15,15 @@ func _process(_delta):
 	if (primeiroNode.name == "QuartoCostura"):
 		var nome = self.name
 		
-		if (nome.length() == 1 || self.isLetraAcentuada):
+		if ((nome.length() == 1 && !isRetalho) || self.isLetraAcentuada):
 			instanceLetraPalavra($"/root/Global".letraInstanceRef, nome)
-		else:
-			instanceLetraPalavra($"/root/Global".palavraInstanceRef, nome)
+		#else:
+		#	instanceLetraPalavra($"/root/Global".palavraInstanceRef, nome)
 		
 		if !Input.is_action_pressed("Click") && palavrasParentesco.has_node(nome) && !$"/root/Global".podeSetar:
 			palavrasParentesco.get_node(nome).free()
+
+
 
 func instanceLetraPalavra(var ref, var nome):
 	if !palavrasParentesco.has_node(nome) && mouseIn && Input.is_action_pressed("Click"):

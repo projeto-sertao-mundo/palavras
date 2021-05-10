@@ -58,14 +58,26 @@ func _on_Bolsa_pressed():
 func _on_ButtonPalavras_pressed():
 	move_child(get_node("Palavras"), 6)
 	InstanciarPalavras()
+	get_node("Retalhos/GridRetalhos").hide()
+	get_node("Palavras/GridPalavras").show()
+	get_node("Letras/GridLetras").hide()
+	get_node("Letras/GridLetrasAcentuadas").hide()
 
 func _on_ButtonLetras_pressed():
 	move_child(get_node("Letras"), 6)
 	InstanciarPalavras()
+	get_node("Retalhos/GridRetalhos").hide()
+	get_node("Palavras/GridPalavras").hide()
+	get_node("Letras/GridLetras").show()
+	get_node("Letras/GridLetrasAcentuadas").show()
 
 func _on_ButtonRetalhos_pressed():
 	move_child(get_node("Retalhos"), 6)
 	InstanciarPalavras()
+	get_node("Retalhos/GridRetalhos").show()
+	get_node("Palavras/GridPalavras").hide()
+	get_node("Letras/GridLetras").hide()
+	get_node("Letras/GridLetrasAcentuadas").hide()
 
 func _on_Voltar_pressed():
 	self.hide()

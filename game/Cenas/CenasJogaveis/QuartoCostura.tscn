@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=2]
+[gd_scene load_steps=44 format=2]
 
 [ext_resource path="res://Sprites/SpritesFinais/ObetosCostura/Losango Botão.png" type="Texture" id=1]
 [ext_resource path="res://Sprites/SpritesFinais/Fundo cenas/quarto de costura refeito.png" type="Texture" id=2]
@@ -37,7 +37,9 @@
 [ext_resource path="res://Sprites/SpritesFinais/noAtlasObjects/Circulo Borda.png" type="Texture" id=35]
 [ext_resource path="res://Sprites/SpritesFinais/noAtlasObjects/Losango Borda.png" type="Texture" id=36]
 [ext_resource path="res://Scripts/ArrastarCor.gd" type="Script" id=37]
+[ext_resource path="res://Sprites/Blocagem/FundoBrancoBordaPreta.png" type="Texture" id=38]
 [ext_resource path="res://Scripts/ColorControl.gd" type="Script" id=39]
+[ext_resource path="res://Scripts/Lixeira.gd" type="Script" id=40]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 72.0968, 69.361 )
@@ -46,14 +48,23 @@ extents = Vector2( 72.0968, 69.361 )
 size = 25
 font_data = ExtResource( 3 )
 
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 247.434, 400.43 )
+
 [node name="QuartoCostura" type="Node2D"]
 script = ExtResource( 5 )
-SceneName = "QuartoCostura"
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 799.776, 450.077 )
 scale = Vector2( 0.833667, 0.832008 )
 texture = ExtResource( 2 )
+
+[node name="Lixeira" type="Sprite" parent="."]
+modulate = Color( 0.886275, 0.0745098, 0.0745098, 1 )
+position = Vector2( 801.31, 700.061 )
+scale = Vector2( 0.213809, 0.205062 )
+texture = ExtResource( 38 )
+script = ExtResource( 40 )
 
 [node name="MaquinaCostura" type="TextureButton" parent="."]
 margin_left = 966.631
@@ -78,7 +89,6 @@ __meta__ = {
 }
 
 [node name="CosturaPopUp" type="Control" parent="."]
-visible = false
 margin_left = -84.8948
 margin_top = 143.063
 margin_right = -84.8948
@@ -397,13 +407,19 @@ position = Vector2( -62.8754, 427.458 )
 texture = ExtResource( 29 )
 
 [node name="PalavrasPopUp" parent="CosturaPopUp" instance=ExtResource( 6 )]
-visible = false
 margin_left = 1020.41
 margin_top = -16.937
 margin_right = 1020.41
 margin_bottom = -16.937
 
 [node name="ArrastarParentesco" type="Node" parent="."]
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2( 801.31, 700.061 )
+scale = Vector2( 0.213809, 0.205062 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource( 3 )
 [connection signal="pressed" from="MaquinaCostura" to="." method="_on_MaquinaCostura_pressed"]
 [connection signal="pressed" from="Voltar2" to="." method="_on_Voltar2_pressed"]
 [connection signal="area_entered" from="CosturaPopUp/Preview/Area2D" to="." method="_on_Area2D_area_entered"]
@@ -412,11 +428,11 @@ margin_bottom = -16.937
 [connection signal="pressed" from="CosturaPopUp/Voltar" to="." method="_on_Voltar_pressed"]
 [connection signal="pressed" from="CosturaPopUp/Costurar" to="CosturaPopUp/PalavrasPopUp" method="_on_Costurar_pressed"]
 [connection signal="pressed" from="CosturaPopUp/Costurar" to="." method="_on_Costurar_pressed"]
-[connection signal="pressed" from="CosturaPopUp/Costurar" to="CosturaPopUp/Preview/Miolo" method="_on_Costurar_pressed"]
 [connection signal="pressed" from="CosturaPopUp/Costurar" to="CosturaPopUp/Preview/Borda" method="_on_Costurar_pressed"]
+[connection signal="pressed" from="CosturaPopUp/Costurar" to="CosturaPopUp/Preview/Miolo" method="_on_Costurar_pressed"]
 [connection signal="pressed" from="CosturaPopUp/Recomecar" to="." method="_on_Recomecar_pressed"]
-[connection signal="pressed" from="CosturaPopUp/Recomecar" to="CosturaPopUp/Preview/Miolo" method="_on_Recomecar_pressed"]
 [connection signal="pressed" from="CosturaPopUp/Recomecar" to="CosturaPopUp/Preview/Borda" method="_on_Recomecar_pressed"]
+[connection signal="pressed" from="CosturaPopUp/Recomecar" to="CosturaPopUp/Preview/Miolo" method="_on_Recomecar_pressed"]
 [connection signal="mouse_entered" from="CosturaPopUp/Cor/Verde" to="CosturaPopUp/Cor/Verde" method="_on_Verde_mouse_entered"]
 [connection signal="mouse_exited" from="CosturaPopUp/Cor/Verde" to="CosturaPopUp/Cor/Verde" method="_on_Verde_mouse_exited"]
 [connection signal="mouse_entered" from="CosturaPopUp/Cor/Vermelho" to="CosturaPopUp/Cor/Vermelho" method="_on_Vermelho_mouse_entered"]
@@ -435,3 +451,5 @@ margin_bottom = -16.937
 [connection signal="pressed" from="CosturaPopUp/Formas/RetanguloPe" to="." method="_on_RetanguloPe_pressed"]
 [connection signal="pressed" from="CosturaPopUp/Formas/Retangulo" to="." method="_on_Retangulo_pressed"]
 [connection signal="pressed" from="CosturaPopUp/Formas/Losango" to="." method="_on_Losango_pressed"]
+[connection signal="area_entered" from="Area2D" to="Lixeira" method="_on_Area2D_area_entered"]
+[connection signal="area_exited" from="Area2D" to="Lixeira" method="_on_Area2D_area_exited"]

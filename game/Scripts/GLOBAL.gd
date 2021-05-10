@@ -17,6 +17,8 @@ var retalhoInstanceRef
 
 var corArrastada
 
+var retalhoArrastado
+
 var codigoRetalho = 0
 
 func criarRetalho(var corBorda, corMiolo, spriteBorda, spriteMiolo, texto):
@@ -26,6 +28,17 @@ func criarRetalho(var corBorda, corMiolo, spriteBorda, spriteMiolo, texto):
 
 func retornarRetalhos():
 	return retalhos
+
+func mudarRetalhoArrastado (var retalho):
+	retalhoArrastado = retalho
+
+func returnRetalhoArrastado():
+	return retalhoArrastado
+
+func deleteRetalhoArrastado():
+	for ret in retalhos:
+		if str(ret.codigo) == retalhoArrastado.name:
+			retalhos.erase(ret)
 
 func mudarcorArrastada(var cor):
 	corArrastada = cor
