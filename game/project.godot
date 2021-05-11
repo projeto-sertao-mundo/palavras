@@ -48,5 +48,4 @@ Click={
 [rendering]
 
 quality/driver/driver_name="GLES2"
-quality/depth/hdr=false
 environment/default_environment="res://default_env.tres"
