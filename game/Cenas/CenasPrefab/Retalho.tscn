@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Fonts/xilosa_.ttf" type="DynamicFontData" id=1]
-[ext_resource path="res://Sprites/SpritesFinais/noAtlasObjects/Retângulo Borda.png" type="Texture" id=2]
-[ext_resource path="res://Sprites/SpritesFinais/noAtlasObjects/Retangulo Miolo.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/SpritesFinais/noAtlasObjects/Retângulo Borda Textura.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/SpritesFinais/noAtlasObjects/Retangulo Miolo Textura.png" type="Texture" id=3]
 [ext_resource path="res://Scripts/ArrastarRetalho.gd" type="Script" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
