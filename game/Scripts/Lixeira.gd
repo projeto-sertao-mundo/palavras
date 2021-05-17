@@ -35,11 +35,9 @@ func instanceRetalhos():
 			costuraPopUpNode.get_node("Retalhos").get_node("GridRetalhos").add_child(retalhoInstanciado)
 	
 
-func _on_Area2D_area_entered(area):
+func _on_Area2D_area_entered(_area):
 	mouseIn = true
-	print("kek")
 	set_process(true)
-func _on_Area2D_area_exited(area):
+func _on_Area2D_area_exited(_area):
 	mouseIn = false
-	print("kek")
 	set_process(false)

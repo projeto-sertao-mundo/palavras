@@ -1,20 +1,19 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Sprites/Concepts/Letras fundo.png" type="Texture" id=1]
 [ext_resource path="res://Sprites/Concepts/seta_.png" type="Texture" id=2]
 [ext_resource path="res://Scripts/InstancePalavras.gd" type="Script" id=3]
 [ext_resource path="res://Sprites/Concepts/artes da bag/quadro palavras separado.png" type="Texture" id=4]
 [ext_resource path="res://Sprites/SpritesFinais/noAtlasObjects/Retalho fundo completo.png" type="Texture" id=5]
-[ext_resource path="res://Sprites/Blocagem/icon.png" type="Texture" id=6]
 [ext_resource path="res://Sprites/Concepts/quadrinhos .png" type="Texture" id=7]
 
 [node name="PalavrasPopUp" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 20.0226
-margin_top = 36.0407
+margin_top = 37.0407
 margin_right = 20.0227
-margin_bottom = 36.0408
+margin_bottom = 37.0408
 script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -28,7 +27,6 @@ margin_left = 171.0
 margin_top = -19.0
 margin_right = 328.0
 margin_bottom = 51.0
-icon = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -39,7 +37,6 @@ margin_left = 12.0
 margin_top = -14.0
 margin_right = 154.0
 margin_bottom = 56.0
-icon = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -47,10 +44,9 @@ __meta__ = {
 [node name="ButtonRetalhos" type="Button" parent="."]
 modulate = Color( 1, 1, 1, 0 )
 margin_left = 359.0
-margin_top = -13.0
+margin_top = -15.0
 margin_right = 514.0
-margin_bottom = 57.0
-icon = ExtResource( 6 )
+margin_bottom = 55.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -62,9 +58,9 @@ texture = ExtResource( 5 )
 
 [node name="GridRetalhos" type="GridContainer" parent="Retalhos"]
 margin_left = -326.0
-margin_top = -204.0
+margin_top = -200.667
 margin_right = 290.0
-margin_bottom = 279.0
+margin_bottom = 282.333
 grow_horizontal = 0
 grow_vertical = 0
 custom_constants/vseparation = 220

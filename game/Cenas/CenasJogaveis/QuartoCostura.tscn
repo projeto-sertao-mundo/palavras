@@ -37,7 +37,7 @@
 [ext_resource path="res://Sprites/SpritesFinais/noAtlasObjects/Quadrado Miolo Textura.png" type="Texture" id=35]
 [ext_resource path="res://Sprites/SpritesFinais/noAtlasObjects/Retângulo Borda Textura.png" type="Texture" id=36]
 [ext_resource path="res://Scripts/ArrastarCor.gd" type="Script" id=37]
-[ext_resource path="res://Sprites/Blocagem/FundoBrancoBordaPreta.png" type="Texture" id=38]
+[ext_resource path="res://icon.png" type="Texture" id=38]
 [ext_resource path="res://Scripts/ColorControl.gd" type="Script" id=39]
 [ext_resource path="res://Scripts/Lixeira.gd" type="Script" id=40]
 
@@ -60,10 +60,11 @@ scale = Vector2( 0.833667, 0.832008 )
 texture = ExtResource( 2 )
 
 [node name="Lixeira" type="Sprite" parent="."]
-modulate = Color( 0.886275, 0.0745098, 0.0745098, 1 )
-position = Vector2( 801.31, 700.061 )
-scale = Vector2( 0.213809, 0.205062 )
+modulate = Color( 1, 0, 0, 1 )
+position = Vector2( 803.983, 706.297 )
+scale = Vector2( 1.80072, 2.79424 )
 texture = ExtResource( 38 )
+normal_map = ExtResource( 38 )
 script = ExtResource( 40 )
 
 [node name="MaquinaCostura" type="TextureButton" parent="."]
@@ -89,6 +90,7 @@ __meta__ = {
 }
 
 [node name="CosturaPopUp" type="Control" parent="."]
+visible = false
 margin_left = -84.8948
 margin_top = 143.063
 margin_right = -84.8948
@@ -406,6 +408,7 @@ position = Vector2( -62.8754, 427.458 )
 texture = ExtResource( 30 )
 
 [node name="PalavrasPopUp" parent="CosturaPopUp" instance=ExtResource( 6 )]
+visible = false
 margin_left = 1020.41
 margin_top = -16.937
 margin_right = 1020.41

@@ -12,8 +12,8 @@ __meta__ = {
 }
 
 [node name="corredor" type="Sprite" parent="."]
-position = Vector2( 800.812, 451.781 )
-scale = Vector2( 0.832, 0.835 )
+position = Vector2( 801.61, 451.377 )
+scale = Vector2( 1.66662, 1.67019 )
 texture = ExtResource( 4 )
 
 [node name="Label" type="Label" parent="."]

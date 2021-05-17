@@ -1,0 +1,17 @@
+[remap]
+
+importer="texture_atlas"
+type="Texture"
+path="res://.import/retalho cinco.png-dec188681be5d711e2235b6fc173c002.res"
+group_file="res://Sprites/SpritesFinais/Atlas/AtlasFrases.png"
+valid=true
+[deps]
+
+
+source_file="res://Sprites/SpritesFinais/Frases/retalho cinco.png"
+dest_files=[ "res://.import/retalho cinco.png-dec188681be5d711e2235b6fc173c002.res" ]
+
+[params]
+
+atlas_file="res://Sprites/SpritesFinais/Atlas/AtlasFrases.png"
+import_mode=0

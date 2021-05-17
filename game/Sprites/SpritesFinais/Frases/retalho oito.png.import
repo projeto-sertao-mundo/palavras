@@ -1,0 +1,17 @@
+[remap]
+
+importer="texture_atlas"
+type="Texture"
+path="res://.import/retalho oito.png-07388852ae36a586350bb4af6ebbf8a7.res"
+group_file="res://Sprites/SpritesFinais/Atlas/AtlasFrases.png"
+valid=true
+[deps]
+
+
+source_file="res://Sprites/SpritesFinais/Frases/retalho oito.png"
+dest_files=[ "res://.import/retalho oito.png-07388852ae36a586350bb4af6ebbf8a7.res" ]
+
+[params]
+
+atlas_file="res://Sprites/SpritesFinais/Atlas/AtlasFrases.png"
+import_mode=0

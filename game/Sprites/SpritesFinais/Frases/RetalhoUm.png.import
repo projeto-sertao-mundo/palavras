@@ -1,0 +1,17 @@
+[remap]
+
+importer="texture_atlas"
+type="Texture"
+path="res://.import/RetalhoUm.png-fa283ca6f75c7bb30f5dc40ca017f62b.res"
+group_file="res://Sprites/SpritesFinais/Atlas/AtlasFrases.png"
+valid=true
+[deps]
+
+
+source_file="res://Sprites/SpritesFinais/Frases/RetalhoUm.png"
+dest_files=[ "res://.import/RetalhoUm.png-fa283ca6f75c7bb30f5dc40ca017f62b.res" ]
+
+[params]
+
+atlas_file="res://Sprites/SpritesFinais/Atlas/AtlasFrases.png"
+import_mode=0

@@ -1,0 +1,17 @@
+[remap]
+
+importer="texture_atlas"
+type="Texture"
+path="res://.import/RetalhoQuatro.png-f233b87e3bdcde8719ee840b08d968ea.res"
+group_file="res://Sprites/SpritesFinais/Atlas/AtlasFrases.png"
+valid=true
+[deps]
+
+
+source_file="res://Sprites/SpritesFinais/Frases/RetalhoQuatro.png"
+dest_files=[ "res://.import/RetalhoQuatro.png-f233b87e3bdcde8719ee840b08d968ea.res" ]
+
+[params]
+
+atlas_file="res://Sprites/SpritesFinais/Atlas/AtlasFrases.png"
+import_mode=0
