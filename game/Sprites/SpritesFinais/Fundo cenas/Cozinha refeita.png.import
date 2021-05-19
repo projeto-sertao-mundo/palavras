@@ -1,34 +1,17 @@
 [remap]
 
-importer="texture"
-type="StreamTexture"
-path="res://.import/Cozinha refeita.png-b8c8bd08382ad5433290978f76b751fa.stex"
-metadata={
-"vram_texture": false
-}
-
+importer="texture_atlas"
+type="Texture"
+path="res://.import/Cozinha refeita.png-b8c8bd08382ad5433290978f76b751fa.res"
+group_file="res://Sprites/SpritesFinais/Atlas/FundoCenas.png"
+valid=true
 [deps]
 
+
 source_file="res://Sprites/SpritesFinais/Fundo cenas/Cozinha refeita.png"
-dest_files=[ "res://.import/Cozinha refeita.png-b8c8bd08382ad5433290978f76b751fa.stex" ]
+dest_files=[ "res://.import/Cozinha refeita.png-b8c8bd08382ad5433290978f76b751fa.res" ]
 
 [params]
 
-compress/mode=0
-compress/lossy_quality=0.7
-compress/hdr_mode=0
-compress/bptc_ldr=0
-compress/normal_map=0
-flags/repeat=0
-flags/filter=true
-flags/mipmaps=false
-flags/anisotropic=false
-flags/srgb=2
-process/fix_alpha_border=true
-process/premult_alpha=false
-process/HDR_as_SRGB=false
-process/invert_color=false
-stream=false
-size_limit=0
-detect_3d=true
-svg/scale=1.0
+atlas_file="res://Sprites/SpritesFinais/Atlas/FundoCenas.png"
+import_mode=0

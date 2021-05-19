@@ -1,0 +1,17 @@
+[remap]
+
+importer="texture_atlas"
+type="Texture"
+path="res://.import/Retângulo Borda Textura.png-47edbd30e910bab95cc2ae95e2f52034.res"
+group_file="res://Sprites/SpritesFinais/Atlas/Costura.png"
+valid=true
+[deps]
+
+
+source_file="res://Sprites/SpritesFinais/ObetosCostura/Retângulo Borda Textura.png"
+dest_files=[ "res://.import/Retângulo Borda Textura.png-47edbd30e910bab95cc2ae95e2f52034.res" ]
+
+[params]
+
+atlas_file="res://Sprites/SpritesFinais/Atlas/Costura.png"
+import_mode=0

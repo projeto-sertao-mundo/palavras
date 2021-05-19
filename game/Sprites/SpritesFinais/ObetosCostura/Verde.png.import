@@ -1,0 +1,17 @@
+[remap]
+
+importer="texture_atlas"
+type="Texture"
+path="res://.import/Verde.png-33fa347d76d771dffeddfba3f87e7fe0.res"
+group_file="res://Sprites/SpritesFinais/Atlas/Costura.png"
+valid=true
+[deps]
+
+
+source_file="res://Sprites/SpritesFinais/ObetosCostura/Verde.png"
+dest_files=[ "res://.import/Verde.png-33fa347d76d771dffeddfba3f87e7fe0.res" ]
+
+[params]
+
+atlas_file="res://Sprites/SpritesFinais/Atlas/Costura.png"
+import_mode=0

@@ -1,0 +1,17 @@
+[remap]
+
+importer="texture_atlas"
+type="Texture"
+path="res://.import/Retalho fundo completo.png-97358c25b06d94489f93ce30b149092d.res"
+group_file="res://Sprites/SpritesFinais/Atlas/Costura.png"
+valid=true
+[deps]
+
+
+source_file="res://Sprites/SpritesFinais/ObetosCostura/Retalho fundo completo.png"
+dest_files=[ "res://.import/Retalho fundo completo.png-97358c25b06d94489f93ce30b149092d.res" ]
+
+[params]
+
+atlas_file="res://Sprites/SpritesFinais/Atlas/Costura.png"
+import_mode=0

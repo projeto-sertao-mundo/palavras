@@ -2,8 +2,8 @@
 
 [ext_resource path="res://Fonts/xilosa_.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Scripts/ArrastarRetalho.gd" type="Script" id=2]
-[ext_resource path="res://Sprites/SpritesFinais/noAtlasObjects/Quadrado Borda Textura.png" type="Texture" id=3]
-[ext_resource path="res://Sprites/SpritesFinais/noAtlasObjects/Quadrado Miolo Textura.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/SpritesFinais/ObetosCostura/Quadrado Borda Textura.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/SpritesFinais/ObetosCostura/Quadrado Miolo Textura.png" type="Texture" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 72.0968, 69.361 )
@@ -19,11 +19,13 @@ __meta__ = {
 }
 
 [node name="Miolo" type="Sprite" parent="."]
-scale = Vector2( 0.35, 0.35 )
+position = Vector2( -0.396867, 1.5874 )
+scale = Vector2( 0.731968, 0.808582 )
 texture = ExtResource( 4 )
 
 [node name="Borda" type="Sprite" parent="."]
-scale = Vector2( 0.35, 0.35 )
+position = Vector2( -0.793713, 1.19055 )
+scale = Vector2( 0.621351, 0.652189 )
 texture = ExtResource( 3 )
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -47,9 +49,12 @@ __meta__ = {
 
 [node name="TextureButton" type="TextureButton" parent="."]
 margin_left = -71.0
-margin_top = -64.0
-margin_right = 69.0
+margin_top = -45.0
+margin_right = 44.0
 margin_bottom = 64.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="mouse_entered" from="." to="." method="_on_Preview_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_Preview_mouse_exited"]
 [connection signal="mouse_entered" from="TextureButton" to="." method="_on_TextureButton_mouse_entered"]

@@ -1,0 +1,17 @@
+[remap]
+
+importer="texture_atlas"
+type="Texture"
+path="res://.import/Hexagono Miolo Textura.png-b9eaf73ee57dd20d47fef75598f585d1.res"
+group_file="res://Sprites/SpritesFinais/Atlas/Costura.png"
+valid=true
+[deps]
+
+
+source_file="res://Sprites/SpritesFinais/ObetosCostura/Hexagono Miolo Textura.png"
+dest_files=[ "res://.import/Hexagono Miolo Textura.png-b9eaf73ee57dd20d47fef75598f585d1.res" ]
+
+[params]
+
+atlas_file="res://Sprites/SpritesFinais/Atlas/Costura.png"
+import_mode=0

@@ -1,18 +1,23 @@
 [gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Cenas/CenasPrefab/Frases.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Sprites/SpritesFinais/ObetosCostura/Bolsa.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/SpritesFinais/noAtlasObjects/Bolsa.png" type="Texture" id=2]
 [ext_resource path="res://Sprites/SpritesFinais/Fundo cenas/Interface.png" type="Texture" id=3]
 [ext_resource path="res://Scripts/QuartoFrases.gd" type="Script" id=4]
 [ext_resource path="res://Cenas/CenasPrefab/PalavrasPopUp.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Sprites/SpritesFinais/Frases/RetalhoTres.png" type="Texture" id=6]
-[ext_resource path="res://Sprites/Concepts/seta_.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/SpritesFinais/noAtlasObjects/seta.png" type="Texture" id=7]
 [ext_resource path="res://Sprites/SpritesFinais/Frases/RetalhoQuatro.png" type="Texture" id=8]
 [ext_resource path="res://Sprites/SpritesFinais/Frases/RetalhoDois.png" type="Texture" id=9]
 [ext_resource path="res://Sprites/SpritesFinais/Frases/retalho cinco.png" type="Texture" id=10]
 [ext_resource path="res://Sprites/SpritesFinais/Frases/retalho seis.png" type="Texture" id=11]
 [ext_resource path="res://Sprites/SpritesFinais/Frases/retalho sete.png" type="Texture" id=12]
 [ext_resource path="res://Sprites/SpritesFinais/Frases/retalho oito.png" type="Texture" id=13]
+
+
+
+
+
 
 [node name="QuartoFrases" type="Node2D"]
 position = Vector2( -4.48987, -4.48981 )
@@ -24,8 +29,8 @@ __meta__ = {
 SceneName = "QuartoFrases"
 
 [node name="Interface" type="Sprite" parent="."]
-position = Vector2( 804.239, 454.735 )
-scale = Vector2( 0.835, 0.835 )
+position = Vector2( 804.517, 454.068 )
+scale = Vector2( 1.24962, 1.24647 )
 texture = ExtResource( 3 )
 
 [node name="Bolsa" type="TextureButton" parent="."]
@@ -40,11 +45,11 @@ __meta__ = {
 }
 
 [node name="Voltar" type="TextureButton" parent="."]
-margin_left = 130.0
-margin_top = 716.345
-margin_right = 376.0
-margin_bottom = 923.345
-rect_scale = Vector2( 0.6, 0.4 )
+margin_left = 126.224
+margin_top = 708.449
+margin_right = 249.224
+margin_bottom = 812.449
+rect_scale = Vector2( 1.2, 0.9 )
 texture_normal = ExtResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false

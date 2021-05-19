@@ -3,12 +3,12 @@
 [ext_resource path="res://Sprites/SpritesFinais/ObetosCostura/Losango Botão.png" type="Texture" id=1]
 [ext_resource path="res://Sprites/SpritesFinais/Fundo cenas/quarto de costura refeito.png" type="Texture" id=2]
 [ext_resource path="res://Fonts/xilosa_.ttf" type="DynamicFontData" id=3]
-[ext_resource path="res://Sprites/SpritesFinais/noAtlasObjects/Vermelho.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/SpritesFinais/ObetosCostura/Vermelho.png" type="Texture" id=4]
 [ext_resource path="res://Scripts/QuartoCostura.gd" type="Script" id=5]
 [ext_resource path="res://Cenas/CenasPrefab/PalavrasPopUp.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Sprites/Concepts/seta_.png" type="Texture" id=7]
-[ext_resource path="res://Sprites/SpritesFinais/Objetos/Maquina de Costura.png" type="Texture" id=8]
-[ext_resource path="res://Sprites/SpritesFinais/noAtlasObjects/Verde.png" type="Texture" id=9]
+[ext_resource path="res://Sprites/SpritesFinais/noAtlasObjects/seta.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/SpritesFinais/ObetosCostura/Maquina de Costura.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/SpritesFinais/ObetosCostura/Verde.png" type="Texture" id=9]
 [ext_resource path="res://Sprites/SpritesFinais/ObetosCostura/Lata copiar.png" type="Texture" id=10]
 [ext_resource path="res://Sprites/SpritesFinais/ObetosCostura/Descartar.png" type="Texture" id=11]
 [ext_resource path="res://Sprites/SpritesFinais/ObetosCostura/Fundo.png" type="Texture" id=12]
@@ -17,32 +17,32 @@
 [ext_resource path="res://Sprites/SpritesFinais/ObetosCostura/Azul.png" type="Texture" id=15]
 [ext_resource path="res://Sprites/SpritesFinais/ObetosCostura/Amarelo.png" type="Texture" id=16]
 [ext_resource path="res://Sprites/SpritesFinais/ObetosCostura/Caixa.png" type="Texture" id=17]
-[ext_resource path="res://Sprites/SpritesFinais/ObetosCostura/Bolsa.png" type="Texture" id=18]
+[ext_resource path="res://Sprites/SpritesFinais/noAtlasObjects/Bolsa.png" type="Texture" id=18]
 [ext_resource path="res://Sprites/SpritesFinais/ObetosCostura/Quadrado Botão.png" type="Texture" id=19]
 [ext_resource path="res://Sprites/SpritesFinais/ObetosCostura/Retângulo Botão.png" type="Texture" id=20]
-[ext_resource path="res://Sprites/SpritesFinais/noAtlasObjects/Branco.png" type="Texture" id=21]
-[ext_resource path="res://Sprites/SpritesFinais/noAtlasObjects/Circulo Botão.png" type="Texture" id=22]
-[ext_resource path="res://Sprites/SpritesFinais/noAtlasObjects/Hexagono Botão.png" type="Texture" id=23]
-[ext_resource path="res://Sprites/SpritesFinais/noAtlasObjects/RetanguloDePe Botão.png" type="Texture" id=24]
-[ext_resource path="res://Sprites/SpritesFinais/noAtlasObjects/Retangulo Miolo Textura.png" type="Texture" id=25]
-[ext_resource path="res://Sprites/SpritesFinais/noAtlasObjects/Losango Borda Textura.png" type="Texture" id=26]
-[ext_resource path="res://Sprites/SpritesFinais/noAtlasObjects/Hexagono Borda Textura.png" type="Texture" id=27]
-[ext_resource path="res://Sprites/SpritesFinais/noAtlasObjects/Losango Miolo Textura.png" type="Texture" id=28]
-[ext_resource path="res://Sprites/SpritesFinais/noAtlasObjects/RetanguloDePe Borda Textura.png" type="Texture" id=29]
-[ext_resource path="res://Sprites/SpritesFinais/noAtlasObjects/RetanguloDePe Miolo Textura.png" type="Texture" id=30]
-[ext_resource path="res://Sprites/SpritesFinais/noAtlasObjects/Circulo Miolo Textura.png" type="Texture" id=31]
-[ext_resource path="res://Sprites/SpritesFinais/noAtlasObjects/Quadrado Borda Textura.png" type="Texture" id=32]
-[ext_resource path="res://Sprites/SpritesFinais/noAtlasObjects/Hexagono Miolo Textura.png" type="Texture" id=33]
-[ext_resource path="res://Sprites/SpritesFinais/noAtlasObjects/Circulo Borda Textura.png" type="Texture" id=34]
-[ext_resource path="res://Sprites/SpritesFinais/noAtlasObjects/Quadrado Miolo Textura.png" type="Texture" id=35]
-[ext_resource path="res://Sprites/SpritesFinais/noAtlasObjects/Retângulo Borda Textura.png" type="Texture" id=36]
+[ext_resource path="res://Sprites/SpritesFinais/ObetosCostura/Branco.png" type="Texture" id=21]
+[ext_resource path="res://Sprites/SpritesFinais/ObetosCostura/Circulo Botão.png" type="Texture" id=22]
+[ext_resource path="res://Sprites/SpritesFinais/ObetosCostura/Hexagono Botão.png" type="Texture" id=23]
+[ext_resource path="res://Sprites/SpritesFinais/ObetosCostura/RetanguloDePe Botão.png" type="Texture" id=24]
+[ext_resource path="res://Sprites/SpritesFinais/ObetosCostura/Retangulo Miolo Textura.png" type="Texture" id=25]
+[ext_resource path="res://Sprites/SpritesFinais/ObetosCostura/Losango Borda Textura.png" type="Texture" id=26]
+[ext_resource path="res://Sprites/SpritesFinais/ObetosCostura/Hexagono Borda Textura.png" type="Texture" id=27]
+[ext_resource path="res://Sprites/SpritesFinais/ObetosCostura/Losango Miolo Textura.png" type="Texture" id=28]
+[ext_resource path="res://Sprites/SpritesFinais/ObetosCostura/RetanguloDePe Borda Textura.png" type="Texture" id=29]
+[ext_resource path="res://Sprites/SpritesFinais/ObetosCostura/RetanguloDePe Miolo Textura.png" type="Texture" id=30]
+[ext_resource path="res://Sprites/SpritesFinais/ObetosCostura/Circulo Miolo Textura.png" type="Texture" id=31]
+[ext_resource path="res://Sprites/SpritesFinais/ObetosCostura/Quadrado Borda Textura.png" type="Texture" id=32]
+[ext_resource path="res://Sprites/SpritesFinais/ObetosCostura/Hexagono Miolo Textura.png" type="Texture" id=33]
+[ext_resource path="res://Sprites/SpritesFinais/ObetosCostura/Circulo Borda Textura.png" type="Texture" id=34]
+[ext_resource path="res://Sprites/SpritesFinais/ObetosCostura/Quadrado Miolo Textura.png" type="Texture" id=35]
+[ext_resource path="res://Sprites/SpritesFinais/ObetosCostura/Retângulo Borda Textura.png" type="Texture" id=36]
 [ext_resource path="res://Scripts/ArrastarCor.gd" type="Script" id=37]
 [ext_resource path="res://icon.png" type="Texture" id=38]
 [ext_resource path="res://Scripts/ColorControl.gd" type="Script" id=39]
 [ext_resource path="res://Scripts/Lixeira.gd" type="Script" id=40]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 72.0968, 69.361 )
+extents = Vector2( 82.901, 76.4056 )
 
 [sub_resource type="DynamicFont" id=2]
 size = 25
@@ -55,8 +55,8 @@ extents = Vector2( 247.434, 400.43 )
 script = ExtResource( 5 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 799.776, 450.077 )
-scale = Vector2( 0.833667, 0.832008 )
+position = Vector2( 794.736, 445.037 )
+scale = Vector2( 1.25, 1.25 )
 texture = ExtResource( 2 )
 
 [node name="Lixeira" type="Sprite" parent="."]
@@ -68,22 +68,22 @@ normal_map = ExtResource( 38 )
 script = ExtResource( 40 )
 
 [node name="MaquinaCostura" type="TextureButton" parent="."]
-margin_left = 966.631
-margin_top = 352.002
-margin_right = 1469.63
-margin_bottom = 689.002
-rect_scale = Vector2( 0.4, 0.4 )
+margin_left = 978.772
+margin_top = 352.0
+margin_right = 1223.77
+margin_bottom = 521.0
+rect_scale = Vector2( 0.8, 0.8 )
 texture_normal = ExtResource( 8 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Voltar2" type="ToolButton" parent="."]
-margin_left = 19.0222
-margin_top = 799.658
-margin_right = 277.022
-margin_bottom = 1012.66
-rect_scale = Vector2( 0.6, 0.4 )
+margin_left = 27.591
+margin_top = 770.954
+margin_right = 162.591
+margin_bottom = 882.954
+rect_scale = Vector2( 1.2, 1 )
 icon = ExtResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -100,38 +100,41 @@ __meta__ = {
 }
 
 [node name="Sprite" type="Sprite" parent="CosturaPopUp"]
-position = Vector2( 477.289, 284.052 )
-scale = Vector2( 0.6, 0.6 )
+position = Vector2( 456.343, 265.153 )
+scale = Vector2( 1.09331, 1.06263 )
 texture = ExtResource( 12 )
 
 [node name="Cores" type="Sprite" parent="CosturaPopUp"]
-position = Vector2( 647.534, 82.6009 )
-scale = Vector2( 0.833891, 0.833891 )
+position = Vector2( 619.097, 105.859 )
+scale = Vector2( 0.717733, 0.659509 )
 texture = ExtResource( 10 )
 
 [node name="Preview" type="Sprite" parent="CosturaPopUp"]
-position = Vector2( 571.464, 331.767 )
+position = Vector2( 581.994, 310.343 )
 
 [node name="Miolo" type="Sprite" parent="CosturaPopUp/Preview"]
-scale = Vector2( 0.42, 0.42 )
+position = Vector2( -14.7178, 10.524 )
+scale = Vector2( 0.855766, 0.91189 )
 texture = ExtResource( 35 )
 script = ExtResource( 39 )
 
 [node name="Borda" type="Sprite" parent="CosturaPopUp/Preview"]
-scale = Vector2( 0.4, 0.4 )
+position = Vector2( -13.3847, 9.26406 )
+scale = Vector2( 0.731204, 0.747028 )
 texture = ExtResource( 32 )
 script = ExtResource( 39 )
 
 [node name="Area2D" type="Area2D" parent="CosturaPopUp/Preview"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CosturaPopUp/Preview/Area2D"]
+position = Vector2( -15, 10 )
 shape = SubResource( 1 )
 
 [node name="Label" type="Label" parent="CosturaPopUp/Preview"]
 modulate = Color( 0, 0, 0, 1 )
 margin_left = -75.0
 margin_top = -18.0
-margin_right = 70.0
+margin_right = 46.0
 margin_bottom = 22.0
 custom_fonts/font = SubResource( 2 )
 align = 1
@@ -142,15 +145,15 @@ __meta__ = {
 }
 
 [node name="FormatoRetalhos" type="Sprite" parent="CosturaPopUp"]
-position = Vector2( 304.977, 238.152 )
-scale = Vector2( 0.809819, 1.12881 )
+position = Vector2( 304.347, 217.993 )
+scale = Vector2( 0.8051, 1.02509 )
 texture = ExtResource( 17 )
 
 [node name="Bolsa" type="TextureButton" parent="CosturaPopUp"]
-margin_left = 446.433
-margin_top = 58.4856
-margin_right = 607.433
-margin_bottom = 293.486
+margin_left = 433.734
+margin_top = 39.4368
+margin_right = 596.734
+margin_bottom = 277.437
 rect_scale = Vector2( 0.5, 0.5 )
 texture_normal = ExtResource( 18 )
 __meta__ = {
@@ -158,30 +161,33 @@ __meta__ = {
 }
 
 [node name="Voltar" type="TextureButton" parent="CosturaPopUp"]
-margin_left = 181.512
-margin_top = 497.017
-margin_right = 427.512
-margin_bottom = 704.017
-rect_scale = Vector2( 0.494, 0.3 )
+margin_left = 198.379
+margin_top = 449.123
+margin_right = 321.379
+margin_bottom = 553.123
+rect_scale = Vector2( 0.9, 0.6 )
 texture_normal = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Costurar" type="TextureButton" parent="CosturaPopUp"]
-margin_left = 351.052
-margin_top = 483.603
-margin_right = 662.052
-margin_bottom = 632.603
-rect_scale = Vector2( 0.5, 0.5 )
+margin_left = 379.978
+margin_top = 446.202
+margin_right = 534.978
+margin_bottom = 520.202
+rect_scale = Vector2( 0.9, 0.9 )
 texture_normal = ExtResource( 14 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Recomecar" type="TextureButton" parent="CosturaPopUp"]
-margin_left = 552.632
-margin_top = 485.095
-margin_right = 863.632
-margin_bottom = 634.095
-rect_scale = Vector2( 0.5, 0.5 )
+margin_left = 542.921
+margin_top = 442.163
+margin_right = 697.921
+margin_bottom = 516.163
+rect_scale = Vector2( 0.9, 0.9 )
 texture_normal = ExtResource( 11 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -195,10 +201,10 @@ __meta__ = {
 }
 
 [node name="Vermelho" type="TextureButton" parent="CosturaPopUp/Cor"]
-margin_left = 631.218
-margin_top = 4.76372
-margin_right = 682.218
-margin_bottom = 56.7637
+margin_left = 602.677
+margin_top = 33.8993
+margin_right = 653.677
+margin_bottom = 85.8993
 rect_scale = Vector2( 0.8, 0.8 )
 texture_normal = ExtResource( 4 )
 script = ExtResource( 37 )
@@ -208,10 +214,10 @@ __meta__ = {
 }
 
 [node name="Verde" type="TextureButton" parent="CosturaPopUp/Cor"]
-margin_left = 636.403
-margin_top = 117.985
-margin_right = 688.403
-margin_bottom = 170.985
+margin_left = 602.511
+margin_top = 135.229
+margin_right = 654.511
+margin_bottom = 188.229
 rect_scale = Vector2( 0.8, 0.8 )
 texture_normal = ExtResource( 9 )
 script = ExtResource( 37 )
@@ -221,11 +227,11 @@ __meta__ = {
 }
 
 [node name="Azul" type="TextureButton" parent="CosturaPopUp/Cor"]
-margin_left = 580.687
-margin_top = 97.1691
-margin_right = 687.687
-margin_bottom = 206.169
-rect_scale = Vector2( 0.4, 0.4 )
+margin_left = 551.864
+margin_top = 108.297
+margin_right = 605.864
+margin_bottom = 163.297
+rect_scale = Vector2( 0.8, 0.8 )
 texture_normal = ExtResource( 15 )
 script = ExtResource( 37 )
 __meta__ = {
@@ -233,11 +239,11 @@ __meta__ = {
 }
 
 [node name="Amarelo" type="TextureButton" parent="CosturaPopUp/Cor"]
-margin_left = 688.231
-margin_top = 47.9576
-margin_right = 783.231
-margin_bottom = 145.958
-rect_scale = Vector2( 0.4, 0.4 )
+margin_left = 650.513
+margin_top = 67.7022
+margin_right = 698.513
+margin_bottom = 116.702
+rect_scale = Vector2( 0.8, 0.8 )
 texture_normal = ExtResource( 16 )
 script = ExtResource( 37 )
 __meta__ = {
@@ -245,11 +251,11 @@ __meta__ = {
 }
 
 [node name="Roxo" type="TextureButton" parent="CosturaPopUp/Cor"]
-margin_left = 578.811
-margin_top = 40.2807
-margin_right = 679.811
-margin_bottom = 143.281
-rect_scale = Vector2( 0.4, 0.4 )
+margin_left = 554.216
+margin_top = 63.0
+margin_right = 605.216
+margin_bottom = 115.0
+rect_scale = Vector2( 0.8, 0.8 )
 texture_normal = ExtResource( 13 )
 script = ExtResource( 37 )
 __meta__ = {
@@ -258,10 +264,10 @@ __meta__ = {
 }
 
 [node name="Branco" type="TextureButton" parent="CosturaPopUp/Cor"]
-margin_left = 684.0
-margin_top = 94.5903
-margin_right = 735.0
-margin_bottom = 146.59
+margin_left = 649.513
+margin_top = 111.834
+margin_right = 700.513
+margin_bottom = 163.834
 rect_scale = Vector2( 0.8, 0.8 )
 texture_normal = ExtResource( 21 )
 script = ExtResource( 37 )
@@ -280,66 +286,66 @@ __meta__ = {
 }
 
 [node name="Quadrado" type="TextureButton" parent="CosturaPopUp/Formas"]
-margin_left = 219.447
-margin_top = 80.656
-margin_right = 404.447
-margin_bottom = 251.656
-rect_scale = Vector2( 0.4, 0.4 )
+margin_left = 220.26
+margin_top = 81.0
+margin_right = 307.26
+margin_bottom = 161.0
+rect_scale = Vector2( 0.9, 0.9 )
 texture_normal = ExtResource( 19 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Hexagono" type="TextureButton" parent="CosturaPopUp/Formas"]
-margin_left = 231.564
-margin_top = 162.469
-margin_right = 397.564
-margin_bottom = 333.469
-rect_scale = Vector2( 0.4, 0.4 )
+margin_left = 218.141
+margin_top = 163.26
+margin_right = 301.141
+margin_bottom = 247.26
+rect_scale = Vector2( 0.9, 0.9 )
 texture_normal = ExtResource( 23 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Circulo" type="TextureButton" parent="CosturaPopUp/Formas"]
-margin_left = 312.752
-margin_top = 315.951
-margin_right = 478.752
-margin_bottom = 486.951
-rect_scale = Vector2( 0.4, 0.4 )
+margin_left = 318.04
+margin_top = 96.7737
+margin_right = 400.04
+margin_bottom = 180.774
+rect_scale = Vector2( 0.9, 0.9 )
 texture_normal = ExtResource( 22 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="RetanguloPe" type="TextureButton" parent="CosturaPopUp/Formas"]
-margin_left = 229.564
-margin_top = 297.064
-margin_right = 352.564
-margin_bottom = 500.064
-rect_scale = Vector2( 0.4, 0.4 )
+margin_left = 219.921
+margin_top = 256.683
+margin_right = 281.921
+margin_bottom = 358.683
+rect_scale = Vector2( 0.9, 0.9 )
 texture_normal = ExtResource( 24 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Retangulo" type="TextureButton" parent="CosturaPopUp/Formas"]
-margin_left = 289.549
-margin_top = 238.796
-margin_right = 559.549
-margin_bottom = 380.796
-rect_scale = Vector2( 0.35, 0.35 )
+margin_left = 288.74
+margin_top = 300.736
+margin_right = 405.74
+margin_bottom = 362.736
+rect_scale = Vector2( 0.9, 0.9 )
 texture_normal = ExtResource( 20 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Losango" type="TextureButton" parent="CosturaPopUp/Formas"]
-margin_left = 313.228
-margin_top = 84.4986
-margin_right = 528.228
-margin_bottom = 309.499
-rect_scale = Vector2( 0.4, 0.4 )
+margin_left = 306.7
+margin_top = 198.653
+margin_right = 400.7
+margin_bottom = 296.653
+rect_scale = Vector2( 0.9, 0.9 )
 texture_normal = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false

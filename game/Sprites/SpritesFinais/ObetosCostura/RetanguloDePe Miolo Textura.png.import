@@ -1,0 +1,17 @@
+[remap]
+
+importer="texture_atlas"
+type="Texture"
+path="res://.import/RetanguloDePe Miolo Textura.png-5ce6e7fac8ac2086a86181f7e888fb34.res"
+group_file="res://Sprites/SpritesFinais/Atlas/Costura.png"
+valid=true
+[deps]
+
+
+source_file="res://Sprites/SpritesFinais/ObetosCostura/RetanguloDePe Miolo Textura.png"
+dest_files=[ "res://.import/RetanguloDePe Miolo Textura.png-5ce6e7fac8ac2086a86181f7e888fb34.res" ]
+
+[params]
+
+atlas_file="res://Sprites/SpritesFinais/Atlas/Costura.png"
+import_mode=0

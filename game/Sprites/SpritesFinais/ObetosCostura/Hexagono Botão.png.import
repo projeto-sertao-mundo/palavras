@@ -1,0 +1,17 @@
+[remap]
+
+importer="texture_atlas"
+type="Texture"
+path="res://.import/Hexagono Botão.png-3c9e9504a14dc81233b79469eccaff46.res"
+group_file="res://Sprites/SpritesFinais/Atlas/Costura.png"
+valid=true
+[deps]
+
+
+source_file="res://Sprites/SpritesFinais/ObetosCostura/Hexagono Botão.png"
+dest_files=[ "res://.import/Hexagono Botão.png-3c9e9504a14dc81233b79469eccaff46.res" ]
+
+[params]
+
+atlas_file="res://Sprites/SpritesFinais/Atlas/Costura.png"
+import_mode=0

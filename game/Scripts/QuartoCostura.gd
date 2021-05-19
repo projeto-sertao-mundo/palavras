@@ -5,7 +5,7 @@ var numeroCaracteres = 0
 var numeroRetalhos = 0
 
 onready var letraInstance = preload("res://Cenas/CenasPrefab/BotaoLetra.tscn")
-onready var palavraInstance = preload("res://Cenas/CenasPrefab/BotaoPalavra.tscn")
+#onready var palavraInstance = preload("res://Cenas/CenasPrefab/BotaoPalavra.tscn")
 onready var coresInstance = preload ("res://Cenas/CenasPrefab/Cores.tscn")
 onready var retalhosInstance = preload ("res://Cenas/CenasPrefab/Preview.tscn")
 
@@ -14,16 +14,16 @@ var caminho = "CosturaPopUp/Formas/HolderFormas" #PASTA DESTINO DOS SPRITES MUDA
 func _ready():
 	$"/root/Global".firstSceneNode = self
 	$"/root/Global".podeSetar = false
-	$"/root/Global".setarRefs(palavraInstance, letraInstance, coresInstance, retalhosInstance)
+	$"/root/Global".setarRefs(null, letraInstance, coresInstance, retalhosInstance)
 
 func _process(_delta):
 	
-	if ($"/root/Global".podeSetar && !Input.is_action_pressed("Click") && palavra.name.length() > 1 && !palavra.isLetraAcentuada):
-		if numeroCaracteres <= 15:
-			MudarLabelPreview(palavra.get_node("Label").text)
-			$"/root/Global".podeSetar = false
-		palavra.free()
-	elif ($"/root/Global".podeSetar && !Input.is_action_pressed("Click") && palavra.name.length() == 1):
+#	if ($"/root/Global".podeSetar && !Input.is_action_pressed("Click") && palavra.name.length() > 1 && !palavra.isLetraAcentuada):
+#		if numeroCaracteres <= 15:
+#			MudarLabelPreview(palavra.get_node("Label").text)
+#			$"/root/Global".podeSetar = false
+#		palavra.free()
+	if ($"/root/Global".podeSetar && !Input.is_action_pressed("Click") && palavra.name.length() == 1):
 		if numeroCaracteres <= 10:
 			MudarLabelPreview(palavra.name)
 			$"/root/Global".podeSetar = false

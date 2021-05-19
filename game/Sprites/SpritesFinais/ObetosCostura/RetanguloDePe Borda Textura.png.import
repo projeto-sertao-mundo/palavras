@@ -1,0 +1,17 @@
+[remap]
+
+importer="texture_atlas"
+type="Texture"
+path="res://.import/RetanguloDePe Borda Textura.png-fb812e06e469fd59978e9c737f941efa.res"
+group_file="res://Sprites/SpritesFinais/Atlas/Costura.png"
+valid=true
+[deps]
+
+
+source_file="res://Sprites/SpritesFinais/ObetosCostura/RetanguloDePe Borda Textura.png"
+dest_files=[ "res://.import/RetanguloDePe Borda Textura.png-fb812e06e469fd59978e9c737f941efa.res" ]
+
+[params]
+
+atlas_file="res://Sprites/SpritesFinais/Atlas/Costura.png"
+import_mode=0
