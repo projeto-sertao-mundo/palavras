@@ -10,7 +10,7 @@ var podeSetar
 
 var firstSceneNode
 
-var palavraInstanceRef
+var morfemaInstanceRef
 var letraInstanceRef
 var coresInstanceRef
 var retalhoInstanceRef
@@ -81,8 +81,8 @@ func retornarLetras():
 func retornarLetrasAcentuadas():
 	return bolsaLetraAcentuada
 
-func setarRefs(var palavras, var letras, var cores, var retalhosRef):
-	palavraInstanceRef = palavras
+func setarRefs(var morfemas, var letras, var cores, var retalhosRef):
+	morfemaInstanceRef = morfemas
 	letraInstanceRef = letras
 	coresInstanceRef = cores
 	retalhoInstanceRef = retalhosRef

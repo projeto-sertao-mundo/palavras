@@ -1,10 +1,16 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=12 format=2]
 
-[ext_resource path="res://Sprites/SpritesFinais/noAtlasObjects/Quadro das letras leve.png" type="Texture" id=1]
-[ext_resource path="res://Sprites/SpritesFinais/noAtlasObjects/seta.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/SpritesFinais/Objetos/Quadro das letras leve.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/SpritesFinais/Objetos/seta.png" type="Texture" id=2]
 [ext_resource path="res://Scripts/InstancePalavras.gd" type="Script" id=3]
-[ext_resource path="res://Sprites/SpritesFinais/noAtlasObjects/Quadro dos morfemas leve.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/SpritesFinais/Objetos/Quadro dos morfemas leve.png" type="Texture" id=4]
 [ext_resource path="res://Sprites/SpritesFinais/ObetosCostura/Retalho fundo completo.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/SpritesFinais/Objetos/Zinho.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/SpritesFinais/Objetos/Dis.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/SpritesFinais/Objetos/Inha.png" type="Texture" id=8]
+[ext_resource path="res://Cenas/CenasPrefab/Morfemas.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Sprites/SpritesFinais/Objetos/Zinha.png" type="Texture" id=10]
+[ext_resource path="res://Sprites/SpritesFinais/Objetos/Inho.png" type="Texture" id=11]
 
 [node name="PalavrasPopUp" type="Control"]
 anchor_right = 1.0
@@ -72,7 +78,7 @@ __meta__ = {
 }
 
 [node name="Letras" type="Sprite" parent="."]
-position = Vector2( 297.015, 278.619 )
+position = Vector2( 291.022, 278.619 )
 scale = Vector2( 1.2, 1.2 )
 texture = ExtResource( 1 )
 
@@ -103,25 +109,56 @@ __meta__ = {
 }
 
 [node name="Palavras" type="Sprite" parent="."]
-visible = false
 position = Vector2( 305.024, 278.619 )
 scale = Vector2( 1.22994, 1.2 )
 texture = ExtResource( 4 )
 
-[node name="GridPalavras" type="GridContainer" parent="Palavras"]
-margin_left = -898.0
-margin_top = -658.0
-margin_right = 895.0
-margin_bottom = 669.0
-grow_horizontal = 0
-grow_vertical = 0
-custom_constants/vseparation = 61
-custom_constants/hseparation = 70
-columns = 3
-__meta__ = {
-"_edit_group_": true,
-"_edit_use_anchors_": false
-}
+[node name="Morfema" parent="Palavras" instance=ExtResource( 9 )]
+margin_left = -164.925
+margin_top = -141.741
+margin_right = -105.925
+margin_bottom = -115.741
+rect_scale = Vector2( 1.5, 1.5 )
+
+[node name="Morfema2" parent="Palavras" instance=ExtResource( 9 )]
+margin_left = 39.9506
+margin_top = -142.337
+margin_right = 98.9506
+margin_bottom = -116.337
+rect_scale = Vector2( 1.5, 1.5 )
+texture_normal = ExtResource( 7 )
+
+[node name="Morfema3" parent="Palavras" instance=ExtResource( 9 )]
+margin_left = -167.998
+margin_top = -56.6964
+margin_right = -108.998
+margin_bottom = -30.6964
+rect_scale = Vector2( 1.5, 1.5 )
+texture_normal = ExtResource( 8 )
+
+[node name="Morfema4" parent="Palavras" instance=ExtResource( 9 )]
+margin_left = 40.5321
+margin_top = -57.7464
+margin_right = 102.532
+margin_bottom = -27.7464
+rect_scale = Vector2( 1.5, 1.5 )
+texture_normal = ExtResource( 11 )
+
+[node name="Morfema5" parent="Palavras" instance=ExtResource( 9 )]
+margin_left = -168.247
+margin_top = 27.497
+margin_right = -93.2468
+margin_bottom = 53.497
+rect_scale = Vector2( 1.5, 1.5 )
+texture_normal = ExtResource( 10 )
+
+[node name="Morfema6" parent="Palavras" instance=ExtResource( 9 )]
+margin_left = 37.9852
+margin_top = 26.0497
+margin_right = 113.985
+margin_bottom = 54.0497
+rect_scale = Vector2( 1.5, 1.5 )
+texture_normal = ExtResource( 6 )
 
 [node name="Voltar" type="TextureButton" parent="."]
 margin_left = 2.0
@@ -138,3 +175,15 @@ __meta__ = {
 [connection signal="pressed" from="ButtonLetras" to="." method="_on_ButtonLetras_pressed"]
 [connection signal="pressed" from="ButtonRetalhos" to="." method="_on_ButtonRetalhos_pressed"]
 [connection signal="pressed" from="Voltar" to="." method="_on_Voltar_pressed"]
+
+[editable path="Palavras/Morfema"]
+
+[editable path="Palavras/Morfema2"]
+
+[editable path="Palavras/Morfema3"]
+
+[editable path="Palavras/Morfema4"]
+
+[editable path="Palavras/Morfema5"]
+
+[editable path="Palavras/Morfema6"]

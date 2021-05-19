@@ -5,7 +5,7 @@ var mouseIn = false
 func _ready():
 	set_process(false)
 
-func _process(delta):
+func _process(_delta):
 	if mouseIn && $"/root/Global".returnRetalhoArrastado() != null && !Input.is_action_pressed("Click"):
 		print ("KEKO")
 		$"/root/Global".deleteRetalhoArrastado()

@@ -6,6 +6,7 @@ var numeroRetalhos = 0
 
 onready var letraInstance = preload("res://Cenas/CenasPrefab/BotaoLetra.tscn")
 #onready var palavraInstance = preload("res://Cenas/CenasPrefab/BotaoPalavra.tscn")
+onready var morfemas = preload("res://Cenas/CenasPrefab/Morfemas.tscn")
 onready var coresInstance = preload ("res://Cenas/CenasPrefab/Cores.tscn")
 onready var retalhosInstance = preload ("res://Cenas/CenasPrefab/Preview.tscn")
 
@@ -14,7 +15,7 @@ var caminho = "CosturaPopUp/Formas/HolderFormas" #PASTA DESTINO DOS SPRITES MUDA
 func _ready():
 	$"/root/Global".firstSceneNode = self
 	$"/root/Global".podeSetar = false
-	$"/root/Global".setarRefs(null, letraInstance, coresInstance, retalhosInstance)
+	$"/root/Global".setarRefs(morfemas, letraInstance, coresInstance, retalhosInstance)
 
 func _process(_delta):
 	
@@ -102,3 +103,5 @@ func _on_Costurar_pressed():
 			get_node("CosturaPopUp/Preview/Label").text = ""
 			numeroCaracteres = 0
 
+func _on_QuartoCostura_tree_entered():
+	$"/root/Global".firstSceneNode = self

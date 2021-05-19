@@ -9,6 +9,7 @@ export var isRetalho = false;
 
 func _ready():
 	primeiroNode = $"/root/Global".firstSceneNode
+	print(primeiroNode.name)
 	palavrasParentesco = primeiroNode.get_node("ArrastarParentesco")
 
 func _process(_delta):
@@ -17,8 +18,8 @@ func _process(_delta):
 		
 		if ((nome.length() == 1 && !isRetalho) || self.isLetraAcentuada):
 			instanceLetraPalavra($"/root/Global".letraInstanceRef, nome)
-		#else:
-		#	instanceLetraPalavra($"/root/Global".palavraInstanceRef, nome)
+		else:
+			instanceLetraPalavra($"/root/Global".morfemaInstanceRef, nome)
 		
 		if !Input.is_action_pressed("Click") && palavrasParentesco.has_node(nome) && !$"/root/Global".podeSetar:
 			palavrasParentesco.get_node(nome).free()
@@ -53,3 +54,9 @@ func _on_Button_pressed():
 
 func _on_TextureButton_pressed():
 	pass
+
+func _on_Morfema_mouse_entered():
+	mouseIn = true
+
+func _on_Morfema_mouse_exited():
+	mouseIn = false
