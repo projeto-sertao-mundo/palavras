@@ -3,6 +3,7 @@ extends Node2D
 var palavra
 var numeroCaracteres = 0
 var numeroRetalhos = 0
+export var isMorfema = 0
 
 onready var letraInstance = preload("res://Cenas/CenasPrefab/BotaoLetra.tscn")
 #onready var palavraInstance = preload("res://Cenas/CenasPrefab/BotaoPalavra.tscn")
@@ -24,15 +25,31 @@ func _process(_delta):
 #			MudarLabelPreview(palavra.get_node("Label").text)
 #			$"/root/Global".podeSetar = false
 #		palavra.free()
-	if ($"/root/Global".podeSetar && !Input.is_action_pressed("Click") && palavra.name.length() == 1):
-		if numeroCaracteres <= 10:
-			MudarLabelPreview(palavra.name)
-			$"/root/Global".podeSetar = false
+	if ($"/root/Global".podeSetar && !Input.is_action_pressed("Click") && (palavra.name.length() == 1 || palavra.isMorfema)):
+		var aux = numeroCaracteres + palavra.name.length()
+		if  aux <= 11:
+			
+			var isPrefixo
+			if palavra.name.length() == 3:
+				isPrefixo = true
+			else:
+				isPrefixo = false
+			
+			if !palavra.isMorfema:
+				MudarLabelPreview(palavra.name, palavra.name.length())
+				$"/root/Global".podeSetar = false
+			elif palavra.isMorfema && isPrefixo && numeroCaracteres == 0:
+				MudarLabelPreview(palavra.name, palavra.name.length())
+				$"/root/Global".podeSetar = false
+			elif !isPrefixo && palavra.isMorfema && numeroCaracteres > 0:
+				MudarLabelPreview(palavra.name, palavra.name.length())
+				$"/root/Global".podeSetar = false
+				
 		palavra.free()
 	
 
-func MudarLabelPreview(var texto):
-	numeroCaracteres += 1
+func MudarLabelPreview(var texto, var numCaracteres):
+	numeroCaracteres += numCaracteres
 	var textoAtual = get_node("CosturaPopUp/Preview").get_node("Label").text
 	get_node("CosturaPopUp/Preview").get_node("Label").text = textoAtual + texto
 

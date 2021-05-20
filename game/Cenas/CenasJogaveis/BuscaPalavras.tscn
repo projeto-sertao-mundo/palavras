@@ -45,12 +45,6 @@
 [ext_resource path="res://Sprites/SpritesFinais/Letras/Uac.png" type="Texture" id=45]
 [ext_resource path="res://Sprites/SpritesFinais/Letras/Oac3.png" type="Texture" id=46]
 
-
-
-
-
-
-
 [node name="BuscaPalavras" type="Node2D"]
 script = ExtResource( 1 )
 SceneName = "BuscaPalavras"
@@ -723,6 +717,7 @@ margin_left = 459.562
 margin_top = 73.0513
 margin_right = 459.562
 margin_bottom = 73.0513
+[connection signal="tree_entered" from="." to="." method="_on_BuscaPalavras_tree_entered"]
 [connection signal="pressed" from="Bolsa" to="PalavrasPopUp" method="_on_Bolsa_pressed"]
 [connection signal="pressed" from="Voltar" to="." method="_on_Voltar_pressed"]
 [connection signal="mouse_entered" from="Letras/A" to="Letras/A/TextureButton" method="_on_A_mouse_entered"]

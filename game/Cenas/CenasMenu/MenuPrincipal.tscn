@@ -25,10 +25,10 @@ __meta__ = {
 }
 
 [node name="Jogar" type="TextureButton" parent="."]
-margin_left = 645.664
-margin_top = 514.248
-margin_right = 911.664
-margin_bottom = 639.248
+margin_left = 693.772
+margin_top = 516.03
+margin_right = 959.772
+margin_bottom = 641.03
 rect_scale = Vector2( 0.9, 0.9 )
 texture_normal = ExtResource( 1 )
 __meta__ = {
@@ -37,10 +37,10 @@ __meta__ = {
 }
 
 [node name="Creditos" type="TextureButton" parent="."]
-margin_left = 679.567
-margin_top = 621.251
-margin_right = 906.567
-margin_bottom = 727.251
+margin_left = 727.675
+margin_top = 623.033
+margin_right = 954.675
+margin_bottom = 729.033
 rect_scale = Vector2( 0.8, 0.8 )
 texture_normal = ExtResource( 5 )
 __meta__ = {
@@ -49,10 +49,10 @@ __meta__ = {
 }
 
 [node name="Sair" type="TextureButton" parent="."]
-margin_left = 685.924
-margin_top = 701.77
-margin_right = 884.924
-margin_bottom = 795.77
+margin_left = 734.032
+margin_top = 703.552
+margin_right = 933.032
+margin_bottom = 797.552
 rect_scale = Vector2( 0.85, 0.85 )
 texture_normal = ExtResource( 6 )
 __meta__ = {

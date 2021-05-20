@@ -16,3 +16,6 @@ func _on_Voltar2_pressed():
 
 func _ready():
 	$"/root/Global".firstSceneNode = self
+
+func _on_QuartoFrases_tree_entered():
+	$"/root/Global".firstSceneNode = self

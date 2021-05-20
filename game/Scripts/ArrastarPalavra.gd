@@ -4,13 +4,14 @@ var mouseIn
 var primeiroNode
 var palavraInstanciada
 var palavrasParentesco
-export var isLetraAcentuada = false
-export var isRetalho = false;
+export(bool) var isMorfema
+export(bool) var isLetraAcentuada
+export(bool) var isRetalho
+export(bool) var isPrefixo
 
 func _ready():
 	primeiroNode = $"/root/Global".firstSceneNode
-	print(primeiroNode.name)
-	palavrasParentesco = primeiroNode.get_node("ArrastarParentesco")
+	palavrasParentesco = primeiroNode
 
 func _process(_delta):
 	if (primeiroNode.name == "QuartoCostura"):

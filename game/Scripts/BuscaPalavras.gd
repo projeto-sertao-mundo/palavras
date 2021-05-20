@@ -18,3 +18,6 @@ func _on_Voltar2_pressed():
 func _ready():
 	$"/root/Global".setarRefs(morfemas, letra, null, null)
 	$"/root/Global".firstSceneNode = self
+
+func _on_BuscaPalavras_tree_entered():
+	$"/root/Global".firstSceneNode = self
