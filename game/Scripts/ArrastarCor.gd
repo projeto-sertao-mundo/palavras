@@ -40,28 +40,8 @@ func on_TextureButton_mouse_exited():
 	mouseIn = false
 	#set_process(false)
 
-
-func _on_Verde_mouse_entered():
+	
+func _on_Vermelho_button_down():
 	on_TextureButton_mouse_entered()
-func _on_Verde_mouse_exited():
+func _on_Vermelho_button_up():
 	on_TextureButton_mouse_exited()
-func _on_Vermelho_mouse_entered():
-	on_TextureButton_mouse_entered()
-func _on_Vermelho_mouse_exited():
-	on_TextureButton_mouse_exited()
-func _on_Azul_mouse_entered():
-	on_TextureButton_mouse_entered()
-func _on_Azul_mouse_exited():
-	on_TextureButton_mouse_exited()
-func _on_Branco_mouse_entered():
-	on_TextureButton_mouse_entered()
-func _on_Branco_mouse_exited():
-	on_TextureButton_mouse_exited()
-func _on_Roxo_mouse_entered():
-	on_TextureButton_mouse_entered()
-func _on_Roxo_mouse_exited():
-	on_TextureButton_mouse_exited()
-func _on_Amarelo_mouse_exited():
-	on_TextureButton_mouse_exited()
-func _on_Amarelo_mouse_entered():
-	on_TextureButton_mouse_entered()

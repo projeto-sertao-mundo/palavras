@@ -122,3 +122,7 @@ func _on_Costurar_pressed():
 
 func _on_QuartoCostura_tree_entered():
 	$"/root/Global".firstSceneNode = self
+
+
+func _on_Vermelho_button_down():
+	print("IE")
