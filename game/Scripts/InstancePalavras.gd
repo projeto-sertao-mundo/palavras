@@ -1,20 +1,23 @@
 extends Control
 var foiClicado = false;
 
+func _ready():
+	InstanciarPalavras()
+
 func InstanciarPalavras():
 	var bolsa = []
 	bolsa = $"/root/Global".retornarPalavras()
 	
-	if get_child(6).name == "Palavras":
-		for textoPalavra in bolsa:
-			if !get_node("Palavras").has_node("GridPalavras/"+textoPalavra):
-				var palavraInstanciada = $"/root/Global".palavraInstanceRef.instance()
-				var caminhoParentesco = self.get_node("Palavras").get_node("GridPalavras")
-				
-				caminhoParentesco.add_child(palavraInstanciada)
-				palavraInstanciada.name = textoPalavra
-				palavraInstanciada.get_node("Label").text = textoPalavra
-	elif get_child(6).name == "Letras":
+#	if get_child(6).name == "Palavras":
+#		for textoPalavra in bolsa:
+#			if !get_node("Palavras").has_node("GridPalavras/"+textoPalavra):
+#				var palavraInstanciada = $"/root/Global".palavraInstanceRef.instance()
+#				var caminhoParentesco = self.get_node("Palavras").get_node("GridPalavras")
+#
+#				caminhoParentesco.add_child(palavraInstanciada)
+#				palavraInstanciada.name = textoPalavra
+#				palavraInstanciada.get_node("Label").text = textoPalavra
+	if get_child(6).name == "Letras":
 		
 		var bolsaLetrasAcentuadas = []
 		var bolsaLetras = []

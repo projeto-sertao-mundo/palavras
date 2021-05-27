@@ -8,7 +8,7 @@ var nomeR = self.name
 
 func _ready():
 	primeiroNode = $"/root/Global".firstSceneNode
-	palavrasParentesco = primeiroNode.get_node("ArrastarParentesco")
+	palavrasParentesco = primeiroNode
 
 func _process(_delta):
 	if (primeiroNode.name == "QuartoCostura"):
