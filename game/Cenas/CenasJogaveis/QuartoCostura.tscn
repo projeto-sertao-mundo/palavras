@@ -90,7 +90,6 @@ __meta__ = {
 }
 
 [node name="CosturaPopUp" type="Control" parent="."]
-visible = false
 margin_left = -84.8948
 margin_top = 143.063
 margin_right = -84.8948
@@ -201,11 +200,11 @@ __meta__ = {
 }
 
 [node name="Vermelho" type="TextureButton" parent="CosturaPopUp/Cor"]
-margin_left = 602.677
-margin_top = 33.8993
-margin_right = 653.677
-margin_bottom = 85.8993
-rect_scale = Vector2( 0.8, 0.8 )
+margin_left = 1004.29
+margin_top = -2.61092
+margin_right = 1055.29
+margin_bottom = 49.3891
+rect_scale = Vector2( 3, 3 )
 texture_normal = ExtResource( 4 )
 script = ExtResource( 37 )
 __meta__ = {

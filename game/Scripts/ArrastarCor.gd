@@ -43,5 +43,7 @@ func on_TextureButton_mouse_exited():
 	
 func _on_Vermelho_button_down():
 	on_TextureButton_mouse_entered()
+	print("in")
 func _on_Vermelho_button_up():
+	print("out")
 	on_TextureButton_mouse_exited()
