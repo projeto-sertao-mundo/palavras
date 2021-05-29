@@ -22,7 +22,7 @@ func _process(_delta):
 		else:
 			instanceLetraPalavra($"/root/Global".morfemaInstanceRef, nome)
 		
-		if !Input.is_action_pressed("Click") && palavrasParentesco.has_node(nome) && !$"/root/Global".podeSetar:
+		if !mouseIn && palavrasParentesco.has_node(nome) && !$"/root/Global".podeSetar:
 			palavrasParentesco.get_node(nome).free()
 
 

@@ -25,7 +25,7 @@ func _process(_delta):
 #			MudarLabelPreview(palavra.get_node("Label").text)
 #			$"/root/Global".podeSetar = false
 #		palavra.free()
-	if ($"/root/Global".podeSetar && !Input.is_action_pressed("Click") && (palavra.name.length() == 1 || palavra.isMorfema)):
+	if ($"/root/Global".podeSetar && (palavra.name.length() == 1 || palavra.isMorfema)):
 		var aux = numeroCaracteres + palavra.name.length()
 		if  aux <= 11:
 			
