@@ -28,7 +28,7 @@ func _process(_delta):
 
 
 func instanceLetraPalavra(var ref, var nome):
-	if !palavrasParentesco.has_node(nome) && mouseIn && Input.is_action_pressed("Click"):
+	if !palavrasParentesco.has_node(nome) && mouseIn:
 			palavraInstanciada = ref.instance()
 			palavraInstanciada.name = nome
 			palavraInstanciada.visible = false
@@ -36,7 +36,7 @@ func instanceLetraPalavra(var ref, var nome):
 			palavraInstanciada.texture_normal = self.texture_normal
 			palavraInstanciada.modulate = Color(self.modulate.r, self.modulate.g, self.modulate.b)
 	
-	if palavrasParentesco.has_node(nome) && Input.is_action_pressed("Click"):
+	if palavrasParentesco.has_node(nome):
 		palavraInstanciada = palavrasParentesco.get_node(nome)
 		palavraInstanciada.set_position(get_viewport().get_mouse_position())
 		palavraInstanciada.visible = true
