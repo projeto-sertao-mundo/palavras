@@ -4,6 +4,7 @@ var mouseIn
 var primeiroNode
 var palavraInstanciada
 var palavrasParentesco
+var clickPosition
 export(bool) var isMorfema
 export(bool) var isLetraAcentuada
 export(bool) var isRetalho
@@ -16,7 +17,6 @@ func _ready():
 func _process(_delta):
 	if (primeiroNode.name == "QuartoCostura"):
 		var nome = self.name
-		
 		if ((nome.length() == 1 && !isRetalho) || self.isLetraAcentuada):
 			instanceLetraPalavra($"/root/Global".letraInstanceRef, nome)
 		else:
@@ -38,8 +38,15 @@ func instanceLetraPalavra(var ref, var nome):
 	
 	if palavrasParentesco.has_node(nome):
 		palavraInstanciada = palavrasParentesco.get_node(nome)
-		palavraInstanciada.set_position(get_viewport().get_mouse_position())
-		palavraInstanciada.visible = true
+		if (clickPosition != null):
+			palavraInstanciada.set_position(clickPosition)
+			palavraInstanciada.visible = true
+
+
+func _input(event):
+	if event is InputEventScreenDrag:
+		clickPosition = event.position
+		#print(clickPosition)
 
 
 func _on_TextureButton_mouse_entered():
