@@ -50,14 +50,11 @@ func _on_TextureButton_mouse_exited():
 	mouseIn = false
 	#set_process(false)
 
-func _on_Button_pressed():
-	pass 
-
-func _on_TextureButton_pressed():
-	pass
-
-func _on_Morfema_mouse_entered():
+func _on_TextureButton_button_down():
 	mouseIn = true
-
-func _on_Morfema_mouse_exited():
+func _on_TextureButton_button_up():
 	mouseIn = false
+func _on_Morfema_button_up():
+	mouseIn = false
+func _on_Morfema_button_down():
+	mouseIn = true
