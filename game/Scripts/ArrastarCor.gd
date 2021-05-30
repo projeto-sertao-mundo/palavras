@@ -1,6 +1,7 @@
 extends TextureButton
 
-var mouseIn
+var mouseClicking
+var clickPosition
 var primeiroNode
 var corInstanciada
 var corParentesco
@@ -13,37 +14,41 @@ func _ready():
 func _process(_delta):
 	var nome = self.name
 	instanceCor($"/root/Global".coresInstanceRef, nome)
-	if !Input.is_action_pressed("Click") && corParentesco.has_node(nome) && !$"/root/Global".podeSetar:
+	if !mouseClicking && corParentesco.has_node(nome) && !$"/root/Global".podeSetar:
 		corParentesco.get_node(nome).free()
 		$"/root/Global".mudarcorArrastada(null)
 
 func instanceCor(var ref, var nome):
-	if !corParentesco.has_node(nome) && mouseIn && Input.is_action_pressed("Click"):
+	if !corParentesco.has_node(nome) && mouseClicking:
 			corInstanciada = ref.instance()
 			corInstanciada.name = nome
 			corInstanciada.visible = false
 			corParentesco.add_child(corInstanciada)
 			corInstanciada.texture_normal = self.texture_normal
 			$"/root/Global".mudarcorArrastada(corInstanciada)
+			print("Instanciando")
 			#corInstanciada.modulate = Color(self.modulate.r, self.modulate.g, self.modulate.b)
-	if corParentesco.has_node(nome) && Input.is_action_pressed("Click"):
+	if corParentesco.has_node(nome) && mouseClicking:
 		corInstanciada = corParentesco.get_node(nome)
-		corInstanciada.set_position(get_viewport().get_mouse_position())
-		corInstanciada.visible = true
+		if (clickPosition != null):
+			corInstanciada.set_position(clickPosition)
+			corInstanciada.visible = true
 
 
 func on_TextureButton_mouse_entered():
-	mouseIn = true
+	mouseClicking = true
 	#set_process(true)
 
 func on_TextureButton_mouse_exited():
-	mouseIn = false
+	mouseClicking = false
 	#set_process(false)
 
-	
+func _input(event):
+	if event is InputEventScreenDrag:
+		clickPosition = event.position
+	#print(clickPosition)
+
 func _on_Vermelho_button_down():
 	on_TextureButton_mouse_entered()
-	print("in")
 func _on_Vermelho_button_up():
-	print("out")
 	on_TextureButton_mouse_exited()
