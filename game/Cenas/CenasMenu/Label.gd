@@ -1,6 +1,6 @@
 extends Label
 
-var clickPosition = 0
+var clickPosition
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -10,6 +10,15 @@ func _process(delta):
 		self.text = str(clickPosition)
 
 func _input(event):
-	if event is InputEventScreenDrag:
-		clickPosition = event.position
-		#print(clickPosition)
+#	if event is InputEventScreenDrag:
+#		clickPosition = event.position
+#		#print(clickPosition)
+	pass
+
+
+func _on_TextureButton_button_up():
+	self.text = "false"
+	print("false")
+func _on_TextureButton_button_down():
+	self.text = "true"
+	print("true")
