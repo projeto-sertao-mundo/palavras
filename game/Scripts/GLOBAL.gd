@@ -15,6 +15,8 @@ var letraInstanceRef
 var coresInstanceRef
 var retalhoInstanceRef
 
+var jaSetou
+
 var corArrastada
 
 var retalhoArrastado

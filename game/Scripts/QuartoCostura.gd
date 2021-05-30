@@ -4,7 +4,7 @@ var palavra
 var numeroCaracteres = 0
 var numeroRetalhos = 0
 export var isMorfema = 0
-
+var clickPosition
 onready var letraInstance = preload("res://Cenas/CenasPrefab/BotaoLetra.tscn")
 #onready var palavraInstance = preload("res://Cenas/CenasPrefab/BotaoPalavra.tscn")
 onready var morfemas = preload("res://Cenas/CenasPrefab/Morfemas.tscn")
@@ -26,6 +26,7 @@ func _process(_delta):
 #			$"/root/Global".podeSetar = false
 #		palavra.free()
 	if ($"/root/Global".podeSetar && (palavra.name.length() == 1 || palavra.isMorfema)):
+		print("teco")
 		var aux = numeroCaracteres + palavra.name.length()
 		if  aux <= 11:
 			
@@ -46,6 +47,7 @@ func _process(_delta):
 				$"/root/Global".podeSetar = false
 				
 		palavra.free()
+		$"/root/Global".jaSetou = true
 	
 
 func MudarLabelPreview(var texto, var numCaracteres):
@@ -126,3 +128,9 @@ func _on_QuartoCostura_tree_entered():
 
 func _on_Vermelho_button_down():
 	print("IE")
+	
+
+func _input(event):
+	if event is InputEventScreenDrag:
+		clickPosition = event.position
+		#print(clickPosition)

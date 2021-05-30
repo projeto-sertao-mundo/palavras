@@ -22,19 +22,22 @@ func _process(_delta):
 		else:
 			instanceLetraPalavra($"/root/Global".morfemaInstanceRef, nome)
 		
-		if !mouseIn && palavrasParentesco.has_node(nome) && !$"/root/Global".podeSetar:
+		if !mouseIn && mouseIn != null && palavrasParentesco.has_node(nome) && !$"/root/Global".podeSetar:
 			palavrasParentesco.get_node(nome).free()
 
 
 
 func instanceLetraPalavra(var ref, var nome):
-	if !palavrasParentesco.has_node(nome) && mouseIn:
+	if !palavrasParentesco.has_node(nome) && mouseIn && !$"/root/Global".jaSetou:
 			palavraInstanciada = ref.instance()
-			palavraInstanciada.name = nome
-			palavraInstanciada.visible = false
+			clickPosition = Vector2(self.rect_global_position)
+			palavraInstanciada.set_position(Vector2(0,0))
 			palavrasParentesco.add_child(palavraInstanciada)
+			palavraInstanciada.name = nome
 			palavraInstanciada.texture_normal = self.texture_normal
 			palavraInstanciada.modulate = Color(self.modulate.r, self.modulate.g, self.modulate.b)
+	elif palavrasParentesco.has_node(nome) && $"/root/Global".jaSetou:
+		palavrasParentesco.get_node(nome).free()
 	
 	if palavrasParentesco.has_node(nome):
 		palavraInstanciada = palavrasParentesco.get_node(nome)
@@ -59,9 +62,11 @@ func _on_TextureButton_mouse_exited():
 
 func _on_TextureButton_button_down():
 	mouseIn = true
+	$"/root/Global".jaSetou = false
 func _on_TextureButton_button_up():
 	mouseIn = false
 func _on_Morfema_button_up():
 	mouseIn = false
 func _on_Morfema_button_down():
+	$"/root/Global".jaSetou = false
 	mouseIn = true

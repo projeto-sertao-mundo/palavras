@@ -90,7 +90,6 @@ __meta__ = {
 }
 
 [node name="CosturaPopUp" type="Control" parent="."]
-visible = false
 margin_left = -84.8948
 margin_top = 143.063
 margin_right = -84.8948
@@ -435,8 +434,8 @@ shape = SubResource( 3 )
 [connection signal="area_exited" from="CosturaPopUp/Preview/Area2D" to="." method="_on_Area2D_area_exited"]
 [connection signal="pressed" from="CosturaPopUp/Bolsa" to="CosturaPopUp/PalavrasPopUp" method="_on_Bolsa_pressed"]
 [connection signal="pressed" from="CosturaPopUp/Voltar" to="." method="_on_Voltar_pressed"]
-[connection signal="pressed" from="CosturaPopUp/Costurar" to="CosturaPopUp/PalavrasPopUp" method="_on_Costurar_pressed"]
 [connection signal="pressed" from="CosturaPopUp/Costurar" to="." method="_on_Costurar_pressed"]
+[connection signal="pressed" from="CosturaPopUp/Costurar" to="CosturaPopUp/PalavrasPopUp" method="_on_Costurar_pressed"]
 [connection signal="pressed" from="CosturaPopUp/Costurar" to="CosturaPopUp/Preview/Borda" method="_on_Costurar_pressed"]
 [connection signal="pressed" from="CosturaPopUp/Costurar" to="CosturaPopUp/Preview/Miolo" method="_on_Costurar_pressed"]
 [connection signal="pressed" from="CosturaPopUp/Recomecar" to="." method="_on_Recomecar_pressed"]
@@ -444,6 +443,16 @@ shape = SubResource( 3 )
 [connection signal="pressed" from="CosturaPopUp/Recomecar" to="CosturaPopUp/Preview/Miolo" method="_on_Recomecar_pressed"]
 [connection signal="button_down" from="CosturaPopUp/Cor/Vermelho" to="CosturaPopUp/Cor/Vermelho" method="_on_Vermelho_button_down"]
 [connection signal="button_up" from="CosturaPopUp/Cor/Vermelho" to="CosturaPopUp/Cor/Vermelho" method="_on_Vermelho_button_up"]
+[connection signal="button_down" from="CosturaPopUp/Cor/Verde" to="CosturaPopUp/Cor/Verde" method="_on_Verde_button_down"]
+[connection signal="button_up" from="CosturaPopUp/Cor/Verde" to="CosturaPopUp/Cor/Verde" method="_on_Verde_button_up"]
+[connection signal="button_down" from="CosturaPopUp/Cor/Azul" to="CosturaPopUp/Cor/Azul" method="_on_Azul_button_down"]
+[connection signal="button_up" from="CosturaPopUp/Cor/Azul" to="CosturaPopUp/Cor/Azul" method="_on_Azul_button_up"]
+[connection signal="button_down" from="CosturaPopUp/Cor/Amarelo" to="CosturaPopUp/Cor/Amarelo" method="_on_Amarelo_button_down"]
+[connection signal="button_up" from="CosturaPopUp/Cor/Amarelo" to="CosturaPopUp/Cor/Amarelo" method="_on_Amarelo_button_up"]
+[connection signal="button_down" from="CosturaPopUp/Cor/Roxo" to="CosturaPopUp/Cor/Roxo" method="_on_Roxo_button_down"]
+[connection signal="button_up" from="CosturaPopUp/Cor/Roxo" to="CosturaPopUp/Cor/Roxo" method="_on_Roxo_button_up"]
+[connection signal="button_down" from="CosturaPopUp/Cor/Branco" to="CosturaPopUp/Cor/Branco" method="_on_Branco_button_down"]
+[connection signal="button_up" from="CosturaPopUp/Cor/Branco" to="CosturaPopUp/Cor/Branco" method="_on_Branco_button_up"]
 [connection signal="pressed" from="CosturaPopUp/Formas/Quadrado" to="." method="_on_Quadrado_pressed"]
 [connection signal="pressed" from="CosturaPopUp/Formas/Hexagono" to="." method="_on_Hexagono_pressed"]
 [connection signal="pressed" from="CosturaPopUp/Formas/Circulo" to="." method="_on_Circulo_pressed"]

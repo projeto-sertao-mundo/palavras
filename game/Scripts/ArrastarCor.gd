@@ -19,15 +19,15 @@ func _process(_delta):
 		$"/root/Global".mudarcorArrastada(null)
 
 func instanceCor(var ref, var nome):
-	if !corParentesco.has_node(nome) && mouseClicking:
+	if !corParentesco.has_node(nome) && mouseClicking && !$"/root/Global".jaSetou:
 			corInstanciada = ref.instance()
+			clickPosition = Vector2(self.rect_global_position)
+			corInstanciada.set_position(Vector2(0,0))
+			corParentesco.add_child(corInstanciada)
 			corInstanciada.name = nome
 			corInstanciada.visible = false
-			corParentesco.add_child(corInstanciada)
 			corInstanciada.texture_normal = self.texture_normal
 			$"/root/Global".mudarcorArrastada(corInstanciada)
-			print("Instanciando")
-			#corInstanciada.modulate = Color(self.modulate.r, self.modulate.g, self.modulate.b)
 	if corParentesco.has_node(nome) && mouseClicking:
 		corInstanciada = corParentesco.get_node(nome)
 		if (clickPosition != null):
@@ -51,4 +51,24 @@ func _input(event):
 func _on_Vermelho_button_down():
 	on_TextureButton_mouse_entered()
 func _on_Vermelho_button_up():
+	on_TextureButton_mouse_exited()
+func _on_Verde_button_down():
+	on_TextureButton_mouse_entered()
+func _on_Verde_button_up():
+	on_TextureButton_mouse_exited()
+func _on_Azul_button_down():
+	on_TextureButton_mouse_entered()
+func _on_Azul_button_up():
+	on_TextureButton_mouse_exited()
+func _on_Amarelo_button_up():
+	on_TextureButton_mouse_exited()
+func _on_Amarelo_button_down():
+	on_TextureButton_mouse_entered()
+func _on_Roxo_button_up():
+	on_TextureButton_mouse_exited()
+func _on_Roxo_button_down():
+	on_TextureButton_mouse_entered()
+func _on_Branco_button_down():
+	on_TextureButton_mouse_entered()
+func _on_Branco_button_up():
 	on_TextureButton_mouse_exited()
