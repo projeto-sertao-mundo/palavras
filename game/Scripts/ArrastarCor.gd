@@ -40,6 +40,7 @@ func on_TextureButton_mouse_entered():
 	#set_process(true)
 
 func on_TextureButton_mouse_exited():
+	$"/root/Global".jaSetou = false
 	mouseClicking = false
 	#set_process(false)
 
