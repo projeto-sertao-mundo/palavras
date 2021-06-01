@@ -56,7 +56,7 @@ extents = Vector2( 247.434, 400.43 )
 script = ExtResource( 5 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 794.736, 445.037 )
+position = Vector2( 795.68, 445.037 )
 scale = Vector2( 1.25, 1.25 )
 texture = ExtResource( 2 )
 
@@ -109,7 +109,8 @@ scale = Vector2( 0.717733, 0.659509 )
 texture = ExtResource( 10 )
 
 [node name="Preview" type="Sprite" parent="CosturaPopUp"]
-position = Vector2( 581.994, 310.343 )
+position = Vector2( 568.78, 300.904 )
+scale = Vector2( 1.25, 1.25 )
 
 [node name="Miolo" type="Sprite" parent="CosturaPopUp/Preview"]
 position = Vector2( -14.7178, 10.524 )
@@ -131,12 +132,12 @@ shape = SubResource( 1 )
 
 [node name="Label" type="Label" parent="CosturaPopUp/Preview"]
 modulate = Color( 0, 0, 0, 1 )
-margin_left = -75.0
-margin_top = -18.0
-margin_right = 46.0
-margin_bottom = 22.0
+margin_left = -70.0
+margin_top = -30.0
+margin_right = 84.0
+margin_bottom = 70.0
+rect_scale = Vector2( 0.75, 0.85 )
 custom_fonts/font = SubResource( 2 )
-align = 1
 valign = 1
 uppercase = true
 __meta__ = {
@@ -434,13 +435,13 @@ shape = SubResource( 3 )
 [connection signal="area_exited" from="CosturaPopUp/Preview/Area2D" to="." method="_on_Area2D_area_exited"]
 [connection signal="pressed" from="CosturaPopUp/Bolsa" to="CosturaPopUp/PalavrasPopUp" method="_on_Bolsa_pressed"]
 [connection signal="pressed" from="CosturaPopUp/Voltar" to="." method="_on_Voltar_pressed"]
-[connection signal="pressed" from="CosturaPopUp/Costurar" to="CosturaPopUp/PalavrasPopUp" method="_on_Costurar_pressed"]
-[connection signal="pressed" from="CosturaPopUp/Costurar" to="CosturaPopUp/Preview/Miolo" method="_on_Costurar_pressed"]
 [connection signal="pressed" from="CosturaPopUp/Costurar" to="CosturaPopUp/Preview/Borda" method="_on_Costurar_pressed"]
 [connection signal="pressed" from="CosturaPopUp/Costurar" to="." method="_on_Costurar_pressed"]
-[connection signal="pressed" from="CosturaPopUp/Recomecar" to="CosturaPopUp/Preview/Miolo" method="_on_Recomecar_pressed"]
+[connection signal="pressed" from="CosturaPopUp/Costurar" to="CosturaPopUp/Preview/Miolo" method="_on_Costurar_pressed"]
+[connection signal="pressed" from="CosturaPopUp/Costurar" to="CosturaPopUp/PalavrasPopUp" method="_on_Costurar_pressed"]
 [connection signal="pressed" from="CosturaPopUp/Recomecar" to="CosturaPopUp/Preview/Borda" method="_on_Recomecar_pressed"]
 [connection signal="pressed" from="CosturaPopUp/Recomecar" to="." method="_on_Recomecar_pressed"]
+[connection signal="pressed" from="CosturaPopUp/Recomecar" to="CosturaPopUp/Preview/Miolo" method="_on_Recomecar_pressed"]
 [connection signal="button_down" from="CosturaPopUp/Cor/Vermelho" to="CosturaPopUp/Cor/Vermelho" method="_on_Vermelho_button_down"]
 [connection signal="button_up" from="CosturaPopUp/Cor/Vermelho" to="CosturaPopUp/Cor/Vermelho" method="_on_Vermelho_button_up"]
 [connection signal="button_down" from="CosturaPopUp/Cor/Verde" to="CosturaPopUp/Cor/Verde" method="_on_Verde_button_down"]

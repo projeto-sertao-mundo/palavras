@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://Scripts/FrasePreview.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/SpritesFinais/Objetos/Bolsa.png" type="Texture" id=2]
@@ -23,12 +23,13 @@
 [ext_resource path="res://Sprites/SpritesFinais/Objetos/Quadro das letras leve.png" type="Texture" id=21]
 [ext_resource path="res://Sprites/SpritesFinais/Objetos/Zinha.png" type="Texture" id=22]
 [ext_resource path="res://Cenas/CenasPrefab/Frase.tscn" type="PackedScene" id=23]
+[ext_resource path="res://Sprites/SpritesFinais/noAtlasObjects/retalho nove.png" type="Texture" id=24]
 
 [node name="QuartoFrases" type="Node2D"]
 position = Vector2( -4.48987, -4.48981 )
 script = ExtResource( 4 )
 __meta__ = {
-"_edit_horizontal_guides_": [ 450.622, 745.111, 180.674 ],
+"_edit_horizontal_guides_": [ 450.622, 745.111, 180.674, 623.041 ],
 "_edit_vertical_guides_": [ 798.937, 489.346, 1121.74 ]
 }
 SceneName = "QuartoFrases"
@@ -263,47 +264,75 @@ __meta__ = {
 }
 
 [node name="1" parent="Frases" instance=ExtResource( 23 )]
+margin_left = 128.776
+margin_top = 121.085
+margin_right = 762.776
+margin_bottom = 508.085
+rect_scale = Vector2( 0.37, 0.4 )
 
 [node name="2" parent="Frases" instance=ExtResource( 23 )]
-margin_left = 374.38
-margin_right = 1012.38
+margin_left = 372.606
+margin_top = 121.085
+margin_right = 1010.61
+margin_bottom = 508.085
+rect_scale = Vector2( 0.37, 0.4 )
 texture_normal = ExtResource( 9 )
 
 [node name="3" parent="Frases" instance=ExtResource( 23 )]
-margin_left = 625.24
-margin_right = 1259.24
+margin_left = 617.916
+margin_top = 121.085
+margin_right = 1251.92
+margin_bottom = 508.085
+rect_scale = Vector2( 0.37, 0.4 )
 texture_normal = ExtResource( 6 )
 
 [node name="4" parent="Frases" instance=ExtResource( 23 )]
-margin_top = 282.29
-margin_bottom = 669.29
+margin_left = 128.776
+margin_top = 295.885
+margin_right = 762.776
+margin_bottom = 682.885
+rect_scale = Vector2( 0.37, 0.4 )
 texture_normal = ExtResource( 8 )
 
 [node name="5" parent="Frases" instance=ExtResource( 23 )]
-margin_left = 374.38
-margin_top = 282.29
-margin_right = 1012.38
-margin_bottom = 669.29
+margin_left = 372.606
+margin_top = 295.885
+margin_right = 1010.61
+margin_bottom = 682.885
+rect_scale = Vector2( 0.37, 0.4 )
 texture_normal = ExtResource( 10 )
 
 [node name="6" parent="Frases" instance=ExtResource( 23 )]
-margin_left = 625.24
-margin_top = 282.29
-margin_right = 1259.24
-margin_bottom = 669.29
+margin_left = 617.916
+margin_top = 295.885
+margin_right = 1251.92
+margin_bottom = 682.885
+rect_scale = Vector2( 0.37, 0.4 )
 texture_normal = ExtResource( 11 )
 
 [node name="7" parent="Frases" instance=ExtResource( 23 )]
-margin_top = 436.58
-margin_bottom = 833.58
+margin_left = 128.776
+margin_top = 470.685
+margin_right = 762.776
+margin_bottom = 867.685
+rect_scale = Vector2( 0.37, 0.4 )
 texture_normal = ExtResource( 12 )
 
 [node name="8" parent="Frases" instance=ExtResource( 23 )]
-margin_left = 374.38
-margin_top = 436.58
-margin_right = 1012.38
-margin_bottom = 833.58
+margin_left = 372.134
+margin_top = 473.045
+margin_right = 1010.13
+margin_bottom = 870.045
+rect_scale = Vector2( 0.37, 0.4 )
 texture_normal = ExtResource( 13 )
+
+[node name="9" parent="Frases" instance=ExtResource( 23 )]
+margin_left = 618.0
+margin_top = 473.0
+margin_right = 935.0
+margin_bottom = 667.0
+rect_scale = Vector2( 0.745, 0.8 )
+texture_normal = ExtResource( 24 )
 
 [node name="RetalhoGrande" type="Sprite" parent="."]
 visible = false
@@ -326,3 +355,4 @@ texture = ExtResource( 10 )
 [connection signal="pressed" from="Frases/6" to="Frases" method="_on_6_pressed"]
 [connection signal="pressed" from="Frases/7" to="Frases" method="_on_7_pressed"]
 [connection signal="pressed" from="Frases/8" to="Frases" method="_on_8_pressed"]
+[connection signal="pressed" from="Frases/9" to="Frases" method="_on_3_pressed"]
