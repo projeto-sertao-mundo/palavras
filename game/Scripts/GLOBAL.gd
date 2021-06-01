@@ -51,6 +51,7 @@ func returnCorArrastada():
 func adicionarItemBolsaPalavra(var palavraR):
 	var palavraNova = [palavraR]
 	bolsa += palavraNova
+	print(bolsa.size())
 
 func adicionarItemBolsaLetra(var letra):
 	var letraNova = Letras.new()
@@ -62,58 +63,6 @@ func adicionarItemBolsaLetra(var letra):
 	var letraNovaVector = [letraNova]
 	
 	bolsaLetra += letraNovaVector
-
-func sortLetras():
-	
-	for i in bolsaLetra.size():
-		
-		var menorIndice = ord(bolsaLetra[i].nome)
-		var menorLetra = bolsaLetra[i]
-		var indiceMenorLetra = i
-		
-		
-		for j in bolsaLetra.size() - 1:
-			j = j + 1
-			if (menorIndice > ord(bolsaLetra[j].nome)):
-				menorIndice = ord(bolsaLetra[j].nome)
-				menorLetra = bolsaLetra[j]
-				indiceMenorLetra = j
-#				print(true)
-#			else:
-#				print(menorIndice)
-#				print(ord(bolsaLetra[j].nome))
-		
-		#print(indiceMenorLetra)
-		
-		var aux = bolsaLetra[i]
-#		print(bolsaLetra[i].nome)
-#		print(menorLetra.nome)
-#		print("-")
-		bolsaLetra[i] = menorLetra
-		bolsaLetra[indiceMenorLetra] = aux
-	
-#	for k in bolsaLetra.size():
-#		print(bolsaLetra[k].nome)
-	
-	#	var aux = []
-#	var bolsaLetraAux = bolsaLetra
-#
-#	for i in bolsaLetra.size():
-#		aux.append(ord(bolsaLetra[i].nome))
-#
-#	aux.sort()
-#
-#	print(bolsaLetra.size())
-#	print(bolsaLetraAux.size())
-#
-#	for i in bolsaLetra.size():
-#		for j in bolsaLetra.size():
-#			if (char(aux[i]) == bolsaLetraAux[j].nome):
-#				bolsaLetra[i] = bolsaLetraAux[j]
-#				print("true")
-#			else:
-#				print("false")
-	
 
 func adicionarItemBolsaLetraAcentuada(var letra):
 	var letraNova = Letras.new()

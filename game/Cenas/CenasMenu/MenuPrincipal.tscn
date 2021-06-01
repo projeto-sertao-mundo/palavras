@@ -25,6 +25,10 @@ __meta__ = {
 "_edit_group_": true
 }
 
+[node name="Logo escolhida" type="Sprite" parent="."]
+position = Vector2( 819.834, 289.647 )
+texture = ExtResource( 8 )
+
 [node name="Jogar" type="TextureButton" parent="."]
 margin_left = 658.136
 margin_top = 546.321
@@ -96,10 +100,6 @@ icon = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="Logo escolhida" type="Sprite" parent="."]
-position = Vector2( 819.834, 289.647 )
-texture = ExtResource( 8 )
 [connection signal="pressed" from="Jogar" to="." method="_on_Jogar_pressed"]
 [connection signal="pressed" from="Creditos" to="." method="_on_Creditos_pressed"]
 [connection signal="pressed" from="CreditosPopUP/VoltarCreditos" to="." method="_on_VoltarCreditos_pressed"]

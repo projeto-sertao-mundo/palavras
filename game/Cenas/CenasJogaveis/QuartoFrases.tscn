@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://Scripts/FrasePreview.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/SpritesFinais/Objetos/Bolsa.png" type="Texture" id=2]
@@ -22,8 +22,14 @@
 [ext_resource path="res://Sprites/SpritesFinais/Objetos/Quadro dos morfemas leve.png" type="Texture" id=20]
 [ext_resource path="res://Sprites/SpritesFinais/Objetos/Quadro das letras leve.png" type="Texture" id=21]
 [ext_resource path="res://Sprites/SpritesFinais/Objetos/Zinha.png" type="Texture" id=22]
-[ext_resource path="res://Cenas/CenasPrefab/Frase.tscn" type="PackedScene" id=23]
+[ext_resource path="res://Sprites/SpritesFinais/Frases/RetalhoUm.png" type="Texture" id=23]
 [ext_resource path="res://Sprites/SpritesFinais/noAtlasObjects/retalho nove.png" type="Texture" id=24]
+[ext_resource path="res://Sprites/SpritesFinais/noAtlasObjects/retalho quinze.png" type="Texture" id=25]
+[ext_resource path="res://Sprites/SpritesFinais/noAtlasObjects/retalho treze.png" type="Texture" id=26]
+[ext_resource path="res://Sprites/SpritesFinais/noAtlasObjects/retalho dez.png" type="Texture" id=27]
+[ext_resource path="res://Sprites/SpritesFinais/noAtlasObjects/retalho onze.png" type="Texture" id=28]
+[ext_resource path="res://Sprites/SpritesFinais/noAtlasObjects/retalho doze.png" type="Texture" id=29]
+[ext_resource path="res://Sprites/SpritesFinais/noAtlasObjects/retalho quatorze.png" type="Texture" id=30]
 
 [node name="QuartoFrases" type="Node2D"]
 position = Vector2( -4.48987, -4.48981 )
@@ -47,6 +53,15 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="ExitLock" type="Control" parent="."]
+margin_left = 1232.0
+margin_top = 103.0
+margin_right = 1391.0
+margin_bottom = 168.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Bolsa" type="TextureButton" parent="."]
 visible = false
 margin_left = 1383.8
@@ -66,6 +81,19 @@ margin_top = 708.449
 margin_right = 249.224
 margin_bottom = 812.449
 rect_scale = Vector2( 1.2, 0.9 )
+texture_normal = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PaginaRetalho" type="TextureButton" parent="."]
+modulate = Color( 0.960784, 0.952941, 0.372549, 1 )
+margin_left = 839.336
+margin_top = 661.909
+margin_right = 962.336
+margin_bottom = 765.909
+rect_rotation = 180.0
+rect_scale = Vector2( 0.8, 0.7 )
 texture_normal = ExtResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -263,96 +291,173 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="1" parent="Frases" instance=ExtResource( 23 )]
-margin_left = 128.776
-margin_top = 121.085
-margin_right = 762.776
-margin_bottom = 508.085
-rect_scale = Vector2( 0.37, 0.4 )
+[node name="FrasesPagina1" type="Control" parent="Frases"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="2" parent="Frases" instance=ExtResource( 23 )]
-margin_left = 372.606
-margin_top = 121.085
-margin_right = 1010.61
-margin_bottom = 508.085
-rect_scale = Vector2( 0.37, 0.4 )
+[node name="1" type="TextureButton" parent="Frases/FrasesPagina1"]
+margin_left = 132.0
+margin_top = 117.0
+margin_right = 449.0
+margin_bottom = 311.0
+rect_scale = Vector2( 0.7, 0.7 )
+texture_normal = ExtResource( 23 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="2" type="TextureButton" parent="Frases/FrasesPagina1"]
+margin_left = 374.64
+margin_top = 117.0
+margin_right = 691.64
+margin_bottom = 311.0
+rect_scale = Vector2( 0.7, 0.7 )
 texture_normal = ExtResource( 9 )
 
-[node name="3" parent="Frases" instance=ExtResource( 23 )]
-margin_left = 617.916
-margin_top = 121.085
-margin_right = 1251.92
-margin_bottom = 508.085
-rect_scale = Vector2( 0.37, 0.4 )
+[node name="3" type="TextureButton" parent="Frases/FrasesPagina1"]
+margin_left = 617.28
+margin_top = 117.0
+margin_right = 934.28
+margin_bottom = 311.0
+rect_scale = Vector2( 0.7, 0.7 )
 texture_normal = ExtResource( 6 )
 
-[node name="4" parent="Frases" instance=ExtResource( 23 )]
-margin_left = 128.776
-margin_top = 295.885
-margin_right = 762.776
-margin_bottom = 682.885
-rect_scale = Vector2( 0.37, 0.4 )
+[node name="4" type="TextureButton" parent="Frases/FrasesPagina1"]
+margin_left = 132.0
+margin_top = 271.08
+margin_right = 449.0
+margin_bottom = 465.08
+rect_scale = Vector2( 0.7, 0.7 )
 texture_normal = ExtResource( 8 )
 
-[node name="5" parent="Frases" instance=ExtResource( 23 )]
-margin_left = 372.606
-margin_top = 295.885
-margin_right = 1010.61
-margin_bottom = 682.885
-rect_scale = Vector2( 0.37, 0.4 )
+[node name="5" type="TextureButton" parent="Frases/FrasesPagina1"]
+margin_left = 374.64
+margin_top = 271.08
+margin_right = 691.64
+margin_bottom = 465.08
+rect_scale = Vector2( 0.7, 0.7 )
 texture_normal = ExtResource( 10 )
 
-[node name="6" parent="Frases" instance=ExtResource( 23 )]
-margin_left = 617.916
-margin_top = 295.885
-margin_right = 1251.92
-margin_bottom = 682.885
-rect_scale = Vector2( 0.37, 0.4 )
+[node name="6" type="TextureButton" parent="Frases/FrasesPagina1"]
+margin_left = 617.28
+margin_top = 271.08
+margin_right = 934.28
+margin_bottom = 465.08
+rect_scale = Vector2( 0.7, 0.7 )
 texture_normal = ExtResource( 11 )
 
-[node name="7" parent="Frases" instance=ExtResource( 23 )]
-margin_left = 128.776
-margin_top = 470.685
-margin_right = 762.776
-margin_bottom = 867.685
-rect_scale = Vector2( 0.37, 0.4 )
+[node name="7" type="TextureButton" parent="Frases/FrasesPagina1"]
+margin_left = 132.0
+margin_top = 425.16
+margin_right = 449.0
+margin_bottom = 622.16
+rect_scale = Vector2( 0.7, 0.7 )
 texture_normal = ExtResource( 12 )
 
-[node name="8" parent="Frases" instance=ExtResource( 23 )]
-margin_left = 372.134
-margin_top = 473.045
-margin_right = 1010.13
-margin_bottom = 870.045
-rect_scale = Vector2( 0.37, 0.4 )
+[node name="8" type="TextureButton" parent="Frases/FrasesPagina1"]
+margin_left = 374.64
+margin_top = 425.16
+margin_right = 691.64
+margin_bottom = 622.16
+rect_scale = Vector2( 0.7, 0.7 )
 texture_normal = ExtResource( 13 )
 
-[node name="9" parent="Frases" instance=ExtResource( 23 )]
-margin_left = 618.0
-margin_top = 473.0
-margin_right = 935.0
-margin_bottom = 667.0
-rect_scale = Vector2( 0.745, 0.8 )
+[node name="9" type="TextureButton" parent="Frases/FrasesPagina1"]
+margin_left = 617.28
+margin_top = 425.16
+margin_right = 934.28
+margin_bottom = 622.16
+rect_scale = Vector2( 0.7, 0.7 )
 texture_normal = ExtResource( 24 )
+
+[node name="FrasesPagina2" type="Control" parent="Frases"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="10" type="TextureButton" parent="Frases/FrasesPagina2"]
+margin_left = 132.0
+margin_top = 117.0
+margin_right = 449.0
+margin_bottom = 311.0
+rect_scale = Vector2( 0.7, 0.7 )
+texture_normal = ExtResource( 27 )
+
+[node name="11" type="TextureButton" parent="Frases/FrasesPagina2"]
+margin_left = 374.64
+margin_top = 117.0
+margin_right = 691.64
+margin_bottom = 311.0
+rect_scale = Vector2( 0.7, 0.7 )
+texture_normal = ExtResource( 28 )
+
+[node name="12" type="TextureButton" parent="Frases/FrasesPagina2"]
+margin_left = 617.28
+margin_top = 117.0
+margin_right = 934.28
+margin_bottom = 311.0
+rect_scale = Vector2( 0.7, 0.7 )
+texture_normal = ExtResource( 29 )
+
+[node name="13" type="TextureButton" parent="Frases/FrasesPagina2"]
+margin_left = 132.0
+margin_top = 271.08
+margin_right = 449.0
+margin_bottom = 465.08
+rect_scale = Vector2( 0.7, 0.7 )
+texture_normal = ExtResource( 26 )
+
+[node name="14" type="TextureButton" parent="Frases/FrasesPagina2"]
+margin_left = 374.64
+margin_top = 271.08
+margin_right = 691.64
+margin_bottom = 465.08
+rect_scale = Vector2( 0.7, 0.7 )
+texture_normal = ExtResource( 30 )
+
+[node name="15" type="TextureButton" parent="Frases/FrasesPagina2"]
+margin_left = 617.28
+margin_top = 271.08
+margin_right = 934.28
+margin_bottom = 465.08
+rect_scale = Vector2( 0.7, 0.7 )
+texture_normal = ExtResource( 25 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="RetalhoGrande" type="Sprite" parent="."]
 visible = false
-position = Vector2( 484.49, 372.49 )
-scale = Vector2( 1.11, 1.11 )
-texture = ExtResource( 10 )
+position = Vector2( 481.835, 337.29 )
+scale = Vector2( 2.24655, 2.24655 )
+texture = ExtResource( 23 )
 [connection signal="tree_entered" from="." to="." method="_on_QuartoFrases_tree_entered"]
 [connection signal="pressed" from="ExitButton" to="Frases" method="_on_ExitButton_pressed"]
 [connection signal="pressed" from="Bolsa" to="PalavrasPopUp" method="_on_Bolsa_pressed"]
-[connection signal="pressed" from="Voltar" to="." method="_on_Voltar_pressed"]
+[connection signal="pressed" from="Voltar" to="Frases" method="_on_Voltar_pressed"]
+[connection signal="pressed" from="PaginaRetalho" to="Frases" method="_on_PaginaRetalho_pressed"]
 [connection signal="pressed" from="PalavrasPopUp/ButtonPalavras" to="PalavrasPopUp" method="_on_ButtonPalavras_pressed"]
 [connection signal="pressed" from="PalavrasPopUp/ButtonLetras" to="PalavrasPopUp" method="_on_ButtonLetras_pressed"]
 [connection signal="pressed" from="PalavrasPopUp/ButtonRetalhos" to="PalavrasPopUp" method="_on_ButtonRetalhos_pressed"]
 [connection signal="pressed" from="PalavrasPopUp/Voltar" to="PalavrasPopUp" method="_on_Voltar_pressed"]
-[connection signal="pressed" from="Frases/1" to="Frases" method="_on_1_pressed"]
-[connection signal="pressed" from="Frases/2" to="Frases" method="_on_2_pressed"]
-[connection signal="pressed" from="Frases/3" to="Frases" method="_on_3_pressed"]
-[connection signal="pressed" from="Frases/4" to="Frases" method="_on_4_pressed"]
-[connection signal="pressed" from="Frases/5" to="Frases" method="_on_5_pressed"]
-[connection signal="pressed" from="Frases/6" to="Frases" method="_on_6_pressed"]
-[connection signal="pressed" from="Frases/7" to="Frases" method="_on_7_pressed"]
-[connection signal="pressed" from="Frases/8" to="Frases" method="_on_8_pressed"]
-[connection signal="pressed" from="Frases/9" to="Frases" method="_on_3_pressed"]
+[connection signal="pressed" from="Frases/FrasesPagina1/1" to="Frases" method="_on_1_pressed"]
+[connection signal="pressed" from="Frases/FrasesPagina1/2" to="Frases" method="_on_2_pressed"]
+[connection signal="pressed" from="Frases/FrasesPagina1/3" to="Frases" method="_on_3_pressed"]
+[connection signal="pressed" from="Frases/FrasesPagina1/4" to="Frases" method="_on_4_pressed"]
+[connection signal="pressed" from="Frases/FrasesPagina1/5" to="Frases" method="_on_5_pressed"]
+[connection signal="pressed" from="Frases/FrasesPagina1/6" to="Frases" method="_on_6_pressed"]
+[connection signal="pressed" from="Frases/FrasesPagina1/7" to="Frases" method="_on_7_pressed"]
+[connection signal="pressed" from="Frases/FrasesPagina1/8" to="Frases" method="_on_8_pressed"]
+[connection signal="pressed" from="Frases/FrasesPagina1/9" to="Frases" method="_on_9_pressed"]
+[connection signal="pressed" from="Frases/FrasesPagina2/10" to="Frases" method="_on_10_pressed"]
+[connection signal="pressed" from="Frases/FrasesPagina2/11" to="Frases" method="_on_11_pressed"]
+[connection signal="pressed" from="Frases/FrasesPagina2/12" to="Frases" method="_on_12_pressed"]
+[connection signal="pressed" from="Frases/FrasesPagina2/13" to="Frases" method="_on_13_pressed"]
+[connection signal="pressed" from="Frases/FrasesPagina2/14" to="Frases" method="_on_14_pressed"]
+[connection signal="pressed" from="Frases/FrasesPagina2/15" to="Frases" method="_on_15_pressed"]

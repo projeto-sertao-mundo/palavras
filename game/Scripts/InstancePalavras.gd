@@ -5,18 +5,20 @@ func _ready():
 	InstanciarPalavras()
 
 func InstanciarPalavras():
-	var bolsa = []
-	bolsa = $"/root/Global".retornarPalavras()
-	
-#	if get_child(6).name == "Palavras":
-#		for textoPalavra in bolsa:
-#			if !get_node("Palavras").has_node("GridPalavras/"+textoPalavra):
-#				var palavraInstanciada = $"/root/Global".palavraInstanceRef.instance()
-#				var caminhoParentesco = self.get_node("Palavras").get_node("GridPalavras")
-#
-#				caminhoParentesco.add_child(palavraInstanciada)
-#				palavraInstanciada.name = textoPalavra
-#				palavraInstanciada.get_node("Label").text = textoPalavra
+	print(get_child(6).name)
+	if get_child(6).name == "Palavras":
+		var bolsaPalavras = []
+		bolsaPalavras = $"/root/Global".retornarPalavras()
+		var gridPalavras = get_node("Palavras/GridContainer")
+		
+		print(bolsaPalavras.size())
+		
+		for morfema in bolsaPalavras:
+			print(morfema)
+			gridPalavras.get_node(morfema).disabled = false
+			gridPalavras.get_node(morfema).visible = true
+			
+		
 	if get_child(6).name == "Letras":
 		
 		var bolsaLetrasAcentuadas = []
@@ -26,13 +28,15 @@ func InstanciarPalavras():
 		
 		for letra in bolsaLetras:
 			var gridLetras = get_node("Letras/GridLetras")
-			gridLetras.get_node(letra.nome).disabled = false
-			gridLetras.get_node(letra.nome).visible = true
+			if (gridLetras.has_node(letra.nome)):
+				gridLetras.get_node(letra.nome).disabled = false
+				gridLetras.get_node(letra.nome).visible = true
 		
 		for letraAcentuada in bolsaLetrasAcentuadas:
 			var gridLetrasAcentuadas = get_node("Letras/GridLetrasAcentuadas")
-			gridLetrasAcentuadas.get_node(letraAcentuada.nome).disabled = false
-			gridLetrasAcentuadas.get_node(letraAcentuada.nome).visible = true
+			if (gridLetrasAcentuadas.has_node(letraAcentuada.nome)):
+				gridLetrasAcentuadas.get_node(letraAcentuada.nome).disabled = false
+				gridLetrasAcentuadas.get_node(letraAcentuada.nome).visible = true
 			
 #		for letraRefAc in bolsaLetrasAcentuadas:
 #			if !get_node("Letras").has_node("GridLetrasAcentuadas/"+letraRefAc.nome):
