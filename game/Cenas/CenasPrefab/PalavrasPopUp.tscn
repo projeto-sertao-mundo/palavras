@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=49 format=2]
 
 [ext_resource path="res://Sprites/SpritesFinais/Objetos/Quadro das letras leve.png" type="Texture" id=1]
 [ext_resource path="res://Sprites/SpritesFinais/Objetos/seta.png" type="Texture" id=2]
@@ -11,6 +11,43 @@
 [ext_resource path="res://Cenas/CenasPrefab/Morfemas.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Sprites/SpritesFinais/Objetos/Zinha.png" type="Texture" id=10]
 [ext_resource path="res://Sprites/SpritesFinais/Objetos/Inho.png" type="Texture" id=11]
+[ext_resource path="res://Cenas/CenasPrefab/BotaoLetra.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Sprites/SpritesFinais/Letras/B.png" type="Texture" id=13]
+[ext_resource path="res://Sprites/SpritesFinais/Letras/N.png" type="Texture" id=14]
+[ext_resource path="res://Sprites/SpritesFinais/Letras/O.png" type="Texture" id=15]
+[ext_resource path="res://Sprites/SpritesFinais/Letras/G.png" type="Texture" id=16]
+[ext_resource path="res://Sprites/SpritesFinais/Letras/E.png" type="Texture" id=17]
+[ext_resource path="res://Sprites/SpritesFinais/Letras/I.png" type="Texture" id=18]
+[ext_resource path="res://Sprites/SpritesFinais/Letras/J.png" type="Texture" id=19]
+[ext_resource path="res://Sprites/SpritesFinais/Letras/M.png" type="Texture" id=20]
+[ext_resource path="res://Sprites/SpritesFinais/Letras/C.png" type="Texture" id=21]
+[ext_resource path="res://Sprites/SpritesFinais/Letras/L.png" type="Texture" id=22]
+[ext_resource path="res://Sprites/SpritesFinais/Letras/K.png" type="Texture" id=23]
+[ext_resource path="res://Sprites/SpritesFinais/Letras/D.png" type="Texture" id=24]
+[ext_resource path="res://Sprites/SpritesFinais/Letras/H.png" type="Texture" id=25]
+[ext_resource path="res://Sprites/SpritesFinais/Letras/F.png" type="Texture" id=26]
+[ext_resource path="res://Sprites/SpritesFinais/Letras/Q.png" type="Texture" id=27]
+[ext_resource path="res://Sprites/SpritesFinais/Letras/P.png" type="Texture" id=28]
+[ext_resource path="res://Sprites/SpritesFinais/Letras/R.png" type="Texture" id=29]
+[ext_resource path="res://Sprites/SpritesFinais/Letras/S.png" type="Texture" id=30]
+[ext_resource path="res://Sprites/SpritesFinais/Letras/T.png" type="Texture" id=31]
+[ext_resource path="res://Sprites/SpritesFinais/Letras/U.png" type="Texture" id=32]
+[ext_resource path="res://Sprites/SpritesFinais/Letras/V.png" type="Texture" id=33]
+[ext_resource path="res://Sprites/SpritesFinais/Letras/W.png" type="Texture" id=34]
+[ext_resource path="res://Sprites/SpritesFinais/Letras/X.png" type="Texture" id=35]
+[ext_resource path="res://Sprites/SpritesFinais/Letras/Y.png" type="Texture" id=36]
+[ext_resource path="res://Sprites/SpritesFinais/Letras/Z.png" type="Texture" id=37]
+[ext_resource path="res://Sprites/SpritesFinais/Letras/Iac.png" type="Texture" id=38]
+[ext_resource path="res://Sprites/SpritesFinais/Letras/Oac.png" type="Texture" id=39]
+[ext_resource path="res://Sprites/SpritesFinais/Letras/Eac.png" type="Texture" id=40]
+[ext_resource path="res://Sprites/SpritesFinais/Letras/Aac2.png" type="Texture" id=41]
+[ext_resource path="res://Sprites/SpritesFinais/Letras/Uac.png" type="Texture" id=42]
+[ext_resource path="res://Sprites/SpritesFinais/Letras/Eac3.png" type="Texture" id=43]
+[ext_resource path="res://Sprites/SpritesFinais/Letras/Oac3.png" type="Texture" id=44]
+[ext_resource path="res://Sprites/SpritesFinais/Letras/Oac2.png" type="Texture" id=45]
+[ext_resource path="res://Sprites/SpritesFinais/Letras/Aac.png" type="Texture" id=46]
+[ext_resource path="res://Sprites/SpritesFinais/Letras/Aac3.png" type="Texture" id=47]
+[ext_resource path="res://Sprites/SpritesFinais/Letras/Cedilha.png" type="Texture" id=48]
 
 [node name="PalavrasPopUp" type="Control"]
 anchor_right = 1.0
@@ -95,6 +132,228 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="A" parent="Letras/GridLetras" instance=ExtResource( 12 )]
+visible = false
+margin_right = 64.0
+margin_bottom = 64.0
+disabled = true
+
+[node name="B" parent="Letras/GridLetras" instance=ExtResource( 12 )]
+visible = false
+margin_left = 154.0
+margin_right = 218.0
+margin_bottom = 64.0
+disabled = true
+texture_normal = ExtResource( 13 )
+
+[node name="C" parent="Letras/GridLetras" instance=ExtResource( 12 )]
+visible = false
+margin_left = 308.0
+margin_right = 372.0
+margin_bottom = 64.0
+disabled = true
+texture_normal = ExtResource( 21 )
+
+[node name="D" parent="Letras/GridLetras" instance=ExtResource( 12 )]
+visible = false
+margin_left = 462.0
+margin_right = 526.0
+margin_bottom = 64.0
+disabled = true
+texture_normal = ExtResource( 24 )
+
+[node name="E" parent="Letras/GridLetras" instance=ExtResource( 12 )]
+visible = false
+margin_left = 616.0
+margin_right = 680.0
+margin_bottom = 64.0
+disabled = true
+texture_normal = ExtResource( 17 )
+
+[node name="F" parent="Letras/GridLetras" instance=ExtResource( 12 )]
+visible = false
+margin_left = 770.0
+margin_right = 834.0
+margin_bottom = 64.0
+disabled = true
+texture_normal = ExtResource( 26 )
+
+[node name="G" parent="Letras/GridLetras" instance=ExtResource( 12 )]
+visible = false
+margin_left = 924.0
+margin_right = 988.0
+margin_bottom = 64.0
+disabled = true
+texture_normal = ExtResource( 16 )
+
+[node name="H" parent="Letras/GridLetras" instance=ExtResource( 12 )]
+visible = false
+margin_top = 147.0
+margin_right = 64.0
+margin_bottom = 211.0
+disabled = true
+texture_normal = ExtResource( 25 )
+
+[node name="I" parent="Letras/GridLetras" instance=ExtResource( 12 )]
+visible = false
+margin_left = 154.0
+margin_top = 147.0
+margin_right = 218.0
+margin_bottom = 211.0
+disabled = true
+texture_normal = ExtResource( 18 )
+
+[node name="J" parent="Letras/GridLetras" instance=ExtResource( 12 )]
+visible = false
+margin_left = 308.0
+margin_top = 147.0
+margin_right = 372.0
+margin_bottom = 211.0
+disabled = true
+texture_normal = ExtResource( 19 )
+
+[node name="K" parent="Letras/GridLetras" instance=ExtResource( 12 )]
+visible = false
+margin_left = 462.0
+margin_top = 147.0
+margin_right = 526.0
+margin_bottom = 211.0
+disabled = true
+texture_normal = ExtResource( 23 )
+
+[node name="L" parent="Letras/GridLetras" instance=ExtResource( 12 )]
+visible = false
+margin_left = 616.0
+margin_top = 147.0
+margin_right = 680.0
+margin_bottom = 211.0
+disabled = true
+texture_normal = ExtResource( 22 )
+
+[node name="M" parent="Letras/GridLetras" instance=ExtResource( 12 )]
+visible = false
+margin_left = 770.0
+margin_top = 147.0
+margin_right = 834.0
+margin_bottom = 211.0
+disabled = true
+texture_normal = ExtResource( 20 )
+
+[node name="N" parent="Letras/GridLetras" instance=ExtResource( 12 )]
+visible = false
+margin_left = 924.0
+margin_top = 147.0
+margin_right = 988.0
+margin_bottom = 211.0
+disabled = true
+texture_normal = ExtResource( 14 )
+
+[node name="O" parent="Letras/GridLetras" instance=ExtResource( 12 )]
+visible = false
+margin_top = 294.0
+margin_right = 64.0
+margin_bottom = 358.0
+disabled = true
+texture_normal = ExtResource( 15 )
+
+[node name="P" parent="Letras/GridLetras" instance=ExtResource( 12 )]
+visible = false
+margin_left = 154.0
+margin_top = 294.0
+margin_right = 218.0
+margin_bottom = 358.0
+disabled = true
+texture_normal = ExtResource( 28 )
+
+[node name="Q" parent="Letras/GridLetras" instance=ExtResource( 12 )]
+visible = false
+margin_left = 308.0
+margin_top = 294.0
+margin_right = 372.0
+margin_bottom = 358.0
+disabled = true
+texture_normal = ExtResource( 27 )
+
+[node name="R" parent="Letras/GridLetras" instance=ExtResource( 12 )]
+visible = false
+margin_left = 462.0
+margin_top = 294.0
+margin_right = 526.0
+margin_bottom = 358.0
+disabled = true
+texture_normal = ExtResource( 29 )
+
+[node name="S" parent="Letras/GridLetras" instance=ExtResource( 12 )]
+visible = false
+margin_left = 616.0
+margin_top = 294.0
+margin_right = 680.0
+margin_bottom = 358.0
+disabled = true
+texture_normal = ExtResource( 30 )
+
+[node name="T" parent="Letras/GridLetras" instance=ExtResource( 12 )]
+visible = false
+margin_left = 770.0
+margin_top = 294.0
+margin_right = 834.0
+margin_bottom = 358.0
+disabled = true
+texture_normal = ExtResource( 31 )
+
+[node name="U" parent="Letras/GridLetras" instance=ExtResource( 12 )]
+visible = false
+margin_left = 924.0
+margin_top = 294.0
+margin_right = 988.0
+margin_bottom = 358.0
+disabled = true
+texture_normal = ExtResource( 32 )
+
+[node name="V" parent="Letras/GridLetras" instance=ExtResource( 12 )]
+visible = false
+margin_top = 441.0
+margin_right = 64.0
+margin_bottom = 505.0
+disabled = true
+texture_normal = ExtResource( 33 )
+
+[node name="W" parent="Letras/GridLetras" instance=ExtResource( 12 )]
+visible = false
+margin_left = 154.0
+margin_top = 441.0
+margin_right = 218.0
+margin_bottom = 505.0
+disabled = true
+texture_normal = ExtResource( 34 )
+
+[node name="X" parent="Letras/GridLetras" instance=ExtResource( 12 )]
+visible = false
+margin_left = 308.0
+margin_top = 441.0
+margin_right = 372.0
+margin_bottom = 505.0
+disabled = true
+texture_normal = ExtResource( 35 )
+
+[node name="Y" parent="Letras/GridLetras" instance=ExtResource( 12 )]
+visible = false
+margin_left = 462.0
+margin_top = 441.0
+margin_right = 526.0
+margin_bottom = 505.0
+disabled = true
+texture_normal = ExtResource( 36 )
+
+[node name="Z" parent="Letras/GridLetras" instance=ExtResource( 12 )]
+visible = false
+margin_left = 616.0
+margin_top = 441.0
+margin_right = 680.0
+margin_bottom = 505.0
+disabled = true
+texture_normal = ExtResource( 37 )
+
 [node name="GridLetrasAcentuadas" type="GridContainer" parent="Letras"]
 margin_left = -194.0
 margin_top = 90.0
@@ -108,7 +367,98 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Á" parent="Letras/GridLetrasAcentuadas" instance=ExtResource( 12 )]
+visible = false
+margin_right = 64.0
+margin_bottom = 64.0
+disabled = true
+texture_normal = ExtResource( 41 )
+
+[node name="Â" parent="Letras/GridLetrasAcentuadas" instance=ExtResource( 12 )]
+visible = false
+margin_left = 154.0
+margin_right = 218.0
+margin_bottom = 64.0
+disabled = true
+texture_normal = ExtResource( 47 )
+
+[node name="Ã" parent="Letras/GridLetrasAcentuadas" instance=ExtResource( 12 )]
+visible = false
+margin_left = 308.0
+margin_right = 372.0
+margin_bottom = 64.0
+disabled = true
+texture_normal = ExtResource( 46 )
+
+[node name="Ê" parent="Letras/GridLetrasAcentuadas" instance=ExtResource( 12 )]
+visible = false
+margin_left = 462.0
+margin_right = 526.0
+margin_bottom = 64.0
+disabled = true
+texture_normal = ExtResource( 43 )
+
+[node name="É" parent="Letras/GridLetrasAcentuadas" instance=ExtResource( 12 )]
+visible = false
+margin_left = 616.0
+margin_right = 680.0
+margin_bottom = 64.0
+disabled = true
+texture_normal = ExtResource( 40 )
+
+[node name="Í" parent="Letras/GridLetrasAcentuadas" instance=ExtResource( 12 )]
+visible = false
+margin_left = 770.0
+margin_right = 834.0
+margin_bottom = 64.0
+disabled = true
+texture_normal = ExtResource( 38 )
+
+[node name="Ó" parent="Letras/GridLetrasAcentuadas" instance=ExtResource( 12 )]
+visible = false
+margin_left = 924.0
+margin_right = 988.0
+margin_bottom = 64.0
+disabled = true
+texture_normal = ExtResource( 45 )
+
+[node name="Ô" parent="Letras/GridLetrasAcentuadas" instance=ExtResource( 12 )]
+visible = false
+margin_top = 158.0
+margin_right = 64.0
+margin_bottom = 222.0
+disabled = true
+texture_normal = ExtResource( 44 )
+
+[node name="Õ" parent="Letras/GridLetrasAcentuadas" instance=ExtResource( 12 )]
+visible = false
+margin_left = 154.0
+margin_top = 158.0
+margin_right = 218.0
+margin_bottom = 222.0
+disabled = true
+texture_normal = ExtResource( 39 )
+
+[node name="Ú" parent="Letras/GridLetrasAcentuadas" instance=ExtResource( 12 )]
+visible = false
+margin_left = 308.0
+margin_top = 158.0
+margin_right = 372.0
+margin_bottom = 222.0
+disabled = true
+texture_normal = ExtResource( 42 )
+
+[node name="Ç" parent="Letras/GridLetrasAcentuadas" instance=ExtResource( 12 )]
+visible = false
+margin_left = 462.0
+margin_top = 158.0
+margin_right = 526.0
+margin_bottom = 222.0
+disabled = true
+texture_normal = ExtResource( 48 )
+
 [node name="Palavras" type="Sprite" parent="."]
+visible = false
 position = Vector2( 306.509, 278.619 )
 scale = Vector2( 1.20686, 1.2 )
 texture = ExtResource( 4 )

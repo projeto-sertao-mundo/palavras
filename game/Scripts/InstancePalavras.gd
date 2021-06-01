@@ -24,21 +24,32 @@ func InstanciarPalavras():
 		bolsaLetras = $"/root/Global".retornarLetras()
 		bolsaLetrasAcentuadas = $"/root/Global".retornarLetrasAcentuadas()
 		
-		for letraRefAc in bolsaLetrasAcentuadas:
-			if !get_node("Letras").has_node("GridLetrasAcentuadas/"+letraRefAc.nome):
-				var letraInstanciada = $"/root/Global".letraInstanceRef.instance()
-				letraInstanciada.name = letraRefAc.nome
-				letraInstanciada.isLetraAcentuada = true
-				self.get_node("Letras").get_node("GridLetrasAcentuadas").add_child(letraInstanciada)
-				letraInstanciada.texture_normal = letraRefAc.sprite
-				#letraInstanciada.modulate = letraRefAc.cor
+		for letra in bolsaLetras:
+			var gridLetras = get_node("Letras/GridLetras")
+			gridLetras.get_node(letra.nome).disabled = false
+			gridLetras.get_node(letra.nome).visible = true
 		
-		for letraRef in bolsaLetras:
-			if !get_node("Letras").has_node("GridLetras/"+letraRef.nome):
-				var letraInstanciada = $"/root/Global".letraInstanceRef.instance()
-				letraInstanciada.name = letraRef.nome
-				self.get_node("Letras").get_node("GridLetras").add_child(letraInstanciada)
-				letraInstanciada.texture_normal = letraRef.sprite
+		for letraAcentuada in bolsaLetrasAcentuadas:
+			var gridLetrasAcentuadas = get_node("Letras/GridLetrasAcentuadas")
+			gridLetrasAcentuadas.get_node(letraAcentuada.nome).disabled = false
+			gridLetrasAcentuadas.get_node(letraAcentuada.nome).visible = true
+			
+#		for letraRefAc in bolsaLetrasAcentuadas:
+#			if !get_node("Letras").has_node("GridLetrasAcentuadas/"+letraRefAc.nome):
+#				var letraInstanciada = $"/root/Global".letraInstanceRef.instance()
+#				letraInstanciada.name = letraRefAc.nome
+#				letraInstanciada.isLetraAcentuada = true
+#				self.get_node("Letras").get_node("GridLetrasAcentuadas").add_child(letraInstanciada)
+#				letraInstanciada.texture_normal = letraRefAc.sprite
+#				#letraInstanciada.modulate = letraRefAc.cor
+#
+#		for letraRef in bolsaLetras:
+#			if !get_node("Letras").has_node("GridLetras/"+letraRef.nome):
+#				var letraInstanciada = $"/root/Global".letraInstanceRef.instance()
+#				letraInstanciada.name = letraRef.nome
+#				self.get_node("Letras").get_node("GridLetras").add_child(letraInstanciada)
+#				letraInstanciada.texture_normal = letraRef.sprite
+	
 	elif get_child(6).name == "Retalhos":
 		var retalhos = []
 		retalhos = $"/root/Global".retornarRetalhos()

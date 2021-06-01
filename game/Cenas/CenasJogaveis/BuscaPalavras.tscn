@@ -717,6 +717,13 @@ margin_left = 459.562
 margin_top = 73.0513
 margin_right = 459.562
 margin_bottom = 73.0513
+
+[node name="ButtonRetalhos" parent="PalavrasPopUp" index="3"]
+visible = false
+disabled = true
+
+[node name="Retalhos" parent="PalavrasPopUp" index="4"]
+visible = false
 [connection signal="tree_entered" from="." to="." method="_on_BuscaPalavras_tree_entered"]
 [connection signal="pressed" from="Bolsa" to="PalavrasPopUp" method="_on_Bolsa_pressed"]
 [connection signal="pressed" from="Voltar" to="." method="_on_Voltar_pressed"]
@@ -831,3 +838,5 @@ margin_bottom = 73.0513
 [connection signal="mouse_entered" from="Letras/Ú" to="Letras/Ú/TextureButton" method="_on_A_mouse_entered"]
 [connection signal="mouse_exited" from="Letras/Ú" to="Letras/Ú/TextureButton" method="_on_A_mouse_exited"]
 [connection signal="pressed" from="Letras/Ú/TextureButton" to="Letras/Ú" method="_on_TextureButton_pressed"]
+
+[editable path="PalavrasPopUp"]
