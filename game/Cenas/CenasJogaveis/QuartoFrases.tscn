@@ -440,7 +440,7 @@ texture = ExtResource( 23 )
 [connection signal="tree_entered" from="." to="." method="_on_QuartoFrases_tree_entered"]
 [connection signal="pressed" from="ExitButton" to="Frases" method="_on_ExitButton_pressed"]
 [connection signal="pressed" from="Bolsa" to="PalavrasPopUp" method="_on_Bolsa_pressed"]
-[connection signal="pressed" from="Voltar" to="Frases" method="_on_Voltar_pressed"]
+[connection signal="pressed" from="Voltar" to="." method="_on_Voltar_pressed"]
 [connection signal="pressed" from="PaginaRetalho" to="Frases" method="_on_PaginaRetalho_pressed"]
 [connection signal="pressed" from="PalavrasPopUp/ButtonPalavras" to="PalavrasPopUp" method="_on_ButtonPalavras_pressed"]
 [connection signal="pressed" from="PalavrasPopUp/ButtonLetras" to="PalavrasPopUp" method="_on_ButtonLetras_pressed"]
