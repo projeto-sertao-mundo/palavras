@@ -64,15 +64,15 @@ __meta__ = {
 }
 
 [node name="Busca das Letras" type="Sprite" parent="."]
-position = Vector2( 375.234, 78.3845 )
+position = Vector2( 384.053, 96.0234 )
 texture = ExtResource( 5 )
 
 [node name="Quarto de Costura" type="Sprite" parent="."]
-position = Vector2( 864.04, 74.2133 )
+position = Vector2( 867.82, 72.9534 )
 texture = ExtResource( 6 )
 
 [node name="Confecção Dos Retalhps" type="Sprite" parent="."]
-position = Vector2( 1364, 69.9229 )
+position = Vector2( 1364, 93.0863 )
 texture = ExtResource( 1 )
 [connection signal="pressed" from="VoltarMenu" to="." method="_on_VoltarMenu_pressed"]
 [connection signal="pressed" from="PortaBuscaPalavras" to="." method="_on_PortaBuscaPalavras_pressed"]

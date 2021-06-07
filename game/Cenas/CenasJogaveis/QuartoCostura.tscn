@@ -90,6 +90,7 @@ __meta__ = {
 }
 
 [node name="CosturaPopUp" type="Control" parent="."]
+visible = false
 margin_left = -84.8948
 margin_top = 143.063
 margin_right = -84.8948
@@ -437,11 +438,11 @@ shape = SubResource( 3 )
 [connection signal="pressed" from="CosturaPopUp/Voltar" to="." method="_on_Voltar_pressed"]
 [connection signal="pressed" from="CosturaPopUp/Costurar" to="." method="_on_Costurar_pressed"]
 [connection signal="pressed" from="CosturaPopUp/Costurar" to="CosturaPopUp/PalavrasPopUp" method="_on_Costurar_pressed"]
-[connection signal="pressed" from="CosturaPopUp/Costurar" to="CosturaPopUp/Preview/Miolo" method="_on_Costurar_pressed"]
 [connection signal="pressed" from="CosturaPopUp/Costurar" to="CosturaPopUp/Preview/Borda" method="_on_Costurar_pressed"]
+[connection signal="pressed" from="CosturaPopUp/Costurar" to="CosturaPopUp/Preview/Miolo" method="_on_Costurar_pressed"]
 [connection signal="pressed" from="CosturaPopUp/Recomecar" to="." method="_on_Recomecar_pressed"]
-[connection signal="pressed" from="CosturaPopUp/Recomecar" to="CosturaPopUp/Preview/Miolo" method="_on_Recomecar_pressed"]
 [connection signal="pressed" from="CosturaPopUp/Recomecar" to="CosturaPopUp/Preview/Borda" method="_on_Recomecar_pressed"]
+[connection signal="pressed" from="CosturaPopUp/Recomecar" to="CosturaPopUp/Preview/Miolo" method="_on_Recomecar_pressed"]
 [connection signal="button_down" from="CosturaPopUp/Cor/Vermelho" to="CosturaPopUp/Cor/Vermelho" method="_on_Vermelho_button_down"]
 [connection signal="button_up" from="CosturaPopUp/Cor/Vermelho" to="CosturaPopUp/Cor/Vermelho" method="_on_Vermelho_button_up"]
 [connection signal="button_down" from="CosturaPopUp/Cor/Verde" to="CosturaPopUp/Cor/Verde" method="_on_Verde_button_down"]
