@@ -75,8 +75,9 @@ func _on_Recomecar_pressed():
 
 func _on_Area2D_area_entered(area):
 	set_process(true)
-	$"/root/Global".podeSetar = true
-	palavra = area.get_parent()
+	if !area.get_parent().isRetalho:
+		$"/root/Global".podeSetar = true
+		palavra = area.get_parent()
 
 func _on_Area2D_area_exited(_area):
 	set_process(false)
@@ -124,11 +125,6 @@ func _on_Costurar_pressed():
 
 func _on_QuartoCostura_tree_entered():
 	$"/root/Global".firstSceneNode = self
-
-
-func _on_Vermelho_button_down():
-	print("IE")
-	
 
 func _input(event):
 	if event is InputEventScreenDrag:

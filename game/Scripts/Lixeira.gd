@@ -1,17 +1,17 @@
 extends Sprite
 
 var mouseIn = false
+var costuraPopUpNode
+var clickPosition
+var area
 
 func _ready():
-	set_process(false)
+	costuraPopUpNode = get_parent().get_node("CosturaPopUp/PalavrasPopUp")
 
 func _process(_delta):
-	if mouseIn && $"/root/Global".returnRetalhoArrastado() != null && !Input.is_action_pressed("Click"):
-		print ("KEKO")
-		$"/root/Global".deleteRetalhoArrastado()
-		
-		var costuraPopUpNode = get_parent().get_node("CosturaPopUp/PalavrasPopUp")
+	if mouseIn && $"/root/Global".returnRetalhoArrastado() != null:
 		var grid = costuraPopUpNode.get_node("Retalhos").get_node("GridRetalhos").get_children()
+		$"/root/Global".deleteRetalhoArrastado()
 		
 		for n in grid:
 			n.free()
@@ -33,11 +33,18 @@ func instanceRetalhos():
 			retalhoInstanciado.get_node("Miolo").texture = retalhoRef.spriteMiolo
 			retalhoInstanciado.get_node("Label").text = retalhoRef.labelText
 			costuraPopUpNode.get_node("Retalhos").get_node("GridRetalhos").add_child(retalhoInstanciado)
+			
 	
+	area.free()
+	
+
+func _input(event):
+	if event is InputEventScreenDrag:
+		clickPosition = event.position
 
 func _on_Area2D_area_entered(_area):
 	mouseIn = true
-	set_process(true)
+	area = _area.get_parent()
+
 func _on_Area2D_area_exited(_area):
 	mouseIn = false
-	set_process(false)

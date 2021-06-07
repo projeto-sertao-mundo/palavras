@@ -42,6 +42,7 @@ func deleteRetalhoArrastado():
 		if str(ret.codigo) == retalhoArrastado.name:
 			retalhos.erase(ret)
 
+
 func mudarcorArrastada(var cor):
 	corArrastada = cor
 

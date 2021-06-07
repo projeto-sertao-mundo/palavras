@@ -42,15 +42,15 @@
 [ext_resource path="res://Scripts/Lixeira.gd" type="Script" id=40]
 [ext_resource path="res://Sprites/SpritesFinais/noAtlasObjects/Lixeira.png" type="Texture" id=41]
 
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 49.998, 224.62 )
+
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 82.901, 76.4056 )
 
 [sub_resource type="DynamicFont" id=2]
 size = 25
 font_data = ExtResource( 3 )
-
-[sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 247.434, 400.43 )
 
 [node name="QuartoCostura" type="Node2D"]
 script = ExtResource( 5 )
@@ -66,6 +66,13 @@ scale = Vector2( 0.905656, 1.32662 )
 texture = ExtResource( 41 )
 normal_map = ExtResource( 38 )
 script = ExtResource( 40 )
+
+[node name="Area2D" type="Area2D" parent="Lixeira"]
+position = Vector2( -0.611755, -0.308289 )
+scale = Vector2( 0.236082, 0.154575 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lixeira/Area2D"]
+shape = SubResource( 3 )
 
 [node name="MaquinaCostura" type="TextureButton" parent="."]
 margin_left = 978.772
@@ -424,27 +431,22 @@ margin_right = 1020.41
 margin_bottom = -16.937
 
 [node name="ArrastarParentesco" type="Node" parent="."]
-
-[node name="Area2D" type="Area2D" parent="."]
-position = Vector2( 801.31, 700.061 )
-scale = Vector2( 0.213809, 0.205062 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource( 3 )
 [connection signal="tree_entered" from="." to="." method="_on_QuartoCostura_tree_entered"]
+[connection signal="area_entered" from="Lixeira/Area2D" to="Lixeira" method="_on_Area2D_area_entered"]
+[connection signal="area_exited" from="Lixeira/Area2D" to="Lixeira" method="_on_Area2D_area_exited"]
 [connection signal="pressed" from="MaquinaCostura" to="." method="_on_MaquinaCostura_pressed"]
 [connection signal="pressed" from="Voltar2" to="." method="_on_Voltar2_pressed"]
 [connection signal="area_entered" from="CosturaPopUp/Preview/Area2D" to="." method="_on_Area2D_area_entered"]
 [connection signal="area_exited" from="CosturaPopUp/Preview/Area2D" to="." method="_on_Area2D_area_exited"]
 [connection signal="pressed" from="CosturaPopUp/Bolsa" to="CosturaPopUp/PalavrasPopUp" method="_on_Bolsa_pressed"]
 [connection signal="pressed" from="CosturaPopUp/Voltar" to="." method="_on_Voltar_pressed"]
-[connection signal="pressed" from="CosturaPopUp/Costurar" to="." method="_on_Costurar_pressed"]
 [connection signal="pressed" from="CosturaPopUp/Costurar" to="CosturaPopUp/PalavrasPopUp" method="_on_Costurar_pressed"]
-[connection signal="pressed" from="CosturaPopUp/Costurar" to="CosturaPopUp/Preview/Borda" method="_on_Costurar_pressed"]
+[connection signal="pressed" from="CosturaPopUp/Costurar" to="." method="_on_Costurar_pressed"]
 [connection signal="pressed" from="CosturaPopUp/Costurar" to="CosturaPopUp/Preview/Miolo" method="_on_Costurar_pressed"]
+[connection signal="pressed" from="CosturaPopUp/Costurar" to="CosturaPopUp/Preview/Borda" method="_on_Costurar_pressed"]
 [connection signal="pressed" from="CosturaPopUp/Recomecar" to="." method="_on_Recomecar_pressed"]
-[connection signal="pressed" from="CosturaPopUp/Recomecar" to="CosturaPopUp/Preview/Borda" method="_on_Recomecar_pressed"]
 [connection signal="pressed" from="CosturaPopUp/Recomecar" to="CosturaPopUp/Preview/Miolo" method="_on_Recomecar_pressed"]
+[connection signal="pressed" from="CosturaPopUp/Recomecar" to="CosturaPopUp/Preview/Borda" method="_on_Recomecar_pressed"]
 [connection signal="button_down" from="CosturaPopUp/Cor/Vermelho" to="CosturaPopUp/Cor/Vermelho" method="_on_Vermelho_button_down"]
 [connection signal="button_up" from="CosturaPopUp/Cor/Vermelho" to="CosturaPopUp/Cor/Vermelho" method="_on_Vermelho_button_up"]
 [connection signal="button_down" from="CosturaPopUp/Cor/Verde" to="CosturaPopUp/Cor/Verde" method="_on_Verde_button_down"]
@@ -463,5 +465,3 @@ shape = SubResource( 3 )
 [connection signal="pressed" from="CosturaPopUp/Formas/RetanguloPe" to="." method="_on_RetanguloPe_pressed"]
 [connection signal="pressed" from="CosturaPopUp/Formas/Retangulo" to="." method="_on_Retangulo_pressed"]
 [connection signal="pressed" from="CosturaPopUp/Formas/Losango" to="." method="_on_Losango_pressed"]
-[connection signal="area_entered" from="Area2D" to="Lixeira" method="_on_Area2D_area_entered"]
-[connection signal="area_exited" from="Area2D" to="Lixeira" method="_on_Area2D_area_exited"]

@@ -22,8 +22,9 @@ func _process(_delta):
 	#		#self.get_node("SpritePopUp").visible = false
 
 func changeSpriteGrande(var texture):
-	spriteGrande.texture = texture
-	spriteGrande.visible = true
+	if (!spriteGrande.visible):
+		spriteGrande.texture = texture
+		spriteGrande.visible = true
 
 func _on_1_pressed():
 	changeSpriteGrande(get_node("FrasesPagina1").get_node("1").texture_normal)

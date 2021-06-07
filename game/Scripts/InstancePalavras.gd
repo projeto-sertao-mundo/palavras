@@ -5,13 +5,10 @@ func _ready():
 	InstanciarPalavras()
 
 func InstanciarPalavras():
-	print(get_child(6).name)
 	if get_child(6).name == "Palavras":
 		var bolsaPalavras = []
 		bolsaPalavras = $"/root/Global".retornarPalavras()
 		var gridPalavras = get_node("Palavras/GridContainer")
-		
-		print(bolsaPalavras.size())
 		
 		for morfema in bolsaPalavras:
 			gridPalavras.get_node(morfema).disabled = false
