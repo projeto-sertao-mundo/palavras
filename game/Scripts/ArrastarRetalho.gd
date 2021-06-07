@@ -5,14 +5,19 @@ var primeiroNode
 var palavraInstanciada
 var palavrasParentesco
 var nomeR = self.name
+var sprite
 
 func _ready():
 	primeiroNode = $"/root/Global".firstSceneNode
 	palavrasParentesco = primeiroNode
+	sprite = primeiroNode.get_node("RetalhoGrande")
 
 func _process(_delta):
 	if (primeiroNode.name == "QuartoCostura"):
 		instanceRetalho($"/root/Global".retalhoInstanceRef, "retaio")
+	elif (primeiroNode.name == "QuartoFrases"):
+		if (sprite.visible):
+			instanceRetalho($"/root/Global".retalhoInstanceRef, "retaio")
 	
 	if !Input.is_action_pressed("Click") && palavrasParentesco.has_node("retaio") && !$"/root/Global".podeSetar:
 		$"/root/Global".mudarRetalhoArrastado(null)

@@ -16,7 +16,7 @@ func _on_Area2D_mouse_exited():
 	mouseIn = false
 
 func _process(_delta):
-	print(mouseIn)
+	pass
 	#if (Input.is_action_pressed("Click")):
 	#		spriteGrande.visible = false
 	#		#self.get_node("SpritePopUp").visible = false

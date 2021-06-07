@@ -191,6 +191,27 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Retalhos" type="Sprite" parent="PalavrasPopUp"]
+position = Vector2( 294.514, 277.314 )
+scale = Vector2( 1.2, 1.2 )
+texture = ExtResource( 17 )
+
+[node name="GridRetalhos" type="GridContainer" parent="PalavrasPopUp/Retalhos"]
+margin_left = -168.7
+margin_top = -113.8
+margin_right = 364.3
+margin_bottom = 369.2
+grow_horizontal = 0
+grow_vertical = 0
+rect_scale = Vector2( 0.55, 0.55 )
+custom_constants/vseparation = 190
+custom_constants/hseparation = 248
+columns = 3
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
 [node name="Palavras" type="Sprite" parent="PalavrasPopUp"]
 visible = false
 position = Vector2( 306.509, 278.619 )
@@ -247,27 +268,6 @@ margin_bottom = 54.0497
 rect_scale = Vector2( 1.5, 1.5 )
 texture_normal = ExtResource( 16 )
 isPrefixo = false
-
-[node name="Retalhos" type="Sprite" parent="PalavrasPopUp"]
-position = Vector2( 294.514, 277.314 )
-scale = Vector2( 1.2, 1.2 )
-texture = ExtResource( 17 )
-
-[node name="GridRetalhos" type="GridContainer" parent="PalavrasPopUp/Retalhos"]
-margin_left = -168.7
-margin_top = -113.8
-margin_right = 364.3
-margin_bottom = 369.2
-grow_horizontal = 0
-grow_vertical = 0
-rect_scale = Vector2( 0.55, 0.55 )
-custom_constants/vseparation = 190
-custom_constants/hseparation = 248
-columns = 3
-__meta__ = {
-"_edit_group_": true,
-"_edit_use_anchors_": false
-}
 
 [node name="Voltar" type="TextureButton" parent="PalavrasPopUp"]
 visible = false

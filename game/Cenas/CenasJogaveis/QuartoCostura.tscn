@@ -133,12 +133,14 @@ shape = SubResource( 1 )
 
 [node name="Label" type="Label" parent="CosturaPopUp/Preview"]
 modulate = Color( 0, 0, 0, 1 )
-margin_left = -70.0
+margin_left = -74.0
 margin_top = -30.0
-margin_right = 84.0
+margin_right = 83.0
 margin_bottom = 70.0
+grow_vertical = 0
 rect_scale = Vector2( 0.75, 0.85 )
 custom_fonts/font = SubResource( 2 )
+align = 1
 valign = 1
 uppercase = true
 __meta__ = {
