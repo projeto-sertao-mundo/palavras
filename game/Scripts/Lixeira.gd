@@ -13,6 +13,8 @@ func _process(_delta):
 		var grid = costuraPopUpNode.get_node("Retalhos").get_node("GridRetalhos").get_children()
 		$"/root/Global".deleteRetalhoArrastado()
 		
+		print ("titi")
+		
 		for n in grid:
 			n.free()
 		
