@@ -13,9 +13,15 @@ _global_script_classes=[ {
 "class": "Costura",
 "language": "GDScript",
 "path": "res://Scripts/Costura.gd"
+}, {
+"base": "Reference",
+"class": "FraseOBJ",
+"language": "GDScript",
+"path": "res://Scripts/FraseOBJ.gd"
 } ]
 _global_script_class_icons={
-"Costura": ""
+"Costura": "",
+"FraseOBJ": ""
 }
 
 [application]

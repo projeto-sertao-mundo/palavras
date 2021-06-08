@@ -4,6 +4,7 @@ var bolsa = []
 var bolsaLetra = []
 var bolsaLetraAcentuada = []
 var retalhos = []
+var frases = []
 
 var aux = -1
 var podeSetar
@@ -45,6 +46,10 @@ func deleteRetalhoArrastado():
 
 func mudarcorArrastada(var cor):
 	corArrastada = cor
+
+func criarFrase(var sprite, var retalho, var posRetalho):
+	var fraseNovo = [FraseOBJ.new(sprite, posRetalho, retalho)]
+	frases += fraseNovo
 
 func returnCorArrastada():
 	return corArrastada
