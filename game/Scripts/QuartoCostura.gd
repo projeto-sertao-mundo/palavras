@@ -14,6 +14,7 @@ onready var retalhosInstance = preload ("res://Cenas/CenasPrefab/Preview.tscn")
 var caminho = "CosturaPopUp/Formas/HolderFormas" #PASTA DESTINO DOS SPRITES MUDAR!!!
 
 func _ready():
+	get_node("AnimationPlayer").play("FadeIn")
 	$"/root/Global".firstSceneNode = self
 	$"/root/Global".podeSetar = false
 	$"/root/Global".setarRefs(morfemas, letraInstance, coresInstance, retalhosInstance)
@@ -62,6 +63,8 @@ func _on_Voltar_pressed():
 	get_node("CosturaPopUp").hide()
 
 func _on_Voltar2_pressed():
+	get_node("AnimationPlayer").play("FadeOut")
+	yield(get_tree().create_timer(0.35), "timeout")
 	var _cenaChanged = get_tree().change_scene("res://Cenas/CenasMenu/Corredor.tscn")
 
 func MudarCor(var r, g, b):
