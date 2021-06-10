@@ -9,6 +9,7 @@ var sprite
 var clickPosition
 var areaEntered
 var setRetalhoFrase
+var placedPosition
 #var setouRetalho
 
 func _ready():
@@ -20,9 +21,9 @@ func _ready():
 		sprite = primeiroNode.get_node("RetalhoGrande")
 
 func _process(_delta):
-	if (mouseIn && clickPosition != null):
-		print(sprite.to_local(clickPosition), " ", sprite.to_local(self.rect_position))
+	if (mouseIn && clickPosition != null && placedPosition != clickPosition):
 		self.set_position(sprite.to_local(clickPosition))
+		placedPosition = clickPosition
 	elif (!setRetalhoFrase && !mouseIn && clickPosition != null):
 		self.free()
 
@@ -32,7 +33,6 @@ func _input(event):
 
 func _on_TextureButton_button_down():
 	$"/root/Global".jaSetou = false
-	clickPosition = sprite.to_local(self.rect_position)
 	mouseIn = true
 func _on_TextureButton_button_up():
 	clickPosition = sprite.to_local(self.rect_position)

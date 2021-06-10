@@ -27,12 +27,15 @@ func instanceRetalho(var ref, var nome, var positionR, changeGlobal):
 		var mioloSelf = self.get_parent().get_node("retaio/Miolo")
 		var bordaSelf = self.get_parent().get_node("retaio/Borda")
 	
-		mioloInst.texture = mioloSelf.texture
-		mioloInst.modulate = Color(mioloSelf.modulate.r, mioloSelf.modulate.g, mioloSelf.modulate.b)
-		bordaInst.texture = bordaSelf.texture
-		bordaInst.modulate = Color(bordaSelf.modulate.r, bordaSelf.modulate.g, bordaSelf.modulate.b)
-		palavraInstanciada.get_node("Label").text = self.get_parent().get_node("retaio/Label").text
-
+		if (mioloInst != null && mioloSelf != null):
+			mioloInst.texture = mioloSelf.texture
+			mioloInst.modulate = Color(mioloSelf.modulate.r, mioloSelf.modulate.g, mioloSelf.modulate.b)
+			bordaInst.texture = bordaSelf.texture
+			bordaInst.modulate = Color(bordaSelf.modulate.r, bordaSelf.modulate.g, bordaSelf.modulate.b)
+			palavraInstanciada.get_node("Label").text = self.get_parent().get_node("retaio/Label").text
+		else:
+			return
+	
 func _input(event):
 	if event is InputEventScreenDrag:
 		clickPosition = event.position
