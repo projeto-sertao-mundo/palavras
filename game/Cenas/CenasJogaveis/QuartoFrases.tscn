@@ -35,7 +35,7 @@
 [ext_resource path="res://Cenas/CenasPrefab/Fade.tscn" type="PackedScene" id=33]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 106.03, 65.351 )
+extents = Vector2( 86.3473, 50.4913 )
 
 [node name="QuartoFrases" type="Node2D"]
 position = Vector2( -4.48987, -4.48981 )
@@ -66,6 +66,15 @@ margin_left = 1232.0
 margin_top = 103.0
 margin_right = 1391.0
 margin_bottom = 168.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ExitLock2" type="Control" parent="ExitLock"]
+margin_left = -1100.0
+margin_top = 13.0
+margin_right = -395.0
+margin_bottom = 459.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -372,6 +381,9 @@ margin_right = 691.64
 margin_bottom = 622.16
 rect_scale = Vector2( 0.7, 0.7 )
 texture_normal = ExtResource( 13 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="9" type="TextureButton" parent="Frases/FrasesPagina1"]
 margin_left = 617.28
@@ -441,7 +453,6 @@ __meta__ = {
 }
 
 [node name="RetalhoGrande" type="Sprite" parent="."]
-visible = false
 position = Vector2( 481.835, 337.29 )
 scale = Vector2( 2.24655, 2.24655 )
 texture = ExtResource( 23 )

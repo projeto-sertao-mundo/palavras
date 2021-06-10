@@ -5,11 +5,6 @@ var numeroCaracteres = 0
 var numeroRetalhos = 0
 export var isMorfema = 0
 var clickPosition
-onready var letraInstance = preload("res://Cenas/CenasPrefab/BotaoLetra.tscn")
-#onready var palavraInstance = preload("res://Cenas/CenasPrefab/BotaoPalavra.tscn")
-onready var morfemas = preload("res://Cenas/CenasPrefab/Morfemas.tscn")
-onready var coresInstance = preload ("res://Cenas/CenasPrefab/Cores.tscn")
-onready var retalhosInstance = preload ("res://Cenas/CenasPrefab/Preview.tscn")
 
 var caminho = "CosturaPopUp/Formas/HolderFormas" #PASTA DESTINO DOS SPRITES MUDAR!!!
 
@@ -17,7 +12,6 @@ func _ready():
 	get_node("AnimationPlayer").play("FadeIn")
 	$"/root/Global".firstSceneNode = self
 	$"/root/Global".podeSetar = false
-	$"/root/Global".setarRefs(morfemas, letraInstance, coresInstance, retalhosInstance)
 
 func _process(_delta):
 	
@@ -27,7 +21,6 @@ func _process(_delta):
 #			$"/root/Global".podeSetar = false
 #		palavra.free()
 	if ($"/root/Global".podeSetar && (palavra.name.length() == 1 || palavra.isMorfema)):
-		print("teco")
 		var aux = numeroCaracteres + palavra.name.length()
 		if  aux <= 11:
 			

@@ -22,20 +22,22 @@ func _ready():
 		sprite = primeiroNode.get_node("RetalhoGrande")
 
 func _process(_delta):
-		
+	
 	if (primeiroNode.name == "QuartoCostura"):
 		instanceRetalho($"/root/Global".retalhoInstanceRef, "retaio", Vector2(0.7,0.7))
 		moveRetalho()
+	
 	
 	elif (primeiroNode.name == "QuartoFrases"):
 		if (sprite.visible):
 			instanceRetalho($"/root/Global".retalhoInstanceRef, "retaio", Vector2(1.2,1.2))
 			moveRetalho()
-
+	
 	if (!setRetalhoFrase && !setouRetalho):
-		if !mouseIn && mouseIn != null && palavrasParentesco.has_node("retaio") && !$"/root/Global".podeSetar:
-			$"/root/Global".mudarRetalhoArrastado(null)
-			palavraInstanciada.free()
+			if !mouseIn && mouseIn != null && palavrasParentesco.has_node("retaio") && !$"/root/Global".podeSetar:
+				$"/root/Global".mudarRetalhoArrastado(null)
+				if (palavraInstanciada != null):
+					palavraInstanciada.free()
 
 
 func instanceRetalho(var ref, var nome, var scale):
@@ -43,6 +45,7 @@ func instanceRetalho(var ref, var nome, var scale):
 		palavraInstanciada = ref.instance()
 		clickPosition = Vector2(self.rect_global_position)
 		palavraInstanciada.name = nome
+		palavraInstanciada.set_scale(scale)
 		palavraInstanciada.visible = false
 		palavrasParentesco.add_child(palavraInstanciada)
 		

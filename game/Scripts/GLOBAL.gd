@@ -15,6 +15,7 @@ var morfemaInstanceRef
 var letraInstanceRef
 var coresInstanceRef
 var retalhoInstanceRef
+var retalhosFrasesRef
 
 var jaSetou
 
@@ -90,8 +91,9 @@ func retornarLetras():
 func retornarLetrasAcentuadas():
 	return bolsaLetraAcentuada
 
-func setarRefs(var morfemas, var letras, var cores, var retalhosRef):
+func setarRefs(var morfemas, var letras, var cores, var retalhosRef, var retalhosFrases):
 	morfemaInstanceRef = morfemas
+	retalhosFrasesRef = retalhosFrases
 	letraInstanceRef = letras
 	coresInstanceRef = cores
 	retalhoInstanceRef = retalhosRef
