@@ -16,7 +16,7 @@ func _ready():
 	#setouRetalho = false
 	setRetalhoFrase = false
 	primeiroNode = $"/root/Global".firstSceneNode
-	palavrasParentesco = primeiroNode
+	palavrasParentesco = primeiroNode.get_node("RetalhoGrande")
 	if (primeiroNode.has_node("RetalhoGrande")):
 		sprite = primeiroNode.get_node("RetalhoGrande")
 

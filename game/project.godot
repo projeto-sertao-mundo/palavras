@@ -18,10 +18,16 @@ _global_script_classes=[ {
 "class": "FraseOBJ",
 "language": "GDScript",
 "path": "res://Scripts/FraseOBJ.gd"
+}, {
+"base": "Reference",
+"class": "RetalhoToGlobal",
+"language": "GDScript",
+"path": "res://Scripts/RetalhoSaveOBJ.gd"
 } ]
 _global_script_class_icons={
 "Costura": "",
-"FraseOBJ": ""
+"FraseOBJ": "",
+"RetalhoToGlobal": ""
 }
 
 [application]
@@ -33,6 +39,7 @@ config/icon="res://Sprites/Blocagem/icon.png"
 [autoload]
 
 Global="*res://Scripts/GLOBAL.gd"
+Yield="*res://Scripts/YIELD.gd"
 
 [display]
 

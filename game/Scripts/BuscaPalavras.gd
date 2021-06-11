@@ -4,7 +4,7 @@ export (String) var SceneName
 
 func _on_Voltar_pressed():
 	get_node("AnimationPlayer").play("FadeOut")
-	yield(get_tree().create_timer(0.35), "timeout")
+	yield(Yield.yield_wait(0.35, self), "completed")
 	var _cenaChanged = get_tree().change_scene("res://Cenas/CenasMenu/Corredor.tscn")
 
 func _on_Bolsa_pressed():
@@ -19,3 +19,4 @@ func _ready():
 
 func _on_BuscaPalavras_tree_entered():
 	$"/root/Global".firstSceneNode = self
+

@@ -1,10 +1,10 @@
 class_name FraseOBJ
 
 var sprite
-var posicaoRetalho
-var retalho
+var retalhos = []
+var codigo
 
-func _init(var spriteRef, posicaoRetalhoRef, retalhoRef):
+func _init(var spriteRef, var retalhosRef, var codigoRef):
 	sprite = spriteRef
-	posicaoRetalho = posicaoRetalhoRef
-	retalho = retalhoRef
+	retalhos = retalhosRef
+	codigo = codigoRef

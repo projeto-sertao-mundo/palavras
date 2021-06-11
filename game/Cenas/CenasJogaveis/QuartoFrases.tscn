@@ -1,10 +1,9 @@
-[gd_scene load_steps=35 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://Scripts/FrasePreview.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/SpritesFinais/Objetos/Bolsa.png" type="Texture" id=2]
 [ext_resource path="res://Sprites/SpritesFinais/Fundo cenas/Interface.png" type="Texture" id=3]
 [ext_resource path="res://Scripts/QuartoFrases.gd" type="Script" id=4]
-[ext_resource path="res://Cenas/CenasPrefab/Morfemas.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Sprites/SpritesFinais/Frases/RetalhoTres.png" type="Texture" id=6]
 [ext_resource path="res://Sprites/SpritesFinais/Objetos/seta.png" type="Texture" id=7]
 [ext_resource path="res://Sprites/SpritesFinais/Frases/RetalhoQuatro.png" type="Texture" id=8]
@@ -14,14 +13,7 @@
 [ext_resource path="res://Sprites/SpritesFinais/Frases/retalho sete.png" type="Texture" id=12]
 [ext_resource path="res://Sprites/SpritesFinais/Frases/retalho oito.png" type="Texture" id=13]
 [ext_resource path="res://Scripts/InstancePalavras.gd" type="Script" id=14]
-[ext_resource path="res://Sprites/SpritesFinais/Objetos/Inha.png" type="Texture" id=15]
-[ext_resource path="res://Sprites/SpritesFinais/Objetos/Zinho.png" type="Texture" id=16]
 [ext_resource path="res://Sprites/SpritesFinais/ObetosCostura/Retalho fundo completo.png" type="Texture" id=17]
-[ext_resource path="res://Sprites/SpritesFinais/Objetos/Dis.png" type="Texture" id=18]
-[ext_resource path="res://Sprites/SpritesFinais/Objetos/Inho.png" type="Texture" id=19]
-[ext_resource path="res://Sprites/SpritesFinais/Objetos/Quadro dos morfemas leve.png" type="Texture" id=20]
-[ext_resource path="res://Sprites/SpritesFinais/Objetos/Quadro das letras leve.png" type="Texture" id=21]
-[ext_resource path="res://Sprites/SpritesFinais/Objetos/Zinha.png" type="Texture" id=22]
 [ext_resource path="res://Sprites/SpritesFinais/Frases/RetalhoUm.png" type="Texture" id=23]
 [ext_resource path="res://Sprites/SpritesFinais/noAtlasObjects/retalho nove.png" type="Texture" id=24]
 [ext_resource path="res://Sprites/SpritesFinais/noAtlasObjects/retalho quinze.png" type="Texture" id=25]
@@ -33,6 +25,7 @@
 [ext_resource path="res://Scripts/RetalhoGrande.gd" type="Script" id=31]
 [ext_resource path="res://Sprites/SpritesFinais/ObetosCostura/Confirmar.png" type="Texture" id=32]
 [ext_resource path="res://Cenas/CenasPrefab/Fade.tscn" type="PackedScene" id=33]
+[ext_resource path="res://Sprites/SpritesFinais/noAtlasObjects/Cartões.png" type="Texture" id=34]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 86.3473, 50.4913 )
@@ -62,7 +55,7 @@ __meta__ = {
 }
 
 [node name="ExitLock" type="Control" parent="."]
-margin_left = 1232.0
+margin_left = 1050.0
 margin_top = 103.0
 margin_right = 1391.0
 margin_bottom = 168.0
@@ -165,45 +158,29 @@ __meta__ = {
 }
 
 [node name="ButtonRetalhos" type="Button" parent="PalavrasPopUp"]
-visible = false
 modulate = Color( 1, 1, 1, 0 )
 margin_left = 359.0
 margin_top = -15.0
 margin_right = 514.0
 margin_bottom = 55.0
-disabled = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Letras" type="Sprite" parent="PalavrasPopUp"]
-visible = false
-position = Vector2( 291.022, 278.619 )
-scale = Vector2( 1.2, 1.2 )
-texture = ExtResource( 21 )
+[node name="Cartões" type="Sprite" parent="PalavrasPopUp"]
+position = Vector2( 294.032, 276.411 )
+scale = Vector2( 1.19349, 1.1994 )
+texture = ExtResource( 34 )
 
-[node name="GridLetras" type="GridContainer" parent="PalavrasPopUp/Letras"]
-margin_left = -194.0
-margin_top = -160.0
-margin_right = 1247.0
-margin_bottom = 950.0
-rect_scale = Vector2( 0.4, 0.4 )
-custom_constants/vseparation = 83
-custom_constants/hseparation = 90
-columns = 7
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="GridLetrasAcentuadas" type="GridContainer" parent="PalavrasPopUp/Letras"]
-margin_left = -194.0
-margin_top = 90.0
-margin_right = 1083.0
-margin_bottom = 556.0
-rect_scale = Vector2( 0.4, 0.4 )
-custom_constants/vseparation = 94
-custom_constants/hseparation = 90
-columns = 7
+[node name="GridCartões" type="GridContainer" parent="PalavrasPopUp/Cartões"]
+margin_left = -196.0
+margin_top = -155.0
+margin_right = 1075.0
+margin_bottom = 858.0
+rect_scale = Vector2( 0.35, 0.35 )
+custom_constants/vseparation = 40
+custom_constants/hseparation = 60
+columns = 3
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -229,62 +206,15 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Palavras" type="Sprite" parent="PalavrasPopUp"]
-visible = false
-position = Vector2( 306.509, 278.619 )
-scale = Vector2( 1.20686, 1.2 )
-texture = ExtResource( 20 )
-
-[node name="des" parent="PalavrasPopUp/Palavras" instance=ExtResource( 5 )]
-margin_left = -164.925
-margin_top = -141.741
-margin_right = -105.925
-margin_bottom = -115.741
-rect_scale = Vector2( 1.5, 1.5 )
-
-[node name="dis" parent="PalavrasPopUp/Palavras" instance=ExtResource( 5 )]
-margin_left = 39.9506
-margin_top = -142.337
-margin_right = 98.9506
-margin_bottom = -116.337
-rect_scale = Vector2( 1.5, 1.5 )
-texture_normal = ExtResource( 18 )
-
-[node name="inha" parent="PalavrasPopUp/Palavras" instance=ExtResource( 5 )]
-margin_left = -167.998
-margin_top = -56.6964
-margin_right = -106.998
-margin_bottom = -28.6964
-rect_scale = Vector2( 1.5, 1.5 )
-texture_normal = ExtResource( 15 )
-isPrefixo = false
-
-[node name="inho" parent="PalavrasPopUp/Palavras" instance=ExtResource( 5 )]
-margin_left = 40.5321
-margin_top = -57.7464
-margin_right = 102.532
-margin_bottom = -27.7464
-rect_scale = Vector2( 1.5, 1.5 )
-texture_normal = ExtResource( 19 )
-isPrefixo = false
-
-[node name="zinha" parent="PalavrasPopUp/Palavras" instance=ExtResource( 5 )]
-margin_left = -168.247
-margin_top = 27.497
-margin_right = -93.2468
-margin_bottom = 53.497
-rect_scale = Vector2( 1.5, 1.5 )
-texture_normal = ExtResource( 22 )
-isPrefixo = false
-
-[node name="zinho" parent="PalavrasPopUp/Palavras" instance=ExtResource( 5 )]
-margin_left = 37.9852
-margin_top = 26.0497
-margin_right = 113.985
-margin_bottom = 54.0497
-rect_scale = Vector2( 1.5, 1.5 )
-texture_normal = ExtResource( 16 )
-isPrefixo = false
+[node name="ButtonCartoes" type="Button" parent="PalavrasPopUp"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 163.0
+margin_top = -22.0
+margin_right = 338.0
+margin_bottom = 49.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Voltar" type="TextureButton" parent="PalavrasPopUp"]
 visible = false
@@ -453,6 +383,7 @@ __meta__ = {
 }
 
 [node name="RetalhoGrande" type="Sprite" parent="."]
+visible = false
 position = Vector2( 481.835, 337.29 )
 scale = Vector2( 2.24655, 2.24655 )
 texture = ExtResource( 23 )
@@ -483,6 +414,7 @@ __meta__ = {
 [connection signal="pressed" from="PalavrasPopUp/ButtonPalavras" to="PalavrasPopUp" method="_on_ButtonPalavras_pressed"]
 [connection signal="pressed" from="PalavrasPopUp/ButtonLetras" to="PalavrasPopUp" method="_on_ButtonLetras_pressed"]
 [connection signal="pressed" from="PalavrasPopUp/ButtonRetalhos" to="PalavrasPopUp" method="_on_ButtonRetalhos_pressed"]
+[connection signal="pressed" from="PalavrasPopUp/ButtonCartoes" to="PalavrasPopUp" method="_on_ButtonCartoes_pressed"]
 [connection signal="pressed" from="PalavrasPopUp/Voltar" to="PalavrasPopUp" method="_on_Voltar_pressed"]
 [connection signal="pressed" from="Frases/FrasesPagina1/1" to="Frases" method="_on_1_pressed"]
 [connection signal="pressed" from="Frases/FrasesPagina1/2" to="Frases" method="_on_2_pressed"]

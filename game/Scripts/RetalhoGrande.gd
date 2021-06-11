@@ -6,13 +6,13 @@ var mouseIn
 var clickPosition
 var palavrasParentesco
 var palavraInstanciada
+var sprite
 
 func _ready():
 	palavrasParentesco = self
 
-
 func instanceRetalho(var ref, var nome, var positionR, changeGlobal):
-	if (self.visible):
+	if (self.visible && self.get_parent().has_node("retaio/Miolo") && self.get_parent().has_node("retaio/Borda")):
 		palavraInstanciada = ref.instance()
 		palavraInstanciada.name = nome
 		palavraInstanciada.visible = true
@@ -48,17 +48,24 @@ func _on_Area2D_area_entered(area):
 
 func _on_Area2D_area_exited(area):
 	if (area.get_parent().name == "retaio" && !mouseIn):
-		if (!mouseIn):
-			instanceRetalho($"/root/Global".retalhosFrasesRef, "retaio", clickPosition, false)
-			self.get_parent().get_node("Confirm").visible = true
+		instanceRetalho($"/root/Global".retalhosFrasesRef, "retaio", clickPosition, false)
+		self.get_parent().get_node("Confirm").visible = true
 
 func _on_ExitButton_pressed():
-	if (self.has_node("retaio")):
-		self.get_node("retaio").free()
-		setRetalhoFrase = false
-		self.get_parent().get_node("Confirm").visible = false
-
+	for child in self.get_children():
+		if !(child is Area2D) && !(child is CollisionShape2D):
+			child.free()
+		
+	setRetalhoFrase = false
+	self.get_parent().get_node("Confirm").visible = false
 
 func _on_Confirm_pressed():
-	#$"/root/Global".criarFrase(self.texture, palavraInstanciada, palavraInstanciada.get_position())
-	_on_ExitButton_pressed()
+	var retalhos = []
+	for child in self.get_children():
+		if child is TextureButton:
+			print(child.name)
+			var retalhoNew = RetalhoToGlobal.new(child.get_node("Miolo").texture, child.get_node("Borda").texture, child.get_node("Miolo").modulate,  child.get_node("Borda").modulate, child.get_node("Label").text, child.get_rect().position, child.texture_normal) 
+			retalhos.append(retalhoNew)
+			child.free()
+	
+	$"/root/Global".criarFrase(self.texture, retalhos)

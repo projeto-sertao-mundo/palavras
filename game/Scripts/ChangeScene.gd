@@ -10,7 +10,7 @@ func _on_Jogar_pressed():
 
 func ChangeScene():
 	get_node("AnimationPlayer").play("FadeOut")
-	yield(get_tree().create_timer(0.35), "timeout")
+	yield(Yield.yield_wait(0.35, self), "completed")
 	var _cenaChanged = get_tree().change_scene(path)
 
 func _on_Creditos_pressed():

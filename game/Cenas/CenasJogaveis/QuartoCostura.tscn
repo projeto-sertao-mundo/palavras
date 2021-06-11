@@ -78,11 +78,13 @@ scale = Vector2( 0.236082, 0.154575 )
 shape = SubResource( 1 )
 
 [node name="MaquinaCostura" type="TextureButton" parent="."]
+visible = false
 margin_left = 978.772
 margin_top = 352.0
 margin_right = 1223.77
 margin_bottom = 521.0
 rect_scale = Vector2( 0.8, 0.8 )
+disabled = true
 texture_normal = ExtResource( 8 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -100,7 +102,6 @@ __meta__ = {
 }
 
 [node name="CosturaPopUp" type="Control" parent="."]
-visible = false
 margin_left = -84.8948
 margin_top = 143.063
 margin_right = -84.8948
@@ -163,22 +164,26 @@ scale = Vector2( 0.8051, 1.02509 )
 texture = ExtResource( 17 )
 
 [node name="Bolsa" type="TextureButton" parent="CosturaPopUp"]
+visible = false
 margin_left = 433.734
 margin_top = 39.4368
 margin_right = 596.734
 margin_bottom = 277.437
 rect_scale = Vector2( 0.5, 0.5 )
+disabled = true
 texture_normal = ExtResource( 18 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Voltar" type="TextureButton" parent="CosturaPopUp"]
+visible = false
 margin_left = 198.379
 margin_top = 449.123
 margin_right = 321.379
 margin_bottom = 553.123
 rect_scale = Vector2( 0.9, 0.6 )
+disabled = true
 texture_normal = ExtResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -427,7 +432,6 @@ position = Vector2( -62.8754, 427.458 )
 texture = ExtResource( 30 )
 
 [node name="PalavrasPopUp" parent="CosturaPopUp" instance=ExtResource( 6 )]
-visible = false
 margin_left = 1020.41
 margin_top = -16.937
 margin_right = 1020.41

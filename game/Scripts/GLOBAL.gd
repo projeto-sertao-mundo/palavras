@@ -8,7 +8,6 @@ var frases = []
 
 var aux = -1
 var podeSetar
-
 var firstSceneNode
 
 var morfemaInstanceRef
@@ -16,14 +15,13 @@ var letraInstanceRef
 var coresInstanceRef
 var retalhoInstanceRef
 var retalhosFrasesRef
+var cartoesInstanceRef
 
 var jaSetou
-
 var corArrastada
-
 var retalhoArrastado
-
 var codigoRetalho = 0
+var codigoCartao = 0
 
 func criarRetalho(var corBorda, corMiolo, spriteBorda, spriteMiolo, texto):
 	codigoRetalho += 1
@@ -32,6 +30,9 @@ func criarRetalho(var corBorda, corMiolo, spriteBorda, spriteMiolo, texto):
 
 func retornarRetalhos():
 	return retalhos
+
+func retornarCartoes():
+	return frases
 
 func mudarRetalhoArrastado (var retalho):
 	retalhoArrastado = retalho
@@ -48,8 +49,9 @@ func deleteRetalhoArrastado():
 func mudarcorArrastada(var cor):
 	corArrastada = cor
 
-func criarFrase(var sprite, var retalho, var posRetalho):
-	var fraseNovo = [FraseOBJ.new(sprite, posRetalho, retalho)]
+func criarFrase(var sprite, var retalhos):
+	codigoCartao += 1
+	var fraseNovo = [FraseOBJ.new(sprite, retalhos, codigoCartao)]
 	frases += fraseNovo
 
 func returnCorArrastada():
@@ -91,12 +93,13 @@ func retornarLetras():
 func retornarLetrasAcentuadas():
 	return bolsaLetraAcentuada
 
-func setarRefs(var morfemas, var letras, var cores, var retalhosRef, var retalhosFrases):
+func setarRefs(var morfemas, var letras, var cores, var retalhosRef, var retalhosFrases, var cartoesRef):
 	morfemaInstanceRef = morfemas
 	retalhosFrasesRef = retalhosFrases
 	letraInstanceRef = letras
 	coresInstanceRef = cores
 	retalhoInstanceRef = retalhosRef
+	cartoesInstanceRef = cartoesRef
 
 class Letras:
 	var sprite
