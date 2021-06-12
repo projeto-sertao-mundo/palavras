@@ -23,13 +23,13 @@
 [ext_resource path="res://Sprites/SpritesFinais/ObetosCostura/Branco.png" type="Texture" id=21]
 [ext_resource path="res://Sprites/SpritesFinais/ObetosCostura/Circulo Botão.png" type="Texture" id=22]
 [ext_resource path="res://Sprites/SpritesFinais/ObetosCostura/Hexagono Botão.png" type="Texture" id=23]
-[ext_resource path="res://Sprites/SpritesFinais/ObetosCostura/RetanguloDePe Botão.png" type="Texture" id=24]
+[ext_resource path="res://Sprites/SpritesFinais/noAtlasObjects/Coração Botão.png" type="Texture" id=24]
 [ext_resource path="res://Sprites/SpritesFinais/ObetosCostura/Retangulo Miolo Textura.png" type="Texture" id=25]
 [ext_resource path="res://Sprites/SpritesFinais/ObetosCostura/Losango Borda Textura.png" type="Texture" id=26]
 [ext_resource path="res://Sprites/SpritesFinais/ObetosCostura/Hexagono Borda Textura.png" type="Texture" id=27]
 [ext_resource path="res://Sprites/SpritesFinais/ObetosCostura/Losango Miolo Textura.png" type="Texture" id=28]
-[ext_resource path="res://Sprites/SpritesFinais/ObetosCostura/RetanguloDePe Borda Textura.png" type="Texture" id=29]
-[ext_resource path="res://Sprites/SpritesFinais/ObetosCostura/RetanguloDePe Miolo Textura.png" type="Texture" id=30]
+[ext_resource path="res://Sprites/SpritesFinais/noAtlasObjects/Coração Borda.png" type="Texture" id=29]
+[ext_resource path="res://Sprites/SpritesFinais/noAtlasObjects/Coração Miolo.png" type="Texture" id=30]
 [ext_resource path="res://Sprites/SpritesFinais/ObetosCostura/Circulo Miolo Textura.png" type="Texture" id=31]
 [ext_resource path="res://Sprites/SpritesFinais/ObetosCostura/Quadrado Borda Textura.png" type="Texture" id=32]
 [ext_resource path="res://Sprites/SpritesFinais/ObetosCostura/Hexagono Miolo Textura.png" type="Texture" id=33]
@@ -59,8 +59,8 @@ script = ExtResource( 5 )
 [node name="AnimationPlayer" parent="." instance=ExtResource( 42 )]
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 795.68, 445.037 )
-scale = Vector2( 1.25, 1.25 )
+position = Vector2( 800, 452 )
+scale = Vector2( 1.25, 1.25556 )
 texture = ExtResource( 2 )
 
 [node name="Lixeira" type="Sprite" parent="."]
@@ -325,7 +325,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Circulo" type="TextureButton" parent="CosturaPopUp/Formas"]
+[node name="Coracao" type="TextureButton" parent="CosturaPopUp/Formas"]
 margin_left = 318.04
 margin_top = 96.7737
 margin_right = 400.04
@@ -337,10 +337,10 @@ __meta__ = {
 }
 
 [node name="RetanguloPe" type="TextureButton" parent="CosturaPopUp/Formas"]
-margin_left = 219.921
-margin_top = 256.683
-margin_right = 281.921
-margin_bottom = 358.683
+margin_left = 209.041
+margin_top = 259.483
+margin_right = 299.041
+margin_bottom = 332.483
 rect_scale = Vector2( 0.9, 0.9 )
 texture_normal = ExtResource( 24 )
 __meta__ = {
@@ -348,10 +348,10 @@ __meta__ = {
 }
 
 [node name="Retangulo" type="TextureButton" parent="CosturaPopUp/Formas"]
-margin_left = 288.74
-margin_top = 300.736
-margin_right = 405.74
-margin_bottom = 362.736
+margin_left = 286.808
+margin_top = 305.478
+margin_right = 403.808
+margin_bottom = 367.478
 rect_scale = Vector2( 0.9, 0.9 )
 texture_normal = ExtResource( 20 )
 __meta__ = {
@@ -359,10 +359,10 @@ __meta__ = {
 }
 
 [node name="Losango" type="TextureButton" parent="CosturaPopUp/Formas"]
-margin_left = 306.7
-margin_top = 198.653
-margin_right = 400.7
-margin_bottom = 296.653
+margin_left = 304.918
+margin_top = 192.417
+margin_right = 398.918
+margin_bottom = 290.417
 rect_scale = Vector2( 0.9, 0.9 )
 texture_normal = ExtResource( 1 )
 __meta__ = {
@@ -468,7 +468,7 @@ margin_bottom = -16.937
 [connection signal="button_up" from="CosturaPopUp/Cor/Branco" to="CosturaPopUp/Cor/Branco" method="_on_Branco_button_up"]
 [connection signal="pressed" from="CosturaPopUp/Formas/Quadrado" to="." method="_on_Quadrado_pressed"]
 [connection signal="pressed" from="CosturaPopUp/Formas/Hexagono" to="." method="_on_Hexagono_pressed"]
-[connection signal="pressed" from="CosturaPopUp/Formas/Circulo" to="." method="_on_Circulo_pressed"]
+[connection signal="pressed" from="CosturaPopUp/Formas/Coracao" to="." method="_on_Circulo_pressed"]
 [connection signal="pressed" from="CosturaPopUp/Formas/RetanguloPe" to="." method="_on_RetanguloPe_pressed"]
 [connection signal="pressed" from="CosturaPopUp/Formas/Retangulo" to="." method="_on_Retangulo_pressed"]
 [connection signal="pressed" from="CosturaPopUp/Formas/Losango" to="." method="_on_Losango_pressed"]

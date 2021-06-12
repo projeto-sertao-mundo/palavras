@@ -1,11 +1,19 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Sprites/SpritesFinais/Frases/RetalhoUm.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/VisualizarCartoes.gd" type="Script" id=2]
 
 [node name="TextureButton" type="TextureButton"]
 margin_right = 40.0
 margin_bottom = 40.0
 texture_normal = ExtResource( 1 )
+script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="TextureControl" type="TextureButton" parent="."]
+margin_right = 314.0
+margin_bottom = 191.0
+[connection signal="pressed" from="." to="." method="_on_TextureButton_pressed"]
+[connection signal="pressed" from="TextureControl" to="." method="_on_TextureControl_pressed"]

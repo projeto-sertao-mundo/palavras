@@ -11,7 +11,7 @@ func _on_Frase2_pressed():
 func _on_Voltar_pressed():
 	get_node("AnimationPlayer").play("FadeOut")
 	yield(Yield.yield_wait(0.35, self), "completed")
-	get_tree().change_scene("res://Cenas/CenasMenu/Corredor.tscn")
+	var _ignore = get_tree().change_scene("res://Cenas/CenasMenu/Corredor.tscn")
 
 func _on_Voltar2_pressed():
 	get_node("RetalhoPopUp").hide()

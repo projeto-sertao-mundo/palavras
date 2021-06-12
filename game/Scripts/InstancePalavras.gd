@@ -40,7 +40,7 @@ func InstanciarPalavras():
 		retalhos = $"/root/Global".retornarRetalhos()
 		for retalhoRef in retalhos:
 			if !get_node("Retalhos").has_node("GridRetalhos/"+str(retalhoRef.codigo)):
-				var retalhoInstanciado = $"/root/Global".retalhoInstanceRef.instance()
+				retalhoInstanciado = $"/root/Global".retalhoInstanceRef.instance()
 				retalhoInstanciado.name = str(retalhoRef.codigo)
 				retalhoInstanciado.get_node("Borda").modulate = retalhoRef.corBorda
 				retalhoInstanciado.get_node("Miolo").modulate = retalhoRef.corMiolo
@@ -52,7 +52,6 @@ func InstanciarPalavras():
 	elif get_child(6).name == "Cartões":
 		var cartoes = []
 		cartoes = $"/root/Global".retornarCartoes()
-		var aux = 0;
 		for cartao in cartoes:
 			if (!get_node("Cartões").has_node("GridCartões/"+str(cartao.codigo))):
 				var cartaoInstanciado = $"/root/Global".cartoesInstanceRef.instance()
@@ -62,9 +61,8 @@ func InstanciarPalavras():
 				
 				for retalho in cartao.retalhos:
 					retalhoInstanciado = $"/root/Global".retalhoInstanceRef.instance()
-					print(retalhoInstanciado.name)
 					cartaoInstanciado.add_child(retalhoInstanciado)
-					print(cartaoInstanciado.name)
+					cartaoInstanciado.move_child(retalhoInstanciado, 0)
 					retalhoInstanciado.set_scale(Vector2(0.6,0.6))
 					
 					retalhoInstanciado.get_node("Borda").modulate = retalho.retalhoBordaColor
@@ -133,3 +131,6 @@ func _on_ButtonCartoes_pressed():
 		get_node("Letras/GridLetrasAcentuadas").hide()
 	if (has_node("Retalhos/GridRetalhos")):
 		get_node("Retalhos/GridRetalhos").hide()
+
+func _on_Confirm_pressed():
+	InstanciarPalavras()

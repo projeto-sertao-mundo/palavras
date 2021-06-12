@@ -11,7 +11,7 @@ var sprite
 func _ready():
 	palavrasParentesco = self
 
-func instanceRetalho(var ref, var nome, var positionR, changeGlobal):
+func instanceRetalho(var ref, var nome, var positionR, var _changeGlobal):
 	if (self.visible && self.get_parent().has_node("retaio/Miolo") && self.get_parent().has_node("retaio/Borda")):
 		palavraInstanciada = ref.instance()
 		palavraInstanciada.name = nome
@@ -60,6 +60,7 @@ func _on_ExitButton_pressed():
 	self.get_parent().get_node("Confirm").visible = false
 
 func _on_Confirm_pressed():
+	self.get_parent().get_node("Confirm").visible = false
 	var retalhos = []
 	for child in self.get_children():
 		if child is TextureButton:
@@ -68,4 +69,9 @@ func _on_Confirm_pressed():
 			retalhos.append(retalhoNew)
 			child.free()
 	
-	$"/root/Global".criarFrase(self.texture, retalhos)
+	self.get_parent().get_node("Confirm").visible = false
+	
+	if ($"/root/Global".cartaoEditando == null):
+		$"/root/Global".criarFrase(self.texture, retalhos)
+	else:
+		$"/root/Global".editarFrase(self.texture, retalhos)

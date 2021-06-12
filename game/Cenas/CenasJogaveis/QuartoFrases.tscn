@@ -405,6 +405,16 @@ texture_normal = ExtResource( 32 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="FraseLock" type="Control" parent="."]
+visible = false
+margin_left = 134.0
+margin_top = 119.0
+margin_right = 838.0
+margin_bottom = 559.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="tree_entered" from="." to="." method="_on_QuartoFrases_tree_entered"]
 [connection signal="pressed" from="ExitButton" to="Frases" method="_on_ExitButton_pressed"]
 [connection signal="pressed" from="ExitButton" to="RetalhoGrande" method="_on_ExitButton_pressed"]
@@ -433,4 +443,5 @@ __meta__ = {
 [connection signal="pressed" from="Frases/FrasesPagina2/15" to="Frases" method="_on_15_pressed"]
 [connection signal="area_entered" from="RetalhoGrande/Area2D" to="RetalhoGrande" method="_on_Area2D_area_entered"]
 [connection signal="area_exited" from="RetalhoGrande/Area2D" to="RetalhoGrande" method="_on_Area2D_area_exited"]
+[connection signal="pressed" from="Confirm" to="PalavrasPopUp" method="_on_Confirm_pressed"]
 [connection signal="pressed" from="Confirm" to="RetalhoGrande" method="_on_Confirm_pressed"]

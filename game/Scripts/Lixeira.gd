@@ -24,7 +24,7 @@ func _process(_delta):
 func instanceRetalhos():
 	var retalhos = []
 	retalhos = $"/root/Global".retornarRetalhos()
-	var costuraPopUpNode = get_parent().get_node("CosturaPopUp/PalavrasPopUp")
+	costuraPopUpNode = get_parent().get_node("CosturaPopUp/PalavrasPopUp")
 	for retalhoRef in retalhos:
 		if !costuraPopUpNode.get_node("Retalhos").has_node("GridRetalhos/"+str(retalhoRef.codigo)):
 			var retalhoInstanciado = $"/root/Global".retalhoInstanceRef.instance()

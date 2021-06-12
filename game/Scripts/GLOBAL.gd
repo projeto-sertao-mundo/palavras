@@ -22,6 +22,7 @@ var corArrastada
 var retalhoArrastado
 var codigoRetalho = 0
 var codigoCartao = 0
+var cartaoEditando
 
 func criarRetalho(var corBorda, corMiolo, spriteBorda, spriteMiolo, texto):
 	codigoRetalho += 1
@@ -49,10 +50,17 @@ func deleteRetalhoArrastado():
 func mudarcorArrastada(var cor):
 	corArrastada = cor
 
-func criarFrase(var sprite, var retalhos):
+func criarFrase(var sprite, var retalhosRef):
 	codigoCartao += 1
-	var fraseNovo = [FraseOBJ.new(sprite, retalhos, codigoCartao)]
+	var fraseNovo = [FraseOBJ.new(sprite, retalhosRef, codigoCartao)]
 	frases += fraseNovo
+
+#func editarFrase(var sprite, var retalhosRef):
+#	for frase in frases:
+#		if (frase.codigo == int(cartaoEditando)):
+#			var fraseNovo = [FraseOBJ.new(sprite, retalhosRef, frase.codigo)]
+#			frase = fraseNovo
+
 
 func returnCorArrastada():
 	return corArrastada
