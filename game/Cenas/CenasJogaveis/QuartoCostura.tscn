@@ -10,7 +10,7 @@
 [ext_resource path="res://Sprites/SpritesFinais/ObetosCostura/Maquina de Costura.png" type="Texture" id=8]
 [ext_resource path="res://Sprites/SpritesFinais/ObetosCostura/Verde.png" type="Texture" id=9]
 [ext_resource path="res://Sprites/SpritesFinais/ObetosCostura/Lata copiar.png" type="Texture" id=10]
-[ext_resource path="res://Sprites/SpritesFinais/ObetosCostura/Descartar.png" type="Texture" id=11]
+[ext_resource path="res://Sprites/SpritesFinais/noAtlasObjects/Apagar.png" type="Texture" id=11]
 [ext_resource path="res://Sprites/SpritesFinais/ObetosCostura/Fundo.png" type="Texture" id=12]
 [ext_resource path="res://Sprites/SpritesFinais/ObetosCostura/Roxo.png" type="Texture" id=13]
 [ext_resource path="res://Sprites/SpritesFinais/ObetosCostura/Confirmar.png" type="Texture" id=14]
@@ -201,10 +201,10 @@ __meta__ = {
 }
 
 [node name="Recomecar" type="TextureButton" parent="CosturaPopUp"]
-margin_left = 542.921
-margin_top = 442.163
-margin_right = 697.921
-margin_bottom = 516.163
+margin_left = 536.0
+margin_top = 442.0
+margin_right = 693.0
+margin_bottom = 517.0
 rect_scale = Vector2( 0.9, 0.9 )
 texture_normal = ExtResource( 11 )
 __meta__ = {
@@ -437,6 +437,10 @@ margin_top = -16.937
 margin_right = 1020.41
 margin_bottom = -16.937
 
+[node name="Voltar" parent="CosturaPopUp/PalavrasPopUp" index="7"]
+visible = false
+disabled = true
+
 [node name="ArrastarParentesco" type="Node" parent="."]
 [connection signal="tree_entered" from="." to="." method="_on_QuartoCostura_tree_entered"]
 [connection signal="area_entered" from="Lixeira/Area2D" to="Lixeira" method="_on_Area2D_area_entered"]
@@ -452,8 +456,6 @@ margin_bottom = -16.937
 [connection signal="pressed" from="CosturaPopUp/Costurar" to="CosturaPopUp/Preview/Miolo" method="_on_Costurar_pressed"]
 [connection signal="pressed" from="CosturaPopUp/Costurar" to="CosturaPopUp/Preview/Borda" method="_on_Costurar_pressed"]
 [connection signal="pressed" from="CosturaPopUp/Recomecar" to="." method="_on_Recomecar_pressed"]
-[connection signal="pressed" from="CosturaPopUp/Recomecar" to="CosturaPopUp/Preview/Miolo" method="_on_Recomecar_pressed"]
-[connection signal="pressed" from="CosturaPopUp/Recomecar" to="CosturaPopUp/Preview/Borda" method="_on_Recomecar_pressed"]
 [connection signal="button_down" from="CosturaPopUp/Cor/Vermelho" to="CosturaPopUp/Cor/Vermelho" method="_on_Vermelho_button_down"]
 [connection signal="button_up" from="CosturaPopUp/Cor/Vermelho" to="CosturaPopUp/Cor/Vermelho" method="_on_Vermelho_button_up"]
 [connection signal="button_down" from="CosturaPopUp/Cor/Verde" to="CosturaPopUp/Cor/Verde" method="_on_Verde_button_down"]
@@ -472,3 +474,5 @@ margin_bottom = -16.937
 [connection signal="pressed" from="CosturaPopUp/Formas/RetanguloPe" to="." method="_on_RetanguloPe_pressed"]
 [connection signal="pressed" from="CosturaPopUp/Formas/Retangulo" to="." method="_on_Retangulo_pressed"]
 [connection signal="pressed" from="CosturaPopUp/Formas/Losango" to="." method="_on_Losango_pressed"]
+
+[editable path="CosturaPopUp/PalavrasPopUp"]

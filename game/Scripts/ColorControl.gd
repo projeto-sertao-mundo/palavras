@@ -2,13 +2,15 @@ extends Sprite
 
 var setado = false
 var corAnterior = Color(0.882353, 0.882353, 0.819608)
+var corAux
+
+func _ready():
+	corAux = Color(0.882353, 0.882353, 0.819608)
 
 func _process(_delta):
 	var cor = $"/root/Global".returnCorArrastada()
 	
 	if is_pixel_opaque(get_local_mouse_position()) && cor != null:
-		var corAux = Color(0.882353, 0.882353, 0.819608)
-		
 		if cor.name == "Verde":
 			MudarCor(0.364706, 0.529412, 0.372549)
 			corAux = Color(0.364706, 0.529412, 0.372549)
@@ -41,8 +43,6 @@ func _process(_delta):
 func MudarCor(var r, g, b):
 	self.modulate = Color(r,g,b)
 
-func _on_Recomecar_pressed():
-	corAnterior = Color(0.882353, 0.882353, 0.819608)
-
 func _on_Costurar_pressed():
-	corAnterior = Color(0.882353, 0.882353, 0.819608)
+	MudarCor(0.768627, 0.74902, 0.698039)
+	corAux = Color(0.768627, 0.74902, 0.698039)

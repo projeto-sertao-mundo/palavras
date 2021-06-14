@@ -64,10 +64,23 @@ func MudarCor(var r, g, b):
 	get_node("CosturaPopUp/Preview").modulate = Color(r,g,b)
 
 func _on_Recomecar_pressed():
-	get_node("CosturaPopUp/Preview/Miolo").modulate = Color(0.882353, 0.882353, 0.819608)
-	get_node("CosturaPopUp/Preview/Borda").modulate = Color(0.882353, 0.882353, 0.819608)
-	get_node("CosturaPopUp/Preview").get_node("Label").text = ""
-	numeroCaracteres = 0
+	#get_node("CosturaPopUp/Preview/Miolo").modulate = Color(0.882353, 0.882353, 0.819608)
+	#get_node("CosturaPopUp/Preview/Borda").modulate = Color(0.882353, 0.882353, 0.819608)
+	if (numeroCaracteres > 0):
+		var text = get_node("CosturaPopUp/Preview").get_node("Label").text
+		
+		var array = []
+		for c in text:
+			array.append(c)
+		
+		array.remove(numeroCaracteres - 1)
+		
+		var textC = ""
+		for i in range(0,array.size()):
+			textC += array[i]
+		
+		get_node("CosturaPopUp/Preview").get_node("Label").text = textC
+		numeroCaracteres = array.size()
 
 func _on_Area2D_area_entered(area):
 	set_process(true)
