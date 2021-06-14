@@ -10,6 +10,7 @@ var aux = -1
 var podeSetar
 var firstSceneNode
 
+var limite = 11
 var morfemaInstanceRef
 var letraInstanceRef
 var coresInstanceRef
@@ -23,6 +24,9 @@ var retalhoArrastado
 var codigoRetalho = 0
 var codigoCartao = 0
 var cartaoEditando
+
+func _ready():
+	limite = 11
 
 func criarRetalho(var corBorda, corMiolo, spriteBorda, spriteMiolo, texto):
 	codigoRetalho += 1

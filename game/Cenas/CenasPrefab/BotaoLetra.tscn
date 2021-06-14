@@ -23,3 +23,4 @@ position = Vector2( 37.4177, 32.5178 )
 shape = SubResource( 1 )
 [connection signal="button_down" from="." to="." method="_on_TextureButton_button_down"]
 [connection signal="button_up" from="." to="." method="_on_TextureButton_button_up"]
+[connection signal="pressed" from="." to="." method="_on_TextureButton_pressed"]

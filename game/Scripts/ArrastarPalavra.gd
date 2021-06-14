@@ -9,21 +9,22 @@ export(bool) var isMorfema
 export(bool) var isLetraAcentuada
 export(bool) var isRetalho
 export(bool) var isPrefixo
+var numeroCaracteres
 
 func _ready():
 	primeiroNode = $"/root/Global".firstSceneNode
 	palavrasParentesco = primeiroNode
 
-func _process(_delta):
-	if (primeiroNode.name == "QuartoCostura"):
-		var nome = self.name
-		if ((nome.length() == 1 && !isRetalho) || self.isLetraAcentuada):
-			instanceLetraPalavra($"/root/Global".letraInstanceRef, nome)
-		else:
-			instanceLetraPalavra($"/root/Global".morfemaInstanceRef, nome)
-		
-		if !mouseIn && mouseIn != null && palavrasParentesco.has_node(nome) && !$"/root/Global".podeSetar:
-			palavrasParentesco.get_node(nome).free()
+#func _process(_delta):
+#	if (primeiroNode.name == "QuartoCostura"):
+#		var nome = self.name
+#		if ((nome.length() == 1 && !isRetalho) || self.isLetraAcentuada):
+#			instanceLetraPalavra($"/root/Global".letraInstanceRef, nome)
+#		else:
+#			instanceLetraPalavra($"/root/Global".morfemaInstanceRef, nome)
+#
+#		if !mouseIn && mouseIn != null && palavrasParentesco.has_node(nome) && !$"/root/Global".podeSetar:
+#			palavrasParentesco.get_node(nome).free()
 
 
 
@@ -70,3 +71,38 @@ func _on_Morfema_button_up():
 func _on_Morfema_button_down():
 	$"/root/Global".jaSetou = false
 	mouseIn = true
+
+
+func _on_TextureButton_pressed():
+	if (primeiroNode.name == "QuartoCostura"):
+		var palavra = self
+		var label = primeiroNode.get_node("CosturaPopUp/Preview/Label")
+		var aux = label.text.length() + self.name.length()
+		numeroCaracteres = label.text.length()
+		
+		if  aux <= $"/root/Global".limite:
+			
+			var isPrefixo
+			if palavra.name.length() == 3:
+				isPrefixo = true
+			else:
+				isPrefixo = false
+			
+			if !palavra.isMorfema:
+				MudarLabelPreview(palavra.name, palavra.name.length())
+				$"/root/Global".podeSetar = false
+			elif palavra.isMorfema && isPrefixo && numeroCaracteres == 0:
+				MudarLabelPreview(palavra.name, palavra.name.length())
+				$"/root/Global".podeSetar = false
+			elif !isPrefixo && palavra.isMorfema && numeroCaracteres > 0:
+				MudarLabelPreview(palavra.name, palavra.name.length())
+				$"/root/Global".podeSetar = false
+
+func MudarLabelPreview(var texto, var numCaracteres):
+	numeroCaracteres += numCaracteres
+	var textoAtual = primeiroNode.get_node("CosturaPopUp/Preview/Label").text
+	primeiroNode.get_node("CosturaPopUp/Preview/Label").text = textoAtual + texto
+
+
+func _on_Morfema_pressed():
+	_on_TextureButton_pressed()

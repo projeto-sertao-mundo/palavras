@@ -5,6 +5,7 @@ var numeroCaracteres = 0
 var numeroRetalhos = 0
 export var isMorfema = 0
 var clickPosition
+var limite
 
 var caminho = "CosturaPopUp/Formas/HolderFormas" #PASTA DESTINO DOS SPRITES MUDAR!!!
 
@@ -12,6 +13,7 @@ func _ready():
 	get_node("AnimationPlayer").play("FadeIn")
 	$"/root/Global".firstSceneNode = self
 	$"/root/Global".podeSetar = false
+	$"/root/Global".limite = 11
 
 func _process(_delta):
 	
@@ -22,7 +24,8 @@ func _process(_delta):
 #		palavra.free()
 	if ($"/root/Global".podeSetar && (palavra.name.length() == 1 || palavra.isMorfema)):
 		var aux = numeroCaracteres + palavra.name.length()
-		if  aux <= 11:
+		print (aux, " ", limite)
+		if  aux <= limite:
 			
 			var isPrefixo
 			if palavra.name.length() == 3:
@@ -66,6 +69,7 @@ func MudarCor(var r, g, b):
 func _on_Recomecar_pressed():
 	#get_node("CosturaPopUp/Preview/Miolo").modulate = Color(0.882353, 0.882353, 0.819608)
 	#get_node("CosturaPopUp/Preview/Borda").modulate = Color(0.882353, 0.882353, 0.819608)
+	numeroCaracteres = get_node("CosturaPopUp/Preview").get_node("Label").text.length()
 	if (numeroCaracteres > 0):
 		var text = get_node("CosturaPopUp/Preview").get_node("Label").text
 		
@@ -94,28 +98,39 @@ func _on_Area2D_area_exited(_area):
 	palavra = null
 
 func mudarSprite(var nomeMiolo, var nomeBorda):
+	numeroCaracteres = get_node("CosturaPopUp/Preview").get_node("Label").text.length()
+	while(numeroCaracteres > $"/root/Global".limite):
+		_on_Recomecar_pressed()
+	
 	self.get_node("CosturaPopUp/Preview/Miolo").texture = self.get_node(caminho + "/" + nomeMiolo).texture
 	self.get_node("CosturaPopUp/Preview/Borda").texture = self.get_node(caminho + "/" + nomeBorda).texture
 
 func _on_Quadrado_pressed():
+	$"/root/Global".limite = 11
 	mudarSprite("Quadrado Miolo","Quadrado Borda")
 
 func _on_Retangulo_pressed():
+	$"/root/Global".limite = 16
 	mudarSprite("Retangulo Miolo","Retangulo Borda")
 
 func _on_Losango_pressed():
+	$"/root/Global".limite = 11
 	mudarSprite("Losango Miolo","Losango Borda")
 
 func _on_Hexagono_pressed():
+	$"/root/Global".limite = 14
 	mudarSprite("Hexagono Miolo","Hexagono Borda")
 
 func _on_Circulo_pressed():
+	$"/root/Global".limite = 11
 	mudarSprite("Circulo Miolo","Circulo Borda")
 
 func _on_RetanguloPe_pressed():
+	$"/root/Global".limite = 13
 	mudarSprite("Retangulo De Pe Miolo","Retangulo De Pe Borda")
 
 func _on_Costurar_pressed():
+	numeroCaracteres = get_node("CosturaPopUp/Preview").get_node("Label").text.length()
 	if (numeroCaracteres > 0):
 		if numeroRetalhos < 9:
 			var previewRef = self.get_node("CosturaPopUp/Preview")

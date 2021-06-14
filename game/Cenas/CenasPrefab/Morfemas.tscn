@@ -24,3 +24,4 @@ position = Vector2( 29.3997, 13.809 )
 shape = SubResource( 1 )
 [connection signal="button_down" from="." to="." method="_on_Morfema_button_down"]
 [connection signal="button_up" from="." to="." method="_on_Morfema_button_up"]
+[connection signal="pressed" from="." to="." method="_on_Morfema_pressed"]
