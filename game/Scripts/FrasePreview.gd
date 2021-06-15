@@ -73,6 +73,7 @@ func _on_15_pressed():
 
 func _on_ExitButton_pressed():
 	spriteGrande.visible = false;
+	spriteGrande.get_parent().get_node("Descartar").visible = false
 	get_parent().get_node("FraseLock").visible = false
 
 func _on_PaginaRetalho_pressed():

@@ -134,3 +134,5 @@ func _on_ButtonCartoes_pressed():
 
 func _on_Confirm_pressed():
 	InstanciarPalavras()
+func _on_Descartar_pressed():
+	InstanciarPalavras()

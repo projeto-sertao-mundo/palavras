@@ -1,13 +1,17 @@
 extends TextureButton
 
+var primeiroNode
 var sprite
 var confirmar
 var retalhoLock
+var descartButton
 
 func _ready():
-	sprite = self.get_parent().get_parent().get_parent().get_parent().get_node("RetalhoGrande")
-	confirmar = sprite.get_parent().get_node("Confirm")
-	retalhoLock = sprite.get_parent().get_node("FraseLock")
+	primeiroNode = self.get_parent().get_parent().get_parent().get_parent()
+	sprite = primeiroNode.get_node("RetalhoGrande")
+	confirmar = primeiroNode.get_node("Confirm")
+	retalhoLock = primeiroNode.get_node("FraseLock")
+	descartButton = primeiroNode.get_node("Descartar")
 
 func _on_TextureButton_pressed():
 	sprite.visible = true
@@ -18,6 +22,7 @@ func _on_TextureButton_pressed():
 			child.free()
 	
 	retalhoLock.visible = true
+	descartButton.visible = true
 	#confirmar.visible = true
 #	$"/root/Global".cartaoEditando = self.name
 	
@@ -45,3 +50,5 @@ func instanceRetalhos():
 				retalhoInstanciado.get_node("Miolo").texture = retalho.retalhoMioloTex
 				retalhoInstanciado.get_node("Label").text = retalho.retalhoLabel
 				retalhoInstanciado.set_position(Vector2(retalho.posicaoRetalho.x, retalho.posicaoRetalho.y))
+			
+			$"/root/Global".selectedCard = cartao.codigo

@@ -11,6 +11,7 @@ var caminho = "CosturaPopUp/Formas/HolderFormas" #PASTA DESTINO DOS SPRITES MUDA
 
 func _ready():
 	get_node("AnimationPlayer").play("FadeIn")
+	get_node("CosturaPopUp/CosturaAnimation").play("CosturaPopUp")
 	$"/root/Global".firstSceneNode = self
 	$"/root/Global".podeSetar = false
 	$"/root/Global".limite = 11

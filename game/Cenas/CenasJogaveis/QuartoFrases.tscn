@@ -1,9 +1,10 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://Scripts/FrasePreview.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/SpritesFinais/Objetos/Bolsa.png" type="Texture" id=2]
 [ext_resource path="res://Sprites/SpritesFinais/Fundo cenas/Interface.png" type="Texture" id=3]
 [ext_resource path="res://Scripts/QuartoFrases.gd" type="Script" id=4]
+[ext_resource path="res://Sprites/SpritesFinais/ObetosCostura/Descartar.png" type="Texture" id=5]
 [ext_resource path="res://Sprites/SpritesFinais/Frases/RetalhoTres.png" type="Texture" id=6]
 [ext_resource path="res://Sprites/SpritesFinais/Objetos/seta.png" type="Texture" id=7]
 [ext_resource path="res://Sprites/SpritesFinais/Frases/RetalhoQuatro.png" type="Texture" id=8]
@@ -406,6 +407,18 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Descartar" type="TextureButton" parent="."]
+visible = false
+margin_left = 133.498
+margin_top = 577.965
+margin_right = 288.498
+margin_bottom = 651.965
+rect_scale = Vector2( 1.2, 1.2 )
+texture_normal = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="FraseLock" type="Control" parent="."]
 visible = false
 margin_left = 134.0
@@ -445,3 +458,5 @@ __meta__ = {
 [connection signal="area_exited" from="RetalhoGrande/Area2D" to="RetalhoGrande" method="_on_Area2D_area_exited"]
 [connection signal="pressed" from="Confirm" to="PalavrasPopUp" method="_on_Confirm_pressed"]
 [connection signal="pressed" from="Confirm" to="RetalhoGrande" method="_on_Confirm_pressed"]
+[connection signal="pressed" from="Descartar" to="PalavrasPopUp" method="_on_Descartar_pressed"]
+[connection signal="pressed" from="Descartar" to="." method="_on_Descartar_pressed"]

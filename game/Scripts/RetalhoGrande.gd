@@ -60,6 +60,7 @@ func _on_ExitButton_pressed():
 	self.get_parent().get_node("Confirm").visible = false
 
 func _on_Confirm_pressed():
+	self.visible = false
 	self.get_parent().get_node("Confirm").visible = false
 	var retalhos = []
 	for child in self.get_children():

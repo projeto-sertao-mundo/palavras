@@ -17,6 +17,7 @@ var coresInstanceRef
 var retalhoInstanceRef
 var retalhosFrasesRef
 var cartoesInstanceRef
+var selectedCard
 
 var jaSetou
 var corArrastada
@@ -50,7 +51,13 @@ func deleteRetalhoArrastado():
 		if str(ret.codigo) == retalhoArrastado.name:
 			retalhos.erase(ret)
 
-
+func deleteCartaoSelecionado():
+	for cartao in frases:
+		if cartao.codigo == selectedCard:
+			print(cartao.codigo)
+			frases.erase(cartao)
+	print(frases)
+	
 func mudarcorArrastada(var cor):
 	corArrastada = cor
 

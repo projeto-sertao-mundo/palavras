@@ -26,3 +26,19 @@ func _on_QuartoFrases_tree_entered():
 
 func _on_Area2D_area_entered(_area):
 	pass # Replace with function body.
+
+
+func _on_Descartar_pressed():
+	get_node("RetalhoGrande").visible = false
+	
+	for child in get_node("RetalhoGrande").get_children():
+		if child is TextureButton:
+			child.free()
+	
+	var grid = get_node("PalavrasPopUp/Cartões/GridCartões").get_children()
+	
+	for n in grid:
+		n.free()
+	
+	get_node("Descartar").visible = false
+	$"/root/Global".deleteCartaoSelecionado()
