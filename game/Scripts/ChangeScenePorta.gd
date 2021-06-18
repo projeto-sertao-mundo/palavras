@@ -13,9 +13,10 @@ func _ready():
 	$"/root/Global".setarRefs(morfemas, letraInstance, coresInstance, retalhosInstance, retalhosFrasesInstance, cartoes)
 
 func _on_PortaBuscaPalavras_pressed():
-	get_node("AnimationPlayer").play("FadeOut")
-	yield(Yield.yield_wait(0.35, self), "completed")
-	var _cenaChanged = get_tree().change_scene("res://Cenas/CenasJogaveis/BuscaPalavras.tscn")
+	if $"/root/Global".contPalavrasEncontradas < 43:
+		get_node("AnimationPlayer").play("FadeOut")
+		yield(Yield.yield_wait(0.35, self), "completed")
+		var _cenaChanged = get_tree().change_scene("res://Cenas/CenasJogaveis/BuscaPalavras.tscn")
 
 func _on_PortaQuartoCostura_pressed():
 	get_node("AnimationPlayer").play("FadeOut")

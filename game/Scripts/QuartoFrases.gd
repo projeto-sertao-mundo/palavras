@@ -29,6 +29,13 @@ func _on_Area2D_area_entered(_area):
 
 
 func _on_Descartar_pressed():
+	get_node("Atençao").visible = true
+
+func _on_NaoDescartar_pressed():
+	get_node("Atençao").visible = false
+
+func _on_Descart_pressed():
+	print("titi")
 	get_node("RetalhoGrande").visible = false
 	
 	for child in get_node("RetalhoGrande").get_children():
@@ -42,3 +49,4 @@ func _on_Descartar_pressed():
 	
 	get_node("Descartar").visible = false
 	$"/root/Global".deleteCartaoSelecionado()
+	get_node("Atençao").visible = false

@@ -10,6 +10,7 @@ var aux = -1
 var podeSetar
 var firstSceneNode
 
+var contPalavrasEncontradas = 0
 var limite = 11
 var morfemaInstanceRef
 var letraInstanceRef
@@ -27,7 +28,14 @@ var codigoCartao = 0
 var cartaoEditando
 
 func _ready():
+	contPalavrasEncontradas = 0
 	limite = 11
+
+func AdicionarPalavraEncontrada():
+	if contPalavrasEncontradas == null:
+		contPalavrasEncontradas = 1
+	else:
+		contPalavrasEncontradas += 1
 
 func criarRetalho(var corBorda, corMiolo, spriteBorda, spriteMiolo, texto):
 	codigoRetalho += 1

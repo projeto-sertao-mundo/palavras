@@ -22,6 +22,7 @@ func _process(_delta):
 			$"/root/Global".adicionarItemBolsaLetra(self)
 		else:
 			$"/root/Global".adicionarItemBolsaPalavra(self.name)
+		$"/root/Global".AdicionarPalavraEncontrada()
 		self.free()
 
 func _on_TextureButton_pressed():

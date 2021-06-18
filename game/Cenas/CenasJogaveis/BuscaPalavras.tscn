@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=2]
+[gd_scene load_steps=54 format=2]
 
 [ext_resource path="res://Scripts/BuscaPalavras.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/SpritesFinais/Objetos/seta.png" type="Texture" id=2]
@@ -51,12 +51,29 @@
 [ext_resource path="res://Sprites/SpritesFinais/Objetos/Inho.png" type="Texture" id=49]
 [ext_resource path="res://Sprites/SpritesFinais/Objetos/Zinho.png" type="Texture" id=50]
 [ext_resource path="res://Cenas/CenasPrefab/Fade.tscn" type="PackedScene" id=51]
+[ext_resource path="res://Sprites/SpritesFinais/noAtlasObjects/Parabens.png" type="Texture" id=52]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Parabens"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Finish/Sprite:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1e-05, 1e-05 ), Vector2( 1.2, 1.2 ), Vector2( 1.2, 1.2 ) ]
+}
 
 [node name="BuscaPalavras" type="Node2D"]
 script = ExtResource( 1 )
 SceneName = "BuscaPalavras"
 
 [node name="AnimationPlayer" parent="." instance=ExtResource( 51 )]
+anims/Parabens = SubResource( 1 )
 
 [node name="Cozinha" type="Sprite" parent="."]
 position = Vector2( 799.746, 451.378 )
@@ -75,17 +92,6 @@ rect_scale = Vector2( 0.6, 0.6 )
 texture_normal = ExtResource( 3 )
 __meta__ = {
 "_edit_group_": true,
-"_edit_use_anchors_": false
-}
-
-[node name="Voltar" type="TextureButton" parent="."]
-margin_left = 30.0
-margin_top = 782.0
-margin_right = 153.0
-margin_bottom = 886.0
-rect_scale = Vector2( 1.2, 0.9 )
-texture_normal = ExtResource( 2 )
-__meta__ = {
 "_edit_use_anchors_": false
 }
 
@@ -842,9 +848,32 @@ disabled = true
 
 [node name="Retalhos" parent="PalavrasPopUp" index="4"]
 visible = false
+
+[node name="Finish" type="Control" parent="."]
+visible = false
+margin_right = 1599.0
+margin_bottom = 901.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="Finish"]
+position = Vector2( 861.078, 413.721 )
+scale = Vector2( 1.2, 1.2 )
+texture = ExtResource( 52 )
+
+[node name="Voltar" type="TextureButton" parent="."]
+margin_left = 30.0
+margin_top = 782.0
+margin_right = 153.0
+margin_bottom = 886.0
+rect_scale = Vector2( 1.2, 0.9 )
+texture_normal = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="tree_entered" from="." to="." method="_on_BuscaPalavras_tree_entered"]
 [connection signal="pressed" from="Bolsa" to="PalavrasPopUp" method="_on_Bolsa_pressed"]
-[connection signal="pressed" from="Voltar" to="." method="_on_Voltar_pressed"]
 [connection signal="mouse_entered" from="Letras/A" to="Letras/A/TextureButton" method="_on_A_mouse_entered"]
 [connection signal="mouse_exited" from="Letras/A" to="Letras/A/TextureButton" method="_on_A_mouse_exited"]
 [connection signal="pressed" from="Letras/A/TextureButton" to="Letras/A" method="_on_TextureButton_pressed"]
@@ -974,5 +1003,6 @@ visible = false
 [connection signal="mouse_entered" from="Letras/zinho" to="Letras/zinho/TextureButton" method="_on_A_mouse_entered"]
 [connection signal="mouse_exited" from="Letras/zinho" to="Letras/zinho/TextureButton" method="_on_A_mouse_exited"]
 [connection signal="pressed" from="Letras/zinho/TextureButton" to="Letras/zinho" method="_on_TextureButton_pressed"]
+[connection signal="pressed" from="Voltar" to="." method="_on_Voltar_pressed"]
 
 [editable path="PalavrasPopUp"]

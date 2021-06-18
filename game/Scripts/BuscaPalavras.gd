@@ -1,6 +1,13 @@
 extends Node2D
 
 export (String) var SceneName
+var aux = false
+
+func _process(delta):
+	if $"/root/Global".contPalavrasEncontradas == 43 && !aux:
+		get_node("AnimationPlayer").play("Parabens")
+		aux = true
+		get_node("Finish").visible = true
 
 func _on_Voltar_pressed():
 	get_node("AnimationPlayer").play("FadeOut")
