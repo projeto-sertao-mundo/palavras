@@ -26,4 +26,6 @@ func _ready():
 
 func _on_BuscaPalavras_tree_entered():
 	$"/root/Global".firstSceneNode = self
-
+	
+func _on_TextureButton_pressed():
+	_on_Voltar_pressed()

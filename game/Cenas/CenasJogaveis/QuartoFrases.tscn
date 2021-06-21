@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://Scripts/FrasePreview.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/SpritesFinais/Objetos/Bolsa.png" type="Texture" id=2]
@@ -18,6 +18,9 @@
 [ext_resource path="res://Sprites/SpritesFinais/noAtlasObjects/Atenção.png" type="Texture" id=16]
 [ext_resource path="res://Sprites/SpritesFinais/ObetosCostura/Retalho fundo completo.png" type="Texture" id=17]
 [ext_resource path="res://Sprites/SpritesFinais/noAtlasObjects/Sim Botão.png" type="Texture" id=18]
+[ext_resource path="res://Sprites/SpritesFinais/noAtlasObjects/retalho dezessete.png" type="Texture" id=19]
+[ext_resource path="res://Sprites/SpritesFinais/noAtlasObjects/retalho dezoito.png" type="Texture" id=20]
+[ext_resource path="res://Sprites/SpritesFinais/noAtlasObjects/retalho dezesseis.png" type="Texture" id=21]
 [ext_resource path="res://Sprites/SpritesFinais/Frases/RetalhoUm.png" type="Texture" id=23]
 [ext_resource path="res://Sprites/SpritesFinais/noAtlasObjects/retalho nove.png" type="Texture" id=24]
 [ext_resource path="res://Sprites/SpritesFinais/noAtlasObjects/retalho quinze.png" type="Texture" id=25]
@@ -386,6 +389,33 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="16" type="TextureButton" parent="Frases/FrasesPagina2"]
+margin_left = 132.0
+margin_top = 425.0
+margin_right = 449.0
+margin_bottom = 619.0
+rect_scale = Vector2( 0.7, 0.7 )
+texture_normal = ExtResource( 21 )
+
+[node name="17" type="TextureButton" parent="Frases/FrasesPagina2"]
+margin_left = 374.64
+margin_top = 425.0
+margin_right = 691.64
+margin_bottom = 619.0
+rect_scale = Vector2( 0.7, 0.7 )
+texture_normal = ExtResource( 19 )
+
+[node name="18" type="TextureButton" parent="Frases/FrasesPagina2"]
+margin_left = 617.28
+margin_top = 425.0
+margin_right = 934.28
+margin_bottom = 619.0
+rect_scale = Vector2( 0.7, 0.7 )
+texture_normal = ExtResource( 20 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="RetalhoGrande" type="Sprite" parent="."]
 visible = false
 position = Vector2( 481.835, 337.29 )
@@ -483,11 +513,14 @@ __meta__ = {
 [connection signal="pressed" from="Frases/FrasesPagina2/13" to="Frases" method="_on_13_pressed"]
 [connection signal="pressed" from="Frases/FrasesPagina2/14" to="Frases" method="_on_14_pressed"]
 [connection signal="pressed" from="Frases/FrasesPagina2/15" to="Frases" method="_on_15_pressed"]
+[connection signal="pressed" from="Frases/FrasesPagina2/16" to="Frases" method="_on_16_pressed"]
+[connection signal="pressed" from="Frases/FrasesPagina2/17" to="Frases" method="_on_17_pressed"]
+[connection signal="pressed" from="Frases/FrasesPagina2/18" to="Frases" method="_on_18_pressed"]
 [connection signal="area_entered" from="RetalhoGrande/Area2D" to="RetalhoGrande" method="_on_Area2D_area_entered"]
 [connection signal="area_exited" from="RetalhoGrande/Area2D" to="RetalhoGrande" method="_on_Area2D_area_exited"]
 [connection signal="pressed" from="Confirm" to="PalavrasPopUp" method="_on_Confirm_pressed"]
 [connection signal="pressed" from="Confirm" to="RetalhoGrande" method="_on_Confirm_pressed"]
 [connection signal="pressed" from="Descartar" to="." method="_on_Descartar_pressed"]
 [connection signal="pressed" from="Atençao/NaoDescartar" to="." method="_on_NaoDescartar_pressed"]
-[connection signal="pressed" from="Atençao/Descart" to="." method="_on_Descart_pressed"]
 [connection signal="pressed" from="Atençao/Descart" to="PalavrasPopUp" method="_on_Descart_pressed"]
+[connection signal="pressed" from="Atençao/Descart" to="." method="_on_Descart_pressed"]

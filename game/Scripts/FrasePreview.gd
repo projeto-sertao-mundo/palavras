@@ -69,6 +69,12 @@ func _on_14_pressed():
 	changeSpriteGrande(get_node("FrasesPagina2").get_node("14").texture_normal)#, frase14)
 func _on_15_pressed():
 	changeSpriteGrande(get_node("FrasesPagina2").get_node("15").texture_normal)#, frase15)
+func _on_16_pressed():
+	changeSpriteGrande(get_node("FrasesPagina2").get_node("16").texture_normal)#, frase16)
+func _on_17_pressed():
+	changeSpriteGrande(get_node("FrasesPagina2").get_node("17").texture_normal)#, frase17)
+func _on_18_pressed():
+	changeSpriteGrande(get_node("FrasesPagina2").get_node("18").texture_normal)#, frase18)
 
 
 func _on_ExitButton_pressed():
@@ -85,3 +91,6 @@ func _on_PaginaRetalho_pressed():
 		get_node("FrasesPagina1").visible = true
 		get_node("FrasesPagina2").visible = false
 		alreadyChanged = false
+
+
+

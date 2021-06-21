@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=2]
+[gd_scene load_steps=55 format=2]
 
 [ext_resource path="res://Scripts/BuscaPalavras.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/SpritesFinais/Objetos/seta.png" type="Texture" id=2]
@@ -52,6 +52,7 @@
 [ext_resource path="res://Sprites/SpritesFinais/Objetos/Zinho.png" type="Texture" id=50]
 [ext_resource path="res://Cenas/CenasPrefab/Fade.tscn" type="PackedScene" id=51]
 [ext_resource path="res://Sprites/SpritesFinais/noAtlasObjects/Parabens.png" type="Texture" id=52]
+[ext_resource path="res://Sprites/SpritesFinais/noAtlasObjects/OK! Botão.png" type="Texture" id=53]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Parabens"
@@ -862,6 +863,16 @@ position = Vector2( 861.078, 413.721 )
 scale = Vector2( 1.2, 1.2 )
 texture = ExtResource( 52 )
 
+[node name="OK" type="TextureButton" parent="Finish/Sprite"]
+margin_left = -84.0896
+margin_top = 103.71
+margin_right = 68.9104
+margin_bottom = 176.71
+texture_normal = ExtResource( 53 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Voltar" type="TextureButton" parent="."]
 margin_left = 30.0
 margin_top = 782.0
@@ -1003,6 +1014,7 @@ __meta__ = {
 [connection signal="mouse_entered" from="Letras/zinho" to="Letras/zinho/TextureButton" method="_on_A_mouse_entered"]
 [connection signal="mouse_exited" from="Letras/zinho" to="Letras/zinho/TextureButton" method="_on_A_mouse_exited"]
 [connection signal="pressed" from="Letras/zinho/TextureButton" to="Letras/zinho" method="_on_TextureButton_pressed"]
+[connection signal="pressed" from="Finish/Sprite/OK" to="." method="_on_TextureButton_pressed"]
 [connection signal="pressed" from="Voltar" to="." method="_on_Voltar_pressed"]
 
 [editable path="PalavrasPopUp"]
