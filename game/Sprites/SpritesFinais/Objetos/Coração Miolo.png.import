@@ -1,0 +1,17 @@
+[remap]
+
+importer="texture_atlas"
+type="Texture"
+path="res://.import/Coração Miolo.png-95e8657b6b3abe0cb7434e76ffe6e32b.res"
+group_file="res://Sprites/SpritesFinais/Atlas/Objects2.png"
+valid=true
+[deps]
+
+
+source_file="res://Sprites/SpritesFinais/Objetos/Coração Miolo.png"
+dest_files=[ "res://.import/Coração Miolo.png-95e8657b6b3abe0cb7434e76ffe6e32b.res" ]
+
+[params]
+
+atlas_file="res://Sprites/SpritesFinais/Atlas/Objects2.png"
+import_mode=0

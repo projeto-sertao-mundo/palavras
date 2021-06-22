@@ -1,0 +1,17 @@
+[remap]
+
+importer="texture_atlas"
+type="Texture"
+path="res://.import/Cartões.png-d026f530f37edbc3a7edab61f17ba470.res"
+group_file="res://Sprites/SpritesFinais/Atlas/Objects2.png"
+valid=true
+[deps]
+
+
+source_file="res://Sprites/SpritesFinais/Objetos/Cartões.png"
+dest_files=[ "res://.import/Cartões.png-d026f530f37edbc3a7edab61f17ba470.res" ]
+
+[params]
+
+atlas_file="res://Sprites/SpritesFinais/Atlas/Objects2.png"
+import_mode=0

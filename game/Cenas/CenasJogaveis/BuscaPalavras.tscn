@@ -1,13 +1,13 @@
-[gd_scene load_steps=55 format=2]
+[gd_scene load_steps=60 format=2]
 
-[ext_resource path="res://Scripts/BuscaPalavras.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/Cozinha/BuscaPalavras.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/SpritesFinais/Objetos/seta.png" type="Texture" id=2]
 [ext_resource path="res://Sprites/SpritesFinais/Objetos/Bolsa.png" type="Texture" id=3]
 [ext_resource path="res://Cenas/CenasPrefab/PalavrasPopUp.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Sprites/SpritesFinais/Letras/A.png" type="Texture" id=5]
-[ext_resource path="res://Scripts/InicializadorBuscaPalavras.gd" type="Script" id=6]
+[ext_resource path="res://Scripts/Cozinha/InicializadorBuscaPalavras.gd" type="Script" id=6]
 [ext_resource path="res://Sprites/SpritesFinais/Fundo cenas/Cozinha refeita.png" type="Texture" id=7]
-[ext_resource path="res://Scripts/Palavras.gd" type="Script" id=8]
+[ext_resource path="res://Scripts/Cozinha/Palavras.gd" type="Script" id=8]
 [ext_resource path="res://Sprites/SpritesFinais/Letras/B.png" type="Texture" id=9]
 [ext_resource path="res://Sprites/SpritesFinais/Letras/N.png" type="Texture" id=10]
 [ext_resource path="res://Sprites/SpritesFinais/Letras/F.png" type="Texture" id=11]
@@ -51,8 +51,12 @@
 [ext_resource path="res://Sprites/SpritesFinais/Objetos/Inho.png" type="Texture" id=49]
 [ext_resource path="res://Sprites/SpritesFinais/Objetos/Zinho.png" type="Texture" id=50]
 [ext_resource path="res://Cenas/CenasPrefab/Fade.tscn" type="PackedScene" id=51]
-[ext_resource path="res://Sprites/SpritesFinais/noAtlasObjects/Parabens.png" type="Texture" id=52]
-[ext_resource path="res://Sprites/SpritesFinais/noAtlasObjects/OK! Botão.png" type="Texture" id=53]
+[ext_resource path="res://Sprites/SpritesFinais/Objetos/Parabens.png" type="Texture" id=52]
+[ext_resource path="res://Sprites/SpritesFinais/Objetos/OK! Botão.png" type="Texture" id=53]
+[ext_resource path="res://Sprites/SpritesFinais/noAtlasObjects/Vovó.png" type="Texture" id=54]
+[ext_resource path="res://Sprites/SpritesFinais/noAtlasObjects/BalãoDeDialogo.png" type="Texture" id=55]
+[ext_resource path="res://Fonts/xilosa_.ttf" type="DynamicFontData" id=56]
+[ext_resource path="res://Scripts/Tutorial/TutorialBusca.gd" type="Script" id=57]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Parabens"
@@ -68,6 +72,10 @@ tracks/0/keys = {
 "update": 0,
 "values": [ Vector2( 1e-05, 1e-05 ), Vector2( 1.2, 1.2 ), Vector2( 1.2, 1.2 ) ]
 }
+
+[sub_resource type="DynamicFont" id=2]
+size = 33
+font_data = ExtResource( 56 )
 
 [node name="BuscaPalavras" type="Node2D"]
 script = ExtResource( 1 )
@@ -883,7 +891,250 @@ texture_normal = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Tutorial2" type="Control" parent="."]
+margin_right = 23.0
+margin_bottom = 23.0
+script = ExtResource( 57 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+D1 = NodePath("Label1")
+D2 = NodePath("Label2")
+D3 = NodePath("Label3")
+D4 = NodePath("Label4")
+D5 = NodePath("Label5")
+D6 = NodePath("Label6")
+D7 = NodePath("Label7")
+D8 = NodePath("Label8")
+D9 = NodePath("Label9")
+
+[node name="BalãoDeDialogo" type="Sprite" parent="Tutorial2"]
+position = Vector2( 702.388, 794.992 )
+scale = Vector2( 2.01025, 1.33176 )
+texture = ExtResource( 55 )
+
+[node name="Vó" type="Sprite" parent="Tutorial2"]
+position = Vector2( 1338.71, 741.67 )
+scale = Vector2( 1.395, 1.395 )
+texture = ExtResource( 54 )
+
+[node name="Label1" type="Label" parent="Tutorial2"]
+anchor_left = 10.522
+anchor_top = 32.348
+anchor_right = 50.913
+anchor_bottom = 37.304
+margin_left = 4.10617
+margin_top = -16.1164
+margin_right = -10.8868
+margin_bottom = 22.8957
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Aqui, vamos procurar letras para construir as
+nossas palavrinhas no futuro!
+As letras estão escondidas!
+Ao encontrar uma letra, basta clicar nela!"
+align = 1
+uppercase = true
+percent_visible = 0.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="Tutorial2"]
+anchor_left = 10.522
+anchor_top = 32.348
+anchor_right = 50.913
+anchor_bottom = 37.304
+margin_left = 3.99399
+margin_top = 26.9959
+margin_right = -10.999
+margin_bottom = -52.992
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Tente encontrar uma letra agora."
+align = 1
+uppercase = true
+percent_visible = 0.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="Tutorial2"]
+anchor_left = 10.522
+anchor_top = 32.348
+anchor_right = 50.913
+anchor_bottom = 37.304
+margin_left = 3.99399
+margin_top = 23.9959
+margin_right = -10.999
+margin_bottom = -18.992
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Legal! Você encontrou a sua primeira letra!
+Ela agora ficará armazenada na sua bolsa!"
+align = 1
+uppercase = true
+percent_visible = 0.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label4" type="Label" parent="Tutorial2"]
+anchor_left = 10.522
+anchor_top = 32.348
+anchor_right = 50.913
+anchor_bottom = 37.304
+margin_left = 3.99399
+margin_top = 7.99591
+margin_right = -10.999
+margin_bottom = 22.008
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Clique na bolsa para consultar quantas
+letras você já coletou!"
+align = 1
+uppercase = true
+percent_visible = 0.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label5" type="Label" parent="Tutorial2"]
+anchor_left = 10.522
+anchor_top = 32.348
+anchor_right = 50.913
+anchor_bottom = 37.304
+margin_left = 3.99399
+margin_top = -5.00409
+margin_right = -10.999
+margin_bottom = 23.008
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Nesta bolsa, ficarão armazenadas todas
+as letras que você encontrar!
+Você pode consultar quando quiser!"
+align = 1
+uppercase = true
+percent_visible = 0.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label6" type="Label" parent="Tutorial2"]
+anchor_left = 10.522
+anchor_top = 32.348
+anchor_right = 50.913
+anchor_bottom = 37.304
+margin_left = 4.9985
+margin_top = -17.6647
+margin_right = -7.99451
+margin_bottom = 13.3474
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Agora vamos falar dos morfemas. Morfemas são pedacinhos
+ de palavras que também estão escondidos por aqui!
+Assim que você encontrar um morfema, ele ficará
+armazenado na segunda aba da bolsa, ok?"
+align = 1
+uppercase = true
+percent_visible = 0.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label7" type="Label" parent="Tutorial2"]
+anchor_left = 10.522
+anchor_top = 32.348
+anchor_right = 50.913
+anchor_bottom = 37.304
+margin_left = 3.99399
+margin_top = 7.99591
+margin_right = -10.999
+margin_bottom = 23.008
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Só pra você não esquecer o que é um morfema,
+eu coloquei um lembrete dentro da bolsa pra você!"
+align = 1
+uppercase = true
+percent_visible = 0.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label8" type="Label" parent="Tutorial2"]
+anchor_left = 10.522
+anchor_top = 32.348
+anchor_right = 50.913
+anchor_bottom = 37.304
+margin_left = 4.10617
+margin_top = -16.1164
+margin_right = -10.8868
+margin_bottom = 22.8957
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Agora é com você! Tente encontrar o maior
+número de letras e morfemas possíveis!
+Quanto mais letras você encontrar,
+mais palavras poderá construir! Boa sorte!"
+align = 1
+uppercase = true
+percent_visible = 0.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label9" type="Label" parent="Tutorial2"]
+anchor_left = 10.522
+anchor_top = 32.348
+anchor_right = 50.913
+anchor_bottom = 37.304
+margin_left = 3.99399
+margin_top = -4.00409
+margin_right = -10.999
+margin_bottom = 23.008
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Só lembrando que você pode sair e voltar na
+cozinha quando quiser, clicando na seta à sua
+esquerda!"
+align = 1
+uppercase = true
+percent_visible = 0.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SetaBolsa" type="Sprite" parent="Tutorial2"]
+visible = false
+modulate = Color( 1, 1, 0, 1 )
+position = Vector2( 1538.25, 663.55 )
+rotation = -1.5708
+texture = ExtResource( 2 )
+
+[node name="SetaMorfemas" type="Sprite" parent="Tutorial2"]
+visible = false
+modulate = Color( 1, 1, 0, 1 )
+position = Vector2( 879.428, 78.3474 )
+rotation = -6.28319
+texture = ExtResource( 2 )
+
+[node name="SetaMorfemasDesc" type="Sprite" parent="Tutorial2"]
+visible = false
+modulate = Color( 1, 1, 0, 1 )
+position = Vector2( 1121.06, 518.193 )
+rotation = -6.28319
+texture = ExtResource( 2 )
+
+[node name="SetaSair" type="Sprite" parent="Tutorial2"]
+visible = false
+modulate = Color( 1, 1, 0, 1 )
+position = Vector2( 107.339, 680.539 )
+rotation = -1.5708
+texture = ExtResource( 2 )
 [connection signal="tree_entered" from="." to="." method="_on_BuscaPalavras_tree_entered"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 [connection signal="pressed" from="Bolsa" to="PalavrasPopUp" method="_on_Bolsa_pressed"]
 [connection signal="mouse_entered" from="Letras/A" to="Letras/A/TextureButton" method="_on_A_mouse_entered"]
 [connection signal="mouse_exited" from="Letras/A" to="Letras/A/TextureButton" method="_on_A_mouse_exited"]

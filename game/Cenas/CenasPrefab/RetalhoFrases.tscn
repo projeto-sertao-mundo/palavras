@@ -3,7 +3,7 @@
 [ext_resource path="res://Fonts/xilosa_.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Sprites/SpritesFinais/ObetosCostura/Quadrado Borda Textura.png" type="Texture" id=2]
 [ext_resource path="res://Sprites/SpritesFinais/ObetosCostura/Quadrado Miolo Textura.png" type="Texture" id=3]
-[ext_resource path="res://Scripts/RetalhoFrases.gd" type="Script" id=4]
+[ext_resource path="res://Scripts/Costura/RetalhoFrases.gd" type="Script" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 72.0968, 69.361 )

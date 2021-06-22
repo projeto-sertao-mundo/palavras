@@ -73,20 +73,26 @@ func InstanciarPalavras():
 					retalhoInstanciado.set_position(Vector2(retalho.posicaoRetalho.x + 158.5, retalho.posicaoRetalho.y + 97))
 
 func _on_Bolsa_pressed():
-	self.show()
-	InstanciarPalavras()
+	if ($"/root/TutorialGlobal".tutorialPos >= 6 || !$"/root/TutorialGlobal".willDoTutorial):
+		self.show()
+		get_parent().get_node("Tutorial2").Tutorial7()
+		InstanciarPalavras()
 
 func _on_ButtonPalavras_pressed():
-	move_child(get_node("Palavras"), 6)
-	InstanciarPalavras()
-	if (has_node("Retalhos/GridRetalhos")):
-		get_node("Retalhos/GridRetalhos").hide()
-	if (has_node("Letras/GridLetras")):
-		get_node("Letras/GridLetras").hide()
-	if (has_node("Letras/GridLetrasAcentuadas")):
-		get_node("Letras/GridLetrasAcentuadas").hide()
-	if (has_node("Cartões/GridCartões")):
-		get_node("Cartões/GridCartões").hide()
+	if ($"/root/TutorialGlobal".tutorialPos >= 8 || !$"/root/TutorialGlobal".willDoTutorial):
+		move_child(get_node("Palavras"), 6)
+		InstanciarPalavras()
+		if (has_node("Retalhos/GridRetalhos")):
+			get_node("Retalhos/GridRetalhos").hide()
+		if (has_node("Letras/GridLetras")):
+			get_node("Letras/GridLetras").hide()
+		if (has_node("Letras/GridLetrasAcentuadas")):
+			get_node("Letras/GridLetrasAcentuadas").hide()
+		if (has_node("Cartões/GridCartões")):
+			get_node("Cartões/GridCartões").hide()
+		
+		if ($"/root/TutorialGlobal".tutorialPos == 8):
+			get_parent().get_node("Tutorial2").Tutorial9()
 
 func _on_ButtonLetras_pressed():
 	move_child(get_node("Letras"), 6)
@@ -114,7 +120,8 @@ func _on_ButtonRetalhos_pressed():
 		get_node("Cartões/GridCartões").hide()
 
 func _on_Voltar_pressed():
-	self.hide()
+	if (!$"/root/TutorialGlobal".willDoTutorial || $"/root/TutorialGlobal".tutorialPos > 10):
+		self.hide()
 
 func _on_Costurar_pressed():
 	InstanciarPalavras()

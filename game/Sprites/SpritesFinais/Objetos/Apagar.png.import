@@ -1,0 +1,17 @@
+[remap]
+
+importer="texture_atlas"
+type="Texture"
+path="res://.import/Apagar.png-8c821b58978f7fdf553a544fca5a696e.res"
+group_file="res://Sprites/SpritesFinais/Atlas/Objects2.png"
+valid=true
+[deps]
+
+
+source_file="res://Sprites/SpritesFinais/Objetos/Apagar.png"
+dest_files=[ "res://.import/Apagar.png-8c821b58978f7fdf553a544fca5a696e.res" ]
+
+[params]
+
+atlas_file="res://Sprites/SpritesFinais/Atlas/Objects2.png"
+import_mode=0

@@ -1,13 +1,13 @@
 [gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Sprites/SpritesFinais/Objetos/Jogar Botão.png" type="Texture" id=1]
-[ext_resource path="res://Scripts/ChangeScene.gd" type="Script" id=2]
+[ext_resource path="res://Scripts/Corredor/ChangeScene.gd" type="Script" id=2]
 [ext_resource path="res://Sprites/SpritesFinais/Objetos/Créditos.png" type="Texture" id=3]
 [ext_resource path="res://Sprites/SpritesFinais/Objetos/seta.png" type="Texture" id=4]
 [ext_resource path="res://Sprites/SpritesFinais/Objetos/Créditos Botão.png" type="Texture" id=5]
 [ext_resource path="res://Sprites/SpritesFinais/Objetos/Sair Botão.png" type="Texture" id=6]
 [ext_resource path="res://Sprites/SpritesFinais/Fundo cenas/Interface.png" type="Texture" id=7]
-[ext_resource path="res://Sprites/SpritesFinais/noAtlasObjects/Logo escolhida.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/SpritesFinais/Objetos/Logo escolhida.png" type="Texture" id=8]
 [ext_resource path="res://Cenas/CenasPrefab/Fade.tscn" type="PackedScene" id=9]
 
 [node name="Main" type="Node2D"]
@@ -103,6 +103,7 @@ icon = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 [connection signal="pressed" from="Jogar" to="." method="_on_Jogar_pressed"]
 [connection signal="pressed" from="Creditos" to="." method="_on_Creditos_pressed"]
 [connection signal="pressed" from="CreditosPopUP/VoltarCreditos" to="." method="_on_VoltarCreditos_pressed"]

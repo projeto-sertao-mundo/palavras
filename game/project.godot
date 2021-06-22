@@ -22,7 +22,7 @@ _global_script_classes=[ {
 "base": "Reference",
 "class": "RetalhoToGlobal",
 "language": "GDScript",
-"path": "res://Scripts/RetalhoSaveOBJ.gd"
+"path": "res://Scripts/Costura/RetalhoSaveOBJ.gd"
 } ]
 _global_script_class_icons={
 "Costura": "",
@@ -39,6 +39,7 @@ config/icon="res://Sprites/Blocagem/icon.png"
 [autoload]
 
 Global="*res://Scripts/GLOBAL.gd"
+TutorialGlobal="*res://Scripts/TutorialGLOBAL.gd"
 Yield="*res://Scripts/YIELD.gd"
 
 [display]

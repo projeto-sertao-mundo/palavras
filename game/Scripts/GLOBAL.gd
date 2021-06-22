@@ -27,7 +27,7 @@ var codigoRetalho = 0
 var codigoCartao = 0
 var cartaoEditando
 
-func _ready():
+func _init():
 	contPalavrasEncontradas = 0
 	limite = 11
 

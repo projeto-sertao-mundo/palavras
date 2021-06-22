@@ -1,0 +1,17 @@
+[remap]
+
+importer="texture_atlas"
+type="Texture"
+path="res://.import/Quarto de Costura.png-a2af19ba2c49c001aadb90ceb8684686.res"
+group_file="res://Sprites/SpritesFinais/Atlas/Objects2.png"
+valid=true
+[deps]
+
+
+source_file="res://Sprites/SpritesFinais/Objetos/Quarto de Costura.png"
+dest_files=[ "res://.import/Quarto de Costura.png-a2af19ba2c49c001aadb90ceb8684686.res" ]
+
+[params]
+
+atlas_file="res://Sprites/SpritesFinais/Atlas/Objects2.png"
+import_mode=0

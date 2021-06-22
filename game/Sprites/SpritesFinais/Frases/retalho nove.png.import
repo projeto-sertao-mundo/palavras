@@ -1,0 +1,17 @@
+[remap]
+
+importer="texture_atlas"
+type="Texture"
+path="res://.import/retalho nove.png-23e8d8f12a757538cce138855311292d.res"
+group_file="res://Sprites/SpritesFinais/Atlas/Objects2.png"
+valid=true
+[deps]
+
+
+source_file="res://Sprites/SpritesFinais/Frases/retalho nove.png"
+dest_files=[ "res://.import/retalho nove.png-23e8d8f12a757538cce138855311292d.res" ]
+
+[params]
+
+atlas_file="res://Sprites/SpritesFinais/Atlas/Objects2.png"
+import_mode=0

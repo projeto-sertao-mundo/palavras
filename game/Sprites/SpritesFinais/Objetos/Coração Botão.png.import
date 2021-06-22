@@ -1,0 +1,17 @@
+[remap]
+
+importer="texture_atlas"
+type="Texture"
+path="res://.import/Coração Botão.png-1a0cccfb4d7a51ce2b266ec693b5464b.res"
+group_file="res://Sprites/SpritesFinais/Atlas/Objects2.png"
+valid=true
+[deps]
+
+
+source_file="res://Sprites/SpritesFinais/Objetos/Coração Botão.png"
+dest_files=[ "res://.import/Coração Botão.png-1a0cccfb4d7a51ce2b266ec693b5464b.res" ]
+
+[params]
+
+atlas_file="res://Sprites/SpritesFinais/Atlas/Objects2.png"
+import_mode=0

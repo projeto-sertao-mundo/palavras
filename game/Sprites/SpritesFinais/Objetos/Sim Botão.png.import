@@ -1,0 +1,17 @@
+[remap]
+
+importer="texture_atlas"
+type="Texture"
+path="res://.import/Sim Botão.png-ff2dc4163f4530cbad0220831cd7d3f9.res"
+group_file="res://Sprites/SpritesFinais/Atlas/Objects2.png"
+valid=true
+[deps]
+
+
+source_file="res://Sprites/SpritesFinais/Objetos/Sim Botão.png"
+dest_files=[ "res://.import/Sim Botão.png-ff2dc4163f4530cbad0220831cd7d3f9.res" ]
+
+[params]
+
+atlas_file="res://Sprites/SpritesFinais/Atlas/Objects2.png"
+import_mode=0

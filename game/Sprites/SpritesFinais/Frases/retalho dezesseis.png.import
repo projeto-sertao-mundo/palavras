@@ -1,0 +1,17 @@
+[remap]
+
+importer="texture_atlas"
+type="Texture"
+path="res://.import/retalho dezesseis.png-31efcc13e49cc5bbfad7f9e137e24073.res"
+group_file="res://Sprites/SpritesFinais/Atlas/Objects2.png"
+valid=true
+[deps]
+
+
+source_file="res://Sprites/SpritesFinais/Frases/retalho dezesseis.png"
+dest_files=[ "res://.import/retalho dezesseis.png-31efcc13e49cc5bbfad7f9e137e24073.res" ]
+
+[params]
+
+atlas_file="res://Sprites/SpritesFinais/Atlas/Objects2.png"
+import_mode=0
