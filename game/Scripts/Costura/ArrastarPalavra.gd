@@ -10,8 +10,10 @@ export(bool) var isLetraAcentuada
 export(bool) var isRetalho
 export(bool) var isPrefixo
 var numeroCaracteres
+var auxL 
 
 func _ready():
+	auxL = false
 	primeiroNode = $"/root/Global".firstSceneNode
 	palavrasParentesco = primeiroNode
 
@@ -82,8 +84,10 @@ func _on_TextureButton_pressed():
 		
 		if ($"/root/TutorialGlobal".tutorialPos == 14 || $"/root/TutorialGlobal".CosturaCompleted || !$"/root/TutorialGlobal".willDoTutorial):
 			
-			if ($"/root/TutorialGlobal".tutorialPos == 14):
+			if ($"/root/TutorialGlobal".tutorialPos == 14 && !auxL):
+				print(aux)
 				primeiroNode.get_node("Tutorial3").Tutorial15()
+				auxL = true
 			
 			if  aux <= $"/root/Global".limite:
 				

@@ -19,8 +19,9 @@ func _ready():
 			Tutorial1()
 		elif ($"/root/TutorialGlobal".tutorialPos == 2):
 			Tutorial2()
-		elif($"/root/TutorialGlobal".CozinhaCompleted):
+		elif($"/root/TutorialGlobal".CozinhaCompleted && !$"/root/TutorialGlobal".CosturaCompleted):
 			Tutorial12()
+			$"/root/TutorialGlobal".lockCozinha = true
 	else:
 		self.visible = false
 
@@ -33,7 +34,7 @@ func Tutorial2():
 
 func Tutorial12():
 	dialogo2.percent_visible = 0
-	displayString(dialogo3)	
+	displayString(dialogo3)
 
 func displayString(var dialogo):
 	dialogueEnded = false
