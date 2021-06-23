@@ -12,11 +12,12 @@ func _ready():
 	corParentesco = self.get_parent().get_node("CoresParent")
 
 func _process(_delta):
-	var nome = self.name
-	instanceCor($"/root/Global".coresInstanceRef, nome)
-	if !mouseClicking && corParentesco.has_node(nome) && !$"/root/Global".podeSetar:
-		corParentesco.get_node(nome).free()
-		$"/root/Global".mudarcorArrastada(null)
+	if ($"/root/TutorialGlobal".tutorialPos == 16 || $"/root/TutorialGlobal".CosturaCompleted || !$"/root/TutorialGlobal".willDoTutorial):
+		var nome = self.name
+		instanceCor($"/root/Global".coresInstanceRef, nome)
+		if !mouseClicking && corParentesco.has_node(nome) && !$"/root/Global".podeSetar:
+			corParentesco.get_node(nome).free()
+			$"/root/Global".mudarcorArrastada(null)
 
 func instanceCor(var ref, var nome):
 	if !corParentesco.has_node(nome) && mouseClicking && !$"/root/Global".jaSetou:

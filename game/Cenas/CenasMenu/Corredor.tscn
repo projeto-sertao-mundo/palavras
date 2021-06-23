@@ -13,7 +13,7 @@
 [ext_resource path="res://Scripts/Tutorial/Tutorial.gd" type="Script" id=11]
 
 [sub_resource type="DynamicFont" id=1]
-size = 40
+size = 38
 use_filter = true
 font_data = ExtResource( 10 )
 
@@ -98,6 +98,7 @@ __meta__ = {
 }
 D1 = NodePath("Label1")
 D2 = NodePath("Label2")
+D3 = NodePath("Label3")
 
 [node name="Vó" type="Sprite" parent="Tutorial1"]
 position = Vector2( 1469.09, 735.409 )
@@ -112,7 +113,13 @@ texture = ExtResource( 8 )
 [node name="Seta" type="Sprite" parent="Tutorial1"]
 visible = false
 modulate = Color( 1, 1, 0, 1 )
-position = Vector2( 638.485, 450.445 )
+position = Vector2( 626.593, 426.661 )
+texture = ExtResource( 3 )
+
+[node name="SetaCostura" type="Sprite" parent="Tutorial1"]
+visible = false
+modulate = Color( 1, 1, 0, 1 )
+position = Vector2( 1078.59, 426.661 )
 texture = ExtResource( 3 )
 
 [node name="Label1" type="Label" parent="Tutorial1"]
@@ -142,6 +149,24 @@ custom_fonts/font = SubResource( 1 )
 text = "Gostaria de um cafézinho?
 Vem comigo, deixa eu te apresentar a minha cozinha!
 Para entrar, basta clicar na porta indicada."
+align = 1
+uppercase = true
+percent_visible = 0.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="Tutorial1"]
+modulate = Color( 0, 0, 0, 1 )
+margin_left = 265.0
+margin_top = 710.0
+margin_right = 1266.0
+margin_bottom = 878.0
+custom_fonts/font = SubResource( 1 )
+text = "Já encontrou algumas letras né?
+Agora vou te apresentar meu quartinho de costura
+pra você brincar! Vem comigo! Clique na
+segunda porta para entrar no quarto de costura."
 align = 1
 uppercase = true
 percent_visible = 0.0

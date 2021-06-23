@@ -9,6 +9,7 @@ func _ready():
 	costuraPopUpNode = get_parent().get_node("CosturaPopUp/PalavrasPopUp")
 
 func _process(_delta):
+	#print(mouseIn , " ", $"/root/Global".returnRetalhoArrastado())
 	if mouseIn && $"/root/Global".returnRetalhoArrastado() != null:
 		var grid = costuraPopUpNode.get_node("Retalhos").get_node("GridRetalhos").get_children()
 		$"/root/Global".deleteRetalhoArrastado()

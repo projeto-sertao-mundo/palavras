@@ -10,6 +10,8 @@ var limite
 var caminho = "CosturaPopUp/Formas/HolderFormas" #PASTA DESTINO DOS SPRITES MUDAR!!!
 
 func _ready():
+	if (!$"/root/TutorialGlobal".CosturaCompleted):
+		get_node("Tutorial3").Tutorial13()
 	get_node("AnimationPlayer").play("FadeIn")
 	get_node("CosturaPopUp/CosturaAnimation").play("CosturaPopUp")
 	$"/root/Global".firstSceneNode = self
@@ -57,34 +59,37 @@ func _on_MaquinaCostura_pressed():
 	get_node("CosturaPopUp").show()
 
 func _on_Voltar_pressed():
-	get_node("CosturaPopUp").hide()
+	if ($"/root/TutorialGlobal".CosturaCompleted):
+		get_node("CosturaPopUp").hide()
 
 func _on_Voltar2_pressed():
-	get_node("AnimationPlayer").play("FadeOut")
+	if ($"/root/TutorialGlobal".CosturaCompleted):
+		get_node("AnimationPlayer").play("FadeOut")
 	#yield(Yield.yield_wait(0.35, self), "completed")
 	
 func MudarCor(var r, g, b):
 	get_node("CosturaPopUp/Preview").modulate = Color(r,g,b)
 
 func _on_Recomecar_pressed():
-	#get_node("CosturaPopUp/Preview/Miolo").modulate = Color(0.882353, 0.882353, 0.819608)
-	#get_node("CosturaPopUp/Preview/Borda").modulate = Color(0.882353, 0.882353, 0.819608)
-	numeroCaracteres = get_node("CosturaPopUp/Preview").get_node("Label").text.length()
-	if (numeroCaracteres > 0):
-		var text = get_node("CosturaPopUp/Preview").get_node("Label").text
-		
-		var array = []
-		for c in text:
-			array.append(c)
-		
-		array.remove(numeroCaracteres - 1)
-		
-		var textC = ""
-		for i in range(0,array.size()):
-			textC += array[i]
-		
-		get_node("CosturaPopUp/Preview").get_node("Label").text = textC
-		numeroCaracteres = array.size()
+	if (!$"/root/TutorialGlobal".willDoTutorial || $"/root/TutorialGlobal".CosturaCompleted):
+		#get_node("CosturaPopUp/Preview/Miolo").modulate = Color(0.882353, 0.882353, 0.819608)
+		#get_node("CosturaPopUp/Preview/Borda").modulate = Color(0.882353, 0.882353, 0.819608)
+		numeroCaracteres = get_node("CosturaPopUp/Preview").get_node("Label").text.length()
+		if (numeroCaracteres > 0):
+			var text = get_node("CosturaPopUp/Preview").get_node("Label").text
+			
+			var array = []
+			for c in text:
+				array.append(c)
+			
+			array.remove(numeroCaracteres - 1)
+			
+			var textC = ""
+			for i in range(0,array.size()):
+				textC += array[i]
+			
+			get_node("CosturaPopUp/Preview").get_node("Label").text = textC
+			numeroCaracteres = array.size()
 
 func _on_Area2D_area_entered(area):
 	set_process(true)
@@ -98,12 +103,16 @@ func _on_Area2D_area_exited(_area):
 	palavra = null
 
 func mudarSprite(var nomeMiolo, var nomeBorda):
-	numeroCaracteres = get_node("CosturaPopUp/Preview").get_node("Label").text.length()
-	while(numeroCaracteres > $"/root/Global".limite):
-		_on_Recomecar_pressed()
-	
-	self.get_node("CosturaPopUp/Preview/Miolo").texture = self.get_node(caminho + "/" + nomeMiolo).texture
-	self.get_node("CosturaPopUp/Preview/Borda").texture = self.get_node(caminho + "/" + nomeBorda).texture
+	if ($"/root/TutorialGlobal".tutorialPos == 15 || $"/root/TutorialGlobal".CosturaCompleted || !$"/root/TutorialGlobal".willDoTutorial):
+		if ($"/root/TutorialGlobal".tutorialPos == 15):
+			get_node("Tutorial3").Tutorial16()
+		
+		numeroCaracteres = get_node("CosturaPopUp/Preview").get_node("Label").text.length()
+		while(numeroCaracteres > $"/root/Global".limite):
+			_on_Recomecar_pressed()
+		
+		self.get_node("CosturaPopUp/Preview/Miolo").texture = self.get_node(caminho + "/" + nomeMiolo).texture
+		self.get_node("CosturaPopUp/Preview/Borda").texture = self.get_node(caminho + "/" + nomeBorda).texture
 
 func _on_Quadrado_pressed():
 	$"/root/Global".limite = 11
@@ -130,22 +139,26 @@ func _on_RetanguloPe_pressed():
 	mudarSprite("Retangulo De Pe Miolo","Retangulo De Pe Borda")
 
 func _on_Costurar_pressed():
-	numeroCaracteres = get_node("CosturaPopUp/Preview").get_node("Label").text.length()
-	if (numeroCaracteres > 0):
-		if numeroRetalhos < 9:
-			var previewRef = self.get_node("CosturaPopUp/Preview")
-			var spriteBorda = previewRef.get_node("Borda").texture
-			var spriteMiolo = previewRef.get_node("Miolo").texture
-			var corBorda = previewRef.get_node("Borda").modulate
-			var corMiolo = previewRef.get_node("Miolo").modulate
-			var label = previewRef.get_node("Label").text
-			numeroRetalhos += 1
-			
-			$"/root/Global".criarRetalho(corBorda, corMiolo, spriteBorda, spriteMiolo, label)
-			get_node("CosturaPopUp/Preview/Miolo").modulate = Color(0.882353, 0.882353, 0.819608)
-			get_node("CosturaPopUp/Preview/Borda").modulate = Color(0.882353, 0.882353, 0.819608)
-			get_node("CosturaPopUp/Preview/Label").text = ""
-			numeroCaracteres = 0
+	if ($"/root/TutorialGlobal".tutorialPos == 18 || !$"/root/TutorialGlobal".willDoTutorial || $"/root/TutorialGlobal".CosturaCompleted):
+		if ($"/root/TutorialGlobal".tutorialPos == 18):
+			get_node("Tutorial3").Tutorial19()
+		
+		numeroCaracteres = get_node("CosturaPopUp/Preview").get_node("Label").text.length()
+		if (numeroCaracteres > 0):
+			if numeroRetalhos < 9:
+				var previewRef = self.get_node("CosturaPopUp/Preview")
+				var spriteBorda = previewRef.get_node("Borda").texture
+				var spriteMiolo = previewRef.get_node("Miolo").texture
+				var corBorda = previewRef.get_node("Borda").modulate
+				var corMiolo = previewRef.get_node("Miolo").modulate
+				var label = previewRef.get_node("Label").text
+				numeroRetalhos += 1
+				
+				$"/root/Global".criarRetalho(corBorda, corMiolo, spriteBorda, spriteMiolo, label)
+				get_node("CosturaPopUp/Preview/Miolo").modulate = Color(0.882353, 0.882353, 0.819608)
+				get_node("CosturaPopUp/Preview/Borda").modulate = Color(0.882353, 0.882353, 0.819608)
+				get_node("CosturaPopUp/Preview/Label").text = ""
+				numeroCaracteres = 0
 
 func _on_QuartoCostura_tree_entered():
 	$"/root/Global".firstSceneNode = self

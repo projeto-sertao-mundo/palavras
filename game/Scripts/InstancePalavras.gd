@@ -73,13 +73,13 @@ func InstanciarPalavras():
 					retalhoInstanciado.set_position(Vector2(retalho.posicaoRetalho.x + 158.5, retalho.posicaoRetalho.y + 97))
 
 func _on_Bolsa_pressed():
-	if ($"/root/TutorialGlobal".tutorialPos >= 6 || !$"/root/TutorialGlobal".willDoTutorial):
+	if ($"/root/TutorialGlobal".tutorialPos == 6 || $"/root/TutorialGlobal".CozinhaCompleted || !$"/root/TutorialGlobal".willDoTutorial):
 		self.show()
 		get_parent().get_node("Tutorial2").Tutorial7()
 		InstanciarPalavras()
 
 func _on_ButtonPalavras_pressed():
-	if ($"/root/TutorialGlobal".tutorialPos >= 8 || !$"/root/TutorialGlobal".willDoTutorial):
+	if ($"/root/TutorialGlobal".tutorialPos == 8 || $"/root/TutorialGlobal".tutorialPos == 14 || ($"/root/TutorialGlobal".CosturaCompleted && $"/root/TutorialGlobal".CozinhaCompleted) || !$"/root/TutorialGlobal".willDoTutorial):
 		move_child(get_node("Palavras"), 6)
 		InstanciarPalavras()
 		if (has_node("Retalhos/GridRetalhos")):

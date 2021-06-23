@@ -42,9 +42,10 @@ func _on_PortaQuartoMontagens_pressed():
 		cena = "QF"
 
 func _on_VoltarMenu_pressed():
-	get_node("AnimationPlayer").play("FadeOut")
-	#yield(Yield.yield_wait(0.45, self), "completed")
-	cena = "Menu"
+	if ($"/root/TutorialGlobal".CosturaCompleted && $"/root/TutorialGlobal".CozinhaComplete && $"/root/TutorialGlobal".FrasesCompleted):
+		get_node("AnimationPlayer").play("FadeOut")
+		#yield(Yield.yield_wait(0.45, self), "completed")
+		cena = "Menu"
 
 
 func _on_AnimationPlayer_animation_finished(anim_name):

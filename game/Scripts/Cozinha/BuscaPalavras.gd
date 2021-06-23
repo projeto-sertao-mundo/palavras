@@ -10,7 +10,8 @@ func _process(delta):
 		get_node("Finish").visible = true
 
 func _on_Voltar_pressed():
-	get_node("AnimationPlayer").play("FadeOut")
+	if (!$"/root/TutorialGlobal".willDoTutorial  || $"/root/TutorialGlobal".CozinhaCompleted):
+		get_node("AnimationPlayer").play("FadeOut")
 	#yield(Yield.yield_wait(0.35, self), "completed")
 	
 func _on_Bolsa_pressed():

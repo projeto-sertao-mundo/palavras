@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=2]
+[gd_scene load_steps=51 format=2]
 
 [ext_resource path="res://Sprites/SpritesFinais/ObetosCostura/Losango Botão.png" type="Texture" id=1]
 [ext_resource path="res://Sprites/SpritesFinais/Fundo cenas/quarto de costura refeito.png" type="Texture" id=2]
@@ -42,6 +42,9 @@
 [ext_resource path="res://Scripts/Costura/Lixeira.gd" type="Script" id=40]
 [ext_resource path="res://Sprites/SpritesFinais/Objetos/Lixeira.png" type="Texture" id=41]
 [ext_resource path="res://Cenas/CenasPrefab/Fade.tscn" type="PackedScene" id=42]
+[ext_resource path="res://Sprites/SpritesFinais/noAtlasObjects/BalãoDeDialogo.png" type="Texture" id=43]
+[ext_resource path="res://Sprites/SpritesFinais/noAtlasObjects/Vovó.png" type="Texture" id=44]
+[ext_resource path="res://Scripts/Tutorial/TutorialCostura.gd" type="Script" id=45]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 49.998, 224.62 )
@@ -164,6 +167,10 @@ extents = Vector2( 82.901, 76.4056 )
 
 [sub_resource type="DynamicFont" id=4]
 size = 25
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 33
 font_data = ExtResource( 3 )
 
 [node name="QuartoCostura" type="Node2D"]
@@ -551,6 +558,211 @@ visible = false
 disabled = true
 
 [node name="ArrastarParentesco" type="Node" parent="."]
+
+[node name="Tutorial3" type="Control" parent="."]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 45 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+D1 = NodePath("Label1")
+D2 = NodePath("Label2")
+D3 = NodePath("Label7")
+D4 = NodePath("Label3")
+D5 = NodePath("Label4")
+D6 = NodePath("Label5")
+D7 = NodePath("Label6")
+D8 = NodePath("Label8")
+
+[node name="Vó" type="Sprite" parent="Tutorial3"]
+position = Vector2( 1503.27, 781.001 )
+texture = ExtResource( 44 )
+
+[node name="Dialogo" type="Sprite" parent="Tutorial3"]
+position = Vector2( 831.148, 801.766 )
+scale = Vector2( 2.19744, 1.3283 )
+texture = ExtResource( 43 )
+
+[node name="SetaRetalho" type="Sprite" parent="Tutorial3"]
+visible = false
+modulate = Color( 1, 1, 0, 1 )
+position = Vector2( 655.159, 446.012 )
+texture = ExtResource( 7 )
+
+[node name="SetaFormas" type="Sprite" parent="Tutorial3"]
+visible = false
+modulate = Color( 1, 1, 0, 1 )
+position = Vector2( 201.587, 105.833 )
+rotation = -1.5708
+texture = ExtResource( 7 )
+
+[node name="SetaCores" type="Sprite" parent="Tutorial3"]
+visible = false
+modulate = Color( 1, 1, 0, 1 )
+position = Vector2( 660.199, 244.425 )
+texture = ExtResource( 7 )
+
+[node name="SetaApagar" type="Sprite" parent="Tutorial3"]
+visible = false
+modulate = Color( 1, 1, 0, 1 )
+position = Vector2( 676.199, 578.425 )
+rotation = -0.349066
+texture = ExtResource( 7 )
+
+[node name="SetaConfirmar" type="Sprite" parent="Tutorial3"]
+visible = false
+modulate = Color( 1, 1, 0, 1 )
+position = Vector2( 204.199, 588.425 )
+rotation = 3.49066
+texture = ExtResource( 7 )
+
+[node name="SetaRetalhosAba" type="Sprite" parent="Tutorial3"]
+visible = false
+modulate = Color( 1, 1, 0, 1 )
+position = Vector2( 1508.2, 66.4248 )
+rotation = -0.523599
+texture = ExtResource( 7 )
+
+[node name="SetaLixeira" type="Sprite" parent="Tutorial3"]
+visible = false
+modulate = Color( 1, 1, 0, 1 )
+position = Vector2( 801.093, 510.488 )
+rotation = -1.5708
+texture = ExtResource( 7 )
+
+[node name="Label1" type="Label" parent="Tutorial3"]
+margin_left = 336.0
+margin_top = 755.581
+margin_right = 1328.0
+margin_bottom = 875.581
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Aqui vamos montar nossos retalhos com
+as letras que coletamos na cozinha!"
+align = 1
+uppercase = true
+percent_visible = 0.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="Tutorial3"]
+margin_left = 336.0
+margin_top = 752.0
+margin_right = 1328.0
+margin_bottom = 875.0
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Para escrever, basta clicar na letra ou morfema
+desejado que elá aparecerá no retalho à esquerda!"
+align = 1
+uppercase = true
+percent_visible = 0.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label7" type="Label" parent="Tutorial3"]
+margin_left = 336.0
+margin_top = 755.581
+margin_right = 1328.0
+margin_bottom = 875.581
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Você pode mudar o formato do retalho clicando
+em uma das formas disponíveis na mesa."
+align = 1
+uppercase = true
+percent_visible = 0.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="Tutorial3"]
+margin_left = 329.273
+margin_top = 733.0
+margin_right = 1366.27
+margin_bottom = 888.0
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Você também pode colorir os seus retalhos!
+Basta clicar na cor desejada e arrastar para o retalho!
+Lembrando que você pode colorir tanto a borda
+quanto o centro do retalho!"
+align = 1
+uppercase = true
+percent_visible = 0.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label4" type="Label" parent="Tutorial3"]
+margin_left = 336.0
+margin_top = 751.0
+margin_right = 1328.0
+margin_bottom = 876.0
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Se você errou alguma letra, pode apagar
+utilizando o botão \"apagar\"."
+align = 1
+uppercase = true
+percent_visible = 0.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label5" type="Label" parent="Tutorial3"]
+margin_left = 336.0
+margin_top = 742.0
+margin_right = 1328.0
+margin_bottom = 875.0
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Quando você terminar o seu retalho,
+basta clicar em \"confirmar\" para armazená-lo
+na sua bolsa!"
+align = 1
+uppercase = true
+percent_visible = 0.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label6" type="Label" parent="Tutorial3"]
+margin_left = 336.0
+margin_top = 757.0
+margin_right = 1328.0
+margin_bottom = 875.0
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Seu retalho ficará armazenado na aba \"retalhos\"."
+align = 1
+uppercase = true
+percent_visible = 0.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label8" type="Label" parent="Tutorial3"]
+margin_left = 336.0
+margin_top = 734.0
+margin_right = 1328.0
+margin_bottom = 909.0
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Caso você não goste do resultado final do seu
+retalho, pode arrastar ele para a lixeirinha que fica no
+centro do quarto, ok?
+Agora divirta-se!"
+align = 1
+uppercase = true
+percent_visible = 0.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="tree_entered" from="." to="." method="_on_QuartoCostura_tree_entered"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 [connection signal="area_entered" from="Lixeira/Area2D" to="Lixeira" method="_on_Area2D_area_entered"]
@@ -560,10 +772,10 @@ disabled = true
 [connection signal="area_exited" from="CosturaPopUp/Preview/Area2D" to="." method="_on_Area2D_area_exited"]
 [connection signal="pressed" from="CosturaPopUp/Bolsa" to="CosturaPopUp/PalavrasPopUp" method="_on_Bolsa_pressed"]
 [connection signal="pressed" from="CosturaPopUp/Voltar" to="." method="_on_Voltar_pressed"]
-[connection signal="pressed" from="CosturaPopUp/Costurar" to="CosturaPopUp/PalavrasPopUp" method="_on_Costurar_pressed"]
-[connection signal="pressed" from="CosturaPopUp/Costurar" to="." method="_on_Costurar_pressed"]
 [connection signal="pressed" from="CosturaPopUp/Costurar" to="CosturaPopUp/Preview/Miolo" method="_on_Costurar_pressed"]
 [connection signal="pressed" from="CosturaPopUp/Costurar" to="CosturaPopUp/Preview/Borda" method="_on_Costurar_pressed"]
+[connection signal="pressed" from="CosturaPopUp/Costurar" to="." method="_on_Costurar_pressed"]
+[connection signal="pressed" from="CosturaPopUp/Costurar" to="CosturaPopUp/PalavrasPopUp" method="_on_Costurar_pressed"]
 [connection signal="pressed" from="CosturaPopUp/Recomecar" to="." method="_on_Recomecar_pressed"]
 [connection signal="button_down" from="CosturaPopUp/Cor/Vermelho" to="CosturaPopUp/Cor/Vermelho" method="_on_Vermelho_button_down"]
 [connection signal="button_up" from="CosturaPopUp/Cor/Vermelho" to="CosturaPopUp/Cor/Vermelho" method="_on_Vermelho_button_up"]

@@ -80,23 +80,28 @@ func _on_TextureButton_pressed():
 		var aux = label.text.length() + self.name.length()
 		numeroCaracteres = label.text.length()
 		
-		if  aux <= $"/root/Global".limite:
+		if ($"/root/TutorialGlobal".tutorialPos == 14 || $"/root/TutorialGlobal".CosturaCompleted || !$"/root/TutorialGlobal".willDoTutorial):
 			
-			var isPrefixo
-			if palavra.name.length() == 3:
-				isPrefixo = true
-			else:
-				isPrefixo = false
+			if ($"/root/TutorialGlobal".tutorialPos == 14):
+				primeiroNode.get_node("Tutorial3").Tutorial15()
 			
-			if !palavra.isMorfema:
-				MudarLabelPreview(palavra.name, palavra.name.length())
-				$"/root/Global".podeSetar = false
-			elif palavra.isMorfema && isPrefixo && numeroCaracteres == 0:
-				MudarLabelPreview(palavra.name, palavra.name.length())
-				$"/root/Global".podeSetar = false
-			elif !isPrefixo && palavra.isMorfema && numeroCaracteres > 0:
-				MudarLabelPreview(palavra.name, palavra.name.length())
-				$"/root/Global".podeSetar = false
+			if  aux <= $"/root/Global".limite:
+				
+				var isPrefixo
+				if palavra.name.length() == 3:
+					isPrefixo = true
+				else:
+					isPrefixo = false
+				
+				if !palavra.isMorfema:
+					MudarLabelPreview(palavra.name, palavra.name.length())
+					$"/root/Global".podeSetar = false
+				elif palavra.isMorfema && isPrefixo && numeroCaracteres == 0:
+					MudarLabelPreview(palavra.name, palavra.name.length())
+					$"/root/Global".podeSetar = false
+				elif !isPrefixo && palavra.isMorfema && numeroCaracteres > 0:
+					MudarLabelPreview(palavra.name, palavra.name.length())
+					$"/root/Global".podeSetar = false
 
 func MudarLabelPreview(var texto, var numCaracteres):
 	numeroCaracteres += numCaracteres

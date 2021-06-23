@@ -21,8 +21,10 @@ onready var dialogo8 = get_node(D8)
 onready var dialogo9 = get_node(D9)
 
 var dialogueEnded
+var aux
 
 func _ready():
+	aux = false
 	if ($"/root/TutorialGlobal".willDoTutorial):
 		self.visible = true
 		if ($"/root/TutorialGlobal".tutorialPos == 2):
@@ -38,9 +40,12 @@ func Tutorial4():
 	dialogo1.percent_visible = 0
 
 func Tutorial5():
-	displayString(dialogo3)
-	dialogo1.percent_visible = 0
-	dialogo2.percent_visible = 0
+	if (!aux):
+		aux = true
+		print("a")
+		displayString(dialogo3)
+		dialogo1.percent_visible = 0
+		dialogo2.percent_visible = 0
 
 func Tutorial6():
 	displayString(dialogo4)
@@ -89,8 +94,8 @@ func displayString(var dialogo):
 	var cont = 0
 	
 	while (cont < 1):
-		cont += soma
-		yield(Yield.yield_wait(0.01, self), "completed")
+		cont += soma * 2
+		yield(Yield.yield_wait(0.001, self), "completed")
 		dialogo.percent_visible = cont
 	
 	$"/root/TutorialGlobal".tutorialPos += 1
