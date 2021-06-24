@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Sprites/SpritesFinais/Objetos/Confecção Dos Retalhps.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Corredor/ChangeScenePorta.gd" type="Script" id=2]
@@ -16,6 +16,106 @@
 [ext_resource path="res://Sprites/SpritesFinais/Objetos/Não Botão.png" type="Texture" id=14]
 [ext_resource path="res://Sprites/SpritesFinais/noAtlasObjects/Tem certeza.png" type="Texture" id=15]
 
+[sub_resource type="Animation" id=2]
+resource_name = "SetaEsquerda"
+length = 0.9
+loop = true
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("Tutorial1/Seta:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 626.593, -0.25, 0, 0.25, 0, 660, -0.25, 0, 0.25, 0, 626.593, -0.25, 0, 0.25, 0, 626.593, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.4, 0.9, 1.2 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("Tutorial1/Seta:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 426.661, -0.25, 0, 0.25, 0, 426.661, -0.25, 0, 0.25, 0, 426.661, -0.25, 0, 0.25, 0, 426.661, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.4, 0.9, 1.2 )
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Tutorial1/Seta:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
+"update": 1,
+"values": [  ]
+}
+tracks/3/type = "bezier"
+tracks/3/path = NodePath("Tutorial1/SetaCostura:position:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"points": PoolRealArray( 1078.59, -0.25, 0, 0.25, 0, 1111, -0.25, 0, 0.25, 0, 1078.59, -0.25, 0, 0.25, 0, 1078.59, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.4, 0.9, 1.2 )
+}
+tracks/4/type = "bezier"
+tracks/4/path = NodePath("Tutorial1/SetaCostura:position:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"points": PoolRealArray( 426.661, -0.25, 0, 0.25, 0, 426.661, -0.25, 0, 0.25, 0, 426.661, -0.25, 0, 0.25, 0, 426.661, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.4, 0.9, 1.2 )
+}
+tracks/5/type = "bezier"
+tracks/5/path = NodePath("Tutorial1/SetaCartoes:position:x")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"points": PoolRealArray( 1111.89, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/6/type = "bezier"
+tracks/6/path = NodePath("Tutorial1/SetaCartoes:position:y")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"points": PoolRealArray( 343.416, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "SetaEsquerda2"
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("Tutorial1/SetaCostura:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 1078.59, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("Tutorial1/SetaCostura:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 426.661, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+
 [sub_resource type="DynamicFont" id=1]
 size = 38
 use_filter = true
@@ -29,6 +129,8 @@ __meta__ = {
 }
 
 [node name="AnimationPlayer" parent="." instance=ExtResource( 7 )]
+anims/SetaEsquerda = SubResource( 2 )
+anims/SetaEsquerda2 = SubResource( 3 )
 
 [node name="corredor" type="Sprite" parent="."]
 position = Vector2( 798.892, 449.981 )

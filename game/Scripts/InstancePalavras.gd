@@ -80,7 +80,7 @@ func _on_Bolsa_pressed():
 		InstanciarPalavras()
 
 func _on_ButtonPalavras_pressed():
-	if ($"/root/TutorialGlobal".tutorialPos == 8 || $"/root/TutorialGlobal".tutorialPos == 14 || $"/root/TutorialGlobal".CosturaCompleted || !$"/root/TutorialGlobal".willDoTutorial):
+	if ($"/root/TutorialGlobal".tutorialPos == 8 || $"/root/TutorialGlobal".tutorialPos == 14 || $"/root/TutorialGlobal".CozinhaCompleted || $"/root/TutorialGlobal".CosturaCompleted || !$"/root/TutorialGlobal".willDoTutorial):
 		move_child(get_node("Palavras"), 6)
 		InstanciarPalavras()
 		if (has_node("Retalhos/GridRetalhos")):

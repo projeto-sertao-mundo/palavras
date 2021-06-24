@@ -14,6 +14,34 @@ var dialogueEnded
 
 var auxD
 
+func _ready():
+	if ($"/root/TutorialGlobal".willDoTutorial):
+		
+		self.visible = true
+		auxD = 0
+		
+		if ($"/root/TutorialGlobal".tutorialPos == 0):
+			self.visible = true
+			dialogueEnded = false
+			Tutorial1()
+		elif ($"/root/TutorialGlobal".tutorialPos == 2):
+			Tutorial2()
+		elif($"/root/TutorialGlobal".CozinhaCompleted && !$"/root/TutorialGlobal".CosturaCompleted):
+			Tutorial12()
+			$"/root/TutorialGlobal".lockCozinha = true
+		elif ($"/root/TutorialGlobal".CozinhaCompleted && $"/root/TutorialGlobal".CosturaCompleted && !$"/root/TutorialGlobal".FrasesCompleted && $"/root/Global".retalhos.size() > 0):
+			Tutorial21()
+		elif $"/root/Global".retalhos.size() == 0:
+			self.visible = false
+		elif ($"/root/TutorialGlobal".CozinhaCompleted && $"/root/TutorialGlobal".CosturaCompleted && $"/root/TutorialGlobal".FrasesCompleted):
+			self.visible = false
+			$"/root/TutorialGlobal".lockCozinha = false
+			$"/root/TutorialGlobal".lockCostura = false
+			$"/root/TutorialGlobal".lockFrases = false
+		else:
+			self.visible = false
+
+
 func Tutorial1():
 	if (auxD == 0):
 		displayString(dialogo1)
@@ -74,32 +102,4 @@ func _input(event):
 
 func _on_Sim_pressed():
 	$"/root/TutorialGlobal".willDoTutorial = true
-	
-	$"/root/TutorialGlobal".lockCozinha = true
-	$"/root/TutorialGlobal".lockCostura = true
-	$"/root/TutorialGlobal".lockFrases = true
-	
-	self.visible = true
-	auxD = 0
-	
-	if ($"/root/TutorialGlobal".tutorialPos == 0):
-		self.visible = true
-		dialogueEnded = false
-		Tutorial1()
-	elif ($"/root/TutorialGlobal".tutorialPos == 2):
-		Tutorial2()
-	elif($"/root/TutorialGlobal".CozinhaCompleted && !$"/root/TutorialGlobal".CosturaCompleted):
-		Tutorial12()
-		$"/root/TutorialGlobal".lockCozinha = true
-	elif ($"/root/TutorialGlobal".CozinhaCompleted && $"/root/TutorialGlobal".CosturaCompleted && !$"/root/TutorialGlobal".FrasesCompleted && $"/root/Global".retalhos.size() > 0):
-		Tutorial21()
-	elif $"/root/Global".retalhos.size() == 0:
-		self.visible = false
-	elif ($"/root/TutorialGlobal".CozinhaCompleted && $"/root/TutorialGlobal".CosturaCompleted && $"/root/TutorialGlobal".FrasesCompleted):
-		self.visible = false
-		$"/root/TutorialGlobal".lockCozinha = false
-		$"/root/TutorialGlobal".lockCostura = false
-		$"/root/TutorialGlobal".lockFrases = false
-	else:
-		self.visible = false
-
+	_ready()
