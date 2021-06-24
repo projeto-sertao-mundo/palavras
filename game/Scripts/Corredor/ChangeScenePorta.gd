@@ -20,6 +20,12 @@ func ChangeSceneQF():
 	var _cenaChanged = get_tree().change_scene("res://Cenas/CenasJogaveis/QuartoFrases.tscn")
 
 func _ready():
+	if ($"/root/TutorialGlobal".alreadyAsked):
+		get_node("TutorialPergunta").visible = false
+		get_node("Confirmacao").visible = false
+	else:
+		$"/root/TutorialGlobal".alreadyAsked = true
+	
 	get_node("AnimationPlayer").play("FadeIn")
 	$"/root/Global".setarRefs(morfemas, letraInstance, coresInstance, retalhosInstance, retalhosFrasesInstance, cartoes)
 
@@ -42,7 +48,7 @@ func _on_PortaQuartoMontagens_pressed():
 		cena = "QF"
 
 func _on_VoltarMenu_pressed():
-	if ($"/root/TutorialGlobal".CosturaCompleted && $"/root/TutorialGlobal".CozinhaComplete && $"/root/TutorialGlobal".FrasesCompleted):
+	if (($"/root/TutorialGlobal".CosturaCompleted && $"/root/TutorialGlobal".CozinhaCompleted && $"/root/TutorialGlobal".FrasesCompleted) || !$"/root/TutorialGlobal".willDoTutorial):
 		get_node("AnimationPlayer").play("FadeOut")
 		#yield(Yield.yield_wait(0.45, self), "completed")
 		cena = "Menu"
@@ -58,3 +64,22 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 			ChangeSceneQF()
 		elif (cena == "Menu"):
 			var _cenaChanged = get_tree().change_scene("res://Cenas/CenasMenu/MenuPrincipal.tscn")
+
+
+func _on_Nao_pressed():
+	get_node("Confirmacao").visible = true
+
+func _on_NaoC_pressed():
+	get_node("Confirmacao").visible = false
+
+func _on_SimC_pressed():
+	$"/root/TutorialGlobal".lockCozinha = false
+	$"/root/TutorialGlobal".lockCostura = false
+	$"/root/TutorialGlobal".lockFrases = false
+	$"/root/TutorialGlobal".willDoTutorial = false
+	get_node("TutorialPergunta").visible = false
+	get_node("Confirmacao").visible = false
+
+func _on_Sim_pressed():
+	get_node("TutorialPergunta").visible = false
+	get_node("Confirmacao").visible = false

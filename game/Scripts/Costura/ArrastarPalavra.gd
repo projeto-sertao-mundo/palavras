@@ -91,7 +91,7 @@ func _on_TextureButton_pressed():
 			
 			if  aux <= $"/root/Global".limite:
 				
-				var isPrefixo
+				
 				if palavra.name.length() == 3:
 					isPrefixo = true
 				else:

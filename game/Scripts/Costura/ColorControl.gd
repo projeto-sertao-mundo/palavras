@@ -37,7 +37,7 @@ func _process(_delta):
 				self.get_parent().get_parent().get_parent().get_node("Tutorial3").ChangeSetedColor()
 			else:
 				setado = false
-				corAnterior = Color(0.768627, 0.74902, 0.698039)
+				#corAnterior = Color(0.768627, 0.74902, 0.698039)
 		
 		if !is_pixel_opaque(get_local_mouse_position()) && !setado:
 			self.modulate = corAnterior
@@ -46,6 +46,7 @@ func _process(_delta):
 func MudarCor(var r, g, b):
 	self.modulate = Color(r,g,b)
 
-func _on_Costurar_pressed():
+func on_Costurar_pressed():
 	MudarCor(0.768627, 0.74902, 0.698039)
 	corAux = Color(0.768627, 0.74902, 0.698039)
+	corAnterior = Color(0.768627, 0.74902, 0.698039)

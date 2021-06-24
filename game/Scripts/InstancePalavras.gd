@@ -75,11 +75,12 @@ func InstanciarPalavras():
 func _on_Bolsa_pressed():
 	if ($"/root/TutorialGlobal".tutorialPos == 6 || $"/root/TutorialGlobal".CozinhaCompleted || !$"/root/TutorialGlobal".willDoTutorial):
 		self.show()
-		get_parent().get_node("Tutorial2").Tutorial7()
+		if ($"/root/TutorialGlobal".tutorialPos ==  6):
+			get_parent().get_node("Tutorial2").Tutorial7()
 		InstanciarPalavras()
 
 func _on_ButtonPalavras_pressed():
-	if ($"/root/TutorialGlobal".tutorialPos == 8 || $"/root/TutorialGlobal".tutorialPos == 14 || ($"/root/TutorialGlobal".CosturaCompleted && $"/root/TutorialGlobal".CozinhaCompleted) || !$"/root/TutorialGlobal".willDoTutorial):
+	if ($"/root/TutorialGlobal".tutorialPos == 8 || $"/root/TutorialGlobal".tutorialPos == 14 || $"/root/TutorialGlobal".CosturaCompleted || !$"/root/TutorialGlobal".willDoTutorial):
 		move_child(get_node("Palavras"), 6)
 		InstanciarPalavras()
 		if (has_node("Retalhos/GridRetalhos")):
@@ -127,6 +128,9 @@ func _on_Costurar_pressed():
 	InstanciarPalavras()
 
 func _on_ButtonCartoes_pressed():
+	if ($"/root/TutorialGlobal".tutorialPos == 25 && $"/root/TutorialGlobal".willDoTutorial):
+		get_parent().get_node("Tutorial4").Tutorial26()
+	
 	move_child(get_node("Cartões"), 6)
 	InstanciarPalavras()
 	

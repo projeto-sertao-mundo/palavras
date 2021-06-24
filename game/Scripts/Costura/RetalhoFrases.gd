@@ -21,11 +21,12 @@ func _ready():
 		sprite = primeiroNode.get_node("RetalhoGrande")
 
 func _process(_delta):
-	if (mouseIn && clickPosition != null && placedPosition != clickPosition):
-		self.set_position(sprite.to_local(clickPosition))
-		placedPosition = clickPosition
-	elif (!setRetalhoFrase && !mouseIn && clickPosition != null):
-		self.free()
+	if ($"/root/TutorialGlobal".tutorialPos == 23 || !$"/root/TutorialGlobal".willDoTutorial || $"/root/TutorialGlobal".FrasesCompleted):
+		if (mouseIn && clickPosition != null && placedPosition != clickPosition):
+			self.set_position(sprite.to_local(clickPosition))
+			placedPosition = clickPosition
+		elif (!setRetalhoFrase && !mouseIn && clickPosition != null):
+			self.free()
 
 func _input(event):
 	if event is InputEventScreenDrag:

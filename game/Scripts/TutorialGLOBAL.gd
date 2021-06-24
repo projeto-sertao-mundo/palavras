@@ -11,9 +11,11 @@ var CozinhaCompleted
 var CosturaCompleted
 var FrasesCompleted
 
+var alreadyAsked
+
 func _init():
 	tutorialPos = 0
-	willDoTutorial = true
+	#willDoTutorial = false
 	
 	if (willDoTutorial):
 		lockCozinha = true

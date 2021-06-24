@@ -14,19 +14,25 @@ func _ready():
 	descartButton = primeiroNode.get_node("Descartar")
 
 func _on_TextureButton_pressed():
-	sprite.visible = true
-	sprite.texture = self.texture_normal
 	
-	for child in sprite.get_children():
-		if child is TextureButton:
-			child.free()
-	
-	retalhoLock.visible = true
-	descartButton.visible = true
-	#confirmar.visible = true
-#	$"/root/Global".cartaoEditando = self.name
-	
-	instanceRetalhos()
+	if ($"/root/TutorialGlobal".tutorialPos == 26 || !$"/root/TutorialGlobal".willDoTutorial || $"/root/TutorialGlobal".FrasesCompleted):
+		
+		if ($"/root/TutorialGlobal".tutorialPos == 26):
+			get_parent().get_parent().get_parent().get_parent().get_node("Tutorial4").Tutorial27()
+		
+		sprite.visible = true
+		sprite.texture = self.texture_normal
+		
+		for child in sprite.get_children():
+			if child is TextureButton:
+				child.free()
+		
+		retalhoLock.visible = true
+		descartButton.visible = true
+		#confirmar.visible = true
+	#	$"/root/Global".cartaoEditando = self.name
+		
+		instanceRetalhos()
 	
 func _on_TextureControl_pressed():
 	_on_TextureButton_pressed()

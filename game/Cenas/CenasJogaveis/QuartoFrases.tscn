@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=2]
+[gd_scene load_steps=40 format=2]
 
 [ext_resource path="res://Scripts/Frases/FrasePreview.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/SpritesFinais/Objetos/Bolsa.png" type="Texture" id=2]
@@ -21,6 +21,7 @@
 [ext_resource path="res://Sprites/SpritesFinais/Frases/retalho dezessete.png" type="Texture" id=19]
 [ext_resource path="res://Sprites/SpritesFinais/Frases/retalho dezoito.png" type="Texture" id=20]
 [ext_resource path="res://Sprites/SpritesFinais/Frases/retalho dezesseis.png" type="Texture" id=21]
+[ext_resource path="res://Scripts/Tutorial/TutorialFrases.gd" type="Script" id=22]
 [ext_resource path="res://Sprites/SpritesFinais/Frases/RetalhoUm.png" type="Texture" id=23]
 [ext_resource path="res://Sprites/SpritesFinais/Frases/retalho nove.png" type="Texture" id=24]
 [ext_resource path="res://Sprites/SpritesFinais/Frases/retalho quinze.png" type="Texture" id=25]
@@ -33,9 +34,16 @@
 [ext_resource path="res://Sprites/SpritesFinais/ObetosCostura/Confirmar.png" type="Texture" id=32]
 [ext_resource path="res://Cenas/CenasPrefab/Fade.tscn" type="PackedScene" id=33]
 [ext_resource path="res://Sprites/SpritesFinais/Objetos/Cartões.png" type="Texture" id=34]
+[ext_resource path="res://Sprites/SpritesFinais/noAtlasObjects/Vovó.png" type="Texture" id=35]
+[ext_resource path="res://Sprites/SpritesFinais/noAtlasObjects/BalãoDeDialogo.png" type="Texture" id=36]
+[ext_resource path="res://Fonts/xilosa_.ttf" type="DynamicFontData" id=37]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 86.3473, 50.4913 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 32
+font_data = ExtResource( 37 )
 
 [node name="QuartoFrases" type="Node2D"]
 position = Vector2( -4.48987, -4.48981 )
@@ -105,10 +113,10 @@ __meta__ = {
 
 [node name="PaginaRetalho" type="TextureButton" parent="."]
 modulate = Color( 0.960784, 0.952941, 0.372549, 1 )
-margin_left = 839.336
-margin_top = 661.909
-margin_right = 962.336
-margin_bottom = 765.909
+margin_left = 843.579
+margin_top = 642.11
+margin_right = 966.579
+margin_bottom = 746.11
 rect_rotation = 180.0
 rect_scale = Vector2( 0.8, 0.7 )
 texture_normal = ExtResource( 7 )
@@ -487,10 +495,177 @@ texture_normal = ExtResource( 18 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Tutorial4" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 22 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+D1 = NodePath("Label1")
+D2 = NodePath("Label2")
+D3 = NodePath("Label3")
+D4 = NodePath("Label6")
+D5 = NodePath("Label7")
+D6 = NodePath("Label4")
+D7 = NodePath("Label5")
+
+[node name="Vó" type="Sprite" parent="Tutorial4"]
+position = Vector2( 1399.97, 697.003 )
+texture = ExtResource( 35 )
+
+[node name="Dialogo" type="Sprite" parent="Tutorial4"]
+position = Vector2( 799.572, 721.389 )
+scale = Vector2( 1.99814, 1.20718 )
+texture = ExtResource( 36 )
+
+[node name="SetaCartoes" type="Sprite" parent="Tutorial4"]
+visible = false
+modulate = Color( 1, 1, 0, 1 )
+position = Vector2( 58.2791, 342.425 )
+rotation = 3.14159
+texture = ExtResource( 7 )
+
+[node name="SetaRetalhos" type="Sprite" parent="Tutorial4"]
+visible = false
+modulate = Color( 1, 1, 0, 1 )
+position = Vector2( 1471.24, 399.443 )
+texture = ExtResource( 7 )
+
+[node name="SetaConfirmar" type="Sprite" parent="Tutorial4"]
+visible = false
+modulate = Color( 1, 1, 0, 1 )
+position = Vector2( 218.641, 511.696 )
+rotation = -1.5708
+texture = ExtResource( 7 )
+
+[node name="SetaCartoesAba" type="Sprite" parent="Tutorial4"]
+visible = false
+modulate = Color( 1, 1, 0, 1 )
+position = Vector2( 959.698, 130.747 )
+rotation = 3.14159
+texture = ExtResource( 7 )
+
+[node name="SetaCartaoPronto" type="Sprite" parent="Tutorial4"]
+visible = false
+modulate = Color( 1, 1, 0, 1 )
+position = Vector2( 1159.67, 271.009 )
+texture = ExtResource( 7 )
+
+[node name="Label1" type="Label" parent="Tutorial4"]
+margin_left = 342.0
+margin_top = 670.0
+margin_right = 1256.0
+margin_bottom = 783.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Aqui temos alguns cartões. Você pode
+visualizá-los melhor ao clicar em qualquer um deles."
+align = 1
+uppercase = true
+percent_visible = 0.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="Tutorial4"]
+margin_left = 342.0
+margin_top = 658.0
+margin_right = 1256.0
+margin_bottom = 823.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Agora podemos arrastar os retalhos que
+produzimos no quarto de costura para o cartão!
+Clique no retalho e arraste para qualquer
+área do cartão."
+align = 1
+uppercase = true
+percent_visible = 0.0
+
+[node name="Label3" type="Label" parent="Tutorial4"]
+margin_left = 342.0
+margin_top = 670.0
+margin_right = 1256.0
+margin_bottom = 783.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Quando o retalho estiver posicionado da
+forma que você quer, basta clicar no botão
+\"confirmar\", e o seu cartão estará pronto!"
+align = 1
+uppercase = true
+percent_visible = 0.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label6" type="Label" parent="Tutorial4"]
+margin_left = 342.0
+margin_top = 682.0
+margin_right = 1256.0
+margin_bottom = 783.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Seus cartões ficarão armazenados na aba
+\"cartões\"."
+align = 1
+uppercase = true
+percent_visible = 0.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label7" type="Label" parent="Tutorial4"]
+margin_left = 342.0
+margin_top = 680.0
+margin_right = 1249.0
+margin_bottom = 783.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Quando estiver na aba de cartões, 
+você pode visualizar um cartão ao clicar nele."
+align = 1
+uppercase = true
+percent_visible = 0.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label4" type="Label" parent="Tutorial4"]
+margin_left = 342.0
+margin_top = 670.0
+margin_right = 1256.0
+margin_bottom = 783.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Caso não goste de um cartão, você
+pode apagá-lo clicando no botão \"descartar\"."
+align = 1
+uppercase = true
+percent_visible = 0.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label5" type="Label" parent="Tutorial4"]
+margin_left = 342.0
+margin_top = 670.0
+margin_right = 1256.0
+margin_bottom = 783.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Isto é tudo! Espero ter ajudado! Explore a sua
+criatividade! você pode usar mais de um retalho por
+cartão! São muitas possibilidades! Boa sorte!"
+align = 1
+uppercase = true
+percent_visible = 0.0
 [connection signal="tree_entered" from="." to="." method="_on_QuartoFrases_tree_entered"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
-[connection signal="pressed" from="ExitButton" to="RetalhoGrande" method="_on_ExitButton_pressed"]
 [connection signal="pressed" from="ExitButton" to="Frases" method="_on_ExitButton_pressed"]
+[connection signal="pressed" from="ExitButton" to="RetalhoGrande" method="_on_ExitButton_pressed"]
 [connection signal="pressed" from="Bolsa" to="PalavrasPopUp" method="_on_Bolsa_pressed"]
 [connection signal="pressed" from="Voltar" to="." method="_on_Voltar_pressed"]
 [connection signal="pressed" from="PaginaRetalho" to="Frases" method="_on_PaginaRetalho_pressed"]
@@ -519,9 +694,9 @@ __meta__ = {
 [connection signal="pressed" from="Frases/FrasesPagina2/18" to="Frases" method="_on_18_pressed"]
 [connection signal="area_entered" from="RetalhoGrande/Area2D" to="RetalhoGrande" method="_on_Area2D_area_entered"]
 [connection signal="area_exited" from="RetalhoGrande/Area2D" to="RetalhoGrande" method="_on_Area2D_area_exited"]
-[connection signal="pressed" from="Confirm" to="RetalhoGrande" method="_on_Confirm_pressed"]
 [connection signal="pressed" from="Confirm" to="PalavrasPopUp" method="_on_Confirm_pressed"]
+[connection signal="pressed" from="Confirm" to="RetalhoGrande" method="_on_Confirm_pressed"]
 [connection signal="pressed" from="Descartar" to="." method="_on_Descartar_pressed"]
 [connection signal="pressed" from="Atençao/NaoDescartar" to="." method="_on_NaoDescartar_pressed"]
-[connection signal="pressed" from="Atençao/Descart" to="." method="_on_Descart_pressed"]
 [connection signal="pressed" from="Atençao/Descart" to="PalavrasPopUp" method="_on_Descart_pressed"]
+[connection signal="pressed" from="Atençao/Descart" to="." method="_on_Descart_pressed"]

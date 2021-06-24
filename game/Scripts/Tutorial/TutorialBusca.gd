@@ -21,11 +21,13 @@ onready var dialogo8 = get_node(D8)
 onready var dialogo9 = get_node(D9)
 
 var dialogueEnded
+var auxD
 var aux
 
 func _ready():
+	auxD = 2
 	aux = false
-	if ($"/root/TutorialGlobal".willDoTutorial):
+	if ($"/root/TutorialGlobal".willDoTutorial && !$"/root/TutorialGlobal".CozinhaCompleted):
 		self.visible = true
 		if ($"/root/TutorialGlobal".tutorialPos == 2):
 			self.visible = true
@@ -33,60 +35,71 @@ func _ready():
 			Tutorial3()
 
 func Tutorial3():
-	displayString(dialogo1)
+	if (auxD == 2):
+		displayString(dialogo1)
 
 func Tutorial4():
-	displayString(dialogo2)
-	dialogo1.percent_visible = 0
+	if (auxD == 3):
+		displayString(dialogo2)
+		dialogo1.percent_visible = 0
 
 func Tutorial5():
-	if (!aux):
-		aux = true
-		print("a")
-		displayString(dialogo3)
-		dialogo1.percent_visible = 0
-		dialogo2.percent_visible = 0
+	if (auxD == 4):
+		if (!aux):
+			self.visible = true
+			aux = true
+			print("a")
+			displayString(dialogo3)
+			dialogo1.percent_visible = 0
+			dialogo2.percent_visible = 0
 
 func Tutorial6():
-	displayString(dialogo4)
-	dialogo2.percent_visible = 0
-	dialogo3.percent_visible = 0
-	get_node("SetaBolsa").visible = true
+	if (auxD == 5):
+		displayString(dialogo4)
+		dialogo2.percent_visible = 0
+		dialogo3.percent_visible = 0
+		get_node("SetaBolsa").visible = true
 
 func Tutorial7():
-	displayString(dialogo5)
-	dialogo3.percent_visible = 0
-	dialogo4.percent_visible = 0
-	get_node("SetaBolsa").visible = false
+	if (auxD == 6):
+		displayString(dialogo5)
+		dialogo3.percent_visible = 0
+		dialogo4.percent_visible = 0
+		get_node("SetaBolsa").visible = false
 
 func Tutorial8():
-	displayString(dialogo6)
-	dialogo4.percent_visible = 0
-	dialogo5.percent_visible = 0
-	get_node("SetaBolsa").visible = false
-	get_node("SetaMorfemas").visible = true
+	if (auxD == 7):
+		displayString(dialogo6)
+		dialogo4.percent_visible = 0
+		dialogo5.percent_visible = 0
+		get_node("SetaBolsa").visible = false
+		get_node("SetaMorfemas").visible = true
 
 func Tutorial9():
-	displayString(dialogo7)
-	dialogo5.percent_visible = 0
-	dialogo6.percent_visible = 0
-	get_node("SetaMorfemas").visible = false
-	get_node("SetaMorfemasDesc").visible = true
+	if (auxD == 8):
+		displayString(dialogo7)
+		dialogo5.percent_visible = 0
+		dialogo6.percent_visible = 0
+		get_node("SetaMorfemas").visible = false
+		get_node("SetaMorfemasDesc").visible = true
 
 func Tutorial10():
-	displayString(dialogo8)
-	dialogo6.percent_visible = 0
-	dialogo7.percent_visible = 0
-	get_node("SetaMorfemasDesc").visible = false
-	get_parent().get_node("PalavrasPopUp").visible = false
+	if (auxD == 9):
+		displayString(dialogo8)
+		dialogo6.percent_visible = 0
+		dialogo7.percent_visible = 0
+		get_node("SetaMorfemasDesc").visible = false
+		get_parent().get_node("PalavrasPopUp").visible = false
 
 func Tutorial11():
-	displayString(dialogo9)
-	dialogo7.percent_visible = 0
-	dialogo8.percent_visible = 0
-	get_node("SetaSair").visible = true
+	if (auxD == 10):
+		displayString(dialogo9)
+		dialogo7.percent_visible = 0
+		dialogo8.percent_visible = 0
+		get_node("SetaSair").visible = true
 
 func displayString(var dialogo):
+	auxD += 1
 	dialogueEnded = false
 	
 	var textCont = dialogo.get_text().length()
@@ -106,6 +119,8 @@ func _input(event):
 	if (event is InputEventScreenTouch) && dialogueEnded:
 		if ($"/root/TutorialGlobal".tutorialPos == 3):
 			Tutorial4()
+		elif ($"/root/TutorialGlobal".tutorialPos == 4):
+			self.visible = false
 		elif ($"/root/TutorialGlobal".tutorialPos == 5):
 			Tutorial6()
 		elif ($"/root/TutorialGlobal".tutorialPos == 7):

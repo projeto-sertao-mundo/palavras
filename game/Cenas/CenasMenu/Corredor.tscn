@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Sprites/SpritesFinais/Objetos/Confecção Dos Retalhps.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Corredor/ChangeScenePorta.gd" type="Script" id=2]
@@ -11,6 +11,10 @@
 [ext_resource path="res://Sprites/SpritesFinais/noAtlasObjects/Vovó.png" type="Texture" id=9]
 [ext_resource path="res://Fonts/xilosa_.ttf" type="DynamicFontData" id=10]
 [ext_resource path="res://Scripts/Tutorial/Tutorial.gd" type="Script" id=11]
+[ext_resource path="res://Sprites/SpritesFinais/noAtlasObjects/Deseja passar  pelo tutorial.png" type="Texture" id=12]
+[ext_resource path="res://Sprites/SpritesFinais/Objetos/Sim Botão.png" type="Texture" id=13]
+[ext_resource path="res://Sprites/SpritesFinais/Objetos/Não Botão.png" type="Texture" id=14]
+[ext_resource path="res://Sprites/SpritesFinais/noAtlasObjects/Tem certeza.png" type="Texture" id=15]
 
 [sub_resource type="DynamicFont" id=1]
 size = 38
@@ -99,6 +103,7 @@ __meta__ = {
 D1 = NodePath("Label1")
 D2 = NodePath("Label2")
 D3 = NodePath("Label3")
+D4 = NodePath("Label4")
 
 [node name="Vó" type="Sprite" parent="Tutorial1"]
 position = Vector2( 1469.09, 735.409 )
@@ -120,6 +125,13 @@ texture = ExtResource( 3 )
 visible = false
 modulate = Color( 1, 1, 0, 1 )
 position = Vector2( 1078.59, 426.661 )
+texture = ExtResource( 3 )
+
+[node name="SetaCartoes" type="Sprite" parent="Tutorial1"]
+visible = false
+modulate = Color( 1, 1, 0, 1 )
+position = Vector2( 1111.89, 343.416 )
+rotation = -3.14159
 texture = ExtResource( 3 )
 
 [node name="Label1" type="Label" parent="Tutorial1"]
@@ -173,8 +185,90 @@ percent_visible = 0.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Label4" type="Label" parent="Tutorial1"]
+modulate = Color( 0, 0, 0, 1 )
+margin_left = 265.0
+margin_top = 731.0
+margin_right = 1266.0
+margin_bottom = 878.0
+custom_fonts/font = SubResource( 1 )
+text = "Agora que você já tem retalhos prontos,
+vou te ensinar a colocar eles nos cartões!
+Clique na porta indicada!"
+align = 1
+uppercase = true
+percent_visible = 0.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TutorialPergunta" type="Sprite" parent="."]
+position = Vector2( 811.947, 405.899 )
+scale = Vector2( 1.7312, 1.7312 )
+texture = ExtResource( 12 )
+
+[node name="Lock" type="Control" parent="TutorialPergunta"]
+margin_left = -484.0
+margin_top = -255.0
+margin_right = 467.0
+margin_bottom = 299.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sim" type="TextureButton" parent="TutorialPergunta"]
+margin_left = -164.131
+margin_top = 47.6806
+margin_right = -11.1313
+margin_bottom = 120.681
+texture_normal = ExtResource( 13 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Nao" type="TextureButton" parent="TutorialPergunta"]
+margin_left = 13.754
+margin_top = 47.6806
+margin_right = 166.754
+margin_bottom = 120.681
+texture_normal = ExtResource( 14 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Confirmacao" type="Sprite" parent="."]
+visible = false
+position = Vector2( 810.471, 468.667 )
+scale = Vector2( 1.58801, 1.58801 )
+texture = ExtResource( 15 )
+
+[node name="SimC" type="TextureButton" parent="Confirmacao"]
+margin_left = -179.002
+margin_top = 27.4479
+margin_right = -26.0017
+margin_bottom = 100.448
+texture_normal = ExtResource( 13 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NaoC" type="TextureButton" parent="Confirmacao"]
+margin_left = 21.9218
+margin_top = 29.4471
+margin_right = 174.922
+margin_bottom = 102.447
+texture_normal = ExtResource( 14 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 [connection signal="pressed" from="VoltarMenu" to="." method="_on_VoltarMenu_pressed"]
 [connection signal="pressed" from="PortaBuscaPalavras" to="." method="_on_PortaBuscaPalavras_pressed"]
 [connection signal="pressed" from="PortaQuartoCostura" to="." method="_on_PortaQuartoCostura_pressed"]
 [connection signal="pressed" from="PortaQuartoMontagens" to="." method="_on_PortaQuartoMontagens_pressed"]
+[connection signal="pressed" from="TutorialPergunta/Sim" to="Tutorial1" method="_on_Sim_pressed"]
+[connection signal="pressed" from="TutorialPergunta/Sim" to="." method="_on_Sim_pressed"]
+[connection signal="pressed" from="TutorialPergunta/Nao" to="." method="_on_Nao_pressed"]
+[connection signal="pressed" from="Confirmacao/SimC" to="." method="_on_SimC_pressed"]
+[connection signal="pressed" from="Confirmacao/NaoC" to="." method="_on_NaoC_pressed"]

@@ -17,6 +17,8 @@ func _on_Voltar2_pressed():
 	get_node("RetalhoPopUp").hide()
 
 func _ready():
+	if (!$"/root/TutorialGlobal".FrasesCompleted):
+		get_node("Tutorial4").Tutorial22()
 	get_node("AnimationPlayer").play("FadeIn")
 	$"/root/Global".firstSceneNode = self
 
@@ -29,7 +31,8 @@ func _on_Area2D_area_entered(_area):
 
 
 func _on_Descartar_pressed():
-	get_node("Atençao").visible = true
+	if (!$"/root/TutorialGlobal".willDoTutorial || $"/root/TutorialGlobal".FrasesCompleted):
+		get_node("Atençao").visible = true
 
 func _on_NaoDescartar_pressed():
 	get_node("Atençao").visible = false

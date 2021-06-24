@@ -59,11 +59,11 @@ func _on_MaquinaCostura_pressed():
 	get_node("CosturaPopUp").show()
 
 func _on_Voltar_pressed():
-	if ($"/root/TutorialGlobal".CosturaCompleted):
+	if ($"/root/TutorialGlobal".CosturaCompleted || !$"/root/TutorialGlobal".willDoTutorial):
 		get_node("CosturaPopUp").hide()
 
 func _on_Voltar2_pressed():
-	if ($"/root/TutorialGlobal".CosturaCompleted):
+	if ($"/root/TutorialGlobal".CosturaCompleted || !$"/root/TutorialGlobal".willDoTutorial):
 		get_node("AnimationPlayer").play("FadeOut")
 	#yield(Yield.yield_wait(0.35, self), "completed")
 	
@@ -146,6 +146,9 @@ func _on_Costurar_pressed():
 		numeroCaracteres = get_node("CosturaPopUp/Preview").get_node("Label").text.length()
 		if (numeroCaracteres > 0):
 			if numeroRetalhos < 9:
+				get_node("CosturaPopUp/Preview/Miolo").on_Costurar_pressed()
+				get_node("CosturaPopUp/Preview/Borda").on_Costurar_pressed()
+				
 				var previewRef = self.get_node("CosturaPopUp/Preview")
 				var spriteBorda = previewRef.get_node("Borda").texture
 				var spriteMiolo = previewRef.get_node("Miolo").texture

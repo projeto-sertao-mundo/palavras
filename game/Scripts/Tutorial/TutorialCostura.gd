@@ -21,11 +21,16 @@ onready var dialogo6 = get_node(D6)
 onready var dialogo7 = get_node(D7)
 onready var dialogo8 = get_node(D8)
 
+var auxD
+
 func _ready():
 	#aux = false
+	auxD = 12
 	colorSeted = false
-	if ($"/root/TutorialGlobal".willDoTutorial):
+	if ($"/root/TutorialGlobal".willDoTutorial && !$"/root/TutorialGlobal".CosturaCompleted):
 		self.visible = true
+	elif (!$"/root/TutorialGlobal".willDoTutorial):
+		self.visible = false
 	else:
 		self.visible = false
 
@@ -36,38 +41,47 @@ func ChangeSetedColor():
 		Tutorial17()
 
 func Tutorial13():
-	displayString(dialogo1)
+	if (auxD == 12):
+		displayString(dialogo1)
 
 func Tutorial14():
-	dialogo1.percent_visible = 0
-	displayString(dialogo2)
+	if (auxD == 13):
+		dialogo1.percent_visible = 0
+		displayString(dialogo2)
 
 func Tutorial15():
-	dialogo2.percent_visible = 0
-	displayString(dialogo3)
+	if (auxD == 14):
+		dialogo2.percent_visible = 0
+		displayString(dialogo3)
 
 func Tutorial16():
-	dialogo3.percent_visible = 0
-	displayString(dialogo4)
+	if (auxD == 15):
+		dialogo3.percent_visible = 0
+		displayString(dialogo4)
 
 func Tutorial17():
-	dialogo4.percent_visible = 0
-	displayString(dialogo5)
+	if (auxD == 16):
+		dialogo4.percent_visible = 0
+		displayString(dialogo5)
 
 func Tutorial18():
-	dialogo5.percent_visible = 0
-	displayString(dialogo6)
+	if (auxD == 17):
+		dialogo5.percent_visible = 0
+		displayString(dialogo6)
 
 func Tutorial19():
-	dialogo6.percent_visible = 0
-	displayString(dialogo7)
+	if (auxD == 18):
+		dialogo6.percent_visible = 0
+		displayString(dialogo7)
 
 func Tutorial20():
-	dialogo7.percent_visible = 0
-	displayString(dialogo8)
-	get_node("SetaRetalhosAba").visible = false
+	if (auxD == 19):
+		dialogo7.percent_visible = 0
+		displayString(dialogo8)
+		get_node("SetaRetalhosAba").visible = false
 
 func displayString(var dialogo):
+	auxD += 1
 	dialogueEnded = false
 	
 	var textCont = dialogo.get_text().length()

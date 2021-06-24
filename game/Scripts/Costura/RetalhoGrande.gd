@@ -48,6 +48,10 @@ func _on_Area2D_area_entered(area):
 
 func _on_Area2D_area_exited(area):
 	if (area.get_parent().name == "retaio" && !mouseIn):
+		
+		if ($"/root/TutorialGlobal".tutorialPos == 23):
+			get_parent().get_node("Tutorial4").Tutorial24()
+		
 		instanceRetalho($"/root/Global".retalhosFrasesRef, "retaio", clickPosition, false)
 		self.get_parent().get_node("Confirm").visible = true
 
@@ -60,19 +64,25 @@ func _on_ExitButton_pressed():
 	self.get_parent().get_node("Confirm").visible = false
 
 func _on_Confirm_pressed():
-	self.visible = false
-	self.get_parent().get_node("Confirm").visible = false
-	var retalhos = []
-	for child in self.get_children():
-		if child is TextureButton:
-			print(child.name)
-			var retalhoNew = RetalhoToGlobal.new(child.get_node("Miolo").texture, child.get_node("Borda").texture, child.get_node("Miolo").modulate,  child.get_node("Borda").modulate, child.get_node("Label").text, child.get_rect().position, child.texture_normal) 
-			retalhos.append(retalhoNew)
-			child.free()
+	if ($"/root/TutorialGlobal".tutorialPos == 24 || !$"/root/TutorialGlobal".willDoTutorial || $"/root/TutorialGlobal".FrasesCompleted):
 	
-	self.get_parent().get_node("Confirm").visible = false
+		if ($"/root/TutorialGlobal".tutorialPos == 24):
+			get_parent().get_node("Tutorial4").Tutorial25()
+			get_parent().get_node("Tutorial4/SetaConfirmar").visible = false
 	
-	if ($"/root/Global".cartaoEditando == null):
-		$"/root/Global".criarFrase(self.texture, retalhos)
-	else:
-		$"/root/Global".editarFrase(self.texture, retalhos)
+		self.visible = false
+		self.get_parent().get_node("Confirm").visible = false
+		var retalhos = []
+		for child in self.get_children():
+			if child is TextureButton:
+				print(child.name)
+				var retalhoNew = RetalhoToGlobal.new(child.get_node("Miolo").texture, child.get_node("Borda").texture, child.get_node("Miolo").modulate,  child.get_node("Borda").modulate, child.get_node("Label").text, child.get_rect().position, child.texture_normal) 
+				retalhos.append(retalhoNew)
+				child.free()
+		
+		self.get_parent().get_node("Confirm").visible = false
+		
+		if ($"/root/Global".cartaoEditando == null):
+			$"/root/Global".criarFrase(self.texture, retalhos)
+		else:
+			$"/root/Global".editarFrase(self.texture, retalhos)

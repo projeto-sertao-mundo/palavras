@@ -33,11 +33,15 @@ func _on_Area2D_mouse_exited():
 	mouseIn = false
 
 func changeSpriteGrande(var texture):#, var newFrase):
-	if (!spriteGrande.visible):
-		spriteGrande.texture = texture
-		spriteGrande.visible = true
-		if (spriteGrande.has_node("retaio")):
-			spriteGrande.get_node("retaio").free()
+	if ($"/root/TutorialGlobal".tutorialPos == 22 || !$"/root/TutorialGlobal".willDoTutorial || $"/root/TutorialGlobal".FrasesCompleted):
+		if ($"/root/TutorialGlobal".tutorialPos == 22):
+			get_parent().get_node("Tutorial4").Tutorial23()
+		
+		if (!spriteGrande.visible):
+			spriteGrande.texture = texture
+			spriteGrande.visible = true
+			if (spriteGrande.has_node("retaio")):
+				spriteGrande.get_node("retaio").free()
 
 func _on_1_pressed():
 	changeSpriteGrande(get_node("FrasesPagina1").get_node("1").texture_normal)#, frase1)
@@ -78,9 +82,10 @@ func _on_18_pressed():
 
 
 func _on_ExitButton_pressed():
-	spriteGrande.visible = false;
-	spriteGrande.get_parent().get_node("Descartar").visible = false
-	get_parent().get_node("FraseLock").visible = false
+	if ($"/root/TutorialGlobal".FrasesCompleted || !$"/root/TutorialGlobal".willDoTutorial):
+		spriteGrande.visible = false;
+		spriteGrande.get_parent().get_node("Descartar").visible = false
+		get_parent().get_node("FraseLock").visible = false
 
 func _on_PaginaRetalho_pressed():
 	if !alreadyChanged:
