@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=2]
+[gd_scene load_steps=45 format=2]
 
 [ext_resource path="res://Scripts/Frases/FrasePreview.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/SpritesFinais/Objetos/Bolsa.png" type="Texture" id=2]
@@ -38,6 +38,123 @@
 [ext_resource path="res://Sprites/SpritesFinais/noAtlasObjects/BalãoDeDialogo.png" type="Texture" id=36]
 [ext_resource path="res://Fonts/xilosa_.ttf" type="DynamicFontData" id=37]
 
+[sub_resource type="Animation" id=3]
+resource_name = "SetaCartaoPronto"
+length = 0.9
+loop = true
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("Tutorial4/SetaCartaoPronto:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 1159.67, -0.25, 0, 0.25, 0, 1193.08, -0.25, 0, 0.25, 0, 1159.67, -0.25, 0, 0.25, 0, 1159.67, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5, 1, 1.2 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("Tutorial4/SetaCartaoPronto:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 271.009, -0.25, 0, 0.25, 0, 271.009, -0.25, 0, 0.25, 0, 271.009, -0.25, 0, 0.25, 0, 271.009, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5, 1, 1.2 )
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "SetaCartoes"
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("Tutorial4/SetaCartoes:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 58.2791, -0.25, 0, 0.25, 0, 24.883, -0.25, 0, 0.25, 0, 58.2791, -0.25, 0, 0.25, 0, 58.2791, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5, 1, 1.2 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("Tutorial4/SetaCartoes:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 342.425, -0.25, 0, 0.25, 0, 342.425, -0.25, 0, 0.25, 0, 342.425, -0.25, 0, 0.25, 0, 342.425, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5, 1, 1.2 )
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "SetaCartoesAba"
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("Tutorial4/SetaCartoesAba:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 959.698, -0.25, 0, 0.25, 0, 925.291, -0.25, 0, 0.25, 0, 959.698, -0.25, 0, 0.25, 0, 959.698, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5, 1, 1.2 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("Tutorial4/SetaCartoesAba:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 130.747, -0.25, 0, 0.25, 0, 130.747, -0.25, 0, 0.25, 0, 130.747, -0.25, 0, 0.25, 0, 130.747, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5, 1, 1.2 )
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "SetaConfirmar"
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("Tutorial4/SetaConfirmar:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 218.641, -0.25, 0, 0.25, 0, 218.641, -0.25, 0, 0.25, 0, 218.641, -0.25, 0, 0.25, 0, 218.641, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5, 1, 1.2 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("Tutorial4/SetaConfirmar:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 511.696, -0.25, 0, 0.25, 0, 478.29, -0.25, 0, 0.25, 0, 511.696, -0.25, 0, 0.25, 0, 511.696, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5, 1, 1.2 )
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "SetaRetalhos"
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("Tutorial4/SetaRetalhos:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 1471.24, -0.25, 0, 0.25, 0, 1504.65, -0.25, 0, 0.25, 0, 1471.24, -0.25, 0, 0.25, 0, 1471.24, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5, 1, 1.2 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("Tutorial4/SetaRetalhos:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 399.443, -0.25, 0, 0.25, 0, 399.443, -0.25, 0, 0.25, 0, 399.443, -0.25, 0, 0.25, 0, 399.443, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5, 1, 1.2 )
+}
+
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 86.3473, 50.4913 )
 
@@ -55,6 +172,11 @@ __meta__ = {
 SceneName = "QuartoFrases"
 
 [node name="AnimationPlayer" parent="." instance=ExtResource( 33 )]
+anims/SetaCartaoPronto = SubResource( 3 )
+anims/SetaCartoes = SubResource( 4 )
+anims/SetaCartoesAba = SubResource( 7 )
+anims/SetaConfirmar = SubResource( 6 )
+anims/SetaRetalhos = SubResource( 5 )
 
 [node name="Interface" type="Sprite" parent="."]
 position = Vector2( 804.517, 454.068 )
@@ -497,6 +619,7 @@ __meta__ = {
 }
 
 [node name="Tutorial4" type="Control" parent="."]
+visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 script = ExtResource( 22 )
@@ -523,34 +646,34 @@ texture = ExtResource( 36 )
 [node name="SetaCartoes" type="Sprite" parent="Tutorial4"]
 visible = false
 modulate = Color( 1, 1, 0, 1 )
-position = Vector2( 58.2791, 342.425 )
+position = Vector2( 27.0369, 342.425 )
 rotation = 3.14159
 texture = ExtResource( 7 )
 
 [node name="SetaRetalhos" type="Sprite" parent="Tutorial4"]
 visible = false
 modulate = Color( 1, 1, 0, 1 )
-position = Vector2( 1471.24, 399.443 )
+position = Vector2( 1502.5, 399.443 )
 texture = ExtResource( 7 )
 
 [node name="SetaConfirmar" type="Sprite" parent="Tutorial4"]
 visible = false
 modulate = Color( 1, 1, 0, 1 )
-position = Vector2( 218.641, 511.696 )
+position = Vector2( 218.641, 480.445 )
 rotation = -1.5708
 texture = ExtResource( 7 )
 
 [node name="SetaCartoesAba" type="Sprite" parent="Tutorial4"]
 visible = false
 modulate = Color( 1, 1, 0, 1 )
-position = Vector2( 959.698, 130.747 )
+position = Vector2( 927.51, 130.747 )
 rotation = 3.14159
 texture = ExtResource( 7 )
 
 [node name="SetaCartaoPronto" type="Sprite" parent="Tutorial4"]
 visible = false
 modulate = Color( 1, 1, 0, 1 )
-position = Vector2( 1159.67, 271.009 )
+position = Vector2( 1190.92, 271.009 )
 texture = ExtResource( 7 )
 
 [node name="Label1" type="Label" parent="Tutorial4"]

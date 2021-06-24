@@ -29,6 +29,7 @@ func _ready():
 	colorSeted = false
 	if ($"/root/TutorialGlobal".willDoTutorial && !$"/root/TutorialGlobal".CosturaCompleted):
 		self.visible = true
+	
 	elif (!$"/root/TutorialGlobal".willDoTutorial):
 		self.visible = false
 	else:
@@ -98,25 +99,32 @@ func displayString(var dialogo):
 	dialogueEnded = true
 	
 	if ($"/root/TutorialGlobal".tutorialPos == 14):
+		initializeAnim("SetaRetalho")
 		get_node("SetaRetalho").visible = true
 	elif ($"/root/TutorialGlobal".tutorialPos == 15):
 		get_node("SetaRetalho").visible = false
+		initializeAnim("SetaFormas")
 		get_node("SetaFormas").visible = true
 	elif ($"/root/TutorialGlobal".tutorialPos == 16):
 		get_node("SetaFormas").visible = false
+		initializeAnim("SetaCores")
 		get_node("SetaCores").visible = true
 	elif ($"/root/TutorialGlobal".tutorialPos == 17):
 		get_node("SetaCores").visible = false
+		initializeAnim("SetaApagar")
 		get_node("SetaApagar").visible = true
 	elif ($"/root/TutorialGlobal".tutorialPos == 18):
 		get_node("SetaApagar").visible = false
+		initializeAnim("SetaConfirmar")
 		get_node("SetaConfirmar").visible = true
 	elif ($"/root/TutorialGlobal".tutorialPos == 19):
 		get_node("SetaConfirmar").visible = false
+		initializeAnim("SetaRetalhosAba")
 		get_node("SetaRetalhosAba").visible = true
 		#get_parent().get_node("CosturaPopUp/PalavrasPopUp")._on_ButtonRetalhos_pressed()
 	elif ($"/root/TutorialGlobal".tutorialPos == 20):
 		get_node("SetaLixeira").visible = true
+		initializeAnim("SetaLixeira")
 
 func _input(event):
 	if (event is InputEventScreenTouch) && dialogueEnded:
@@ -145,4 +153,10 @@ func _input(event):
 #		elif ($"/root/TutorialGlobal".tutorialPos == 11):
 #			self.visible = false
 #			$"/root/TutorialGlobal".CozinhaCompleted = true
+
+func initializeAnim(var animat):
+	pass
+	var anim = get_parent().get_node("AnimationPlayer").get_animation(animat)
+	anim.set_loop(true)
+	get_parent().get_node("AnimationPlayer").play(animat)
 

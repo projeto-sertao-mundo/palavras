@@ -9,7 +9,8 @@ func _on_Frase2_pressed():
 	get_node("RetalhoPopUp").show()
 
 func _on_Voltar_pressed():
-	get_node("AnimationPlayer").play("FadeOut")
+	if ($"/root/TutorialGlobal".FrasesCompleted || !$"/root/TutorialGlobal".willDoTutorial):
+		get_node("AnimationPlayer").play("FadeOut")
 	#yield(Yield.yield_wait(0.35, self), "completed")
 	
 

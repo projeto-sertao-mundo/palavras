@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=2]
+[gd_scene load_steps=64 format=2]
 
 [ext_resource path="res://Scripts/Cozinha/BuscaPalavras.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/SpritesFinais/Objetos/seta.png" type="Texture" id=2]
@@ -73,6 +73,101 @@ tracks/0/keys = {
 "values": [ Vector2( 1e-05, 1e-05 ), Vector2( 1.2, 1.2 ), Vector2( 1.2, 1.2 ) ]
 }
 
+[sub_resource type="Animation" id=3]
+resource_name = "SetaBolsa"
+length = 0.9
+loop = true
+step = 0.05
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("Tutorial2/SetaBolsa:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 1538.25, -0.25, 0, 0.25, 0, 1538.25, -0.25, 0, 0.25, 0, 1538.25, -0.25, 0, 0.25, 0, 1538.25, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5, 0.9, 1.2 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("Tutorial2/SetaBolsa:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 663.55, -0.25, 0, 0.25, 0, 630.143, -0.25, 0, 0.25, 0, 663.55, -0.25, 0, 0.25, 0, 663.55, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5, 0.9, 1.2 )
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "SetaMorfemas"
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("Tutorial2/SetaMorfemas:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 879.428, -0.25, 0, 0.25, 0, 912.835, -0.25, 0, 0.25, 0, 879.428, -0.25, 0, 0.25, 0, 879.428, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5, 0.9, 1.2 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("Tutorial2/SetaMorfemas:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 78.3474, -0.25, 0, 0.25, 0, 78.347, -0.25, 0, 0.25, 0, 78.3474, -0.25, 0, 0.25, 0, 78.3474, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5, 0.9, 1.2 )
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "SetaMorfemasDesc"
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("Tutorial2/SetaMorfemasDesc:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 1121.06, -0.25, 0, 0.25, 0, 1154.47, -0.25, 0, 0.25, 0, 1121.06, -0.25, 0, 0.25, 0, 1121.06, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5, 0.9, 1.2 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("Tutorial2/SetaMorfemasDesc:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 518.193, -0.25, 0, 0.25, 0, 518.193, -0.25, 0, 0.25, 0, 518.193, -0.25, 0, 0.25, 0, 518.193, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5, 0.9, 1.2 )
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "SetaSair"
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("Tutorial2/SetaSair:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 107.339, -0.25, 0, 0.25, 0, 107.339, -0.25, 0, 0.25, 0, 107.339, -0.25, 0, 0.25, 0, 107.339, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5, 0.9, 1.2 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("Tutorial2/SetaSair:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 680.539, -0.25, 0, 0.25, 0, 647, -0.25, 0, 0.25, 0, 680.539, -0.25, 0, 0.25, 0, 680.539, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5, 0.9, 1.2 )
+}
+
 [sub_resource type="DynamicFont" id=2]
 size = 33
 font_data = ExtResource( 56 )
@@ -83,6 +178,10 @@ SceneName = "BuscaPalavras"
 
 [node name="AnimationPlayer" parent="." instance=ExtResource( 51 )]
 anims/Parabens = SubResource( 1 )
+anims/SetaBolsa = SubResource( 3 )
+anims/SetaMorfemas = SubResource( 6 )
+anims/SetaMorfemasDesc = SubResource( 5 )
+anims/SetaSair = SubResource( 4 )
 
 [node name="Cozinha" type="Sprite" parent="."]
 position = Vector2( 799.746, 451.378 )
@@ -1110,7 +1209,7 @@ __meta__ = {
 [node name="SetaBolsa" type="Sprite" parent="Tutorial2"]
 visible = false
 modulate = Color( 1, 1, 0, 1 )
-position = Vector2( 1538.25, 663.55 )
+position = Vector2( 1538.25, 630.632 )
 rotation = -1.5708
 texture = ExtResource( 2 )
 

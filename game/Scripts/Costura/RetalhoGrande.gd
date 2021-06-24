@@ -56,9 +56,10 @@ func _on_Area2D_area_exited(area):
 		self.get_parent().get_node("Confirm").visible = true
 
 func _on_ExitButton_pressed():
-	for child in self.get_children():
-		if !(child is Area2D) && !(child is CollisionShape2D):
-			child.free()
+	if ($"/root/TutorialGlobal".FrasesCompleted || !$"/root/TutorialGlobal".willDoTutorial):
+		for child in self.get_children():
+			if !(child is Area2D) && !(child is CollisionShape2D):
+				child.free()
 		
 	setRetalhoFrase = false
 	self.get_parent().get_node("Confirm").visible = false

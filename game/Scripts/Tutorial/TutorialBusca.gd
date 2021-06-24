@@ -58,6 +58,7 @@ func Tutorial6():
 		displayString(dialogo4)
 		dialogo2.percent_visible = 0
 		dialogo3.percent_visible = 0
+		initializeAnim("SetaBolsa")
 		get_node("SetaBolsa").visible = true
 
 func Tutorial7():
@@ -73,6 +74,7 @@ func Tutorial8():
 		dialogo4.percent_visible = 0
 		dialogo5.percent_visible = 0
 		get_node("SetaBolsa").visible = false
+		initializeAnim("SetaMorfemas")
 		get_node("SetaMorfemas").visible = true
 
 func Tutorial9():
@@ -81,6 +83,7 @@ func Tutorial9():
 		dialogo5.percent_visible = 0
 		dialogo6.percent_visible = 0
 		get_node("SetaMorfemas").visible = false
+		initializeAnim("SetaMorfemasDesc")
 		get_node("SetaMorfemasDesc").visible = true
 
 func Tutorial10():
@@ -96,6 +99,7 @@ func Tutorial11():
 		displayString(dialogo9)
 		dialogo7.percent_visible = 0
 		dialogo8.percent_visible = 0
+		initializeAnim("SetaSair")
 		get_node("SetaSair").visible = true
 
 func displayString(var dialogo):
@@ -132,3 +136,8 @@ func _input(event):
 		elif ($"/root/TutorialGlobal".tutorialPos == 11):
 			self.visible = false
 			$"/root/TutorialGlobal".CozinhaCompleted = true
+
+func initializeAnim(var animat):
+	var anim = get_parent().get_node("AnimationPlayer").get_animation(animat)
+	anim.set_loop(true)
+	get_parent().get_node("AnimationPlayer").play(animat)

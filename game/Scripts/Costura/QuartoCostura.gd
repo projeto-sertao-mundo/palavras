@@ -146,8 +146,6 @@ func _on_Costurar_pressed():
 		numeroCaracteres = get_node("CosturaPopUp/Preview").get_node("Label").text.length()
 		if (numeroCaracteres > 0):
 			if numeroRetalhos < 9:
-				get_node("CosturaPopUp/Preview/Miolo").on_Costurar_pressed()
-				get_node("CosturaPopUp/Preview/Borda").on_Costurar_pressed()
 				
 				var previewRef = self.get_node("CosturaPopUp/Preview")
 				var spriteBorda = previewRef.get_node("Borda").texture
@@ -158,10 +156,11 @@ func _on_Costurar_pressed():
 				numeroRetalhos += 1
 				
 				$"/root/Global".criarRetalho(corBorda, corMiolo, spriteBorda, spriteMiolo, label)
-				get_node("CosturaPopUp/Preview/Miolo").modulate = Color(0.768627, 0.74902, 0.698039)
-				get_node("CosturaPopUp/Preview/Borda").modulate = Color(0.768627, 0.74902, 0.698039)
 				get_node("CosturaPopUp/Preview/Label").text = ""
 				numeroCaracteres = 0
+				
+				get_node("CosturaPopUp/Preview/Miolo").on_Costurar_pressed()
+				get_node("CosturaPopUp/Preview/Borda").on_Costurar_pressed()
 
 func _on_QuartoCostura_tree_entered():
 	$"/root/Global".firstSceneNode = self

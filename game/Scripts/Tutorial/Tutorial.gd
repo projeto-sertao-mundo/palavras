@@ -79,15 +79,18 @@ func displayString(var dialogo):
 	
 	if ($"/root/TutorialGlobal".tutorialPos == 2):
 		$"/root/TutorialGlobal".lockCozinha = false
+		initializeAnim("Seta")
 		get_node("Seta").visible = true
 	elif ($"/root/TutorialGlobal".tutorialPos == 12):
 		$"/root/TutorialGlobal".lockCozinha = true
 		$"/root/TutorialGlobal".lockCostura = false
+		initializeAnim("SetaCostura")
 		get_node("SetaCostura").visible = true
 	elif ($"/root/TutorialGlobal".tutorialPos == 21):
 		$"/root/TutorialGlobal".lockCozinha = true
 		$"/root/TutorialGlobal".lockCostura = true
 		$"/root/TutorialGlobal".lockFrases = false
+		initializeAnim("SetaCartoes")
 		get_node("SetaCartoes").visible = true
 	
 	print($"/root/TutorialGlobal".tutorialPos)
@@ -102,4 +105,12 @@ func _input(event):
 
 func _on_Sim_pressed():
 	$"/root/TutorialGlobal".willDoTutorial = true
+	$"/root/TutorialGlobal".lockCozinha = true
+	$"/root/TutorialGlobal".lockCostura = true
+	$"/root/TutorialGlobal".lockFrases = true
 	_ready()
+
+func initializeAnim(var animat):
+	var anim = get_parent().get_node("AnimationPlayer").get_animation(animat)
+	anim.set_loop(true)
+	get_parent().get_node("AnimationPlayer").play(animat)

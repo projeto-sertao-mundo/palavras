@@ -82,21 +82,27 @@ func displayString(var dialogo):
 	dialogueEnded = true
 	
 	if ($"/root/TutorialGlobal".tutorialPos == 22):
+		initializeAnim("SetaCartoes")
 		get_node("SetaCartoes").visible = true
 	elif ($"/root/TutorialGlobal".tutorialPos == 23):
 		get_node("SetaCartoes").visible = false
+		initializeAnim("SetaRetalhos")
 		get_node("SetaRetalhos").visible = true
 	elif ($"/root/TutorialGlobal".tutorialPos == 24):
 		get_node("SetaRetalhos").visible = false
+		initializeAnim("SetaConfirmar")
 		get_node("SetaConfirmar").visible = true
 	elif ($"/root/TutorialGlobal".tutorialPos == 25):
 		get_node("SetaConfirmar").visible = false
+		initializeAnim("SetaCartoesAba")
 		get_node("SetaCartoesAba").visible = true
 	elif ($"/root/TutorialGlobal".tutorialPos == 26):
 		get_node("SetaCartoesAba").visible = false
+		initializeAnim("SetaCartaoPronto")
 		get_node("SetaCartaoPronto").visible = true
 	elif ($"/root/TutorialGlobal".tutorialPos == 27):
 		get_node("SetaCartaoPronto").visible = false
+		initializeAnim("SetaConfirmar")
 		get_node("SetaConfirmar").visible = true
 	#elif ($"/root/TutorialGlobal".tutorialPos == 25):
 		#get_node("SetaCores").visible = false
@@ -113,3 +119,8 @@ func _input(event):
 			$"/root/TutorialGlobal".lockCostura = false
 			$"/root/TutorialGlobal".lockFrases = false
 			$"/root/TutorialGlobal".FrasesCompleted = true
+
+func initializeAnim(var animat):
+	var anim = get_parent().get_node("AnimationPlayer").get_animation(animat)
+	anim.set_loop(true)
+	get_parent().get_node("AnimationPlayer").play(animat)
