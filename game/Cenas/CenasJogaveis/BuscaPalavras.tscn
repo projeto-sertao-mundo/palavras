@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=2]
+[gd_scene load_steps=65 format=2]
 
 [ext_resource path="res://Scripts/Cozinha/BuscaPalavras.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/SpritesFinais/Objetos/seta.png" type="Texture" id=2]
@@ -57,6 +57,7 @@
 [ext_resource path="res://Sprites/SpritesFinais/noAtlasObjects/BalãoDeDialogo.png" type="Texture" id=55]
 [ext_resource path="res://Fonts/xilosa_.ttf" type="DynamicFontData" id=56]
 [ext_resource path="res://Scripts/Tutorial/TutorialBusca.gd" type="Script" id=57]
+[ext_resource path="res://Audio/whoosh.ogg" type="AudioStream" id=58]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Parabens"
@@ -73,7 +74,7 @@ tracks/0/keys = {
 "values": [ Vector2( 1e-05, 1e-05 ), Vector2( 1.2, 1.2 ), Vector2( 1.2, 1.2 ) ]
 }
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=2]
 resource_name = "SetaBolsa"
 length = 0.9
 loop = true
@@ -99,7 +100,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 0.5, 0.9, 1.2 )
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=3]
 resource_name = "SetaMorfemas"
 tracks/0/type = "bezier"
 tracks/0/path = NodePath("Tutorial2/SetaMorfemas:position:x")
@@ -122,7 +123,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 0.5, 0.9, 1.2 )
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=4]
 resource_name = "SetaMorfemasDesc"
 tracks/0/type = "bezier"
 tracks/0/path = NodePath("Tutorial2/SetaMorfemasDesc:position:x")
@@ -145,8 +146,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 0.5, 0.9, 1.2 )
 }
 
-[sub_resource type="Animation" id=4]
-resource_name = "SetaSair"
+[sub_resource type="Animation" id=5]
 tracks/0/type = "bezier"
 tracks/0/path = NodePath("Tutorial2/SetaSair:position:x")
 tracks/0/interp = 1
@@ -168,7 +168,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 0.5, 0.9, 1.2 )
 }
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=6]
 size = 33
 font_data = ExtResource( 56 )
 
@@ -178,10 +178,10 @@ SceneName = "BuscaPalavras"
 
 [node name="AnimationPlayer" parent="." instance=ExtResource( 51 )]
 anims/Parabens = SubResource( 1 )
-anims/SetaBolsa = SubResource( 3 )
-anims/SetaMorfemas = SubResource( 6 )
-anims/SetaMorfemasDesc = SubResource( 5 )
-anims/SetaSair = SubResource( 4 )
+anims/SetaBolsa = SubResource( 2 )
+anims/SetaMorfemas = SubResource( 3 )
+anims/SetaMorfemasDesc = SubResource( 4 )
+anims/SetaSair = SubResource( 5 )
 
 [node name="Cozinha" type="Sprite" parent="."]
 position = Vector2( 799.746, 451.378 )
@@ -1028,7 +1028,7 @@ margin_left = 4.10617
 margin_top = -16.1164
 margin_right = -10.8868
 margin_bottom = 22.8957
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 6 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Aqui, vamos procurar letras para construir as
 nossas palavrinhas no futuro!
@@ -1050,7 +1050,7 @@ margin_left = 3.99399
 margin_top = 26.9959
 margin_right = -10.999
 margin_bottom = -52.992
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 6 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Tente encontrar uma letra agora."
 align = 1
@@ -1069,7 +1069,7 @@ margin_left = 3.99399
 margin_top = 23.9959
 margin_right = -10.999
 margin_bottom = -18.992
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 6 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Legal! Você encontrou a sua primeira letra!
 Ela agora ficará armazenada na sua bolsa!"
@@ -1089,7 +1089,7 @@ margin_left = 3.99399
 margin_top = 7.99591
 margin_right = -10.999
 margin_bottom = 22.008
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 6 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Clique na bolsa para consultar quantas
 letras você já coletou!"
@@ -1109,7 +1109,7 @@ margin_left = 3.99399
 margin_top = -5.00409
 margin_right = -10.999
 margin_bottom = 23.008
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 6 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Nesta bolsa, ficarão armazenadas todas
 as letras que você encontrar!
@@ -1130,7 +1130,7 @@ margin_left = 4.9985
 margin_top = -17.6647
 margin_right = -7.99451
 margin_bottom = 13.3474
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 6 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Agora vamos falar dos morfemas. Morfemas são pedacinhos
  de palavras que também estão escondidos por aqui!
@@ -1152,7 +1152,7 @@ margin_left = 3.99399
 margin_top = 7.99591
 margin_right = -10.999
 margin_bottom = 23.008
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 6 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Só pra você não esquecer o que é um morfema,
 eu coloquei um lembrete dentro da bolsa pra você!"
@@ -1172,7 +1172,7 @@ margin_left = 4.10617
 margin_top = -16.1164
 margin_right = -10.8868
 margin_bottom = 22.8957
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 6 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Agora é com você! Tente encontrar o maior
 número de letras e morfemas possíveis!
@@ -1194,7 +1194,7 @@ margin_left = 3.99399
 margin_top = -4.00409
 margin_right = -10.999
 margin_bottom = 23.008
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 6 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Só lembrando que você pode sair e voltar na
 cozinha quando quiser, clicando na seta à sua
@@ -1233,6 +1233,11 @@ modulate = Color( 1, 1, 0, 1 )
 position = Vector2( 107.339, 680.539 )
 rotation = -1.5708
 texture = ExtResource( 2 )
+
+[node name="Audio" type="Node" parent="."]
+
+[node name="Whoosh" type="AudioStreamPlayer2D" parent="Audio"]
+stream = ExtResource( 58 )
 [connection signal="tree_entered" from="." to="." method="_on_BuscaPalavras_tree_entered"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 [connection signal="pressed" from="Bolsa" to="PalavrasPopUp" method="_on_Bolsa_pressed"]

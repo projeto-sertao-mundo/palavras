@@ -8,8 +8,6 @@ onready var coresInstance = preload ("res://Cenas/CenasPrefab/Cores.tscn")
 onready var retalhosInstance = preload ("res://Cenas/CenasPrefab/Preview.tscn")
 onready var cartoes = preload ("res://Cenas/CenasPrefab/Cartoes.tscn")
 
-onready var player = get_node("AnimationPlayer")
-
 var cena
 
 func ChangeSceneBP():
@@ -32,26 +30,28 @@ func _ready():
 func _on_PortaBuscaPalavras_pressed():
 	if (!$"/root/TutorialGlobal".lockCozinha):
 		if $"/root/Global".contPalavrasEncontradas < 43:
-			get_node("AnimationPlayer").play("FadeOut")
+			$AnimationPlayer.play("FadeOut")
 			cena = "BP"
 
 func _on_PortaQuartoCostura_pressed():
 	if (!$"/root/TutorialGlobal".lockCostura):
-		get_node("AnimationPlayer").play("FadeOut")
+		$AnimationPlayer.play("FadeOut")
 		#yield(Yield.yield_wait(0.45, self), "completed")
 		cena = "QC"
 
 func _on_PortaQuartoMontagens_pressed():
 	if (!$"/root/TutorialGlobal".lockFrases):
-		get_node("AnimationPlayer").play("FadeOut")
+		$AnimationPlayer.play("FadeOut")
 		#yield(Yield.yield_wait(0.45, self), "completed")
 		cena = "QF"
 
 func _on_VoltarMenu_pressed():
 	if (($"/root/TutorialGlobal".CosturaCompleted && $"/root/TutorialGlobal".CozinhaCompleted && $"/root/TutorialGlobal".FrasesCompleted) || !$"/root/TutorialGlobal".willDoTutorial):
-		get_node("AnimationPlayer").play("FadeOut")
+		$AnimationPlayer.play("FadeOut")
 		#yield(Yield.yield_wait(0.45, self), "completed")
 		cena = "Menu"
+		if (!$Audio/Whoosh.playing):
+			$Audio/Whoosh.play()
 
 
 func _on_AnimationPlayer_animation_finished(anim_name):
@@ -67,19 +67,19 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 
 
 func _on_Nao_pressed():
-	get_node("Confirmacao").visible = true
+	$Confirmacao.visible = true
 
 func _on_NaoC_pressed():
-	get_node("Confirmacao").visible = false
+	$Confirmacao.visible = false
 
 func _on_SimC_pressed():
 	$"/root/TutorialGlobal".lockCozinha = false
 	$"/root/TutorialGlobal".lockCostura = false
 	$"/root/TutorialGlobal".lockFrases = false
 	$"/root/TutorialGlobal".willDoTutorial = false
-	get_node("TutorialPergunta").visible = false
-	get_node("Confirmacao").visible = false
+	$TutorialPergunta.visible = false
+	$Confirmacao.visible = false
 
 func _on_Sim_pressed():
-	get_node("TutorialPergunta").visible = false
-	get_node("Confirmacao").visible = false
+	$TutorialPergunta.visible = false
+	$Confirmacao.visible = false

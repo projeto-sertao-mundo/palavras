@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Sprites/SpritesFinais/Objetos/Confecção Dos Retalhps.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Corredor/ChangeScenePorta.gd" type="Script" id=2]
@@ -15,8 +15,9 @@
 [ext_resource path="res://Sprites/SpritesFinais/Objetos/Sim Botão.png" type="Texture" id=13]
 [ext_resource path="res://Sprites/SpritesFinais/Objetos/Não Botão.png" type="Texture" id=14]
 [ext_resource path="res://Sprites/SpritesFinais/noAtlasObjects/Tem certeza.png" type="Texture" id=15]
+[ext_resource path="res://Audio/whoosh.ogg" type="AudioStream" id=16]
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=1]
 resource_name = "Seta"
 tracks/0/type = "bezier"
 tracks/0/path = NodePath("Tutorial1/Seta:position:x")
@@ -64,7 +65,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 0.4, 0.9, 1.2 )
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=3]
 resource_name = "SetaCostura"
 tracks/0/type = "bezier"
 tracks/0/path = NodePath("Tutorial1/SetaCostura:position:x")
@@ -87,7 +88,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 0.4, 0.9, 1.2 )
 }
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="DynamicFont" id=4]
 size = 38
 use_filter = true
 font_data = ExtResource( 10 )
@@ -100,9 +101,9 @@ __meta__ = {
 }
 
 [node name="AnimationPlayer" parent="." instance=ExtResource( 7 )]
-anims/Seta = SubResource( 3 )
+anims/Seta = SubResource( 1 )
 anims/SetaCartoes = SubResource( 2 )
-anims/SetaCostura = SubResource( 4 )
+anims/SetaCostura = SubResource( 3 )
 
 [node name="corredor" type="Sprite" parent="."]
 position = Vector2( 798.892, 449.981 )
@@ -214,7 +215,7 @@ margin_left = 312.0
 margin_top = 726.0
 margin_right = 1223.0
 margin_bottom = 852.0
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 4 )
 text = "Olá! Seja bem vindo(a) à minha humilde casinha!
 Meu nome é \"fulana\", mas o pessoal aqui
 carinhosamente me chama de vó \"ciclana\"."
@@ -231,7 +232,7 @@ margin_left = 265.0
 margin_top = 726.0
 margin_right = 1266.0
 margin_bottom = 852.0
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 4 )
 text = "Gostaria de um cafézinho?
 Vem comigo, deixa eu te apresentar a minha cozinha!
 Para entrar, basta clicar na porta indicada."
@@ -248,7 +249,7 @@ margin_left = 265.0
 margin_top = 710.0
 margin_right = 1266.0
 margin_bottom = 878.0
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 4 )
 text = "Já encontrou algumas letras né?
 Agora vou te apresentar meu quartinho de costura
 pra você brincar! Vem comigo! Clique na
@@ -266,7 +267,7 @@ margin_left = 265.0
 margin_top = 731.0
 margin_right = 1266.0
 margin_bottom = 878.0
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 4 )
 text = "Agora que você já tem retalhos prontos,
 vou te ensinar a colocar eles nos cartões!
 Clique na porta indicada!"
@@ -336,6 +337,12 @@ texture_normal = ExtResource( 14 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Audio" type="Node2D" parent="."]
+
+[node name="Whoosh" type="AudioStreamPlayer2D" parent="Audio"]
+stream = ExtResource( 16 )
+volume_db = -5.0
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 [connection signal="pressed" from="VoltarMenu" to="." method="_on_VoltarMenu_pressed"]
 [connection signal="pressed" from="PortaBuscaPalavras" to="." method="_on_PortaBuscaPalavras_pressed"]

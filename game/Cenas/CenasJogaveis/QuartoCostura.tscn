@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=2]
+[gd_scene load_steps=59 format=2]
 
 [ext_resource path="res://Sprites/SpritesFinais/ObetosCostura/Losango Botão.png" type="Texture" id=1]
 [ext_resource path="res://Sprites/SpritesFinais/Fundo cenas/quarto de costura refeito.png" type="Texture" id=2]
@@ -45,8 +45,9 @@
 [ext_resource path="res://Sprites/SpritesFinais/noAtlasObjects/BalãoDeDialogo.png" type="Texture" id=43]
 [ext_resource path="res://Sprites/SpritesFinais/noAtlasObjects/Vovó.png" type="Texture" id=44]
 [ext_resource path="res://Scripts/Tutorial/TutorialCostura.gd" type="Script" id=45]
+[ext_resource path="res://Audio/whoosh.ogg" type="AudioStream" id=46]
 
-[sub_resource type="Animation" id=11]
+[sub_resource type="Animation" id=1]
 resource_name = "SetaApagar"
 tracks/0/type = "bezier"
 tracks/0/path = NodePath("Tutorial3/SetaApagar:position:x")
@@ -69,7 +70,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 0.45, 0.9, 1.2 )
 }
 
-[sub_resource type="Animation" id=12]
+[sub_resource type="Animation" id=2]
 resource_name = "SetaConfirmar"
 tracks/0/type = "bezier"
 tracks/0/path = NodePath("Tutorial3/SetaConfirmar:position:x")
@@ -92,7 +93,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 0.45, 0.9, 1.2 )
 }
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=3]
 resource_name = "SetaCores"
 tracks/0/type = "bezier"
 tracks/0/path = NodePath("Tutorial3/SetaCores:position:x")
@@ -115,7 +116,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 0.45, 0.9, 1.2 )
 }
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=4]
 resource_name = "SetaFormas"
 tracks/0/type = "bezier"
 tracks/0/path = NodePath("Tutorial3/SetaFormas:position:x")
@@ -138,7 +139,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 0.45, 0.9, 1.2 )
 }
 
-[sub_resource type="Animation" id=10]
+[sub_resource type="Animation" id=5]
 resource_name = "SetaLixeira"
 tracks/0/type = "bezier"
 tracks/0/path = NodePath("Tutorial3/SetaLixeira:position:x")
@@ -161,7 +162,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 0.45, 0.9, 1.2 )
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=6]
 resource_name = "SetaRetalho"
 tracks/0/type = "bezier"
 tracks/0/path = NodePath("Tutorial3/SetaRetalho:position:x")
@@ -184,8 +185,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 0.45, 0.9, 1.2 )
 }
 
-[sub_resource type="Animation" id=6]
-resource_name = "SetaRetalhosAba"
+[sub_resource type="Animation" id=7]
 length = 0.9
 loop = true
 step = 0.05
@@ -210,11 +210,10 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 0.45, 0.9, 1.2 )
 }
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=8]
 extents = Vector2( 49.998, 224.62 )
 
-[sub_resource type="Animation" id=2]
-resource_name = "CosturaPopUp"
+[sub_resource type="Animation" id=9]
 length = 1.11
 step = 0.01
 tracks/0/type = "value"
@@ -326,14 +325,14 @@ tracks/8/keys = {
 "values": [ Vector2( 1800, -16.929 ), Vector2( 1020.41, -16.937 ), Vector2( 1020.41, -16.937 ) ]
 }
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=10]
 extents = Vector2( 82.901, 76.4056 )
 
-[sub_resource type="DynamicFont" id=4]
+[sub_resource type="DynamicFont" id=11]
 size = 25
 font_data = ExtResource( 3 )
 
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="DynamicFont" id=12]
 size = 33
 font_data = ExtResource( 3 )
 
@@ -341,13 +340,13 @@ font_data = ExtResource( 3 )
 script = ExtResource( 5 )
 
 [node name="AnimationPlayer" parent="." instance=ExtResource( 42 )]
-anims/SetaApagar = SubResource( 11 )
-anims/SetaConfirmar = SubResource( 12 )
-anims/SetaCores = SubResource( 9 )
-anims/SetaFormas = SubResource( 8 )
-anims/SetaLixeira = SubResource( 10 )
-anims/SetaRetalho = SubResource( 7 )
-anims/SetaRetalhosAba = SubResource( 6 )
+anims/SetaApagar = SubResource( 1 )
+anims/SetaConfirmar = SubResource( 2 )
+anims/SetaCores = SubResource( 3 )
+anims/SetaFormas = SubResource( 4 )
+anims/SetaLixeira = SubResource( 5 )
+anims/SetaRetalho = SubResource( 6 )
+anims/SetaRetalhosAba = SubResource( 7 )
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 800, 452 )
@@ -371,7 +370,7 @@ position = Vector2( -0.611755, -0.308289 )
 scale = Vector2( 0.236082, 0.154575 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Lixeira/Area2D"]
-shape = SubResource( 1 )
+shape = SubResource( 8 )
 
 [node name="Voltar2" type="ToolButton" parent="."]
 margin_left = 27.591
@@ -394,7 +393,7 @@ __meta__ = {
 }
 
 [node name="CosturaAnimation" type="AnimationPlayer" parent="CosturaPopUp"]
-anims/CosturaPopUp = SubResource( 2 )
+anims/CosturaPopUp = SubResource( 9 )
 
 [node name="Sprite" type="Sprite" parent="CosturaPopUp"]
 position = Vector2( 450, 265.153 )
@@ -426,7 +425,7 @@ script = ExtResource( 39 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CosturaPopUp/Preview/Area2D"]
 position = Vector2( -15, 10 )
-shape = SubResource( 3 )
+shape = SubResource( 10 )
 
 [node name="Label" type="Label" parent="CosturaPopUp/Preview"]
 modulate = Color( 0, 0, 0, 1 )
@@ -436,7 +435,7 @@ margin_right = 133.0
 margin_bottom = 70.0
 grow_vertical = 0
 rect_scale = Vector2( 0.75, 0.85 )
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 11 )
 align = 1
 valign = 1
 uppercase = true
@@ -809,7 +808,7 @@ margin_left = 336.0
 margin_top = 755.581
 margin_right = 1328.0
 margin_bottom = 875.581
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 12 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Aqui vamos montar nossos retalhos com
 as letras que coletamos na cozinha!"
@@ -825,7 +824,7 @@ margin_left = 336.0
 margin_top = 752.0
 margin_right = 1328.0
 margin_bottom = 875.0
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 12 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Para escrever, basta clicar na letra ou morfema
 desejado que elá aparecerá no retalho à esquerda!"
@@ -841,7 +840,7 @@ margin_left = 336.0
 margin_top = 755.581
 margin_right = 1328.0
 margin_bottom = 875.581
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 12 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Você pode mudar o formato do retalho clicando
 em uma das formas disponíveis na mesa."
@@ -857,7 +856,7 @@ margin_left = 329.273
 margin_top = 733.0
 margin_right = 1366.27
 margin_bottom = 888.0
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 12 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Você também pode colorir os seus retalhos!
 Basta clicar na cor desejada e arrastar para o retalho!
@@ -875,7 +874,7 @@ margin_left = 336.0
 margin_top = 751.0
 margin_right = 1328.0
 margin_bottom = 876.0
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 12 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Se você errou alguma letra, pode apagar
 utilizando o botão \"apagar\"."
@@ -891,7 +890,7 @@ margin_left = 336.0
 margin_top = 742.0
 margin_right = 1328.0
 margin_bottom = 875.0
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 12 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Quando você terminar o seu retalho,
 basta clicar em \"confirmar\" para armazená-lo
@@ -908,7 +907,7 @@ margin_left = 336.0
 margin_top = 757.0
 margin_right = 1328.0
 margin_bottom = 875.0
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 12 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Seu retalho ficará armazenado na aba \"retalhos\"."
 align = 1
@@ -923,7 +922,7 @@ margin_left = 336.0
 margin_top = 734.0
 margin_right = 1328.0
 margin_bottom = 909.0
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 12 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Caso você não goste do resultado final do seu
 retalho, pode arrastar ele para a lixeirinha que fica no
@@ -935,6 +934,11 @@ percent_visible = 0.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Audio" type="Node" parent="."]
+
+[node name="Whoosh" type="AudioStreamPlayer2D" parent="Audio"]
+stream = ExtResource( 46 )
 [connection signal="tree_entered" from="." to="." method="_on_QuartoCostura_tree_entered"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 [connection signal="area_entered" from="Lixeira/Area2D" to="Lixeira" method="_on_Area2D_area_entered"]
@@ -944,8 +948,8 @@ __meta__ = {
 [connection signal="area_exited" from="CosturaPopUp/Preview/Area2D" to="." method="_on_Area2D_area_exited"]
 [connection signal="pressed" from="CosturaPopUp/Bolsa" to="CosturaPopUp/PalavrasPopUp" method="_on_Bolsa_pressed"]
 [connection signal="pressed" from="CosturaPopUp/Voltar" to="." method="_on_Voltar_pressed"]
-[connection signal="pressed" from="CosturaPopUp/Costurar" to="." method="_on_Costurar_pressed"]
 [connection signal="pressed" from="CosturaPopUp/Costurar" to="CosturaPopUp/PalavrasPopUp" method="_on_Costurar_pressed"]
+[connection signal="pressed" from="CosturaPopUp/Costurar" to="." method="_on_Costurar_pressed"]
 [connection signal="pressed" from="CosturaPopUp/Recomecar" to="." method="_on_Recomecar_pressed"]
 [connection signal="button_down" from="CosturaPopUp/Cor/Vermelho" to="CosturaPopUp/Cor/Vermelho" method="_on_Vermelho_button_down"]
 [connection signal="button_up" from="CosturaPopUp/Cor/Vermelho" to="CosturaPopUp/Cor/Vermelho" method="_on_Vermelho_button_up"]

@@ -65,6 +65,8 @@ func _on_Voltar_pressed():
 func _on_Voltar2_pressed():
 	if ($"/root/TutorialGlobal".CosturaCompleted || !$"/root/TutorialGlobal".willDoTutorial):
 		get_node("AnimationPlayer").play("FadeOut")
+		if (!$Audio/Whoosh.playing):
+			$Audio/Whoosh.play()
 	#yield(Yield.yield_wait(0.35, self), "completed")
 	
 func MudarCor(var r, g, b):

@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=2]
+[gd_scene load_steps=46 format=2]
 
 [ext_resource path="res://Scripts/Frases/FrasePreview.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/SpritesFinais/Objetos/Bolsa.png" type="Texture" id=2]
@@ -37,8 +37,9 @@
 [ext_resource path="res://Sprites/SpritesFinais/noAtlasObjects/Vovó.png" type="Texture" id=35]
 [ext_resource path="res://Sprites/SpritesFinais/noAtlasObjects/BalãoDeDialogo.png" type="Texture" id=36]
 [ext_resource path="res://Fonts/xilosa_.ttf" type="DynamicFontData" id=37]
+[ext_resource path="res://Audio/whoosh.ogg" type="AudioStream" id=38]
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=1]
 resource_name = "SetaCartaoPronto"
 length = 0.9
 loop = true
@@ -63,7 +64,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 0.5, 1, 1.2 )
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=2]
 resource_name = "SetaCartoes"
 tracks/0/type = "bezier"
 tracks/0/path = NodePath("Tutorial4/SetaCartoes:position:x")
@@ -86,7 +87,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 0.5, 1, 1.2 )
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=3]
 resource_name = "SetaCartoesAba"
 tracks/0/type = "bezier"
 tracks/0/path = NodePath("Tutorial4/SetaCartoesAba:position:x")
@@ -109,7 +110,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 0.5, 1, 1.2 )
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=4]
 resource_name = "SetaConfirmar"
 tracks/0/type = "bezier"
 tracks/0/path = NodePath("Tutorial4/SetaConfirmar:position:x")
@@ -155,10 +156,10 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 0.5, 1, 1.2 )
 }
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 86.3473, 50.4913 )
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=7]
 size = 32
 font_data = ExtResource( 37 )
 
@@ -172,10 +173,10 @@ __meta__ = {
 SceneName = "QuartoFrases"
 
 [node name="AnimationPlayer" parent="." instance=ExtResource( 33 )]
-anims/SetaCartaoPronto = SubResource( 3 )
-anims/SetaCartoes = SubResource( 4 )
-anims/SetaCartoesAba = SubResource( 7 )
-anims/SetaConfirmar = SubResource( 6 )
+anims/SetaCartaoPronto = SubResource( 1 )
+anims/SetaCartoes = SubResource( 2 )
+anims/SetaCartoesAba = SubResource( 3 )
+anims/SetaConfirmar = SubResource( 4 )
 anims/SetaRetalhos = SubResource( 5 )
 
 [node name="Interface" type="Sprite" parent="."]
@@ -556,7 +557,7 @@ script = ExtResource( 31 )
 [node name="Area2D" type="Area2D" parent="RetalhoGrande"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RetalhoGrande/Area2D"]
-shape = SubResource( 1 )
+shape = SubResource( 6 )
 
 [node name="Confirm" type="TextureButton" parent="."]
 visible = false
@@ -681,7 +682,7 @@ margin_left = 342.0
 margin_top = 670.0
 margin_right = 1256.0
 margin_bottom = 783.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 7 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Aqui temos alguns cartões. Você pode
 visualizá-los melhor ao clicar em qualquer um deles."
@@ -697,7 +698,7 @@ margin_left = 342.0
 margin_top = 658.0
 margin_right = 1256.0
 margin_bottom = 823.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 7 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Agora podemos arrastar os retalhos que
 produzimos no quarto de costura para o cartão!
@@ -712,7 +713,7 @@ margin_left = 342.0
 margin_top = 670.0
 margin_right = 1256.0
 margin_bottom = 783.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 7 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Quando o retalho estiver posicionado da
 forma que você quer, basta clicar no botão
@@ -729,7 +730,7 @@ margin_left = 342.0
 margin_top = 682.0
 margin_right = 1256.0
 margin_bottom = 783.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 7 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Seus cartões ficarão armazenados na aba
 \"cartões\"."
@@ -745,7 +746,7 @@ margin_left = 342.0
 margin_top = 680.0
 margin_right = 1249.0
 margin_bottom = 783.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 7 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Quando estiver na aba de cartões, 
 você pode visualizar um cartão ao clicar nele."
@@ -761,7 +762,7 @@ margin_left = 342.0
 margin_top = 670.0
 margin_right = 1256.0
 margin_bottom = 783.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 7 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Caso não goste de um cartão, você
 pode apagá-lo clicando no botão \"descartar\"."
@@ -777,7 +778,7 @@ margin_left = 342.0
 margin_top = 670.0
 margin_right = 1256.0
 margin_bottom = 783.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 7 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Isto é tudo! Espero ter ajudado! Explore a sua
 criatividade! você pode usar mais de um retalho por
@@ -785,6 +786,11 @@ cartão! São muitas possibilidades! Boa sorte!"
 align = 1
 uppercase = true
 percent_visible = 0.0
+
+[node name="Audio" type="Node" parent="."]
+
+[node name="Whoosh" type="AudioStreamPlayer2D" parent="Audio"]
+stream = ExtResource( 38 )
 [connection signal="tree_entered" from="." to="." method="_on_QuartoFrases_tree_entered"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 [connection signal="pressed" from="ExitButton" to="Frases" method="_on_ExitButton_pressed"]
