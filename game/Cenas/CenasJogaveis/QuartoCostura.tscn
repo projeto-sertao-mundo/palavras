@@ -17,7 +17,6 @@
 [ext_resource path="res://Sprites/SpritesFinais/ObetosCostura/Azul.png" type="Texture" id=15]
 [ext_resource path="res://Sprites/SpritesFinais/ObetosCostura/Amarelo.png" type="Texture" id=16]
 [ext_resource path="res://Sprites/SpritesFinais/ObetosCostura/Caixa.png" type="Texture" id=17]
-[ext_resource path="res://Sprites/SpritesFinais/Objetos/Bolsa.png" type="Texture" id=18]
 [ext_resource path="res://Sprites/SpritesFinais/ObetosCostura/Quadrado Botão.png" type="Texture" id=19]
 [ext_resource path="res://Sprites/SpritesFinais/ObetosCostura/Retângulo Botão.png" type="Texture" id=20]
 [ext_resource path="res://Sprites/SpritesFinais/ObetosCostura/Branco.png" type="Texture" id=21]
@@ -46,6 +45,7 @@
 [ext_resource path="res://Sprites/SpritesFinais/noAtlasObjects/Vovó.png" type="Texture" id=44]
 [ext_resource path="res://Scripts/Tutorial/TutorialCostura.gd" type="Script" id=45]
 [ext_resource path="res://Audio/whoosh.ogg" type="AudioStream" id=46]
+[ext_resource path="res://Scripts/ScaleButton.gd" type="Script" id=47]
 
 [sub_resource type="Animation" id=1]
 resource_name = "SetaApagar"
@@ -372,16 +372,15 @@ scale = Vector2( 0.236082, 0.154575 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Lixeira/Area2D"]
 shape = SubResource( 8 )
 
-[node name="Voltar2" type="ToolButton" parent="."]
+[node name="Voltar2" type="TextureButton" parent="."]
 margin_left = 27.591
 margin_top = 770.954
 margin_right = 162.591
 margin_bottom = 882.954
 rect_scale = Vector2( 1.2, 1 )
-icon = ExtResource( 7 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+rect_pivot_offset = Vector2( 68, 55 )
+texture_normal = ExtResource( 7 )
+script = ExtResource( 47 )
 
 [node name="CosturaPopUp" type="Control" parent="."]
 margin_left = -84.8948
@@ -448,50 +447,28 @@ position = Vector2( 304.347, 217.993 )
 scale = Vector2( 0.8051, 1.02509 )
 texture = ExtResource( 17 )
 
-[node name="Bolsa" type="TextureButton" parent="CosturaPopUp"]
-visible = false
-margin_left = 433.734
-margin_top = 39.4368
-margin_right = 596.734
-margin_bottom = 277.437
-rect_scale = Vector2( 0.5, 0.5 )
-disabled = true
-texture_normal = ExtResource( 18 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Voltar" type="TextureButton" parent="CosturaPopUp"]
-visible = false
-margin_left = 198.379
-margin_top = 449.123
-margin_right = 321.379
-margin_bottom = 553.123
-rect_scale = Vector2( 0.9, 0.6 )
-disabled = true
-texture_normal = ExtResource( 7 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="Costurar" type="TextureButton" parent="CosturaPopUp"]
-margin_left = 379.978
-margin_top = 446.202
-margin_right = 534.979
-margin_bottom = 520.202
+margin_left = 377.733
+margin_top = 438.345
+margin_right = 532.734
+margin_bottom = 512.345
 rect_scale = Vector2( 0.9, 0.9 )
+rect_pivot_offset = Vector2( 75, 38 )
 texture_normal = ExtResource( 14 )
+script = ExtResource( 47 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Recomecar" type="TextureButton" parent="CosturaPopUp"]
-margin_left = 536.0
-margin_top = 442.0
-margin_right = 693.0
-margin_bottom = 517.0
+margin_left = 535.439
+margin_top = 439.194
+margin_right = 692.439
+margin_bottom = 514.194
 rect_scale = Vector2( 0.9, 0.9 )
+rect_pivot_offset = Vector2( 78, 38 )
 texture_normal = ExtResource( 11 )
+script = ExtResource( 47 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -943,13 +920,17 @@ stream = ExtResource( 46 )
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 [connection signal="area_entered" from="Lixeira/Area2D" to="Lixeira" method="_on_Area2D_area_entered"]
 [connection signal="area_exited" from="Lixeira/Area2D" to="Lixeira" method="_on_Area2D_area_exited"]
+[connection signal="mouse_entered" from="Voltar2" to="Voltar2" method="_on_Voltar2_mouse_entered"]
+[connection signal="mouse_exited" from="Voltar2" to="Voltar2" method="_on_Voltar2_mouse_exited"]
 [connection signal="pressed" from="Voltar2" to="." method="_on_Voltar2_pressed"]
 [connection signal="area_entered" from="CosturaPopUp/Preview/Area2D" to="." method="_on_Area2D_area_entered"]
 [connection signal="area_exited" from="CosturaPopUp/Preview/Area2D" to="." method="_on_Area2D_area_exited"]
-[connection signal="pressed" from="CosturaPopUp/Bolsa" to="CosturaPopUp/PalavrasPopUp" method="_on_Bolsa_pressed"]
-[connection signal="pressed" from="CosturaPopUp/Voltar" to="." method="_on_Voltar_pressed"]
-[connection signal="pressed" from="CosturaPopUp/Costurar" to="CosturaPopUp/PalavrasPopUp" method="_on_Costurar_pressed"]
+[connection signal="mouse_entered" from="CosturaPopUp/Costurar" to="CosturaPopUp/Costurar" method="_on_Costurar_mouse_entered"]
+[connection signal="mouse_exited" from="CosturaPopUp/Costurar" to="CosturaPopUp/Costurar" method="_on_Costurar_mouse_exited"]
 [connection signal="pressed" from="CosturaPopUp/Costurar" to="." method="_on_Costurar_pressed"]
+[connection signal="pressed" from="CosturaPopUp/Costurar" to="CosturaPopUp/PalavrasPopUp" method="_on_Costurar_pressed"]
+[connection signal="mouse_entered" from="CosturaPopUp/Recomecar" to="CosturaPopUp/Recomecar" method="_on_Recomecar_mouse_entered"]
+[connection signal="mouse_exited" from="CosturaPopUp/Recomecar" to="CosturaPopUp/Recomecar" method="_on_Recomecar_mouse_exited"]
 [connection signal="pressed" from="CosturaPopUp/Recomecar" to="." method="_on_Recomecar_pressed"]
 [connection signal="button_down" from="CosturaPopUp/Cor/Vermelho" to="CosturaPopUp/Cor/Vermelho" method="_on_Vermelho_button_down"]
 [connection signal="button_up" from="CosturaPopUp/Cor/Vermelho" to="CosturaPopUp/Cor/Vermelho" method="_on_Vermelho_button_up"]

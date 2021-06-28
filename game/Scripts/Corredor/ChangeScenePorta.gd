@@ -24,6 +24,9 @@ func _ready():
 	else:
 		$"/root/TutorialGlobal".alreadyAsked = true
 	
+	if $"/root/Global".contPalavrasEncontradas == 43:
+		get_node("PortaFechada").visible = true
+	
 	get_node("AnimationPlayer").play("FadeIn")
 	$"/root/Global".setarRefs(morfemas, letraInstance, coresInstance, retalhosInstance, retalhosFrasesInstance, cartoes)
 
@@ -83,3 +86,29 @@ func _on_SimC_pressed():
 func _on_Sim_pressed():
 	$TutorialPergunta.visible = false
 	$Confirmacao.visible = false
+
+
+func _on_PortaBuscaPalavras_mouse_entered():
+	var anim = $NamesAnimation.get_animation("LetrasPulse")
+	anim.set_loop(true)
+	$NamesAnimation.play("LetrasPulse")
+
+func _on_PortaBuscaPalavras_mouse_exited():
+	$NamesAnimation.stop(true)
+
+
+func _on_PortaQuartoCostura_mouse_entered():
+	var anim = $NamesAnimation.get_animation("CosturaPulse")
+	anim.set_loop(true)
+	$NamesAnimation.play("CosturaPulse")
+
+func _on_PortaQuartoCostura_mouse_exited():
+	$NamesAnimation.stop(true)
+
+func _on_PortaQuartoMontagens_mouse_entered():
+	var anim = $NamesAnimation.get_animation("CartoesPulse")
+	anim.set_loop(true)
+	$NamesAnimation.play("CartoesPulse")
+
+func _on_PortaQuartoMontagens_mouse_exited():
+	$NamesAnimation.stop(true)

@@ -1,5 +1,7 @@
 extends Node
 
+var firstTime
+
 var bolsa = []
 var bolsaLetra = []
 var bolsaLetraAcentuada = []

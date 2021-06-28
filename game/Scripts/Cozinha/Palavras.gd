@@ -26,6 +26,7 @@ func _process(_delta):
 		else:
 			$"/root/Global".adicionarItemBolsaPalavra(self.name)
 		$"/root/Global".AdicionarPalavraEncontrada()
+		get_parent().get_parent().get_node("AnimationPlayer").play("BolsaShake")
 		self.free()
 
 func _on_TextureButton_pressed():

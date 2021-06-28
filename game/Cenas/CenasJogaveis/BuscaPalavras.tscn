@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=2]
+[gd_scene load_steps=67 format=2]
 
 [ext_resource path="res://Scripts/Cozinha/BuscaPalavras.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/SpritesFinais/Objetos/seta.png" type="Texture" id=2]
@@ -58,6 +58,48 @@
 [ext_resource path="res://Fonts/xilosa_.ttf" type="DynamicFontData" id=56]
 [ext_resource path="res://Scripts/Tutorial/TutorialBusca.gd" type="Script" id=57]
 [ext_resource path="res://Audio/whoosh.ogg" type="AudioStream" id=58]
+[ext_resource path="res://Scripts/ScaleButton.gd" type="Script" id=59]
+
+[sub_resource type="Animation" id=7]
+resource_name = "BolsaShake"
+length = 0.32
+step = 0.08
+tracks/0/type = "value"
+tracks/0/path = NodePath("Bolsa:rect_rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.08, 0.16, 0.24, 0.32 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 5.0, -13.8, 6.3, 0.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Bolsa:rect_position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.08, 0.16, 0.24, 0.32 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1458.07, 699.708 ), Vector2( 1460.49, 696.214 ), Vector2( 1449.42, 700.889 ), Vector2( 1460.8, 694.098 ), Vector2( 1459.23, 701.093 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Bolsa:rect_pivot_offset")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 80, 120 ) ]
+}
 
 [sub_resource type="Animation" id=1]
 resource_name = "Parabens"
@@ -177,6 +219,7 @@ script = ExtResource( 1 )
 SceneName = "BuscaPalavras"
 
 [node name="AnimationPlayer" parent="." instance=ExtResource( 51 )]
+anims/BolsaShake = SubResource( 7 )
 anims/Parabens = SubResource( 1 )
 anims/SetaBolsa = SubResource( 2 )
 anims/SetaMorfemas = SubResource( 3 )
@@ -192,12 +235,14 @@ texture = ExtResource( 7 )
 script = ExtResource( 6 )
 
 [node name="Bolsa" type="TextureButton" parent="."]
-margin_left = 1486.1
-margin_top = 748.573
-margin_right = 1647.1
-margin_bottom = 983.573
+margin_left = 1459.23
+margin_top = 701.093
+margin_right = 1622.23
+margin_bottom = 939.093
 rect_scale = Vector2( 0.6, 0.6 )
+rect_pivot_offset = Vector2( 80, 120 )
 texture_normal = ExtResource( 3 )
+script = ExtResource( 59 )
 __meta__ = {
 "_edit_group_": true,
 "_edit_use_anchors_": false
@@ -967,7 +1012,7 @@ __meta__ = {
 
 [node name="Sprite" type="Sprite" parent="Finish"]
 position = Vector2( 861.078, 413.721 )
-scale = Vector2( 1.2, 1.2 )
+scale = Vector2( 1e-05, 1e-05 )
 texture = ExtResource( 52 )
 
 [node name="OK" type="TextureButton" parent="Finish/Sprite"]
@@ -986,7 +1031,9 @@ margin_top = 782.0
 margin_right = 153.0
 margin_bottom = 886.0
 rect_scale = Vector2( 1.2, 0.9 )
+rect_pivot_offset = Vector2( 62, 50 )
 texture_normal = ExtResource( 2 )
+script = ExtResource( 59 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -1240,6 +1287,8 @@ texture = ExtResource( 2 )
 stream = ExtResource( 58 )
 [connection signal="tree_entered" from="." to="." method="_on_BuscaPalavras_tree_entered"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
+[connection signal="mouse_entered" from="Bolsa" to="Bolsa" method="_on_Bolsa_mouse_entered"]
+[connection signal="mouse_exited" from="Bolsa" to="Bolsa" method="_on_Bolsa_mouse_exited"]
 [connection signal="pressed" from="Bolsa" to="PalavrasPopUp" method="_on_Bolsa_pressed"]
 [connection signal="mouse_entered" from="Letras/A" to="Letras/A/TextureButton" method="_on_A_mouse_entered"]
 [connection signal="mouse_exited" from="Letras/A" to="Letras/A/TextureButton" method="_on_A_mouse_exited"]
@@ -1371,6 +1420,8 @@ stream = ExtResource( 58 )
 [connection signal="mouse_exited" from="Letras/zinho" to="Letras/zinho/TextureButton" method="_on_A_mouse_exited"]
 [connection signal="pressed" from="Letras/zinho/TextureButton" to="Letras/zinho" method="_on_TextureButton_pressed"]
 [connection signal="pressed" from="Finish/Sprite/OK" to="." method="_on_TextureButton_pressed"]
+[connection signal="mouse_entered" from="Voltar" to="Voltar" method="_on_Voltar_mouse_entered"]
+[connection signal="mouse_exited" from="Voltar" to="Voltar" method="_on_Voltar_mouse_exited"]
 [connection signal="pressed" from="Voltar" to="." method="_on_Voltar_pressed"]
 
 [editable path="PalavrasPopUp"]
