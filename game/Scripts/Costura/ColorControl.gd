@@ -3,7 +3,6 @@ extends Sprite
 var setado = false
 var corAnterior = Color(0.882353, 0.882353, 0.819608)
 var corAux
-
 func _ready():
 	corAux = Color(0.882353, 0.882353, 0.819608)
 
@@ -30,18 +29,25 @@ func _process(_delta):
 			elif cor.name == "Branco":
 				MudarCor(0.768627, 0.74902, 0.698039)
 				corAux = Color(0.768627, 0.74902, 0.698039)
-			if !Input.is_action_pressed("Click"):
-				setado = true
-				cor.free()
-				corAnterior = Color(corAux)
-				self.get_parent().get_parent().get_parent().get_node("Tutorial3").ChangeSetedColor()
-			else:
-				setado = false
-				#corAnterior = Color(0.768627, 0.74902, 0.698039)
+				
 		
 		if !is_pixel_opaque(get_local_mouse_position()) && !setado:
 			self.modulate = corAnterior
 
+
+func _input(event):
+	if(event.is_action_released("Click")):
+		if (is_pixel_opaque(get_local_mouse_position())):
+			setColor()
+		else:
+			setado = false
+	else:
+		setado = false
+
+func setColor():
+	setado = true
+	corAnterior = Color(corAux)
+	self.get_parent().get_parent().get_parent().get_node("Tutorial3").ChangeSetedColor()
 
 func MudarCor(var r, g, b):
 	self.modulate = Color(r,g,b)

@@ -38,10 +38,12 @@ func instanceCor(var ref, var nome):
 
 func on_TextureButton_mouse_entered():
 	mouseClicking = true
+	$"/root/Global".cliking = true
 	#set_process(true)
 
 func on_TextureButton_mouse_exited():
 	$"/root/Global".jaSetou = false
+	$"/root/Global".cliking = false
 	mouseClicking = false
 	#set_process(false)
 

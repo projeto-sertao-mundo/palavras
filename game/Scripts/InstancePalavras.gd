@@ -124,7 +124,7 @@ func _on_Voltar_pressed():
 	if (!$"/root/TutorialGlobal".willDoTutorial || $"/root/TutorialGlobal".tutorialPos > 10):
 		self.hide()
 
-func _on_Costurar_pressed():
+func InstancePalavras():
 	InstanciarPalavras()
 
 func _on_ButtonCartoes_pressed():

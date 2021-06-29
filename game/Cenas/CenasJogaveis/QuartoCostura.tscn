@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=2]
+[gd_scene load_steps=61 format=2]
 
 [ext_resource path="res://Sprites/SpritesFinais/ObetosCostura/Losango Botão.png" type="Texture" id=1]
 [ext_resource path="res://Sprites/SpritesFinais/Fundo cenas/quarto de costura refeito.png" type="Texture" id=2]
@@ -325,14 +325,72 @@ tracks/8/keys = {
 "values": [ Vector2( 1800, -16.929 ), Vector2( 1020.41, -16.937 ), Vector2( 1020.41, -16.937 ) ]
 }
 
-[sub_resource type="RectangleShape2D" id=10]
+[sub_resource type="Animation" id=10]
+resource_name = "SaveRetalho"
+length = 0.96
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("Preview:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.36, 0.6, 0.82, 0.83, 0.84, 0.87, 0.93, 0.96 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 583.136, 300.904 ), Vector2( 1064.11, 327.903 ), Vector2( 1368.99, 155.37 ), Vector2( 1456.97, -5.34814 ), Vector2( 1456.97, -5.34814 ), Vector2( 1456.97, -5.34814 ), Vector2( 568, 300.904 ), Vector2( 568, 300.904 ), Vector2( 583.136, 300.904 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Preview:scale")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5, 0.82, 0.84, 0.9, 0.926437, 0.95, 0.96 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1.2, 1.2 ), Vector2( 0.5, 0.5 ), Vector2( 1e-05, 1e-05 ), Vector2( 1e-05, 1e-05 ), Vector2( 1e-05, 1e-05 ), Vector2( 1e-05, 1e-05 ), Vector2( 1e-05, 1e-05 ), Vector2( 1e-05, 1e-05 ) ]
+}
+
+[sub_resource type="Animation" id=14]
+resource_name = "ScaleRetalho"
+length = 0.96
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("Preview:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.54, 0.7, 0.96 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1e-05, 1e-05 ), Vector2( 1.4, 1.4 ), Vector2( 1.2, 1.2 ), Vector2( 1.2, 1.2 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Preview:position")
+tracks/1/interp = 0
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.96 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 583.136, 300.909 ), Vector2( 583.136, 300.909 ) ]
+}
+
+[sub_resource type="RectangleShape2D" id=11]
 extents = Vector2( 82.901, 76.4056 )
 
-[sub_resource type="DynamicFont" id=11]
+[sub_resource type="DynamicFont" id=12]
 size = 25
 font_data = ExtResource( 3 )
 
-[sub_resource type="DynamicFont" id=12]
+[sub_resource type="DynamicFont" id=13]
 size = 33
 font_data = ExtResource( 3 )
 
@@ -381,6 +439,9 @@ rect_scale = Vector2( 1.2, 1 )
 rect_pivot_offset = Vector2( 68, 55 )
 texture_normal = ExtResource( 7 )
 script = ExtResource( 47 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="CosturaPopUp" type="Control" parent="."]
 margin_left = -84.8948
@@ -393,65 +454,29 @@ __meta__ = {
 
 [node name="CosturaAnimation" type="AnimationPlayer" parent="CosturaPopUp"]
 anims/CosturaPopUp = SubResource( 9 )
+anims/SaveRetalho = SubResource( 10 )
+anims/ScaleRetalho = SubResource( 14 )
 
 [node name="Sprite" type="Sprite" parent="CosturaPopUp"]
-position = Vector2( 450, 265.153 )
+position = Vector2( 453.15, 265.153 )
 scale = Vector2( 1.09331, 1.06263 )
 texture = ExtResource( 12 )
 
 [node name="Cores" type="Sprite" parent="CosturaPopUp"]
-position = Vector2( 570, 105.859 )
+position = Vector2( 587.067, 105.859 )
 scale = Vector2( 0.717733, 0.659509 )
 texture = ExtResource( 10 )
 
-[node name="Preview" type="Sprite" parent="CosturaPopUp"]
-position = Vector2( 568, 300.904 )
-scale = Vector2( 1.25, 1.25 )
-
-[node name="Miolo" type="Sprite" parent="CosturaPopUp/Preview"]
-position = Vector2( -14.7178, 10.524 )
-scale = Vector2( 0.855766, 0.91189 )
-texture = ExtResource( 35 )
-script = ExtResource( 39 )
-
-[node name="Borda" type="Sprite" parent="CosturaPopUp/Preview"]
-position = Vector2( -13.3847, 9.26406 )
-scale = Vector2( 0.731204, 0.747028 )
-texture = ExtResource( 32 )
-script = ExtResource( 39 )
-
-[node name="Area2D" type="Area2D" parent="CosturaPopUp/Preview"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CosturaPopUp/Preview/Area2D"]
-position = Vector2( -15, 10 )
-shape = SubResource( 10 )
-
-[node name="Label" type="Label" parent="CosturaPopUp/Preview"]
-modulate = Color( 0, 0, 0, 1 )
-margin_left = -101.0
-margin_top = -30.0
-margin_right = 133.0
-margin_bottom = 70.0
-grow_vertical = 0
-rect_scale = Vector2( 0.75, 0.85 )
-custom_fonts/font = SubResource( 11 )
-align = 1
-valign = 1
-uppercase = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="FormatoRetalhos" type="Sprite" parent="CosturaPopUp"]
-position = Vector2( 304.347, 217.993 )
+position = Vector2( 336.37, 217.993 )
 scale = Vector2( 0.8051, 1.02509 )
 texture = ExtResource( 17 )
 
 [node name="Costurar" type="TextureButton" parent="CosturaPopUp"]
-margin_left = 377.733
-margin_top = 438.345
-margin_right = 532.734
-margin_bottom = 512.345
+margin_left = 412.057
+margin_top = 446.202
+margin_right = 567.059
+margin_bottom = 520.202
 rect_scale = Vector2( 0.9, 0.9 )
 rect_pivot_offset = Vector2( 75, 38 )
 texture_normal = ExtResource( 14 )
@@ -461,10 +486,10 @@ __meta__ = {
 }
 
 [node name="Recomecar" type="TextureButton" parent="CosturaPopUp"]
-margin_left = 535.439
-margin_top = 439.194
-margin_right = 692.439
-margin_bottom = 514.194
+margin_left = 553.25
+margin_top = 442.0
+margin_right = 710.25
+margin_bottom = 517.0
 rect_scale = Vector2( 0.9, 0.9 )
 rect_pivot_offset = Vector2( 78, 38 )
 texture_normal = ExtResource( 11 )
@@ -474,8 +499,8 @@ __meta__ = {
 }
 
 [node name="Cor" type="Control" parent="CosturaPopUp"]
-margin_left = -50.0
-margin_right = -10.0
+margin_left = -32.835
+margin_right = 7.16504
 margin_bottom = 40.0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -560,7 +585,8 @@ __meta__ = {
 [node name="CoresParent" type="Node" parent="CosturaPopUp/Cor"]
 
 [node name="Formas" type="Control" parent="CosturaPopUp"]
-margin_right = 40.0
+margin_left = 31.85
+margin_right = 71.85
 margin_bottom = 40.0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -695,14 +721,55 @@ position = Vector2( -62.8754, 427.458 )
 texture = ExtResource( 30 )
 
 [node name="PalavrasPopUp" parent="CosturaPopUp" instance=ExtResource( 6 )]
-margin_left = 1020.41
-margin_top = -16.937
-margin_right = 1020.41
-margin_bottom = -16.937
+margin_left = 989.372
+margin_top = -16.9373
+margin_right = 989.372
+margin_bottom = -16.9373
 
 [node name="Voltar" parent="CosturaPopUp/PalavrasPopUp" index="7"]
 visible = false
 disabled = true
+
+[node name="Preview" type="Sprite" parent="CosturaPopUp"]
+position = Vector2( 583.136, 300.904 )
+scale = Vector2( 1.2, 1.2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Miolo" type="Sprite" parent="CosturaPopUp/Preview"]
+position = Vector2( -14.7178, 10.524 )
+scale = Vector2( 0.855766, 0.91189 )
+texture = ExtResource( 35 )
+script = ExtResource( 39 )
+
+[node name="Borda" type="Sprite" parent="CosturaPopUp/Preview"]
+position = Vector2( -13.3847, 9.26406 )
+scale = Vector2( 0.731204, 0.747028 )
+texture = ExtResource( 32 )
+script = ExtResource( 39 )
+
+[node name="Area2D" type="Area2D" parent="CosturaPopUp/Preview"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CosturaPopUp/Preview/Area2D"]
+position = Vector2( -15, 10 )
+shape = SubResource( 11 )
+
+[node name="Label" type="Label" parent="CosturaPopUp/Preview"]
+modulate = Color( 0, 0, 0, 1 )
+margin_left = -101.0
+margin_top = -30.0
+margin_right = 133.0
+margin_bottom = 70.0
+grow_vertical = 0
+rect_scale = Vector2( 0.75, 0.85 )
+custom_fonts/font = SubResource( 12 )
+align = 1
+valign = 1
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="ArrastarParentesco" type="Node" parent="."]
 
@@ -785,7 +852,7 @@ margin_left = 336.0
 margin_top = 755.581
 margin_right = 1328.0
 margin_bottom = 875.581
-custom_fonts/font = SubResource( 12 )
+custom_fonts/font = SubResource( 13 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Aqui vamos montar nossos retalhos com
 as letras que coletamos na cozinha!"
@@ -801,7 +868,7 @@ margin_left = 336.0
 margin_top = 752.0
 margin_right = 1328.0
 margin_bottom = 875.0
-custom_fonts/font = SubResource( 12 )
+custom_fonts/font = SubResource( 13 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Para escrever, basta clicar na letra ou morfema
 desejado que elá aparecerá no retalho à esquerda!"
@@ -817,7 +884,7 @@ margin_left = 336.0
 margin_top = 755.581
 margin_right = 1328.0
 margin_bottom = 875.581
-custom_fonts/font = SubResource( 12 )
+custom_fonts/font = SubResource( 13 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Você pode mudar o formato do retalho clicando
 em uma das formas disponíveis na mesa."
@@ -833,7 +900,7 @@ margin_left = 329.273
 margin_top = 733.0
 margin_right = 1366.27
 margin_bottom = 888.0
-custom_fonts/font = SubResource( 12 )
+custom_fonts/font = SubResource( 13 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Você também pode colorir os seus retalhos!
 Basta clicar na cor desejada e arrastar para o retalho!
@@ -851,7 +918,7 @@ margin_left = 336.0
 margin_top = 751.0
 margin_right = 1328.0
 margin_bottom = 876.0
-custom_fonts/font = SubResource( 12 )
+custom_fonts/font = SubResource( 13 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Se você errou alguma letra, pode apagar
 utilizando o botão \"apagar\"."
@@ -867,7 +934,7 @@ margin_left = 336.0
 margin_top = 742.0
 margin_right = 1328.0
 margin_bottom = 875.0
-custom_fonts/font = SubResource( 12 )
+custom_fonts/font = SubResource( 13 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Quando você terminar o seu retalho,
 basta clicar em \"confirmar\" para armazená-lo
@@ -884,7 +951,7 @@ margin_left = 336.0
 margin_top = 757.0
 margin_right = 1328.0
 margin_bottom = 875.0
-custom_fonts/font = SubResource( 12 )
+custom_fonts/font = SubResource( 13 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Seu retalho ficará armazenado na aba \"retalhos\"."
 align = 1
@@ -899,7 +966,7 @@ margin_left = 336.0
 margin_top = 734.0
 margin_right = 1328.0
 margin_bottom = 909.0
-custom_fonts/font = SubResource( 12 )
+custom_fonts/font = SubResource( 13 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Caso você não goste do resultado final do seu
 retalho, pode arrastar ele para a lixeirinha que fica no
@@ -923,12 +990,10 @@ stream = ExtResource( 46 )
 [connection signal="mouse_entered" from="Voltar2" to="Voltar2" method="_on_Voltar2_mouse_entered"]
 [connection signal="mouse_exited" from="Voltar2" to="Voltar2" method="_on_Voltar2_mouse_exited"]
 [connection signal="pressed" from="Voltar2" to="." method="_on_Voltar2_pressed"]
-[connection signal="area_entered" from="CosturaPopUp/Preview/Area2D" to="." method="_on_Area2D_area_entered"]
-[connection signal="area_exited" from="CosturaPopUp/Preview/Area2D" to="." method="_on_Area2D_area_exited"]
+[connection signal="animation_finished" from="CosturaPopUp/CosturaAnimation" to="." method="_on_CosturaAnimation_animation_finished"]
 [connection signal="mouse_entered" from="CosturaPopUp/Costurar" to="CosturaPopUp/Costurar" method="_on_Costurar_mouse_entered"]
 [connection signal="mouse_exited" from="CosturaPopUp/Costurar" to="CosturaPopUp/Costurar" method="_on_Costurar_mouse_exited"]
 [connection signal="pressed" from="CosturaPopUp/Costurar" to="." method="_on_Costurar_pressed"]
-[connection signal="pressed" from="CosturaPopUp/Costurar" to="CosturaPopUp/PalavrasPopUp" method="_on_Costurar_pressed"]
 [connection signal="mouse_entered" from="CosturaPopUp/Recomecar" to="CosturaPopUp/Recomecar" method="_on_Recomecar_mouse_entered"]
 [connection signal="mouse_exited" from="CosturaPopUp/Recomecar" to="CosturaPopUp/Recomecar" method="_on_Recomecar_mouse_exited"]
 [connection signal="pressed" from="CosturaPopUp/Recomecar" to="." method="_on_Recomecar_pressed"]
@@ -950,5 +1015,7 @@ stream = ExtResource( 46 )
 [connection signal="pressed" from="CosturaPopUp/Formas/RetanguloPe" to="." method="_on_RetanguloPe_pressed"]
 [connection signal="pressed" from="CosturaPopUp/Formas/Retangulo" to="." method="_on_Retangulo_pressed"]
 [connection signal="pressed" from="CosturaPopUp/Formas/Losango" to="." method="_on_Losango_pressed"]
+[connection signal="area_entered" from="CosturaPopUp/Preview/Area2D" to="." method="_on_Area2D_area_entered"]
+[connection signal="area_exited" from="CosturaPopUp/Preview/Area2D" to="." method="_on_Area2D_area_exited"]
 
 [editable path="CosturaPopUp/PalavrasPopUp"]

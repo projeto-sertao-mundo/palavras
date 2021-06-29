@@ -5,7 +5,7 @@ var numeroCaracteres = 0
 var numeroRetalhos = 0
 export var isMorfema = 0
 var clickPosition
-var limite
+var limite = 11
 
 var caminho = "CosturaPopUp/Formas/HolderFormas" #PASTA DESTINO DOS SPRITES MUDAR!!!
 
@@ -27,8 +27,8 @@ func _process(_delta):
 #		palavra.free()
 	if ($"/root/Global".podeSetar && (palavra.name.length() == 1 || palavra.isMorfema)):
 		var aux = numeroCaracteres + palavra.name.length()
-		print (aux, " ", limite)
-		if  aux <= limite:
+#		print (aux, " ", $"/root/Global".limite)
+		if  aux <= $"/root/Global".limite:
 			
 			var isPrefixo
 			if palavra.name.length() == 3:
@@ -149,6 +149,8 @@ func _on_Costurar_pressed():
 		if (numeroCaracteres > 0):
 			if numeroRetalhos < 9:
 				
+				get_node("CosturaPopUp/CosturaAnimation").play("SaveRetalho")
+				
 				var previewRef = self.get_node("CosturaPopUp/Preview")
 				var spriteBorda = previewRef.get_node("Borda").texture
 				var spriteMiolo = previewRef.get_node("Miolo").texture
@@ -158,11 +160,7 @@ func _on_Costurar_pressed():
 				numeroRetalhos += 1
 				
 				$"/root/Global".criarRetalho(corBorda, corMiolo, spriteBorda, spriteMiolo, label)
-				get_node("CosturaPopUp/Preview/Label").text = ""
 				numeroCaracteres = 0
-				
-				get_node("CosturaPopUp/Preview/Miolo").on_Costurar_pressed()
-				get_node("CosturaPopUp/Preview/Borda").on_Costurar_pressed()
 
 func _on_QuartoCostura_tree_entered():
 	$"/root/Global".firstSceneNode = self
@@ -175,3 +173,12 @@ func _input(event):
 func _on_AnimationPlayer_animation_finished(anim_name):
 	if (anim_name == "FadeOut"):
 		var _cenaChanged = get_tree().change_scene("res://Cenas/CenasMenu/Corredor.tscn")
+
+
+func _on_CosturaAnimation_animation_finished(anim_name):
+	if (anim_name == "SaveRetalho"):
+		get_node("CosturaPopUp/Preview/Miolo").on_Costurar_pressed()
+		get_node("CosturaPopUp/Preview/Borda").on_Costurar_pressed()
+		get_node("CosturaPopUp/Preview/Label").text = ""
+		get_node("CosturaPopUp/PalavrasPopUp").InstancePalavras()
+		get_node("CosturaPopUp/CosturaAnimation").play("ScaleRetalho")
