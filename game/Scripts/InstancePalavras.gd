@@ -124,9 +124,6 @@ func _on_Voltar_pressed():
 	if (!$"/root/TutorialGlobal".willDoTutorial || $"/root/TutorialGlobal".tutorialPos > 10):
 		self.hide()
 
-func InstancePalavras():
-	InstanciarPalavras()
-
 func _on_ButtonCartoes_pressed():
 	if ($"/root/TutorialGlobal".tutorialPos == 25 && $"/root/TutorialGlobal".willDoTutorial):
 		get_parent().get_node("Tutorial4").Tutorial26()
@@ -143,8 +140,6 @@ func _on_ButtonCartoes_pressed():
 	if (has_node("Retalhos/GridRetalhos")):
 		get_node("Retalhos/GridRetalhos").hide()
 
-func _on_Confirm_pressed():
-	InstanciarPalavras()
 func _on_Descartar2_pressed():
 	InstanciarPalavras()
 func _on_Descart_pressed():

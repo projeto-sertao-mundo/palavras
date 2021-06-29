@@ -61,3 +61,8 @@ func _on_Descart_pressed():
 func _on_AnimationPlayer_animation_finished(anim_name):
 	if (anim_name == "FadeOut"):
 		var _ignore = get_tree().change_scene("res://Cenas/CenasMenu/Corredor.tscn")
+
+func _on_Confirm_pressed():
+	get_node("RetalhoGrande").CreateRetalhoBag()
+	get_node("Confirm").visible = false
+	get_node("CartaoAnimation").play("Cartao")

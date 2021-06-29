@@ -180,5 +180,5 @@ func _on_CosturaAnimation_animation_finished(anim_name):
 		get_node("CosturaPopUp/Preview/Miolo").on_Costurar_pressed()
 		get_node("CosturaPopUp/Preview/Borda").on_Costurar_pressed()
 		get_node("CosturaPopUp/Preview/Label").text = ""
-		get_node("CosturaPopUp/PalavrasPopUp").InstancePalavras()
+		get_node("CosturaPopUp/PalavrasPopUp").InstanciarPalavras()
 		get_node("CosturaPopUp/CosturaAnimation").play("ScaleRetalho")

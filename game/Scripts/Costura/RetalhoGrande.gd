@@ -64,7 +64,7 @@ func _on_ExitButton_pressed():
 	setRetalhoFrase = false
 	self.get_parent().get_node("Confirm").visible = false
 
-func _on_Confirm_pressed():
+func CreateRetalhoBag():
 	if ($"/root/TutorialGlobal".tutorialPos == 24 || !$"/root/TutorialGlobal".willDoTutorial || $"/root/TutorialGlobal".FrasesCompleted):
 	
 		if ($"/root/TutorialGlobal".tutorialPos == 24):
@@ -76,10 +76,8 @@ func _on_Confirm_pressed():
 		var retalhos = []
 		for child in self.get_children():
 			if child is TextureButton:
-				print(child.name)
 				var retalhoNew = RetalhoToGlobal.new(child.get_node("Miolo").texture, child.get_node("Borda").texture, child.get_node("Miolo").modulate,  child.get_node("Borda").modulate, child.get_node("Label").text, child.get_rect().position, child.texture_normal) 
 				retalhos.append(retalhoNew)
-				child.free()
 		
 		self.get_parent().get_node("Confirm").visible = false
 		
@@ -87,3 +85,11 @@ func _on_Confirm_pressed():
 			$"/root/Global".criarFrase(self.texture, retalhos)
 		else:
 			$"/root/Global".editarFrase(self.texture, retalhos)
+
+
+func _on_CartaoAnimation_animation_finished(anim_name):
+	for child in self.get_children():
+			if child is TextureButton:
+				child.free()
+	
+	get_parent().get_node("PalavrasPopUp").InstanciarPalavras()
