@@ -67,9 +67,9 @@ func instanceRetalho(var ref, var nome, var scale):
 func moveRetalho():
 	if palavrasParentesco.has_node("retaio") && !mouseIn && !$"/root/Global".jaSetou && palavraInstanciada != null:
 		palavraInstanciada = palavrasParentesco.get_node("retaio")
-	if (clickPosition != null && palavraInstanciada != null):
+	if (clickPosition != null && palavraInstanciada != null && is_instance_valid(palavraInstanciada)):
 		palavraInstanciada.set_position(clickPosition)
-	if palavraInstanciada != null:
+	if palavraInstanciada != null && is_instance_valid(palavraInstanciada):
 		palavraInstanciada.visible = true
 
 func _input(event):

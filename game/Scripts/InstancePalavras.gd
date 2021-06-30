@@ -74,7 +74,7 @@ func InstanciarPalavras():
 
 func _on_Bolsa_pressed():
 	if ($"/root/TutorialGlobal".tutorialPos == 6 || $"/root/TutorialGlobal".CozinhaCompleted || !$"/root/TutorialGlobal".willDoTutorial):
-		self.show()
+		get_parent().get_node("BolsaJuice").play("BolsaIn")
 		if ($"/root/TutorialGlobal".tutorialPos ==  6):
 			get_parent().get_node("Tutorial2").Tutorial7()
 		InstanciarPalavras()
@@ -122,7 +122,7 @@ func _on_ButtonRetalhos_pressed():
 
 func _on_Voltar_pressed():
 	if (!$"/root/TutorialGlobal".willDoTutorial || $"/root/TutorialGlobal".tutorialPos > 10):
-		self.hide()
+		get_parent().get_node("BolsaJuice").play("BolsaOut")
 
 func _on_ButtonCartoes_pressed():
 	if ($"/root/TutorialGlobal".tutorialPos == 25 && $"/root/TutorialGlobal".willDoTutorial):

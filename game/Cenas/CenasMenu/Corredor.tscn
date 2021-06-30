@@ -92,6 +92,8 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id=4]
 resource_name = "CartoesPulse"
+length = 1.3
+loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Confecção Dos Retalhps:position")
 tracks/0/interp = 2
@@ -99,31 +101,19 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 1 ),
+"times": PoolRealArray( 0, 1.3 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 1364.38, 103.881 ), Vector2( 1364.38, 103.881 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Confecção Dos Retalhps:rotation_degrees")
+tracks/1/path = NodePath("Confecção Dos Retalhps:scale")
 tracks/1/interp = 2
 tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.3, 0.7 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 0,
-"values": [ 0.0, -5.0, 5.0 ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("Confecção Dos Retalhps:scale")
-tracks/2/interp = 2
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0, 0.5, 0.8, 1 ),
+"times": PoolRealArray( 0, 0.6, 1, 1.3 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
 "values": [ Vector2( 0.915365, 0.9263 ), Vector2( 1.29, 1.29 ), Vector2( 0.915365, 0.9263 ), Vector2( 0.915365, 0.9263 ) ]
@@ -131,6 +121,7 @@ tracks/2/keys = {
 
 [sub_resource type="Animation" id=5]
 resource_name = "CosturaPulse"
+loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Quarto de Costura:scale")
 tracks/0/interp = 2
@@ -141,23 +132,12 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.5, 0.8, 1 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 1, 1 ), Vector2( 1.4, 1.4 ), Vector2( 1, 1 ), Vector2( 1, 1 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Quarto de Costura:rotation_degrees")
-tracks/1/interp = 2
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 0.3, 0.7, 1 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
-"update": 0,
-"values": [ 0.0, -5.0, 5.0, 0.0 ]
+"values": [ Vector2( 1, 1 ), Vector2( 1.23, 1.23 ), Vector2( 1, 1 ), Vector2( 1, 1 ) ]
 }
 
 [sub_resource type="Animation" id=6]
 resource_name = "LetrasPulse"
+length = 1.3
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Busca das Letras:position")
@@ -166,7 +146,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.8, 1 ),
+"times": PoolRealArray( 0, 1.1, 1.3 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ Vector2( 384.053, 96.0234 ), Vector2( 384.053, 96.0234 ), Vector2( 384.053, 96.0234 ) ]
@@ -178,22 +158,10 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.5, 0.8, 1 ),
+"times": PoolRealArray( 0, 0.5, 0.9, 1.3 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
 "values": [ Vector2( 1, 1 ), Vector2( 1.4, 1.4 ), Vector2( 1, 1 ), Vector2( 1, 1 ) ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("Busca das Letras:rotation_degrees")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0.3, 0.7 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ -5.0, 5.0 ]
 }
 
 [sub_resource type="DynamicFont" id=7]
@@ -277,15 +245,17 @@ __meta__ = {
 
 [node name="Busca das Letras" type="Sprite" parent="."]
 position = Vector2( 384.053, 96.0234 )
+scale = Vector2( 1.09063, 1.09063 )
 texture = ExtResource( 5 )
 
 [node name="Quarto de Costura" type="Sprite" parent="."]
 position = Vector2( 864.256, 69.426 )
+scale = Vector2( 1.01962, 1.01962 )
 texture = ExtResource( 6 )
 
 [node name="Confecção Dos Retalhps" type="Sprite" parent="."]
 position = Vector2( 1364.38, 103.881 )
-scale = Vector2( 0.915365, 0.9263 )
+scale = Vector2( 1.22375, 1.22569 )
 texture = ExtResource( 1 )
 
 [node name="Tutorial1" type="Control" parent="."]
@@ -394,6 +364,7 @@ text = "Agora que você já tem os bordados, vou te ensinar
  a fazer os cartões com eles! Clique na porta indicada!"
 align = 1
 uppercase = true
+percent_visible = 0.0
 __meta__ = {
 "_edit_use_anchors_": false
 }

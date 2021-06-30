@@ -104,10 +104,10 @@ scale = Vector2( 1.2, 1.2 )
 texture = ExtResource( 5 )
 
 [node name="GridRetalhos" type="GridContainer" parent="Retalhos"]
-margin_left = -168.7
-margin_top = -113.8
-margin_right = 364.3
-margin_bottom = 369.2
+margin_left = -169.0
+margin_top = -109.0
+margin_right = 364.0
+margin_bottom = 365.0
 grow_horizontal = 0
 grow_vertical = 0
 rect_scale = Vector2( 0.55, 0.55 )
@@ -551,16 +551,17 @@ disabled = true
 texture_normal = ExtResource( 48 )
 
 [node name="Voltar" type="TextureButton" parent="."]
-margin_left = 2.0
-margin_top = 518.0
-margin_right = 125.0
-margin_bottom = 622.0
-rect_scale = Vector2( 1, 0.6 )
+margin_left = -7.51364
+margin_top = 513.243
+margin_right = 115.486
+margin_bottom = 617.243
+rect_scale = Vector2( 0.6, 0.6 )
 texture_normal = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true,
 "_edit_use_anchors_": false
 }
+
 [connection signal="pressed" from="ButtonPalavras" to="." method="_on_ButtonPalavras_pressed"]
 [connection signal="pressed" from="ButtonLetras" to="." method="_on_ButtonLetras_pressed"]
 [connection signal="pressed" from="ButtonRetalhos" to="." method="_on_ButtonRetalhos_pressed"]

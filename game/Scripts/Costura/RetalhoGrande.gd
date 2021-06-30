@@ -7,8 +7,10 @@ var clickPosition
 var palavrasParentesco
 var palavraInstanciada
 var sprite
+var canShow
 
 func _ready():
+	canShow = true
 	palavrasParentesco = self
 
 func instanceRetalho(var ref, var nome, var positionR, var _changeGlobal):
@@ -53,7 +55,8 @@ func _on_Area2D_area_exited(area):
 			get_parent().get_node("Tutorial4").Tutorial24()
 		
 		instanceRetalho($"/root/Global".retalhosFrasesRef, "retaio", clickPosition, false)
-		self.get_parent().get_node("Confirm").visible = true
+		if (canShow):
+			self.get_parent().get_node("Confirm").visible = true
 
 func _on_ExitButton_pressed():
 	if ($"/root/TutorialGlobal".FrasesCompleted || !$"/root/TutorialGlobal".willDoTutorial):
@@ -79,7 +82,6 @@ func CreateRetalhoBag():
 				var retalhoNew = RetalhoToGlobal.new(child.get_node("Miolo").texture, child.get_node("Borda").texture, child.get_node("Miolo").modulate,  child.get_node("Borda").modulate, child.get_node("Label").text, child.get_rect().position, child.texture_normal) 
 				retalhos.append(retalhoNew)
 		
-		self.get_parent().get_node("Confirm").visible = false
 		
 		if ($"/root/Global".cartaoEditando == null):
 			$"/root/Global".criarFrase(self.texture, retalhos)
@@ -93,3 +95,8 @@ func _on_CartaoAnimation_animation_finished(anim_name):
 				child.free()
 	
 	get_parent().get_node("PalavrasPopUp").InstanciarPalavras()
+	canShow = true
+
+
+func _on_CartaoAnimation_animation_started(anim_name):
+	canShow = false

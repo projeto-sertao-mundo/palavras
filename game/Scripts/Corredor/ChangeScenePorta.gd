@@ -89,26 +89,29 @@ func _on_Sim_pressed():
 
 
 func _on_PortaBuscaPalavras_mouse_entered():
-	var anim = $NamesAnimation.get_animation("LetrasPulse")
-	anim.set_loop(true)
-	$NamesAnimation.play("LetrasPulse")
+	if ($"/root/Global".contPalavrasEncontradas < 43 && ( ($"/root/TutorialGlobal".CozinhaCompleted && $"/root/TutorialGlobal".CosturaCompleted && $"/root/TutorialGlobal".FrasesCompleted) || !$"/root/TutorialGlobal".willDoTutorial || $"/root/TutorialGlobal".tutorialPos == 2)):
+		var anim = $NamesAnimation.get_animation("LetrasPulse")
+		anim.set_loop(true)
+		$NamesAnimation.play("LetrasPulse")
 
 func _on_PortaBuscaPalavras_mouse_exited():
 	$NamesAnimation.stop(true)
 
 
 func _on_PortaQuartoCostura_mouse_entered():
-	var anim = $NamesAnimation.get_animation("CosturaPulse")
-	anim.set_loop(true)
-	$NamesAnimation.play("CosturaPulse")
+	if (!$"/root/TutorialGlobal".willDoTutorial || $"/root/TutorialGlobal".tutorialPos == 12 || ($"/root/TutorialGlobal".CozinhaCompleted && $"/root/TutorialGlobal".CosturaCompleted && $"/root/TutorialGlobal".FrasesCompleted)):
+		var anim = $NamesAnimation.get_animation("CosturaPulse")
+		anim.set_loop(true)
+		$NamesAnimation.play("CosturaPulse")
 
 func _on_PortaQuartoCostura_mouse_exited():
 	$NamesAnimation.stop(true)
 
 func _on_PortaQuartoMontagens_mouse_entered():
-	var anim = $NamesAnimation.get_animation("CartoesPulse")
-	anim.set_loop(true)
-	$NamesAnimation.play("CartoesPulse")
+	if (($"/root/TutorialGlobal".CozinhaCompleted && $"/root/TutorialGlobal".CosturaCompleted && $"/root/TutorialGlobal".FrasesCompleted) || !$"/root/TutorialGlobal".willDoTutorial || $"/root/TutorialGlobal".tutorialPos == 21):
+		var anim = $NamesAnimation.get_animation("CartoesPulse")
+		anim.set_loop(true)
+		$NamesAnimation.play("CartoesPulse")
 
 func _on_PortaQuartoMontagens_mouse_exited():
 	$NamesAnimation.stop(true)

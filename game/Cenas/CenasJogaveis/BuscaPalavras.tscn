@@ -1,4 +1,4 @@
-[gd_scene load_steps=67 format=2]
+[gd_scene load_steps=69 format=2]
 
 [ext_resource path="res://Scripts/Cozinha/BuscaPalavras.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/SpritesFinais/Objetos/seta.png" type="Texture" id=2]
@@ -206,6 +206,38 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 0.5, 0.9, 1.2 )
 }
 
+[sub_resource type="Animation" id=8]
+resource_name = "BolsaIn"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/path = NodePath("PalavrasPopUp:rect_position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 459.562, -600 ), Vector2( 472.276, 140 ), Vector2( 472.276, 140 ) ]
+}
+
+[sub_resource type="Animation" id=9]
+resource_name = "BolsaOut"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/path = NodePath("PalavrasPopUp:rect_position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 472.276, 140 ), Vector2( 472.276, 160 ), Vector2( 472.276, -600 ) ]
+}
+
 [sub_resource type="DynamicFont" id=7]
 size = 33
 font_data = ExtResource( 56 )
@@ -222,6 +254,10 @@ anims/SetaMorfemas = SubResource( 4 )
 anims/SetaMorfemasDesc = SubResource( 5 )
 anims/SetaSair = SubResource( 6 )
 
+[node name="BolsaJuice" type="AnimationPlayer" parent="."]
+anims/BolsaIn = SubResource( 8 )
+anims/BolsaOut = SubResource( 9 )
+
 [node name="Cozinha" type="Sprite" parent="."]
 position = Vector2( 799.746, 451.378 )
 scale = Vector2( 1.25, 1.25 )
@@ -231,10 +267,10 @@ texture = ExtResource( 7 )
 script = ExtResource( 6 )
 
 [node name="Bolsa" type="TextureButton" parent="."]
-margin_left = 1459.23
-margin_top = 701.093
-margin_right = 1622.23
-margin_bottom = 939.093
+margin_left = 1458.07
+margin_top = 699.708
+margin_right = 1621.07
+margin_bottom = 937.708
 rect_scale = Vector2( 0.6, 0.6 )
 rect_pivot_offset = Vector2( 80, 120 )
 texture_normal = ExtResource( 3 )
@@ -858,7 +894,7 @@ __meta__ = {
 
 [node name="Ú" type="KinematicBody2D" parent="Letras"]
 modulate = Color( 0.733333, 0.733333, 0.74902, 1 )
-position = Vector2( 1475.43, 690.179 )
+position = Vector2( 1390.58, 589.77 )
 rotation = 0.197587
 scale = Vector2( 1, 0.679995 )
 script = ExtResource( 8 )
@@ -985,11 +1021,10 @@ __meta__ = {
 }
 
 [node name="PalavrasPopUp" parent="." instance=ExtResource( 4 )]
-visible = false
-margin_left = 459.562
-margin_top = 73.0513
-margin_right = 459.562
-margin_bottom = 73.0513
+margin_left = 472.276
+margin_top = -600.0
+margin_right = 472.276
+margin_bottom = -600.0
 
 [node name="ButtonRetalhos" parent="PalavrasPopUp" index="3"]
 visible = false

@@ -1,10 +1,10 @@
 extends TextureButton
 
-func ScaleButton():
-	set_scale(self.get_scale() + Vector2(0.15,0.15))
+func ScaleButton(var tamanhoX = 0.15, var tamanhoY = 0.15):
+	set_scale(self.get_scale() + Vector2(tamanhoX,tamanhoY))
 
-func UnScaleButton():
-	set_scale(self.get_scale() - Vector2(0.15,0.15))
+func UnScaleButton(var tamanhoX = 0.15, var tamanhoY = 0.15):
+	set_scale(self.get_scale() - Vector2(tamanhoX,tamanhoY))
 
 
 func _on_Sim_mouse_entered():
@@ -33,9 +33,9 @@ func _on_VoltarMenu_mouse_exited():
 	UnScaleButton()
 
 func _on_Bolsa_mouse_entered():
-	ScaleButton()
+	ScaleButton(0.08, 0.08)
 func _on_Bolsa_mouse_exited():
-	UnScaleButton()
+	UnScaleButton(0.08, 0.08)
 
 func _on_Voltar_mouse_exited():
 	UnScaleButton()
@@ -80,4 +80,7 @@ func _on_NaoDescartar_mouse_exited():
 func _on_Descart_mouse_entered():
 	ScaleButton()
 func _on_Descart_mouse_exited():
+	UnScaleButton()
+
+func _on_Confirm_pressed():
 	UnScaleButton()
