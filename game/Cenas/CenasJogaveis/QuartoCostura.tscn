@@ -354,7 +354,7 @@ tracks/1/keys = {
 "values": [ Vector2( 1.2, 1.2 ), Vector2( 0.5, 0.5 ), Vector2( 1e-05, 1e-05 ), Vector2( 1e-05, 1e-05 ), Vector2( 1e-05, 1e-05 ), Vector2( 1e-05, 1e-05 ), Vector2( 1e-05, 1e-05 ), Vector2( 1e-05, 1e-05 ) ]
 }
 
-[sub_resource type="Animation" id=14]
+[sub_resource type="Animation" id=11]
 resource_name = "ScaleRetalho"
 length = 0.96
 step = 0.01
@@ -383,14 +383,14 @@ tracks/1/keys = {
 "values": [ Vector2( 583.136, 300.909 ), Vector2( 583.136, 300.909 ) ]
 }
 
-[sub_resource type="RectangleShape2D" id=11]
+[sub_resource type="RectangleShape2D" id=12]
 extents = Vector2( 82.901, 76.4056 )
 
-[sub_resource type="DynamicFont" id=12]
+[sub_resource type="DynamicFont" id=13]
 size = 25
 font_data = ExtResource( 3 )
 
-[sub_resource type="DynamicFont" id=13]
+[sub_resource type="DynamicFont" id=14]
 size = 33
 font_data = ExtResource( 3 )
 
@@ -455,7 +455,7 @@ __meta__ = {
 [node name="CosturaAnimation" type="AnimationPlayer" parent="CosturaPopUp"]
 anims/CosturaPopUp = SubResource( 9 )
 anims/SaveRetalho = SubResource( 10 )
-anims/ScaleRetalho = SubResource( 14 )
+anims/ScaleRetalho = SubResource( 11 )
 
 [node name="Sprite" type="Sprite" parent="CosturaPopUp"]
 position = Vector2( 453.15, 265.153 )
@@ -753,7 +753,7 @@ script = ExtResource( 39 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CosturaPopUp/Preview/Area2D"]
 position = Vector2( -15, 10 )
-shape = SubResource( 11 )
+shape = SubResource( 12 )
 
 [node name="Label" type="Label" parent="CosturaPopUp/Preview"]
 modulate = Color( 0, 0, 0, 1 )
@@ -763,7 +763,7 @@ margin_right = 133.0
 margin_bottom = 70.0
 grow_vertical = 0
 rect_scale = Vector2( 0.75, 0.85 )
-custom_fonts/font = SubResource( 12 )
+custom_fonts/font = SubResource( 13 )
 align = 1
 valign = 1
 uppercase = true
@@ -852,10 +852,11 @@ margin_left = 336.0
 margin_top = 755.581
 margin_right = 1328.0
 margin_bottom = 875.581
-custom_fonts/font = SubResource( 13 )
+custom_fonts/font = SubResource( 14 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Aqui vamos montar nossos retalhos com
-as letras que coletamos na cozinha!"
+text = "Aqui vamos montar nossos bordados com
+as letras que coletamos na cozinha!
+"
 align = 1
 uppercase = true
 percent_visible = 0.0
@@ -866,12 +867,12 @@ __meta__ = {
 [node name="Label2" type="Label" parent="Tutorial3"]
 margin_left = 336.0
 margin_top = 752.0
-margin_right = 1328.0
+margin_right = 1337.0
 margin_bottom = 875.0
-custom_fonts/font = SubResource( 13 )
+custom_fonts/font = SubResource( 14 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Para escrever, basta clicar na letra ou morfema
-desejado que elá aparecerá no retalho à esquerda!"
+text = "Para escrever, basta clicar na letra ou no morfema desejado
+ que eles aparecerão no retalho à esquerda!"
 align = 1
 uppercase = true
 percent_visible = 0.0
@@ -884,9 +885,9 @@ margin_left = 336.0
 margin_top = 755.581
 margin_right = 1328.0
 margin_bottom = 875.581
-custom_fonts/font = SubResource( 13 )
+custom_fonts/font = SubResource( 14 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Você pode mudar o formato do retalho clicando
+text = "Você pode mudar o formato do bordado clicando
 em uma das formas disponíveis na mesa."
 align = 1
 uppercase = true
@@ -896,15 +897,15 @@ __meta__ = {
 }
 
 [node name="Label3" type="Label" parent="Tutorial3"]
-margin_left = 329.273
+margin_left = 329.0
 margin_top = 733.0
-margin_right = 1366.27
+margin_right = 1341.0
 margin_bottom = 888.0
-custom_fonts/font = SubResource( 13 )
+custom_fonts/font = SubResource( 14 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Você também pode colorir os seus retalhos!
 Basta clicar na cor desejada e arrastar para o retalho!
-Lembrando que você pode colorir tanto a borda
+ Lembre-se de que você pode colorir tanto a borda 
 quanto o centro do retalho!"
 align = 1
 uppercase = true
@@ -916,12 +917,12 @@ __meta__ = {
 [node name="Label4" type="Label" parent="Tutorial3"]
 margin_left = 336.0
 margin_top = 751.0
-margin_right = 1328.0
+margin_right = 1340.0
 margin_bottom = 876.0
-custom_fonts/font = SubResource( 13 )
+custom_fonts/font = SubResource( 14 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Se você errou alguma letra, pode apagar
-utilizando o botão \"apagar\"."
+text = "Se você errou alguma letra ou morfema,
+ pode apagar usando o botão \"apagar\"."
 align = 1
 uppercase = true
 percent_visible = 0.0
@@ -930,15 +931,15 @@ __meta__ = {
 }
 
 [node name="Label5" type="Label" parent="Tutorial3"]
-margin_left = 336.0
+margin_left = 332.0
 margin_top = 742.0
-margin_right = 1328.0
+margin_right = 1330.0
 margin_bottom = 875.0
-custom_fonts/font = SubResource( 13 )
+custom_fonts/font = SubResource( 14 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Quando você terminar o seu retalho,
-basta clicar em \"confirmar\" para armazená-lo
-na sua bolsa!"
+text = "Quando você terminar, basta clicar em \"confirmar\" para guardar
+seu bordado na bolsa!
+"
 align = 1
 uppercase = true
 percent_visible = 0.0
@@ -951,9 +952,9 @@ margin_left = 336.0
 margin_top = 757.0
 margin_right = 1328.0
 margin_bottom = 875.0
-custom_fonts/font = SubResource( 13 )
+custom_fonts/font = SubResource( 14 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Seu retalho ficará armazenado na aba \"retalhos\"."
+text = "Seu bordado ficará guardado na aba \"bordados\"."
 align = 1
 uppercase = true
 percent_visible = 0.0
@@ -963,15 +964,13 @@ __meta__ = {
 
 [node name="Label8" type="Label" parent="Tutorial3"]
 margin_left = 336.0
-margin_top = 734.0
-margin_right = 1328.0
+margin_top = 756.0
+margin_right = 1324.0
 margin_bottom = 909.0
-custom_fonts/font = SubResource( 13 )
+custom_fonts/font = SubResource( 14 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Caso você não goste do resultado final do seu
-retalho, pode arrastar ele para a lixeirinha que fica no
-centro do quarto, ok?
-Agora divirta-se!"
+text = "Caso não goste do bordado, você pode arrastá-lo até a lixeirinha
+ que fica no centro do quarto, está bem? Agora divirta-se!"
 align = 1
 uppercase = true
 percent_visible = 0.0
@@ -983,6 +982,7 @@ __meta__ = {
 
 [node name="Whoosh" type="AudioStreamPlayer2D" parent="Audio"]
 stream = ExtResource( 46 )
+
 [connection signal="tree_entered" from="." to="." method="_on_QuartoCostura_tree_entered"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 [connection signal="area_entered" from="Lixeira/Area2D" to="Lixeira" method="_on_Area2D_area_entered"]

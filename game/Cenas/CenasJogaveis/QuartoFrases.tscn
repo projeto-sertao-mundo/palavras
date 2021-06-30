@@ -156,7 +156,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 0.5, 1, 1.2 )
 }
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=6]
 resource_name = "Cartao"
 length = 1.05
 step = 0.01
@@ -197,10 +197,10 @@ tracks/2/keys = {
 "values": [ true, false ]
 }
 
-[sub_resource type="RectangleShape2D" id=6]
+[sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 86.3473, 50.4913 )
 
-[sub_resource type="DynamicFont" id=7]
+[sub_resource type="DynamicFont" id=8]
 size = 32
 font_data = ExtResource( 37 )
 
@@ -221,7 +221,7 @@ anims/SetaConfirmar = SubResource( 4 )
 anims/SetaRetalhos = SubResource( 5 )
 
 [node name="CartaoAnimation" type="AnimationPlayer" parent="."]
-anims/Cartao = SubResource( 8 )
+anims/Cartao = SubResource( 6 )
 
 [node name="Interface" type="Sprite" parent="."]
 position = Vector2( 804.517, 454.068 )
@@ -595,7 +595,7 @@ __meta__ = {
 [node name="Area2D" type="Area2D" parent="RetalhoGrande"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RetalhoGrande/Area2D"]
-shape = SubResource( 6 )
+shape = SubResource( 7 )
 
 [node name="Confirm" type="TextureButton" parent="."]
 visible = false
@@ -726,12 +726,12 @@ texture = ExtResource( 7 )
 [node name="Label1" type="Label" parent="Tutorial4"]
 margin_left = 342.0
 margin_top = 670.0
-margin_right = 1256.0
+margin_right = 1267.0
 margin_bottom = 783.0
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 8 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Aqui temos alguns cartões. Você pode
-visualizá-los melhor ao clicar em qualquer um deles."
+text = "Aqui temos alguns cartões. Você pode visualizá-los melhor,
+ clicando em qualquer um deles."
 align = 1
 uppercase = true
 percent_visible = 0.0
@@ -741,15 +741,14 @@ __meta__ = {
 
 [node name="Label2" type="Label" parent="Tutorial4"]
 margin_left = 342.0
-margin_top = 658.0
-margin_right = 1256.0
+margin_top = 669.0
+margin_right = 1264.0
 margin_bottom = 823.0
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 8 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Agora podemos arrastar os retalhos que
-produzimos no quarto de costura para o cartão!
-Clique no retalho e arraste para qualquer
-área do cartão."
+text = "Agora podemos arrastar os bordados
+ produzidos no quarto de costura para o cartão!
+ Clique no bordado e arraste-o  para qualquer área do cartão."
 align = 1
 uppercase = true
 percent_visible = 0.0
@@ -757,13 +756,13 @@ percent_visible = 0.0
 [node name="Label3" type="Label" parent="Tutorial4"]
 margin_left = 342.0
 margin_top = 670.0
-margin_right = 1256.0
+margin_right = 1262.0
 margin_bottom = 783.0
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 8 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Quando o retalho estiver posicionado da
-forma que você quer, basta clicar no botão
-\"confirmar\", e o seu cartão estará pronto!"
+text = "Quando o bordado estiver posicionado no lugar que você quer,
+ basta clicar no botão \"confirmar\", 
+e o seu cartão estará pronto!"
 align = 1
 uppercase = true
 percent_visible = 0.0
@@ -773,13 +772,13 @@ __meta__ = {
 
 [node name="Label6" type="Label" parent="Tutorial4"]
 margin_left = 342.0
-margin_top = 682.0
-margin_right = 1256.0
-margin_bottom = 783.0
-custom_fonts/font = SubResource( 7 )
+margin_top = 690.0
+margin_right = 1263.0
+margin_bottom = 784.0
+custom_fonts/font = SubResource( 8 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Seus cartões ficarão armazenados na aba
-\"cartões\"."
+text = "Seus cartões ficarão guardados na 
+aba \"cartões\". "
 align = 1
 uppercase = true
 percent_visible = 0.0
@@ -792,7 +791,7 @@ margin_left = 342.0
 margin_top = 680.0
 margin_right = 1249.0
 margin_bottom = 783.0
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 8 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Quando estiver na aba de cartões, 
 você pode visualizar um cartão ao clicar nele."
@@ -806,12 +805,12 @@ __meta__ = {
 [node name="Label4" type="Label" parent="Tutorial4"]
 margin_left = 342.0
 margin_top = 670.0
-margin_right = 1256.0
+margin_right = 1261.0
 margin_bottom = 783.0
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 8 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Caso não goste de um cartão, você
-pode apagá-lo clicando no botão \"descartar\"."
+text = "Caso não goste do resultado,
+ você pode apagar o cartão clicando no botão \"descartar\". "
 align = 1
 uppercase = true
 percent_visible = 0.0
@@ -821,22 +820,27 @@ __meta__ = {
 
 [node name="Label5" type="Label" parent="Tutorial4"]
 margin_left = 342.0
-margin_top = 670.0
-margin_right = 1256.0
-margin_bottom = 783.0
-custom_fonts/font = SubResource( 7 )
+margin_top = 660.0
+margin_right = 1254.0
+margin_bottom = 807.0
+custom_fonts/font = SubResource( 8 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Isto é tudo! Espero ter ajudado! Explore a sua
-criatividade! você pode usar mais de um retalho por
-cartão! São muitas possibilidades! Boa sorte!"
+text = "Espero ter ajudado! Agora é sua vez de explorar as
+ infinitas  possibilidades de combinar letras e morfemas 
+para criar seus bordados. 
+Você pode usar mais de um bordado por cartão! Boa sorte!"
 align = 1
 uppercase = true
 percent_visible = 0.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Audio" type="Node" parent="."]
 
 [node name="Whoosh" type="AudioStreamPlayer2D" parent="Audio"]
 stream = ExtResource( 38 )
+
 [connection signal="tree_entered" from="." to="." method="_on_QuartoFrases_tree_entered"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 [connection signal="animation_finished" from="CartaoAnimation" to="RetalhoGrande" method="_on_CartaoAnimation_animation_finished"]

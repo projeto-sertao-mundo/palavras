@@ -90,7 +90,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 0.4, 0.9, 1.2 )
 }
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=4]
 resource_name = "CartoesPulse"
 tracks/0/type = "value"
 tracks/0/path = NodePath("Confecção Dos Retalhps:position")
@@ -129,7 +129,7 @@ tracks/2/keys = {
 "values": [ Vector2( 0.915365, 0.9263 ), Vector2( 1.29, 1.29 ), Vector2( 0.915365, 0.9263 ), Vector2( 0.915365, 0.9263 ) ]
 }
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=5]
 resource_name = "CosturaPulse"
 tracks/0/type = "value"
 tracks/0/path = NodePath("Quarto de Costura:scale")
@@ -156,7 +156,7 @@ tracks/1/keys = {
 "values": [ 0.0, -5.0, 5.0, 0.0 ]
 }
 
-[sub_resource type="Animation" id=10]
+[sub_resource type="Animation" id=6]
 resource_name = "LetrasPulse"
 loop = true
 tracks/0/type = "value"
@@ -196,7 +196,7 @@ tracks/2/keys = {
 "values": [ -5.0, 5.0 ]
 }
 
-[sub_resource type="DynamicFont" id=4]
+[sub_resource type="DynamicFont" id=7]
 size = 38
 use_filter = true
 font_data = ExtResource( 10 )
@@ -214,9 +214,9 @@ anims/SetaCartoes = SubResource( 2 )
 anims/SetaCostura = SubResource( 3 )
 
 [node name="NamesAnimation" type="AnimationPlayer" parent="."]
-anims/CartoesPulse = SubResource( 8 )
-anims/CosturaPulse = SubResource( 9 )
-anims/LetrasPulse = SubResource( 10 )
+anims/CartoesPulse = SubResource( 4 )
+anims/CosturaPulse = SubResource( 5 )
+anims/LetrasPulse = SubResource( 6 )
 
 [node name="corredor" type="Sprite" parent="."]
 position = Vector2( 798.892, 449.981 )
@@ -336,7 +336,7 @@ margin_left = 312.0
 margin_top = 726.0
 margin_right = 1223.0
 margin_bottom = 852.0
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 7 )
 text = "Olá! Seja bem vindo(a) à minha humilde casinha!
 Meu nome é \"fulana\", mas o pessoal aqui
 carinhosamente me chama de vó \"ciclana\"."
@@ -351,12 +351,13 @@ __meta__ = {
 modulate = Color( 0, 0, 0, 1 )
 margin_left = 265.0
 margin_top = 726.0
-margin_right = 1266.0
-margin_bottom = 852.0
-custom_fonts/font = SubResource( 4 )
-text = "Gostaria de um cafézinho?
-Vem comigo, deixa eu te apresentar a minha cozinha!
-Para entrar, basta clicar na porta indicada."
+margin_right = 1275.0
+margin_bottom = 891.0
+custom_fonts/font = SubResource( 7 )
+text = "Você sabe costurar? Já fez um bordado? 
+Não? Então, chega aqui na minha cozinha que eu te explico!
+Para entrar, basta clicar na porta indicada.
+"
 align = 1
 uppercase = true
 percent_visible = 0.0
@@ -367,14 +368,14 @@ __meta__ = {
 [node name="Label3" type="Label" parent="Tutorial1"]
 modulate = Color( 0, 0, 0, 1 )
 margin_left = 265.0
-margin_top = 710.0
-margin_right = 1266.0
+margin_top = 713.0
+margin_right = 1281.0
 margin_bottom = 878.0
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 7 )
 text = "Já encontrou algumas letras né?
-Agora vou te apresentar meu quartinho de costura
-pra você brincar! Vem comigo! Clique na
-segunda porta para entrar no quarto de costura."
+Agora vou te apresentar meu quartinho de costura! 
+Vem comigo! Clique na porta do quarto de costura.
+"
 align = 1
 uppercase = true
 percent_visible = 0.0
@@ -386,15 +387,13 @@ __meta__ = {
 modulate = Color( 0, 0, 0, 1 )
 margin_left = 265.0
 margin_top = 731.0
-margin_right = 1266.0
+margin_right = 1279.0
 margin_bottom = 878.0
-custom_fonts/font = SubResource( 4 )
-text = "Agora que você já tem retalhos prontos,
-vou te ensinar a colocar eles nos cartões!
-Clique na porta indicada!"
+custom_fonts/font = SubResource( 7 )
+text = "Agora que você já tem os bordados, vou te ensinar
+ a fazer os cartões com eles! Clique na porta indicada!"
 align = 1
 uppercase = true
-percent_visible = 0.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -481,6 +480,7 @@ __meta__ = {
 [node name="Whoosh" type="AudioStreamPlayer2D" parent="Audio"]
 stream = ExtResource( 16 )
 volume_db = -5.0
+
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 [connection signal="mouse_entered" from="VoltarMenu" to="VoltarMenu" method="_on_VoltarMenu_mouse_entered"]
 [connection signal="mouse_exited" from="VoltarMenu" to="VoltarMenu" method="_on_VoltarMenu_mouse_exited"]
@@ -496,8 +496,8 @@ volume_db = -5.0
 [connection signal="pressed" from="PortaQuartoMontagens" to="." method="_on_PortaQuartoMontagens_pressed"]
 [connection signal="mouse_entered" from="TutorialPergunta/Sim" to="TutorialPergunta/Sim" method="_on_Sim_mouse_entered"]
 [connection signal="mouse_exited" from="TutorialPergunta/Sim" to="TutorialPergunta/Sim" method="_on_Sim_mouse_exited"]
-[connection signal="pressed" from="TutorialPergunta/Sim" to="." method="_on_Sim_pressed"]
 [connection signal="pressed" from="TutorialPergunta/Sim" to="Tutorial1" method="_on_Sim_pressed"]
+[connection signal="pressed" from="TutorialPergunta/Sim" to="." method="_on_Sim_pressed"]
 [connection signal="mouse_entered" from="TutorialPergunta/Nao" to="TutorialPergunta/Nao" method="_on_Nao_mouse_entered"]
 [connection signal="mouse_exited" from="TutorialPergunta/Nao" to="TutorialPergunta/Nao" method="_on_Nao_mouse_exited"]
 [connection signal="pressed" from="TutorialPergunta/Nao" to="." method="_on_Nao_pressed"]
