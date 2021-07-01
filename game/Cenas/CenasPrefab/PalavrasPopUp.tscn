@@ -51,7 +51,7 @@
 [ext_resource path="res://Fonts/xilosa_.ttf" type="DynamicFontData" id=49]
 
 [sub_resource type="DynamicFont" id=1]
-size = 24
+size = 20
 font_data = ExtResource( 49 )
 
 [node name="PalavrasPopUp" type="Control"]
@@ -124,6 +124,22 @@ position = Vector2( 293.024, 280.117 )
 scale = Vector2( 1.20686, 1.2 )
 texture = ExtResource( 4 )
 
+[node name="Label" type="Label" parent="Palavras"]
+modulate = Color( 0, 0, 0, 1 )
+margin_left = -198.0
+margin_top = 106.0
+margin_right = 217.0
+margin_bottom = 195.0
+custom_fonts/font = SubResource( 1 )
+text = "Pedacinhos das palavras, cheios de 
+significado, que se combinam para construir}
+ palavras, com infinitas possibilidades.
+"
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="GridContainer" type="GridContainer" parent="Palavras"]
 margin_left = -161.0
 margin_top = -141.0
@@ -192,20 +208,6 @@ margin_bottom = 138.0
 disabled = true
 texture_normal = ExtResource( 6 )
 isPrefixo = false
-
-[node name="Label" type="Label" parent="Palavras"]
-modulate = Color( 0, 0, 0, 1 )
-margin_left = -202.196
-margin_top = 103.126
-margin_right = 233.804
-margin_bottom = 181.126
-custom_fonts/font = SubResource( 1 )
-text = "MORFEMAS A BLALABLA MAISMORFEMAS 
-TICO TICO BLABLA BLABL EU NAO SEI MAIS
-O QUE ESCREVER BLABLALBLABLALBLBLBA"
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Letras" type="Sprite" parent="."]
 position = Vector2( 291.022, 278.619 )

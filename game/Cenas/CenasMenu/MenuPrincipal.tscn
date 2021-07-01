@@ -85,10 +85,10 @@ tracks/6/loop_wrap = true
 tracks/6/imported = false
 tracks/6/enabled = true
 tracks/6/keys = {
-"times": PoolRealArray( 4.1, 4.8, 5 ),
+"times": PoolRealArray( 4, 4.7, 5 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 1e-05, 1e-05 ), Vector2( 1, 1 ), Vector2( 1, 1 ) ]
+"values": [ Vector2( 1e-05, 1e-05 ), Vector2( 1.5, 1.5 ), Vector2( 1.5, 1.5 ) ]
 }
 tracks/7/type = "value"
 tracks/7/path = NodePath("Logo escolhida:rotation_degrees")
@@ -97,7 +97,7 @@ tracks/7/loop_wrap = true
 tracks/7/imported = false
 tracks/7/enabled = true
 tracks/7/keys = {
-"times": PoolRealArray( 4, 4.3, 4.8, 5 ),
+"times": PoolRealArray( 3.9, 4.2, 4.7, 5 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
 "values": [ 0.0, -5.0, 5.0, 0.0 ]
@@ -124,6 +124,7 @@ __meta__ = {
 
 [node name="Logo escolhida" type="Sprite" parent="."]
 position = Vector2( 819.834, 289.647 )
+scale = Vector2( 1.5, 1.5 )
 texture = ExtResource( 8 )
 
 [node name="Jogar" type="TextureButton" parent="."]
@@ -202,11 +203,13 @@ __meta__ = {
 }
 
 [node name="Logo espaço 960x540" type="Sprite" parent="."]
+visible = false
 position = Vector2( 801.654, 451.239 )
 scale = Vector2( 1.67541, 1.67884 )
 texture = ExtResource( 10 )
 
 [node name="LOCK" type="Control" parent="."]
+visible = false
 margin_left = 1.0
 margin_right = 1601.0
 margin_bottom = 905.0

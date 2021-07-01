@@ -141,7 +141,7 @@ func _on_RetanguloPe_pressed():
 	mudarSprite("Retangulo De Pe Miolo","Retangulo De Pe Borda")
 
 func _on_Costurar_pressed():
-	if ($"/root/TutorialGlobal".tutorialPos == 18 || !$"/root/TutorialGlobal".willDoTutorial || $"/root/TutorialGlobal".CosturaCompleted):
+	if (!$"/root/TutorialGlobal".willDoTutorial || $"/root/TutorialGlobal".CosturaCompleted):
 		if ($"/root/TutorialGlobal".tutorialPos == 18):
 			get_node("Tutorial3").Tutorial19()
 		

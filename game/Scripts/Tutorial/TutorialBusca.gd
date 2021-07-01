@@ -92,7 +92,7 @@ func Tutorial10():
 		dialogo6.percent_visible = 0
 		dialogo7.percent_visible = 0
 		get_node("SetaMorfemasDesc").visible = false
-		get_parent().get_node("PalavrasPopUp").visible = false
+		get_parent().get_node("BolsaJuice").play("BolsaOut")
 
 func Tutorial11():
 	if (auxD == 10):

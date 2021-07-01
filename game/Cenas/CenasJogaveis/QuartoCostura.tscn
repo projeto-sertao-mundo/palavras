@@ -904,7 +904,7 @@ margin_bottom = 888.0
 custom_fonts/font = SubResource( 14 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Você também pode colorir os seus retalhos!
-Basta clicar na cor desejada e arrastar para o retalho!
+Basta clicar na cor desejada e arrastar para o bordado!
  Lembre-se de que você pode colorir tanto a borda 
 quanto o centro do retalho!"
 align = 1

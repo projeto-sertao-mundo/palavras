@@ -206,7 +206,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 0.5, 0.9, 1.2 )
 }
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=7]
 resource_name = "BolsaIn"
 length = 0.7
 tracks/0/type = "value"
@@ -219,10 +219,10 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.4, 0.7 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 459.562, -600 ), Vector2( 472.276, 140 ), Vector2( 472.276, 140 ) ]
+"values": [ Vector2( 459.562, -600 ), Vector2( 472.276, 70 ), Vector2( 472.276, 70 ) ]
 }
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=8]
 resource_name = "BolsaOut"
 length = 0.7
 tracks/0/type = "value"
@@ -235,10 +235,10 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.4, 0.7 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 472.276, 140 ), Vector2( 472.276, 160 ), Vector2( 472.276, -600 ) ]
+"values": [ Vector2( 472.276, 70 ), Vector2( 472.276, 90 ), Vector2( 472.276, -600 ) ]
 }
 
-[sub_resource type="DynamicFont" id=7]
+[sub_resource type="DynamicFont" id=9]
 size = 33
 font_data = ExtResource( 56 )
 
@@ -255,8 +255,8 @@ anims/SetaMorfemasDesc = SubResource( 5 )
 anims/SetaSair = SubResource( 6 )
 
 [node name="BolsaJuice" type="AnimationPlayer" parent="."]
-anims/BolsaIn = SubResource( 8 )
-anims/BolsaOut = SubResource( 9 )
+anims/BolsaIn = SubResource( 7 )
+anims/BolsaOut = SubResource( 8 )
 
 [node name="Cozinha" type="Sprite" parent="."]
 position = Vector2( 799.746, 451.378 )
@@ -267,10 +267,10 @@ texture = ExtResource( 7 )
 script = ExtResource( 6 )
 
 [node name="Bolsa" type="TextureButton" parent="."]
-margin_left = 1458.07
-margin_top = 699.708
-margin_right = 1621.07
-margin_bottom = 937.708
+margin_left = 1459.23
+margin_top = 701.093
+margin_right = 1622.23
+margin_bottom = 939.093
 rect_scale = Vector2( 0.6, 0.6 )
 rect_pivot_offset = Vector2( 80, 120 )
 texture_normal = ExtResource( 3 )
@@ -1106,7 +1106,7 @@ margin_left = 3.99399
 margin_top = -16.004
 margin_right = 3.0011
 margin_bottom = 23.008
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 9 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Aqui, vamos procurar letras para montar as palavras do 
 nosso bordado! 
@@ -1128,7 +1128,7 @@ margin_left = 3.99399
 margin_top = 26.996
 margin_right = -2.9989
 margin_bottom = -52.992
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 9 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Agora é com você. Já encontrou alguma letra?"
 align = 1
@@ -1147,7 +1147,7 @@ margin_left = 3.99399
 margin_top = 15.996
 margin_right = -3.9989
 margin_bottom = -18.992
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 9 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Legal! Você encontrou a sua primeira letra! 
 Ela agora ficará guardada na sua bolsa!"
@@ -1167,7 +1167,7 @@ margin_left = 3.99399
 margin_top = 7.99591
 margin_right = -10.999
 margin_bottom = 22.008
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 9 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Clique na bolsa para saber quantas
 letras você já coletou!"
@@ -1187,7 +1187,7 @@ margin_left = 3.99399
 margin_top = -5.00409
 margin_right = -10.999
 margin_bottom = 23.008
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 9 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Nesta bolsa, ficarão guardadas  todas
 as letras que você encontrar!
@@ -1208,7 +1208,7 @@ margin_left = 4.9985
 margin_top = -17.6647
 margin_right = -7.99451
 margin_bottom = 13.3474
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 9 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Agora vamos falar dos morfemas. Morfemas são pedacinhos
  de palavras que também estão escondidos por aqui!
@@ -1230,7 +1230,7 @@ margin_left = 3.99399
 margin_top = 7.99591
 margin_right = -10.999
 margin_bottom = 23.008
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 9 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Só pra você não esquecer o que é um morfema,
 eu coloquei um lembrete dentro da bolsa pra você!"
@@ -1250,7 +1250,7 @@ margin_left = -7.00601
 margin_top = -16.004
 margin_right = 112.001
 margin_bottom = 23.008
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 9 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = " Agora é com você! Encontre o maior número de letras 
 e morfemas possível! 
@@ -1272,7 +1272,7 @@ margin_left = 3.99399
 margin_top = -4.00397
 margin_right = -17.9989
 margin_bottom = 23.008
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 9 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = " Só lembrando que você pode sair da cozinha e
  voltar nela quando quiser, clicando na seta à sua esquerda!"

@@ -133,6 +133,8 @@ func _input(event):
 			Tutorial14()
 		elif ($"/root/TutorialGlobal".tutorialPos == 17):
 			Tutorial18()
+		elif ($"/root/TutorialGlobal".tutorialPos == 18):
+			Tutorial19()
 		elif ($"/root/TutorialGlobal".tutorialPos == 19):
 			Tutorial20()
 		elif ($"/root/TutorialGlobal".tutorialPos == 20):
