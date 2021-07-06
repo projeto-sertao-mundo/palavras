@@ -27,10 +27,12 @@ func _process(_delta):
 			$"/root/Global".adicionarItemBolsaPalavra(self.name)
 		$"/root/Global".AdicionarPalavraEncontrada()
 		get_parent().get_parent().get_node("AnimationPlayer").play("BolsaShake")
+		get_parent().get_parent().get_node("Lock").visible = false
 		self.free()
 
 func _on_TextureButton_pressed():
 	if ($"/root/TutorialGlobal".tutorialPos == 4 || !$"/root/TutorialGlobal".willDoTutorial || $"/root/TutorialGlobal".CozinhaCompleted):
 		set_process(true)
+		get_parent().get_parent().get_node("Lock").visible = true
 		if ($"/root/TutorialGlobal".tutorialPos == 4):
 			get_parent().get_parent().get_node("Tutorial2").Tutorial5()

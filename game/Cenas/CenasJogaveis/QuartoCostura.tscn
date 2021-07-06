@@ -458,24 +458,24 @@ anims/SaveRetalho = SubResource( 10 )
 anims/ScaleRetalho = SubResource( 11 )
 
 [node name="Sprite" type="Sprite" parent="CosturaPopUp"]
-position = Vector2( 453.15, 265.153 )
+position = Vector2( 450, 265.153 )
 scale = Vector2( 1.09331, 1.06263 )
 texture = ExtResource( 12 )
 
 [node name="Cores" type="Sprite" parent="CosturaPopUp"]
-position = Vector2( 587.067, 105.859 )
+position = Vector2( 570, 105.859 )
 scale = Vector2( 0.717733, 0.659509 )
 texture = ExtResource( 10 )
 
 [node name="FormatoRetalhos" type="Sprite" parent="CosturaPopUp"]
-position = Vector2( 336.37, 217.993 )
+position = Vector2( 304.347, 217.993 )
 scale = Vector2( 0.8051, 1.02509 )
 texture = ExtResource( 17 )
 
 [node name="Costurar" type="TextureButton" parent="CosturaPopUp"]
-margin_left = 412.057
+margin_left = 379.978
 margin_top = 446.202
-margin_right = 567.059
+margin_right = 534.98
 margin_bottom = 520.202
 rect_scale = Vector2( 0.9, 0.9 )
 rect_pivot_offset = Vector2( 75, 38 )
@@ -486,9 +486,9 @@ __meta__ = {
 }
 
 [node name="Recomecar" type="TextureButton" parent="CosturaPopUp"]
-margin_left = 553.25
+margin_left = 536.0
 margin_top = 442.0
-margin_right = 710.25
+margin_right = 693.0
 margin_bottom = 517.0
 rect_scale = Vector2( 0.9, 0.9 )
 rect_pivot_offset = Vector2( 78, 38 )
@@ -499,8 +499,8 @@ __meta__ = {
 }
 
 [node name="Cor" type="Control" parent="CosturaPopUp"]
-margin_left = -32.835
-margin_right = 7.16504
+margin_left = -50.0
+margin_right = -10.0
 margin_bottom = 40.0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -585,8 +585,7 @@ __meta__ = {
 [node name="CoresParent" type="Node" parent="CosturaPopUp/Cor"]
 
 [node name="Formas" type="Control" parent="CosturaPopUp"]
-margin_left = 31.85
-margin_right = 71.85
+margin_right = 40.0
 margin_bottom = 40.0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -721,10 +720,10 @@ position = Vector2( -62.8754, 427.458 )
 texture = ExtResource( 30 )
 
 [node name="PalavrasPopUp" parent="CosturaPopUp" instance=ExtResource( 6 )]
-margin_left = 989.372
-margin_top = -16.9373
-margin_right = 989.372
-margin_bottom = -16.9373
+margin_left = 1020.41
+margin_top = -16.937
+margin_right = 1020.41
+margin_bottom = -16.937
 
 [node name="Voltar" parent="CosturaPopUp/PalavrasPopUp" index="7"]
 visible = false

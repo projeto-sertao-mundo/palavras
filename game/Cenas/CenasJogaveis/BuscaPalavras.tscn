@@ -1316,6 +1316,16 @@ texture = ExtResource( 2 )
 [node name="Whoosh" type="AudioStreamPlayer2D" parent="Audio"]
 stream = ExtResource( 58 )
 
+[node name="Lock" type="Control" parent="."]
+visible = false
+margin_left = -19.0
+margin_top = -15.0
+margin_right = 1623.0
+margin_bottom = 920.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [connection signal="tree_entered" from="." to="." method="_on_BuscaPalavras_tree_entered"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 [connection signal="mouse_entered" from="Bolsa" to="Bolsa" method="_on_Bolsa_mouse_entered"]

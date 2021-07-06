@@ -46,7 +46,7 @@ func _process(_delta):
 				MudarLabelPreview(palavra.name, palavra.name.length())
 				$"/root/Global".podeSetar = false
 				
-		palavra.free()
+		#palavra.free()
 		$"/root/Global".jaSetou = true
 	
 
