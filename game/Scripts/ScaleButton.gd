@@ -81,6 +81,10 @@ func _on_Descart_mouse_entered():
 	ScaleButton()
 func _on_Descart_mouse_exited():
 	UnScaleButton()
-
 func _on_Confirm_pressed():
+	UnScaleButton()
+
+func _on_Descart_pressed():
+	UnScaleButton()
+func _on_NaoDescartar_pressed():
 	UnScaleButton()

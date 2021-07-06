@@ -65,16 +65,12 @@ func instanceRetalho(var ref, var nome, var scale):
 		palavraInstanciada.get_node("Label").text = self.get_node("Label").text
 
 func moveRetalho():
-	var aux = "null"
-	if (has_node(self.get_parent().get_parent().get_path())):
-		aux = self.get_parent().get_parent().name
-	if (aux != "GridCartões"):
-		if palavrasParentesco.has_node("retaio") && !mouseIn && !$"/root/Global".jaSetou && palavraInstanciada != null:
-			palavraInstanciada = palavrasParentesco.get_node("retaio")
-		if (clickPosition != null && palavraInstanciada != null && is_instance_valid(palavraInstanciada)):
-				palavraInstanciada.set_position(clickPosition)
-		if palavraInstanciada != null && is_instance_valid(palavraInstanciada):
-				palavraInstanciada.visible = true
+	if palavrasParentesco.has_node("retaio") && !mouseIn && !$"/root/Global".jaSetou && palavraInstanciada != null:
+		palavraInstanciada = palavrasParentesco.get_node("retaio")
+	if (clickPosition != null && palavraInstanciada != null && is_instance_valid(palavraInstanciada)):
+		palavraInstanciada.set_position(clickPosition)
+	if palavraInstanciada != null && is_instance_valid(palavraInstanciada):
+		palavraInstanciada.visible = true
 
 func _input(event):
 	if event is InputEventScreenDrag:
