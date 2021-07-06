@@ -2,6 +2,8 @@ extends Node2D
 
 export (String) var SceneName
 var aux = false
+var lettersClick = 0
+var lettersReach = 0
 
 func _process(delta):
 	if $"/root/Global".contPalavrasEncontradas == 43 && !aux:
@@ -10,10 +12,11 @@ func _process(delta):
 		get_node("Finish").visible = true
 
 func _on_Voltar_pressed():
-	if (!$"/root/TutorialGlobal".willDoTutorial  || $"/root/TutorialGlobal".CozinhaCompleted):
-		get_node("AnimationPlayer").play("FadeOut")
-		if (!$Audio/Whoosh.playing):
-			$Audio/Whoosh.play()
+	if (lettersReach == lettersClick):
+		if (!$"/root/TutorialGlobal".willDoTutorial  || $"/root/TutorialGlobal".CozinhaCompleted):
+			get_node("AnimationPlayer").play("FadeOut")
+			if (!$Audio/Whoosh.playing):
+				$Audio/Whoosh.play()
 	#yield(Yield.yield_wait(0.35, self), "completed")
 	
 func _on_Bolsa_pressed():

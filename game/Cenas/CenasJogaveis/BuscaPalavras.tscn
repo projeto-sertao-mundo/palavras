@@ -267,10 +267,10 @@ texture = ExtResource( 7 )
 script = ExtResource( 6 )
 
 [node name="Bolsa" type="TextureButton" parent="."]
-margin_left = 1459.23
-margin_top = 701.093
-margin_right = 1622.23
-margin_bottom = 939.093
+margin_left = 1458.07
+margin_top = 699.708
+margin_right = 1621.07
+margin_bottom = 937.708
 rect_scale = Vector2( 0.6, 0.6 )
 rect_pivot_offset = Vector2( 80, 120 )
 texture_normal = ExtResource( 3 )
@@ -1021,9 +1021,9 @@ __meta__ = {
 }
 
 [node name="PalavrasPopUp" parent="." instance=ExtResource( 4 )]
-margin_left = 472.276
+margin_left = 459.562
 margin_top = -600.0
-margin_right = 472.276
+margin_right = 459.562
 margin_bottom = -600.0
 
 [node name="ButtonRetalhos" parent="PalavrasPopUp" index="3"]
@@ -1315,16 +1315,6 @@ texture = ExtResource( 2 )
 
 [node name="Whoosh" type="AudioStreamPlayer2D" parent="Audio"]
 stream = ExtResource( 58 )
-
-[node name="Lock" type="Control" parent="."]
-visible = false
-margin_left = -19.0
-margin_top = -15.0
-margin_right = 1623.0
-margin_bottom = 920.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [connection signal="tree_entered" from="." to="." method="_on_BuscaPalavras_tree_entered"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
