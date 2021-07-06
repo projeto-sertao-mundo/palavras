@@ -41,7 +41,8 @@ func _on_NaoDescartar_pressed():
 	get_node("Atençao").visible = false
 
 func _on_Descart_pressed():
-	print("titi")
+	get_node("ExitLock").visible = false
+	
 	get_node("RetalhoGrande").visible = false
 	
 	for child in get_node("RetalhoGrande").get_children():

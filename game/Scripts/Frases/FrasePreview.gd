@@ -36,11 +36,8 @@ func changeSpriteGrande(var texture):#, var newFrase):
 	if ($"/root/TutorialGlobal".tutorialPos == 22 || !$"/root/TutorialGlobal".willDoTutorial || $"/root/TutorialGlobal".FrasesCompleted):
 		if ($"/root/TutorialGlobal".tutorialPos == 22):
 			get_parent().get_node("Tutorial4").Tutorial23()
-		
-		print("a")
-		
+
 		if (!spriteGrande.visible):
-			print("b")
 			spriteGrande.texture = texture
 			spriteGrande.visible = true
 			if (spriteGrande.has_node("retaio")):
