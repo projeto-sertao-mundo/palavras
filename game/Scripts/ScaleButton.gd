@@ -88,3 +88,9 @@ func _on_Descart_pressed():
 	UnScaleButton()
 func _on_NaoDescartar_pressed():
 	UnScaleButton()
+
+
+func _on_Maquina_mouse_entered():
+	ScaleButton()
+func _on_Maquina_mouse_exited():
+	UnScaleButton()

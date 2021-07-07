@@ -266,17 +266,14 @@ texture = ExtResource( 7 )
 [node name="Inicializador" type="Node" parent="."]
 script = ExtResource( 6 )
 
-[node name="Bolsa" type="TextureButton" parent="."]
-margin_left = 1458.07
-margin_top = 699.708
-margin_right = 1621.07
-margin_bottom = 937.708
-rect_scale = Vector2( 0.6, 0.6 )
-rect_pivot_offset = Vector2( 80, 120 )
-texture_normal = ExtResource( 3 )
-script = ExtResource( 59 )
+[node name="VoltarAll" type="TextureButton" parent="."]
+margin_left = -2.0
+margin_top = -16.0
+margin_right = 1356.0
+margin_bottom = 1006.0
+rect_scale = Vector2( 1.2, 0.9 )
+rect_pivot_offset = Vector2( 62, 50 )
 __meta__ = {
-"_edit_group_": true,
 "_edit_use_anchors_": false
 }
 
@@ -1020,6 +1017,20 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Bolsa" type="TextureButton" parent="."]
+margin_left = 1447.42
+margin_top = 689.34
+margin_right = 1610.42
+margin_bottom = 927.34
+rect_scale = Vector2( 0.6, 0.6 )
+rect_pivot_offset = Vector2( 80, 120 )
+texture_normal = ExtResource( 3 )
+script = ExtResource( 59 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
 [node name="PalavrasPopUp" parent="." instance=ExtResource( 4 )]
 margin_left = 459.562
 margin_top = -600.0
@@ -1318,9 +1329,7 @@ stream = ExtResource( 58 )
 
 [connection signal="tree_entered" from="." to="." method="_on_BuscaPalavras_tree_entered"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
-[connection signal="mouse_entered" from="Bolsa" to="Bolsa" method="_on_Bolsa_mouse_entered"]
-[connection signal="mouse_exited" from="Bolsa" to="Bolsa" method="_on_Bolsa_mouse_exited"]
-[connection signal="pressed" from="Bolsa" to="PalavrasPopUp" method="_on_Bolsa_pressed"]
+[connection signal="pressed" from="VoltarAll" to="PalavrasPopUp" method="_on_VoltarAll_pressed"]
 [connection signal="mouse_entered" from="Letras/A" to="Letras/A/TextureButton" method="_on_A_mouse_entered"]
 [connection signal="mouse_exited" from="Letras/A" to="Letras/A/TextureButton" method="_on_A_mouse_exited"]
 [connection signal="pressed" from="Letras/A/TextureButton" to="Letras/A" method="_on_TextureButton_pressed"]
@@ -1450,6 +1459,9 @@ stream = ExtResource( 58 )
 [connection signal="mouse_entered" from="Letras/zinho" to="Letras/zinho/TextureButton" method="_on_A_mouse_entered"]
 [connection signal="mouse_exited" from="Letras/zinho" to="Letras/zinho/TextureButton" method="_on_A_mouse_exited"]
 [connection signal="pressed" from="Letras/zinho/TextureButton" to="Letras/zinho" method="_on_TextureButton_pressed"]
+[connection signal="mouse_entered" from="Bolsa" to="Bolsa" method="_on_Bolsa_mouse_entered"]
+[connection signal="mouse_exited" from="Bolsa" to="Bolsa" method="_on_Bolsa_mouse_exited"]
+[connection signal="pressed" from="Bolsa" to="PalavrasPopUp" method="_on_Bolsa_pressed"]
 [connection signal="pressed" from="Finish/Sprite/OK" to="." method="_on_TextureButton_pressed"]
 [connection signal="mouse_entered" from="Voltar" to="Voltar" method="_on_Voltar_mouse_entered"]
 [connection signal="mouse_exited" from="Voltar" to="Voltar" method="_on_Voltar_mouse_exited"]

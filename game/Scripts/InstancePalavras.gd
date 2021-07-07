@@ -1,6 +1,8 @@
 extends Control
 var foiClicado = false
 var retalhoInstanciado
+var isShow = false
+
 
 func _ready():
 	InstanciarPalavras()
@@ -73,11 +75,13 @@ func InstanciarPalavras():
 					retalhoInstanciado.set_position(Vector2(retalho.posicaoRetalho.x + 158.5, retalho.posicaoRetalho.y + 97))
 
 func _on_Bolsa_pressed():
-	if ($"/root/TutorialGlobal".tutorialPos == 6 || $"/root/TutorialGlobal".CozinhaCompleted || !$"/root/TutorialGlobal".willDoTutorial):
-		get_parent().get_node("BolsaJuice").play("BolsaIn")
-		if ($"/root/TutorialGlobal".tutorialPos ==  6):
-			get_parent().get_node("Tutorial2").Tutorial7()
-		InstanciarPalavras()
+	if (!isShow):
+		if ($"/root/TutorialGlobal".tutorialPos == 6 || $"/root/TutorialGlobal".CozinhaCompleted || !$"/root/TutorialGlobal".willDoTutorial):
+			get_parent().get_node("BolsaJuice").play("BolsaIn")
+			if ($"/root/TutorialGlobal".tutorialPos ==  6):
+				get_parent().get_node("Tutorial2").Tutorial7()
+			InstanciarPalavras()
+			isShow = true
 
 func _on_ButtonPalavras_pressed():
 	if ($"/root/TutorialGlobal".tutorialPos == 8 || $"/root/TutorialGlobal".tutorialPos == 14 || $"/root/TutorialGlobal".CozinhaCompleted || $"/root/TutorialGlobal".CosturaCompleted || !$"/root/TutorialGlobal".willDoTutorial):
@@ -123,6 +127,7 @@ func _on_ButtonRetalhos_pressed():
 func _on_Voltar_pressed():
 	if (!$"/root/TutorialGlobal".willDoTutorial || $"/root/TutorialGlobal".tutorialPos > 10):
 		get_parent().get_node("BolsaJuice").play("BolsaOut")
+		isShow = false
 
 func _on_ButtonCartoes_pressed():
 	if ($"/root/TutorialGlobal".tutorialPos == 25 && $"/root/TutorialGlobal".willDoTutorial):
@@ -144,3 +149,8 @@ func _on_Descartar2_pressed():
 	InstanciarPalavras()
 func _on_Descart_pressed():
 	InstanciarPalavras()
+
+
+func _on_VoltarAll_pressed():
+	if (isShow):
+		_on_Voltar_pressed()

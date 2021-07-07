@@ -11,9 +11,8 @@ var caminho = "CosturaPopUp/Formas/HolderFormas" #PASTA DESTINO DOS SPRITES MUDA
 
 func _ready():
 	if (!$"/root/TutorialGlobal".CosturaCompleted):
-		get_node("Tutorial3").Tutorial13()
+		get_node("Tutorial3").Tutorial0()
 	get_node("AnimationPlayer").play("FadeIn")
-	get_node("CosturaPopUp/CosturaAnimation").play("CosturaPopUp")
 	$"/root/Global".firstSceneNode = self
 	$"/root/Global".podeSetar = false
 	$"/root/Global".limite = 11
@@ -182,3 +181,7 @@ func _on_CosturaAnimation_animation_finished(anim_name):
 		get_node("CosturaPopUp/Preview/Label").text = ""
 		get_node("CosturaPopUp/PalavrasPopUp").InstanciarPalavras()
 		get_node("CosturaPopUp/CosturaAnimation").play("ScaleRetalho")
+
+
+func _on_Maquina_pressed():
+	get_node("CosturaPopUp/CosturaAnimation").play("CosturaPopUp")

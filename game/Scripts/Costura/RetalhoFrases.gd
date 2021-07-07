@@ -25,7 +25,6 @@ func _process(_delta):
 		if (mouseIn && clickPosition != null && placedPosition != clickPosition):
 			self.set_position(sprite.to_local(clickPosition))
 			placedPosition = clickPosition
-			self.modulate = Color(255,0,0)
 		elif (!setRetalhoFrase && !mouseIn && clickPosition != null):
 			self.free()
 

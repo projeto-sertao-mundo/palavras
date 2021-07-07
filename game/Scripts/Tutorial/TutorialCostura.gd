@@ -3,6 +3,7 @@ extends Control
 var dialogueEnded
 var colorSeted
 
+export(NodePath) var D0
 export(NodePath) var D1
 export(NodePath) var D2
 export(NodePath) var D3
@@ -12,6 +13,7 @@ export(NodePath) var D6
 export(NodePath) var D7
 export(NodePath) var D8
 
+onready var dialogo0 = get_node(D0)
 onready var dialogo1 = get_node(D1)
 onready var dialogo2 = get_node(D2)
 onready var dialogo3 = get_node(D3)
@@ -25,7 +27,9 @@ var auxD
 
 func _ready():
 	#aux = false
-	auxD = 12
+	$"/root/TutorialGlobal".tutorialPos = -12
+	auxD = -12
+	Tutorial0()
 	colorSeted = false
 	if ($"/root/TutorialGlobal".willDoTutorial && !$"/root/TutorialGlobal".CosturaCompleted):
 		self.visible = true
@@ -41,13 +45,18 @@ func ChangeSetedColor():
 	else:
 		Tutorial17()
 
+func Tutorial0():
+	displayString(dialogo0)
+
 func Tutorial13():
 	if (auxD == 12):
+		dialogo0.percent_visible = 0
 		displayString(dialogo1)
 
 func Tutorial14():
 	if (auxD == 13):
 		dialogo1.percent_visible = 0
+		get_node("SetaMaquina").visible = false
 		displayString(dialogo2)
 
 func Tutorial15():
@@ -94,11 +103,16 @@ func displayString(var dialogo):
 		yield(Yield.yield_wait(0.001, self), "completed")
 		dialogo.percent_visible = cont
 	
-	$"/root/TutorialGlobal".tutorialPos += 1
+	if (auxD > 0):
+		$"/root/TutorialGlobal".tutorialPos += 1
 	dialogo.percent_visible = 1
 	dialogueEnded = true
 	
-	if ($"/root/TutorialGlobal".tutorialPos == 14):
+	
+	if ($"/root/TutorialGlobal".tutorialPos == 13):
+		initializeAnim("SetaMaquina")
+		get_node("SetaMaquina").visible = true
+	elif ($"/root/TutorialGlobal".tutorialPos == 14):
 		initializeAnim("SetaRetalho")
 		get_node("SetaRetalho").visible = true
 	elif ($"/root/TutorialGlobal".tutorialPos == 15):
@@ -128,8 +142,11 @@ func displayString(var dialogo):
 
 func _input(event):
 	if (event is InputEventScreenTouch) && dialogueEnded:
-		pass
-		if ($"/root/TutorialGlobal".tutorialPos == 13):
+		if (auxD == -10):
+			$"/root/TutorialGlobal".tutorialPos = 12
+			auxD = 12
+			Tutorial13()
+		elif ($"/root/TutorialGlobal".tutorialPos == 13):
 			Tutorial14()
 		elif ($"/root/TutorialGlobal".tutorialPos == 17):
 			Tutorial18()

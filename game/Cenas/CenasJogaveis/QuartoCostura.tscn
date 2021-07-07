@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=2]
+[gd_scene load_steps=62 format=2]
 
 [ext_resource path="res://Sprites/SpritesFinais/ObetosCostura/Losango Botão.png" type="Texture" id=1]
 [ext_resource path="res://Sprites/SpritesFinais/Fundo cenas/quarto de costura refeito.png" type="Texture" id=2]
@@ -160,6 +160,22 @@ tracks/1/enabled = true
 tracks/1/keys = {
 "points": PoolRealArray( 510.488, -0.25, 0, 0.25, 0, 477.081, -0.25, 0, 0.25, 0, 510.488, -0.25, 0, 0.25, 0, 510.488, -0.25, 0, 0.25, 0 ),
 "times": PoolRealArray( 0, 0.45, 0.9, 1.2 )
+}
+
+[sub_resource type="Animation" id=15]
+resource_name = "SetaMaquina"
+length = 1.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Tutorial3/SetaMaquina:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4, 0.8, 1.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1089.27, 292.734 ), Vector2( 1089.27, 258 ), Vector2( 1089.27, 292.734 ), Vector2( 1089.27, 292.734 ) ]
 }
 
 [sub_resource type="Animation" id=6]
@@ -403,6 +419,7 @@ anims/SetaConfirmar = SubResource( 2 )
 anims/SetaCores = SubResource( 3 )
 anims/SetaFormas = SubResource( 4 )
 anims/SetaLixeira = SubResource( 5 )
+anims/SetaMaquina = SubResource( 15 )
 anims/SetaRetalho = SubResource( 6 )
 anims/SetaRetalhosAba = SubResource( 7 )
 
@@ -411,10 +428,18 @@ position = Vector2( 800, 452 )
 scale = Vector2( 1.25, 1.25556 )
 texture = ExtResource( 2 )
 
-[node name="Maquina" type="Sprite" parent="."]
-position = Vector2( 1087.65, 429.407 )
-scale = Vector2( 0.731311, 0.731311 )
-texture = ExtResource( 8 )
+[node name="Maquina" type="TextureButton" parent="."]
+margin_left = 961.156
+margin_top = 322.38
+margin_right = 1206.16
+margin_bottom = 491.38
+rect_scale = Vector2( 0.8, 0.8 )
+rect_pivot_offset = Vector2( 122, 170 )
+texture_normal = ExtResource( 8 )
+script = ExtResource( 47 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Lixeira" type="Sprite" parent="."]
 position = Vector2( 801.864, 700.47 )
@@ -458,24 +483,24 @@ anims/SaveRetalho = SubResource( 10 )
 anims/ScaleRetalho = SubResource( 11 )
 
 [node name="Sprite" type="Sprite" parent="CosturaPopUp"]
-position = Vector2( 450, 265.153 )
+position = Vector2( -250, 265.153 )
 scale = Vector2( 1.09331, 1.06263 )
 texture = ExtResource( 12 )
 
 [node name="Cores" type="Sprite" parent="CosturaPopUp"]
-position = Vector2( 570, 105.859 )
+position = Vector2( -300, 105.859 )
 scale = Vector2( 0.717733, 0.659509 )
 texture = ExtResource( 10 )
 
 [node name="FormatoRetalhos" type="Sprite" parent="CosturaPopUp"]
-position = Vector2( 304.347, 217.993 )
+position = Vector2( -500, 217.993 )
 scale = Vector2( 0.8051, 1.02509 )
 texture = ExtResource( 17 )
 
 [node name="Costurar" type="TextureButton" parent="CosturaPopUp"]
-margin_left = 379.978
+margin_left = -350.0
 margin_top = 446.202
-margin_right = 534.98
+margin_right = -194.998
 margin_bottom = 520.202
 rect_scale = Vector2( 0.9, 0.9 )
 rect_pivot_offset = Vector2( 75, 38 )
@@ -486,9 +511,9 @@ __meta__ = {
 }
 
 [node name="Recomecar" type="TextureButton" parent="CosturaPopUp"]
-margin_left = 536.0
+margin_left = -200.0
 margin_top = 442.0
-margin_right = 693.0
+margin_right = -42.9998
 margin_bottom = 517.0
 rect_scale = Vector2( 0.9, 0.9 )
 rect_pivot_offset = Vector2( 78, 38 )
@@ -499,8 +524,8 @@ __meta__ = {
 }
 
 [node name="Cor" type="Control" parent="CosturaPopUp"]
-margin_left = -50.0
-margin_right = -10.0
+margin_left = -925.0
+margin_right = -885.0
 margin_bottom = 40.0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -585,7 +610,8 @@ __meta__ = {
 [node name="CoresParent" type="Node" parent="CosturaPopUp/Cor"]
 
 [node name="Formas" type="Control" parent="CosturaPopUp"]
-margin_right = 40.0
+margin_left = -800.0
+margin_right = -760.0
 margin_bottom = 40.0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -720,17 +746,17 @@ position = Vector2( -62.8754, 427.458 )
 texture = ExtResource( 30 )
 
 [node name="PalavrasPopUp" parent="CosturaPopUp" instance=ExtResource( 6 )]
-margin_left = 1020.41
-margin_top = -16.937
-margin_right = 1020.41
-margin_bottom = -16.937
+margin_left = 1800.0
+margin_top = -16.929
+margin_right = 1800.0
+margin_bottom = -16.929
 
 [node name="Voltar" parent="CosturaPopUp/PalavrasPopUp" index="7"]
 visible = false
 disabled = true
 
 [node name="Preview" type="Sprite" parent="CosturaPopUp"]
-position = Vector2( 583.136, 300.904 )
+position = Vector2( -200, 300.904 )
 scale = Vector2( 1.2, 1.2 )
 __meta__ = {
 "_edit_group_": true
@@ -773,13 +799,13 @@ __meta__ = {
 [node name="ArrastarParentesco" type="Node" parent="."]
 
 [node name="Tutorial3" type="Control" parent="."]
-visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 script = ExtResource( 45 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+D0 = NodePath("Label0")
 D1 = NodePath("Label1")
 D2 = NodePath("Label2")
 D3 = NodePath("Label7")
@@ -842,9 +868,32 @@ texture = ExtResource( 7 )
 [node name="SetaLixeira" type="Sprite" parent="Tutorial3"]
 visible = false
 modulate = Color( 1, 1, 0, 1 )
-position = Vector2( 801.093, 477.081 )
+position = Vector2( 801.093, 510.488 )
 rotation = -1.5708
 texture = ExtResource( 7 )
+
+[node name="SetaMaquina" type="Sprite" parent="Tutorial3"]
+visible = false
+modulate = Color( 1, 1, 0, 1 )
+position = Vector2( 1089.27, 292.734 )
+rotation = -1.5708
+texture = ExtResource( 7 )
+
+[node name="Label0" type="Label" parent="Tutorial3"]
+margin_left = 336.0
+margin_top = 755.581
+margin_right = 1328.0
+margin_bottom = 875.581
+custom_fonts/font = SubResource( 14 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Aqui vamos montar nossos bordados com
+as letras que coletamos na cozinha!"
+align = 1
+uppercase = true
+percent_visible = 0.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Label1" type="Label" parent="Tutorial3"]
 margin_left = 336.0
@@ -853,9 +902,7 @@ margin_right = 1328.0
 margin_bottom = 875.581
 custom_fonts/font = SubResource( 14 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Aqui vamos montar nossos bordados com
-as letras que coletamos na cozinha!
-"
+text = "Clique na máquina de costura para começar!"
 align = 1
 uppercase = true
 percent_visible = 0.0
@@ -984,6 +1031,9 @@ stream = ExtResource( 46 )
 
 [connection signal="tree_entered" from="." to="." method="_on_QuartoCostura_tree_entered"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
+[connection signal="mouse_entered" from="Maquina" to="Maquina" method="_on_Maquina_mouse_entered"]
+[connection signal="mouse_exited" from="Maquina" to="Maquina" method="_on_Maquina_mouse_exited"]
+[connection signal="pressed" from="Maquina" to="." method="_on_Maquina_pressed"]
 [connection signal="area_entered" from="Lixeira/Area2D" to="Lixeira" method="_on_Area2D_area_entered"]
 [connection signal="area_exited" from="Lixeira/Area2D" to="Lixeira" method="_on_Area2D_area_exited"]
 [connection signal="mouse_entered" from="Voltar2" to="Voltar2" method="_on_Voltar2_mouse_entered"]

@@ -44,3 +44,7 @@ func _on_TextureButton_pressed():
 func _on_AnimationPlayer_animation_finished(anim_name):
 	if (anim_name == "FadeOut"):
 		var _cenaChanged = get_tree().change_scene("res://Cenas/CenasMenu/Corredor.tscn")
+
+
+func _on_VoltarAll_pressed():
+	_on_Voltar_pressed()
