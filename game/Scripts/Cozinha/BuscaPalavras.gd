@@ -25,7 +25,7 @@ func _process(delta):
 		get_node("Finish").visible = true
 
 func _on_Voltar_pressed():
-	if (lettersReach == lettersClick):
+	if (lettersReach >= lettersClick):
 		if (!$"/root/TutorialGlobal".willDoTutorial  || $"/root/TutorialGlobal".CozinhaCompleted):
 			get_node("AnimationPlayer").play("FadeOut")
 			if (!$Audio/Whoosh.playing):

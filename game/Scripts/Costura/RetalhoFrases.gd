@@ -23,7 +23,7 @@ func _ready():
 
 func _process(_delta):
 	if ($"/root/TutorialGlobal".tutorialPos == 23 || !$"/root/TutorialGlobal".willDoTutorial || $"/root/TutorialGlobal".FrasesCompleted):
-		if (mouseIn && clickPosition != null && placedPosition != clickPosition && canMove):
+		if (mouseIn && clickPosition != null && placedPosition != clickPosition):
 			self.set_position(sprite.to_local(clickPosition))
 			placedPosition = clickPosition
 		elif (!setRetalhoFrase && !mouseIn && clickPosition != null):
