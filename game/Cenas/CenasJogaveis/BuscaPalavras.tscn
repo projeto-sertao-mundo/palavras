@@ -1057,11 +1057,10 @@ __meta__ = {
 }
 
 [node name="PalavrasPopUp" parent="." instance=ExtResource( 4 )]
-visible = false
-margin_left = 472.276
-margin_top = 70.0
-margin_right = 472.276
-margin_bottom = 70.0
+margin_left = 459.562
+margin_top = -600.0
+margin_right = 459.562
+margin_bottom = -600.0
 
 [node name="ButtonRetalhos" parent="PalavrasPopUp" index="3"]
 visible = false

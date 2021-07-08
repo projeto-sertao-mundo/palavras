@@ -46,6 +46,7 @@ func Tutorial4():
 		get_node("SetaAjuda").visible = true
 
 func Tutorial5():
+	get_node("SetaAjuda").visible = false
 	if (auxD == 4):
 		if (!aux):
 			self.visible = true
