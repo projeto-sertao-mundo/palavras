@@ -12,6 +12,8 @@ var posicaoRetalho
 
 var sprite
 
+var canMove = false
+
 func _init(var retalhoMioloTexRef, var retalhoBordaTexRef, var retalhoMioloColorRef, var retalhoBordaColorRef, var retalhoLabelRef, var posicaoRetalhoRef, var spriteRef):
 	retalhoMioloTex = retalhoMioloTexRef
 	retalhoBordaTex = retalhoBordaTexRef

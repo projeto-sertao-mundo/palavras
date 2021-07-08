@@ -1,4 +1,4 @@
-extends TextureButton
+extends Control
 
 var primeiroNode
 var sprite
@@ -21,7 +21,7 @@ func _on_TextureButton_pressed():
 			get_parent().get_parent().get_parent().get_parent().get_node("Tutorial4").Tutorial27()
 		
 		sprite.visible = true
-		sprite.texture = self.texture_normal
+		sprite.texture = self.get_node("Cartao").texture_normal
 		
 		for child in sprite.get_children():
 			if child is TextureButton:
@@ -33,9 +33,6 @@ func _on_TextureButton_pressed():
 	#	$"/root/Global".cartaoEditando = self.name
 		
 		instanceRetalhos()
-	
-func _on_TextureControl_pressed():
-	_on_TextureButton_pressed()
 	
 
 func instanceRetalhos():
@@ -49,6 +46,7 @@ func instanceRetalhos():
 				retalhoInstanciado.disabled = true
 				sprite.add_child(retalhoInstanciado)
 				retalhoInstanciado.set_scale(Vector2(0.6,0.6))
+				retalhoInstanciado.canMove = false
 				
 				retalhoInstanciado.get_node("Borda").modulate = retalho.retalhoBordaColor
 				retalhoInstanciado.get_node("Miolo").modulate = retalho.retalhoMioloColor
@@ -58,3 +56,7 @@ func instanceRetalhos():
 				retalhoInstanciado.set_position(Vector2(retalho.posicaoRetalho.x, retalho.posicaoRetalho.y))
 			
 			$"/root/Global".selectedCard = cartao.codigo
+
+
+func _on_Control_pressed():
+	_on_TextureButton_pressed()

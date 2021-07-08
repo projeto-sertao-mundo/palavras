@@ -348,11 +348,11 @@ texture = ExtResource( 34 )
 [node name="GridCartões" type="GridContainer" parent="PalavrasPopUp/Cartões"]
 margin_left = -196.0
 margin_top = -155.0
-margin_right = 1075.0
+margin_right = 989.0
 margin_bottom = 858.0
 rect_scale = Vector2( 0.35, 0.35 )
-custom_constants/vseparation = 40
-custom_constants/hseparation = 60
+custom_constants/vseparation = 230
+custom_constants/hseparation = 410
 columns = 3
 __meta__ = {
 "_edit_use_anchors_": false
@@ -666,6 +666,7 @@ __meta__ = {
 }
 
 [node name="Tutorial4" type="Control" parent="."]
+visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 script = ExtResource( 22 )
@@ -896,17 +897,17 @@ stream = ExtResource( 38 )
 [connection signal="area_exited" from="RetalhoGrande/Area2D" to="RetalhoGrande" method="_on_Area2D_area_exited"]
 [connection signal="mouse_entered" from="Confirm" to="Confirm" method="_on_Confirm_mouse_entered"]
 [connection signal="mouse_exited" from="Confirm" to="Confirm" method="_on_Confirm_mouse_exited"]
-[connection signal="pressed" from="Confirm" to="." method="_on_Confirm_pressed"]
 [connection signal="pressed" from="Confirm" to="Confirm" method="_on_Confirm_pressed"]
+[connection signal="pressed" from="Confirm" to="." method="_on_Confirm_pressed"]
 [connection signal="mouse_entered" from="Descartar" to="Descartar" method="_on_Descartar_mouse_entered"]
 [connection signal="mouse_exited" from="Descartar" to="Descartar" method="_on_Descartar_mouse_exited"]
 [connection signal="pressed" from="Descartar" to="." method="_on_Descartar_pressed"]
 [connection signal="mouse_entered" from="Atençao/NaoDescartar" to="Atençao/NaoDescartar" method="_on_NaoDescartar_mouse_entered"]
 [connection signal="mouse_exited" from="Atençao/NaoDescartar" to="Atençao/NaoDescartar" method="_on_NaoDescartar_mouse_exited"]
-[connection signal="pressed" from="Atençao/NaoDescartar" to="." method="_on_NaoDescartar_pressed"]
 [connection signal="pressed" from="Atençao/NaoDescartar" to="Atençao/NaoDescartar" method="_on_NaoDescartar_pressed"]
+[connection signal="pressed" from="Atençao/NaoDescartar" to="." method="_on_NaoDescartar_pressed"]
 [connection signal="mouse_entered" from="Atençao/Descart" to="Atençao/Descart" method="_on_Descart_mouse_entered"]
 [connection signal="mouse_exited" from="Atençao/Descart" to="Atençao/Descart" method="_on_Descart_mouse_exited"]
+[connection signal="pressed" from="Atençao/Descart" to="Atençao/Descart" method="_on_Descart_pressed"]
 [connection signal="pressed" from="Atençao/Descart" to="." method="_on_Descart_pressed"]
 [connection signal="pressed" from="Atençao/Descart" to="PalavrasPopUp" method="_on_Descart_pressed"]
-[connection signal="pressed" from="Atençao/Descart" to="Atençao/Descart" method="_on_Descart_pressed"]

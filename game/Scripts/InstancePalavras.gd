@@ -58,13 +58,13 @@ func InstanciarPalavras():
 			if (!get_node("Cartões").has_node("GridCartões/"+str(cartao.codigo))):
 				var cartaoInstanciado = $"/root/Global".cartoesInstanceRef.instance()
 				cartaoInstanciado.name = str(cartao.codigo)
-				cartaoInstanciado.texture_normal = cartao.sprite
+				cartaoInstanciado.get_node("Cartao").texture_normal = cartao.sprite
 				self.get_node("Cartões").get_node("GridCartões").add_child(cartaoInstanciado)
 				
 				for retalho in cartao.retalhos:
 					retalhoInstanciado = $"/root/Global".retalhoInstanceRef.instance()
 					cartaoInstanciado.add_child(retalhoInstanciado)
-					cartaoInstanciado.move_child(retalhoInstanciado, 0)
+					cartaoInstanciado.move_child(retalhoInstanciado, 1)
 					retalhoInstanciado.set_scale(Vector2(0.6,0.6))
 					
 					retalhoInstanciado.get_node("Borda").modulate = retalho.retalhoBordaColor
