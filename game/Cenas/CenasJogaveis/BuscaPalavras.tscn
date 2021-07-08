@@ -1,4 +1,4 @@
-[gd_scene load_steps=69 format=2]
+[gd_scene load_steps=72 format=2]
 
 [ext_resource path="res://Scripts/Cozinha/BuscaPalavras.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/SpritesFinais/Objetos/seta.png" type="Texture" id=2]
@@ -115,8 +115,25 @@ tracks/0/keys = {
 "values": [ Vector2( 1e-05, 1e-05 ), Vector2( 1.2, 1.2 ), Vector2( 1.2, 1.2 ) ]
 }
 
+[sub_resource type="Animation" id=12]
+resource_name = "SetaAjuda"
+length = 1.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Tutorial2/SetaAjuda:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 0.9, 1.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 61.428, 144.347 ), Vector2( 61.428, 178 ), Vector2( 61.428, 144.347 ), Vector2( 61.428, 144.347 ) ]
+}
+
 [sub_resource type="Animation" id=3]
-length = 0.9
+length = 1.2
 loop = true
 step = 0.05
 tracks/0/type = "bezier"
@@ -242,6 +259,14 @@ tracks/0/keys = {
 size = 33
 font_data = ExtResource( 56 )
 
+[sub_resource type="DynamicFont" id=10]
+size = 60
+font_data = ExtResource( 56 )
+
+[sub_resource type="DynamicFont" id=11]
+size = 21
+font_data = ExtResource( 56 )
+
 [node name="BuscaPalavras" type="Node2D"]
 script = ExtResource( 1 )
 SceneName = "BuscaPalavras"
@@ -249,6 +274,7 @@ SceneName = "BuscaPalavras"
 [node name="AnimationPlayer" parent="." instance=ExtResource( 51 )]
 anims/BolsaShake = SubResource( 1 )
 anims/Parabens = SubResource( 2 )
+anims/SetaAjuda = SubResource( 12 )
 anims/SetaBolsa = SubResource( 3 )
 anims/SetaMorfemas = SubResource( 4 )
 anims/SetaMorfemasDesc = SubResource( 5 )
@@ -278,6 +304,7 @@ __meta__ = {
 }
 
 [node name="Letras" type="Node2D" parent="."]
+position = Vector2( 0, 9.53674e-07 )
 
 [node name="A" type="KinematicBody2D" parent="Letras"]
 modulate = Color( 0.576471, 0.701961, 0.741176, 1 )
@@ -927,7 +954,7 @@ __meta__ = {
 
 [node name="dis" type="KinematicBody2D" parent="Letras"]
 modulate = Color( 0.370453, 0.689026, 0.777344, 1 )
-position = Vector2( 1482.04, 607.118 )
+position = Vector2( 1482.04, 605.118 )
 rotation = 0.7545
 scale = Vector2( 1, 0.679995 )
 script = ExtResource( 8 )
@@ -999,7 +1026,7 @@ __meta__ = {
 
 [node name="zinho" type="KinematicBody2D" parent="Letras"]
 modulate = Color( 0.494118, 0.568627, 0.67451, 1 )
-position = Vector2( 1295.23, 618.098 )
+position = Vector2( 1438.96, 34.7059 )
 rotation = 0.197587
 scale = Vector2( 1, 0.679995 )
 script = ExtResource( 8 )
@@ -1008,20 +1035,18 @@ __meta__ = {
 }
 
 [node name="TextureButton" type="TextureButton" parent="Letras/zinho"]
-margin_left = 71.0869
-margin_top = -907.8
-margin_right = 147.087
-margin_bottom = -867.8
+margin_right = 76.0001
+margin_bottom = 40.0
 texture_normal = ExtResource( 50 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Bolsa" type="TextureButton" parent="."]
-margin_left = 1447.42
-margin_top = 689.34
-margin_right = 1610.42
-margin_bottom = 927.34
+margin_left = 1459.23
+margin_top = 701.093
+margin_right = 1622.23
+margin_bottom = 939.093
 rect_scale = Vector2( 0.6, 0.6 )
 rect_pivot_offset = Vector2( 80, 120 )
 texture_normal = ExtResource( 3 )
@@ -1032,10 +1057,11 @@ __meta__ = {
 }
 
 [node name="PalavrasPopUp" parent="." instance=ExtResource( 4 )]
-margin_left = 459.562
-margin_top = -600.0
-margin_right = 459.562
-margin_bottom = -600.0
+visible = false
+margin_left = 472.276
+margin_top = 70.0
+margin_right = 472.276
+margin_bottom = 70.0
 
 [node name="ButtonRetalhos" parent="PalavrasPopUp" index="3"]
 visible = false
@@ -1136,12 +1162,13 @@ anchor_top = 32.348
 anchor_right = 50.913
 anchor_bottom = 37.304
 margin_left = 3.99399
-margin_top = 26.996
+margin_top = 14.996
 margin_right = -2.9989
-margin_bottom = -52.992
+margin_bottom = -15.992
 custom_fonts/font = SubResource( 9 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Agora é com você. Já encontrou alguma letra?"
+text = "Agora é com você. Já encontrou alguma letra?
+Caso tenha dificuldade, você pode utilizar uma ajuda."
 align = 1
 uppercase = true
 percent_visible = 0.0
@@ -1297,7 +1324,7 @@ __meta__ = {
 [node name="SetaBolsa" type="Sprite" parent="Tutorial2"]
 visible = false
 modulate = Color( 1, 1, 0, 1 )
-position = Vector2( 1538.25, 630.632 )
+position = Vector2( 1538.25, 663.55 )
 rotation = -1.5708
 texture = ExtResource( 2 )
 
@@ -1306,6 +1333,20 @@ visible = false
 modulate = Color( 1, 1, 0, 1 )
 position = Vector2( 879.428, 78.3474 )
 rotation = -6.28319
+texture = ExtResource( 2 )
+
+[node name="SetaMorfemas2" type="Sprite" parent="Tutorial2"]
+visible = false
+modulate = Color( 1, 1, 0, 1 )
+position = Vector2( 879.428, 78.3474 )
+rotation = -6.28319
+texture = ExtResource( 2 )
+
+[node name="SetaAjuda" type="Sprite" parent="Tutorial2"]
+visible = false
+modulate = Color( 1, 1, 0, 1 )
+position = Vector2( 61.428, 144.347 )
+rotation = -4.71239
 texture = ExtResource( 2 )
 
 [node name="SetaMorfemasDesc" type="Sprite" parent="Tutorial2"]
@@ -1326,6 +1367,41 @@ texture = ExtResource( 2 )
 
 [node name="Whoosh" type="AudioStreamPlayer2D" parent="Audio"]
 stream = ExtResource( 58 )
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="Ajuda" type="TextureButton" parent="."]
+margin_left = 22.0
+margin_top = 6.0
+margin_right = 107.0
+margin_bottom = 78.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Ajuda"]
+modulate = Color( 0, 0, 0, 1 )
+margin_left = 9.47217
+margin_top = 9.9074
+margin_right = 71.4722
+margin_bottom = 69.9074
+custom_fonts/font = SubResource( 10 )
+text = "40"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DEBUG" type="Button" parent="."]
+margin_left = 247.112
+margin_top = 15.2245
+margin_right = 478.112
+margin_bottom = 90.2245
+custom_fonts/font = SubResource( 11 )
+text = "PEGAR LETRAS (MENOS A)"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [connection signal="tree_entered" from="." to="." method="_on_BuscaPalavras_tree_entered"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
@@ -1466,5 +1542,8 @@ stream = ExtResource( 58 )
 [connection signal="mouse_entered" from="Voltar" to="Voltar" method="_on_Voltar_mouse_entered"]
 [connection signal="mouse_exited" from="Voltar" to="Voltar" method="_on_Voltar_mouse_exited"]
 [connection signal="pressed" from="Voltar" to="." method="_on_Voltar_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="pressed" from="Ajuda" to="." method="_on_Ajuda_pressed"]
+[connection signal="pressed" from="DEBUG" to="." method="_on_Button_pressed"]
 
 [editable path="PalavrasPopUp"]

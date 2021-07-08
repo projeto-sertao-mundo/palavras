@@ -28,6 +28,7 @@ func _process(_delta):
 		$"/root/Global".AdicionarPalavraEncontrada()
 		get_parent().get_parent().get_node("AnimationPlayer").play("BolsaShake")
 		get_parent().get_parent().lettersReach += 1
+		get_parent().get_parent().AtualizeLetrasMorfemas(self)
 		self.free()
 
 func _on_TextureButton_pressed():

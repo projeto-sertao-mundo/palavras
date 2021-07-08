@@ -42,6 +42,8 @@ func Tutorial4():
 	if (auxD == 3):
 		displayString(dialogo2)
 		dialogo1.percent_visible = 0
+		initializeAnim("SetaAjuda")
+		get_node("SetaAjuda").visible = true
 
 func Tutorial5():
 	if (auxD == 4):
