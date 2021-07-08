@@ -162,7 +162,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 0.45, 0.9, 1.2 )
 }
 
-[sub_resource type="Animation" id=15]
+[sub_resource type="Animation" id=6]
 resource_name = "SetaMaquina"
 length = 1.1
 tracks/0/type = "value"
@@ -178,8 +178,7 @@ tracks/0/keys = {
 "values": [ Vector2( 1089.27, 292.734 ), Vector2( 1089.27, 258 ), Vector2( 1089.27, 292.734 ), Vector2( 1089.27, 292.734 ) ]
 }
 
-[sub_resource type="Animation" id=6]
-resource_name = "SetaRetalho"
+[sub_resource type="Animation" id=7]
 tracks/0/type = "bezier"
 tracks/0/path = NodePath("Tutorial3/SetaRetalho:position:x")
 tracks/0/interp = 1
@@ -201,7 +200,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 0.45, 0.9, 1.2 )
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=8]
 length = 0.9
 loop = true
 step = 0.05
@@ -226,10 +225,10 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 0.45, 0.9, 1.2 )
 }
 
-[sub_resource type="RectangleShape2D" id=8]
+[sub_resource type="RectangleShape2D" id=9]
 extents = Vector2( 49.998, 224.62 )
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=10]
 length = 1.11
 step = 0.01
 tracks/0/type = "value"
@@ -341,8 +340,7 @@ tracks/8/keys = {
 "values": [ Vector2( 1800, -16.929 ), Vector2( 1020.41, -16.937 ), Vector2( 1020.41, -16.937 ) ]
 }
 
-[sub_resource type="Animation" id=10]
-resource_name = "SaveRetalho"
+[sub_resource type="Animation" id=11]
 length = 0.96
 step = 0.01
 tracks/0/type = "value"
@@ -369,9 +367,20 @@ tracks/1/keys = {
 "update": 0,
 "values": [ Vector2( 1.2, 1.2 ), Vector2( 0.5, 0.5 ), Vector2( 1e-05, 1e-05 ), Vector2( 1e-05, 1e-05 ), Vector2( 1e-05, 1e-05 ), Vector2( 1e-05, 1e-05 ), Vector2( 1e-05, 1e-05 ), Vector2( 1e-05, 1e-05 ) ]
 }
+tracks/2/type = "value"
+tracks/2/path = NodePath("../LOCK:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.96 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, true ]
+}
 
-[sub_resource type="Animation" id=11]
-resource_name = "ScaleRetalho"
+[sub_resource type="Animation" id=12]
 length = 0.96
 step = 0.01
 tracks/0/type = "value"
@@ -398,15 +407,27 @@ tracks/1/keys = {
 "update": 0,
 "values": [ Vector2( 583.136, 300.909 ), Vector2( 583.136, 300.909 ) ]
 }
+tracks/2/type = "value"
+tracks/2/path = NodePath("../LOCK:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.96 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
 
-[sub_resource type="RectangleShape2D" id=12]
+[sub_resource type="RectangleShape2D" id=13]
 extents = Vector2( 82.901, 76.4056 )
 
-[sub_resource type="DynamicFont" id=13]
+[sub_resource type="DynamicFont" id=14]
 size = 25
 font_data = ExtResource( 3 )
 
-[sub_resource type="DynamicFont" id=14]
+[sub_resource type="DynamicFont" id=15]
 size = 33
 font_data = ExtResource( 3 )
 
@@ -419,9 +440,9 @@ anims/SetaConfirmar = SubResource( 2 )
 anims/SetaCores = SubResource( 3 )
 anims/SetaFormas = SubResource( 4 )
 anims/SetaLixeira = SubResource( 5 )
-anims/SetaMaquina = SubResource( 15 )
-anims/SetaRetalho = SubResource( 6 )
-anims/SetaRetalhosAba = SubResource( 7 )
+anims/SetaMaquina = SubResource( 6 )
+anims/SetaRetalho = SubResource( 7 )
+anims/SetaRetalhosAba = SubResource( 8 )
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 800, 452 )
@@ -453,7 +474,7 @@ position = Vector2( -0.611755, -0.308289 )
 scale = Vector2( 0.236082, 0.154575 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Lixeira/Area2D"]
-shape = SubResource( 8 )
+shape = SubResource( 9 )
 
 [node name="Voltar2" type="TextureButton" parent="."]
 margin_left = 27.591
@@ -478,9 +499,9 @@ __meta__ = {
 }
 
 [node name="CosturaAnimation" type="AnimationPlayer" parent="CosturaPopUp"]
-anims/CosturaPopUp = SubResource( 9 )
-anims/SaveRetalho = SubResource( 10 )
-anims/ScaleRetalho = SubResource( 11 )
+anims/CosturaPopUp = SubResource( 10 )
+anims/SaveRetalho = SubResource( 11 )
+anims/ScaleRetalho = SubResource( 12 )
 
 [node name="Sprite" type="Sprite" parent="CosturaPopUp"]
 position = Vector2( -250, 265.153 )
@@ -513,7 +534,7 @@ __meta__ = {
 [node name="Recomecar" type="TextureButton" parent="CosturaPopUp"]
 margin_left = -200.0
 margin_top = 442.0
-margin_right = -42.9998
+margin_right = -42.9997
 margin_bottom = 517.0
 rect_scale = Vector2( 0.9, 0.9 )
 rect_pivot_offset = Vector2( 78, 38 )
@@ -778,7 +799,7 @@ script = ExtResource( 39 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CosturaPopUp/Preview/Area2D"]
 position = Vector2( -15, 10 )
-shape = SubResource( 12 )
+shape = SubResource( 13 )
 
 [node name="Label" type="Label" parent="CosturaPopUp/Preview"]
 modulate = Color( 0, 0, 0, 1 )
@@ -788,7 +809,7 @@ margin_right = 133.0
 margin_bottom = 70.0
 grow_vertical = 0
 rect_scale = Vector2( 0.75, 0.85 )
-custom_fonts/font = SubResource( 13 )
+custom_fonts/font = SubResource( 14 )
 align = 1
 valign = 1
 uppercase = true
@@ -799,6 +820,7 @@ __meta__ = {
 [node name="ArrastarParentesco" type="Node" parent="."]
 
 [node name="Tutorial3" type="Control" parent="."]
+visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 script = ExtResource( 45 )
@@ -884,7 +906,7 @@ margin_left = 336.0
 margin_top = 755.581
 margin_right = 1328.0
 margin_bottom = 875.581
-custom_fonts/font = SubResource( 14 )
+custom_fonts/font = SubResource( 15 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Aqui vamos montar nossos bordados com
 as letras que coletamos na cozinha!"
@@ -900,7 +922,7 @@ margin_left = 336.0
 margin_top = 755.581
 margin_right = 1328.0
 margin_bottom = 875.581
-custom_fonts/font = SubResource( 14 )
+custom_fonts/font = SubResource( 15 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Clique na máquina de costura para começar!"
 align = 1
@@ -915,7 +937,7 @@ margin_left = 336.0
 margin_top = 752.0
 margin_right = 1337.0
 margin_bottom = 875.0
-custom_fonts/font = SubResource( 14 )
+custom_fonts/font = SubResource( 15 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Para escrever, basta clicar na letra ou no morfema desejado
  que eles aparecerão no retalho à esquerda!"
@@ -931,7 +953,7 @@ margin_left = 336.0
 margin_top = 755.581
 margin_right = 1328.0
 margin_bottom = 875.581
-custom_fonts/font = SubResource( 14 )
+custom_fonts/font = SubResource( 15 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Você pode mudar o formato do bordado clicando
 em uma das formas disponíveis na mesa."
@@ -947,7 +969,7 @@ margin_left = 329.0
 margin_top = 733.0
 margin_right = 1341.0
 margin_bottom = 888.0
-custom_fonts/font = SubResource( 14 )
+custom_fonts/font = SubResource( 15 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Você também pode colorir os seus retalhos!
 Basta clicar na cor desejada e arrastar para o bordado!
@@ -965,7 +987,7 @@ margin_left = 336.0
 margin_top = 751.0
 margin_right = 1340.0
 margin_bottom = 876.0
-custom_fonts/font = SubResource( 14 )
+custom_fonts/font = SubResource( 15 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Se você errou alguma letra ou morfema,
  pode apagar usando o botão \"apagar\"."
@@ -981,7 +1003,7 @@ margin_left = 332.0
 margin_top = 742.0
 margin_right = 1330.0
 margin_bottom = 875.0
-custom_fonts/font = SubResource( 14 )
+custom_fonts/font = SubResource( 15 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Quando você terminar, basta clicar em \"confirmar\" para guardar
 seu bordado na bolsa!
@@ -998,7 +1020,7 @@ margin_left = 336.0
 margin_top = 757.0
 margin_right = 1328.0
 margin_bottom = 875.0
-custom_fonts/font = SubResource( 14 )
+custom_fonts/font = SubResource( 15 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Seu bordado ficará guardado na aba \"bordados\"."
 align = 1
@@ -1013,7 +1035,7 @@ margin_left = 336.0
 margin_top = 756.0
 margin_right = 1324.0
 margin_bottom = 909.0
-custom_fonts/font = SubResource( 14 )
+custom_fonts/font = SubResource( 15 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Caso não goste do bordado, você pode arrastá-lo até a lixeirinha
  que fica no centro do quarto, está bem? Agora divirta-se!"
@@ -1028,6 +1050,14 @@ __meta__ = {
 
 [node name="Whoosh" type="AudioStreamPlayer2D" parent="Audio"]
 stream = ExtResource( 46 )
+
+[node name="LOCK" type="Control" parent="."]
+visible = false
+margin_right = 1596.0
+margin_bottom = 905.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [connection signal="tree_entered" from="." to="." method="_on_QuartoCostura_tree_entered"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

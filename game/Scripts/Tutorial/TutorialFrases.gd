@@ -9,6 +9,7 @@ export(NodePath) var D4
 export(NodePath) var D5
 export(NodePath) var D6
 export(NodePath) var D7
+export(NodePath) var D8
 
 onready var dialogo1 = get_node(D1)
 onready var dialogo2 = get_node(D2)
@@ -17,6 +18,7 @@ onready var dialogo4 = get_node(D4)
 onready var dialogo5 = get_node(D5)
 onready var dialogo6 = get_node(D6)
 onready var dialogo7 = get_node(D7)
+onready var dialogo8 = get_node(D8)
 
 var auxD
 
@@ -62,6 +64,11 @@ func Tutorial28():
 		dialogo6.percent_visible = 0
 		displayString(dialogo7)
 		get_node("SetaConfirmar").visible = false
+
+func Tutorial29():
+	if (auxD == 28):
+		dialogo7.percent_visible = 0
+		displayString(dialogo8)
 
 
 func displayString(var dialogo):
@@ -114,6 +121,8 @@ func _input(event):
 		if ($"/root/TutorialGlobal".tutorialPos == 27):
 			Tutorial28()
 		elif ($"/root/TutorialGlobal".tutorialPos == 28):
+			Tutorial29()
+		elif($"/root/TutorialGlobal".tutorialPos == 29):
 			self.visible = false
 			$"/root/TutorialGlobal".lockCozinha = false
 			$"/root/TutorialGlobal".lockCostura = false

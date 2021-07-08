@@ -112,6 +112,7 @@ func displayString(var dialogo):
 	if ($"/root/TutorialGlobal".tutorialPos == 13):
 		initializeAnim("SetaMaquina")
 		get_node("SetaMaquina").visible = true
+		print($"/root/TutorialGlobal".tutorialPos)
 	elif ($"/root/TutorialGlobal".tutorialPos == 14):
 		initializeAnim("SetaRetalho")
 		get_node("SetaRetalho").visible = true

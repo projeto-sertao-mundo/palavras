@@ -42,7 +42,6 @@ func _on_NaoDescartar_pressed():
 
 func _on_Descart_pressed():
 	get_node("ExitLock").visible = false
-	
 	get_node("RetalhoGrande").visible = false
 	
 	for child in get_node("RetalhoGrande").get_children():

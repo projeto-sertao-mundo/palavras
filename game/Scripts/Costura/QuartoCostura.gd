@@ -184,4 +184,5 @@ func _on_CosturaAnimation_animation_finished(anim_name):
 
 
 func _on_Maquina_pressed():
-	get_node("CosturaPopUp/CosturaAnimation").play("CosturaPopUp")
+	if (!$"/root/TutorialGlobal".willDoTutorial || $"/root/TutorialGlobal".tutorialPos == 13 || $"/root/TutorialGlobal".CosturaCompleted):
+		get_node("CosturaPopUp/CosturaAnimation").play("CosturaPopUp")

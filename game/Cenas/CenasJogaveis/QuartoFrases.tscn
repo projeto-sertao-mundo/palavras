@@ -666,7 +666,6 @@ __meta__ = {
 }
 
 [node name="Tutorial4" type="Control" parent="."]
-visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 script = ExtResource( 22 )
@@ -680,6 +679,7 @@ D4 = NodePath("Label6")
 D5 = NodePath("Label7")
 D6 = NodePath("Label4")
 D7 = NodePath("Label5")
+D8 = NodePath("Label8")
 
 [node name="Vó" type="Sprite" parent="Tutorial4"]
 position = Vector2( 1399.97, 697.003 )
@@ -836,6 +836,22 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Label8" type="Label" parent="Tutorial4"]
+margin_left = 336.0
+margin_top = 685.0
+margin_right = 1265.0
+margin_bottom = 807.0
+custom_fonts/font = SubResource( 8 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Ah! Antes que eu me esqueça,
+ Agora você pode colar seus cartões em sua caderneta!"
+align = 1
+uppercase = true
+percent_visible = 0.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Audio" type="Node" parent="."]
 
 [node name="Whoosh" type="AudioStreamPlayer2D" parent="Audio"]
@@ -892,5 +908,5 @@ stream = ExtResource( 38 )
 [connection signal="mouse_entered" from="Atençao/Descart" to="Atençao/Descart" method="_on_Descart_mouse_entered"]
 [connection signal="mouse_exited" from="Atençao/Descart" to="Atençao/Descart" method="_on_Descart_mouse_exited"]
 [connection signal="pressed" from="Atençao/Descart" to="." method="_on_Descart_pressed"]
-[connection signal="pressed" from="Atençao/Descart" to="Atençao/Descart" method="_on_Descart_pressed"]
 [connection signal="pressed" from="Atençao/Descart" to="PalavrasPopUp" method="_on_Descart_pressed"]
+[connection signal="pressed" from="Atençao/Descart" to="Atençao/Descart" method="_on_Descart_pressed"]

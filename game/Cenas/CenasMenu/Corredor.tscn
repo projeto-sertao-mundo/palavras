@@ -255,7 +255,7 @@ texture = ExtResource( 6 )
 
 [node name="Confecção Dos Retalhps" type="Sprite" parent="."]
 position = Vector2( 1364.38, 103.881 )
-scale = Vector2( 1.22375, 1.22569 )
+scale = Vector2( 1.20675, 1.20918 )
 texture = ExtResource( 1 )
 
 [node name="Tutorial1" type="Control" parent="."]
