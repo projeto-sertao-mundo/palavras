@@ -29,7 +29,7 @@ func _process(_delta):
 	
 	
 	elif (primeiroNode.name == "QuartoFrases"):
-		if (sprite.visible):
+		if (sprite.visible && !sprite.isVisualization):
 			instanceRetalho($"/root/Global".retalhoInstanceRef, "retaio", Vector2(1.2,1.2))
 			moveRetalho()
 	

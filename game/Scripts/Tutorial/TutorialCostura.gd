@@ -46,7 +46,8 @@ func ChangeSetedColor():
 		Tutorial17()
 
 func Tutorial0():
-	displayString(dialogo0)
+	if ($"/root/TutorialGlobal".willDoTutorial && !$"/root/TutorialGlobal".CosturaCompleted):
+		displayString(dialogo0)
 
 func Tutorial13():
 	if (auxD == 12):

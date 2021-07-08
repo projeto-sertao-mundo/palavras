@@ -358,6 +358,64 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Control" type="Control" parent="PalavrasPopUp/Cartões/GridCartões"]
+
+[node name="Control2" type="Control" parent="PalavrasPopUp/Cartões/GridCartões"]
+margin_left = 410.0
+margin_right = 410.0
+
+[node name="Control3" type="Control" parent="PalavrasPopUp/Cartões/GridCartões"]
+margin_left = 820.0
+margin_right = 820.0
+
+[node name="Control4" type="Control" parent="PalavrasPopUp/Cartões/GridCartões"]
+margin_top = 230.0
+margin_bottom = 230.0
+
+[node name="Control5" type="Control" parent="PalavrasPopUp/Cartões/GridCartões"]
+margin_left = 410.0
+margin_top = 230.0
+margin_right = 410.0
+margin_bottom = 230.0
+
+[node name="Control6" type="Control" parent="PalavrasPopUp/Cartões/GridCartões"]
+margin_left = 820.0
+margin_top = 230.0
+margin_right = 820.0
+margin_bottom = 230.0
+
+[node name="Control7" type="Control" parent="PalavrasPopUp/Cartões/GridCartões"]
+margin_top = 460.0
+margin_bottom = 460.0
+
+[node name="Control8" type="Control" parent="PalavrasPopUp/Cartões/GridCartões"]
+margin_left = 410.0
+margin_top = 460.0
+margin_right = 410.0
+margin_bottom = 460.0
+
+[node name="Control9" type="Control" parent="PalavrasPopUp/Cartões/GridCartões"]
+margin_left = 820.0
+margin_top = 460.0
+margin_right = 820.0
+margin_bottom = 460.0
+
+[node name="Control10" type="Control" parent="PalavrasPopUp/Cartões/GridCartões"]
+margin_top = 690.0
+margin_bottom = 690.0
+
+[node name="Control11" type="Control" parent="PalavrasPopUp/Cartões/GridCartões"]
+margin_left = 410.0
+margin_top = 690.0
+margin_right = 410.0
+margin_bottom = 690.0
+
+[node name="Control12" type="Control" parent="PalavrasPopUp/Cartões/GridCartões"]
+margin_left = 820.0
+margin_top = 690.0
+margin_right = 820.0
+margin_bottom = 690.0
+
 [node name="Retalhos" type="Sprite" parent="PalavrasPopUp"]
 position = Vector2( 294.514, 277.314 )
 scale = Vector2( 1.2, 1.2 )
@@ -862,8 +920,8 @@ stream = ExtResource( 38 )
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 [connection signal="animation_finished" from="CartaoAnimation" to="RetalhoGrande" method="_on_CartaoAnimation_animation_finished"]
 [connection signal="animation_started" from="CartaoAnimation" to="RetalhoGrande" method="_on_CartaoAnimation_animation_started"]
-[connection signal="pressed" from="ExitButton" to="RetalhoGrande" method="_on_ExitButton_pressed"]
 [connection signal="pressed" from="ExitButton" to="Frases" method="_on_ExitButton_pressed"]
+[connection signal="pressed" from="ExitButton" to="RetalhoGrande" method="_on_ExitButton_pressed"]
 [connection signal="mouse_entered" from="Voltar" to="Voltar" method="_on_Voltar_mouse_entered"]
 [connection signal="mouse_exited" from="Voltar" to="Voltar" method="_on_Voltar_mouse_exited"]
 [connection signal="pressed" from="Voltar" to="." method="_on_Voltar_pressed"]
@@ -908,6 +966,6 @@ stream = ExtResource( 38 )
 [connection signal="pressed" from="Atençao/NaoDescartar" to="." method="_on_NaoDescartar_pressed"]
 [connection signal="mouse_entered" from="Atençao/Descart" to="Atençao/Descart" method="_on_Descart_mouse_entered"]
 [connection signal="mouse_exited" from="Atençao/Descart" to="Atençao/Descart" method="_on_Descart_mouse_exited"]
+[connection signal="pressed" from="Atençao/Descart" to="PalavrasPopUp" method="_on_Descart_pressed"]
 [connection signal="pressed" from="Atençao/Descart" to="Atençao/Descart" method="_on_Descart_pressed"]
 [connection signal="pressed" from="Atençao/Descart" to="." method="_on_Descart_pressed"]
-[connection signal="pressed" from="Atençao/Descart" to="PalavrasPopUp" method="_on_Descart_pressed"]

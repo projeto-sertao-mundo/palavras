@@ -60,6 +60,7 @@ func InstanciarPalavras():
 				cartaoInstanciado.name = str(cartao.codigo)
 				cartaoInstanciado.get_node("Cartao").texture_normal = cartao.sprite
 				self.get_node("Cartões").get_node("GridCartões").add_child(cartaoInstanciado)
+				self.get_node("Cartões").get_node("GridCartões").move_child(cartaoInstanciado,0)
 				
 				for retalho in cartao.retalhos:
 					retalhoInstanciado = $"/root/Global".retalhoInstanceRef.instance()

@@ -22,6 +22,7 @@ func _on_TextureButton_pressed():
 		
 		sprite.visible = true
 		sprite.texture = self.get_node("Cartao").texture_normal
+		sprite.isVisualization = true
 		
 		for child in sprite.get_children():
 			if child is TextureButton:

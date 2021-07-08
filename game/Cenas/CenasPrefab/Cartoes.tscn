@@ -19,6 +19,9 @@ __meta__ = {
 [node name="Control" type="TextureButton" parent="."]
 margin_right = 317.0
 margin_bottom = 194.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [connection signal="pressed" from="Cartao" to="." method="_on_TextureButton_pressed"]
 [connection signal="pressed" from="Control" to="." method="_on_Control_pressed"]

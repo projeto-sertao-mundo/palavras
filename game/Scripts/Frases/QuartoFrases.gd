@@ -63,6 +63,7 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 		var _ignore = get_tree().change_scene("res://Cenas/CenasMenu/Corredor.tscn")
 
 func _on_Confirm_pressed():
-	get_node("RetalhoGrande").CreateRetalhoBag()
-	get_node("Confirm").visible = false
-	get_node("CartaoAnimation").play("Cartao")
+	if (get_parent().get_node("PalavrasPopUp/Cartões/GridCartões").get_child_count() < 12):
+		get_node("RetalhoGrande").CreateRetalhoBag()
+		get_node("Confirm").visible = false
+		get_node("CartaoAnimation").play("Cartao")

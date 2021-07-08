@@ -8,6 +8,7 @@ var palavrasParentesco
 var palavraInstanciada
 var sprite
 var canShow
+var isVisualization = false
 
 func _ready():
 	canShow = true
@@ -63,6 +64,7 @@ func _on_ExitButton_pressed():
 		for child in self.get_children():
 			if !(child is Area2D) && !(child is CollisionShape2D):
 				child.free()
+		isVisualization = false
 		
 	setRetalhoFrase = false
 	self.get_parent().get_node("Confirm").visible = false

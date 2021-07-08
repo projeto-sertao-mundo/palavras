@@ -4,23 +4,6 @@ var mouseIn
 var spriteGrande
 var alreadyChanged
 
-#var frase1
-#var frase2
-#var frase3
-#var frase4
-#var frase5
-#var frase6
-#var frase7
-#var frase8
-#var frase9
-#var frase10
-#var frase11
-#var frase12
-#var frase13
-#var frase14
-#var frase15
-
-
 func _ready():
 	alreadyChanged = false
 	mouseIn = false;
