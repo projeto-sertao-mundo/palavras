@@ -82,7 +82,8 @@ func _on_Descart_mouse_entered():
 func _on_Descart_mouse_exited():
 	UnScaleButton()
 func _on_Confirm_pressed():
-	UnScaleButton()
+	if (get_parent().get_child_count() < 25):
+		UnScaleButton()
 
 func _on_Descart_pressed():
 	UnScaleButton()
