@@ -43,6 +43,7 @@ func _on_NaoDescartar_pressed():
 func _on_Descart_pressed():
 	get_node("ExitLock").visible = false
 	get_node("RetalhoGrande").visible = false
+	get_node("FraseLock").visible = false
 	
 	for child in get_node("RetalhoGrande").get_children():
 		if child is TextureButton:
@@ -63,8 +64,7 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 		var _ignore = get_tree().change_scene("res://Cenas/CenasMenu/Corredor.tscn")
 
 func _on_Confirm_pressed():
-	print(get_node("PalavrasPopUp/Cartões/GridCartões").get_child_count())
-	if (get_node("PalavrasPopUp/Cartões/GridCartões").get_child_count() < 25):
+	if (get_node("PalavrasPopUp/Cartões/GridCartões").get_child_count() < 12):
 		get_node("RetalhoGrande").CreateRetalhoBag()
 		get_node("Confirm").visible = false
 		get_node("CartaoAnimation").play("Cartao")

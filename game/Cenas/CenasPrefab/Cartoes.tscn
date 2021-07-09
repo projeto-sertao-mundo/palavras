@@ -7,6 +7,9 @@
 margin_right = 318.0
 margin_bottom = 190.0
 script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Cartao" type="TextureButton" parent="."]
 margin_right = 317.0

@@ -3,7 +3,6 @@ extends Control
 var mouseIn
 var spriteGrande
 var alreadyChanged
-
 func _ready():
 	alreadyChanged = false
 	mouseIn = false;
