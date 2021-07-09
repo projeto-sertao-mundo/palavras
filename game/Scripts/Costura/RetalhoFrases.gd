@@ -25,6 +25,10 @@ func _process(_delta):
 	if ($"/root/TutorialGlobal".tutorialPos == 23 || !$"/root/TutorialGlobal".willDoTutorial || $"/root/TutorialGlobal".FrasesCompleted):
 		if (mouseIn && clickPosition != null && placedPosition != clickPosition):
 			self.set_position(sprite.get_local_mouse_position())
+			
+			if (primeiroNode.has_node("Label")):
+				primeiroNode.get_node("Label").set_text(self.name)
+			
 			placedPosition = clickPosition
 		elif (!setRetalhoFrase && !mouseIn && clickPosition != null):
 			self.free()

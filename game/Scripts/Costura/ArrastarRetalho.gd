@@ -65,10 +65,10 @@ func instanceRetalho(var ref, var nome, var scale):
 		palavraInstanciada.get_node("Label").text = self.get_node("Label").text
 
 func moveRetalho():
-	if palavrasParentesco.has_node("retaio") && !mouseIn && !$"/root/Global".jaSetou && palavraInstanciada != null:
-		palavraInstanciada = palavrasParentesco.get_node("retaio")
 	if (clickPosition != null && palavraInstanciada != null && is_instance_valid(palavraInstanciada)):
 		palavraInstanciada.set_position(clickPosition)
+		if (primeiroNode.has_node("Label")):
+			primeiroNode.get_node("Label").set_text(palavraInstanciada.name)
 	if palavraInstanciada != null && is_instance_valid(palavraInstanciada):
 		palavraInstanciada.visible = true
 
@@ -82,3 +82,7 @@ func _on_TextureButton_button_down():
 func _on_TextureButton_button_up():
 	mouseIn = false
 
+func _on_Preview_button_down():
+	palavraInstanciada = self
+func _on_Preview_button_up():
+	palavraInstanciada = null

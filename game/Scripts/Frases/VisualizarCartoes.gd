@@ -54,7 +54,10 @@ func instanceRetalhos():
 				retalhoInstanciado.get_node("Borda").texture = retalho.retalhoBordaTex
 				retalhoInstanciado.get_node("Miolo").texture = retalho.retalhoMioloTex
 				retalhoInstanciado.get_node("Label").text = retalho.retalhoLabel
-				retalhoInstanciado.set_position(Vector2(retalho.posicaoRetalho.x, retalho.posicaoRetalho.y))
+				
+				if (primeiroNode.has_node("Label")):
+					retalhoInstanciado.set_position(Vector2(retalho.posicaoRetalho.x, retalho.posicaoRetalho.y))
+					primeiroNode.get_node("Label").set_text(retalhoInstanciado.name)
 			
 			$"/root/Global".selectedCard = cartao.codigo
 
