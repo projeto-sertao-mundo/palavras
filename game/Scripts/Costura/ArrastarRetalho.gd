@@ -24,16 +24,22 @@ func _ready():
 func _process(_delta):
 	
 	if (primeiroNode.name == "QuartoCostura"):
-		instanceRetalho($"/root/Global".retalhoInstanceRef, "retaio", Vector2(0.7,0.7))
+		instanceRetalho($"/root/Global".retalhoInstanceRef, self.name, Vector2(0.7,0.7))
 		moveRetalho()
+		
+		if (!setRetalhoFrase && !setouRetalho):
+			if !mouseIn && mouseIn != null && !$"/root/Global".podeSetar:
+				$"/root/Global".mudarRetalhoArrastado(null)
+				if (is_instance_valid(palavraInstanciada) && palavraInstanciada != null):
+					palavraInstanciada.free()
 	
 	
 	elif (primeiroNode.name == "QuartoFrases"):
 		if (sprite.visible && !sprite.isVisualization):
 			instanceRetalho($"/root/Global".retalhoInstanceRef, "retaio", Vector2(1.2,1.2))
 			moveRetalho()
-	
-	if (!setRetalhoFrase && !setouRetalho):
+		
+		if (!setRetalhoFrase && !setouRetalho):
 			if !mouseIn && mouseIn != null && palavrasParentesco.has_node("retaio") && !$"/root/Global".podeSetar:
 				$"/root/Global".mudarRetalhoArrastado(null)
 				if (palavraInstanciada != null):
@@ -66,14 +72,9 @@ func instanceRetalho(var ref, var nome, var scale):
 
 func moveRetalho():
 	if (clickPosition != null && palavraInstanciada != null && is_instance_valid(palavraInstanciada)):
-		palavraInstanciada.set_position(clickPosition)
-		
-		if (primeiroNode.has_node("Label")):
-			if (palavraInstanciada.name == "2"):
-				primeiroNode.get_node("Label").set_text("Preview")
-		else:
-			primeiroNode.get_node("Label").set_text(palavraInstanciada.name)
-			primeiroNode.get_node("Label2").set_text("Preview")
+		if (has_node(self.get_parent().get_path())):
+			if (palavraInstanciada.name != "Cartao"):
+				palavraInstanciada.set_position(clickPosition)
 		
 	if palavraInstanciada != null && is_instance_valid(palavraInstanciada):
 		palavraInstanciada.visible = true

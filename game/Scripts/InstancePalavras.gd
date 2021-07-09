@@ -50,6 +50,7 @@ func InstanciarPalavras():
 				retalhoInstanciado.get_node("Miolo").texture = retalhoRef.spriteMiolo
 				retalhoInstanciado.get_node("Label").text = retalhoRef.labelText
 				self.get_node("Retalhos").get_node("GridRetalhos").add_child(retalhoInstanciado)
+				self.get_node("Retalhos").get_node("GridRetalhos").move_child(retalhoInstanciado,0)
 		
 	elif get_child(6).name == "Cartões":
 		var cartoes = []

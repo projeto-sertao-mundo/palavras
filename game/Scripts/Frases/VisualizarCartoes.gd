@@ -5,6 +5,7 @@ var sprite
 var confirmar
 var retalhoLock
 var descartButton
+var created = true
 
 func _ready():
 	primeiroNode = self.get_parent().get_parent().get_parent().get_parent()
@@ -55,13 +56,7 @@ func instanceRetalhos():
 				retalhoInstanciado.get_node("Miolo").texture = retalho.retalhoMioloTex
 				retalhoInstanciado.get_node("Label").text = retalho.retalhoLabel
 				
-				if (primeiroNode.has_node("Label")):
-					retalhoInstanciado.set_position(Vector2(retalho.posicaoRetalho.x, retalho.posicaoRetalho.y))
-					if (retalhoInstanciado.name == "2"):
-						primeiroNode.get_node("Label").set_text("cartoes")
-					else:
-						primeiroNode.get_node("Label").set_text(retalhoInstanciado.name)
-						primeiroNode.get_node("Label2").set_text("Cartoes")
+				retalhoInstanciado.set_position(Vector2(retalho.posicaoRetalho.x, retalho.posicaoRetalho.y))
 			
 			$"/root/Global".selectedCard = cartao.codigo
 

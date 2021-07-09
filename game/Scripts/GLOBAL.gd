@@ -57,9 +57,9 @@ func mudarRetalhoArrastado (var retalho):
 func returnRetalhoArrastado():
 	return retalhoArrastado
 
-func deleteRetalhoArrastado():
+func deleteRetalhoArrastado(var retalho):
 	for ret in retalhos:
-		if str(ret.codigo) == retalhoArrastado.name:
+		if str(ret.codigo) == retalho.name:
 			retalhos.erase(ret)
 
 func deleteCartaoSelecionado():

@@ -25,16 +25,10 @@ func _process(_delta):
 	if ($"/root/TutorialGlobal".tutorialPos == 23 || !$"/root/TutorialGlobal".willDoTutorial || $"/root/TutorialGlobal".FrasesCompleted):
 		if (mouseIn && clickPosition != null && placedPosition != clickPosition):
 			self.set_position(sprite.get_local_mouse_position())
-			
-			if (primeiroNode.has_node("Label")):
-				if (self.name == "2"):
-					primeiroNode.get_node("Label").set_text("retalho frases")
-				else:
-					primeiroNode.get_node("Label").set_text(self.name)
-					primeiroNode.get_node("Label2").set_text("RetalhoFrases")
-			
 			placedPosition = clickPosition
 		elif (!setRetalhoFrase && !mouseIn && clickPosition != null):
+			if (sprite.get_child_count() - 1 < 2):
+				primeiroNode.get_node("Confirm").visible = false
 			self.free()
 
 func _input(event):

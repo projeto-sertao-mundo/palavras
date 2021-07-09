@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=2]
+[gd_scene load_steps=47 format=2]
 
 [ext_resource path="res://Scripts/Frases/FrasePreview.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/ScaleButton.gd" type="Script" id=2]
@@ -202,10 +202,6 @@ extents = Vector2( 86.3473, 50.4913 )
 
 [sub_resource type="DynamicFont" id=8]
 size = 32
-font_data = ExtResource( 37 )
-
-[sub_resource type="DynamicFont" id=9]
-size = 40
 font_data = ExtResource( 37 )
 
 [node name="QuartoFrases" type="Node2D"]
@@ -861,30 +857,6 @@ __meta__ = {
 
 [node name="Whoosh" type="AudioStreamPlayer2D" parent="Audio"]
 stream = ExtResource( 38 )
-
-[node name="Label" type="Label" parent="."]
-modulate = Color( 0, 0, 0, 1 )
-margin_left = 400.904
-margin_top = 743.01
-margin_right = 884.904
-margin_bottom = 783.01
-custom_fonts/font = SubResource( 9 )
-text = "AAAAAAAAAAAAAAAAAAAAAA"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label2" type="Label" parent="."]
-modulate = Color( 0, 0, 0, 1 )
-margin_left = 915.844
-margin_top = 739.446
-margin_right = 1399.84
-margin_bottom = 779.446
-custom_fonts/font = SubResource( 9 )
-text = "AAAAAAAAAAAAAAAAAAAAAA"
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [connection signal="tree_entered" from="." to="." method="_on_QuartoFrases_tree_entered"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

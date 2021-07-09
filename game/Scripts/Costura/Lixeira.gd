@@ -3,18 +3,17 @@ extends Sprite
 var mouseIn = false
 var costuraPopUpNode
 var clickPosition
-var area
+var areaR
 
 func _ready():
 	costuraPopUpNode = get_parent().get_node("CosturaPopUp/PalavrasPopUp")
 
 func _process(_delta):
 	#print(mouseIn , " ", $"/root/Global".returnRetalhoArrastado())
-	if mouseIn && $"/root/Global".returnRetalhoArrastado() != null:
+	if mouseIn && areaR != null:
 		var grid = costuraPopUpNode.get_node("Retalhos").get_node("GridRetalhos").get_children()
-		$"/root/Global".deleteRetalhoArrastado()
-		
-		print ("titi")
+		#print(areaR.name)
+		$"/root/Global".deleteRetalhoArrastado(areaR)
 		
 		for n in grid:
 			n.free()
@@ -37,17 +36,16 @@ func instanceRetalhos():
 			retalhoInstanciado.get_node("Label").text = retalhoRef.labelText
 			costuraPopUpNode.get_node("Retalhos").get_node("GridRetalhos").add_child(retalhoInstanciado)
 			
-	
-	area.free()
-	
+	if (areaR != null):
+		areaR.free()
 
 func _input(event):
 	if event is InputEventScreenDrag:
 		clickPosition = event.position
 
-func _on_Area2D_area_entered(_area):
+func _on_Area2D_area_entered(area):
 	mouseIn = true
-	area = _area.get_parent()
+	areaR = area.get_parent()
 
 func _on_Area2D_area_exited(_area):
 	mouseIn = false

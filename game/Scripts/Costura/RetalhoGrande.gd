@@ -24,7 +24,6 @@ func instanceRetalho(var ref, var nome, var positionR, var _changeGlobal):
 		palavraInstanciada.set_scale(Vector2(0.55,0.55))
 		if (positionR != null):
 			palavraInstanciada.set_position(to_local(positionR))
-			print(palavraInstanciada.name, " ", to_local(positionR))
 		
 		var mioloInst = palavraInstanciada.get_node("Miolo")
 		var bordaInst = palavraInstanciada.get_node("Borda")
