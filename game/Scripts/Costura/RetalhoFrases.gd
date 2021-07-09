@@ -29,6 +29,9 @@ func _process(_delta):
 			if (primeiroNode.has_node("Label")):
 				if (self.name == "2"):
 					primeiroNode.get_node("Label").set_text("retalho frases")
+				else:
+					primeiroNode.get_node("Label").set_text(self.name)
+					primeiroNode.get_node("Label2").set_text("RetalhoFrases")
 			
 			placedPosition = clickPosition
 		elif (!setRetalhoFrase && !mouseIn && clickPosition != null):

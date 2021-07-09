@@ -874,6 +874,18 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Label2" type="Label" parent="."]
+modulate = Color( 0, 0, 0, 1 )
+margin_left = 915.844
+margin_top = 739.446
+margin_right = 1399.84
+margin_bottom = 779.446
+custom_fonts/font = SubResource( 9 )
+text = "AAAAAAAAAAAAAAAAAAAAAA"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [connection signal="tree_entered" from="." to="." method="_on_QuartoFrases_tree_entered"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 [connection signal="animation_finished" from="CartaoAnimation" to="RetalhoGrande" method="_on_CartaoAnimation_animation_finished"]
@@ -925,5 +937,5 @@ __meta__ = {
 [connection signal="mouse_entered" from="Atençao/Descart" to="Atençao/Descart" method="_on_Descart_mouse_entered"]
 [connection signal="mouse_exited" from="Atençao/Descart" to="Atençao/Descart" method="_on_Descart_mouse_exited"]
 [connection signal="pressed" from="Atençao/Descart" to="." method="_on_Descart_pressed"]
-[connection signal="pressed" from="Atençao/Descart" to="Atençao/Descart" method="_on_Descart_pressed"]
 [connection signal="pressed" from="Atençao/Descart" to="PalavrasPopUp" method="_on_Descart_pressed"]
+[connection signal="pressed" from="Atençao/Descart" to="Atençao/Descart" method="_on_Descart_pressed"]

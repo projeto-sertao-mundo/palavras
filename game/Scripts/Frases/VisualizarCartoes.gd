@@ -59,6 +59,9 @@ func instanceRetalhos():
 					retalhoInstanciado.set_position(Vector2(retalho.posicaoRetalho.x, retalho.posicaoRetalho.y))
 					if (retalhoInstanciado.name == "2"):
 						primeiroNode.get_node("Label").set_text("cartoes")
+					else:
+						primeiroNode.get_node("Label").set_text(retalhoInstanciado.name)
+						primeiroNode.get_node("Label2").set_text("Cartoes")
 			
 			$"/root/Global".selectedCard = cartao.codigo
 

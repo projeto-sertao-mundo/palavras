@@ -71,6 +71,9 @@ func moveRetalho():
 		if (primeiroNode.has_node("Label")):
 			if (palavraInstanciada.name == "2"):
 				primeiroNode.get_node("Label").set_text("Preview")
+		else:
+			primeiroNode.get_node("Label").set_text(palavraInstanciada.name)
+			primeiroNode.get_node("Label2").set_text("Preview")
 		
 	if palavraInstanciada != null && is_instance_valid(palavraInstanciada):
 		palavraInstanciada.visible = true
