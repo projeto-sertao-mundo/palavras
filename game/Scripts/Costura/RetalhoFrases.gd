@@ -27,7 +27,8 @@ func _process(_delta):
 			self.set_position(sprite.get_local_mouse_position())
 			
 			if (primeiroNode.has_node("Label")):
-				primeiroNode.get_node("Label").set_text(self.name)
+				if (self.name == "2"):
+					primeiroNode.get_node("Label").set_text("retalho frases")
 			
 			placedPosition = clickPosition
 		elif (!setRetalhoFrase && !mouseIn && clickPosition != null):

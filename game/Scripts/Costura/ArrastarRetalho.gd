@@ -67,8 +67,11 @@ func instanceRetalho(var ref, var nome, var scale):
 func moveRetalho():
 	if (clickPosition != null && palavraInstanciada != null && is_instance_valid(palavraInstanciada)):
 		palavraInstanciada.set_position(clickPosition)
+		
 		if (primeiroNode.has_node("Label")):
-			primeiroNode.get_node("Label").set_text(palavraInstanciada.name)
+			if (palavraInstanciada.name == "2"):
+				primeiroNode.get_node("Label").set_text("Preview")
+		
 	if palavraInstanciada != null && is_instance_valid(palavraInstanciada):
 		palavraInstanciada.visible = true
 
