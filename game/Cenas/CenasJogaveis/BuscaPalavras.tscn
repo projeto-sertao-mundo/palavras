@@ -1,4 +1,4 @@
-[gd_scene load_steps=72 format=2]
+[gd_scene load_steps=76 format=2]
 
 [ext_resource path="res://Scripts/Cozinha/BuscaPalavras.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/SpritesFinais/Objetos/seta.png" type="Texture" id=2]
@@ -59,6 +59,9 @@
 [ext_resource path="res://Scripts/Tutorial/TutorialBusca.gd" type="Script" id=57]
 [ext_resource path="res://Audio/whoosh.ogg" type="AudioStream" id=58]
 [ext_resource path="res://Scripts/ScaleButton.gd" type="Script" id=59]
+[ext_resource path="res://Sprites/SpritesFinais/noAtlasObjects/fundo tempo1.png" type="Texture" id=60]
+[ext_resource path="res://Sprites/SpritesFinais/noAtlasObjects/lupa normal.png" type="Texture" id=61]
+[ext_resource path="res://Sprites/SpritesFinais/noAtlasObjects/lupa inativa.png" type="Texture" id=62]
 
 [sub_resource type="Animation" id=1]
 resource_name = "BolsaShake"
@@ -129,7 +132,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.5, 0.9, 1.2 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 61.428, 144.347 ), Vector2( 61.428, 178 ), Vector2( 61.428, 144.347 ), Vector2( 61.428, 144.347 ) ]
+"values": [ Vector2( 61.428, 190 ), Vector2( 61.428, 168 ), Vector2( 61.428, 190 ), Vector2( 61.428, 190 ) ]
 }
 
 [sub_resource type="Animation" id=4]
@@ -253,6 +256,82 @@ tracks/0/keys = {
 "values": [ Vector2( 472.276, 70 ), Vector2( 472.276, 90 ), Vector2( 472.276, -600 ) ]
 }
 
+[sub_resource type="Animation" id=13]
+resource_name = "EscondeFundo"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/path = NodePath("FundoAjuda/SpriteAjuda:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.52, 0.6 ), Vector2( 0.524704, 0.6 ), Vector2( -0.000375082, 0.6 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("FundoAjuda/SpriteAjuda:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.3, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 94.0243, 51.965 ), Vector2( 94.5346, 51.965 ), Vector2( 37.5636, 51.965 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("FundoAjuda/Label:rect_position")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.3, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 82.9497, 31.8787 ), Vector2( 82.9497, 31.8787 ), Vector2( 37, 31.879 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("FundoAjuda/Label:rect_scale")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.3, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.8, 0.8 ), Vector2( 1, 0.8 ), Vector2( 1e-05, 0.8 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("FundoAjuda/Ajuda:rect_position")
+tracks/4/interp = 2
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, -95.3 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("FundoAjuda/Ajuda:rect_scale")
+tracks/5/interp = 2
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.3, 0.3 ), Vector2( 0.4, 0.4 ), Vector2( 0.4, 0.4 ) ]
+}
+
 [sub_resource type="DynamicFont" id=10]
 size = 33
 font_data = ExtResource( 56 )
@@ -281,6 +360,9 @@ anims/SetaSair = SubResource( 7 )
 [node name="BolsaJuice" type="AnimationPlayer" parent="."]
 anims/BolsaIn = SubResource( 8 )
 anims/BolsaOut = SubResource( 9 )
+
+[node name="AjudaJuice" type="AnimationPlayer" parent="."]
+anims/EscondeFundo = SubResource( 13 )
 
 [node name="Cozinha" type="Sprite" parent="."]
 position = Vector2( 799.746, 451.378 )
@@ -312,10 +394,12 @@ script = ExtResource( 8 )
 __meta__ = {
 "_edit_group_": true
 }
+posicao = Vector2( 1358, 282 )
 
 [node name="TextureButton" type="TextureButton" parent="Letras/A"]
 margin_right = 40.0
 margin_bottom = 40.0
+rect_pivot_offset = Vector2( 30, 30 )
 texture_normal = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -329,10 +413,12 @@ script = ExtResource( 8 )
 __meta__ = {
 "_edit_group_": true
 }
+posicao = Vector2( 726, 421 )
 
 [node name="TextureButton" type="TextureButton" parent="Letras/B"]
 margin_right = 40.0
 margin_bottom = 40.0
+rect_pivot_offset = Vector2( 30, 30 )
 texture_normal = ExtResource( 9 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -346,10 +432,12 @@ script = ExtResource( 8 )
 __meta__ = {
 "_edit_group_": true
 }
+posicao = Vector2( 1122, 306 )
 
 [node name="TextureButton" type="TextureButton" parent="Letras/C"]
 margin_right = 40.0
 margin_bottom = 40.0
+rect_pivot_offset = Vector2( 30, 30 )
 texture_normal = ExtResource( 16 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -363,10 +451,12 @@ script = ExtResource( 8 )
 __meta__ = {
 "_edit_group_": true
 }
+posicao = Vector2( 32, 674 )
 
 [node name="TextureButton" type="TextureButton" parent="Letras/D"]
 margin_right = 40.0
 margin_bottom = 40.0
+rect_pivot_offset = Vector2( 30, 30 )
 texture_normal = ExtResource( 19 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -379,10 +469,12 @@ script = ExtResource( 8 )
 __meta__ = {
 "_edit_group_": true
 }
+posicao = Vector2( 1070, 129 )
 
 [node name="TextureButton" type="TextureButton" parent="Letras/E"]
 margin_right = 40.0
 margin_bottom = 40.0
+rect_pivot_offset = Vector2( 30, 30 )
 texture_normal = ExtResource( 12 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -396,10 +488,12 @@ script = ExtResource( 8 )
 __meta__ = {
 "_edit_group_": true
 }
+posicao = Vector2( 72, 549 )
 
 [node name="TextureButton" type="TextureButton" parent="Letras/F"]
 margin_right = 40.0
 margin_bottom = 40.0
+rect_pivot_offset = Vector2( 30, 30 )
 texture_normal = ExtResource( 11 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -414,10 +508,12 @@ script = ExtResource( 8 )
 __meta__ = {
 "_edit_group_": true
 }
+posicao = Vector2( 1567, 582 )
 
 [node name="TextureButton" type="TextureButton" parent="Letras/G"]
 margin_right = 40.0
 margin_bottom = 40.0
+rect_pivot_offset = Vector2( 30, 30 )
 texture_normal = ExtResource( 14 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -430,10 +526,12 @@ script = ExtResource( 8 )
 __meta__ = {
 "_edit_group_": true
 }
+posicao = Vector2( 805, 378 )
 
 [node name="TextureButton" type="TextureButton" parent="Letras/H"]
 margin_right = 40.0
 margin_bottom = 40.0
+rect_pivot_offset = Vector2( 30, 30 )
 texture_normal = ExtResource( 20 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -447,10 +545,12 @@ script = ExtResource( 8 )
 __meta__ = {
 "_edit_group_": true
 }
+posicao = Vector2( 418, 180 )
 
 [node name="TextureButton" type="TextureButton" parent="Letras/I"]
 margin_right = 40.0
 margin_bottom = 40.0
+rect_pivot_offset = Vector2( 30, 30 )
 texture_normal = ExtResource( 13 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -463,10 +563,12 @@ script = ExtResource( 8 )
 __meta__ = {
 "_edit_group_": true
 }
+posicao = Vector2( 939, 606 )
 
 [node name="TextureButton" type="TextureButton" parent="Letras/J"]
 margin_right = 40.0
 margin_bottom = 40.0
+rect_pivot_offset = Vector2( 30, 30 )
 texture_normal = ExtResource( 15 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -479,10 +581,12 @@ script = ExtResource( 8 )
 __meta__ = {
 "_edit_group_": true
 }
+posicao = Vector2( 1314, 567 )
 
 [node name="TextureButton" type="TextureButton" parent="Letras/K"]
 margin_right = 40.0
 margin_bottom = 40.0
+rect_pivot_offset = Vector2( 30, 30 )
 texture_normal = ExtResource( 17 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -496,10 +600,12 @@ script = ExtResource( 8 )
 __meta__ = {
 "_edit_group_": true
 }
+posicao = Vector2( 549, 108 )
 
 [node name="TextureButton" type="TextureButton" parent="Letras/L"]
 margin_right = 40.0
 margin_bottom = 40.0
+rect_pivot_offset = Vector2( 30, 30 )
 texture_normal = ExtResource( 18 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -514,10 +620,12 @@ script = ExtResource( 8 )
 __meta__ = {
 "_edit_group_": true
 }
+posicao = Vector2( 595, 565 )
 
 [node name="TextureButton" type="TextureButton" parent="Letras/M"]
 margin_right = 40.0
 margin_bottom = 40.0
+rect_pivot_offset = Vector2( 30, 30 )
 texture_normal = ExtResource( 21 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -530,10 +638,12 @@ script = ExtResource( 8 )
 __meta__ = {
 "_edit_group_": true
 }
+posicao = Vector2( 679, 605 )
 
 [node name="TextureButton" type="TextureButton" parent="Letras/N"]
 margin_right = 40.0
 margin_bottom = 40.0
+rect_pivot_offset = Vector2( 30, 30 )
 texture_normal = ExtResource( 10 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -547,10 +657,12 @@ script = ExtResource( 8 )
 __meta__ = {
 "_edit_group_": true
 }
+posicao = Vector2( 1350, 168 )
 
 [node name="TextureButton" type="TextureButton" parent="Letras/O"]
 margin_right = 40.0
 margin_bottom = 40.0
+rect_pivot_offset = Vector2( 30, 30 )
 texture_normal = ExtResource( 24 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -564,10 +676,12 @@ script = ExtResource( 8 )
 __meta__ = {
 "_edit_group_": true
 }
+posicao = Vector2( 540, 349 )
 
 [node name="TextureButton" type="TextureButton" parent="Letras/P"]
 margin_right = 40.0
 margin_bottom = 40.0
+rect_pivot_offset = Vector2( 30, 30 )
 texture_normal = ExtResource( 22 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -581,10 +695,12 @@ script = ExtResource( 8 )
 __meta__ = {
 "_edit_group_": true
 }
+posicao = Vector2( 171, 463 )
 
 [node name="TextureButton" type="TextureButton" parent="Letras/Q"]
 margin_right = 40.0
 margin_bottom = 40.0
+rect_pivot_offset = Vector2( 30, 30 )
 texture_normal = ExtResource( 23 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -599,10 +715,12 @@ script = ExtResource( 8 )
 __meta__ = {
 "_edit_group_": true
 }
+posicao = Vector2( 142, 582 )
 
 [node name="TextureButton" type="TextureButton" parent="Letras/R"]
 margin_right = 40.0
 margin_bottom = 40.0
+rect_pivot_offset = Vector2( 30, 30 )
 texture_normal = ExtResource( 27 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -617,10 +735,12 @@ script = ExtResource( 8 )
 __meta__ = {
 "_edit_group_": true
 }
+posicao = Vector2( 289, 689 )
 
 [node name="TextureButton" type="TextureButton" parent="Letras/S"]
 margin_right = 40.0
 margin_bottom = 40.0
+rect_pivot_offset = Vector2( 30, 30 )
 texture_normal = ExtResource( 31 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -633,10 +753,12 @@ script = ExtResource( 8 )
 __meta__ = {
 "_edit_group_": true
 }
+posicao = Vector2( 728, 68 )
 
 [node name="TextureButton" type="TextureButton" parent="Letras/T"]
 margin_right = 40.0
 margin_bottom = 40.0
+rect_pivot_offset = Vector2( 30, 30 )
 texture_normal = ExtResource( 29 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -650,10 +772,12 @@ script = ExtResource( 8 )
 __meta__ = {
 "_edit_group_": true
 }
+posicao = Vector2( 544, 241 )
 
 [node name="TextureButton" type="TextureButton" parent="Letras/U"]
 margin_right = 40.0
 margin_bottom = 40.0
+rect_pivot_offset = Vector2( 30, 30 )
 texture_normal = ExtResource( 30 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -666,10 +790,12 @@ script = ExtResource( 8 )
 __meta__ = {
 "_edit_group_": true
 }
+posicao = Vector2( 878, 472 )
 
 [node name="TextureButton" type="TextureButton" parent="Letras/V"]
 margin_right = 40.0
 margin_bottom = 40.0
+rect_pivot_offset = Vector2( 30, 30 )
 texture_normal = ExtResource( 25 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -685,10 +811,12 @@ __meta__ = {
 "_edit_group_": true,
 "_editor_description_": ""
 }
+posicao = Vector2( 1022, 431 )
 
 [node name="TextureButton" type="TextureButton" parent="Letras/W"]
 margin_right = 40.0
 margin_bottom = 40.0
+rect_pivot_offset = Vector2( 30, 30 )
 texture_normal = ExtResource( 28 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -701,10 +829,12 @@ script = ExtResource( 8 )
 __meta__ = {
 "_edit_group_": true
 }
+posicao = Vector2( 806, 148 )
 
 [node name="TextureButton" type="TextureButton" parent="Letras/X"]
 margin_right = 40.0
 margin_bottom = 40.0
+rect_pivot_offset = Vector2( 30, 30 )
 texture_normal = ExtResource( 32 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -717,10 +847,12 @@ script = ExtResource( 8 )
 __meta__ = {
 "_edit_group_": true
 }
+posicao = Vector2( 1560, 141 )
 
 [node name="TextureButton" type="TextureButton" parent="Letras/Y"]
 margin_right = 40.0
 margin_bottom = 40.0
+rect_pivot_offset = Vector2( 30, 30 )
 texture_normal = ExtResource( 26 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -733,10 +865,12 @@ script = ExtResource( 8 )
 __meta__ = {
 "_edit_group_": true
 }
+posicao = Vector2( 1228, 741 )
 
 [node name="TextureButton" type="TextureButton" parent="Letras/Z"]
 margin_right = 40.0
 margin_bottom = 40.0
+rect_pivot_offset = Vector2( 30, 30 )
 texture_normal = ExtResource( 33 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -750,10 +884,12 @@ __meta__ = {
 "_edit_group_": true
 }
 isLetraAcentuada = true
+posicao = Vector2( 355, 379 )
 
 [node name="TextureButton" type="TextureButton" parent="Letras/Ã"]
 margin_right = 40.0
 margin_bottom = 40.0
+rect_pivot_offset = Vector2( 30, 30 )
 texture_normal = ExtResource( 42 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -768,10 +904,12 @@ __meta__ = {
 "_edit_group_": true
 }
 isLetraAcentuada = true
+posicao = Vector2( 77, 264 )
 
 [node name="TextureButton" type="TextureButton" parent="Letras/Á"]
 margin_right = 40.0
 margin_bottom = 40.0
+rect_pivot_offset = Vector2( 30, 30 )
 texture_normal = ExtResource( 36 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -785,10 +923,12 @@ __meta__ = {
 "_edit_group_": true
 }
 isLetraAcentuada = true
+posicao = Vector2( 189, 72 )
 
 [node name="TextureButton" type="TextureButton" parent="Letras/Â"]
 margin_right = 40.0
 margin_bottom = 40.0
+rect_pivot_offset = Vector2( 30, 30 )
 texture_normal = ExtResource( 43 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -802,10 +942,12 @@ __meta__ = {
 "_edit_group_": true
 }
 isLetraAcentuada = true
+posicao = Vector2( 676, 178 )
 
 [node name="TextureButton" type="TextureButton" parent="Letras/Ç"]
 margin_right = 40.0
 margin_bottom = 40.0
+rect_pivot_offset = Vector2( 30, 30 )
 texture_normal = ExtResource( 39 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -819,10 +961,12 @@ __meta__ = {
 "_edit_group_": true
 }
 isLetraAcentuada = true
+posicao = Vector2( 871, 60 )
 
 [node name="TextureButton" type="TextureButton" parent="Letras/É"]
 margin_right = 40.0
 margin_bottom = 40.0
+rect_pivot_offset = Vector2( 30, 30 )
 texture_normal = ExtResource( 41 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -836,10 +980,12 @@ __meta__ = {
 "_edit_group_": true
 }
 isLetraAcentuada = true
+posicao = Vector2( 221, 408 )
 
 [node name="TextureButton" type="TextureButton" parent="Letras/Ê"]
 margin_right = 40.0
 margin_bottom = 40.0
+rect_pivot_offset = Vector2( 30, 30 )
 texture_normal = ExtResource( 37 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -853,10 +999,12 @@ __meta__ = {
 "_edit_group_": true
 }
 isLetraAcentuada = true
+posicao = Vector2( 1422, 405 )
 
 [node name="TextureButton" type="TextureButton" parent="Letras/Í"]
 margin_right = 40.0
 margin_bottom = 40.0
+rect_pivot_offset = Vector2( 30, 30 )
 texture_normal = ExtResource( 44 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -871,10 +1019,12 @@ __meta__ = {
 "_edit_group_": true
 }
 isLetraAcentuada = true
+posicao = Vector2( 1360, 66 )
 
 [node name="TextureButton" type="TextureButton" parent="Letras/Õ"]
 margin_right = 40.0
 margin_bottom = 40.0
+rect_pivot_offset = Vector2( 30, 30 )
 texture_normal = ExtResource( 40 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -888,10 +1038,12 @@ __meta__ = {
 "_edit_group_": true
 }
 isLetraAcentuada = true
+posicao = Vector2( 514, 408 )
 
 [node name="TextureButton" type="TextureButton" parent="Letras/Ó"]
 margin_right = 40.0
 margin_bottom = 40.0
+rect_pivot_offset = Vector2( 30, 30 )
 texture_normal = ExtResource( 38 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -905,10 +1057,12 @@ __meta__ = {
 "_edit_group_": true
 }
 isLetraAcentuada = true
+posicao = Vector2( 407, 567 )
 
 [node name="TextureButton" type="TextureButton" parent="Letras/Ô"]
 margin_right = 40.0
 margin_bottom = 40.0
+rect_pivot_offset = Vector2( 30, 30 )
 texture_normal = ExtResource( 46 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -924,10 +1078,12 @@ __meta__ = {
 "_edit_group_": true
 }
 isLetraAcentuada = true
+posicao = Vector2( 1417, 617 )
 
 [node name="TextureButton" type="TextureButton" parent="Letras/Ú"]
 margin_right = 40.0
 margin_bottom = 40.0
+rect_pivot_offset = Vector2( 30, 30 )
 texture_normal = ExtResource( 45 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -941,10 +1097,12 @@ script = ExtResource( 8 )
 __meta__ = {
 "_edit_group_": true
 }
+posicao = Vector2( 1125, 44 )
 
 [node name="TextureButton" type="TextureButton" parent="Letras/des"]
 margin_right = 59.0
 margin_bottom = 40.0
+rect_pivot_offset = Vector2( 30, 30 )
 texture_normal = ExtResource( 34 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -959,10 +1117,12 @@ script = ExtResource( 8 )
 __meta__ = {
 "_edit_group_": true
 }
+posicao = Vector2( 1494, 626 )
 
 [node name="TextureButton" type="TextureButton" parent="Letras/dis"]
 margin_right = 44.0
 margin_bottom = 26.0
+rect_pivot_offset = Vector2( 30, 30 )
 texture_normal = ExtResource( 35 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -977,10 +1137,12 @@ script = ExtResource( 8 )
 __meta__ = {
 "_edit_group_": true
 }
+posicao = Vector2( 190, 287 )
 
 [node name="TextureButton" type="TextureButton" parent="Letras/inha"]
 margin_right = 61.0
 margin_bottom = 40.0
+rect_pivot_offset = Vector2( 30, 30 )
 texture_normal = ExtResource( 47 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -995,10 +1157,12 @@ script = ExtResource( 8 )
 __meta__ = {
 "_edit_group_": true
 }
+posicao = Vector2( 1047, 277 )
 
 [node name="TextureButton" type="TextureButton" parent="Letras/inho"]
 margin_right = 62.0
 margin_bottom = 40.0
+rect_pivot_offset = Vector2( 30, 30 )
 texture_normal = ExtResource( 49 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1013,10 +1177,12 @@ script = ExtResource( 8 )
 __meta__ = {
 "_edit_group_": true
 }
+posicao = Vector2( 1003, 883 )
 
 [node name="TextureButton" type="TextureButton" parent="Letras/zinha"]
 margin_right = 75.0
 margin_bottom = 40.0
+rect_pivot_offset = Vector2( 30, 30 )
 texture_normal = ExtResource( 48 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1031,10 +1197,12 @@ script = ExtResource( 8 )
 __meta__ = {
 "_edit_group_": true
 }
+posicao = Vector2( 1470, 54 )
 
 [node name="TextureButton" type="TextureButton" parent="Letras/zinho"]
 margin_right = 76.0001
 margin_bottom = 40.0
+rect_pivot_offset = Vector2( 30, 30 )
 texture_normal = ExtResource( 50 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1363,7 +1531,7 @@ texture = ExtResource( 2 )
 [node name="SetaAjuda" type="Sprite" parent="Tutorial2"]
 visible = false
 modulate = Color( 1, 1, 0, 1 )
-position = Vector2( 61.428, 144.347 )
+position = Vector2( 61.428, 190.851 )
 rotation = -4.71239
 texture = ExtResource( 2 )
 
@@ -1388,29 +1556,42 @@ stream = ExtResource( 58 )
 
 [node name="Timer" type="Timer" parent="."]
 
-[node name="Ajuda" type="TextureButton" parent="."]
-margin_left = 22.0
-margin_top = 6.0
-margin_right = 107.0
-margin_bottom = 78.0
-__meta__ = {
-"_edit_group_": true,
-"_edit_use_anchors_": false
-}
+[node name="FundoAjuda" type="Node2D" parent="."]
+position = Vector2( 8, 0 )
 
-[node name="Label" type="Label" parent="Ajuda"]
+[node name="SpriteAjuda" type="Sprite" parent="FundoAjuda"]
+position = Vector2( 94.0243, 51.965 )
+scale = Vector2( 0.52, 0.6 )
+texture = ExtResource( 60 )
+
+[node name="Label" type="Label" parent="FundoAjuda"]
 modulate = Color( 0, 0, 0, 1 )
-margin_left = 9.47217
-margin_top = 9.9074
-margin_right = 71.4722
-margin_bottom = 69.9074
+margin_left = 82.9497
+margin_top = 31.8787
+margin_right = 147.95
+margin_bottom = 91.8792
+rect_scale = Vector2( 0.8, 0.8 )
 custom_fonts/font = SubResource( 11 )
 text = "40"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Ajuda" type="TextureButton" parent="FundoAjuda"]
+margin_top = -95.3
+margin_right = 287.0
+margin_bottom = 240.7
+rect_scale = Vector2( 0.3, 0.3 )
+rect_pivot_offset = Vector2( 0, 168 )
+disabled = true
+texture_normal = ExtResource( 61 )
+texture_disabled = ExtResource( 62 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="DEBUG" type="Button" parent="."]
+visible = false
 margin_left = 247.112
 margin_top = 15.2245
 margin_right = 478.112
@@ -1561,7 +1742,7 @@ __meta__ = {
 [connection signal="mouse_exited" from="Voltar" to="Voltar" method="_on_Voltar_mouse_exited"]
 [connection signal="pressed" from="Voltar" to="." method="_on_Voltar_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
-[connection signal="pressed" from="Ajuda" to="." method="_on_Ajuda_pressed"]
+[connection signal="pressed" from="FundoAjuda/Ajuda" to="." method="_on_Ajuda_pressed"]
 [connection signal="pressed" from="DEBUG" to="." method="_on_Button_pressed"]
 
 [editable path="PalavrasPopUp"]

@@ -1,5 +1,7 @@
 extends Node2D
 
+onready var brilho = preload ("res://Cenas/CenasPrefab/BrilhoLetra.tscn")
+
 onready var timer = get_node("Timer")
 
 export (String) var SceneName
@@ -9,6 +11,7 @@ var lettersReach = 0
 var cont = 40
 var letrasMorfemas
 var letraDestacada
+var animTocou = false
 
 func _ready():
 	if ($"/root/TutorialGlobal".CozinhaCompleted):
@@ -24,7 +27,6 @@ func _process(delta):
 		get_node("AnimationPlayer").play("Parabens")
 		aux = true
 		get_node("Finish").visible = true
-	print(lettersClick, " ", lettersReach)
 
 func _on_Voltar_pressed():
 	if (lettersReach >= lettersClick):
@@ -37,7 +39,6 @@ func _on_Voltar_pressed():
 func _on_Bolsa_pressed():
 	if ($"/root/TutorialGlobal".tutorialPos >= 6 || !$"/root/TutorialGlobal".willDoTutorial):
 		get_node("PalavrasPopUp").show()
-		print("tii")
 		get_node("Tutorial2").Tutorial7()
 
 func _on_Voltar2_pressed():
@@ -59,10 +60,16 @@ func _on_VoltarAll_pressed():
 func _on_Timer_timeout():
 	if (cont > 1):
 		cont -= 1
-		get_node("Ajuda/Label").set_text(str(cont))
+		get_node("FundoAjuda/Label").set_text(str(cont))
+	elif (!animTocou):
+		animTocou = true
+		get_node("FundoAjuda/Label").set_text(str(0))
+		get_node("FundoAjuda/Ajuda").disabled = false
+		var anim = $AjudaJuice.get_animation("EscondeFundo")
+		anim.loop = false
+		get_node("AjudaJuice").play("EscondeFundo")
 	else:
 		cont -= 1
-		get_node("Ajuda/Label").set_text("Ready")
 
 func _on_Button_pressed():
 	var letras = get_node("Letras").get_children()
@@ -80,8 +87,21 @@ func _on_Ajuda_pressed():
 			rng.randomize()
 			if (letrasMorfemas.size() > 0):
 				var randomNumber = rng.randi_range(0, letrasMorfemas.size() - 1)
-				letrasMorfemas[randomNumber].scale = Vector2(letrasMorfemas[randomNumber].scale.x + 0.5, letrasMorfemas[randomNumber].scale.y + 0.5)
 				letraDestacada = letrasMorfemas[randomNumber]
+				
+				var instancia = brilho.instance()
+				instancia.get_node("AnimationPlayer").play("Start")
+				get_node("Letras").add_child(instancia)
+				get_node("Letras").move_child(instancia,0)
+				instancia.set_position(letrasMorfemas[randomNumber].posicao)
+				
+				letrasMorfemas[randomNumber].SetRef(instancia)
+				
 				AtualizeLetrasMorfemas(letrasMorfemas[randomNumber])
 			cont = 40
-			get_node("Ajuda/Label").set_text(str(cont))
+			
+			animTocou = false
+			
+			get_node("FundoAjuda/Ajuda").disabled = true
+			$AjudaJuice.play_backwards("EscondeFundo")
+			get_node("FundoAjuda/Label").set_text(str(cont))
