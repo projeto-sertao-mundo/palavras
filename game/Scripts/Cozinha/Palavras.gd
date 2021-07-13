@@ -5,15 +5,17 @@ var movimento
 var velocidade = 700
 var palavra = ""
 var bolsaNode
+var firstNode
 
 var aux
 
 func _ready():
+	firstNode = get_parent().get_parent()
 	aux = false
 	palavra = self.name
 	set_process(false)
-	bolsaNode = get_parent().get_parent().get_node("Bolsa")
-	movimento = (get_parent().get_parent().get_node("Bolsa").get_rect().position - self.position).normalized()
+	bolsaNode = firstNode.get_node("Bolsa")
+	movimento = (firstNode.get_node("Bolsa").get_rect().position - self.position).normalized()
 
 func _process(_delta):
 	if  bolsaNode.get_rect().position.distance_to(self.position) > 50:
@@ -26,14 +28,16 @@ func _process(_delta):
 		else:
 			$"/root/Global".adicionarItemBolsaPalavra(self.name)
 		$"/root/Global".AdicionarPalavraEncontrada()
-		get_parent().get_parent().get_node("AnimationPlayer").play("BolsaShake")
-		get_parent().get_parent().lettersReach += 1
-		get_parent().get_parent().AtualizeLetrasMorfemas(self)
+		firstNode.get_node("AnimationPlayer").play("BolsaShake")
+		firstNode.lettersReach += 1
+		firstNode.AtualizeLetrasMorfemas(self)
+		if (firstNode.letraDestacada == self):
+			firstNode.letraDestacada = null
 		self.free()
 
 func _on_TextureButton_pressed():
 	if ($"/root/TutorialGlobal".tutorialPos == 4 || !$"/root/TutorialGlobal".willDoTutorial || $"/root/TutorialGlobal".CozinhaCompleted):
-		get_parent().get_parent().lettersClick += 1
+		firstNode.lettersClick += 1
 		set_process(true)
 		if ($"/root/TutorialGlobal".tutorialPos == 4):
-			get_parent().get_parent().get_node("Tutorial2").Tutorial5()
+			firstNode.get_node("Tutorial2").Tutorial5()

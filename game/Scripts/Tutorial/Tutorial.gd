@@ -30,6 +30,7 @@ func _ready():
 			Tutorial12()
 			$"/root/TutorialGlobal".lockCozinha = true
 		elif ($"/root/TutorialGlobal".CozinhaCompleted && $"/root/TutorialGlobal".CosturaCompleted && !$"/root/TutorialGlobal".FrasesCompleted && $"/root/Global".retalhos.size() > 0):
+			$"/root/TutorialGlobal".tutorialPos = 20
 			Tutorial21()
 		elif $"/root/Global".retalhos.size() == 0:
 			self.visible = false

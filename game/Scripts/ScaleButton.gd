@@ -92,6 +92,6 @@ func _on_NaoDescartar_pressed():
 
 
 func _on_Maquina_mouse_entered():
-	ScaleButton()
+	ScaleButton(0.08, 0.08)
 func _on_Maquina_mouse_exited():
-	UnScaleButton()
+	UnScaleButton(0.08, 0.08)

@@ -8,6 +8,7 @@ var lettersClick = 0
 var lettersReach = 0
 var cont = 40
 var letrasMorfemas
+var letraDestacada
 
 func _ready():
 	if ($"/root/TutorialGlobal".CozinhaCompleted):
@@ -72,12 +73,14 @@ func AtualizeLetrasMorfemas(var letra):
 	letrasMorfemas.erase(letra)
 
 func _on_Ajuda_pressed():
-	if (cont < 1):
-		var rng = RandomNumberGenerator.new()
-		rng.randomize()
-		if (letrasMorfemas.size() > 0):
-			var my_random_number = rng.randi_range(0, letrasMorfemas.size() - 1)
-			letrasMorfemas[my_random_number].scale = Vector2(letrasMorfemas[my_random_number].scale.x + 0.5, letrasMorfemas[my_random_number].scale.y + 0.5)
-			AtualizeLetrasMorfemas(letrasMorfemas[my_random_number])
-		cont = 40
-		get_node("Ajuda/Label").set_text(str(cont))
+	if ($"/root/TutorialGlobal".CozinhaCompleted || !$"/root/TutorialGlobal".willDoTutorial):
+		if (cont < 1 && letraDestacada == null):
+			var rng = RandomNumberGenerator.new()
+			rng.randomize()
+			if (letrasMorfemas.size() > 0):
+				var randomNumber = rng.randi_range(0, letrasMorfemas.size() - 1)
+				letrasMorfemas[randomNumber].scale = Vector2(letrasMorfemas[randomNumber].scale.x + 0.5, letrasMorfemas[randomNumber].scale.y + 0.5)
+				letraDestacada = letrasMorfemas[randomNumber]
+				AtualizeLetrasMorfemas(letrasMorfemas[randomNumber])
+			cont = 40
+			get_node("Ajuda/Label").set_text(str(cont))

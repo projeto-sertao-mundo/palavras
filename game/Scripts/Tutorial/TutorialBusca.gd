@@ -9,6 +9,7 @@ export(NodePath) var D6
 export(NodePath) var D7
 export(NodePath) var D8
 export(NodePath) var D9
+export(NodePath) var D10
 
 onready var dialogo1 = get_node(D1)
 onready var dialogo2 = get_node(D2)
@@ -19,6 +20,7 @@ onready var dialogo6 = get_node(D6)
 onready var dialogo7 = get_node(D7)
 onready var dialogo8 = get_node(D8)
 onready var dialogo9 = get_node(D9)
+onready var dialogo10 = get_node(D10)
 
 var dialogueEnded
 var auxD
@@ -42,8 +44,16 @@ func Tutorial4():
 	if (auxD == 3):
 		displayString(dialogo2)
 		dialogo1.percent_visible = 0
-		initializeAnim("SetaAjuda")
-		get_node("SetaAjuda").visible = true
+
+#func Tutorial2_5():
+#	self.visible = true
+#	aux = true
+#	displayString(dialogo2_5)
+#	dialogo2.percent_visible = 0
+#	initializeAnim("SetaAjuda")
+#	get_node("SetaAjuda").visible = true
+#	auxD -= 1
+#	$"/root/TutorialGlobal".tutorialPos -= 1
 
 func Tutorial5():
 	get_node("SetaAjuda").visible = false
@@ -51,7 +61,6 @@ func Tutorial5():
 		if (!aux):
 			self.visible = true
 			aux = true
-			print("a")
 			displayString(dialogo3)
 			dialogo1.percent_visible = 0
 			dialogo2.percent_visible = 0
@@ -100,9 +109,18 @@ func Tutorial10():
 
 func Tutorial11():
 	if (auxD == 10):
-		displayString(dialogo9)
-		dialogo7.percent_visible = 0
+		displayString(dialogo10)
 		dialogo8.percent_visible = 0
+		dialogo7.percent_visible = 0
+		initializeAnim("SetaAjuda")
+		get_node("SetaAjuda").visible = true
+
+func Tutorial12():
+	if (auxD == 11):
+		print("ti")
+		displayString(dialogo9)
+		dialogo8.percent_visible = 0
+		dialogo10.percent_visible = 0
 		initializeAnim("SetaSair")
 		get_node("SetaSair").visible = true
 
@@ -138,6 +156,8 @@ func _input(event):
 		elif ($"/root/TutorialGlobal".tutorialPos == 10):
 			Tutorial11()
 		elif ($"/root/TutorialGlobal".tutorialPos == 11):
+			Tutorial12()
+		elif ($"/root/TutorialGlobal".tutorialPos == 12):
 			self.visible = false
 			$"/root/TutorialGlobal".CozinhaCompleted = true
 

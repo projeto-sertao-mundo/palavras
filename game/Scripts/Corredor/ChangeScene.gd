@@ -18,10 +18,10 @@ func ChangeScene():
 	
 
 func _on_Creditos_pressed():
-	get_node("CreditosPopUP").show()
+	$AnimationPlayer.play("CreditosIn")
 
 func _on_VoltarCreditos_pressed():
-	get_node("CreditosPopUP").hide()
+	$AnimationPlayer.play("CreditosOut")
 
 func _on_Voltar_pressed():
 	ChangeScene()
