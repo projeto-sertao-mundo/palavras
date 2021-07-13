@@ -159,6 +159,7 @@ func _input(event):
 			Tutorial12()
 		elif ($"/root/TutorialGlobal".tutorialPos == 12):
 			self.visible = false
+			$"/root/TutorialGlobal".tutorialPos -= 1
 			$"/root/TutorialGlobal".CozinhaCompleted = true
 
 func initializeAnim(var animat):

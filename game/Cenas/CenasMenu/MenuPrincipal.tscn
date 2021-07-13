@@ -27,7 +27,7 @@ tracks/0/keys = {
 "values": [ Vector2( 1e-05, 1e-05 ), Vector2( 2, 2 ), Vector2( 2, 2 ) ]
 }
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=2]
 resource_name = "CreditosOut"
 length = 0.8
 tracks/0/type = "value"
@@ -43,7 +43,7 @@ tracks/0/keys = {
 "values": [ Vector2( 2, 2 ), Vector2( 2.5, 2.5 ), Vector2( 1e-05, 1e-05 ) ]
 }
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=3]
 length = 5.0
 tracks/0/type = "bezier"
 tracks/0/path = NodePath("AnimationPlayer/ColorRect:color:r")
@@ -144,8 +144,8 @@ path = "res://Cenas/CenasMenu/Corredor.tscn"
 
 [node name="AnimationPlayer" parent="." instance=ExtResource( 9 )]
 anims/CreditosIn = SubResource( 1 )
-anims/CreditosOut = SubResource( 3 )
-anims/FadeInFirst = SubResource( 2 )
+anims/CreditosOut = SubResource( 2 )
+anims/FadeInFirst = SubResource( 3 )
 
 [node name="Interface" type="Sprite" parent="."]
 position = Vector2( 799.661, 449.678 )
