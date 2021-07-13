@@ -6,6 +6,7 @@ var velocidade = 700
 var palavra = ""
 var bolsaNode
 var firstNode
+var clicked = false
 
 var aux
 
@@ -29,6 +30,7 @@ func _process(_delta):
 			$"/root/Global".adicionarItemBolsaPalavra(self.name)
 		$"/root/Global".AdicionarPalavraEncontrada()
 		firstNode.get_node("AnimationPlayer").play("BolsaShake")
+
 		firstNode.lettersReach += 1
 		firstNode.AtualizeLetrasMorfemas(self)
 		if (firstNode.letraDestacada == self):
@@ -37,7 +39,9 @@ func _process(_delta):
 
 func _on_TextureButton_pressed():
 	if ($"/root/TutorialGlobal".tutorialPos == 4 || !$"/root/TutorialGlobal".willDoTutorial || $"/root/TutorialGlobal".CozinhaCompleted):
-		firstNode.lettersClick += 1
+		clicked = true
+		if !clicked:
+			firstNode.lettersClick += 1
 		set_process(true)
 		if ($"/root/TutorialGlobal".tutorialPos == 4):
 			firstNode.get_node("Tutorial2").Tutorial5()
