@@ -24,6 +24,7 @@ func _process(delta):
 		get_node("AnimationPlayer").play("Parabens")
 		aux = true
 		get_node("Finish").visible = true
+	print(lettersClick, " ", lettersReach)
 
 func _on_Voltar_pressed():
 	if (lettersReach >= lettersClick):
