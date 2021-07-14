@@ -130,6 +130,7 @@ func _on_Voltar_pressed():
 	if (!$"/root/TutorialGlobal".willDoTutorial || $"/root/TutorialGlobal".tutorialPos > 10):
 		get_parent().get_node("BolsaJuice").play("BolsaOut")
 		isShow = false
+		get_parent().bolsaAberta = false
 
 func _on_ButtonCartoes_pressed():
 	if ($"/root/TutorialGlobal".tutorialPos == 25 && $"/root/TutorialGlobal".willDoTutorial):
@@ -154,5 +155,5 @@ func _on_Descart_pressed():
 
 
 func _on_VoltarAll_pressed():
-	if (isShow):
+	if (get_parent().bolsaAberta):
 		_on_Voltar_pressed()

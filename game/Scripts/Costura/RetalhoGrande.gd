@@ -66,8 +66,8 @@ func _on_ExitButton_pressed():
 				child.free()
 		isVisualization = false
 		
-	setRetalhoFrase = false
-	self.get_parent().get_node("Confirm").visible = false
+		setRetalhoFrase = false
+		self.get_parent().get_node("Confirm").visible = false
 
 func CreateRetalhoBag():
 	if ($"/root/TutorialGlobal".tutorialPos == 24 || !$"/root/TutorialGlobal".willDoTutorial || $"/root/TutorialGlobal".FrasesCompleted):

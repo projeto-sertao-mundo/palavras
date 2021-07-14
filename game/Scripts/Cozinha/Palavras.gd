@@ -45,11 +45,12 @@ func SetRef(var ins):
 
 func _on_TextureButton_pressed():
 	if ($"/root/TutorialGlobal".tutorialPos == 4 || !$"/root/TutorialGlobal".willDoTutorial || $"/root/TutorialGlobal".CozinhaCompleted):
-		if !clicked:
-			firstNode.lettersClick += 1
-		clicked = true
-		if (instancia != null):
-			instancia.get_node("AnimationPlayer").play("End")
-		set_process(true)
-		if ($"/root/TutorialGlobal".tutorialPos == 4):
-			firstNode.get_node("Tutorial2").Tutorial5()
+		if (!get_parent().get_parent().bolsaAberta):
+			if !clicked:
+				firstNode.lettersClick += 1
+			clicked = true
+			if (instancia != null):
+				instancia.get_node("AnimationPlayer").play("End")
+			set_process(true)
+			if ($"/root/TutorialGlobal".tutorialPos == 4):
+				firstNode.get_node("Tutorial2").Tutorial5()

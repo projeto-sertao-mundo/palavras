@@ -148,8 +148,6 @@ func _input(event):
 			$"/root/TutorialGlobal".tutorialPos = 12
 			auxD = 12
 			Tutorial13()
-		elif ($"/root/TutorialGlobal".tutorialPos == 13):
-			Tutorial14()
 		elif ($"/root/TutorialGlobal".tutorialPos == 17):
 			Tutorial18()
 		elif ($"/root/TutorialGlobal".tutorialPos == 18):
@@ -181,3 +179,8 @@ func initializeAnim(var animat):
 	anim.set_loop(true)
 	get_parent().get_node("AnimationPlayer").play(animat)
 
+
+
+func _on_Maquina_pressed():
+	if ($"/root/TutorialGlobal".tutorialPos == 13):
+		Tutorial14()

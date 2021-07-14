@@ -256,7 +256,7 @@ tracks/0/keys = {
 "values": [ Vector2( 472.276, 70 ), Vector2( 472.276, 90 ), Vector2( 472.276, -600 ) ]
 }
 
-[sub_resource type="Animation" id=13]
+[sub_resource type="Animation" id=10]
 resource_name = "EscondeFundo"
 length = 0.7
 tracks/0/type = "value"
@@ -332,15 +332,15 @@ tracks/5/keys = {
 "values": [ Vector2( 0.3, 0.3 ), Vector2( 0.4, 0.4 ), Vector2( 0.4, 0.4 ) ]
 }
 
-[sub_resource type="DynamicFont" id=10]
+[sub_resource type="DynamicFont" id=11]
 size = 33
 font_data = ExtResource( 56 )
 
-[sub_resource type="DynamicFont" id=11]
+[sub_resource type="DynamicFont" id=12]
 size = 60
 font_data = ExtResource( 56 )
 
-[sub_resource type="DynamicFont" id=12]
+[sub_resource type="DynamicFont" id=13]
 size = 21
 font_data = ExtResource( 56 )
 
@@ -362,7 +362,7 @@ anims/BolsaIn = SubResource( 8 )
 anims/BolsaOut = SubResource( 9 )
 
 [node name="AjudaJuice" type="AnimationPlayer" parent="."]
-anims/EscondeFundo = SubResource( 13 )
+anims/EscondeFundo = SubResource( 10 )
 
 [node name="Cozinha" type="Sprite" parent="."]
 position = Vector2( 799.746, 451.378 )
@@ -1209,10 +1209,10 @@ __meta__ = {
 }
 
 [node name="Bolsa" type="TextureButton" parent="."]
-margin_left = 1459.23
-margin_top = 701.093
-margin_right = 1622.23
-margin_bottom = 939.093
+margin_left = 1458.07
+margin_top = 699.708
+margin_right = 1621.07
+margin_bottom = 937.708
 rect_scale = Vector2( 0.6, 0.6 )
 rect_pivot_offset = Vector2( 80, 120 )
 texture_normal = ExtResource( 3 )
@@ -1309,7 +1309,7 @@ margin_left = 3.99399
 margin_top = -16.004
 margin_right = 3.0011
 margin_bottom = 23.008
-custom_fonts/font = SubResource( 10 )
+custom_fonts/font = SubResource( 11 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Aqui, vamos procurar letras para montar as palavras do 
 nosso bordado! 
@@ -1331,7 +1331,7 @@ margin_left = 3.99399
 margin_top = 14.996
 margin_right = -2.9989
 margin_bottom = -15.992
-custom_fonts/font = SubResource( 10 )
+custom_fonts/font = SubResource( 11 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Tente achar uma letra agora!
 "
@@ -1351,7 +1351,7 @@ margin_left = 3.99399
 margin_top = 15.996
 margin_right = -3.9989
 margin_bottom = -18.992
-custom_fonts/font = SubResource( 10 )
+custom_fonts/font = SubResource( 11 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Legal! Você encontrou a sua primeira letra! 
 Ela agora ficará guardada na sua bolsa!"
@@ -1371,7 +1371,7 @@ margin_left = 3.99399
 margin_top = 7.99591
 margin_right = -10.999
 margin_bottom = 22.008
-custom_fonts/font = SubResource( 10 )
+custom_fonts/font = SubResource( 11 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Clique na bolsa para saber quantas
 letras você já coletou!"
@@ -1391,7 +1391,7 @@ margin_left = 3.99399
 margin_top = -5.00409
 margin_right = -10.999
 margin_bottom = 23.008
-custom_fonts/font = SubResource( 10 )
+custom_fonts/font = SubResource( 11 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Nesta bolsa, ficarão guardadas  todas
 as letras que você encontrar!
@@ -1412,7 +1412,7 @@ margin_left = 4.9985
 margin_top = -17.6647
 margin_right = -7.99451
 margin_bottom = 13.3474
-custom_fonts/font = SubResource( 10 )
+custom_fonts/font = SubResource( 11 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Agora vamos falar dos morfemas. Morfemas são pedacinhos
  de palavras que também estão escondidos por aqui!
@@ -1434,7 +1434,7 @@ margin_left = 3.99399
 margin_top = 7.99591
 margin_right = -10.999
 margin_bottom = 23.008
-custom_fonts/font = SubResource( 10 )
+custom_fonts/font = SubResource( 11 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Só pra você não esquecer o que é um morfema,
 eu coloquei um lembrete dentro da bolsa pra você!"
@@ -1454,7 +1454,7 @@ margin_left = -7.00601
 margin_top = -16.004
 margin_right = 112.001
 margin_bottom = 23.008
-custom_fonts/font = SubResource( 10 )
+custom_fonts/font = SubResource( 11 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = " Agora é com você! Encontre o maior número de letras 
 e morfemas possível! 
@@ -1476,7 +1476,7 @@ margin_left = 3.99399
 margin_top = -4.00397
 margin_right = -17.9989
 margin_bottom = 23.008
-custom_fonts/font = SubResource( 10 )
+custom_fonts/font = SubResource( 11 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = " Só lembrando que você pode sair da cozinha e
  voltar nela quando quiser, clicando na seta à sua esquerda!"
@@ -1496,7 +1496,7 @@ margin_left = 3.99399
 margin_top = -4.00397
 margin_right = -17.9989
 margin_bottom = -37.992
-custom_fonts/font = SubResource( 10 )
+custom_fonts/font = SubResource( 11 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Caso tenha dificuldade em achar alguma letra, 
 você pode utilizar uma ajuda."
@@ -1571,7 +1571,7 @@ margin_top = 31.8787
 margin_right = 147.95
 margin_bottom = 91.8792
 rect_scale = Vector2( 0.8, 0.8 )
-custom_fonts/font = SubResource( 11 )
+custom_fonts/font = SubResource( 12 )
 text = "40"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1596,7 +1596,7 @@ margin_left = 247.112
 margin_top = 15.2245
 margin_right = 478.112
 margin_bottom = 90.2245
-custom_fonts/font = SubResource( 12 )
+custom_fonts/font = SubResource( 13 )
 text = "PEGAR LETRAS (MENOS A)"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1736,6 +1736,7 @@ __meta__ = {
 [connection signal="pressed" from="Letras/zinho/TextureButton" to="Letras/zinho" method="_on_TextureButton_pressed"]
 [connection signal="mouse_entered" from="Bolsa" to="Bolsa" method="_on_Bolsa_mouse_entered"]
 [connection signal="mouse_exited" from="Bolsa" to="Bolsa" method="_on_Bolsa_mouse_exited"]
+[connection signal="pressed" from="Bolsa" to="." method="_on_Bolsa_pressed"]
 [connection signal="pressed" from="Bolsa" to="PalavrasPopUp" method="_on_Bolsa_pressed"]
 [connection signal="pressed" from="Finish/Sprite/OK" to="." method="_on_TextureButton_pressed"]
 [connection signal="mouse_entered" from="Voltar" to="Voltar" method="_on_Voltar_mouse_entered"]

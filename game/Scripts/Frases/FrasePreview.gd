@@ -15,15 +15,16 @@ func _on_Area2D_mouse_exited():
 	mouseIn = false
 
 func changeSpriteGrande(var texture):#, var newFrase):
-	if ($"/root/TutorialGlobal".tutorialPos == 22 || !$"/root/TutorialGlobal".willDoTutorial || $"/root/TutorialGlobal".FrasesCompleted):
-		if ($"/root/TutorialGlobal".tutorialPos == 22):
-			get_parent().get_node("Tutorial4").Tutorial23()
+	if (!spriteGrande.visible):
+		if ($"/root/TutorialGlobal".tutorialPos == 22 || !$"/root/TutorialGlobal".willDoTutorial || $"/root/TutorialGlobal".FrasesCompleted):
+			if ($"/root/TutorialGlobal".tutorialPos == 22):
+				get_parent().get_node("Tutorial4").Tutorial23()
 
-		if (!spriteGrande.visible):
-			spriteGrande.texture = texture
-			spriteGrande.visible = true
-			if (spriteGrande.has_node("retaio")):
-				spriteGrande.get_node("retaio").free()
+			if (!spriteGrande.visible):
+				spriteGrande.texture = texture
+				spriteGrande.visible = true
+				if (spriteGrande.has_node("retaio")):
+					spriteGrande.get_node("retaio").free()
 
 func _on_1_pressed():
 	changeSpriteGrande(get_node("FrasesPagina1").get_node("1").texture_normal)#, frase1)

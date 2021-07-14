@@ -105,6 +105,7 @@ func Tutorial10():
 		dialogo7.percent_visible = 0
 		get_node("SetaMorfemasDesc").visible = false
 		get_parent().get_node("BolsaJuice").play("BolsaOut")
+		get_parent().bolsaAberta = false
 		get_parent().get_node("PalavrasPopUp").isShow = false
 
 func Tutorial11():
@@ -157,6 +158,7 @@ func _input(event):
 			Tutorial11()
 		elif ($"/root/TutorialGlobal".tutorialPos == 11):
 			Tutorial12()
+			get_node("SetaAjuda").visible = false
 		elif ($"/root/TutorialGlobal".tutorialPos == 12):
 			self.visible = false
 			$"/root/TutorialGlobal".tutorialPos -= 1
