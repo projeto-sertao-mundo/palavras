@@ -15,6 +15,8 @@ func _process(_delta):
 		#print(areaR.name)
 		$"/root/Global".deleteRetalhoArrastado(areaR)
 		
+		get_parent().numeroRetalhos -= 1
+		
 		for n in grid:
 			n.free()
 		

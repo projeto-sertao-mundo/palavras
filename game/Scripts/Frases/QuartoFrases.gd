@@ -20,8 +20,6 @@ func _on_Voltar2_pressed():
 	get_node("RetalhoPopUp").hide()
 
 func _ready():
-	if (!$"/root/TutorialGlobal".FrasesCompleted):
-		get_node("Tutorial4").Tutorial22()
 	get_node("AnimationPlayer").play("FadeIn")
 	$"/root/Global".firstSceneNode = self
 

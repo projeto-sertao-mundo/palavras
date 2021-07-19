@@ -29,10 +29,11 @@ func _ready():
 	#aux = false
 	$"/root/TutorialGlobal".tutorialPos = -12
 	auxD = -12
-	Tutorial0()
+	
 	colorSeted = false
 	if ($"/root/TutorialGlobal".willDoTutorial && !$"/root/TutorialGlobal".CosturaCompleted):
 		self.visible = true
+		$VoAnimation.play("In")
 	
 	elif (!$"/root/TutorialGlobal".willDoTutorial):
 		self.visible = false
@@ -46,6 +47,7 @@ func ChangeSetedColor():
 		Tutorial17()
 
 func Tutorial0():
+	print("12121212121212121")
 	if ($"/root/TutorialGlobal".willDoTutorial && !$"/root/TutorialGlobal".CosturaCompleted):
 		displayString(dialogo0)
 
@@ -155,11 +157,11 @@ func _input(event):
 		elif ($"/root/TutorialGlobal".tutorialPos == 19):
 			Tutorial20()
 		elif ($"/root/TutorialGlobal".tutorialPos == 20):
-			self.visible = false
 			$"/root/TutorialGlobal".lockCozinha = false
 			$"/root/TutorialGlobal".lockCostura = false
 			$"/root/TutorialGlobal".CosturaCompleted = true
 			get_node("SetaLixeira").visible = false
+			$VoAnimation.play("Out")
 		
 #		elif ($"/root/TutorialGlobal".tutorialPos == 5):
 #			Tutorial6()
@@ -179,8 +181,13 @@ func initializeAnim(var animat):
 	anim.set_loop(true)
 	get_parent().get_node("AnimationPlayer").play(animat)
 
-
-
 func _on_Maquina_pressed():
 	if ($"/root/TutorialGlobal".tutorialPos == 13):
 		Tutorial14()
+
+func _on_AnimationPlayer_animation_finished(anim_name):
+	if (anim_name == "In"):
+		Tutorial0()
+		auxD = -10
+	elif (anim_name == "Out"):
+		self.visible = false

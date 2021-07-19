@@ -23,6 +23,9 @@ onready var dialogo8 = get_node(D8)
 var auxD
 
 func _ready():
+	if (!$"/root/TutorialGlobal".FrasesCompleted):
+		$VoAnimation.play("In")
+	
 	auxD = 21
 	if ($"/root/TutorialGlobal".willDoTutorial && !$"/root/TutorialGlobal".FrasesCompleted):
 		self.visible = true
@@ -123,7 +126,7 @@ func _input(event):
 		elif ($"/root/TutorialGlobal".tutorialPos == 28):
 			Tutorial29()
 		elif($"/root/TutorialGlobal".tutorialPos == 29):
-			self.visible = false
+			$VoAnimation.play("Out")
 			$"/root/TutorialGlobal".lockCozinha = false
 			$"/root/TutorialGlobal".lockCostura = false
 			$"/root/TutorialGlobal".lockFrases = false
@@ -133,3 +136,10 @@ func initializeAnim(var animat):
 	var anim = get_parent().get_node("AnimationPlayer").get_animation(animat)
 	anim.set_loop(true)
 	get_parent().get_node("AnimationPlayer").play(animat)
+
+
+func _on_VoAnimation_animation_finished(anim_name):
+	if (anim_name == "In"):
+		Tutorial22()
+	elif (anim_name == "Out"):
+		self.visible = false

@@ -1,4 +1,4 @@
-[gd_scene load_steps=76 format=2]
+[gd_scene load_steps=78 format=2]
 
 [ext_resource path="res://Scripts/Cozinha/BuscaPalavras.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/SpritesFinais/Objetos/seta.png" type="Texture" id=2]
@@ -330,6 +330,84 @@ tracks/5/keys = {
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ Vector2( 0.3, 0.3 ), Vector2( 0.4, 0.4 ), Vector2( 0.4, 0.4 ) ]
+}
+
+[sub_resource type="Animation" id=14]
+resource_name = "In"
+tracks/0/type = "value"
+tracks/0/path = NodePath("BalãoDeDialogo:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.6, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 702.388, 1150 ), Vector2( 702.388, 794.992 ), Vector2( 702.388, 794.992 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Vó:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1338.71, 1100 ), Vector2( 1338.71, 741.67 ), Vector2( 1338.71, 741.67 ) ]
+}
+
+[sub_resource type="Animation" id=15]
+resource_name = "Out"
+tracks/0/type = "value"
+tracks/0/path = NodePath("BalãoDeDialogo:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 702.388, 794.992 ), Vector2( 702.388, 794.992 ), Vector2( 702.388, 1150 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Vó:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.1, 0.4, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1338.71, 741.67 ), Vector2( 1338.71, 741.67 ), Vector2( 1338.71, 1100 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Label9:rect_position")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.3, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 246, 740 ), Vector2( 246, 740 ), Vector2( 246, 1100 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Label2:rect_position")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.3, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 246, 759 ), Vector2( 246, 759 ), Vector2( 246, 1100 ) ]
 }
 
 [sub_resource type="DynamicFont" id=11]
@@ -1209,10 +1287,10 @@ __meta__ = {
 }
 
 [node name="Bolsa" type="TextureButton" parent="."]
-margin_left = 1458.07
-margin_top = 699.708
-margin_right = 1621.07
-margin_bottom = 937.708
+margin_left = 1459.23
+margin_top = 701.093
+margin_right = 1622.23
+margin_bottom = 939.093
 rect_scale = Vector2( 0.6, 0.6 )
 rect_pivot_offset = Vector2( 80, 120 )
 texture_normal = ExtResource( 3 )
@@ -1272,7 +1350,6 @@ __meta__ = {
 }
 
 [node name="Tutorial2" type="Control" parent="."]
-visible = false
 margin_right = 23.0
 margin_bottom = 23.0
 script = ExtResource( 57 )
@@ -1290,13 +1367,17 @@ D8 = NodePath("Label8")
 D9 = NodePath("Label9")
 D10 = NodePath("Label10")
 
+[node name="VoAnimation" type="AnimationPlayer" parent="Tutorial2"]
+anims/In = SubResource( 14 )
+anims/Out = SubResource( 15 )
+
 [node name="BalãoDeDialogo" type="Sprite" parent="Tutorial2"]
-position = Vector2( 702.388, 794.992 )
+position = Vector2( 702.388, 1150 )
 scale = Vector2( 2.01025, 1.33176 )
 texture = ExtResource( 55 )
 
 [node name="Vó" type="Sprite" parent="Tutorial2"]
-position = Vector2( 1338.71, 741.67 )
+position = Vector2( 1338.71, 1100 )
 scale = Vector2( 1.395, 1.395 )
 texture = ExtResource( 54 )
 
@@ -1330,7 +1411,7 @@ anchor_bottom = 37.304
 margin_left = 3.99399
 margin_top = 14.996
 margin_right = -2.9989
-margin_bottom = -15.992
+margin_bottom = -15.9921
 custom_fonts/font = SubResource( 11 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Tente achar uma letra agora!
@@ -1736,12 +1817,13 @@ __meta__ = {
 [connection signal="pressed" from="Letras/zinho/TextureButton" to="Letras/zinho" method="_on_TextureButton_pressed"]
 [connection signal="mouse_entered" from="Bolsa" to="Bolsa" method="_on_Bolsa_mouse_entered"]
 [connection signal="mouse_exited" from="Bolsa" to="Bolsa" method="_on_Bolsa_mouse_exited"]
-[connection signal="pressed" from="Bolsa" to="." method="_on_Bolsa_pressed"]
 [connection signal="pressed" from="Bolsa" to="PalavrasPopUp" method="_on_Bolsa_pressed"]
+[connection signal="pressed" from="Bolsa" to="." method="_on_Bolsa_pressed"]
 [connection signal="pressed" from="Finish/Sprite/OK" to="." method="_on_TextureButton_pressed"]
 [connection signal="mouse_entered" from="Voltar" to="Voltar" method="_on_Voltar_mouse_entered"]
 [connection signal="mouse_exited" from="Voltar" to="Voltar" method="_on_Voltar_mouse_exited"]
 [connection signal="pressed" from="Voltar" to="." method="_on_Voltar_pressed"]
+[connection signal="animation_finished" from="Tutorial2/VoAnimation" to="Tutorial2" method="_on_VoAnimation_animation_finished"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="pressed" from="FundoAjuda/Ajuda" to="." method="_on_Ajuda_pressed"]
 [connection signal="pressed" from="DEBUG" to="." method="_on_Button_pressed"]

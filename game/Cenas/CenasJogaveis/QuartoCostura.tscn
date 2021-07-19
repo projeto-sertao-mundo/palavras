@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=2]
+[gd_scene load_steps=64 format=2]
 
 [ext_resource path="res://Sprites/SpritesFinais/ObetosCostura/Losango Botão.png" type="Texture" id=1]
 [ext_resource path="res://Sprites/SpritesFinais/Fundo cenas/quarto de costura refeito.png" type="Texture" id=2]
@@ -427,6 +427,74 @@ extents = Vector2( 82.901, 76.4056 )
 size = 25
 font_data = ExtResource( 3 )
 
+[sub_resource type="Animation" id=16]
+resource_name = "In"
+length = 0.9
+tracks/0/type = "value"
+tracks/0/path = NodePath("Vó:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1503.27, 1100 ), Vector2( 1503.27, 781.001 ), Vector2( 1503.27, 781.001 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Dialogo:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.6, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 831.148, 1150 ), Vector2( 831.148, 801.766 ), Vector2( 831.148, 801.766 ) ]
+}
+
+[sub_resource type="Animation" id=17]
+resource_name = "Out"
+length = 0.9
+tracks/0/type = "value"
+tracks/0/path = NodePath("Vó:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1503.27, 781.001 ), Vector2( 1503.27, 781.001 ), Vector2( 1503.27, 1100 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Dialogo:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.3, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 831.148, 801.766 ), Vector2( 831.148, 801.766 ), Vector2( 831.148, 1150 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Label8:rect_position")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.3, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 336, 756 ), Vector2( 336, 756 ), Vector2( 336, 1150 ) ]
+}
+
 [sub_resource type="DynamicFont" id=15]
 size = 33
 font_data = ExtResource( 3 )
@@ -837,6 +905,10 @@ D6 = NodePath("Label5")
 D7 = NodePath("Label6")
 D8 = NodePath("Label8")
 
+[node name="VoAnimation" type="AnimationPlayer" parent="Tutorial3"]
+anims/In = SubResource( 16 )
+anims/Out = SubResource( 17 )
+
 [node name="Vó" type="Sprite" parent="Tutorial3"]
 position = Vector2( 1503.27, 781.001 )
 texture = ExtResource( 44 )
@@ -1063,8 +1135,8 @@ __meta__ = {
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 [connection signal="mouse_entered" from="Maquina" to="Maquina" method="_on_Maquina_mouse_entered"]
 [connection signal="mouse_exited" from="Maquina" to="Maquina" method="_on_Maquina_mouse_exited"]
-[connection signal="pressed" from="Maquina" to="." method="_on_Maquina_pressed"]
 [connection signal="pressed" from="Maquina" to="Tutorial3" method="_on_Maquina_pressed"]
+[connection signal="pressed" from="Maquina" to="." method="_on_Maquina_pressed"]
 [connection signal="area_entered" from="Lixeira/Area2D" to="Lixeira" method="_on_Area2D_area_entered"]
 [connection signal="area_exited" from="Lixeira/Area2D" to="Lixeira" method="_on_Area2D_area_exited"]
 [connection signal="mouse_entered" from="Voltar2" to="Voltar2" method="_on_Voltar2_mouse_entered"]
@@ -1097,5 +1169,6 @@ __meta__ = {
 [connection signal="pressed" from="CosturaPopUp/Formas/Losango" to="." method="_on_Losango_pressed"]
 [connection signal="area_entered" from="CosturaPopUp/Preview/Area2D" to="." method="_on_Area2D_area_entered"]
 [connection signal="area_exited" from="CosturaPopUp/Preview/Area2D" to="." method="_on_Area2D_area_exited"]
+[connection signal="animation_finished" from="Tutorial3/VoAnimation" to="Tutorial3" method="_on_AnimationPlayer_animation_finished"]
 
 [editable path="CosturaPopUp/PalavrasPopUp"]

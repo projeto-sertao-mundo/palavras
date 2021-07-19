@@ -41,7 +41,7 @@ func _on_Bolsa_pressed():
 	if ($"/root/TutorialGlobal".tutorialPos >= 6 || !$"/root/TutorialGlobal".willDoTutorial):
 		get_node("PalavrasPopUp").show()
 		get_node("Tutorial2").Tutorial7()
-	bolsaAberta = true
+		bolsaAberta = true
 
 func _on_Voltar2_pressed():
 	get_node("PalavrasPopUp").hide()

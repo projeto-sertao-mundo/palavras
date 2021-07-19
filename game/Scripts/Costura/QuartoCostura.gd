@@ -10,12 +10,11 @@ var limite = 11
 var caminho = "CosturaPopUp/Formas/HolderFormas" #PASTA DESTINO DOS SPRITES MUDAR!!!
 
 func _ready():
-	if (!$"/root/TutorialGlobal".CosturaCompleted):
-		get_node("Tutorial3").Tutorial0()
 	get_node("AnimationPlayer").play("FadeIn")
 	$"/root/Global".firstSceneNode = self
 	$"/root/Global".podeSetar = false
 	$"/root/Global".limite = 11
+	numeroRetalhos = $"/root/Global".retalhos.size()
 
 func _process(_delta):
 	

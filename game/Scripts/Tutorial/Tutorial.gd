@@ -18,32 +18,32 @@ func _ready():
 	if ($"/root/TutorialGlobal".willDoTutorial):
 		
 		self.visible = true
+		$AnimationsVo.play("In")
+		
 		auxD = 0
 		
 		if ($"/root/TutorialGlobal".tutorialPos == 0):
 			self.visible = true
+			$AnimationsVo.play("In")
 			dialogueEnded = false
-			Tutorial1()
 		elif ($"/root/TutorialGlobal".tutorialPos == 2):
 			Tutorial2()
 		elif($"/root/TutorialGlobal".CozinhaCompleted && !$"/root/TutorialGlobal".CosturaCompleted):
-			Tutorial12()
 			$"/root/TutorialGlobal".lockCozinha = true
 		elif ($"/root/TutorialGlobal".CozinhaCompleted && $"/root/TutorialGlobal".CosturaCompleted && !$"/root/TutorialGlobal".FrasesCompleted && $"/root/Global".retalhos.size() > 0):
 			$"/root/TutorialGlobal".tutorialPos = 20
 			$"/root/TutorialGlobal".lockCozinha = true
 			$"/root/TutorialGlobal".lockCostura = true
 			$"/root/TutorialGlobal".lockFrases = true
-			Tutorial21()
 		elif $"/root/Global".retalhos.size() == 0:
-			self.visible = false
+			$AnimationsVo.play("Out")
 		elif ($"/root/TutorialGlobal".CozinhaCompleted && $"/root/TutorialGlobal".CosturaCompleted && $"/root/TutorialGlobal".FrasesCompleted):
-			self.visible = false
+			$AnimationsVo.play("out")
 			$"/root/TutorialGlobal".lockCozinha = false
 			$"/root/TutorialGlobal".lockCostura = false
 			$"/root/TutorialGlobal".lockFrases = false
 		else:
-			self.visible = false
+			$AnimationsVo.play("Out")
 
 
 func Tutorial1():
@@ -118,3 +118,15 @@ func initializeAnim(var animat):
 	var anim = get_parent().get_node("AnimationPlayer").get_animation(animat)
 	anim.set_loop(true)
 	get_parent().get_node("AnimationPlayer").play(animat)
+
+
+func _on_AnimationsVo_animation_finished(anim_name):
+	if (anim_name == "Out"):
+		self.visible = false
+	elif (anim_name == "In" && auxD == 0):
+		if($"/root/TutorialGlobal".CozinhaCompleted && !$"/root/TutorialGlobal".CosturaCompleted):
+			Tutorial12()
+		elif ($"/root/TutorialGlobal".CozinhaCompleted && $"/root/TutorialGlobal".CosturaCompleted && !$"/root/TutorialGlobal".FrasesCompleted && $"/root/Global".retalhos.size() > 0):
+			Tutorial21()
+		else:
+			Tutorial1()

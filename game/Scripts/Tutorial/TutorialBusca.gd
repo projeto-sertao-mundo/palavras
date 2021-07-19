@@ -31,10 +31,10 @@ func _ready():
 	aux = false
 	if ($"/root/TutorialGlobal".willDoTutorial && !$"/root/TutorialGlobal".CozinhaCompleted):
 		self.visible = true
+		$VoAnimation.play("In")
 		if ($"/root/TutorialGlobal".tutorialPos == 2):
-			self.visible = true
+			$VoAnimation.play("In")
 			dialogueEnded = false
-			Tutorial3()
 
 func Tutorial3():
 	if (auxD == 2):
@@ -59,9 +59,9 @@ func Tutorial5():
 	get_node("SetaAjuda").visible = false
 	if (auxD == 4):
 		if (!aux):
-			self.visible = true
-			aux = true
+			#$VoAnimation.play("In")
 			displayString(dialogo3)
+			aux = true
 			dialogo1.percent_visible = 0
 			dialogo2.percent_visible = 0
 
@@ -118,7 +118,6 @@ func Tutorial11():
 
 func Tutorial12():
 	if (auxD == 11):
-		print("ti")
 		displayString(dialogo9)
 		dialogo8.percent_visible = 0
 		dialogo10.percent_visible = 0
@@ -147,7 +146,8 @@ func _input(event):
 		if ($"/root/TutorialGlobal".tutorialPos == 3):
 			Tutorial4()
 		elif ($"/root/TutorialGlobal".tutorialPos == 4):
-			self.visible = false
+			#$VoAnimation.play("Out")
+			dialogo4.percent_visible = 0
 		elif ($"/root/TutorialGlobal".tutorialPos == 5):
 			Tutorial6()
 		elif ($"/root/TutorialGlobal".tutorialPos == 7):
@@ -160,7 +160,8 @@ func _input(event):
 			Tutorial12()
 			get_node("SetaAjuda").visible = false
 		elif ($"/root/TutorialGlobal".tutorialPos == 12):
-			self.visible = false
+			$VoAnimation.play("Out")
+			get_node("SetaSair").visible = false
 			$"/root/TutorialGlobal".tutorialPos -= 1
 			$"/root/TutorialGlobal".CozinhaCompleted = true
 
@@ -168,3 +169,10 @@ func initializeAnim(var animat):
 	var anim = get_parent().get_node("AnimationPlayer").get_animation(animat)
 	anim.set_loop(true)
 	get_parent().get_node("AnimationPlayer").play(animat)
+
+
+func _on_VoAnimation_animation_finished(anim_name):
+	if (anim_name == "Out" && auxD == 12):
+		self.visible = false
+	elif (anim_name == "In"):
+		Tutorial3()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=2]
+[gd_scene load_steps=49 format=2]
 
 [ext_resource path="res://Scripts/Frases/FrasePreview.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/ScaleButton.gd" type="Script" id=2]
@@ -199,6 +199,74 @@ tracks/2/keys = {
 
 [sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 86.3473, 50.4913 )
+
+[sub_resource type="Animation" id=10]
+resource_name = "In"
+length = 0.9
+tracks/0/type = "value"
+tracks/0/path = NodePath("Vó:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1399.97, 1050 ), Vector2( 1399.97, 697.003 ), Vector2( 1399.97, 697.003 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Dialogo:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.6, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 799.572, 1050 ), Vector2( 799.572, 721.389 ), Vector2( 799.572, 721.389 ) ]
+}
+
+[sub_resource type="Animation" id=9]
+resource_name = "Out"
+length = 0.9
+tracks/0/type = "value"
+tracks/0/path = NodePath("Vó:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1399.97, 697.003 ), Vector2( 1399.97, 697.003 ), Vector2( 1399.97, 1050 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Dialogo:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.3, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 799.572, 721.389 ), Vector2( 799.572, 721.389 ), Vector2( 799.572, 1050 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Label8:rect_position")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.3, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 336, 685 ), Vector2( 336, 685 ), Vector2( 336, 1000 ) ]
+}
 
 [sub_resource type="DynamicFont" id=8]
 size = 32
@@ -666,7 +734,6 @@ __meta__ = {
 }
 
 [node name="Tutorial4" type="Control" parent="."]
-visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 script = ExtResource( 22 )
@@ -682,12 +749,16 @@ D6 = NodePath("Label4")
 D7 = NodePath("Label5")
 D8 = NodePath("Label8")
 
+[node name="VoAnimation" type="AnimationPlayer" parent="Tutorial4"]
+anims/In = SubResource( 10 )
+anims/Out = SubResource( 9 )
+
 [node name="Vó" type="Sprite" parent="Tutorial4"]
-position = Vector2( 1399.97, 697.003 )
+position = Vector2( 1399.97, 1050 )
 texture = ExtResource( 35 )
 
 [node name="Dialogo" type="Sprite" parent="Tutorial4"]
-position = Vector2( 799.572, 721.389 )
+position = Vector2( 799.572, 1050 )
 scale = Vector2( 1.99814, 1.20718 )
 texture = ExtResource( 36 )
 
@@ -909,5 +980,6 @@ stream = ExtResource( 38 )
 [connection signal="mouse_entered" from="Atençao/Descart" to="Atençao/Descart" method="_on_Descart_mouse_entered"]
 [connection signal="mouse_exited" from="Atençao/Descart" to="Atençao/Descart" method="_on_Descart_mouse_exited"]
 [connection signal="pressed" from="Atençao/Descart" to="." method="_on_Descart_pressed"]
-[connection signal="pressed" from="Atençao/Descart" to="Atençao/Descart" method="_on_Descart_pressed"]
 [connection signal="pressed" from="Atençao/Descart" to="PalavrasPopUp" method="_on_Descart_pressed"]
+[connection signal="pressed" from="Atençao/Descart" to="Atençao/Descart" method="_on_Descart_pressed"]
+[connection signal="animation_finished" from="Tutorial4/VoAnimation" to="Tutorial4" method="_on_VoAnimation_animation_finished"]

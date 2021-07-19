@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://Sprites/SpritesFinais/Objetos/Confecção Dos Retalhps.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Corredor/ChangeScenePorta.gd" type="Script" id=2]
@@ -90,8 +90,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 0.4, 0.9, 1.2 )
 }
 
-[sub_resource type="Animation" id=4]
-resource_name = "CartoesPulse"
+[sub_resource type="Animation" id=5]
 length = 1.3
 loop = true
 tracks/0/type = "value"
@@ -119,8 +118,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0.915365, 0.9263 ), Vector2( 1.29, 1.29 ), Vector2( 0.915365, 0.9263 ), Vector2( 0.915365, 0.9263 ) ]
 }
 
-[sub_resource type="Animation" id=5]
-resource_name = "CosturaPulse"
+[sub_resource type="Animation" id=6]
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Quarto de Costura:scale")
@@ -135,8 +133,7 @@ tracks/0/keys = {
 "values": [ Vector2( 1, 1 ), Vector2( 1.23, 1.23 ), Vector2( 1, 1 ), Vector2( 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=6]
-resource_name = "LetrasPulse"
+[sub_resource type="Animation" id=7]
 length = 1.3
 loop = true
 tracks/0/type = "value"
@@ -164,7 +161,63 @@ tracks/1/keys = {
 "values": [ Vector2( 1, 1 ), Vector2( 1.4, 1.4 ), Vector2( 1, 1 ), Vector2( 1, 1 ) ]
 }
 
-[sub_resource type="DynamicFont" id=7]
+[sub_resource type="Animation" id=4]
+resource_name = "In"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/path = NodePath("Vó:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1469.09, 1100 ), Vector2( 1469.09, 738 ), Vector2( 1469.09, 738 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Dialogo:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 767.955, 1150 ), Vector2( 767.955, 780 ), Vector2( 767.955, 780 ) ]
+}
+
+[sub_resource type="Animation" id=9]
+resource_name = "Out"
+length = 0.9
+tracks/0/type = "value"
+tracks/0/path = NodePath("Vó:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1469.09, 738 ), Vector2( 1469.09, 738 ), Vector2( 1469.09, 1100 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Dialogo:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.3, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 767.955, 780 ), Vector2( 767.955, 780 ), Vector2( 767.955, 1150 ) ]
+}
+
+[sub_resource type="DynamicFont" id=8]
 size = 38
 use_filter = true
 font_data = ExtResource( 10 )
@@ -182,9 +235,9 @@ anims/SetaCartoes = SubResource( 2 )
 anims/SetaCostura = SubResource( 3 )
 
 [node name="NamesAnimation" type="AnimationPlayer" parent="."]
-anims/CartoesPulse = SubResource( 4 )
-anims/CosturaPulse = SubResource( 5 )
-anims/LetrasPulse = SubResource( 6 )
+anims/CartoesPulse = SubResource( 5 )
+anims/CosturaPulse = SubResource( 6 )
+anims/LetrasPulse = SubResource( 7 )
 
 [node name="corredor" type="Sprite" parent="."]
 position = Vector2( 798.892, 449.981 )
@@ -271,13 +324,17 @@ D2 = NodePath("Label2")
 D3 = NodePath("Label3")
 D4 = NodePath("Label4")
 
+[node name="AnimationsVo" type="AnimationPlayer" parent="Tutorial1"]
+anims/In = SubResource( 4 )
+anims/Out = SubResource( 9 )
+
 [node name="Vó" type="Sprite" parent="Tutorial1"]
-position = Vector2( 1469.09, 735.409 )
+position = Vector2( 1469.09, 738 )
 scale = Vector2( 1.39493, 1.39493 )
 texture = ExtResource( 9 )
 
 [node name="Dialogo" type="Sprite" parent="Tutorial1"]
-position = Vector2( 767.955, 786.664 )
+position = Vector2( 767.955, 780 )
 scale = Vector2( 2.23132, 1.47773 )
 texture = ExtResource( 8 )
 
@@ -306,7 +363,7 @@ margin_left = 312.0
 margin_top = 726.0
 margin_right = 1223.0
 margin_bottom = 852.0
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 8 )
 text = "Olá! Seja bem vindo(a) à minha humilde casinha!
 Meu nome é Dona Vereda, mas o pessoal aqui
 carinhosamente me chama de Vó Vedinha."
@@ -323,7 +380,7 @@ margin_left = 265.0
 margin_top = 726.0
 margin_right = 1275.0
 margin_bottom = 891.0
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 8 )
 text = "Você sabe costurar? Já fez um bordado? 
 Não? Então, chega aqui na minha cozinha que eu te explico!
 Para entrar, basta clicar na porta indicada.
@@ -341,7 +398,7 @@ margin_left = 265.0
 margin_top = 713.0
 margin_right = 1281.0
 margin_bottom = 878.0
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 8 )
 text = "Já encontrou algumas letras né?
 Agora vou te apresentar meu quartinho de costura! 
 Vem comigo! Clique na porta do quarto de costura.
@@ -359,7 +416,7 @@ margin_left = 265.0
 margin_top = 731.0
 margin_right = 1279.0
 margin_bottom = 878.0
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 8 )
 text = "Agora que você já tem os bordados, vou te ensinar
  a fazer os cartões com eles! Clique na porta indicada!"
 align = 1
@@ -465,6 +522,7 @@ volume_db = -5.0
 [connection signal="mouse_entered" from="PortaQuartoMontagens" to="." method="_on_PortaQuartoMontagens_mouse_entered"]
 [connection signal="mouse_exited" from="PortaQuartoMontagens" to="." method="_on_PortaQuartoMontagens_mouse_exited"]
 [connection signal="pressed" from="PortaQuartoMontagens" to="." method="_on_PortaQuartoMontagens_pressed"]
+[connection signal="animation_finished" from="Tutorial1/AnimationsVo" to="Tutorial1" method="_on_AnimationsVo_animation_finished"]
 [connection signal="mouse_entered" from="TutorialPergunta/Sim" to="TutorialPergunta/Sim" method="_on_Sim_mouse_entered"]
 [connection signal="mouse_exited" from="TutorialPergunta/Sim" to="TutorialPergunta/Sim" method="_on_Sim_mouse_exited"]
 [connection signal="pressed" from="TutorialPergunta/Sim" to="." method="_on_Sim_pressed"]
