@@ -81,9 +81,6 @@ func _on_Descart_mouse_entered():
 	ScaleButton()
 func _on_Descart_mouse_exited():
 	UnScaleButton()
-func _on_Confirm_pressed():
-	if (get_parent().get_node("RetalhoGrande").get_child_count() < 12):
-		UnScaleButton()
 
 func _on_Descart_pressed():
 	UnScaleButton()

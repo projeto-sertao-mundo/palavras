@@ -200,7 +200,7 @@ tracks/2/keys = {
 [sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 86.3473, 50.4913 )
 
-[sub_resource type="Animation" id=10]
+[sub_resource type="Animation" id=8]
 resource_name = "In"
 length = 0.9
 tracks/0/type = "value"
@@ -268,7 +268,7 @@ tracks/2/keys = {
 "values": [ Vector2( 336, 685 ), Vector2( 336, 685 ), Vector2( 336, 1000 ) ]
 }
 
-[sub_resource type="DynamicFont" id=8]
+[sub_resource type="DynamicFont" id=10]
 size = 32
 font_data = ExtResource( 37 )
 
@@ -750,7 +750,7 @@ D7 = NodePath("Label5")
 D8 = NodePath("Label8")
 
 [node name="VoAnimation" type="AnimationPlayer" parent="Tutorial4"]
-anims/In = SubResource( 10 )
+anims/In = SubResource( 8 )
 anims/Out = SubResource( 9 )
 
 [node name="Vó" type="Sprite" parent="Tutorial4"]
@@ -800,7 +800,7 @@ margin_left = 342.0
 margin_top = 670.0
 margin_right = 1267.0
 margin_bottom = 783.0
-custom_fonts/font = SubResource( 8 )
+custom_fonts/font = SubResource( 10 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Aqui temos alguns cartões. Você pode visualizá-los melhor,
  clicando em qualquer um deles."
@@ -816,7 +816,7 @@ margin_left = 342.0
 margin_top = 669.0
 margin_right = 1264.0
 margin_bottom = 823.0
-custom_fonts/font = SubResource( 8 )
+custom_fonts/font = SubResource( 10 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Agora podemos arrastar os bordados
  produzidos no quarto de costura para o cartão!
@@ -830,7 +830,7 @@ margin_left = 342.0
 margin_top = 670.0
 margin_right = 1262.0
 margin_bottom = 783.0
-custom_fonts/font = SubResource( 8 )
+custom_fonts/font = SubResource( 10 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Quando o bordado estiver posicionado no lugar que você quer,
  basta clicar no botão \"confirmar\", 
@@ -847,7 +847,7 @@ margin_left = 342.0
 margin_top = 690.0
 margin_right = 1263.0
 margin_bottom = 784.0
-custom_fonts/font = SubResource( 8 )
+custom_fonts/font = SubResource( 10 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Seus cartões ficarão guardados na 
 aba \"cartões\". "
@@ -863,7 +863,7 @@ margin_left = 342.0
 margin_top = 680.0
 margin_right = 1249.0
 margin_bottom = 783.0
-custom_fonts/font = SubResource( 8 )
+custom_fonts/font = SubResource( 10 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Quando estiver na aba de cartões, 
 você pode visualizar um cartão ao clicar nele."
@@ -879,7 +879,7 @@ margin_left = 342.0
 margin_top = 670.0
 margin_right = 1261.0
 margin_bottom = 783.0
-custom_fonts/font = SubResource( 8 )
+custom_fonts/font = SubResource( 10 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Caso não goste do resultado,
  você pode apagar o cartão clicando no botão \"descartar\". "
@@ -895,7 +895,7 @@ margin_left = 342.0
 margin_top = 660.0
 margin_right = 1254.0
 margin_bottom = 807.0
-custom_fonts/font = SubResource( 8 )
+custom_fonts/font = SubResource( 10 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Espero ter ajudado! Agora é sua vez de explorar as
  infinitas  possibilidades de combinar letras e morfemas 
@@ -913,7 +913,7 @@ margin_left = 336.0
 margin_top = 685.0
 margin_right = 1265.0
 margin_bottom = 807.0
-custom_fonts/font = SubResource( 8 )
+custom_fonts/font = SubResource( 10 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Ah! Antes que eu me esqueça,
  Agora você pode colar seus cartões em sua caderneta!"
@@ -933,8 +933,8 @@ stream = ExtResource( 38 )
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 [connection signal="animation_finished" from="CartaoAnimation" to="RetalhoGrande" method="_on_CartaoAnimation_animation_finished"]
 [connection signal="animation_started" from="CartaoAnimation" to="RetalhoGrande" method="_on_CartaoAnimation_animation_started"]
-[connection signal="pressed" from="ExitButton" to="RetalhoGrande" method="_on_ExitButton_pressed"]
 [connection signal="pressed" from="ExitButton" to="Frases" method="_on_ExitButton_pressed"]
+[connection signal="pressed" from="ExitButton" to="RetalhoGrande" method="_on_ExitButton_pressed"]
 [connection signal="mouse_entered" from="Voltar" to="Voltar" method="_on_Voltar_mouse_entered"]
 [connection signal="mouse_exited" from="Voltar" to="Voltar" method="_on_Voltar_mouse_exited"]
 [connection signal="pressed" from="Voltar" to="." method="_on_Voltar_pressed"]
@@ -969,7 +969,6 @@ stream = ExtResource( 38 )
 [connection signal="mouse_entered" from="Confirm" to="Confirm" method="_on_Confirm_mouse_entered"]
 [connection signal="mouse_exited" from="Confirm" to="Confirm" method="_on_Confirm_mouse_exited"]
 [connection signal="pressed" from="Confirm" to="." method="_on_Confirm_pressed"]
-[connection signal="pressed" from="Confirm" to="Confirm" method="_on_Confirm_pressed"]
 [connection signal="mouse_entered" from="Descartar" to="Descartar" method="_on_Descartar_mouse_entered"]
 [connection signal="mouse_exited" from="Descartar" to="Descartar" method="_on_Descartar_mouse_exited"]
 [connection signal="pressed" from="Descartar" to="." method="_on_Descartar_pressed"]
@@ -980,6 +979,6 @@ stream = ExtResource( 38 )
 [connection signal="mouse_entered" from="Atençao/Descart" to="Atençao/Descart" method="_on_Descart_mouse_entered"]
 [connection signal="mouse_exited" from="Atençao/Descart" to="Atençao/Descart" method="_on_Descart_mouse_exited"]
 [connection signal="pressed" from="Atençao/Descart" to="." method="_on_Descart_pressed"]
-[connection signal="pressed" from="Atençao/Descart" to="PalavrasPopUp" method="_on_Descart_pressed"]
 [connection signal="pressed" from="Atençao/Descart" to="Atençao/Descart" method="_on_Descart_pressed"]
+[connection signal="pressed" from="Atençao/Descart" to="PalavrasPopUp" method="_on_Descart_pressed"]
 [connection signal="animation_finished" from="Tutorial4/VoAnimation" to="Tutorial4" method="_on_VoAnimation_animation_finished"]
