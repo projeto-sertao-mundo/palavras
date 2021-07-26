@@ -120,6 +120,7 @@ func Download():
 func _on_Timer_timeout():
 	SaveImage()
 	Download()
+	$Timer.stop()
 
 func _on_Baixar_pressed():
 	DuplicateRetalhoGrande()
