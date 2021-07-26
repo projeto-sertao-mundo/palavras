@@ -29,20 +29,14 @@ func _process(_delta):
 			elif cor.name == "Branco":
 				MudarCor(0.768627, 0.74902, 0.698039)
 				corAux = Color(0.768627, 0.74902, 0.698039)
-				
-		
-		if !is_pixel_opaque(get_local_mouse_position()) && !setado:
-			self.modulate = corAnterior
 
+		if (!is_pixel_opaque(get_local_mouse_position())):
+			MudarCorModulate(corAnterior)
 
 func _input(event):
 	if(event.is_action_released("Click")):
 		if (is_pixel_opaque(get_local_mouse_position())):
 			setColor()
-		else:
-			setado = false
-	else:
-		setado = false
 
 func setColor():
 	setado = true
@@ -51,6 +45,9 @@ func setColor():
 
 func MudarCor(var r, g, b):
 	self.modulate = Color(r,g,b)
+
+func MudarCorModulate(var cor):
+	self.modulate = cor
 
 func on_Costurar_pressed():
 	MudarCor(0.768627, 0.74902, 0.698039)
