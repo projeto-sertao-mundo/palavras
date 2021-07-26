@@ -258,4 +258,5 @@ __meta__ = {
 [connection signal="pressed" from="Creditos" to="." method="_on_Creditos_pressed"]
 [connection signal="mouse_entered" from="Sair" to="." method="_on_Sair_mouse_entered"]
 [connection signal="mouse_exited" from="Sair" to="." method="_on_Sair_mouse_exited"]
+[connection signal="pressed" from="Sair" to="." method="_on_Sair_pressed"]
 [connection signal="pressed" from="CreditosPopUP/VoltarCreditos" to="." method="_on_VoltarCreditos_pressed"]

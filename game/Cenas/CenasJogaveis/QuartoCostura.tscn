@@ -427,7 +427,7 @@ extents = Vector2( 82.901, 76.4056 )
 size = 25
 font_data = ExtResource( 3 )
 
-[sub_resource type="Animation" id=16]
+[sub_resource type="Animation" id=15]
 resource_name = "In"
 length = 0.9
 tracks/0/type = "value"
@@ -455,7 +455,7 @@ tracks/1/keys = {
 "values": [ Vector2( 831.148, 1150 ), Vector2( 831.148, 801.766 ), Vector2( 831.148, 801.766 ) ]
 }
 
-[sub_resource type="Animation" id=17]
+[sub_resource type="Animation" id=16]
 resource_name = "Out"
 length = 0.9
 tracks/0/type = "value"
@@ -495,7 +495,7 @@ tracks/2/keys = {
 "values": [ Vector2( 336, 756 ), Vector2( 336, 756 ), Vector2( 336, 1150 ) ]
 }
 
-[sub_resource type="DynamicFont" id=15]
+[sub_resource type="DynamicFont" id=17]
 size = 33
 font_data = ExtResource( 3 )
 
@@ -906,8 +906,8 @@ D7 = NodePath("Label6")
 D8 = NodePath("Label8")
 
 [node name="VoAnimation" type="AnimationPlayer" parent="Tutorial3"]
-anims/In = SubResource( 16 )
-anims/Out = SubResource( 17 )
+anims/In = SubResource( 15 )
+anims/Out = SubResource( 16 )
 
 [node name="Vó" type="Sprite" parent="Tutorial3"]
 position = Vector2( 1503.27, 781.001 )
@@ -978,7 +978,7 @@ margin_left = 336.0
 margin_top = 755.581
 margin_right = 1328.0
 margin_bottom = 875.581
-custom_fonts/font = SubResource( 15 )
+custom_fonts/font = SubResource( 17 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Aqui vamos montar nossos bordados com
 as letras que coletamos na cozinha!"
@@ -994,7 +994,7 @@ margin_left = 336.0
 margin_top = 755.581
 margin_right = 1328.0
 margin_bottom = 875.581
-custom_fonts/font = SubResource( 15 )
+custom_fonts/font = SubResource( 17 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Clique na máquina de costura para começar!"
 align = 1
@@ -1009,7 +1009,7 @@ margin_left = 336.0
 margin_top = 752.0
 margin_right = 1337.0
 margin_bottom = 875.0
-custom_fonts/font = SubResource( 15 )
+custom_fonts/font = SubResource( 17 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Para escrever, basta clicar na letra ou no morfema desejado
  que eles aparecerão no retalho à esquerda!"
@@ -1025,7 +1025,7 @@ margin_left = 336.0
 margin_top = 755.581
 margin_right = 1328.0
 margin_bottom = 875.581
-custom_fonts/font = SubResource( 15 )
+custom_fonts/font = SubResource( 17 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Você pode mudar o formato do bordado clicando
 em uma das formas disponíveis na mesa."
@@ -1041,7 +1041,7 @@ margin_left = 329.0
 margin_top = 733.0
 margin_right = 1341.0
 margin_bottom = 888.0
-custom_fonts/font = SubResource( 15 )
+custom_fonts/font = SubResource( 17 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Você também pode colorir os seus retalhos!
 Basta clicar na cor desejada e arrastar para o bordado!
@@ -1059,7 +1059,7 @@ margin_left = 336.0
 margin_top = 751.0
 margin_right = 1340.0
 margin_bottom = 876.0
-custom_fonts/font = SubResource( 15 )
+custom_fonts/font = SubResource( 17 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Se você errou alguma letra ou morfema,
  pode apagar usando o botão \"apagar\"."
@@ -1075,7 +1075,7 @@ margin_left = 332.0
 margin_top = 742.0
 margin_right = 1330.0
 margin_bottom = 875.0
-custom_fonts/font = SubResource( 15 )
+custom_fonts/font = SubResource( 17 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Quando você terminar, basta clicar em \"confirmar\" para guardar
 seu bordado na bolsa!
@@ -1092,7 +1092,7 @@ margin_left = 336.0
 margin_top = 757.0
 margin_right = 1328.0
 margin_bottom = 875.0
-custom_fonts/font = SubResource( 15 )
+custom_fonts/font = SubResource( 17 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Seu bordado ficará guardado na aba \"bordados\"."
 align = 1
@@ -1107,7 +1107,7 @@ margin_left = 336.0
 margin_top = 756.0
 margin_right = 1324.0
 margin_bottom = 909.0
-custom_fonts/font = SubResource( 15 )
+custom_fonts/font = SubResource( 17 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Caso não goste do bordado, você pode arrastá-lo até a lixeirinha
  que fica no centro do quarto, está bem? Agora divirta-se!"

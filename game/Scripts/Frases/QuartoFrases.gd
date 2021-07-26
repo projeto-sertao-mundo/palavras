@@ -3,6 +3,9 @@ extends Node2D
 export (String) var SceneName
 var numeroCartoes = 0
 
+export(NodePath) var rectPath
+onready var rect = get_node(rectPath)
+
 func _on_Frase1_pressed():
 	get_node("RetalhoPopUp").show()
 
@@ -54,6 +57,7 @@ func _on_Descart_pressed():
 		n.free()
 	
 	get_node("Descartar").visible = false
+	get_node("Baixar").visible = false
 	$"/root/Global".deleteCartaoSelecionado()
 	get_node("Atençao").visible = false
 	
@@ -71,4 +75,52 @@ func _on_Confirm_pressed():
 		get_node("Confirm").set_scale(Vector2(1.2,1.2))
 		get_node("CartaoAnimation").play("Cartao")
 		numeroCartoes += 1
-		print(get_node("Confirm").rect_scale)
+
+
+func DuplicateRetalhoGrande():
+	var retalhos = get_node("ViewportContainer/Viewport/RetalhoGrande2").get_children()
+	
+	for retalho in retalhos:
+		if (retalho is TextureButton):
+			retalho.queue_free()
+	
+	retalhos = $RetalhoGrande.get_children()
+	get_node("ViewportContainer/Viewport/RetalhoGrande2").texture = get_node("RetalhoGrande").texture
+	
+	for retalho in retalhos:
+		if (retalho is TextureButton):
+			var retalhoInstanciado = $"/root/Global".retalhoInstanceRef.instance()
+			retalhoInstanciado.name = "retaioSave"
+			retalhoInstanciado.get_node("Borda").modulate = retalho.get_node("Borda").modulate
+			retalhoInstanciado.get_node("Miolo").modulate = retalho.get_node("Miolo").modulate
+			retalhoInstanciado.get_node("Borda").texture = retalho.get_node("Borda").texture
+			retalhoInstanciado.get_node("Miolo").texture = retalho.get_node("Miolo").texture
+			retalhoInstanciado.get_node("Label").text = retalho.get_node("Label").text
+			retalhoInstanciado.set_scale(retalho.rect_scale)
+			retalhoInstanciado.set_position(retalho.rect_position)
+			$ViewportContainer/Viewport/RetalhoGrande2.add_child(retalhoInstanciado)
+#		$ViewportContainer/Viewport/RetalhoGrande2.move_child(retalhoInstanciado,0)
+
+
+func SaveImage():
+	var image = get_node("ViewportContainer/Viewport").get_texture().get_data()
+	image.flip_y()
+	image.save_png("res://Cartão.png")
+
+func Download():
+	var file = File.new()
+	file.open("res://Cartão.png", File.READ)
+	var base_64_data = Marshalls.raw_to_base64(file.get_buffer(file.get_len()))
+
+	var url = "data:image/jpg;base64,"+base_64_data #dont forget the mimetype and encoding
+	var comand = " var a = document.createElement('a'); a.href = '" + url + "'; a.setAttribute( 'download' , 'Screenshot.jpg' ); a.click(); "
+	
+	JavaScript.eval(comand)
+
+func _on_Timer_timeout():
+	SaveImage()
+	Download()
+
+func _on_Baixar_pressed():
+	DuplicateRetalhoGrande()
+	$Timer.start()

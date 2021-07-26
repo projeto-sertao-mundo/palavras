@@ -14,7 +14,8 @@ func yield_wait(var timeout : float, var parent = get_tree().get_root()):
 	timer.start(timeoutCap)
 	yield(_yield_wait(timer), "completed")
 	yield(yield_call_deferred(parent, "remove_child", timer), "completed")
-	timer.free() #avoid orphans
+	if (timer != null):
+		timer.free() #avoid orphans
 
 func _yield_wait(var timer : Timer):
 	yield(timer, "timeout")

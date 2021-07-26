@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=2]
+[gd_scene load_steps=50 format=2]
 
 [ext_resource path="res://Scripts/Frases/FrasePreview.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/ScaleButton.gd" type="Script" id=2]
@@ -38,6 +38,7 @@
 [ext_resource path="res://Sprites/SpritesFinais/noAtlasObjects/BalãoDeDialogo.png" type="Texture" id=36]
 [ext_resource path="res://Fonts/xilosa_.ttf" type="DynamicFontData" id=37]
 [ext_resource path="res://Audio/whoosh.ogg" type="AudioStream" id=38]
+[ext_resource path="res://Sprites/SpritesFinais/noAtlasObjects/baixar.png" type="Texture" id=39]
 
 [sub_resource type="Animation" id=1]
 resource_name = "SetaCartaoPronto"
@@ -679,12 +680,25 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Baixar" type="TextureButton" parent="."]
+visible = false
+margin_left = 129.871
+margin_top = 572.126
+margin_right = 321.871
+margin_bottom = 664.126
+rect_pivot_offset = Vector2( 77, 40 )
+texture_normal = ExtResource( 39 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Descartar" type="TextureButton" parent="."]
 visible = false
-margin_left = 154.474
-margin_top = 587.704
-margin_right = 309.474
-margin_bottom = 661.704
+margin_left = 365.0
+margin_top = 580.763
+margin_right = 520.0
+margin_bottom = 654.763
 rect_scale = Vector2( 1.2, 1.2 )
 rect_pivot_offset = Vector2( 77, 40 )
 texture_normal = ExtResource( 5 )
@@ -929,6 +943,28 @@ __meta__ = {
 [node name="Whoosh" type="AudioStreamPlayer2D" parent="Audio"]
 stream = ExtResource( 38 )
 
+[node name="Timer" type="Timer" parent="."]
+
+[node name="ViewportContainer" type="ViewportContainer" parent="."]
+margin_left = 127.0
+margin_top = -1000.0
+margin_right = 843.0
+margin_bottom = -560.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Viewport" type="Viewport" parent="ViewportContainer"]
+size = Vector2( 716, 440 )
+own_world = true
+handle_input_locally = false
+render_target_update_mode = 3
+
+[node name="RetalhoGrande2" type="Sprite" parent="ViewportContainer/Viewport"]
+position = Vector2( 358, 220 )
+scale = Vector2( 2.26886, 2.30487 )
+texture = ExtResource( 23 )
+
 [connection signal="tree_entered" from="." to="." method="_on_QuartoFrases_tree_entered"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 [connection signal="animation_finished" from="CartaoAnimation" to="RetalhoGrande" method="_on_CartaoAnimation_animation_finished"]
@@ -969,16 +1005,20 @@ stream = ExtResource( 38 )
 [connection signal="mouse_entered" from="Confirm" to="Confirm" method="_on_Confirm_mouse_entered"]
 [connection signal="mouse_exited" from="Confirm" to="Confirm" method="_on_Confirm_mouse_exited"]
 [connection signal="pressed" from="Confirm" to="." method="_on_Confirm_pressed"]
+[connection signal="mouse_entered" from="Baixar" to="Baixar" method="_on_Descartar_mouse_entered"]
+[connection signal="mouse_exited" from="Baixar" to="Baixar" method="_on_Descartar_mouse_exited"]
+[connection signal="pressed" from="Baixar" to="." method="_on_Baixar_pressed"]
 [connection signal="mouse_entered" from="Descartar" to="Descartar" method="_on_Descartar_mouse_entered"]
 [connection signal="mouse_exited" from="Descartar" to="Descartar" method="_on_Descartar_mouse_exited"]
 [connection signal="pressed" from="Descartar" to="." method="_on_Descartar_pressed"]
 [connection signal="mouse_entered" from="Atençao/NaoDescartar" to="Atençao/NaoDescartar" method="_on_NaoDescartar_mouse_entered"]
 [connection signal="mouse_exited" from="Atençao/NaoDescartar" to="Atençao/NaoDescartar" method="_on_NaoDescartar_mouse_exited"]
-[connection signal="pressed" from="Atençao/NaoDescartar" to="." method="_on_NaoDescartar_pressed"]
 [connection signal="pressed" from="Atençao/NaoDescartar" to="Atençao/NaoDescartar" method="_on_NaoDescartar_pressed"]
+[connection signal="pressed" from="Atençao/NaoDescartar" to="." method="_on_NaoDescartar_pressed"]
 [connection signal="mouse_entered" from="Atençao/Descart" to="Atençao/Descart" method="_on_Descart_mouse_entered"]
 [connection signal="mouse_exited" from="Atençao/Descart" to="Atençao/Descart" method="_on_Descart_mouse_exited"]
-[connection signal="pressed" from="Atençao/Descart" to="." method="_on_Descart_pressed"]
 [connection signal="pressed" from="Atençao/Descart" to="Atençao/Descart" method="_on_Descart_pressed"]
+[connection signal="pressed" from="Atençao/Descart" to="." method="_on_Descart_pressed"]
 [connection signal="pressed" from="Atençao/Descart" to="PalavrasPopUp" method="_on_Descart_pressed"]
 [connection signal="animation_finished" from="Tutorial4/VoAnimation" to="Tutorial4" method="_on_VoAnimation_animation_finished"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

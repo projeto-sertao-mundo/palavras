@@ -5,6 +5,7 @@ var sprite
 var confirmar
 var retalhoLock
 var descartButton
+var downloadButton
 var created = true
 
 func _ready():
@@ -13,6 +14,7 @@ func _ready():
 	confirmar = primeiroNode.get_node("Confirm")
 	retalhoLock = primeiroNode.get_node("FraseLock")
 	descartButton = primeiroNode.get_node("Descartar")
+	downloadButton = primeiroNode.get_node("Baixar")
 
 func _on_TextureButton_pressed():
 	
@@ -31,6 +33,7 @@ func _on_TextureButton_pressed():
 		
 		retalhoLock.visible = true
 		descartButton.visible = true
+		downloadButton.visible = true
 		#confirmar.visible = true
 	#	$"/root/Global".cartaoEditando = self.name
 		

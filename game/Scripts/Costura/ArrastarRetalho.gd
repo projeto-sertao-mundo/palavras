@@ -42,7 +42,7 @@ func _process(_delta):
 		if (!setRetalhoFrase && !setouRetalho):
 			if !mouseIn && mouseIn != null && palavrasParentesco.has_node("retaio") && !$"/root/Global".podeSetar:
 				$"/root/Global".mudarRetalhoArrastado(null)
-				if (palavraInstanciada != null):
+				if (is_instance_valid(palavraInstanciada)):
 					palavraInstanciada.free()
 
 

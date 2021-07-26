@@ -68,6 +68,7 @@ func _on_ExitButton_pressed():
 	if ($"/root/TutorialGlobal".FrasesCompleted || !$"/root/TutorialGlobal".willDoTutorial):
 		spriteGrande.visible = false;
 		spriteGrande.get_parent().get_node("Descartar").visible = false
+		spriteGrande.get_parent().get_node("Baixar").visible = false
 		get_parent().get_node("FraseLock").visible = false
 
 func _on_PaginaRetalho_pressed():

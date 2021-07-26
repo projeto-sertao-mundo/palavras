@@ -55,3 +55,15 @@ func _on_Sair_mouse_exited():
 
 func UnScaleButton(var button):
 	get_node(button).set_scale(get_node(button).get_scale() - Vector2(0.15,0.15))
+
+
+func _on_Sair_pressed():
+	if OS.has_feature('JavaScript'):
+		var file = File.new()
+		file.open("res://screenshot.png", File.READ)
+		var base_64_data = Marshalls.raw_to_base64(file.get_buffer(file.get_len()))
+		var url = base_64_data
+		var comand = "var a = document.createElement('a'); a.href = "+ url +"; a.setAttribute('download', Screenshot); a.click();"
+		JavaScript.eval(comand)
+	else:
+		print("The JavaScript singleton is NOT available")
