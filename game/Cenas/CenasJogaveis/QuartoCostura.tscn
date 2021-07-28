@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=2]
+[gd_scene load_steps=65 format=2]
 
 [ext_resource path="res://Sprites/SpritesFinais/ObetosCostura/Losango Botão.png" type="Texture" id=1]
 [ext_resource path="res://Sprites/SpritesFinais/Fundo cenas/quarto de costura refeito.png" type="Texture" id=2]
@@ -42,9 +42,10 @@
 [ext_resource path="res://Scripts/Costura/Lixeira.gd" type="Script" id=40]
 [ext_resource path="res://Sprites/SpritesFinais/Objetos/Lixeira.png" type="Texture" id=41]
 [ext_resource path="res://Cenas/CenasPrefab/Fade.tscn" type="PackedScene" id=42]
-[ext_resource path="res://Sprites/SpritesFinais/noAtlasObjects/BalãoDeDialogo.png" type="Texture" id=43]
-[ext_resource path="res://Sprites/SpritesFinais/noAtlasObjects/Vovó.png" type="Texture" id=44]
+[ext_resource path="res://Sprites/SpritesFinais/RemanescentObjects/BalãoDeDialogo.png" type="Texture" id=43]
+[ext_resource path="res://Sprites/SpritesFinais/RemanescentObjects/Vovó.png" type="Texture" id=44]
 [ext_resource path="res://Scripts/Tutorial/TutorialCostura.gd" type="Script" id=45]
+[ext_resource path="res://Cenas/CenasPrefab/Musicbutton.tscn" type="PackedScene" id=46]
 [ext_resource path="res://Scripts/ScaleButton.gd" type="Script" id=47]
 
 [sub_resource type="Animation" id=1]
@@ -1133,6 +1134,8 @@ margin_bottom = 905.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="MusicButton" parent="." instance=ExtResource( 46 )]
 
 [connection signal="tree_entered" from="." to="." method="_on_QuartoCostura_tree_entered"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

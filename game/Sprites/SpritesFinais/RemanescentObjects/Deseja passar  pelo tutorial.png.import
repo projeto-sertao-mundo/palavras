@@ -1,0 +1,17 @@
+[remap]
+
+importer="texture_atlas"
+type="Texture"
+path="res://.import/Deseja passar  pelo tutorial.png-097daa4a11289510c808003485af6af4.res"
+group_file="res://Sprites/SpritesFinais/Atlas/Remanescentes.png"
+valid=true
+[deps]
+
+
+source_file="res://Sprites/SpritesFinais/RemanescentObjects/Deseja passar  pelo tutorial.png"
+dest_files=[ "res://.import/Deseja passar  pelo tutorial.png-097daa4a11289510c808003485af6af4.res" ]
+
+[params]
+
+atlas_file="res://Sprites/SpritesFinais/Atlas/Remanescentes.png"
+import_mode=0

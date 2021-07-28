@@ -1,0 +1,17 @@
+[remap]
+
+importer="texture_atlas"
+type="Texture"
+path="res://.import/fundo tempo1.png-392c328336c21dcc83bef5e94e3bcad9.res"
+group_file="res://Sprites/SpritesFinais/Atlas/Remanescentes.png"
+valid=true
+[deps]
+
+
+source_file="res://Sprites/SpritesFinais/RemanescentObjects/fundo tempo1.png"
+dest_files=[ "res://.import/fundo tempo1.png-392c328336c21dcc83bef5e94e3bcad9.res" ]
+
+[params]
+
+atlas_file="res://Sprites/SpritesFinais/Atlas/Remanescentes.png"
+import_mode=0

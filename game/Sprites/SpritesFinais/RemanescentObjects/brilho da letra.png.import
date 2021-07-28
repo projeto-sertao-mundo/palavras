@@ -1,0 +1,17 @@
+[remap]
+
+importer="texture_atlas"
+type="Texture"
+path="res://.import/brilho da letra.png-33035f9f9fde71d18f3bacb0ab35744c.res"
+group_file="res://Sprites/SpritesFinais/Atlas/Remanescentes.png"
+valid=true
+[deps]
+
+
+source_file="res://Sprites/SpritesFinais/RemanescentObjects/brilho da letra.png"
+dest_files=[ "res://.import/brilho da letra.png-33035f9f9fde71d18f3bacb0ab35744c.res" ]
+
+[params]
+
+atlas_file="res://Sprites/SpritesFinais/Atlas/Remanescentes.png"
+import_mode=0

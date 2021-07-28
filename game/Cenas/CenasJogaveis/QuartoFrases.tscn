@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=2]
+[gd_scene load_steps=53 format=2]
 
 [ext_resource path="res://Scripts/Frases/FrasePreview.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/ScaleButton.gd" type="Script" id=2]
@@ -34,13 +34,14 @@
 [ext_resource path="res://Sprites/SpritesFinais/ObetosCostura/Confirmar.png" type="Texture" id=32]
 [ext_resource path="res://Cenas/CenasPrefab/Fade.tscn" type="PackedScene" id=33]
 [ext_resource path="res://Sprites/SpritesFinais/Objetos/Cartões.png" type="Texture" id=34]
-[ext_resource path="res://Sprites/SpritesFinais/noAtlasObjects/Vovó.png" type="Texture" id=35]
-[ext_resource path="res://Sprites/SpritesFinais/noAtlasObjects/BalãoDeDialogo.png" type="Texture" id=36]
+[ext_resource path="res://Sprites/SpritesFinais/RemanescentObjects/Vovó.png" type="Texture" id=35]
+[ext_resource path="res://Sprites/SpritesFinais/RemanescentObjects/BalãoDeDialogo.png" type="Texture" id=36]
 [ext_resource path="res://Fonts/xilosa_.ttf" type="DynamicFontData" id=37]
-[ext_resource path="res://Sprites/SpritesFinais/noAtlasObjects/baixar.png" type="Texture" id=39]
+[ext_resource path="res://Cenas/CenasPrefab/Musicbutton.tscn" type="PackedScene" id=38]
+[ext_resource path="res://Sprites/SpritesFinais/RemanescentObjects/baixar.png" type="Texture" id=39]
 [ext_resource path="res://Audio/back.ogg" type="AudioStream" id=40]
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=1]
 length = 1.2
 loop = true
 tracks/0/type = "bezier"
@@ -64,7 +65,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 0.5, 1, 1.2 )
 }
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=2]
 tracks/0/type = "bezier"
 tracks/0/path = NodePath("Tutorial4/SetaCartoes:position:x")
 tracks/0/interp = 1
@@ -86,7 +87,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 0.5, 1, 1.2 )
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=3]
 tracks/0/type = "bezier"
 tracks/0/path = NodePath("Tutorial4/SetaCartoesAba:position:x")
 tracks/0/interp = 1
@@ -108,7 +109,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 0.5, 1, 1.2 )
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=4]
 length = 1.2
 loop = true
 tracks/0/type = "bezier"
@@ -132,8 +133,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 0.5, 1, 1.2 )
 }
 
-[sub_resource type="Animation" id=1]
-resource_name = "SetaDescartar"
+[sub_resource type="Animation" id=5]
 length = 1.2
 loop = true
 tracks/0/type = "value"
@@ -294,11 +294,11 @@ SceneName = "QuartoFrases"
 voltarAudio = ExtResource( 40 )
 
 [node name="AnimationPlayer" parent="." instance=ExtResource( 33 )]
-anims/SetaCartaoPronto = SubResource( 2 )
-anims/SetaCartoes = SubResource( 3 )
-anims/SetaCartoesAba = SubResource( 4 )
-anims/SetaConfirmar = SubResource( 5 )
-anims/SetaDescartar = SubResource( 1 )
+anims/SetaCartaoPronto = SubResource( 1 )
+anims/SetaCartoes = SubResource( 2 )
+anims/SetaCartoesAba = SubResource( 3 )
+anims/SetaConfirmar = SubResource( 4 )
+anims/SetaDescartar = SubResource( 5 )
 anims/SetaRetalhos = SubResource( 6 )
 
 [node name="CartaoAnimation" type="AnimationPlayer" parent="."]
@@ -985,6 +985,8 @@ render_target_update_mode = 3
 position = Vector2( 358, 220 )
 scale = Vector2( 2.26886, 2.30487 )
 texture = ExtResource( 23 )
+
+[node name="MusicButton" parent="." instance=ExtResource( 38 )]
 
 [connection signal="tree_entered" from="." to="." method="_on_QuartoFrases_tree_entered"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

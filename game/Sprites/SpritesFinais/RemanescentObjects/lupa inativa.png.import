@@ -1,0 +1,17 @@
+[remap]
+
+importer="texture_atlas"
+type="Texture"
+path="res://.import/lupa inativa.png-e3b3bf72f3ddd2368f0387035c1b1fbf.res"
+group_file="res://Sprites/SpritesFinais/Atlas/Remanescentes.png"
+valid=true
+[deps]
+
+
+source_file="res://Sprites/SpritesFinais/RemanescentObjects/lupa inativa.png"
+dest_files=[ "res://.import/lupa inativa.png-e3b3bf72f3ddd2368f0387035c1b1fbf.res" ]
+
+[params]
+
+atlas_file="res://Sprites/SpritesFinais/Atlas/Remanescentes.png"
+import_mode=0

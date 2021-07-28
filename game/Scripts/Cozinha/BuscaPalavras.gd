@@ -75,6 +75,7 @@ func _on_Timer_timeout():
 		var anim = $AjudaJuice.get_animation("EscondeFundo")
 		anim.loop = false
 		get_node("AjudaJuice").play("EscondeFundo")
+		$Audio/AudioAjuda.play()
 	else:
 		cont -= 1
 

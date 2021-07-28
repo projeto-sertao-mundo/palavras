@@ -1,4 +1,4 @@
-[gd_scene load_steps=81 format=2]
+[gd_scene load_steps=83 format=2]
 
 [ext_resource path="res://Scripts/Cozinha/BuscaPalavras.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/SpritesFinais/Objetos/seta.png" type="Texture" id=2]
@@ -53,17 +53,19 @@
 [ext_resource path="res://Cenas/CenasPrefab/Fade.tscn" type="PackedScene" id=51]
 [ext_resource path="res://Sprites/SpritesFinais/Objetos/Parabens.png" type="Texture" id=52]
 [ext_resource path="res://Sprites/SpritesFinais/Objetos/OK! Botão.png" type="Texture" id=53]
-[ext_resource path="res://Sprites/SpritesFinais/noAtlasObjects/Vovó.png" type="Texture" id=54]
-[ext_resource path="res://Sprites/SpritesFinais/noAtlasObjects/BalãoDeDialogo.png" type="Texture" id=55]
+[ext_resource path="res://Sprites/SpritesFinais/RemanescentObjects/Vovó.png" type="Texture" id=54]
+[ext_resource path="res://Sprites/SpritesFinais/RemanescentObjects/BalãoDeDialogo.png" type="Texture" id=55]
 [ext_resource path="res://Fonts/xilosa_.ttf" type="DynamicFontData" id=56]
 [ext_resource path="res://Scripts/Tutorial/TutorialBusca.gd" type="Script" id=57]
 [ext_resource path="res://Audio/achar_letra.ogg" type="AudioStream" id=58]
 [ext_resource path="res://Scripts/ScaleButton.gd" type="Script" id=59]
-[ext_resource path="res://Sprites/SpritesFinais/noAtlasObjects/fundo tempo1.png" type="Texture" id=60]
-[ext_resource path="res://Sprites/SpritesFinais/noAtlasObjects/lupa normal.png" type="Texture" id=61]
-[ext_resource path="res://Sprites/SpritesFinais/noAtlasObjects/lupa inativa.png" type="Texture" id=62]
+[ext_resource path="res://Sprites/SpritesFinais/RemanescentObjects/fundo tempo1.png" type="Texture" id=60]
+[ext_resource path="res://Sprites/SpritesFinais/RemanescentObjects/lupa normal.png" type="Texture" id=61]
+[ext_resource path="res://Sprites/SpritesFinais/RemanescentObjects/lupa inativa.png" type="Texture" id=62]
 [ext_resource path="res://Audio/find_all.ogg" type="AudioStream" id=63]
 [ext_resource path="res://Audio/back.ogg" type="AudioStream" id=64]
+[ext_resource path="res://Audio/Ajuda_pronta.ogg" type="AudioStream" id=65]
+[ext_resource path="res://Cenas/CenasPrefab/Musicbutton.tscn" type="PackedScene" id=66]
 
 [sub_resource type="Animation" id=1]
 resource_name = "BolsaShake"
@@ -1648,6 +1650,10 @@ stream = SubResource( 14 )
 [node name="AudioComplete" type="AudioStreamPlayer" parent="Audio"]
 stream = ExtResource( 63 )
 
+[node name="AudioAjuda" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource( 65 )
+volume_db = 2.0
+
 [node name="Timer" type="Timer" parent="."]
 
 [node name="FundoAjuda" type="Node2D" parent="."]
@@ -1694,6 +1700,8 @@ text = "PEGAR LETRAS (MENOS A)"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="MusicButton" parent="." instance=ExtResource( 66 )]
 
 [connection signal="tree_entered" from="." to="." method="_on_BuscaPalavras_tree_entered"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

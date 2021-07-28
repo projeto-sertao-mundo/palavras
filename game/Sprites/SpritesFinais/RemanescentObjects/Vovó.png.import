@@ -1,0 +1,17 @@
+[remap]
+
+importer="texture_atlas"
+type="Texture"
+path="res://.import/Vovó.png-ab5c822c3f3742b644c6d8a4b74408cf.res"
+group_file="res://Sprites/SpritesFinais/Atlas/Remanescentes.png"
+valid=true
+[deps]
+
+
+source_file="res://Sprites/SpritesFinais/RemanescentObjects/Vovó.png"
+dest_files=[ "res://.import/Vovó.png-ab5c822c3f3742b644c6d8a4b74408cf.res" ]
+
+[params]
+
+atlas_file="res://Sprites/SpritesFinais/Atlas/Remanescentes.png"
+import_mode=0

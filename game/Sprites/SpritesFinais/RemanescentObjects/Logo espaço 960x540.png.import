@@ -1,0 +1,17 @@
+[remap]
+
+importer="texture_atlas"
+type="Texture"
+path="res://.import/Logo espaço 960x540.png-4119e2faf942f345edcbee489c4672d7.res"
+group_file="res://Sprites/SpritesFinais/Atlas/Remanescentes.png"
+valid=true
+[deps]
+
+
+source_file="res://Sprites/SpritesFinais/RemanescentObjects/Logo espaço 960x540.png"
+dest_files=[ "res://.import/Logo espaço 960x540.png-4119e2faf942f345edcbee489c4672d7.res" ]
+
+[params]
+
+atlas_file="res://Sprites/SpritesFinais/Atlas/Remanescentes.png"
+import_mode=0
