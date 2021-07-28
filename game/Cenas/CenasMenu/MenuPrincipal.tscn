@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Sprites/SpritesFinais/Objetos/Jogar Botão.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Corredor/ChangeScene.gd" type="Script" id=2]
@@ -10,6 +10,8 @@
 [ext_resource path="res://Sprites/SpritesFinais/Objetos/Logo escolhida.png" type="Texture" id=8]
 [ext_resource path="res://Cenas/CenasPrefab/Fade.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Sprites/SpritesFinais/noAtlasObjects/Logo espaço 960x540.png" type="Texture" id=10]
+[ext_resource path="res://Audio/confirm.ogg" type="AudioStream" id=11]
+[ext_resource path="res://Audio/back.ogg" type="AudioStream" id=12]
 
 [sub_resource type="Animation" id=1]
 resource_name = "CreditosIn"
@@ -140,6 +142,8 @@ __meta__ = {
 "_edit_horizontal_guides_": [ 501.187 ],
 "_edit_vertical_guides_": [ 815.216 ]
 }
+voltarAudio = ExtResource( 12 )
+confirmAudio = ExtResource( 11 )
 path = "res://Cenas/CenasMenu/Corredor.tscn"
 
 [node name="AnimationPlayer" parent="." instance=ExtResource( 9 )]
@@ -248,6 +252,8 @@ margin_bottom = 905.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Audio" type="AudioStreamPlayer" parent="."]
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 [connection signal="mouse_entered" from="Jogar" to="." method="_on_Jogar_mouse_entered"]

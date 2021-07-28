@@ -23,17 +23,17 @@ onready var dialogo6 = get_node(D6)
 onready var dialogo7 = get_node(D7)
 onready var dialogo8 = get_node(D8)
 
-var auxD
+var dialogo
+var cont
+var auxD = 11
 
 func _ready():
 	#aux = false
-	$"/root/TutorialGlobal".tutorialPos = -12
-	auxD = -12
-	
 	colorSeted = false
 	if ($"/root/TutorialGlobal".willDoTutorial && !$"/root/TutorialGlobal".CosturaCompleted):
 		self.visible = true
 		$VoAnimation.play("In")
+		$"/root/TutorialGlobal".tutorialPos -= 1
 	
 	elif (!$"/root/TutorialGlobal".willDoTutorial):
 		self.visible = false
@@ -47,7 +47,6 @@ func ChangeSetedColor():
 		Tutorial17()
 
 func Tutorial0():
-	print("12121212121212121")
 	if ($"/root/TutorialGlobal".willDoTutorial && !$"/root/TutorialGlobal".CosturaCompleted):
 		displayString(dialogo0)
 
@@ -55,100 +54,77 @@ func Tutorial13():
 	if (auxD == 12):
 		dialogo0.percent_visible = 0
 		displayString(dialogo1)
+		initializeAnim("SetaMaquina")
+		get_node("SetaMaquina").visible = true
 
 func Tutorial14():
 	if (auxD == 13):
 		dialogo1.percent_visible = 0
 		get_node("SetaMaquina").visible = false
 		displayString(dialogo2)
+		initializeAnim("SetaRetalho")
+		get_node("SetaRetalho").visible = true
 
 func Tutorial15():
 	if (auxD == 14):
 		dialogo2.percent_visible = 0
 		displayString(dialogo3)
+		get_node("SetaRetalho").visible = false
+		initializeAnim("SetaFormas")
+		get_node("SetaFormas").visible = true
 
 func Tutorial16():
 	if (auxD == 15):
 		dialogo3.percent_visible = 0
 		displayString(dialogo4)
+		get_node("SetaFormas").visible = false
+		initializeAnim("SetaCores")
+		get_node("SetaCores").visible = true
 
 func Tutorial17():
 	if (auxD == 16):
 		dialogo4.percent_visible = 0
 		displayString(dialogo5)
+		get_node("SetaCores").visible = false
+		initializeAnim("SetaApagar")
+		get_node("SetaApagar").visible = true
 
 func Tutorial18():
 	if (auxD == 17):
 		dialogo5.percent_visible = 0
 		displayString(dialogo6)
+		get_node("SetaApagar").visible = false
+		initializeAnim("SetaConfirmar")
+		get_node("SetaConfirmar").visible = true
 
 func Tutorial19():
 	if (auxD == 18):
 		dialogo6.percent_visible = 0
 		displayString(dialogo7)
+		get_node("SetaConfirmar").visible = false
+		initializeAnim("SetaRetalhosAba")
+		get_node("SetaRetalhosAba").visible = true
 
 func Tutorial20():
 	if (auxD == 19):
 		dialogo7.percent_visible = 0
 		displayString(dialogo8)
 		get_node("SetaRetalhosAba").visible = false
-
-func displayString(var dialogo):
-	auxD += 1
-	dialogueEnded = false
-	
-	var textCont = dialogo.get_text().length()
-	var soma = float(1.0 / textCont)
-	var cont = 0
-	
-	while (cont < 1):
-		cont += soma * 2
-		yield(Yield.yield_wait(0.001, self), "completed")
-		dialogo.percent_visible = cont
-	
-	if (auxD > 0):
-		$"/root/TutorialGlobal".tutorialPos += 1
-	dialogo.percent_visible = 1
-	dialogueEnded = true
-	
-	
-	if ($"/root/TutorialGlobal".tutorialPos == 13):
-		initializeAnim("SetaMaquina")
-		get_node("SetaMaquina").visible = true
-		print($"/root/TutorialGlobal".tutorialPos)
-	elif ($"/root/TutorialGlobal".tutorialPos == 14):
-		initializeAnim("SetaRetalho")
-		get_node("SetaRetalho").visible = true
-	elif ($"/root/TutorialGlobal".tutorialPos == 15):
-		get_node("SetaRetalho").visible = false
-		initializeAnim("SetaFormas")
-		get_node("SetaFormas").visible = true
-	elif ($"/root/TutorialGlobal".tutorialPos == 16):
-		get_node("SetaFormas").visible = false
-		initializeAnim("SetaCores")
-		get_node("SetaCores").visible = true
-	elif ($"/root/TutorialGlobal".tutorialPos == 17):
-		get_node("SetaCores").visible = false
-		initializeAnim("SetaApagar")
-		get_node("SetaApagar").visible = true
-	elif ($"/root/TutorialGlobal".tutorialPos == 18):
-		get_node("SetaApagar").visible = false
-		initializeAnim("SetaConfirmar")
-		get_node("SetaConfirmar").visible = true
-	elif ($"/root/TutorialGlobal".tutorialPos == 19):
-		get_node("SetaConfirmar").visible = false
-		initializeAnim("SetaRetalhosAba")
-		get_node("SetaRetalhosAba").visible = true
-		#get_parent().get_node("CosturaPopUp/PalavrasPopUp")._on_ButtonRetalhos_pressed()
-	elif ($"/root/TutorialGlobal".tutorialPos == 20):
 		get_node("SetaLixeira").visible = true
 		initializeAnim("SetaLixeira")
 
+func displayString(var dialogoR):
+	auxD += 1
+	dialogo = dialogoR
+	dialogueEnded = false
+	
+	cont = 0
+	
+	$Timer.start()
+
 func _input(event):
 	if (event is InputEventScreenTouch) && dialogueEnded:
-		if (auxD == -10):
-			$"/root/TutorialGlobal".tutorialPos = 12
-			auxD = 12
+		if (auxD == 12):
 			Tutorial13()
 		elif ($"/root/TutorialGlobal".tutorialPos == 17):
 			Tutorial18()
@@ -188,6 +164,21 @@ func _on_Maquina_pressed():
 func _on_AnimationPlayer_animation_finished(anim_name):
 	if (anim_name == "In"):
 		Tutorial0()
-		auxD = -10
 	elif (anim_name == "Out"):
 		self.visible = false
+
+
+func _on_Timer_timeout():
+	var textCont = dialogo.get_text().length()
+	var soma = float(1.0 / textCont)
+	
+	if (dialogo.percent_visible < 1):
+		cont += soma
+		dialogo.percent_visible = cont
+	else:
+		$Timer.stop()
+		
+		if (auxD > 0):
+			$"/root/TutorialGlobal".tutorialPos += 1
+			dialogo.percent_visible = 1
+			dialogueEnded = true

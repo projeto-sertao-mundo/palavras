@@ -10,6 +10,9 @@ onready var dialogo2 = get_node(D2)
 onready var dialogo3 = get_node(D3)
 onready var dialogo4 = get_node(D4)
 
+var dialogo
+var cont = 0
+
 var dialogueEnded
 
 var auxD
@@ -36,14 +39,12 @@ func _ready():
 			$"/root/TutorialGlobal".lockCostura = true
 			$"/root/TutorialGlobal".lockFrases = true
 		elif $"/root/Global".retalhos.size() == 0:
-			$AnimationsVo.play("Out")
+			self.visible = false
 		elif ($"/root/TutorialGlobal".CozinhaCompleted && $"/root/TutorialGlobal".CosturaCompleted && $"/root/TutorialGlobal".FrasesCompleted):
 			$AnimationsVo.play("out")
 			$"/root/TutorialGlobal".lockCozinha = false
 			$"/root/TutorialGlobal".lockCostura = false
 			$"/root/TutorialGlobal".lockFrases = false
-		else:
-			$AnimationsVo.play("Out")
 
 
 func Tutorial1():
@@ -65,41 +66,16 @@ func Tutorial21():
 		dialogo3.percent_visible = 0
 		displayString(dialogo4)
 
-func displayString(var dialogo):
+func displayString(var dialogoR):
+	
+	dialogo = dialogoR
 	
 	auxD += 1
 	dialogueEnded = false
+	cont = 0
 	
-	var cont = 0
-	var textCont = dialogo.get_text().length()
-	var soma = float(1.0 / textCont)
+	$Timer.start()
 	
-	while (cont < 1):
-		cont += soma * 2
-		yield(Yield.yield_wait(0.001, self.get_parent()), "completed")
-		dialogo.percent_visible = cont
-	
-	$"/root/TutorialGlobal".tutorialPos += 1
-	
-	if ($"/root/TutorialGlobal".tutorialPos == 2):
-		$"/root/TutorialGlobal".lockCozinha = false
-		initializeAnim("Seta")
-		get_node("Seta").visible = true
-	elif ($"/root/TutorialGlobal".tutorialPos == 12):
-		$"/root/TutorialGlobal".lockCozinha = true
-		$"/root/TutorialGlobal".lockCostura = false
-		initializeAnim("SetaCostura")
-		get_node("SetaCostura").visible = true
-	elif ($"/root/TutorialGlobal".tutorialPos == 21):
-		$"/root/TutorialGlobal".lockCozinha = true
-		$"/root/TutorialGlobal".lockCostura = true
-		$"/root/TutorialGlobal".lockFrases = false
-		initializeAnim("SetaCartoes")
-		get_node("SetaCartoes").visible = true
-	
-	print($"/root/TutorialGlobal".tutorialPos)
-	
-	dialogueEnded = true
 
 func _input(event):
 	if (event is InputEventScreenTouch) && dialogueEnded:
@@ -130,3 +106,32 @@ func _on_AnimationsVo_animation_finished(anim_name):
 			Tutorial21()
 		else:
 			Tutorial1()
+
+
+func _on_Timer_timeout():
+	var textCont = dialogo.get_text().length()
+	var soma = float(1.0 / textCont)
+	
+	if (dialogo.percent_visible < 1):
+		cont += soma
+		dialogo.percent_visible = cont
+	else:
+		$Timer.stop()
+		dialogueEnded = true
+		$"/root/TutorialGlobal".tutorialPos += 1
+	
+	if ($"/root/TutorialGlobal".tutorialPos == 2):
+			$"/root/TutorialGlobal".lockCozinha = false
+			initializeAnim("Seta")
+			get_node("Seta").visible = true
+	elif ($"/root/TutorialGlobal".tutorialPos == 12):
+			$"/root/TutorialGlobal".lockCozinha = true
+			$"/root/TutorialGlobal".lockCostura = false
+			initializeAnim("SetaCostura")
+			get_node("SetaCostura").visible = true
+	elif ($"/root/TutorialGlobal".tutorialPos == 21):
+			$"/root/TutorialGlobal".lockCozinha = true
+			$"/root/TutorialGlobal".lockCostura = true
+			$"/root/TutorialGlobal".lockFrases = false
+			initializeAnim("SetaCartoes")
+			get_node("SetaCartoes").visible = true

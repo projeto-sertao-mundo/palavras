@@ -22,6 +22,8 @@ onready var dialogo8 = get_node(D8)
 onready var dialogo9 = get_node(D9)
 onready var dialogo10 = get_node(D10)
 
+var cont = 0
+var dialogo
 var dialogueEnded
 var auxD
 var aux
@@ -124,22 +126,14 @@ func Tutorial12():
 		initializeAnim("SetaSair")
 		get_node("SetaSair").visible = true
 
-func displayString(var dialogo):
+func displayString(var dialogoR):
+	dialogo = dialogoR
 	auxD += 1
 	dialogueEnded = false
 	
-	var textCont = dialogo.get_text().length()
-	var soma = float(1.0 / textCont)
-	var cont = 0
+	cont = 0
 	
-	while (cont < 1):
-		cont += soma * 2
-		yield(Yield.yield_wait(0.001, self), "completed")
-		dialogo.percent_visible = cont
-	
-	$"/root/TutorialGlobal".tutorialPos += 1
-	dialogo.percent_visible = 1
-	dialogueEnded = true
+	$Timer.start()
 
 func _input(event):
 	if (event is InputEventScreenTouch) && dialogueEnded:
@@ -176,3 +170,18 @@ func _on_VoAnimation_animation_finished(anim_name):
 		self.visible = false
 	elif (anim_name == "In"):
 		Tutorial3()
+
+
+func _on_Timer_timeout():
+	var textCont = dialogo.get_text().length()
+	var soma = float(1.0 / textCont)
+	
+	if (dialogo.percent_visible < 1):
+		cont += soma
+		dialogo.percent_visible = cont
+	else:
+		$Timer.stop()
+		
+		$"/root/TutorialGlobal".tutorialPos += 1
+		dialogo.percent_visible = 1
+		dialogueEnded = true

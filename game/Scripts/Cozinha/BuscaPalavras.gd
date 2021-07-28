@@ -4,7 +4,10 @@ onready var brilho = preload ("res://Cenas/CenasPrefab/BrilhoLetra.tscn")
 
 onready var timer = get_node("Timer")
 
+export(AudioStreamOGGVorbis) var voltarAudio
+export(AudioStreamOGGVorbis) var acharLetraAudio
 export (String) var SceneName
+
 var aux = false
 var lettersClick = 0
 var lettersReach = 0
@@ -23,18 +26,20 @@ func _ready():
 	timer.start()
 
 
-func _process(delta):
+func _process(_delta):
 	if $"/root/Global".contPalavrasEncontradas == 43 && !aux:
 		get_node("AnimationPlayer").play("Parabens")
 		aux = true
+		$Audio/AudioComplete.play()
 		get_node("Finish").visible = true
 
 func _on_Voltar_pressed():
 	if (lettersReach >= lettersClick):
 		if (!$"/root/TutorialGlobal".willDoTutorial  || $"/root/TutorialGlobal".CozinhaCompleted):
 			get_node("AnimationPlayer").play("FadeOut")
-			if (!$Audio/Whoosh.playing):
-				$Audio/Whoosh.play()
+			$Audio/Audio.stream = voltarAudio
+			if (!$Audio/Audio.playing):
+				$Audio/Audio.play()
 	#yield(Yield.yield_wait(0.35, self), "completed")
 	
 func _on_Bolsa_pressed():
@@ -107,3 +112,8 @@ func _on_Ajuda_pressed():
 			get_node("FundoAjuda/Ajuda").disabled = true
 			$AjudaJuice.play_backwards("EscondeFundo")
 			get_node("FundoAjuda/Label").set_text(str(cont))
+
+func TocarLetraEncontrada():
+	$Audio/Audio.stream = acharLetraAudio
+	$Audio/Audio.play()
+

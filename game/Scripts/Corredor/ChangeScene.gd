@@ -1,5 +1,7 @@
 extends Node2D
 
+export(AudioStreamOGGVorbis) var voltarAudio
+export(AudioStreamOGGVorbis) var confirmAudio
 export var path = ""
 
 func _ready():
@@ -10,6 +12,9 @@ func _ready():
 		get_node("AnimationPlayer").play("FadeIn")
 
 func _on_Jogar_pressed():
+	$Audio.stream = confirmAudio
+	if (!$Audio.playing):
+			$Audio.play()
 	ChangeScene()
 
 func ChangeScene():
@@ -18,9 +23,15 @@ func ChangeScene():
 	
 
 func _on_Creditos_pressed():
+	$Audio.stream = confirmAudio
+	if (!$Audio.playing):
+			$Audio.play()
 	$AnimationPlayer.play("CreditosIn")
 
 func _on_VoltarCreditos_pressed():
+	$Audio.stream = voltarAudio
+	if (!$Audio.playing):
+			$Audio.play()
 	$AnimationPlayer.play("CreditosOut")
 
 func _on_Voltar_pressed():
@@ -58,12 +69,8 @@ func UnScaleButton(var button):
 
 
 func _on_Sair_pressed():
+	$Audio.stream = voltarAudio
+	if (!$Audio.playing):
+			$Audio.play()
 	if OS.has_feature('JavaScript'):
-		var file = File.new()
-		file.open("res://screenshot.png", File.READ)
-		var base_64_data = Marshalls.raw_to_base64(file.get_buffer(file.get_len()))
-		var url = base_64_data
-		var comand = "var a = document.createElement('a'); a.href = "+ url +"; a.setAttribute('download', Screenshot); a.click();"
-		JavaScript.eval(comand)
-	else:
-		print("The JavaScript singleton is NOT available")
+		JavaScript.eval("window.close()")

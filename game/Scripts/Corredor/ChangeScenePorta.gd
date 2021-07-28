@@ -8,6 +8,9 @@ onready var coresInstance = preload ("res://Cenas/CenasPrefab/Cores.tscn")
 onready var retalhosInstance = preload ("res://Cenas/CenasPrefab/Preview.tscn")
 onready var cartoes = preload ("res://Cenas/CenasPrefab/Cartoes.tscn")
 
+export(AudioStreamOGGVorbis) var voltarAudio
+export(AudioStreamOGGVorbis) var confirmAudio
+
 var cena
 
 func ChangeSceneBP():
@@ -33,18 +36,27 @@ func _ready():
 func _on_PortaBuscaPalavras_pressed():
 	if (!$"/root/TutorialGlobal".lockCozinha):
 		if $"/root/Global".contPalavrasEncontradas < 43:
+			$Audio/Audio.stream = confirmAudio
+			if (!$Audio/Audio.playing):
+					$Audio/Audio.play()
 			$AnimationPlayer.play("FadeOut")
 			cena = "BP"
 
 func _on_PortaQuartoCostura_pressed():
 	if (!$"/root/TutorialGlobal".lockCostura):
 		$AnimationPlayer.play("FadeOut")
+		$Audio/Audio.stream = confirmAudio
+		if (!$Audio/Audio.playing):
+				$Audio/Audio.play()
 		#yield(Yield.yield_wait(0.45, self), "completed")
 		cena = "QC"
 
 func _on_PortaQuartoMontagens_pressed():
 	if (!$"/root/TutorialGlobal".lockFrases):
 		$AnimationPlayer.play("FadeOut")
+		$Audio/Audio.stream = confirmAudio
+		if (!$Audio/Audio.playing):
+			$Audio/Audio.play()
 		#yield(Yield.yield_wait(0.45, self), "completed")
 		cena = "QF"
 
@@ -53,8 +65,9 @@ func _on_VoltarMenu_pressed():
 		$AnimationPlayer.play("FadeOut")
 		#yield(Yield.yield_wait(0.45, self), "completed")
 		cena = "Menu"
-		if (!$Audio/Whoosh.playing):
-			$Audio/Whoosh.play()
+		$Audio/Audio.stream = voltarAudio
+		if (!$Audio/Audio.playing):
+			$Audio/Audio.play()
 
 
 func _on_AnimationPlayer_animation_finished(anim_name):
@@ -70,10 +83,14 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 
 
 func _on_Nao_pressed():
+	$TutorialPergunta.visible = false
 	$Confirmacao.visible = true
+	$TutorialPergunta/Nao.set_scale(Vector2(1,1))
 
 func _on_NaoC_pressed():
+	$TutorialPergunta.visible = true
 	$Confirmacao.visible = false
+	$Confirmacao/NaoC.set_scale(Vector2(1,1))
 
 func _on_SimC_pressed():
 	$"/root/TutorialGlobal".lockCozinha = false

@@ -40,7 +40,6 @@ config/icon="res://Sprites/Blocagem/icon.png"
 
 Global="*res://Scripts/GLOBAL.gd"
 TutorialGlobal="*res://Scripts/TutorialGLOBAL.gd"
-Yield="*res://Scripts/YIELD.gd"
 
 [display]
 

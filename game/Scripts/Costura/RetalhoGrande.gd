@@ -91,7 +91,7 @@ func CreateRetalhoBag():
 			$"/root/Global".editarFrase(self.texture, retalhos)
 
 
-func _on_CartaoAnimation_animation_finished(anim_name):
+func _on_CartaoAnimation_animation_finished(_anim_name):
 	for child in self.get_children():
 			if child is TextureButton:
 				child.free()
@@ -100,5 +100,5 @@ func _on_CartaoAnimation_animation_finished(anim_name):
 	canShow = true
 
 
-func _on_CartaoAnimation_animation_started(anim_name):
+func _on_CartaoAnimation_animation_started(_anim_name):
 	canShow = false

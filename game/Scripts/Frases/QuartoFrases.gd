@@ -2,21 +2,14 @@ extends Node2D
 
 export (String) var SceneName
 var numeroCartoes = 0
-
-export(NodePath) var rectPath
-onready var rect = get_node(rectPath)
-
-func _on_Frase1_pressed():
-	get_node("RetalhoPopUp").show()
-
-func _on_Frase2_pressed():
-	get_node("RetalhoPopUp").show()
+export(AudioStreamOGGVorbis) var voltarAudio
 
 func _on_Voltar_pressed():
 	if ($"/root/TutorialGlobal".FrasesCompleted || !$"/root/TutorialGlobal".willDoTutorial):
 		get_node("AnimationPlayer").play("FadeOut")
-		if (!$Audio/Whoosh.playing):
-			$Audio/Whoosh.play()
+		$Audio/Audio.stream = voltarAudio
+		if (!$Audio/Audio.playing):
+			$Audio/Audio.play()
 	#yield(Yield.yield_wait(0.35, self), "completed")
 	
 

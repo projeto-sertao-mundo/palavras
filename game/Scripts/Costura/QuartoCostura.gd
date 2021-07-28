@@ -7,6 +7,8 @@ export var isMorfema = 0
 var clickPosition
 var limite = 11
 
+export(AudioStreamOGGVorbis) var voltarAudio
+
 var caminho = "CosturaPopUp/Formas/HolderFormas" #PASTA DESTINO DOS SPRITES MUDAR!!!
 
 func _ready():
@@ -63,8 +65,9 @@ func _on_Voltar_pressed():
 func _on_Voltar2_pressed():
 	if ($"/root/TutorialGlobal".CosturaCompleted || !$"/root/TutorialGlobal".willDoTutorial):
 		get_node("AnimationPlayer").play("FadeOut")
-		if (!$Audio/Whoosh.playing):
-			$Audio/Whoosh.play()
+		$Audio/Audio.stream = voltarAudio
+		if (!$Audio/Audio.playing):
+			$Audio/Audio.play()
 	#yield(Yield.yield_wait(0.35, self), "completed")
 	
 func MudarCor(var r, g, b):

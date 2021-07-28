@@ -20,6 +20,7 @@ onready var dialogo6 = get_node(D6)
 onready var dialogo7 = get_node(D7)
 onready var dialogo8 = get_node(D8)
 
+var dialogo
 var auxD
 
 func _ready():
@@ -34,7 +35,7 @@ func _ready():
 
 func Tutorial22():
 	if (auxD == 21):
-		get_node("SetaCartoes")
+		#get_node("SetaCartoes")
 		displayString(dialogo1)
 
 func Tutorial23():
@@ -66,12 +67,15 @@ func Tutorial28():
 	if (auxD == 27):
 		dialogo6.percent_visible = 0
 		displayString(dialogo7)
-		get_node("SetaConfirmar").visible = false
+		get_node("SetaDescartar").visible = true
+		initializeAnim("SetaDescartar")
 
 func Tutorial29():
 	if (auxD == 28):
 		dialogo7.percent_visible = 0
 		displayString(dialogo8)
+		initializeAnim("SetaConfirmar")
+		get_node("SetaConfirmar").visible = true
 
 
 func displayString(var dialogo):
@@ -84,7 +88,7 @@ func displayString(var dialogo):
 	
 	while (cont < 1):
 		cont += soma * 2
-		yield(Yield.yield_wait(0.001, self), "completed")
+		#yield(Yield.yield_wait(0.001, self), "completed")
 		dialogo.percent_visible = cont
 	
 	$"/root/TutorialGlobal".tutorialPos += 1
@@ -110,10 +114,6 @@ func displayString(var dialogo):
 		get_node("SetaCartoesAba").visible = false
 		initializeAnim("SetaCartaoPronto")
 		get_node("SetaCartaoPronto").visible = true
-	elif ($"/root/TutorialGlobal".tutorialPos == 27):
-		get_node("SetaCartaoPronto").visible = false
-		initializeAnim("SetaConfirmar")
-		get_node("SetaConfirmar").visible = true
 	#elif ($"/root/TutorialGlobal".tutorialPos == 25):
 		#get_node("SetaCores").visible = false
 		#get_node("SetaApagar").visible = true
@@ -143,3 +143,14 @@ func _on_VoAnimation_animation_finished(anim_name):
 		Tutorial22()
 	elif (anim_name == "Out"):
 		self.visible = false
+
+func _on_Timer_timeout():
+	pass
+#	var textCont = dialogo.get_text().length()
+#	var soma = float(1.0 / textCont)
+#
+#	if (dialogo.percent_visible < 1):
+#		cont += soma
+#		dialogo.percent_visible = cont
+#	else:
+#		$Timer.stop()
