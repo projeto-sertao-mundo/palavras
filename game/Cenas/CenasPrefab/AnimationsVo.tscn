@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=2]
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=1]
 resource_name = "In"
 length = 0.9
 tracks/0/type = "value"
@@ -28,7 +28,7 @@ tracks/1/keys = {
 "values": [ Vector2( 1469.09, 1100 ), Vector2( 1469.09, 735.409 ), Vector2( 1469.09, 735.409 ) ]
 }
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=2]
 resource_name = "Out"
 length = 0.9
 tracks/0/type = "value"
@@ -57,5 +57,5 @@ tracks/1/keys = {
 }
 
 [node name="AnimationsVo" type="AnimationPlayer"]
-anims/In = SubResource( 4 )
-anims/Out = SubResource( 9 )
+anims/In = SubResource( 1 )
+anims/Out = SubResource( 2 )

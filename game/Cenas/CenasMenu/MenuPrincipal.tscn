@@ -161,7 +161,8 @@ __meta__ = {
 
 [node name="Logo escolhida" type="Sprite" parent="."]
 position = Vector2( 819.834, 289.647 )
-scale = Vector2( 1.5, 1.5 )
+rotation = -0.0323209
+scale = Vector2( 1e-05, 1e-05 )
 texture = ExtResource( 8 )
 
 [node name="Jogar" type="TextureButton" parent="."]

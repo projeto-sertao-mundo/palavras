@@ -52,12 +52,12 @@ func _on_Area2D_area_entered(area):
 func _on_Area2D_area_exited(area):
 	if (area.get_parent().name == "retaio" && !mouseIn):
 		
-		if ($"/root/TutorialGlobal".tutorialPos == 23):
+		if ($"/root/TutorialGlobal".tutorialPos == 23 || $"/root/TutorialGlobal".FrasesCompleted || !$"/root/TutorialGlobal".willDoTutorial):
 			get_parent().get_node("Tutorial4").Tutorial24()
 		
-		instanceRetalho($"/root/Global".retalhosFrasesRef, "retaio", clickPosition, false)
-		if (canShow):
-			self.get_parent().get_node("Confirm").visible = true
+			instanceRetalho($"/root/Global".retalhosFrasesRef, "retaio", clickPosition, false)
+			if (canShow):
+				self.get_parent().get_node("Confirm").visible = true
 
 func _on_ExitButton_pressed():
 	if ($"/root/TutorialGlobal".FrasesCompleted || !$"/root/TutorialGlobal".willDoTutorial):
@@ -71,7 +71,6 @@ func _on_ExitButton_pressed():
 
 func CreateRetalhoBag():
 	if ($"/root/TutorialGlobal".tutorialPos == 24 || !$"/root/TutorialGlobal".willDoTutorial || $"/root/TutorialGlobal".FrasesCompleted):
-	
 		if ($"/root/TutorialGlobal".tutorialPos == 24):
 			get_parent().get_node("Tutorial4").Tutorial25()
 			get_parent().get_node("Tutorial4/SetaConfirmar").visible = false

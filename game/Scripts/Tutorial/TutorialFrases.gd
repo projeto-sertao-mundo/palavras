@@ -21,7 +21,10 @@ onready var dialogo7 = get_node(D7)
 onready var dialogo8 = get_node(D8)
 
 var dialogo
+var cont
 var auxD
+
+
 
 func _ready():
 	if (!$"/root/TutorialGlobal".FrasesCompleted):
@@ -37,38 +40,55 @@ func Tutorial22():
 	if (auxD == 21):
 		#get_node("SetaCartoes")
 		displayString(dialogo1)
+		initializeAnim("SetaCartoes")
+		get_node("SetaCartoes").visible = true
 
 func Tutorial23():
 	if (auxD == 22):
 		dialogo1.percent_visible = 0
-	displayString(dialogo2)
+		displayString(dialogo2)
+		get_node("SetaCartoes").visible = false
+		initializeAnim("SetaRetalhos")
+		get_node("SetaRetalhos").visible = true
 
 func Tutorial24():
 	if (auxD == 23):
 		dialogo2.percent_visible = 0
 		displayString(dialogo3)
+		get_node("SetaRetalhos").visible = false
+		initializeAnim("SetaConfirmar")
+		get_node("SetaConfirmar").visible = true
 
 func Tutorial25():
 	if (auxD == 24):
 		dialogo3.percent_visible = 0
 		displayString(dialogo4)
+		get_node("SetaConfirmar").visible = false
+		initializeAnim("SetaCartoesAba")
+		get_node("SetaCartoesAba").visible = true
 
 func Tutorial26():
 	if (auxD == 25):
 		dialogo4.percent_visible = 0
 		displayString(dialogo5)
+		get_node("SetaCartoesAba").visible = false
+		initializeAnim("SetaCartaoPronto")
+		get_node("SetaCartaoPronto").visible = true
 
 func Tutorial27():
 	if (auxD == 26):
 		dialogo5.percent_visible = 0
 		displayString(dialogo6)
+		get_node("SetaCartaoPronto").visible = false
+		get_node("SetaDescartar").visible = true
+		initializeAnim("SetaDescartar")
 
 func Tutorial28():
 	if (auxD == 27):
 		dialogo6.percent_visible = 0
 		displayString(dialogo7)
-		get_node("SetaDescartar").visible = true
-		initializeAnim("SetaDescartar")
+		get_node("SetaDescartar").visible = false
+
 
 func Tutorial29():
 	if (auxD == 28):
@@ -78,45 +98,16 @@ func Tutorial29():
 		get_node("SetaConfirmar").visible = true
 
 
-func displayString(var dialogo):
+func displayString(var dialogoR):
 	auxD += 1
 	dialogueEnded = false
+	dialogo = dialogoR
 	
 	var textCont = dialogo.get_text().length()
 	var soma = float(1.0 / textCont)
-	var cont = 0
+	cont = 0
 	
-	while (cont < 1):
-		cont += soma * 2
-		#yield(Yield.yield_wait(0.001, self), "completed")
-		dialogo.percent_visible = cont
-	
-	$"/root/TutorialGlobal".tutorialPos += 1
-	dialogo.percent_visible = 1
-	dialogueEnded = true
-	
-	if ($"/root/TutorialGlobal".tutorialPos == 22):
-		initializeAnim("SetaCartoes")
-		get_node("SetaCartoes").visible = true
-	elif ($"/root/TutorialGlobal".tutorialPos == 23):
-		get_node("SetaCartoes").visible = false
-		initializeAnim("SetaRetalhos")
-		get_node("SetaRetalhos").visible = true
-	elif ($"/root/TutorialGlobal".tutorialPos == 24):
-		get_node("SetaRetalhos").visible = false
-		initializeAnim("SetaConfirmar")
-		get_node("SetaConfirmar").visible = true
-	elif ($"/root/TutorialGlobal".tutorialPos == 25):
-		get_node("SetaConfirmar").visible = false
-		initializeAnim("SetaCartoesAba")
-		get_node("SetaCartoesAba").visible = true
-	elif ($"/root/TutorialGlobal".tutorialPos == 26):
-		get_node("SetaCartoesAba").visible = false
-		initializeAnim("SetaCartaoPronto")
-		get_node("SetaCartaoPronto").visible = true
-	#elif ($"/root/TutorialGlobal".tutorialPos == 25):
-		#get_node("SetaCores").visible = false
-		#get_node("SetaApagar").visible = true
+	$Timer.start()
 
 func _input(event):
 	if (event is InputEventScreenTouch) && dialogueEnded:
@@ -131,12 +122,12 @@ func _input(event):
 			$"/root/TutorialGlobal".lockCostura = false
 			$"/root/TutorialGlobal".lockFrases = false
 			$"/root/TutorialGlobal".FrasesCompleted = true
+			get_node("SetaConfirmar").visible = false
 
 func initializeAnim(var animat):
 	var anim = get_parent().get_node("AnimationPlayer").get_animation(animat)
 	anim.set_loop(true)
 	get_parent().get_node("AnimationPlayer").play(animat)
-
 
 func _on_VoAnimation_animation_finished(anim_name):
 	if (anim_name == "In"):
@@ -145,12 +136,14 @@ func _on_VoAnimation_animation_finished(anim_name):
 		self.visible = false
 
 func _on_Timer_timeout():
-	pass
-#	var textCont = dialogo.get_text().length()
-#	var soma = float(1.0 / textCont)
-#
-#	if (dialogo.percent_visible < 1):
-#		cont += soma
-#		dialogo.percent_visible = cont
-#	else:
-#		$Timer.stop()
+	var textCont = dialogo.get_text().length()
+	var soma = float(1.0 / textCont)
+
+	if (dialogo.percent_visible < 1):
+		cont += soma
+		dialogo.percent_visible = cont
+	else:
+		$Timer.stop()
+		$"/root/TutorialGlobal".tutorialPos += 1
+		dialogo.percent_visible = 1
+		dialogueEnded = true

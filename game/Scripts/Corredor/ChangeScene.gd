@@ -8,6 +8,7 @@ func _ready():
 	if ($"/root/Global".firstTime || $"/root/Global".firstTime == null):
 		$AnimationPlayer.play("FadeInFirst")
 		$"/root/Global".firstTime = false
+		$"/root/TrilhaSonora".PlayMusic()
 	else:
 		get_node("AnimationPlayer").play("FadeIn")
 

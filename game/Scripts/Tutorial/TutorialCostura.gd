@@ -167,6 +167,8 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 	elif (anim_name == "Out"):
 		self.visible = false
 
+func _process(delta):
+	print($"/root/TutorialGlobal".tutorialPos)
 
 func _on_Timer_timeout():
 	var textCont = dialogo.get_text().length()

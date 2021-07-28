@@ -63,11 +63,12 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 
 func _on_Confirm_pressed():
 	if (numeroCartoes < 12):
-		get_node("RetalhoGrande").CreateRetalhoBag()
-		get_node("Confirm").visible = false
-		get_node("Confirm").set_scale(Vector2(1.2,1.2))
-		get_node("CartaoAnimation").play("Cartao")
-		numeroCartoes += 1
+		if ($"/root/TutorialGlobal".tutorialPos == 24 || $"/root/TutorialGlobal".FrasesCompleted || !$"/root/TutorialGlobal".willDoTutorial):
+			get_node("RetalhoGrande").CreateRetalhoBag()
+			get_node("Confirm").visible = false
+			get_node("Confirm").set_scale(Vector2(1.2,1.2))
+			get_node("CartaoAnimation").play("Cartao")
+			numeroCartoes += 1
 
 
 func DuplicateRetalhoGrande():

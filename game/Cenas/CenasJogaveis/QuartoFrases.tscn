@@ -40,23 +40,6 @@
 [ext_resource path="res://Sprites/SpritesFinais/noAtlasObjects/baixar.png" type="Texture" id=39]
 [ext_resource path="res://Audio/back.ogg" type="AudioStream" id=40]
 
-[sub_resource type="Animation" id=1]
-resource_name = "Nova Animação"
-length = 1.2
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath("Tutorial4/SetaDescartar:position")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.5, 1, 1.2 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
-"update": 0,
-"values": [ Vector2( 444.091, 478.29 ), Vector2( 444.091, 511.696 ), Vector2( 444.091, 478.29 ), Vector2( 444.091, 478.29 ) ]
-}
-
 [sub_resource type="Animation" id=2]
 length = 1.2
 loop = true
@@ -147,6 +130,23 @@ tracks/1/enabled = true
 tracks/1/keys = {
 "points": PoolRealArray( 511.696, -0.25, 0, 0.25, 0, 478.29, -0.25, 0, 0.25, 0, 511.696, -0.25, 0, 0.25, 0, 511.696, -0.25, 0, 0.25, 0 ),
 "times": PoolRealArray( 0, 0.5, 1, 1.2 )
+}
+
+[sub_resource type="Animation" id=1]
+resource_name = "SetaDescartar"
+length = 1.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Tutorial4/SetaDescartar:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 444.091, 478.29 ), Vector2( 444.091, 511.696 ), Vector2( 444.091, 478.29 ), Vector2( 444.091, 478.29 ) ]
 }
 
 [sub_resource type="Animation" id=6]
@@ -290,19 +290,15 @@ data = PoolByteArray( 79, 103, 103, 83, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 157, 39, 0
 [node name="QuartoFrases" type="Node2D"]
 position = Vector2( -4.48987, -4.48981 )
 script = ExtResource( 4 )
-__meta__ = {
-"_edit_horizontal_guides_": [ 450.622, 745.111, 180.674, 605.064 ],
-"_edit_vertical_guides_": [ 798.937, 1121.74, 353.118, 439.645, 523.55 ]
-}
 SceneName = "QuartoFrases"
 voltarAudio = ExtResource( 40 )
 
 [node name="AnimationPlayer" parent="." instance=ExtResource( 33 )]
-"anims/Nova Animação" = SubResource( 1 )
 anims/SetaCartaoPronto = SubResource( 2 )
 anims/SetaCartoes = SubResource( 3 )
 anims/SetaCartoesAba = SubResource( 4 )
 anims/SetaConfirmar = SubResource( 5 )
+anims/SetaDescartar = SubResource( 1 )
 anims/SetaRetalhos = SubResource( 6 )
 
 [node name="CartaoAnimation" type="AnimationPlayer" parent="."]
@@ -668,7 +664,6 @@ __meta__ = {
 }
 
 [node name="RetalhoGrande" type="Sprite" parent="."]
-visible = false
 position = Vector2( 485.37, 338.704 )
 scale = Vector2( 2.26886, 2.30487 )
 texture = ExtResource( 23 )
@@ -953,7 +948,7 @@ margin_bottom = 807.0
 custom_fonts/font = SubResource( 11 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Ah! Antes que eu me esqueça,
- Agora você pode baixar seus cartões!"
+ Agora você pode baixar seus cartões utilizando o botão Baixar!"
 align = 1
 uppercase = true
 percent_visible = 0.0
@@ -972,10 +967,10 @@ stream = SubResource( 12 )
 [node name="Timer" type="Timer" parent="."]
 
 [node name="ViewportContainer" type="ViewportContainer" parent="."]
-margin_left = 127.0
-margin_top = -1000.0
-margin_right = 843.0
-margin_bottom = -560.0
+margin_top = -4000.0
+margin_right = 716.0
+margin_bottom = -3560.0
+rect_scale = Vector2( 2, 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

@@ -40,6 +40,7 @@ config/icon="res://Sprites/Blocagem/icon.png"
 
 Global="*res://Scripts/GLOBAL.gd"
 TutorialGlobal="*res://Scripts/TutorialGLOBAL.gd"
+TrilhaSonora="*res://Cenas/CenasPrefab/TrilhaSonora.tscn"
 
 [display]
 
