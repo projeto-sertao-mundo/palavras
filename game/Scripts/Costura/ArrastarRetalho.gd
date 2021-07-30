@@ -31,7 +31,7 @@ func _process(_delta):
 			if !mouseIn && mouseIn != null && !$"/root/Global".podeSetar:
 				$"/root/Global".mudarRetalhoArrastado(null)
 				if (is_instance_valid(palavraInstanciada) && palavraInstanciada != null):
-					palavraInstanciada.free()
+					palavraInstanciada.queue_free()
 	
 	
 	elif (primeiroNode.name == "QuartoFrases"):
@@ -43,7 +43,7 @@ func _process(_delta):
 			if !mouseIn && mouseIn != null && palavrasParentesco.has_node("retaio") && !$"/root/Global".podeSetar:
 				$"/root/Global".mudarRetalhoArrastado(null)
 				if (is_instance_valid(palavraInstanciada)):
-					palavraInstanciada.free()
+					palavraInstanciada.queue_free()
 
 
 func instanceRetalho(var ref, var nome, var scale):
@@ -62,8 +62,8 @@ func instanceRetalho(var ref, var nome, var scale):
 		var mioloSelf = self.get_node("Miolo")
 		var bordaSelf = self.get_node("Borda")
 		
-		mioloInst.texture = self.get_node("Miolo").texture
-		bordaInst.texture = self.get_node("Borda").texture
+		mioloInst.texture = mioloSelf.texture
+		bordaInst.texture = bordaSelf.texture
 		
 		mioloInst.modulate = Color(mioloSelf.modulate.r, mioloSelf.modulate.g, mioloSelf.modulate.b)
 		bordaInst.modulate = Color(bordaSelf.modulate.r, bordaSelf.modulate.g, bordaSelf.modulate.b)

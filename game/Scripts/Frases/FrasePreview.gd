@@ -25,6 +25,7 @@ func changeSpriteGrande(var texture):#, var newFrase):
 				spriteGrande.visible = true
 				if (spriteGrande.has_node("retaio")):
 					spriteGrande.get_node("retaio").free()
+		
 
 func _on_1_pressed():
 	changeSpriteGrande(get_node("FrasesPagina1").get_node("1").texture_normal)#, frase1)
