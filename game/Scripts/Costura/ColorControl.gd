@@ -3,6 +3,7 @@ extends Sprite
 var setado = false
 var corAnterior = Color(0.882353, 0.882353, 0.819608)
 var corAux
+
 func _ready():
 	corAux = Color(0.882353, 0.882353, 0.819608)
 
@@ -34,9 +35,11 @@ func _process(_delta):
 			MudarCorModulate(corAnterior)
 
 func _input(event):
-	if(event is InputEventScreenDrag):
-		if (is_pixel_opaque(get_local_mouse_position())):
-			setColor()
+	if(event is InputEventScreenTouch):
+		if (!event.is_pressed()):
+			if (is_pixel_opaque(get_local_mouse_position())):
+				if ($"/root/Global".corArrastada != null):
+					setColor()
 
 func setColor():
 	setado = true

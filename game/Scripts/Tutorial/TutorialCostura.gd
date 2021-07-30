@@ -27,6 +27,10 @@ var dialogo
 var cont
 var auxD = 11
 
+#func _process(delta):
+#	print(colorSeted)
+#	print($"/root/TutorialGlobal".tutorialPos)
+
 func _ready():
 	#aux = false
 	colorSeted = false
@@ -166,9 +170,6 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 		Tutorial0()
 	elif (anim_name == "Out"):
 		self.visible = false
-
-func _process(delta):
-	print($"/root/TutorialGlobal".tutorialPos)
 
 func _on_Timer_timeout():
 	var textCont = dialogo.get_text().length()

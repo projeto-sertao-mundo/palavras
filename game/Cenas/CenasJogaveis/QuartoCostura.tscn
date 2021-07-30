@@ -532,6 +532,14 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="LOCK2" type="Control" parent="."]
+visible = false
+margin_right = 1596.0
+margin_bottom = 905.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Lixeira" type="Sprite" parent="."]
 position = Vector2( 801.864, 700.47 )
 scale = Vector2( 0.905656, 1.32662 )
