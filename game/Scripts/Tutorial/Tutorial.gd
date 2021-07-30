@@ -18,7 +18,7 @@ var dialogueEnded
 var auxD
 
 func _ready():
-	if ($"/root/TutorialGlobal".willDoTutorial):
+	if ($"/root/TutorialGlobal".willDoTutorial && !$"/root/TutorialGlobal".FrasesCompleted):
 		
 		self.visible = true
 		$AnimationsVo.play("In")
@@ -48,8 +48,9 @@ func _ready():
 
 
 func Tutorial1():
-	if (auxD == 0):
-		displayString(dialogo1)
+	if ($"/root/TutorialGlobal".willDoTutorial && !$"/root/TutorialGlobal".CosturaCompleted && !$"/root/TutorialGlobal".CozinhaCompleted && !$"/root/TutorialGlobal".FrasesCompleted):
+		if (auxD == 0):
+			displayString(dialogo1)
 
 func Tutorial2():
 	if (auxD == 1):

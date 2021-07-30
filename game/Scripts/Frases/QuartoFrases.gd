@@ -69,6 +69,7 @@ func _on_Confirm_pressed():
 			get_node("Confirm").set_scale(Vector2(1.2,1.2))
 			get_node("CartaoAnimation").play("Cartao")
 			numeroCartoes += 1
+			get_node("PalavrasPopUp/ButtonCartoes").disabled = false
 
 
 func DuplicateRetalhoGrande():

@@ -55,9 +55,11 @@ func _on_Area2D_area_exited(area):
 		if ($"/root/TutorialGlobal".tutorialPos == 23 || $"/root/TutorialGlobal".FrasesCompleted || !$"/root/TutorialGlobal".willDoTutorial):
 			get_parent().get_node("Tutorial4").Tutorial24()
 		
+			
 			instanceRetalho($"/root/Global".retalhosFrasesRef, "retaio", clickPosition, false)
 			if (canShow):
 				self.get_parent().get_node("Confirm").visible = true
+				get_parent().get_node("PalavrasPopUp/ButtonCartoes").disabled = true
 
 func _on_ExitButton_pressed():
 	if ($"/root/TutorialGlobal".FrasesCompleted || !$"/root/TutorialGlobal".willDoTutorial):
@@ -68,6 +70,7 @@ func _on_ExitButton_pressed():
 		
 		setRetalhoFrase = false
 		self.get_parent().get_node("Confirm").visible = false
+		get_parent().get_node("PalavrasPopUp/ButtonCartoes").disabled = false
 
 func CreateRetalhoBag():
 	if ($"/root/TutorialGlobal".tutorialPos == 24 || !$"/root/TutorialGlobal".willDoTutorial || $"/root/TutorialGlobal".FrasesCompleted):
