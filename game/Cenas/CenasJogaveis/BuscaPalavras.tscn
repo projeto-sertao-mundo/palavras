@@ -1649,6 +1649,7 @@ stream = SubResource( 14 )
 
 [node name="AudioComplete" type="AudioStreamPlayer" parent="Audio"]
 stream = ExtResource( 63 )
+volume_db = -2.0
 
 [node name="AudioAjuda" type="AudioStreamPlayer" parent="Audio"]
 stream = ExtResource( 65 )
@@ -1691,7 +1692,6 @@ __meta__ = {
 }
 
 [node name="DEBUG" type="Button" parent="."]
-visible = false
 margin_left = 247.112
 margin_top = 15.2245
 margin_right = 478.112

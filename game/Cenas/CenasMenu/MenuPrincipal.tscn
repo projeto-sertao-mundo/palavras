@@ -136,6 +136,30 @@ tracks/7/keys = {
 "update": 0,
 "values": [ 0.0, -5.0, 5.0, 0.0 ]
 }
+tracks/8/type = "value"
+tracks/8/path = NodePath("MusicButton:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0, 4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("MusicButton:modulate")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 4, 4.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
 
 [node name="Main" type="Node2D"]
 script = ExtResource( 2 )
@@ -162,8 +186,7 @@ __meta__ = {
 
 [node name="Logo escolhida" type="Sprite" parent="."]
 position = Vector2( 819.834, 289.647 )
-rotation = -0.0323209
-scale = Vector2( 1e-05, 1e-05 )
+scale = Vector2( 1.5, 1.5 )
 texture = ExtResource( 8 )
 
 [node name="Jogar" type="TextureButton" parent="."]

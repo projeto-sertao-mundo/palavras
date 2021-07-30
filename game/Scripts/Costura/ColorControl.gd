@@ -34,7 +34,7 @@ func _process(_delta):
 			MudarCorModulate(corAnterior)
 
 func _input(event):
-	if(event.is_action_released("Click")):
+	if(event is InputEventScreenDrag):
 		if (is_pixel_opaque(get_local_mouse_position())):
 			setColor()
 

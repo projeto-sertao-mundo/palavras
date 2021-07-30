@@ -83,16 +83,22 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 
 
 func _on_Nao_pressed():
+	$Audio/Audio.stream = voltarAudio
+	$Audio/Audio.play()
 	$TutorialPergunta.visible = false
 	$Confirmacao.visible = true
 	$TutorialPergunta/Nao.set_scale(Vector2(1,1))
 
 func _on_NaoC_pressed():
+	$Audio/Audio.stream = voltarAudio
+	$Audio/Audio.play()
 	$TutorialPergunta.visible = true
 	$Confirmacao.visible = false
 	$Confirmacao/NaoC.set_scale(Vector2(1,1))
 
 func _on_SimC_pressed():
+	$Audio/Audio.stream = confirmAudio
+	$Audio/Audio.play()
 	$"/root/TutorialGlobal".lockCozinha = false
 	$"/root/TutorialGlobal".lockCostura = false
 	$"/root/TutorialGlobal".lockFrases = false
@@ -101,6 +107,8 @@ func _on_SimC_pressed():
 	$Confirmacao.visible = false
 
 func _on_Sim_pressed():
+	$Audio/Audio.stream = confirmAudio
+	$Audio/Audio.play()
 	$TutorialPergunta.visible = false
 	$Confirmacao.visible = false
 
