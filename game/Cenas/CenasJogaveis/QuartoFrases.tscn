@@ -664,6 +664,7 @@ __meta__ = {
 }
 
 [node name="RetalhoGrande" type="Sprite" parent="."]
+visible = false
 position = Vector2( 485.37, 338.704 )
 scale = Vector2( 2.26886, 2.30487 )
 texture = ExtResource( 23 )
