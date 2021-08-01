@@ -23,6 +23,9 @@ func _ready():
 
 func _process(_delta):
 	
+	#if (palavraInstanciada != null):
+	print(palavraInstanciada)
+	
 	if (primeiroNode.name == "QuartoCostura"):
 		instanceRetalho($"/root/Global".retalhoInstanceRef, self.name, Vector2(0.7,0.7))
 		moveRetalho()
@@ -32,6 +35,7 @@ func _process(_delta):
 				$"/root/Global".mudarRetalhoArrastado(null)
 				if (is_instance_valid(palavraInstanciada) && palavraInstanciada != null):
 					palavraInstanciada.queue_free()
+					palavraInstanciada = null
 	
 	
 	elif (primeiroNode.name == "QuartoFrases"):
@@ -44,6 +48,7 @@ func _process(_delta):
 				$"/root/Global".mudarRetalhoArrastado(null)
 				if (is_instance_valid(palavraInstanciada)):
 					palavraInstanciada.queue_free()
+					palavraInstanciada = null
 
 
 func instanceRetalho(var ref, var nome, var scale):
