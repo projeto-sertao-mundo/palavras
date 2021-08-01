@@ -23,9 +23,6 @@ func _ready():
 
 func _process(_delta):
 	
-	#if (palavraInstanciada != null):
-	print(palavraInstanciada)
-	
 	if (primeiroNode.name == "QuartoCostura"):
 		instanceRetalho($"/root/Global".retalhoInstanceRef, self.name, Vector2(0.7,0.7))
 		moveRetalho()

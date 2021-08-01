@@ -107,8 +107,8 @@ func Download():
 	file.open("res://Cartão.png", File.READ)
 	var base_64_data = Marshalls.raw_to_base64(file.get_buffer(file.get_len()))
 
-	var url = "data:image/jpg;base64,"+base_64_data #dont forget the mimetype and encoding
-	var comand = " var a = document.createElement('a'); a.href = '" + url + "'; a.setAttribute( 'download' , 'Screenshot.jpg' ); a.click(); "
+	var url = "data:image/png;base64,"+base_64_data #dont forget the mimetype and encoding
+	var comand = " var a = document.createElement('a'); a.href = '" + url + "'; a.setAttribute( 'download' , 'Cartão.png' ); a.click(); "
 	
 	JavaScript.eval(comand)
 
