@@ -8,6 +8,10 @@ var clickPosition
 var limite = 11
 
 export(AudioStreamOGGVorbis) var voltarAudio
+export(AudioStreamOGGVorbis) var confirmAudio
+export(AudioStreamOGGVorbis) var createBordadoAudio
+
+
 
 var caminho = "CosturaPopUp/Formas/HolderFormas" #PASTA DESTINO DOS SPRITES MUDAR!!!
 
@@ -162,6 +166,10 @@ func _on_Costurar_pressed():
 				
 				$"/root/Global".criarRetalho(corBorda, corMiolo, spriteBorda, spriteMiolo, label)
 				numeroCaracteres = 0
+				
+				$Audio/Audio.stream = createBordadoAudio
+				if (!$Audio/Audio.playing):
+					$Audio/Audio.play()
 
 func _on_QuartoCostura_tree_entered():
 	$"/root/Global".firstSceneNode = self
@@ -189,3 +197,6 @@ func _on_Maquina_pressed():
 	if (!$"/root/TutorialGlobal".willDoTutorial || $"/root/TutorialGlobal".tutorialPos >= 13 || $"/root/TutorialGlobal".CosturaCompleted):
 		get_node("CosturaPopUp/CosturaAnimation").play("CosturaPopUp")
 		$LOCK2.visible = true
+		$Audio/Audio.stream = confirmAudio
+		if (!$Audio/Audio.playing):
+			$Audio/Audio.play()

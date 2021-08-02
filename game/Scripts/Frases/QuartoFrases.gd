@@ -3,6 +3,7 @@ extends Node2D
 export (String) var SceneName
 var numeroCartoes = 0
 export(AudioStreamOGGVorbis) var voltarAudio
+export(AudioStreamOGGVorbis) var createFraseAudio
 
 func _on_Voltar_pressed():
 	if ($"/root/TutorialGlobal".FrasesCompleted || !$"/root/TutorialGlobal".willDoTutorial):
@@ -70,6 +71,10 @@ func _on_Confirm_pressed():
 			get_node("CartaoAnimation").play("Cartao")
 			numeroCartoes += 1
 			get_node("PalavrasPopUp/ButtonCartoes").disabled = false
+			
+			$Audio/Audio.stream = createFraseAudio
+			if (!$Audio/Audio.playing):
+				$Audio/Audio.play()
 
 
 func DuplicateRetalhoGrande():

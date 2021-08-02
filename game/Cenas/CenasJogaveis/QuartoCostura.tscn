@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=2]
+[gd_scene load_steps=67 format=2]
 
 [ext_resource path="res://Sprites/SpritesFinais/ObetosCostura/Losango Botão.png" type="Texture" id=1]
 [ext_resource path="res://Sprites/SpritesFinais/Fundo cenas/quarto de costura refeito.png" type="Texture" id=2]
@@ -47,6 +47,8 @@
 [ext_resource path="res://Scripts/Tutorial/TutorialCostura.gd" type="Script" id=45]
 [ext_resource path="res://Cenas/CenasPrefab/Musicbutton.tscn" type="PackedScene" id=46]
 [ext_resource path="res://Scripts/ScaleButton.gd" type="Script" id=47]
+[ext_resource path="res://Audio/confirm.ogg" type="AudioStream" id=48]
+[ext_resource path="res://Audio/achar_letra.ogg" type="AudioStream" id=49]
 
 [sub_resource type="Animation" id=1]
 resource_name = "SetaApagar"
@@ -503,6 +505,8 @@ font_data = ExtResource( 3 )
 [node name="QuartoCostura" type="Node2D"]
 script = ExtResource( 5 )
 voltarAudio = ExtResource( 18 )
+confirmAudio = ExtResource( 48 )
+createBordadoAudio = ExtResource( 49 )
 
 [node name="AnimationPlayer" parent="." instance=ExtResource( 42 )]
 anims/SetaApagar = SubResource( 1 )

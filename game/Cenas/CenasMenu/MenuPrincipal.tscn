@@ -165,7 +165,7 @@ tracks/9/keys = {
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_horizontal_guides_": [ 501.187 ],
-"_edit_vertical_guides_": [ 815.216 ]
+"_edit_vertical_guides_": [ 797.79 ]
 }
 voltarAudio = ExtResource( 12 )
 confirmAudio = ExtResource( 11 )
@@ -205,10 +205,10 @@ __meta__ = {
 }
 
 [node name="Creditos" type="TextureButton" parent="."]
-margin_left = 1260.43
-margin_top = 681.832
-margin_right = 1487.43
-margin_bottom = 787.832
+margin_left = 681.959
+margin_top = 682.393
+margin_right = 908.959
+margin_bottom = 788.393
 rect_scale = Vector2( 0.8, 0.8 )
 rect_pivot_offset = Vector2( 110, 50 )
 texture_normal = ExtResource( 5 )
@@ -217,6 +217,7 @@ __meta__ = {
 }
 
 [node name="Sair" type="TextureButton" parent="."]
+visible = false
 margin_left = 137.13
 margin_top = 687.058
 margin_right = 336.13
