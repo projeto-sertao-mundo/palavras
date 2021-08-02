@@ -975,6 +975,7 @@ stream = SubResource( 12 )
 margin_top = -4000.0
 margin_right = 716.0
 margin_bottom = -3560.0
+rect_min_size = Vector2( 716, 440 )
 rect_scale = Vector2( 2, 2 )
 __meta__ = {
 "_edit_use_anchors_": false
