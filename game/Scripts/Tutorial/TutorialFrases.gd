@@ -24,8 +24,6 @@ var dialogo
 var cont
 var auxD
 
-
-
 func _ready():
 	if (!$"/root/TutorialGlobal".FrasesCompleted):
 		$VoAnimation.play("In")

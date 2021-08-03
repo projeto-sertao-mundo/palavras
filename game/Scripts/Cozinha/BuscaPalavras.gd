@@ -16,6 +16,7 @@ var letrasMorfemas
 var letraDestacada
 var animTocou = false
 var bolsaAberta = false
+var tocouAudio = false
 
 func _ready():
 	if ($"/root/TutorialGlobal".CozinhaCompleted):
@@ -37,9 +38,11 @@ func _on_Voltar_pressed():
 	if (lettersReach >= lettersClick):
 		if (!$"/root/TutorialGlobal".willDoTutorial  || $"/root/TutorialGlobal".CozinhaCompleted):
 			get_node("AnimationPlayer").play("FadeOut")
-			$Audio/Audio.stream = voltarAudio
-			if (!$Audio/Audio.playing):
-				$Audio/Audio.play()
+			if (!tocouAudio):
+				$Audio/Audio.stream = voltarAudio
+				if (!$Audio/Audio.playing):
+					$Audio/Audio.play()
+					tocouAudio = true
 	#yield(Yield.yield_wait(0.35, self), "completed")
 	
 func _on_Bolsa_pressed():

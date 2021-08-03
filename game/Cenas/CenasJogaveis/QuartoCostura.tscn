@@ -545,7 +545,7 @@ __meta__ = {
 }
 
 [node name="Lixeira" type="Sprite" parent="."]
-position = Vector2( 801.864, 700.47 )
+position = Vector2( 801.864, 720 )
 scale = Vector2( 0.905656, 1.32662 )
 texture = ExtResource( 41 )
 normal_map = ExtResource( 38 )

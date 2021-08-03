@@ -929,7 +929,7 @@ __meta__ = {
 
 [node name="Label5" type="Label" parent="Tutorial4"]
 margin_left = 342.0
-margin_top = 660.0
+margin_top = 658.0
 margin_right = 1254.0
 margin_bottom = 807.0
 custom_fonts/font = SubResource( 11 )
@@ -986,6 +986,7 @@ size = Vector2( 716, 440 )
 own_world = true
 world = SubResource( 13 )
 transparent_bg = true
+handle_input_locally = false
 hdr = false
 disable_3d = true
 usage = 0
@@ -1046,13 +1047,13 @@ texture = ExtResource( 23 )
 [connection signal="pressed" from="Descartar" to="." method="_on_Descartar_pressed"]
 [connection signal="mouse_entered" from="Atençao/NaoDescartar" to="Atençao/NaoDescartar" method="_on_NaoDescartar_mouse_entered"]
 [connection signal="mouse_exited" from="Atençao/NaoDescartar" to="Atençao/NaoDescartar" method="_on_NaoDescartar_mouse_exited"]
-[connection signal="pressed" from="Atençao/NaoDescartar" to="." method="_on_NaoDescartar_pressed"]
 [connection signal="pressed" from="Atençao/NaoDescartar" to="Atençao/NaoDescartar" method="_on_NaoDescartar_pressed"]
+[connection signal="pressed" from="Atençao/NaoDescartar" to="." method="_on_NaoDescartar_pressed"]
 [connection signal="mouse_entered" from="Atençao/Descart" to="Atençao/Descart" method="_on_Descart_mouse_entered"]
 [connection signal="mouse_exited" from="Atençao/Descart" to="Atençao/Descart" method="_on_Descart_mouse_exited"]
+[connection signal="pressed" from="Atençao/Descart" to="Atençao/Descart" method="_on_Descart_pressed"]
 [connection signal="pressed" from="Atençao/Descart" to="." method="_on_Descart_pressed"]
 [connection signal="pressed" from="Atençao/Descart" to="PalavrasPopUp" method="_on_Descart_pressed"]
-[connection signal="pressed" from="Atençao/Descart" to="Atençao/Descart" method="_on_Descart_pressed"]
 [connection signal="animation_finished" from="Tutorial4/VoAnimation" to="Tutorial4" method="_on_VoAnimation_animation_finished"]
 [connection signal="timeout" from="Tutorial4/Timer" to="Tutorial4" method="_on_Timer_timeout"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

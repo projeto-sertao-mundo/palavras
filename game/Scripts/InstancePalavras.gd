@@ -136,17 +136,18 @@ func _on_ButtonCartoes_pressed():
 	if ($"/root/TutorialGlobal".tutorialPos == 25 && $"/root/TutorialGlobal".willDoTutorial):
 		get_parent().get_node("Tutorial4").Tutorial26()
 	
-	move_child(get_node("Cartões"), 6)
-	InstanciarPalavras()
-	
-	get_node("Cartões/GridCartões").show()
-	
-	if (has_node("Letras/GridLetras")):
-		get_node("Letras/GridLetras").hide()
-	if (has_node("Letras/GridLetrasAcentuadas")):
-		get_node("Letras/GridLetrasAcentuadas").hide()
-	if (has_node("Retalhos/GridRetalhos")):
-		get_node("Retalhos/GridRetalhos").hide()
+	if ($"/root/TutorialGlobal".tutorialPos == 25 || $"/root/TutorialGlobal".FrasesCompleted):
+		move_child(get_node("Cartões"), 6)
+		InstanciarPalavras()
+		
+		get_node("Cartões/GridCartões").show()
+		
+		if (has_node("Letras/GridLetras")):
+			get_node("Letras/GridLetras").hide()
+		if (has_node("Letras/GridLetrasAcentuadas")):
+			get_node("Letras/GridLetrasAcentuadas").hide()
+		if (has_node("Retalhos/GridRetalhos")):
+			get_node("Retalhos/GridRetalhos").hide()
 
 func _on_Descartar2_pressed():
 	InstanciarPalavras()

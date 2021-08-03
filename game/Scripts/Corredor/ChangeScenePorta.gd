@@ -11,6 +11,8 @@ onready var cartoes = preload ("res://Cenas/CenasPrefab/Cartoes.tscn")
 export(AudioStreamOGGVorbis) var voltarAudio
 export(AudioStreamOGGVorbis) var confirmAudio
 
+var tocouAudio = false
+
 var cena
 
 func ChangeSceneBP():
@@ -36,27 +38,34 @@ func _ready():
 func _on_PortaBuscaPalavras_pressed():
 	if (!$"/root/TutorialGlobal".lockCozinha):
 		if $"/root/Global".contPalavrasEncontradas < 43:
-			$Audio/Audio.stream = confirmAudio
-			if (!$Audio/Audio.playing):
-					$Audio/Audio.play()
+			if (!tocouAudio):
+				$Audio/Audio.stream = confirmAudio
+				if (!$Audio/Audio.playing):
+						$Audio/Audio.play()
+				tocouAudio = true
 			$AnimationPlayer.play("FadeOut")
 			cena = "BP"
 
 func _on_PortaQuartoCostura_pressed():
 	if (!$"/root/TutorialGlobal".lockCostura):
 		$AnimationPlayer.play("FadeOut")
-		$Audio/Audio.stream = confirmAudio
-		if (!$Audio/Audio.playing):
-				$Audio/Audio.play()
+		if (!tocouAudio):
+			$Audio/Audio.stream = confirmAudio
+			if (!$Audio/Audio.playing):
+					$Audio/Audio.play()
+			tocouAudio = true
 		#yield(Yield.yield_wait(0.45, self), "completed")
 		cena = "QC"
 
 func _on_PortaQuartoMontagens_pressed():
 	if (!$"/root/TutorialGlobal".lockFrases):
 		$AnimationPlayer.play("FadeOut")
-		$Audio/Audio.stream = confirmAudio
-		if (!$Audio/Audio.playing):
-			$Audio/Audio.play()
+		
+		if (!tocouAudio):
+			$Audio/Audio.stream = confirmAudio
+			if (!$Audio/Audio.playing):
+				$Audio/Audio.play()
+			tocouAudio = true
 		#yield(Yield.yield_wait(0.45, self), "completed")
 		cena = "QF"
 
@@ -65,9 +74,11 @@ func _on_VoltarMenu_pressed():
 		$AnimationPlayer.play("FadeOut")
 		#yield(Yield.yield_wait(0.45, self), "completed")
 		cena = "Menu"
-		$Audio/Audio.stream = voltarAudio
-		if (!$Audio/Audio.playing):
-			$Audio/Audio.play()
+		if (!tocouAudio):
+			$Audio/Audio.stream = voltarAudio
+			if (!$Audio/Audio.playing):
+				$Audio/Audio.play()
+			tocouAudio = true
 
 
 func _on_AnimationPlayer_animation_finished(anim_name):

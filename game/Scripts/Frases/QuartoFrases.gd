@@ -5,12 +5,16 @@ var numeroCartoes = 0
 export(AudioStreamOGGVorbis) var voltarAudio
 export(AudioStreamOGGVorbis) var createFraseAudio
 
+var tocouAudio = false
+
 func _on_Voltar_pressed():
 	if ($"/root/TutorialGlobal".FrasesCompleted || !$"/root/TutorialGlobal".willDoTutorial):
 		get_node("AnimationPlayer").play("FadeOut")
-		$Audio/Audio.stream = voltarAudio
-		if (!$Audio/Audio.playing):
-			$Audio/Audio.play()
+		if (!tocouAudio):
+			$Audio/Audio.stream = voltarAudio
+			if (!$Audio/Audio.playing):
+				$Audio/Audio.play()
+			tocouAudio = true
 	#yield(Yield.yield_wait(0.35, self), "completed")
 	
 

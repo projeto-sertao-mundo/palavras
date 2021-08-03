@@ -3,6 +3,8 @@ extends Node2D
 export(AudioStreamOGGVorbis) var voltarAudio
 export(AudioStreamOGGVorbis) var confirmAudio
 export var path = ""
+var tocouAudio = false
+var tocouAudioCreditos = false
 
 func _ready():
 	if ($"/root/Global".firstTime || $"/root/Global".firstTime == null):
@@ -13,9 +15,11 @@ func _ready():
 		get_node("AnimationPlayer").play("FadeIn")
 
 func _on_Jogar_pressed():
-	$Audio.stream = confirmAudio
-	if (!$Audio.playing):
-			$Audio.play()
+	if (!tocouAudio):
+		$Audio.stream = confirmAudio
+		if (!$Audio.playing):
+				$Audio.play()
+		tocouAudio = true
 	ChangeScene()
 
 func ChangeScene():
@@ -24,16 +28,20 @@ func ChangeScene():
 	
 
 func _on_Creditos_pressed():
-	$Audio.stream = confirmAudio
-	if (!$Audio.playing):
-			$Audio.play()
+	if (!tocouAudioCreditos):
+		$Audio.stream = confirmAudio
+		if (!$Audio.playing):
+				$Audio.play()
+		tocouAudioCreditos = true
 	$AnimationPlayer.play("CreditosIn")
 
 func _on_VoltarCreditos_pressed():
 	$Audio.stream = voltarAudio
-	if (!$Audio.playing):
-			$Audio.play()
-	$AnimationPlayer.play("CreditosOut")
+	if (tocouAudioCreditos):
+		if (!$Audio.playing):
+				$Audio.play()
+		$AnimationPlayer.play("CreditosOut")
+		tocouAudioCreditos = false
 
 func _on_Voltar_pressed():
 	ChangeScene()

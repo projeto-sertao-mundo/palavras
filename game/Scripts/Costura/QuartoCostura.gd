@@ -11,6 +11,7 @@ export(AudioStreamOGGVorbis) var voltarAudio
 export(AudioStreamOGGVorbis) var confirmAudio
 export(AudioStreamOGGVorbis) var createBordadoAudio
 
+var tocouAudio = false
 
 
 var caminho = "CosturaPopUp/Formas/HolderFormas" #PASTA DESTINO DOS SPRITES MUDAR!!!
@@ -69,9 +70,11 @@ func _on_Voltar_pressed():
 func _on_Voltar2_pressed():
 	if ($"/root/TutorialGlobal".CosturaCompleted || !$"/root/TutorialGlobal".willDoTutorial):
 		get_node("AnimationPlayer").play("FadeOut")
-		$Audio/Audio.stream = voltarAudio
-		if (!$Audio/Audio.playing):
-			$Audio/Audio.play()
+		if (!tocouAudio):
+			$Audio/Audio.stream = voltarAudio
+			if (!$Audio/Audio.playing):
+				$Audio/Audio.play()
+				tocouAudio = true
 	#yield(Yield.yield_wait(0.35, self), "completed")
 	
 func MudarCor(var r, g, b):
