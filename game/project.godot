@@ -36,6 +36,10 @@ config/name="JogoPalavras"
 run/main_scene="res://Cenas/CenasMenu/MenuPrincipal.tscn"
 config/icon="res://Sprites/Blocagem/icon.png"
 
+[audio]
+
+output_latency.web=150
+
 [autoload]
 
 Global="*res://Scripts/GLOBAL.gd"
