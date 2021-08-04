@@ -136,7 +136,7 @@ func _on_ButtonCartoes_pressed():
 	if ($"/root/TutorialGlobal".tutorialPos == 25 && $"/root/TutorialGlobal".willDoTutorial):
 		get_parent().get_node("Tutorial4").Tutorial26()
 	
-	if ($"/root/TutorialGlobal".tutorialPos == 25 || $"/root/TutorialGlobal".FrasesCompleted):
+	if ($"/root/TutorialGlobal".tutorialPos == 25 || !$"/root/TutorialGlobal".willDoTutorial || $"/root/TutorialGlobal".FrasesCompleted):
 		move_child(get_node("Cartões"), 6)
 		InstanciarPalavras()
 		
