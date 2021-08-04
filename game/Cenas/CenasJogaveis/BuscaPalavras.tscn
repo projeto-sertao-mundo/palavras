@@ -1276,9 +1276,9 @@ __meta__ = {
 }
 
 [node name="zinho" type="KinematicBody2D" parent="Letras"]
-modulate = Color( 0.494118, 0.568627, 0.67451, 1 )
-position = Vector2( 1438.96, 34.7059 )
-rotation = 0.197587
+modulate = Color( 0.427451, 0.494118, 0.576471, 1 )
+position = Vector2( 1437.3, 126.764 )
+rotation = -0.0802851
 scale = Vector2( 1, 0.679995 )
 script = ExtResource( 8 )
 __meta__ = {
