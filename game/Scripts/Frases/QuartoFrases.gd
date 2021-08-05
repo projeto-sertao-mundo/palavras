@@ -109,7 +109,27 @@ func DuplicateRetalhoGrande():
 func SaveImage():
 	var image = get_node("ViewportContainer/Viewport").get_texture().get_data()
 	image.flip_y()
-	image.save_png("res://Cartão.png")
+	
+	if !OS.has_feature('JavaScript'):
+		var dir = Directory.new()
+		var path = OS.get_executable_path().get_base_dir().plus_file("Cartões")
+		dir.make_dir(path)
+		var cartaoNumero = 0
+		
+		var format_string = "res://Cartões/Cartão_{str}.png"
+		var actual_string = format_string.format({"str": cartaoNumero})
+		
+		while(dir.file_exists(actual_string)):
+			cartaoNumero += 1
+			format_string = "res://Cartões/Cartão_{str}.png"
+			actual_string = format_string.format({"str": cartaoNumero})
+		
+		format_string = "res://Cartões/Cartão_{str}.png"
+		actual_string = format_string.format({"str": cartaoNumero})
+		
+		image.save_png(actual_string)
+	else:
+		image.save_png("res://Cartão.png")
 
 func Download():
 	var file = File.new()
@@ -123,9 +143,11 @@ func Download():
 
 func _on_Timer_timeout():
 	SaveImage()
-	Download()
+	if OS.has_feature('JavaScript'):
+		Download()
 	$Timer.stop()
 
 func _on_Baixar_pressed():
 	DuplicateRetalhoGrande()
+	$RetalhoGrande.visible = false
 	$Timer.start()
