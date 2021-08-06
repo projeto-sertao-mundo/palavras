@@ -16,7 +16,7 @@ func _on_Area2D_mouse_exited():
 
 func changeSpriteGrande(var texture):#, var newFrase):
 	if (!spriteGrande.visible):
-		if ($"/root/TutorialGlobal".tutorialPos == 22 || !$"/root/TutorialGlobal".willDoTutorial || $"/root/TutorialGlobal".FrasesCompleted):
+		if ($"/root/TutorialGlobal".tutorialPos == 22 || (!$"/root/TutorialGlobal".willDoTutorial && !$"/root/TutorialGlobal".isRedoingTutorial) || $"/root/TutorialGlobal".FrasesCompleted):
 			if ($"/root/TutorialGlobal".tutorialPos == 22):
 				get_parent().get_node("Tutorial4").Tutorial23()
 
@@ -66,7 +66,7 @@ func _on_18_pressed():
 
 
 func _on_ExitButton_pressed():
-	if ($"/root/TutorialGlobal".FrasesCompleted || !$"/root/TutorialGlobal".willDoTutorial):
+	if ($"/root/TutorialGlobal".FrasesCompleted || (!$"/root/TutorialGlobal".willDoTutorial && !$"/root/TutorialGlobal".isRedoingTutorial)):
 		spriteGrande.visible = false;
 		spriteGrande.get_parent().get_node("Descartar").visible = false
 		spriteGrande.get_parent().get_node("Baixar").visible = false

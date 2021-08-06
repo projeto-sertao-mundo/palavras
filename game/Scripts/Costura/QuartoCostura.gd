@@ -24,7 +24,6 @@ func _ready():
 	numeroRetalhos = $"/root/Global".retalhos.size()
 
 func _process(_delta):
-	
 #	if ($"/root/Global".podeSetar && !Input.is_action_pressed("Click") && palavra.name.length() > 1 && !palavra.isLetraAcentuada):
 #		if numeroCaracteres <= 15:
 #			MudarLabelPreview(palavra.get_node("Label").text)
@@ -64,11 +63,11 @@ func _on_MaquinaCostura_pressed():
 	get_node("CosturaPopUp").show()
 
 func _on_Voltar_pressed():
-	if ($"/root/TutorialGlobal".CosturaCompleted || !$"/root/TutorialGlobal".willDoTutorial):
+	if ($"/root/TutorialGlobal".CosturaCompleted || (!$"/root/TutorialGlobal".willDoTutorial && !$"/root/TutorialGlobal".isRedoingTutorial)):
 		get_node("CosturaPopUp").hide()
 
 func _on_Voltar2_pressed():
-	if ($"/root/TutorialGlobal".CosturaCompleted || !$"/root/TutorialGlobal".willDoTutorial):
+	if ($"/root/TutorialGlobal".CosturaCompleted || (!$"/root/TutorialGlobal".willDoTutorial && !$"/root/TutorialGlobal".isRedoingTutorial)):
 		get_node("AnimationPlayer").play("FadeOut")
 		if (!tocouAudio):
 			$Audio/Audio.stream = voltarAudio
@@ -81,7 +80,7 @@ func MudarCor(var r, g, b):
 	get_node("CosturaPopUp/Preview").modulate = Color(r,g,b)
 
 func _on_Recomecar_pressed():
-	if (!$"/root/TutorialGlobal".willDoTutorial || $"/root/TutorialGlobal".CosturaCompleted):
+	if ((!$"/root/TutorialGlobal".willDoTutorial && !$"/root/TutorialGlobal".isRedoingTutorial) || $"/root/TutorialGlobal".CosturaCompleted):
 		#get_node("CosturaPopUp/Preview/Miolo").modulate = Color(0.882353, 0.882353, 0.819608)
 		#get_node("CosturaPopUp/Preview/Borda").modulate = Color(0.882353, 0.882353, 0.819608)
 		numeroCaracteres = get_node("CosturaPopUp/Preview").get_node("Label").text.length()
@@ -113,13 +112,15 @@ func _on_Area2D_area_exited(_area):
 	palavra = null
 
 func mudarSprite(var nomeMiolo, var nomeBorda):
-	if ($"/root/TutorialGlobal".tutorialPos == 15 || $"/root/TutorialGlobal".CosturaCompleted || !$"/root/TutorialGlobal".willDoTutorial):
+	if ($"/root/TutorialGlobal".tutorialPos == 15 || $"/root/TutorialGlobal".CosturaCompleted || (!$"/root/TutorialGlobal".willDoTutorial && !$"/root/TutorialGlobal".isRedoingTutorial)):
 		if ($"/root/TutorialGlobal".tutorialPos == 15):
 			get_node("Tutorial3").Tutorial16()
 		
 		numeroCaracteres = get_node("CosturaPopUp/Preview").get_node("Label").text.length()
 		while(numeroCaracteres > $"/root/Global".limite):
 			_on_Recomecar_pressed()
+		
+		get_node("CosturaPopUp/Preview/Label").rect_size = Vector2(234, 100)
 		
 		self.get_node("CosturaPopUp/Preview/Miolo").texture = self.get_node(caminho + "/" + nomeMiolo).texture
 		self.get_node("CosturaPopUp/Preview/Borda").texture = self.get_node(caminho + "/" + nomeBorda).texture
@@ -149,7 +150,7 @@ func _on_RetanguloPe_pressed():
 	mudarSprite("Retangulo De Pe Miolo","Retangulo De Pe Borda")
 
 func _on_Costurar_pressed():
-	if (!$"/root/TutorialGlobal".willDoTutorial || $"/root/TutorialGlobal".CosturaCompleted):
+	if ((!$"/root/TutorialGlobal".willDoTutorial && !$"/root/TutorialGlobal".isRedoingTutorial) || $"/root/TutorialGlobal".CosturaCompleted):
 		if ($"/root/TutorialGlobal".tutorialPos == 18):
 			get_node("Tutorial3").Tutorial19()
 		
@@ -173,6 +174,8 @@ func _on_Costurar_pressed():
 				$Audio/Audio.stream = createBordadoAudio
 				if (!$Audio/Audio.playing):
 					$Audio/Audio.play()
+				
+				$CosturaPopUp/Preview/Label.set_size(Vector2(234, 100))
 
 func _on_QuartoCostura_tree_entered():
 	$"/root/Global".firstSceneNode = self
@@ -197,7 +200,7 @@ func _on_CosturaAnimation_animation_finished(anim_name):
 
 
 func _on_Maquina_pressed():
-	if (!$"/root/TutorialGlobal".willDoTutorial || $"/root/TutorialGlobal".tutorialPos >= 13 || $"/root/TutorialGlobal".CosturaCompleted):
+	if ((!$"/root/TutorialGlobal".willDoTutorial && !$"/root/TutorialGlobal".isRedoingTutorial) || $"/root/TutorialGlobal".tutorialPos >= 13 || $"/root/TutorialGlobal".CosturaCompleted):
 		get_node("CosturaPopUp/CosturaAnimation").play("CosturaPopUp")
 		$LOCK2.visible = true
 		$Audio/Audio.stream = confirmAudio

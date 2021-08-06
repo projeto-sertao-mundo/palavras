@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://Sprites/SpritesFinais/Objetos/Confecção Dos Retalhps.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Corredor/ChangeScenePorta.gd" type="Script" id=2]
@@ -20,6 +20,7 @@
 [ext_resource path="res://Scripts/ScaleButton.gd" type="Script" id=18]
 [ext_resource path="res://Audio/back.ogg" type="AudioStream" id=19]
 [ext_resource path="res://Cenas/CenasPrefab/Musicbutton.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Scripts/Tutorial/Re-Tutorial.gd" type="Script" id=21]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Seta"
@@ -222,6 +223,38 @@ tracks/1/keys = {
 size = 38
 use_filter = true
 font_data = ExtResource( 10 )
+
+[sub_resource type="Animation" id=11]
+resource_name = "Hide"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/path = NodePath("Dialogo2:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1016.17, 816.158 ), Vector2( 1016.17, 816.158 ), Vector2( 1016.17, 1100 ) ]
+}
+
+[sub_resource type="Animation" id=10]
+resource_name = "InDialogo"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/path = NodePath("Dialogo2:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1016.17, 1100 ), Vector2( 1016.17, 816.158 ), Vector2( 1016.17, 816.158 ) ]
+}
 
 [node name="Corredor" type="Node2D"]
 script = ExtResource( 2 )
@@ -516,6 +549,99 @@ volume_db = -5.0
 
 [node name="MusicButton" parent="." instance=ExtResource( 20 )]
 
+[node name="Re-Tutorial" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 21 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TimerRedo" type="Timer" parent="Re-Tutorial"]
+wait_time = 0.01
+
+[node name="AnimationRedoTutorial" type="AnimationPlayer" parent="Re-Tutorial"]
+anims/Hide = SubResource( 11 )
+anims/InDialogo = SubResource( 10 )
+
+[node name="Redo-Tutorial" type="TextureButton" parent="Re-Tutorial"]
+margin_left = 1421.4
+margin_top = 684.748
+margin_right = 1615.4
+margin_bottom = 921.748
+rect_scale = Vector2( 0.9, 0.9 )
+texture_normal = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Dialogo2" type="Sprite" parent="Re-Tutorial"]
+position = Vector2( 1016.17, 1100 )
+scale = Vector2( 1.55045, 1.02681 )
+texture = ExtResource( 8 )
+
+[node name="Label0" type="Label" parent="Re-Tutorial"]
+modulate = Color( 0, 0, 0, 1 )
+margin_left = 662.0
+margin_top = 796.0
+margin_right = 1366.0
+margin_bottom = 840.0
+custom_fonts/font = SubResource( 9 )
+text = "Precisa de ajuda em qual quarto?"
+align = 1
+uppercase = true
+percent_visible = 0.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LockCompletedLetras" type="Label" parent="Re-Tutorial"]
+modulate = Color( 0, 0, 0, 1 )
+margin_left = 662.0
+margin_top = 796.0
+margin_right = 1366.0
+margin_bottom = 840.0
+custom_fonts/font = SubResource( 9 )
+text = "Você já completou este quarto!"
+align = 1
+uppercase = true
+percent_visible = 0.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LockNoLetraCostura" type="Label" parent="Re-Tutorial"]
+modulate = Color( 0, 0, 0, 1 )
+margin_left = 662.0
+margin_top = 783.0
+margin_right = 1378.0
+margin_bottom = 877.0
+custom_fonts/font = SubResource( 9 )
+text = "Você precisa achar alguma letra para 
+que eu possa te mostrar."
+align = 1
+uppercase = true
+percent_visible = 0.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LockNoBordadoCartoes" type="Label" parent="Re-Tutorial"]
+modulate = Color( 0, 0, 0, 1 )
+margin_left = 662.0
+margin_top = 783.0
+margin_right = 1366.0
+margin_bottom = 877.0
+custom_fonts/font = SubResource( 9 )
+text = "Você precisa criar algum bordado para 
+que eu possa te mostrar."
+align = 1
+uppercase = true
+percent_visible = 0.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 [connection signal="mouse_entered" from="VoltarMenu" to="VoltarMenu" method="_on_VoltarMenu_mouse_entered"]
 [connection signal="mouse_exited" from="VoltarMenu" to="VoltarMenu" method="_on_VoltarMenu_mouse_exited"]
@@ -523,12 +649,15 @@ volume_db = -5.0
 [connection signal="mouse_entered" from="PortaBuscaPalavras" to="." method="_on_PortaBuscaPalavras_mouse_entered"]
 [connection signal="mouse_exited" from="PortaBuscaPalavras" to="." method="_on_PortaBuscaPalavras_mouse_exited"]
 [connection signal="pressed" from="PortaBuscaPalavras" to="." method="_on_PortaBuscaPalavras_pressed"]
+[connection signal="pressed" from="PortaBuscaPalavras" to="Re-Tutorial" method="_on_PortaBuscaPalavras_pressed"]
 [connection signal="mouse_entered" from="PortaQuartoCostura" to="." method="_on_PortaQuartoCostura_mouse_entered"]
 [connection signal="mouse_exited" from="PortaQuartoCostura" to="." method="_on_PortaQuartoCostura_mouse_exited"]
 [connection signal="pressed" from="PortaQuartoCostura" to="." method="_on_PortaQuartoCostura_pressed"]
+[connection signal="pressed" from="PortaQuartoCostura" to="Re-Tutorial" method="_on_PortaQuartoCostura_pressed"]
 [connection signal="mouse_entered" from="PortaQuartoMontagens" to="." method="_on_PortaQuartoMontagens_mouse_entered"]
 [connection signal="mouse_exited" from="PortaQuartoMontagens" to="." method="_on_PortaQuartoMontagens_mouse_exited"]
 [connection signal="pressed" from="PortaQuartoMontagens" to="." method="_on_PortaQuartoMontagens_pressed"]
+[connection signal="pressed" from="PortaQuartoMontagens" to="Re-Tutorial" method="_on_PortaQuartoMontagens_pressed"]
 [connection signal="animation_finished" from="Tutorial1/AnimationsVo" to="Tutorial1" method="_on_AnimationsVo_animation_finished"]
 [connection signal="timeout" from="Tutorial1/Timer" to="Tutorial1" method="_on_Timer_timeout"]
 [connection signal="mouse_entered" from="TutorialPergunta/Sim" to="TutorialPergunta/Sim" method="_on_Sim_mouse_entered"]
@@ -544,3 +673,6 @@ volume_db = -5.0
 [connection signal="mouse_entered" from="Confirmacao/NaoC" to="Confirmacao/NaoC" method="_on_NaoC_mouse_entered"]
 [connection signal="mouse_exited" from="Confirmacao/NaoC" to="Confirmacao/NaoC" method="_on_NaoC_mouse_exited"]
 [connection signal="pressed" from="Confirmacao/NaoC" to="." method="_on_NaoC_pressed"]
+[connection signal="timeout" from="Re-Tutorial/TimerRedo" to="Re-Tutorial" method="_on_TimerRedo_timeout"]
+[connection signal="animation_finished" from="Re-Tutorial/AnimationRedoTutorial" to="Re-Tutorial" method="_on_AnimationRedoTutorial_animation_finished"]
+[connection signal="pressed" from="Re-Tutorial/Redo-Tutorial" to="Re-Tutorial" method="_on_RedoTutorial_pressed"]

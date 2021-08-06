@@ -25,14 +25,22 @@ var cont
 var auxD
 
 func _ready():
-	if (!$"/root/TutorialGlobal".FrasesCompleted):
-		$VoAnimation.play("In")
-	
+	print($"/root/TutorialGlobal".tutorialPos)
 	auxD = 21
-	if ($"/root/TutorialGlobal".willDoTutorial && !$"/root/TutorialGlobal".FrasesCompleted):
-		self.visible = true
+	
+	if (!$"/root/TutorialGlobal".isRedoingTutorial):
+		if (!$"/root/TutorialGlobal".FrasesCompleted):
+			$VoAnimation.play("In")
+		
+		if ($"/root/TutorialGlobal".willDoTutorial && !$"/root/TutorialGlobal".FrasesCompleted):
+			self.visible = true
+		else:
+			self.visible = false
 	else:
-		self.visible = false
+		self.visible = true
+		$VoAnimation.play("In")
+		$"/root/TutorialGlobal".tutorialPos = 21
+		$"/root/TutorialGlobal".FrasesCompleted = false
 
 func Tutorial22():
 	if (auxD == 21):
@@ -120,6 +128,7 @@ func _input(event):
 			$"/root/TutorialGlobal".lockCostura = false
 			$"/root/TutorialGlobal".lockFrases = false
 			$"/root/TutorialGlobal".FrasesCompleted = true
+			$"/root/TutorialGlobal".isRedoingTutorial = false
 			get_node("SetaConfirmar").visible = false
 
 func initializeAnim(var animat):

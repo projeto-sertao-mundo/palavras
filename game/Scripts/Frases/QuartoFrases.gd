@@ -7,8 +7,9 @@ export(AudioStreamOGGVorbis) var createFraseAudio
 
 var tocouAudio = false
 
+
 func _on_Voltar_pressed():
-	if ($"/root/TutorialGlobal".FrasesCompleted || !$"/root/TutorialGlobal".willDoTutorial):
+	if ($"/root/TutorialGlobal".FrasesCompleted || (!$"/root/TutorialGlobal".willDoTutorial && !$"/root/TutorialGlobal".isRedoingTutorial)):
 		get_node("AnimationPlayer").play("FadeOut")
 		if (!tocouAudio):
 			$Audio/Audio.stream = voltarAudio
@@ -34,7 +35,7 @@ func _on_Area2D_area_entered(_area):
 
 
 func _on_Descartar_pressed():
-	if (!$"/root/TutorialGlobal".willDoTutorial || $"/root/TutorialGlobal".FrasesCompleted):
+	if ((!$"/root/TutorialGlobal".willDoTutorial && !$"/root/TutorialGlobal".isRedoingTutorial) || $"/root/TutorialGlobal".FrasesCompleted):
 		get_node("Atençao").visible = true
 
 func _on_NaoDescartar_pressed():
@@ -68,7 +69,7 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 
 func _on_Confirm_pressed():
 	if (numeroCartoes < 12):
-		if ($"/root/TutorialGlobal".tutorialPos == 24 || $"/root/TutorialGlobal".FrasesCompleted || !$"/root/TutorialGlobal".willDoTutorial):
+		if ($"/root/TutorialGlobal".tutorialPos == 24 || $"/root/TutorialGlobal".FrasesCompleted || (!$"/root/TutorialGlobal".willDoTutorial && !$"/root/TutorialGlobal".isRedoingTutorial)):
 			get_node("RetalhoGrande").CreateRetalhoBag()
 			get_node("Confirm").visible = false
 			get_node("Confirm").set_scale(Vector2(1.2,1.2))
@@ -150,4 +151,9 @@ func _on_Timer_timeout():
 func _on_Baixar_pressed():
 	DuplicateRetalhoGrande()
 	$RetalhoGrande.visible = false
+	$Baixar.visible = false
+	$Descartar.visible = false
+	$Baixar.set_scale(self.get_scale() - Vector2(0.15,0.15))
+	$FraseLock.visible = false
+	$RetalhoGrande._on_ExitButton_pressed()
 	$Timer.start()

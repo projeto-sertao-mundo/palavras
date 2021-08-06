@@ -82,11 +82,11 @@ func _on_TextureButton_pressed():
 		var aux = label.text.length() + self.name.length()
 		numeroCaracteres = label.text.length()
 		
-		if ($"/root/TutorialGlobal".tutorialPos == 14 || $"/root/TutorialGlobal".CosturaCompleted || !$"/root/TutorialGlobal".willDoTutorial):
+		if ($"/root/TutorialGlobal".tutorialPos == 14 || $"/root/TutorialGlobal".CosturaCompleted || (!$"/root/TutorialGlobal".willDoTutorial && !$"/root/TutorialGlobal".isRedoingTutorial)):
 			
 			if ($"/root/TutorialGlobal".tutorialPos == 14 && !auxL):
 				print(aux)
-				primeiroNode.get_node("Tutorial3").Tutorial15()
+				primeiroNode.get_node("Tutorial3").Tutorial14_5()
 				auxL = true
 			
 			if  aux <= $"/root/Global".limite:

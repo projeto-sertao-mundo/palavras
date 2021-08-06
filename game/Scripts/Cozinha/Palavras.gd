@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
 export var isLetraAcentuada = false
+export var isMorfema = false
 export(Vector2) var posicao
 var movimento
 var velocidade = 700
@@ -44,7 +45,7 @@ func SetRef(var ins):
 	instancia = ins
 
 func _on_TextureButton_pressed():
-	if ($"/root/TutorialGlobal".tutorialPos == 4 || !$"/root/TutorialGlobal".willDoTutorial || $"/root/TutorialGlobal".CozinhaCompleted):
+	if ($"/root/TutorialGlobal".tutorialPos == 4 || (!$"/root/TutorialGlobal".willDoTutorial && !$"/root/TutorialGlobal".isRedoingTutorial) || $"/root/TutorialGlobal".CozinhaCompleted):
 		if (!get_parent().get_parent().bolsaAberta):
 			if !clicked:
 				firstNode.lettersClick += 1
@@ -53,5 +54,5 @@ func _on_TextureButton_pressed():
 			if (instancia != null):
 				instancia.get_node("AnimationPlayer").play("End")
 			set_process(true)
-			if ($"/root/TutorialGlobal".tutorialPos == 4):
+			if ($"/root/TutorialGlobal".tutorialPos == 4 && !self.isMorfema):
 				firstNode.get_node("Tutorial2").Tutorial5()

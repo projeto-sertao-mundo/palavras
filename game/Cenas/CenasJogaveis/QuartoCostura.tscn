@@ -382,6 +382,18 @@ tracks/2/keys = {
 "update": 1,
 "values": [ true, true ]
 }
+tracks/3/type = "value"
+tracks/3/path = NodePath("Preview/Label:rect_size")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.96 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 234, 100 ), Vector2( 234, 100 ) ]
+}
 
 [sub_resource type="Animation" id=12]
 length = 0.96
@@ -902,7 +914,6 @@ __meta__ = {
 [node name="ArrastarParentesco" type="Node" parent="."]
 
 [node name="Tutorial3" type="Control" parent="."]
-visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 script = ExtResource( 45 )
@@ -918,6 +929,8 @@ D5 = NodePath("Label4")
 D6 = NodePath("Label5")
 D7 = NodePath("Label6")
 D8 = NodePath("Label8")
+D9E = NodePath("Label9")
+D10E = NodePath("Label10")
 
 [node name="VoAnimation" type="AnimationPlayer" parent="Tutorial3"]
 anims/In = SubResource( 15 )
@@ -1005,9 +1018,9 @@ __meta__ = {
 
 [node name="Label1" type="Label" parent="Tutorial3"]
 margin_left = 336.0
-margin_top = 755.581
+margin_top = 756.581
 margin_right = 1328.0
-margin_bottom = 875.581
+margin_bottom = 876.581
 custom_fonts/font = SubResource( 17 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Clique na máquina de costura para começar!"
@@ -1027,6 +1040,22 @@ custom_fonts/font = SubResource( 17 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Para escrever, basta clicar na letra ou no morfema desejado
  que eles aparecerão no retalho à esquerda!"
+align = 1
+uppercase = true
+percent_visible = 0.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label10" type="Label" parent="Tutorial3"]
+margin_left = 336.0
+margin_top = 752.0
+margin_right = 1341.0
+margin_bottom = 875.0
+custom_fonts/font = SubResource( 17 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Você preencheu a primeira letra no seu bordado, muito bom!
+ Vamos terminar de construir esta palavra em breve!"
 align = 1
 uppercase = true
 percent_visible = 0.0
@@ -1118,13 +1147,30 @@ __meta__ = {
 
 [node name="Label8" type="Label" parent="Tutorial3"]
 margin_left = 336.0
-margin_top = 756.0
-margin_right = 1324.0
+margin_top = 750.0
+margin_right = 1335.0
 margin_bottom = 909.0
 custom_fonts/font = SubResource( 17 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Caso não goste do bordado, você pode arrastá-lo até a lixeirinha
- que fica no centro do quarto, está bem? Agora divirta-se!"
+text = "Caso não goste do resultado de um bordado que já estiver pronto
+ na sua aba de bordados, você pode arrastar ele para a lixeirinha.
+ que fica no centro do quarto, está bem?"
+align = 1
+uppercase = true
+percent_visible = 0.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label9" type="Label" parent="Tutorial3"]
+margin_left = 336.0
+margin_top = 769.0
+margin_right = 1335.0
+margin_bottom = 803.0
+custom_fonts/font = SubResource( 17 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Agora pode terminar de escrever a sua palavra! 
+Divirta-se!"
 align = 1
 uppercase = true
 percent_visible = 0.0

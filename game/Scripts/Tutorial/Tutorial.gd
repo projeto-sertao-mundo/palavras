@@ -83,7 +83,6 @@ func _input(event):
 		if ($"/root/TutorialGlobal".tutorialPos == 1):
 			Tutorial2()
 
-
 func _on_Sim_pressed():
 	$"/root/TutorialGlobal".willDoTutorial = true
 	$"/root/TutorialGlobal".lockCozinha = true

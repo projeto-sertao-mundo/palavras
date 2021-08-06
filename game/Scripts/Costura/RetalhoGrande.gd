@@ -52,7 +52,7 @@ func _on_Area2D_area_entered(area):
 func _on_Area2D_area_exited(area):
 	if (area.get_parent().name == "retaio" && !mouseIn):
 		
-		if ($"/root/TutorialGlobal".tutorialPos == 23 || $"/root/TutorialGlobal".FrasesCompleted || !$"/root/TutorialGlobal".willDoTutorial):
+		if ($"/root/TutorialGlobal".tutorialPos == 23 || $"/root/TutorialGlobal".FrasesCompleted || (!$"/root/TutorialGlobal".willDoTutorial && !$"/root/TutorialGlobal".isRedoingTutorial)):
 			get_parent().get_node("Tutorial4").Tutorial24()
 		
 			
@@ -62,7 +62,7 @@ func _on_Area2D_area_exited(area):
 				get_parent().get_node("PalavrasPopUp/ButtonCartoes").disabled = true
 
 func _on_ExitButton_pressed():
-	if ($"/root/TutorialGlobal".FrasesCompleted || !$"/root/TutorialGlobal".willDoTutorial):
+	if ($"/root/TutorialGlobal".FrasesCompleted || (!$"/root/TutorialGlobal".willDoTutorial && !$"/root/TutorialGlobal".isRedoingTutorial)):
 		for child in self.get_children():
 			if !(child is Area2D) && !(child is CollisionShape2D):
 				child.free()
@@ -73,7 +73,7 @@ func _on_ExitButton_pressed():
 		get_parent().get_node("PalavrasPopUp/ButtonCartoes").disabled = false
 
 func CreateRetalhoBag():
-	if ($"/root/TutorialGlobal".tutorialPos == 24 || !$"/root/TutorialGlobal".willDoTutorial || $"/root/TutorialGlobal".FrasesCompleted):
+	if ($"/root/TutorialGlobal".tutorialPos == 24 || (!$"/root/TutorialGlobal".willDoTutorial && !$"/root/TutorialGlobal".isRedoingTutorial) || $"/root/TutorialGlobal".FrasesCompleted):
 		if ($"/root/TutorialGlobal".tutorialPos == 24):
 			get_parent().get_node("Tutorial4").Tutorial25()
 			get_parent().get_node("Tutorial4/SetaConfirmar").visible = false

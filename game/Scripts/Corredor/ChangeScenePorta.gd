@@ -32,6 +32,11 @@ func _ready():
 	if $"/root/Global".contPalavrasEncontradas == 43:
 		get_node("PortaFechada").visible = true
 	
+	if ($"/root/TutorialGlobal".FrasesCompleted && $"/root/TutorialGlobal".CosturaCompleted && $"/root/TutorialGlobal".CozinhaCompleted):
+		$"Re-Tutorial".visible = true
+	else:
+		$"Re-Tutorial".visible = false
+	
 	get_node("AnimationPlayer").play("FadeIn")
 	$"/root/Global".setarRefs(morfemas, letraInstance, coresInstance, retalhosInstance, retalhosFrasesInstance, cartoes)
 
@@ -116,13 +121,18 @@ func _on_SimC_pressed():
 	$"/root/TutorialGlobal".willDoTutorial = false
 	$TutorialPergunta.visible = false
 	$Confirmacao.visible = false
+	$"/root/TutorialGlobal".CozinhaCompleted = true
+	$"/root/TutorialGlobal".CosturaCompleted = true
+	$"/root/TutorialGlobal".FrasesCompleted = true
+	
+	
+	$"Re-Tutorial".visible = true
 
 func _on_Sim_pressed():
 	$Audio/Audio.stream = confirmAudio
 	$Audio/Audio.play()
 	$TutorialPergunta.visible = false
 	$Confirmacao.visible = false
-
 
 func _on_PortaBuscaPalavras_mouse_entered():
 	if ($"/root/Global".contPalavrasEncontradas < 43 && ( ($"/root/TutorialGlobal".CozinhaCompleted && $"/root/TutorialGlobal".CosturaCompleted && $"/root/TutorialGlobal".FrasesCompleted) || !$"/root/TutorialGlobal".willDoTutorial || $"/root/TutorialGlobal".tutorialPos == 2)):
@@ -132,7 +142,6 @@ func _on_PortaBuscaPalavras_mouse_entered():
 
 func _on_PortaBuscaPalavras_mouse_exited():
 	$NamesAnimation.stop(true)
-
 
 func _on_PortaQuartoCostura_mouse_entered():
 	if (!$"/root/TutorialGlobal".willDoTutorial || $"/root/TutorialGlobal".tutorialPos == 12 || ($"/root/TutorialGlobal".CozinhaCompleted && $"/root/TutorialGlobal".CosturaCompleted && $"/root/TutorialGlobal".FrasesCompleted)):

@@ -1184,6 +1184,7 @@ script = ExtResource( 8 )
 __meta__ = {
 "_edit_group_": true
 }
+isMorfema = true
 posicao = Vector2( 1125, 44 )
 
 [node name="TextureButton" type="TextureButton" parent="Letras/des"]
@@ -1204,6 +1205,7 @@ script = ExtResource( 8 )
 __meta__ = {
 "_edit_group_": true
 }
+isMorfema = true
 posicao = Vector2( 1494, 626 )
 
 [node name="TextureButton" type="TextureButton" parent="Letras/dis"]
@@ -1224,6 +1226,7 @@ script = ExtResource( 8 )
 __meta__ = {
 "_edit_group_": true
 }
+isMorfema = true
 posicao = Vector2( 190, 287 )
 
 [node name="TextureButton" type="TextureButton" parent="Letras/inha"]
@@ -1244,6 +1247,7 @@ script = ExtResource( 8 )
 __meta__ = {
 "_edit_group_": true
 }
+isMorfema = true
 posicao = Vector2( 1047, 277 )
 
 [node name="TextureButton" type="TextureButton" parent="Letras/inho"]
@@ -1264,6 +1268,7 @@ script = ExtResource( 8 )
 __meta__ = {
 "_edit_group_": true
 }
+isMorfema = true
 posicao = Vector2( 1003, 883 )
 
 [node name="TextureButton" type="TextureButton" parent="Letras/zinha"]
@@ -1284,6 +1289,7 @@ script = ExtResource( 8 )
 __meta__ = {
 "_edit_group_": true
 }
+isMorfema = true
 posicao = Vector2( 1470, 54 )
 
 [node name="TextureButton" type="TextureButton" parent="Letras/zinho"]

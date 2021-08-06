@@ -22,7 +22,7 @@ func _ready():
 		sprite = primeiroNode.get_node("RetalhoGrande")
 
 func _process(_delta):
-	if ($"/root/TutorialGlobal".tutorialPos == 23 || !$"/root/TutorialGlobal".willDoTutorial || $"/root/TutorialGlobal".FrasesCompleted):
+	if ($"/root/TutorialGlobal".tutorialPos >= 23 || !$"/root/TutorialGlobal".willDoTutorial || $"/root/TutorialGlobal".FrasesCompleted):
 		if (mouseIn && clickPosition != null && placedPosition != clickPosition):
 			self.set_position(sprite.get_local_mouse_position())
 			placedPosition = clickPosition

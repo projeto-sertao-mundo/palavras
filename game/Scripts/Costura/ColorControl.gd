@@ -8,7 +8,7 @@ func _ready():
 	corAux = Color(0.882353, 0.882353, 0.819608)
 
 func _process(_delta):
-	if ($"/root/TutorialGlobal".tutorialPos == 16 || $"/root/TutorialGlobal".CosturaCompleted || !$"/root/TutorialGlobal".willDoTutorial):
+	if ($"/root/TutorialGlobal".tutorialPos == 16 || $"/root/TutorialGlobal".CosturaCompleted || (!$"/root/TutorialGlobal".willDoTutorial && !$"/root/TutorialGlobal".isRedoingTutorial)):
 		var cor = $"/root/Global".returnCorArrastada()
 		
 		if is_pixel_opaque(get_local_mouse_position()) && cor != null:

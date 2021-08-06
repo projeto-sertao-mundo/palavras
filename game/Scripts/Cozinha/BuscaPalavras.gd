@@ -36,7 +36,7 @@ func _process(_delta):
 
 func _on_Voltar_pressed():
 	if (lettersReach >= lettersClick):
-		if (!$"/root/TutorialGlobal".willDoTutorial  || $"/root/TutorialGlobal".CozinhaCompleted):
+		if ((!$"/root/TutorialGlobal".willDoTutorial && !$"/root/TutorialGlobal".isRedoingTutorial)  || $"/root/TutorialGlobal".CozinhaCompleted):
 			get_node("AnimationPlayer").play("FadeOut")
 			if (!tocouAudio):
 				$Audio/Audio.stream = voltarAudio
@@ -46,7 +46,7 @@ func _on_Voltar_pressed():
 	#yield(Yield.yield_wait(0.35, self), "completed")
 	
 func _on_Bolsa_pressed():
-	if ($"/root/TutorialGlobal".tutorialPos >= 6 || !$"/root/TutorialGlobal".willDoTutorial):
+	if ($"/root/TutorialGlobal".tutorialPos >= 6 || (!$"/root/TutorialGlobal".willDoTutorial && !$"/root/TutorialGlobal".isRedoingTutorial)):
 		get_node("PalavrasPopUp").show()
 		get_node("Tutorial2").Tutorial7()
 		bolsaAberta = true
@@ -92,7 +92,7 @@ func AtualizeLetrasMorfemas(var letra):
 	letrasMorfemas.erase(letra)
 
 func _on_Ajuda_pressed():
-	if ($"/root/TutorialGlobal".CozinhaCompleted || !$"/root/TutorialGlobal".willDoTutorial):
+	if ($"/root/TutorialGlobal".CozinhaCompleted || (!$"/root/TutorialGlobal".willDoTutorial && !$"/root/TutorialGlobal".isRedoingTutorial)):
 		if (cont < 1 && letraDestacada == null):
 			var rng = RandomNumberGenerator.new()
 			rng.randomize()

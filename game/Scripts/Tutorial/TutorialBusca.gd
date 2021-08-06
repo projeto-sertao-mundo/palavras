@@ -31,21 +31,36 @@ var aux
 func _ready():
 	auxD = 2
 	aux = false
-	if ($"/root/TutorialGlobal".willDoTutorial && !$"/root/TutorialGlobal".CozinhaCompleted):
+	if (!$"/root/TutorialGlobal".isRedoingTutorial):
+		if ($"/root/TutorialGlobal".willDoTutorial && !$"/root/TutorialGlobal".CozinhaCompleted):
+			self.visible = true
+			$VoAnimation.play("In")
+			if ($"/root/TutorialGlobal".tutorialPos == 2):
+				$VoAnimation.play("In")
+				dialogueEnded = false
+	else:
 		self.visible = true
 		$VoAnimation.play("In")
-		if ($"/root/TutorialGlobal".tutorialPos == 2):
-			$VoAnimation.play("In")
-			dialogueEnded = false
+		$"/root/TutorialGlobal".tutorialPos = 2
+		$VoAnimation.play("In")
+		dialogueEnded = false
+		$"/root/TutorialGlobal".CozinhaCompleted = false
+	
 
 func Tutorial3():
 	if (auxD == 2):
 		displayString(dialogo1)
 
 func Tutorial4():
-	if (auxD == 3):
-		displayString(dialogo2)
+	if (!$"/root/TutorialGlobal".isRedoingTutorial):
+		if (auxD == 3):
+			displayString(dialogo2)
+			dialogo1.percent_visible = 0
+	else:
+		Tutorial6()
+		auxD = 5
 		dialogo1.percent_visible = 0
+		$"/root/TutorialGlobal".tutorialPos += 2
 
 #func Tutorial2_5():
 #	self.visible = true
@@ -158,6 +173,7 @@ func _input(event):
 			get_node("SetaSair").visible = false
 			$"/root/TutorialGlobal".tutorialPos -= 1
 			$"/root/TutorialGlobal".CozinhaCompleted = true
+			$"/root/TutorialGlobal".isRedoingTutorial = false
 
 func initializeAnim(var animat):
 	var anim = get_parent().get_node("AnimationPlayer").get_animation(animat)

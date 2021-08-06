@@ -11,6 +11,8 @@ var CozinhaCompleted
 var CosturaCompleted
 var FrasesCompleted
 
+var isRedoingTutorial
+
 var alreadyAsked
 
 func _init():

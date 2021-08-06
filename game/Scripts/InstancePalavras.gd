@@ -78,7 +78,7 @@ func InstanciarPalavras():
 
 func _on_Bolsa_pressed():
 	if (!isShow):
-		if ($"/root/TutorialGlobal".tutorialPos == 6 || $"/root/TutorialGlobal".CozinhaCompleted || !$"/root/TutorialGlobal".willDoTutorial):
+		if ($"/root/TutorialGlobal".tutorialPos == 6 || $"/root/TutorialGlobal".CozinhaCompleted || (!$"/root/TutorialGlobal".willDoTutorial && !$"/root/TutorialGlobal".isRedoingTutorial)):
 			get_parent().get_node("BolsaJuice").play("BolsaIn")
 			if ($"/root/TutorialGlobal".tutorialPos ==  6):
 				get_parent().get_node("Tutorial2").Tutorial7()
@@ -86,7 +86,7 @@ func _on_Bolsa_pressed():
 			isShow = true
 
 func _on_ButtonPalavras_pressed():
-	if ($"/root/TutorialGlobal".tutorialPos == 8 || $"/root/TutorialGlobal".tutorialPos == 14 || $"/root/TutorialGlobal".CozinhaCompleted || $"/root/TutorialGlobal".CosturaCompleted || !$"/root/TutorialGlobal".willDoTutorial):
+	if ($"/root/TutorialGlobal".tutorialPos == 8 || $"/root/TutorialGlobal".tutorialPos == 14 || $"/root/TutorialGlobal".CozinhaCompleted || $"/root/TutorialGlobal".CosturaCompleted || (!$"/root/TutorialGlobal".willDoTutorial && !$"/root/TutorialGlobal".isRedoingTutorial)):
 		move_child(get_node("Palavras"), 6)
 		InstanciarPalavras()
 		if (has_node("Retalhos/GridRetalhos")):
@@ -127,16 +127,16 @@ func _on_ButtonRetalhos_pressed():
 		get_node("Cartões/GridCartões").hide()
 
 func _on_Voltar_pressed():
-	if (!$"/root/TutorialGlobal".willDoTutorial || $"/root/TutorialGlobal".tutorialPos > 10):
+	if ((!$"/root/TutorialGlobal".willDoTutorial && !$"/root/TutorialGlobal".isRedoingTutorial) || $"/root/TutorialGlobal".tutorialPos > 10):
 		get_parent().get_node("BolsaJuice").play("BolsaOut")
 		isShow = false
 		get_parent().bolsaAberta = false
 
 func _on_ButtonCartoes_pressed():
-	if ($"/root/TutorialGlobal".tutorialPos == 25 && $"/root/TutorialGlobal".willDoTutorial):
+	if ($"/root/TutorialGlobal".tutorialPos == 25 && ($"/root/TutorialGlobal".willDoTutorial || $"/root/TutorialGlobal".isRedoingTutorial)):
 		get_parent().get_node("Tutorial4").Tutorial26()
 	
-	if ($"/root/TutorialGlobal".tutorialPos == 25 || !$"/root/TutorialGlobal".willDoTutorial || $"/root/TutorialGlobal".FrasesCompleted):
+	if ($"/root/TutorialGlobal".tutorialPos == 25 || (!$"/root/TutorialGlobal".willDoTutorial && !$"/root/TutorialGlobal".isRedoingTutorial) || $"/root/TutorialGlobal".FrasesCompleted):
 		move_child(get_node("Cartões"), 6)
 		InstanciarPalavras()
 		
