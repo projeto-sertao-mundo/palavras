@@ -3,18 +3,31 @@ extends Control
 onready var dialogo = get_node("Label0")
 var cont = 0
 var canHide
+var isDialogoUp = false
 
 func _ready():
 	if (!$"/root/TutorialGlobal".willDoTutorial || ($"/root/TutorialGlobal".CozinhaCompleted && $"/root/TutorialGlobal".FrasesCompleted && $"/root/TutorialGlobal".CosturaCompleted)):
 		self.visible = true
+	
+	if ($"/root/TutorialGlobal".willDoTutorial && $"/root/TutorialGlobal".FrasesCompleted && !$"/root/Global".didntShow):
+		ajudaShow()
+		$"/root/Global".didntShow = true
+
+func ajudaShow():
+	if (!isDialogoUp):
+		dialogo = $AvisoText
+		$AnimationRedoTutorial.play("InDialogo")
+		isDialogoUp = true
 
 func _on_RedoTutorial_pressed():
 	$"/root/TutorialGlobal".isRedoingTutorial = true
-	$"/root/TutorialGlobal".lockCostura = true
-	$"/root/TutorialGlobal".lockCozinha = true
-	$"/root/TutorialGlobal".lockFrases = true
+#	$"/root/TutorialGlobal".lockCostura = true
+#	$"/root/TutorialGlobal".lockCozinha = true
+#	$"/root/TutorialGlobal".lockFrases = true
 	
-	$AnimationRedoTutorial.play("InDialogo")
+	if (!isDialogoUp):
+		$AnimationRedoTutorial.play("InDialogo")
+		isDialogoUp = true
 	dialogo = $Label0
 	cont = 0
 
@@ -51,6 +64,7 @@ func _on_PortaBuscaPalavras_pressed():
 		$"/root/TutorialGlobal".lockCozinha = false
 		$"/root/TutorialGlobal".lockFrases = false
 		get_parent()._on_PortaBuscaPalavras_pressed()
+
 func _on_PortaQuartoCostura_pressed():
 	if ($"/root/Global".contPalavrasEncontradas == 0):
 		if ($"/root/TutorialGlobal".isRedoingTutorial):
@@ -65,6 +79,7 @@ func _on_PortaQuartoCostura_pressed():
 		$"/root/TutorialGlobal".lockCozinha = false
 		$"/root/TutorialGlobal".lockFrases = false
 		get_parent()._on_PortaQuartoCostura_pressed()
+
 func _on_PortaQuartoMontagens_pressed():
 	if ($"/root/Global".retalhos.size() == 0):
 		if ($"/root/TutorialGlobal".isRedoingTutorial):
@@ -83,8 +98,14 @@ func _on_PortaQuartoMontagens_pressed():
 func _input(event):
 	if (event is InputEventScreenTouch) && canHide:
 		canHide = false
-		$AnimationRedoTutorial.play("Hide")
+		if (isDialogoUp):
+			$AnimationRedoTutorial.play("Hide")
+			isDialogoUp = false
 		dialogo.percent_visible = 0
 		$"/root/TutorialGlobal".lockCostura = false
 		$"/root/TutorialGlobal".lockCozinha = false
 		$"/root/TutorialGlobal".lockFrases = false
+
+
+func _on_SimC_pressed():
+	ajudaShow()

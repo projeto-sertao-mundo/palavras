@@ -9,6 +9,9 @@ var retalhos = []
 var frases = []
 var cliking
 
+var didntShow = false
+var auxL = false
+
 var aux = -1
 var podeSetar
 var firstSceneNode

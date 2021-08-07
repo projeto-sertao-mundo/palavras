@@ -88,11 +88,12 @@ func Tutorial14_5():
 	get_node("SetaRetalho").visible = false
 
 func Tutorial15():
-	if (auxD == 14):
-		dialogo10.percent_visible = 0
-		displayString(dialogo3)
-		initializeAnim("SetaFormas")
-		get_node("SetaFormas").visible = true
+	dialogo10.percent_visible = 0
+	displayString(dialogo3)
+	auxD = 15
+	initializeAnim("SetaFormas")
+	get_node("SetaFormas").visible = true
+
 
 func Tutorial16():
 	if (auxD == 15):
@@ -163,15 +164,14 @@ func _input(event):
 			Tutorial21()
 			get_node("SetaLixeira").visible = false
 		elif (dialogo10.percent_visible == 1):
-			auxD = 14
 			Tutorial15()
 		if (dialogo9.percent_visible == 1):
 			$"/root/TutorialGlobal".lockCozinha = false
 			$"/root/TutorialGlobal".lockCostura = false
 			$"/root/TutorialGlobal".CosturaCompleted = true
 			$"/root/TutorialGlobal".isRedoingTutorial = false
+			$"/root/Global".auxL = false
 			$VoAnimation.play("Out")
-			dialogo9.percent_visible = 0
 		
 		
 #		elif ($"/root/TutorialGlobal".tutorialPos == 5):

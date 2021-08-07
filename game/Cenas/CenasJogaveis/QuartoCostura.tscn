@@ -498,7 +498,7 @@ tracks/1/keys = {
 "values": [ Vector2( 831.148, 801.766 ), Vector2( 831.148, 801.766 ), Vector2( 831.148, 1150 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Label8:rect_position")
+tracks/2/path = NodePath("Label9:rect_position")
 tracks/2/interp = 2
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -507,7 +507,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0, 0.3, 0.8 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 336, 756 ), Vector2( 336, 756 ), Vector2( 336, 1150 ) ]
+"values": [ Vector2( 436.006, 767.413 ), Vector2( 436.006, 767.413 ), Vector2( 436.006, 1111 ) ]
 }
 
 [sub_resource type="DynamicFont" id=17]
@@ -937,11 +937,11 @@ anims/In = SubResource( 15 )
 anims/Out = SubResource( 16 )
 
 [node name="Vó" type="Sprite" parent="Tutorial3"]
-position = Vector2( 1503.27, 1100 )
+position = Vector2( 1503.27, 781.001 )
 texture = ExtResource( 44 )
 
 [node name="Dialogo" type="Sprite" parent="Tutorial3"]
-position = Vector2( 831.148, 1150 )
+position = Vector2( 831.148, 801.766 )
 scale = Vector2( 2.19744, 1.3283 )
 texture = ExtResource( 43 )
 
@@ -1147,9 +1147,9 @@ __meta__ = {
 
 [node name="Label8" type="Label" parent="Tutorial3"]
 margin_left = 336.0
-margin_top = 750.0
+margin_top = 756.0
 margin_right = 1335.0
-margin_bottom = 909.0
+margin_bottom = 915.0
 custom_fonts/font = SubResource( 17 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Caso não goste do resultado de um bordado que já estiver pronto
@@ -1163,10 +1163,10 @@ __meta__ = {
 }
 
 [node name="Label9" type="Label" parent="Tutorial3"]
-margin_left = 336.0
-margin_top = 769.0
-margin_right = 1335.0
-margin_bottom = 803.0
+margin_left = 436.006
+margin_top = 767.413
+margin_right = 1171.01
+margin_bottom = 838.413
 custom_fonts/font = SubResource( 17 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Agora pode terminar de escrever a sua palavra! 

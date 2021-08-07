@@ -1290,7 +1290,7 @@ __meta__ = {
 "_edit_group_": true
 }
 isMorfema = true
-posicao = Vector2( 1470, 54 )
+posicao = Vector2( 1474.93, 133.703 )
 
 [node name="TextureButton" type="TextureButton" parent="Letras/zinho"]
 margin_right = 76.0001
@@ -1302,10 +1302,10 @@ __meta__ = {
 }
 
 [node name="Bolsa" type="TextureButton" parent="."]
-margin_left = 1459.23
-margin_top = 701.093
-margin_right = 1622.23
-margin_bottom = 939.093
+margin_left = 1458.07
+margin_top = 699.708
+margin_right = 1621.07
+margin_bottom = 937.708
 rect_scale = Vector2( 0.6, 0.6 )
 rect_pivot_offset = Vector2( 80, 120 )
 texture_normal = ExtResource( 3 )
