@@ -114,7 +114,7 @@ func _on_ButtonLetras_pressed():
 		get_node("Cartões/GridCartões").hide()
 
 func _on_ButtonRetalhos_pressed():
-	if ((!$"/root/TutorialGlobal".willDoTutorial && !$"/root/TutorialGlobal".isRedoingTutorial) || $"/root/TutorialGlobal".FrasesCompleted):
+	if ((!$"/root/TutorialGlobal".willDoTutorial && !$"/root/TutorialGlobal".isRedoingTutorial) || $"/root/TutorialGlobal".tutorialPos == 19 || ($"/root/TutorialGlobal".FrasesCompleted && get_tree().get_current_scene().name == "QuartoFrases") || ($"/root/TutorialGlobal".CosturaCompleted && get_tree().get_current_scene().name == "QuartoCostura")):
 		move_child(get_node("Retalhos"), 6)
 		InstanciarPalavras()
 		

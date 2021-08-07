@@ -20,9 +20,9 @@ func _ready():
 	palavrasParentesco = primeiroNode.get_node("RetalhoGrande")
 	if (primeiroNode.has_node("RetalhoGrande")):
 		sprite = primeiroNode.get_node("RetalhoGrande")
-
+# $"/root/TutorialGlobal".tutorialPos >= 23 || 
 func _process(_delta):
-	if ($"/root/TutorialGlobal".tutorialPos >= 23 || !$"/root/TutorialGlobal".willDoTutorial || $"/root/TutorialGlobal".FrasesCompleted):
+	if ((!$"/root/TutorialGlobal".willDoTutorial && !$"/root/TutorialGlobal".isRedoingTutorial) || $"/root/TutorialGlobal".FrasesCompleted):
 		if (mouseIn && clickPosition != null && placedPosition != clickPosition):
 			self.set_position(sprite.get_local_mouse_position())
 			placedPosition = clickPosition
