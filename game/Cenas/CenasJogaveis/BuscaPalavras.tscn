@@ -1698,6 +1698,7 @@ __meta__ = {
 }
 
 [node name="DEBUG" type="Button" parent="."]
+visible = false
 margin_left = 247.112
 margin_top = 15.2245
 margin_right = 478.112
