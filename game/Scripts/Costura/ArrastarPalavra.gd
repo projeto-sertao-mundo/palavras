@@ -86,8 +86,6 @@ func _on_TextureButton_pressed():
 				primeiroNode.get_node("Tutorial3").Tutorial14_5()
 				$"/root/Global".auxL = true
 			
-			print($"/root/Global".auxL)
-			
 			if  aux <= $"/root/Global".limite:
 				if palavra.name.length() == 3:
 					isPrefixo = true

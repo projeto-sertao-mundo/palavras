@@ -68,9 +68,7 @@ func deleteRetalhoArrastado(var retalho):
 func deleteCartaoSelecionado():
 	for cartao in frases:
 		if cartao.codigo == selectedCard:
-			print(cartao.codigo)
 			frases.erase(cartao)
-	print(frases)
 	
 func mudarcorArrastada(var cor):
 	corArrastada = cor

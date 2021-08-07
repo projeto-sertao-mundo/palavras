@@ -29,7 +29,6 @@ func instanceMorfema(var ref, var nome):
 	if palavrasParentesco.has_node(nome) && Input.is_action_pressed("Click"):
 		morfemaInstanciado = palavrasParentesco.get_node(nome)
 		morfemaInstanciado.set_position(get_viewport().get_mouse_position())
-		print(morfemaInstanciado.name)
 		morfemaInstanciado.visible = true
 
 

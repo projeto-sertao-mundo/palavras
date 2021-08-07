@@ -224,7 +224,7 @@ size = 38
 use_filter = true
 font_data = ExtResource( 10 )
 
-[sub_resource type="Animation" id=11]
+[sub_resource type="Animation" id=10]
 resource_name = "Hide"
 length = 0.8
 tracks/0/type = "value"
@@ -240,8 +240,7 @@ tracks/0/keys = {
 "values": [ Vector2( 1016.17, 816.158 ), Vector2( 1016.17, 816.158 ), Vector2( 1016.17, 1100 ) ]
 }
 
-[sub_resource type="Animation" id=10]
-resource_name = "InDialogo"
+[sub_resource type="Animation" id=11]
 length = 0.8
 tracks/0/type = "value"
 tracks/0/path = NodePath("Dialogo2:position")
@@ -561,8 +560,8 @@ __meta__ = {
 wait_time = 0.01
 
 [node name="AnimationRedoTutorial" type="AnimationPlayer" parent="Re-Tutorial"]
-anims/Hide = SubResource( 11 )
-anims/InDialogo = SubResource( 10 )
+anims/Hide = SubResource( 10 )
+anims/InDialogo = SubResource( 11 )
 
 [node name="Redo-Tutorial" type="TextureButton" parent="Re-Tutorial"]
 margin_left = 1421.4
@@ -658,35 +657,51 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="LockBagFull" type="Label" parent="Re-Tutorial"]
+modulate = Color( 0, 0, 0, 1 )
+margin_left = 654.0
+margin_top = 782.0
+margin_right = 1390.0
+margin_bottom = 877.0
+custom_fonts/font = SubResource( 9 )
+text = "Você precisa liberar um espaço na 
+sua bolsa para que eu possa te mostar"
+align = 1
+uppercase = true
+percent_visible = 0.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 [connection signal="mouse_entered" from="VoltarMenu" to="VoltarMenu" method="_on_VoltarMenu_mouse_entered"]
 [connection signal="mouse_exited" from="VoltarMenu" to="VoltarMenu" method="_on_VoltarMenu_mouse_exited"]
 [connection signal="pressed" from="VoltarMenu" to="." method="_on_VoltarMenu_pressed"]
 [connection signal="mouse_entered" from="PortaBuscaPalavras" to="." method="_on_PortaBuscaPalavras_mouse_entered"]
 [connection signal="mouse_exited" from="PortaBuscaPalavras" to="." method="_on_PortaBuscaPalavras_mouse_exited"]
-[connection signal="pressed" from="PortaBuscaPalavras" to="." method="_on_PortaBuscaPalavras_pressed"]
 [connection signal="pressed" from="PortaBuscaPalavras" to="Re-Tutorial" method="_on_PortaBuscaPalavras_pressed"]
+[connection signal="pressed" from="PortaBuscaPalavras" to="." method="_on_PortaBuscaPalavras_pressed"]
 [connection signal="mouse_entered" from="PortaQuartoCostura" to="." method="_on_PortaQuartoCostura_mouse_entered"]
 [connection signal="mouse_exited" from="PortaQuartoCostura" to="." method="_on_PortaQuartoCostura_mouse_exited"]
-[connection signal="pressed" from="PortaQuartoCostura" to="." method="_on_PortaQuartoCostura_pressed"]
 [connection signal="pressed" from="PortaQuartoCostura" to="Re-Tutorial" method="_on_PortaQuartoCostura_pressed"]
+[connection signal="pressed" from="PortaQuartoCostura" to="." method="_on_PortaQuartoCostura_pressed"]
 [connection signal="mouse_entered" from="PortaQuartoMontagens" to="." method="_on_PortaQuartoMontagens_mouse_entered"]
 [connection signal="mouse_exited" from="PortaQuartoMontagens" to="." method="_on_PortaQuartoMontagens_mouse_exited"]
-[connection signal="pressed" from="PortaQuartoMontagens" to="." method="_on_PortaQuartoMontagens_pressed"]
 [connection signal="pressed" from="PortaQuartoMontagens" to="Re-Tutorial" method="_on_PortaQuartoMontagens_pressed"]
+[connection signal="pressed" from="PortaQuartoMontagens" to="." method="_on_PortaQuartoMontagens_pressed"]
 [connection signal="animation_finished" from="Tutorial1/AnimationsVo" to="Tutorial1" method="_on_AnimationsVo_animation_finished"]
 [connection signal="timeout" from="Tutorial1/Timer" to="Tutorial1" method="_on_Timer_timeout"]
 [connection signal="mouse_entered" from="TutorialPergunta/Sim" to="TutorialPergunta/Sim" method="_on_Sim_mouse_entered"]
 [connection signal="mouse_exited" from="TutorialPergunta/Sim" to="TutorialPergunta/Sim" method="_on_Sim_mouse_exited"]
-[connection signal="pressed" from="TutorialPergunta/Sim" to="." method="_on_Sim_pressed"]
 [connection signal="pressed" from="TutorialPergunta/Sim" to="Tutorial1" method="_on_Sim_pressed"]
+[connection signal="pressed" from="TutorialPergunta/Sim" to="." method="_on_Sim_pressed"]
 [connection signal="mouse_entered" from="TutorialPergunta/Nao" to="TutorialPergunta/Nao" method="_on_Nao_mouse_entered"]
 [connection signal="mouse_exited" from="TutorialPergunta/Nao" to="TutorialPergunta/Nao" method="_on_Nao_mouse_exited"]
 [connection signal="pressed" from="TutorialPergunta/Nao" to="." method="_on_Nao_pressed"]
 [connection signal="mouse_entered" from="Confirmacao/SimC" to="Confirmacao/SimC" method="_on_SimC_mouse_entered"]
 [connection signal="mouse_exited" from="Confirmacao/SimC" to="Confirmacao/SimC" method="_on_SimC_mouse_exited"]
-[connection signal="pressed" from="Confirmacao/SimC" to="." method="_on_SimC_pressed"]
 [connection signal="pressed" from="Confirmacao/SimC" to="Re-Tutorial" method="_on_SimC_pressed"]
+[connection signal="pressed" from="Confirmacao/SimC" to="." method="_on_SimC_pressed"]
 [connection signal="mouse_entered" from="Confirmacao/NaoC" to="Confirmacao/NaoC" method="_on_NaoC_mouse_entered"]
 [connection signal="mouse_exited" from="Confirmacao/NaoC" to="Confirmacao/NaoC" method="_on_NaoC_mouse_exited"]
 [connection signal="pressed" from="Confirmacao/NaoC" to="." method="_on_NaoC_pressed"]

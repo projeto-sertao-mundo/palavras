@@ -1698,7 +1698,6 @@ __meta__ = {
 }
 
 [node name="DEBUG" type="Button" parent="."]
-visible = false
 margin_left = 247.112
 margin_top = 15.2245
 margin_right = 478.112
@@ -1845,8 +1844,8 @@ __meta__ = {
 [connection signal="pressed" from="Letras/zinho/TextureButton" to="Letras/zinho" method="_on_TextureButton_pressed"]
 [connection signal="mouse_entered" from="Bolsa" to="Bolsa" method="_on_Bolsa_mouse_entered"]
 [connection signal="mouse_exited" from="Bolsa" to="Bolsa" method="_on_Bolsa_mouse_exited"]
-[connection signal="pressed" from="Bolsa" to="." method="_on_Bolsa_pressed"]
 [connection signal="pressed" from="Bolsa" to="PalavrasPopUp" method="_on_Bolsa_pressed"]
+[connection signal="pressed" from="Bolsa" to="." method="_on_Bolsa_pressed"]
 [connection signal="pressed" from="Finish/Sprite/OK" to="." method="_on_TextureButton_pressed"]
 [connection signal="mouse_entered" from="Voltar" to="Voltar" method="_on_Voltar_mouse_entered"]
 [connection signal="mouse_exited" from="Voltar" to="Voltar" method="_on_Voltar_mouse_exited"]

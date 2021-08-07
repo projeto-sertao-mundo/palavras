@@ -41,7 +41,7 @@ func _ready():
 	$"/root/Global".setarRefs(morfemas, letraInstance, coresInstance, retalhosInstance, retalhosFrasesInstance, cartoes)
 
 func _on_PortaBuscaPalavras_pressed():
-	if (!$"/root/TutorialGlobal".lockCozinha):
+	if (!$"/root/TutorialGlobal".lockCozinha && !($"/root/Global".contPalavrasEncontradas == 43 && $"/root/TutorialGlobal".isRedoingTutorial)):
 		if $"/root/Global".contPalavrasEncontradas < 43:
 			if (!tocouAudio):
 				$Audio/Audio.stream = confirmAudio
@@ -52,7 +52,7 @@ func _on_PortaBuscaPalavras_pressed():
 			cena = "BP"
 
 func _on_PortaQuartoCostura_pressed():
-	if (!$"/root/TutorialGlobal".lockCostura):
+	if (!$"/root/TutorialGlobal".lockCostura && !($"/root/Global".contPalavrasEncontradas == 0 && $"/root/TutorialGlobal".isRedoingTutorial)):
 		$AnimationPlayer.play("FadeOut")
 		if (!tocouAudio):
 			$Audio/Audio.stream = confirmAudio
@@ -63,7 +63,7 @@ func _on_PortaQuartoCostura_pressed():
 		cena = "QC"
 
 func _on_PortaQuartoMontagens_pressed():
-	if (!$"/root/TutorialGlobal".lockFrases):
+	if (!$"/root/TutorialGlobal".lockFrases && !(($"/root/Global".retalhos.size() == 0 || $"/root/Global".frases.size() >= 12) && $"/root/TutorialGlobal".isRedoingTutorial)):
 		$AnimationPlayer.play("FadeOut")
 		
 		if (!tocouAudio):

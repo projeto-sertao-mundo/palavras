@@ -21,13 +21,15 @@ func ajudaShow():
 
 func _on_RedoTutorial_pressed():
 	$"/root/TutorialGlobal".isRedoingTutorial = true
-#	$"/root/TutorialGlobal".lockCostura = true
-#	$"/root/TutorialGlobal".lockCozinha = true
-#	$"/root/TutorialGlobal".lockFrases = true
+	
 	
 	if (!isDialogoUp):
 		$AnimationRedoTutorial.play("InDialogo")
 		isDialogoUp = true
+		
+		$"/root/TutorialGlobal".lockCostura = true
+		$"/root/TutorialGlobal".lockCozinha = true
+		$"/root/TutorialGlobal".lockFrases = true
 	dialogo = $Label0
 	cont = 0
 
@@ -49,15 +51,21 @@ func _on_TimerRedo_timeout():
 func _on_AnimationRedoTutorial_animation_finished(anim_name):
 	if (anim_name == "InDialogo"):
 		$TimerRedo.start()
+		
+		$"/root/TutorialGlobal".lockCostura = false
+		$"/root/TutorialGlobal".lockCozinha = false
+		$"/root/TutorialGlobal".lockFrases = false
 
 func _on_PortaBuscaPalavras_pressed():
 	if ($"/root/Global".contPalavrasEncontradas == 43):
 		if ($"/root/TutorialGlobal".isRedoingTutorial):
 			dialogo = $LockCompletedLetras
 			$Label0.percent_visible = 0
+			$LockBagFull.percent_visible = 0
 			$LockNoLetraCostura.percent_visible = 0
 			$LockNoBordadoCartoes.percent_visible = 0
 			cont = 0
+			$"/root/TutorialGlobal".isRedoingTutorial = false
 			$TimerRedo.start()
 	elif (!$"/root/TutorialGlobal".willDoTutorial):
 		$"/root/TutorialGlobal".lockCostura = false
@@ -71,8 +79,10 @@ func _on_PortaQuartoCostura_pressed():
 			dialogo = $LockNoLetraCostura
 			$LockNoBordadoCartoes.percent_visible = 0
 			$Label0.percent_visible = 0
+			$LockBagFull.percent_visible = 0
 			$LockCompletedLetras.percent_visible = 0
 			cont = 0
+			$"/root/TutorialGlobal".isRedoingTutorial = false
 			$TimerRedo.start()
 	elif (!$"/root/TutorialGlobal".willDoTutorial):
 		$"/root/TutorialGlobal".lockCostura = false
@@ -86,14 +96,28 @@ func _on_PortaQuartoMontagens_pressed():
 			dialogo = $LockNoBordadoCartoes
 			$LockCompletedLetras.percent_visible = 0
 			$LockNoLetraCostura.percent_visible = 0
+			$LockBagFull.percent_visible = 0
 			$Label0.percent_visible = 0
 			cont = 0
 			$TimerRedo.start()
+			$"/root/TutorialGlobal".isRedoingTutorial = false
+	elif($"/root/Global".frases.size() == 12):
+		if ($"/root/TutorialGlobal".isRedoingTutorial):
+			dialogo = $LockBagFull
+			$LockNoBordadoCartoes.percent_visible = 0
+			$LockCompletedLetras.percent_visible = 0
+			$LockNoLetraCostura.percent_visible = 0
+			$Label0.percent_visible = 0
+			cont = 0
+			$TimerRedo.start()
+			$"/root/TutorialGlobal".isRedoingTutorial = false
 	elif (!$"/root/TutorialGlobal".willDoTutorial):
 		$"/root/TutorialGlobal".lockCostura = false
 		$"/root/TutorialGlobal".lockCozinha = false
 		$"/root/TutorialGlobal".lockFrases = false
 		get_parent()._on_PortaQuartoMontagens_pressed()
+	
+	print($"/root/Global".frases.size())
 
 func _input(event):
 	if (event is InputEventScreenTouch) && canHide:
@@ -102,9 +126,6 @@ func _input(event):
 			$AnimationRedoTutorial.play("Hide")
 			isDialogoUp = false
 		dialogo.percent_visible = 0
-		$"/root/TutorialGlobal".lockCostura = false
-		$"/root/TutorialGlobal".lockCozinha = false
-		$"/root/TutorialGlobal".lockFrases = false
 
 
 func _on_SimC_pressed():

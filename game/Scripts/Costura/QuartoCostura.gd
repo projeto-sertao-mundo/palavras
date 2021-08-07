@@ -24,7 +24,6 @@ func _ready():
 	numeroRetalhos = $"/root/Global".retalhos.size()
 
 func _process(_delta):
-	print($"/root/Global".auxL)
 #	if ($"/root/Global".podeSetar && !Input.is_action_pressed("Click") && palavra.name.length() > 1 && !palavra.isLetraAcentuada):
 #		if numeroCaracteres <= 15:
 #			MudarLabelPreview(palavra.get_node("Label").text)

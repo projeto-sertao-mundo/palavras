@@ -114,17 +114,18 @@ func _on_ButtonLetras_pressed():
 		get_node("Cartões/GridCartões").hide()
 
 func _on_ButtonRetalhos_pressed():
-	move_child(get_node("Retalhos"), 6)
-	InstanciarPalavras()
-	
-	if (has_node("Retalhos/GridRetalhos")):
-		get_node("Retalhos/GridRetalhos").show()
-	if (has_node("Letras/GridLetras")):
-		get_node("Letras/GridLetras").hide()
-	if (has_node("Letras/GridLetrasAcentuadas")):
-		get_node("Letras/GridLetrasAcentuadas").hide()
-	if (has_node("Cartões/GridCartões")):
-		get_node("Cartões/GridCartões").hide()
+	if ((!$"/root/TutorialGlobal".willDoTutorial && !$"/root/TutorialGlobal".isRedoingTutorial) || $"/root/TutorialGlobal".FrasesCompleted):
+		move_child(get_node("Retalhos"), 6)
+		InstanciarPalavras()
+		
+		if (has_node("Retalhos/GridRetalhos")):
+			get_node("Retalhos/GridRetalhos").show()
+		if (has_node("Letras/GridLetras")):
+			get_node("Letras/GridLetras").hide()
+		if (has_node("Letras/GridLetrasAcentuadas")):
+			get_node("Letras/GridLetrasAcentuadas").hide()
+		if (has_node("Cartões/GridCartões")):
+			get_node("Cartões/GridCartões").hide()
 
 func _on_Voltar_pressed():
 	if ((!$"/root/TutorialGlobal".willDoTutorial && !$"/root/TutorialGlobal".isRedoingTutorial) || $"/root/TutorialGlobal".tutorialPos > 10):

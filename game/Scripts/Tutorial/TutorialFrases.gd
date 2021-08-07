@@ -25,7 +25,6 @@ var cont
 var auxD
 
 func _ready():
-	print($"/root/TutorialGlobal".tutorialPos)
 	auxD = 21
 	
 	if (!$"/root/TutorialGlobal".isRedoingTutorial):
