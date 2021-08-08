@@ -13,6 +13,7 @@ var placedPosition
 var canMove = true
 #var setouRetalho
 
+
 func _ready():
 	#setouRetalho = false
 	setRetalhoFrase = false
@@ -22,6 +23,7 @@ func _ready():
 		sprite = primeiroNode.get_node("RetalhoGrande")
 # $"/root/TutorialGlobal".tutorialPos >= 23 || 
 func _process(_delta):
+	#print(self.rect_scale)
 	if ((!$"/root/TutorialGlobal".willDoTutorial && !$"/root/TutorialGlobal".isRedoingTutorial) || $"/root/TutorialGlobal".FrasesCompleted):
 		if (mouseIn && clickPosition != null && placedPosition != clickPosition):
 			self.set_position(sprite.get_local_mouse_position())

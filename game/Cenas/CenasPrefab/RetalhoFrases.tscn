@@ -6,7 +6,7 @@
 [ext_resource path="res://Scripts/Costura/RetalhoFrases.gd" type="Script" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 72.0968, 69.361 )
+extents = Vector2( 66.7085, 66.1916 )
 
 [sub_resource type="DynamicFont" id=2]
 size = 25
@@ -20,18 +20,19 @@ __meta__ = {
 }
 
 [node name="Miolo" type="Sprite" parent="."]
-position = Vector2( -0.396867, 1.5874 )
-scale = Vector2( 0.731968, 0.808582 )
+position = Vector2( -3.5, -1.5 )
+scale = Vector2( 0.7, 0.777 )
 texture = ExtResource( 3 )
 
 [node name="Borda" type="Sprite" parent="."]
-position = Vector2( -0.793713, 1.19055 )
-scale = Vector2( 0.621351, 0.652189 )
+position = Vector2( -3.5, -1.5 )
+scale = Vector2( 0.59, 0.62 )
 texture = ExtResource( 2 )
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( -3.53554, -1.41422 )
 shape = SubResource( 1 )
 
 [node name="TextureButton" type="TextureButton" parent="."]
